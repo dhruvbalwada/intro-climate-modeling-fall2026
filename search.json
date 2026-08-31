@@ -67,7 +67,28 @@
     "href": "slides/week01.html#what-arrheniuss-model-was",
     "title": "Introduction to Climate Modeling",
     "section": "What Arrhenius’s model was",
-    "text": "What Arrhenius’s model was\n\\[\\text{absorbed sunlight} = \\text{emitted infrared}\\]\nOne equation. One perturbation (CO₂). One answer (a temperature).\n\nWeeks 2–3: you build exactly this — then make it tick in time, grow an ice cap, and misbehave.\n\nPoint at the ladder: rung 1 never retired. FaIR-type models running IPCC scenario numbers today are direct descendants. (Don’t say FaIR yet — “the models the IPCC uses to score policy scenarios.”)"
+    "text": "What Arrhenius’s model was\n\\[\\text{absorbed sunlight} = \\text{emitted infrared}\\]\nOne equation. One perturbation (CO₂). One answer (a temperature).\n\nSo let’s do his first step. Right now. Together.\n\nPoint at the ladder: rung 1 never retired. FaIR-type models running IPCC scenario numbers today are direct descendants. (Don’t say FaIR yet — “the models the IPCC uses to score policy scenarios.”) Then move to the board."
+  },
+  {
+    "objectID": "slides/week01.html#the-first-calculation-live-on-the-board",
+    "href": "slides/week01.html#the-first-calculation-live-on-the-board",
+    "title": "Introduction to Climate Modeling",
+    "section": "The first calculation (live, on the board)",
+    "text": "The first calculation (live, on the board)\nEnergy in: sunlight intercepted by a disk — \\(\\pi R^2 \\cdot S_0(1-\\alpha)\\)\nEnergy out: infrared radiated by a sphere — \\(4\\pi R^2 \\cdot \\sigma T^4\\)\n\nBalance them:\n\\[T_e = \\left[\\frac{S_0(1-\\alpha)}{4\\sigma}\\right]^{1/4}\\]\nWith \\(S_0 = 1361\\) W/m², \\(\\alpha = 0.3\\): \\(\\quad T_e \\approx \\mathbf{255\\ K} = -18\\,°\\mathrm{C}\\)\n\nDerive SLOWLY on the board; this slide is just the record. Emphasize the disk/sphere ratio → the famous ¼. Ask before revealing: “reasonable answer? Earth’s actual average is about +15 °C…” Let the wrongness land. Also: in Lab 0 this week you’ll plot this exact formula yourself — the verification notebook’s plot is T_e vs albedo."
+  },
+  {
+    "objectID": "slides/week01.html#three-planets-one-formula",
+    "href": "slides/week01.html#three-planets-one-formula",
+    "title": "Introduction to Climate Modeling",
+    "section": "Three planets, one formula",
+    "text": "Three planets, one formula\n\n\n\n\n\\(T_e\\) (this formula)\nactual surface T\n\n\n\n\nMars\n~210 K\n~218 K — close\n\n\nEarth\n255 K\n288 K — off by 33 K\n\n\nVenus\n~230 K\n~735 K — off by 500 K!\n\n\n\n\nThe error isn’t distance from the Sun. It’s the atmosphere.\n\nVenus is the showstopper: FARTHER from the Sun in absorbed-energy terms than Earth (high albedo!), yet hot enough to melt lead. The gap between the columns IS the greenhouse effect, measured planet by planet."
+  },
+  {
+    "objectID": "slides/week01.html#k-the-most-productive-wrong-answer-in-science",
+    "href": "slides/week01.html#k-the-most-productive-wrong-answer-in-science",
+    "title": "Introduction to Climate Modeling",
+    "section": "33 K — the most productive wrong answer in science",
+    "text": "33 K — the most productive wrong answer in science\nThat gap is the greenhouse effect, and closing it is where this course goes next:\n\nWeek 2: why — the layer model, and the picture professionals actually use\nWeek 3: when — make the model tick in time (the ocean sets the clock)\nWeek 9: how much — feedbacks decide whether 3.7 W/m² becomes 2 °C or 5 °C\n\n\nThe cliffhanger. One honest sentence: “the 255 K number is REAL — satellites measure Earth radiating to space at exactly this temperature. The question is why the surface below is warmer. Hold that for Thursday.” Then back to the history ladder — Richardson next."
   },
   {
     "objectID": "slides/week01.html#richardsons-magnificent-failure",
@@ -165,7 +186,7 @@
     "href": "slides/week01.html#readings-next-week",
     "title": "Introduction to Climate Modeling",
     "section": "Readings & next week",
-    "text": "Readings & next week\n\nNo required textbook. Weekly suggested readings on Courseworks (this week: Climate Modelling Primer Ch. 1–2)\nHow to read them: skim first, write down 2–3 questions, bring them Thursday\n\n\nNext week: we build Arrhenius’s model for real — and discover the most productive wrong answer in climate science: 255 K.\n\nOptionally 2–3 min here: your own story — ocean modeler at LDEO, what you actually work on, why this course. Students consistently rate instructor-stakes moments highly."
+    "text": "Readings & next week\n\nNo required textbook. Weekly suggested readings on Courseworks (this week: Climate Modelling Primer Ch. 1–2)\nHow to read them: skim first, write down 2–3 questions, bring them Thursday\n\n\nNext week: closing the 33 K gap — the layer model, the emission-height picture, and why “the CO₂ bands are saturated” is wrong.\n\nOptionally 2–3 min here: your own story — ocean modeler at LDEO, what you actually work on, why this course. Students consistently rate instructor-stakes moments highly."
   },
   {
     "objectID": "slides/week01.html#setup-clinic-starting-now-optional-25-min",
