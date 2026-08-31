@@ -133,10 +133,56 @@ One equation. One perturbation (CO₂). One answer (a temperature).
 
 . . .
 
-**Weeks 2–3:** you build exactly this — then make it tick in time, grow an ice cap, and misbehave.
+So let's do his first step. Right now. Together.
 
 ::: {.notes}
-Point at the ladder: rung 1 never retired. FaIR-type models running IPCC scenario numbers today are direct descendants. (Don't say FaIR yet — "the models the IPCC uses to score policy scenarios.")
+Point at the ladder: rung 1 never retired. FaIR-type models running IPCC scenario numbers today are direct descendants. (Don't say FaIR yet — "the models the IPCC uses to score policy scenarios.") Then move to the board.
+:::
+
+## The first calculation *(live, on the board)*
+
+Energy in: sunlight intercepted by a disk — $\pi R^2 \cdot S_0(1-\alpha)$
+
+Energy out: infrared radiated by a sphere — $4\pi R^2 \cdot \sigma T^4$
+
+. . .
+
+Balance them:
+
+$$T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4}$$
+
+With $S_0 = 1361$ W/m², $\alpha = 0.3$:  $\quad T_e \approx \mathbf{255\ K} = -18\,°\mathrm{C}$
+
+::: {.notes}
+Derive SLOWLY on the board; this slide is just the record. Emphasize the disk/sphere ratio → the famous ¼. Ask before revealing: "reasonable answer? Earth's actual average is about +15 °C…" Let the wrongness land. Also: in Lab 0 this week you'll plot this exact formula yourself — the verification notebook's plot is T_e vs albedo.
+:::
+
+## Three planets, one formula
+
+| | $T_e$ (this formula) | actual surface T |
+|---|---|---|
+| Mars | ~210 K | ~218 K — close |
+| **Earth** | **255 K** | **288 K — off by 33 K** |
+| Venus | ~230 K | **~735 K — off by 500 K!** |
+
+. . .
+
+The error isn't distance from the Sun. **It's the atmosphere.**
+
+::: {.notes}
+Venus is the showstopper: FARTHER from the Sun in absorbed-energy terms than Earth (high albedo!), yet hot enough to melt lead. The gap between the columns IS the greenhouse effect, measured planet by planet.
+:::
+
+## 33 K — the most productive wrong answer in science
+
+That gap is the **greenhouse effect**, and closing it is where this course goes next:
+
+- **Week 2:** *why* — the layer model, and the picture professionals actually use
+- **Week 3:** *when* — make the model tick in time (the ocean sets the clock)
+- **Week 9:** *how much* — feedbacks decide whether 3.7 W/m² becomes 2 °C or 5 °C
+
+::: {.notes}
+The cliffhanger. One honest sentence: "the 255 K number is REAL — satellites measure Earth radiating to space at exactly this temperature. The question is why the surface below is warmer. Hold that for Thursday." Then back to the history ladder — Richardson next.
 :::
 
 # Rung 2: The forecast {background-color="#1a3a5c"}
@@ -332,7 +378,7 @@ Lab 0 is on Courseworks now. The setup clinic in ~15 minutes: stay and do it wit
 
 . . .
 
-**Next week:** we build Arrhenius's model for real — and discover the most productive wrong answer in climate science: **255 K**.
+**Next week:** closing the 33 K gap — the layer model, the emission-height picture, and why "the CO₂ bands are saturated" is wrong.
 
 ::: {.notes}
 Optionally 2–3 min here: your own story — ocean modeler at LDEO, what you actually work on, why this course. Students consistently rate instructor-stakes moments highly.
