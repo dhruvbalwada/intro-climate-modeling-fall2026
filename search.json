@@ -1,0 +1,261 @@
+[
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Slides and lab/homework links appear here as the semester progresses. Suggested readings are posted on Courseworks.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nDue\n\n\n\n\n1\nSep 10\nCourse overview · history of Earth system models · the model hierarchy\nslides\nLab 0 out (instructions)\n\n\n2\nSep 17\nEnergy balance modeling 1: radiative balance & the greenhouse effect\nslides soon\nHW1 out\n\n\n3\nSep 24\nEnergy balance modeling 2: time dependence, ice-albedo, transport\n\nLab 1 (in class) · Lab 0 due\n\n\n4\nOct 1\nCirculation 1: box models of the large-scale circulation\n\nHW1 due · HW2 out\n\n\n5\nOct 8\nCirculation 2: inside a dynamical core\n\nLab 2 · project title due Fri Oct 9\n\n\n6\nOct 15\nCirculation 3: ocean, cryosphere & the parameterization problem\n\nHW2 due · HW3 out\n\n\n7\nOct 22\nModeling the land surface\n\nLab 3 · proposal due Fri Oct 23\n\n\n8\nOct 29\nModeling the carbon cycle\n\nHW3 due · HW4 out\n\n\n9\nNov 5\nClimate feedbacks & climate sensitivity\n\nLab 4\n\n\n10\nNov 12\nClimate model tuning & evaluation\n\nHW4 due\n\n\n11\nNov 19\nProtocols for climate model simulations: CMIP, SSPs, MIPs\n\nLab 5 · HW5 out\n\n\n12\nNov 26\nNo class (Thanksgiving) — asynchronous: CMIP analysis in practice\n\n\n\n\n13\nDec 3\nProjections & the future of climate modeling\n\nHW5 due\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)\n\nnotebook due Fri Dec 18"
+  },
+  {
+    "objectID": "slides/week01.html#before-anything-three-hands-up-questions",
+    "href": "slides/week01.html#before-anything-three-hands-up-questions",
+    "title": "Introduction to Climate Modeling",
+    "section": "Before anything: three hands-up questions",
+    "text": "Before anything: three hands-up questions\n\nRoughly what sets the Earth’s average temperature? (could you explain it to a friend?)\nHave you written Python this year?\nDo you remember what “climate sensitivity” means?\n\n\nUngraded diagnostic — you watched GR5001, they took it a year ago. Watch the hands: this calibrates how much refresher weeks 2–9 need. No judgment framing: “a year is a long time; that’s expected and fine.”"
+  },
+  {
+    "objectID": "slides/week01.html#every-number-on-this-figure-came-out-of-a-model",
+    "href": "slides/week01.html#every-number-on-this-figure-came-out-of-a-model",
+    "title": "Introduction to Climate Modeling",
+    "section": "Every number on this figure came out of a model",
+    "text": "Every number on this figure came out of a model\n\n\nThe hook. Let it sit. “Sea level in 2100, warming under net-zero, monsoon shifts — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them.”"
+  },
+  {
+    "objectID": "slides/week01.html#the-question-someone-is-already-thinking",
+    "href": "slides/week01.html#the-question-someone-is-already-thinking",
+    "title": "Introduction to Climate Modeling",
+    "section": "The question someone is already thinking",
+    "text": "The question someone is already thinking\n\n“Aren’t these models just tuned to give the answer the modelers expect?”\n\n\nThis is a real question, asked inside the field too.\nNovember 12 — a full session on tuning, evaluation, and why matching the past doesn’t guarantee the future.\nBy December you’ll answer it better than most working scientists.\n\nRaise it proactively — trust move. Don’t answer it now beyond one sentence: “the short version is: tuning is real, documented, and much narrower than the accusation implies — the long version needs the machinery we’ll build first.”"
+  },
+  {
+    "objectID": "slides/week01.html#what-this-course-is",
+    "href": "slides/week01.html#what-this-course-is",
+    "title": "Introduction to Climate Modeling",
+    "section": "What this course is",
+    "text": "What this course is\nLast year, GR5001 taught you what the climate system does — and how to interpret climate information.\nThis course opens the machine that produces that information:\n\nBuild the model hierarchy yourselves (in Python)\nUnderstand how the real Earth System Models work\nAnalyze their output the way practicing scientists do (CMIP6)\nJudge what models can and cannot tell you\n\n\nThe one-sentence identity: “you know what the climate does; now, how we know what it will do.” Callbacks to GR5001 will happen every single week — most concepts get rebuilt, properly, with math and code. A year of decay is assumed and fine (Mingfang agrees)."
+  },
+  {
+    "objectID": "slides/week01.html#by-december-you-will-have",
+    "href": "slides/week01.html#by-december-you-will-have",
+    "title": "Introduction to Climate Modeling",
+    "section": "By December, you will have",
+    "text": "By December, you will have\n\nbuilt working models: energy balance → feedbacks → carbon → transient warming\nrun experiments on them (broken them, fixed them, tuned them)\npulled real CMIP6 output from the cloud and made defensible figures\ncompleted a research project answering a climate question you chose\nan informed answer to “should I trust this model result?”\n\n\nConcrete deliverables, incl. the portfolio value: the final project is a reproducible notebook they can show employers."
+  },
+  {
+    "objectID": "slides/week01.html#the-semester-in-four-acts",
+    "href": "slides/week01.html#the-semester-in-four-acts",
+    "title": "Introduction to Climate Modeling",
+    "section": "The semester in four acts",
+    "text": "The semester in four acts\n\n\n\n\n\n\n\n\nAct\nWeeks\nQuestion\n\n\n\n\nI. The simplest model that captures global warming\n1–3\nHow far can energy balance take us?\n\n\nII. Inside an Earth System Model\n4–8\nCirculation, land, carbon — what must be parameterized?\n\n\nIII. Emergent behavior & credibility\n9–10\nFeedbacks, sensitivity, tuning — can we trust this?\n\n\nIV. The modeling enterprise\n11–13\nCMIP, projections, AI — how the world’s climate information gets made\n\n\nFinal projects\n14–15\nYour question, answered with model data"
+  },
+  {
+    "objectID": "slides/week01.html#the-ladder-well-climb",
+    "href": "slides/week01.html#the-ladder-well-climb",
+    "title": "Introduction to Climate Modeling",
+    "section": "The ladder we’ll climb",
+    "text": "The ladder we’ll climb\n\nEvery rung still in active use. The ladder is the course map — today we climb it historically.\n\nKey framing: not a ladder of progress where the top makes the bottom obsolete — a ladder where every rung has a permanent job. Today: meet each rung through the people and problems that created it."
+  },
+  {
+    "objectID": "slides/week01.html#arrhenius-computes-the-climate-by-hand",
+    "href": "slides/week01.html#arrhenius-computes-the-climate-by-hand",
+    "title": "Introduction to Climate Modeling",
+    "section": "1896: Arrhenius computes the climate by hand",
+    "text": "1896: Arrhenius computes the climate by hand\n\n\nMotivated by ice ages, not fossil fuels\nMonths of hand calculation: radiative budget + water-vapor amplification\nHis answer for CO₂ doubling: ~5–6 °C (modern: 2.5–4 °C)\nThe structure of the calculation is recognizably modern\n\n\nStory beats: Langley’s infrared measurements as data; Arrhenius working through a difficult personal period; got the structure right, the number high. In 1908 he thought warming would take millennia and might be nice — why nobody panicked. 1938 Callendar: one sentence — linked rising CO₂ to observed warming from weather stations, was politely dismissed."
+  },
+  {
+    "objectID": "slides/week01.html#what-arrheniuss-model-was",
+    "href": "slides/week01.html#what-arrheniuss-model-was",
+    "title": "Introduction to Climate Modeling",
+    "section": "What Arrhenius’s model was",
+    "text": "What Arrhenius’s model was\n\\[\\text{absorbed sunlight} = \\text{emitted infrared}\\]\nOne equation. One perturbation (CO₂). One answer (a temperature).\n\nWeeks 2–3: you build exactly this — then make it tick in time, grow an ice cap, and misbehave.\n\nPoint at the ladder: rung 1 never retired. FaIR-type models running IPCC scenario numbers today are direct descendants. (Don’t say FaIR yet — “the models the IPCC uses to score policy scenarios.”)"
+  },
+  {
+    "objectID": "slides/week01.html#richardsons-magnificent-failure",
+    "href": "slides/week01.html#richardsons-magnificent-failure",
+    "title": "Introduction to Climate Modeling",
+    "section": "1922: Richardson’s magnificent failure",
+    "text": "1922: Richardson’s magnificent failure\n\n\nHand-integrated the fluid equations for a 6-hour forecast over Europe\nResult: pressure change of ~145 hPa — absurdly, spectacularly wrong\nBut the method — grid + finite differences + timestepping — is exactly what every model does today\n\n\nWhy it failed: unfiltered gravity-wave noise in the initial conditions (don’t dwell — “his equations were too honest; they amplified noisy data”). The forecast-factory image: 64,000 human computers with a conductor — it’s literally a parallel supercomputer, 80 years early. Callback in week 5."
+  },
+  {
+    "objectID": "slides/week01.html#weather-vs-climate-the-distinction-that-saves-us",
+    "href": "slides/week01.html#weather-vs-climate-the-distinction-that-saves-us",
+    "title": "Introduction to Climate Modeling",
+    "section": "Weather vs climate — the distinction that saves us",
+    "text": "Weather vs climate — the distinction that saves us\nWeather forecast = initial-value problem — where does this trajectory go? Chaos (Lorenz) kills it beyond ~2 weeks.\nClimate projection = boundary-value problem — how do the statistics shift when you push the system?\n\n\nCasino analogy: no one can predict the next hand. The house margin is a certainty.\n\n\nTHE misconception-killer of week 1 — students will hear “chaos means you can’t predict 2100” forever. GR5001 gave them weather-vs-climate qualitatively; this is the mathematical version. Lorenz: predictability of the first vs second kind."
+  },
+  {
+    "objectID": "slides/week01.html#eniac-and-a-lesson-in-modeling",
+    "href": "slides/week01.html#eniac-and-a-lesson-in-modeling",
+    "title": "Introduction to Climate Modeling",
+    "section": "1950: ENIAC, and a lesson in modeling",
+    "text": "1950: ENIAC, and a lesson in modeling\nCharney, Fjørtoft & von Neumann: the first numerical weather forecast.\nTheir winning move: simplify — filter Richardson’s equations down to one level of quasi-geostrophic flow.\n\nProgress came from a smarter simple model, not a bigger computer.\n\nThe course’s thesis in one anecdote. The 24-hour forecast took ~24 hours of ENIAC time — “keeping pace with the weather.” This moral repeats: Stommel (wk 4), the EBMs, FaIR."
+  },
+  {
+    "objectID": "slides/week01.html#manabe-wetherald",
+    "href": "slides/week01.html#manabe-wetherald",
+    "title": "Introduction to Climate Modeling",
+    "section": "1967: Manabe & Wetherald",
+    "text": "1967: Manabe & Wetherald\n\n\n1-D radiative-convective column: real spectroscopy + convection pinning the lapse rate\nCO₂ doubling → ECS ≈ 2.3 °C — within today’s assessed range\n2015 poll of climate scientists: the most influential climate-change paper ever\n\n\nSuki Manabe: arrived from Tokyo 1958, GFDL. The insight: get one column right before doing the sphere. Fig. 16’s quiet bombshell — stratospheric cooling while the surface warms: a fingerprint prediction, made decades before it was observed, that pure solar warming would NOT produce. Week 2 builds the toy version; week 9 returns for feedbacks."
+  },
+  {
+    "objectID": "slides/week01.html#phillips-spins-up-a-planet",
+    "href": "slides/week01.html#phillips-spins-up-a-planet",
+    "title": "Introduction to Climate Modeling",
+    "section": "1956: Phillips spins up a planet",
+    "text": "1956: Phillips spins up a planet\nTwo-level model, one hemisphere, a month of simulated time.\nJets and storm tracks appeared — nobody coded them.\n\nThis is emergence: put conservation laws on a grid, and the general circulation is what falling into balance looks like.\n\nPhillips’s numerical experiment ran on a machine with ~5KB of memory. Emergence is week 5’s big idea — plant the phrase “you never coded a Hadley cell” now."
+  },
+  {
+    "objectID": "slides/week01.html#the-lineage-to-today",
+    "href": "slides/week01.html#the-lineage-to-today",
+    "title": "Introduction to Climate Modeling",
+    "section": "The lineage to today",
+    "text": "The lineage to today\n\n1969 Manabe & Bryan: first coupled atmosphere–ocean model\n1975 Manabe & Wetherald: first 3-D CO₂-doubling experiment → polar amplification predicted\n1979 Charney Report: with two GCMs in the world, ECS = 1.5–4.5 °C\n2021 AR6: ECS = 2.5–4 °C\n\n\n42 years to narrow the bar by half. Why so slow? (Hold that thought until Nov 5.)\n\nPlant the week-9 mystery explicitly — it’s the best cliffhanger the field has. Polar amplification: predicted in ’75, now observed at ~4x global rate in the Arctic. Predictions-that-came-true list is the honest counterweight to the tuning question."
+  },
+  {
+    "objectID": "slides/week01.html#modeling-becomes-coordinated-science",
+    "href": "slides/week01.html#modeling-becomes-coordinated-science",
+    "title": "Introduction to Climate Modeling",
+    "section": "Modeling becomes coordinated science",
+    "text": "Modeling becomes coordinated science\n\n1988 Hansen testifies to the Senate; 1990 first IPCC report\n1995→ CMIP: every modeling center runs the same experiments — models become comparable, and their spread becomes data\nCarbon, chemistry, vegetation, ice sheets join → GCMs become Earth System Models\n2021 Nobel Prize in Physics: Manabe & Hasselmann\n\n\nCMIP is Act IV’s subject: the students will use CMIP6 data themselves from HW1 onward (lightly) and deeply from week 11. The Nobel framing: “physics recognized that climate physics is physics.”"
+  },
+  {
+    "objectID": "slides/week01.html#the-frontier-where-this-course-ends",
+    "href": "slides/week01.html#the-frontier-where-this-course-ends",
+    "title": "Introduction to Climate Modeling",
+    "section": "The frontier (where this course ends)",
+    "text": "The frontier (where this course ends)\n\nKm-scale simulation: resolving storms and ocean eddies globally — computationally heroic\nAI emulators: neural networks forecasting weather competitively, now creeping into climate\nThe perpetually unsolved: clouds\n\nWeek 13: what’s hype, what’s real.\n\nOne slide, no depth — just show the course reaches the present. GraphCast/NeuralGCM-class models by name only if asked."
+  },
+  {
+    "objectID": "slides/week01.html#why-keep-the-whole-ladder-held-2005",
+    "href": "slides/week01.html#why-keep-the-whole-ladder-held-2005",
+    "title": "Introduction to Climate Modeling",
+    "section": "Why keep the whole ladder? (Held, 2005)",
+    "text": "Why keep the whole ladder? (Held, 2005)\n\nClimate science needs a hierarchy of models the way biology needs model organisms.\n\n\nSimulation ≠ understanding — you can simulate what you don’t understand\nA gap between them is dangerous: you can’t tell trustworthy projections from artifacts\nSimple models are where understanding lives — and they discover things (a 1961 two-box model found a possible AMOC collapse before any GCM could)\n\n\nHeld’s essay is the intellectual backbone of the course design — say so. The Stommel teaser sets up week 4. If anyone wants one reading from today: this one, it’s short and equation-free."
+  },
+  {
+    "objectID": "slides/week01.html#fit-for-purpose",
+    "href": "slides/week01.html#fit-for-purpose",
+    "title": "Introduction to Climate Modeling",
+    "section": "Fit for purpose",
+    "text": "Fit for purpose\n“Which model is best?” is meaningless without “…for what question?”\n\n\n\n\n\n\n\nQuestion\nRight tool\n\n\n\n\nWhy is there a greenhouse effect?\npencil + 0-D EBM\n\n\nWill this El Niño bring drought?\ninitialized coupled GCM\n\n\nWarming in 2100 under scenario X?\nESM ensemble + simple-model emulator\n\n\nCould the AMOC collapse?\nbox model (mechanism) + ESM (when/whether)\n\n\n\n\nNote the last row deliberately has TWO answers — mechanism rung + projection rung. That’s the segue to the activity, where several questions do too."
+  },
+  {
+    "objectID": "slides/week01.html#your-turn-match-the-question-to-the-rung-15-min",
+    "href": "slides/week01.html#your-turn-match-the-question-to-the-rung-15-min",
+    "title": "Introduction to Climate Modeling",
+    "section": "Your turn — match the question to the rung (15 min)",
+    "text": "Your turn — match the question to the rung (15 min)\nIn pairs: the handout lists 6 climate questions and the model hierarchy.\n\nFor each question: which rung(s)? One minute of gut feeling, then argue.\nWrite your matches + one sentence of justification each\nNames on the slip, hand it in (counts toward participation)\n\n\nDeliberately light. Circulate, listen. Debrief (5 min): call out that half the questions have two defensible answers — mechanism vs projection — and that noticing this IS the learning objective. Cuttable on the day if running long."
+  },
+  {
+    "objectID": "slides/week01.html#how-the-course-works",
+    "href": "slides/week01.html#how-the-course-works",
+    "title": "Introduction to Climate Modeling",
+    "section": "How the course works",
+    "text": "How the course works\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation\n10%\nin-class work, most weeks\n\n\nLabs (5)\n10%\nin class, weeks 3/5/7/9/11 — submit same day\n\n\nHomework (5)\n50%\n~biweekly, 2 weeks each\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n20%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\n\nFlag the early project-title date NOW and again every week until week 5. Late policy: 10%/day, one free late HW (up to a week). AI policy per syllabus: disclose use; submitting work you didn’t do is plagiarism regardless of author."
+  },
+  {
+    "objectID": "slides/week01.html#where-the-work-lives",
+    "href": "slides/week01.html#where-the-work-lives",
+    "title": "Introduction to Climate Modeling",
+    "section": "Where the work lives",
+    "text": "Where the work lives\n\nCompute: course JupyterHub — login details on Courseworks (browser only, nothing to install)\nCode: your own private GitHub repo, shared with me + TA\nSubmitting = posting your repo link on Courseworks (the timestamp)\nLabs: notebooks we complete together in class, pushed by end of day\n\nLab 0 (ungraded, ~30 min): do it this week. It makes all of the above work. Due before Lab 1 on Sep 24.\n\nLab 0 is on Courseworks now. The setup clinic in ~15 minutes: stay and do it with us, or leave early if you’re confident — but done before next Thursday is strongly advised so problems surface with a week of slack."
+  },
+  {
+    "objectID": "slides/week01.html#readings-next-week",
+    "href": "slides/week01.html#readings-next-week",
+    "title": "Introduction to Climate Modeling",
+    "section": "Readings & next week",
+    "text": "Readings & next week\n\nNo required textbook. Weekly suggested readings on Courseworks (this week: Climate Modelling Primer Ch. 1–2)\nHow to read them: skim first, write down 2–3 questions, bring them Thursday\n\n\nNext week: we build Arrhenius’s model for real — and discover the most productive wrong answer in climate science: 255 K.\n\nOptionally 2–3 min here: your own story — ocean modeler at LDEO, what you actually work on, why this course. Students consistently rate instructor-stakes moments highly."
+  },
+  {
+    "objectID": "slides/week01.html#setup-clinic-starting-now-optional-25-min",
+    "href": "slides/week01.html#setup-clinic-starting-now-optional-25-min",
+    "title": "Introduction to Climate Modeling",
+    "section": "Setup clinic — starting now (optional, ~25 min)",
+    "text": "Setup clinic — starting now (optional, ~25 min)\nOpen Lab 0 on Courseworks:\n\nGitHub account → private repo → add me + TA\nHub login → run verify_setup.ipynb\nPush the notebook, post your repo link\n\nWe circulate. Done = free to go. Stuck = that’s exactly what this time is for.\n\nTA takes GitHub questions, you take hub/login questions. Collect the card-sort slips before people drift out."
+  },
+  {
+    "objectID": "labs/index.html",
+    "href": "labs/index.html",
+    "title": "Labs",
+    "section": "",
+    "text": "Five in-class labs (weeks 3, 5, 7, 9, 11), completed collaboratively during the lab portion of class and submitted the same day via your GitHub repo (link posted to Courseworks). Plus Lab 0, the ungraded setup lab everything depends on.\n\n\n\nLab\nWeek\nTopic\n\n\n\n\nLab 0\nbefore Sep 24\nToolchain setup: JupyterHub, GitHub, first notebook\n\n\nLab 1\n3\nEquilibrium & time-dependent energy balance models\n\n\nLab 2\n5\nSimple circulation models\n\n\nLab 3\n7\nSoil-moisture bucket model\n\n\nLab 4\n9\nSimulating albedo feedbacks\n\n\nLab 5\n11\nModeling transient climate change"
+  },
+  {
+    "objectID": "labs/lab0.html",
+    "href": "labs/lab0.html",
+    "title": "Lab 0 — Getting Set Up",
+    "section": "",
+    "text": "Due: before class on Thursday, September 24 (Lab 1 happens in class that day and assumes all of this works). Time needed: ~30–45 minutes. Do it this week — if anything fails, come to office hours or email the TA before Sep 24, not the night before.\nBy the end of this lab you will have: (1) a working JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and linked on Courseworks. This is the exact workflow you’ll use to submit every lab and homework this semester."
+  },
+  {
+    "objectID": "labs/lab0.html#part-a-accounts-10-min",
+    "href": "labs/lab0.html#part-a-accounts-10-min",
+    "title": "Lab 0 — Getting Set Up",
+    "section": "Part A — Accounts (10 min)",
+    "text": "Part A — Accounts (10 min)\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).\nJupyterHub. You will receive an invitation to the course computing hub at [HUB-URL — to be announced on Courseworks]. Log in with the credentials from the invite and confirm your server starts (click “Start My Server” and wait for the JupyterLab interface to load).\n\n\nIf the hub won’t start for you: email the TA with a screenshot. As a backup, every course notebook also runs on Google Colab — but sort out your hub access this week regardless; we’ll need it for the second half of the course."
+  },
+  {
+    "objectID": "labs/lab0.html#part-b-run-the-verification-notebook-10-min",
+    "href": "labs/lab0.html#part-b-run-the-verification-notebook-10-min",
+    "title": "Lab 0 — Getting Set Up",
+    "section": "Part B — Run the verification notebook (10 min)",
+    "text": "Part B — Run the verification notebook (10 min)\n\nDownload verify_setup.ipynb from the Courseworks Lab 0 assignment page.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
+  },
+  {
+    "objectID": "labs/lab0.html#part-c-create-your-course-repository-15-min",
+    "href": "labs/lab0.html#part-c-create-your-course-repository-15-min",
+    "title": "Lab 0 — Getting Set Up",
+    "section": "Part C — Create your course repository (15 min)",
+    "text": "Part C — Create your course repository (15 min)\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add [INSTRUCTOR-GITHUB] and [TA-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nGitHub will ask you to authenticate — you’ll need a personal access token instead of your password: GitHub Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (scope: repo; set expiration to end of December). Paste the token when git push asks for a password. Save it somewhere — you’ll reuse it all semester."
+  },
+  {
+    "objectID": "labs/lab0.html#part-d-tell-us-its-done-2-min",
+    "href": "labs/lab0.html#part-d-tell-us-its-done-2-min",
+    "title": "Lab 0 — Getting Set Up",
+    "section": "Part D — Tell us it’s done (2 min)",
+    "text": "Part D — Tell us it’s done (2 min)\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, staff added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to Climate Modeling",
+    "section": "",
+    "text": "Earth system and climate models are critically important tools for climate science — used to study past climate variability, attribute recent trends and extremes, and project the evolution of the climate system under natural and anthropogenic forcing. This course opens the machine: you will build the hierarchy of climate models yourself in Python, understand how full Earth System Models work, analyze their output (CMIP6) the way practicing scientists do, and learn to judge what models can and cannot tell you."
+  },
+  {
+    "objectID": "index.html#logistics",
+    "href": "index.html#logistics",
+    "title": "Introduction to Climate Modeling",
+    "section": "Logistics",
+    "text": "Logistics\n\n\n\nMeetings\nThursdays 10:10–12:40, [ROOM]\n\n\nInstructor\nDhruv Balwada · dbalwada@ldeo.columbia.edu\n\n\nTA\n[TA NAME · EMAIL]\n\n\nOffice hours\n[DAYS/TIMES]\n\n\nSubmission\nPrivate GitHub repos; links posted to Courseworks\n\n\nComputing\nCourse JupyterHub (details on Courseworks)"
+  },
+  {
+    "objectID": "index.html#grading",
+    "href": "index.html#grading",
+    "title": "Introduction to Climate Modeling",
+    "section": "Grading",
+    "text": "Grading\nParticipation 10% · Labs (5, in class) 10% · Homework (5, biweekly) 50% · Project proposal 10% · Final project 20%. Full policies in the official syllabus on Courseworks."
+  },
+  {
+    "objectID": "index.html#key-dates",
+    "href": "index.html#key-dates",
+    "title": "Introduction to Climate Modeling",
+    "section": "Key dates",
+    "text": "Key dates\n\nSep 24 — Lab 0 (setup) due before class; Lab 1 in class\nOct 9 — final project title due\nOct 23 — final project proposal due (1 page)\nDec 10 / 17 — project presentations\nDec 18 — final project notebook due\n\nStart here: the schedule, then Lab 0."
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "You will develop your own research question and answer it using either output from real climate model simulations (CMIP6 and related archives) or experiments with a simple model of the kind built in class — or both. The deliverable is a reproducible Jupyter notebook documenting your analysis and insights, presented in class during the final weeks.\nExamples of the format and spirit: Earth & Environmental Data Science project gallery."
+  },
+  {
+    "objectID": "project.html#timeline",
+    "href": "project.html#timeline",
+    "title": "Final Project",
+    "section": "Timeline",
+    "text": "Timeline\n\n\n\n\n\n\n\nDate\nMilestone\n\n\n\n\nFri Oct 9\nProject title (1 sentence)\n\n\nFri Oct 23\nProposal (1 page max): question, why it matters, data/model identified and confirmed accessible, planned figures, one annotated reference\n\n\nDec 10 / 17\nIn-class presentation\n\n\nFri Dec 18\nFinal notebook due\n\n\n\nA menu of starter topics, the proposal template, and grading rubrics will be posted here by week 3."
+  }
+]
