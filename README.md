@@ -10,12 +10,16 @@ quarto preview                 # live-reloading site incl. the slide decks
 ```
 
 ## Publish (replaces ghp-import)
+
+**Live site: https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/**
+**Repo: github.com/dhruvbalwada/intro-climate-modeling-fall2026** (this folder is its clone)
+
+After each edit:
 ```bash
-# once: create the GitHub repo (e.g. github.com/<you-or-org>/intro-climate-modeling-f26),
-# push this folder to it, then:
-quarto publish gh-pages
+git add -A && git commit -m "..." && git push     # source
+quarto publish gh-pages --no-prompt               # deploy (~1 min to go live)
 ```
-Then fill the real repo URL into `_quarto.yml` (navbar github icon). Re-publish after each edit with the same command, or add Quarto's standard GitHub Action later.
+Optional later: add Quarto's standard GitHub Action so pushing alone deploys.
 
 ## Conventions
 - Slides: `slides/weekNN.qmd` (revealjs front matter in each file; they render as pages of this site — link them from `schedule.qmd`).
