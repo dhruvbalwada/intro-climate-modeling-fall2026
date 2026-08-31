@@ -172,7 +172,7 @@
     "href": "slides/week01.html#setup-clinic-starting-now-optional-25-min",
     "title": "Introduction to Climate Modeling",
     "section": "Setup clinic — starting now (optional, ~25 min)",
-    "text": "Setup clinic — starting now (optional, ~25 min)\nOpen Lab 0 on Courseworks:\n\nGitHub account → private repo → add me + TA\nHub login → run verify_setup.ipynb\nPush the notebook, post your repo link\n\nWe circulate. Done = free to go. Stuck = that’s exactly what this time is for.\n\nTA takes GitHub questions, you take hub/login questions. Collect the card-sort slips before people drift out."
+    "text": "Setup clinic — starting now (optional, ~25 min)\nOpen Lab 0 on Courseworks:\n\nGitHub account → private repo → add me + TA\nHub login → run verify_setup.ipynb\nPush the notebook, post your repo link\n\nWe circulate. Done = free to go. Stuck = that’s exactly what this time is for.\n\nPrani and Chandanie take GitHub questions, you take hub/login questions. Collect the card-sort slips before people drift out."
   },
   {
     "objectID": "labs/index.html",
@@ -186,14 +186,14 @@
     "href": "labs/lab0.html",
     "title": "Lab 0 — Getting Set Up",
     "section": "",
-    "text": "Due: before class on Thursday, September 24 (Lab 1 happens in class that day and assumes all of this works). Time needed: ~30–45 minutes. Do it this week — if anything fails, come to office hours or email the TA before Sep 24, not the night before.\nBy the end of this lab you will have: (1) a working JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and linked on Courseworks. This is the exact workflow you’ll use to submit every lab and homework this semester."
+    "text": "Due: before class on Thursday, September 24 (Lab 1 happens in class that day and assumes all of this works). Time needed: ~30–45 minutes. Do it this week — if anything fails, come to office hours or email the TAs before Sep 24, not the night before.\nBy the end of this lab you will have: (1) a working JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and linked on Courseworks. This is the exact workflow you’ll use to submit every lab and homework this semester."
   },
   {
     "objectID": "labs/lab0.html#part-a-accounts-10-min",
     "href": "labs/lab0.html#part-a-accounts-10-min",
     "title": "Lab 0 — Getting Set Up",
     "section": "Part A — Accounts (10 min)",
-    "text": "Part A — Accounts (10 min)\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).\nJupyterHub. You will receive an invitation to the course computing hub at [HUB-URL — to be announced on Courseworks]. Log in with the credentials from the invite and confirm your server starts (click “Start My Server” and wait for the JupyterLab interface to load).\n\n\nIf the hub won’t start for you: email the TA with a screenshot. As a backup, every course notebook also runs on Google Colab — but sort out your hub access this week regardless; we’ll need it for the second half of the course."
+    "text": "Part A — Accounts (10 min)\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).\nJupyterHub. You will receive an invitation to the course computing hub at [HUB-URL — to be announced on Courseworks]. Log in with the credentials from the invite and confirm your server starts (click “Start My Server” and wait for the JupyterLab interface to load).\n\n\nIf the hub won’t start for you: email the TAs with a screenshot. As a backup, every course notebook also runs on Google Colab — but sort out your hub access this week regardless; we’ll need it for the second half of the course."
   },
   {
     "objectID": "labs/lab0.html#part-b-run-the-verification-notebook-10-min",
@@ -207,7 +207,7 @@
     "href": "labs/lab0.html#part-c-create-your-course-repository-15-min",
     "title": "Lab 0 — Getting Set Up",
     "section": "Part C — Create your course repository (15 min)",
-    "text": "Part C — Create your course repository (15 min)\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add [INSTRUCTOR-GITHUB] and [TA-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nGitHub will ask you to authenticate — you’ll need a personal access token instead of your password: GitHub Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (scope: repo; set expiration to end of December). Paste the token when git push asks for a password. Save it somewhere — you’ll reuse it all semester."
+    "text": "Part C — Create your course repository (15 min)\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add [INSTRUCTOR-GITHUB], [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nGitHub will ask you to authenticate — you’ll need a personal access token instead of your password: GitHub Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (scope: repo; set expiration to end of December). Paste the token when git push asks for a password. Save it somewhere — you’ll reuse it all semester."
   },
   {
     "objectID": "labs/lab0.html#part-d-tell-us-its-done-2-min",
@@ -228,7 +228,7 @@
     "href": "index.html#logistics",
     "title": "Introduction to Climate Modeling",
     "section": "Logistics",
-    "text": "Logistics\n\n\n\nMeetings\nThursdays 10:10–12:40, [ROOM]\n\n\nInstructor\nDhruv Balwada · dbalwada@ldeo.columbia.edu\n\n\nTA\n[TA NAME · EMAIL]\n\n\nOffice hours\n[DAYS/TIMES]\n\n\nSubmission\nPrivate GitHub repos; links posted to Courseworks\n\n\nComputing\nCourse JupyterHub (details on Courseworks)"
+    "text": "Logistics\n\n\n\n\n\n\n\nMeetings\nThursdays 10:10–12:40 · FRM 315 (The Forum)\n\n\nInstructor\nDhruv Balwada · dbalwada@ldeo.columbia.edu\n\n\nTAs\nPrani Nalluri · pan2121@columbia.eduChandanie Kutwaru · ck3397@columbia.edu\n\n\nOffice hours\n[DAYS/TIMES]\n\n\nSubmission\nPrivate GitHub repos; links posted to Courseworks\n\n\nComputing\nCourse JupyterHub (details on Courseworks)"
   },
   {
     "objectID": "index.html#grading",
