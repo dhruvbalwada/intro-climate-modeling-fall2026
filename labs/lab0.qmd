@@ -4,7 +4,7 @@ subtitle: "Ungraded, but required · due before class Sep 24"
 ---
 
 **Due: before class on Thursday, September 24** (Lab 1 happens in class that day and assumes all of this works).
-**Time needed: ~30–45 minutes.** Do it this week — if anything fails, come to office hours or email the TA *before* Sep 24, not the night before.
+**Time needed: ~30–45 minutes.** Do it this week — if anything fails, come to office hours or email the TAs *before* Sep 24, not the night before.
 
 By the end of this lab you will have: (1) a working JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and linked on Courseworks. This is the exact workflow you'll use to submit every lab and homework this semester.
 
@@ -15,7 +15,7 @@ By the end of this lab you will have: (1) a working JupyterHub login, (2) a GitH
 1. **GitHub.** If you don't have an account, create one at [github.com/signup](https://github.com/signup). Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).
 2. **JupyterHub.** You will receive an invitation to the course computing hub at **[HUB-URL — to be announced on Courseworks]**. Log in with the credentials from the invite and confirm your server starts (click "Start My Server" and wait for the JupyterLab interface to load).
 
-> **If the hub won't start for you:** email the TA with a screenshot. As a backup, every course notebook also runs on [Google Colab](https://colab.research.google.com) — but sort out your hub access this week regardless; we'll need it for the second half of the course.
+> **If the hub won't start for you:** email the TAs with a screenshot. As a backup, every course notebook also runs on [Google Colab](https://colab.research.google.com) — but sort out your hub access this week regardless; we'll need it for the second half of the course.
 
 ## Part B — Run the verification notebook (10 min)
 
@@ -30,7 +30,7 @@ By the end of this lab you will have: (1) a working JupyterHub login, (2) a GitH
    - Name: `climate-modeling-f26-<your-uni>` (e.g., `climate-modeling-f26-ab1234`)
    - Visibility: **Private** ← important
    - Check "Add a README file"
-2. Add the teaching staff as collaborators: repo **Settings → Collaborators → Add people** — add **`[INSTRUCTOR-GITHUB]`** and **`[TA-GITHUB]`**.
+2. Add the teaching staff as collaborators: repo **Settings → Collaborators → Add people** — add **`[INSTRUCTOR-GITHUB]`**, **`[PRANI-GITHUB]`**, and **`[CHANDANIE-GITHUB]`**.
 3. Put your completed notebook in the repo. Two ways — pick one:
    - **Easy way (fine for today):** on your repo's GitHub page, **Add file → Upload files**, drag in the completed `verify_setup.ipynb` (download it from the hub first: right-click the file → Download), and click *Commit changes*.
    - **Real way (we'll all use this from Lab 1 on):** in a hub Terminal (File → New → Terminal):

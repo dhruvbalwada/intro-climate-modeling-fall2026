@@ -14,12 +14,14 @@ format:
 # {.center}
 
 ::: {.r-fit-text}
-**Thursday 10:10–12:40 · [ROOM]**
+**Thursdays 10:10–12:40 · FRM 315 (The Forum)**
 :::
 
-Instructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu) · TA: **[TA NAME]**
+Instructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)
 
-Office hours: **[TIME/PLACE]** · Everything lives on Courseworks
+TAs: **Prani Nalluri** (pan2121) · **Chandanie Kutwaru** (ck3397)
+
+Office hours: **[TIME/PLACE]** · Everything lives on Courseworks + course website
 
 ::: {.notes}
 Let people settle. Introduce yourself briefly — 30 seconds, the longer version comes later in the "why oceans" slide if kept.
@@ -347,5 +349,5 @@ Open **Lab 0** on Courseworks:
 We circulate. Done = free to go. Stuck = that's exactly what this time is for.
 
 ::: {.notes}
-TA takes GitHub questions, you take hub/login questions. Collect the card-sort slips before people drift out.
+Prani and Chandanie take GitHub questions, you take hub/login questions. Collect the card-sort slips before people drift out.
 :::
