@@ -1,0 +1,18 @@
+---
+title: "Final Project"
+---
+
+You will develop your own research question and answer it using either output from real climate model simulations (CMIP6 and related archives) or experiments with a simple model of the kind built in class — or both. The deliverable is a **reproducible Jupyter notebook** documenting your analysis and insights, presented in class during the final weeks.
+
+Examples of the format and spirit: [Earth & Environmental Data Science project gallery](https://earth-env-data-science.github.io/projects.html).
+
+## Timeline
+
+| Date | Milestone |
+|------|-----------|
+| Fri Oct 9 | Project title (1 sentence) |
+| Fri Oct 23 | Proposal (1 page max): question, why it matters, data/model identified **and confirmed accessible**, planned figures, one annotated reference |
+| Dec 10 / 17 | In-class presentation |
+| Fri Dec 18 | Final notebook due |
+
+A menu of starter topics, the proposal template, and grading rubrics will be posted here by week 3.

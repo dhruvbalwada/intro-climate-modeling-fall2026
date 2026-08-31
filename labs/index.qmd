@@ -1,0 +1,14 @@
+---
+title: "Labs"
+---
+
+Five in-class labs (weeks 3, 5, 7, 9, 11), completed collaboratively during the lab portion of class and submitted the same day via your GitHub repo (link posted to Courseworks). Plus Lab 0, the ungraded setup lab everything depends on.
+
+| Lab | Week | Topic |
+|-----|------|-------|
+| [Lab 0](lab0.qmd) | before Sep 24 | Toolchain setup: JupyterHub, GitHub, first notebook |
+| Lab 1 | 3 | Equilibrium & time-dependent energy balance models |
+| Lab 2 | 5 | Simple circulation models |
+| Lab 3 | 7 | Soil-moisture bucket model |
+| Lab 4 | 9 | Simulating albedo feedbacks |
+| Lab 5 | 11 | Modeling transient climate change |
