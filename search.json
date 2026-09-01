@@ -270,7 +270,14 @@
     "href": "slides/week01.html#the-rules-of-the-game",
     "title": "Introduction to Climate Modeling",
     "section": "The rules of the game",
-    "text": "The rules of the game\n\nI have a system: water flows in (with some “weather” in it), the level responds\nI’ve measured inflow and level for a long time — you get the data\nI will not tell you what’s inside\nYour job: a simpler description good enough to predict situations we haven’t seen\n\n\nThat’s modeling. That’s also this entire course, in one sitting.\n\nThen switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: “I double the inflow — what’s the new level? number + reasoning + name”) → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. ~25 min in the notebook. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable."
+    "text": "The rules of the game\n\nI have a system: water flows in (with some “weather” in it), the level responds\nI’ve measured inflow and level for a long time — you get the data\nI will not tell you what’s inside\nYour job: a simpler description good enough to predict situations we haven’t seen\n\n\nThat’s modeling. That’s also this entire course, in one sitting.\n\nBefore the models: pause on the raw data plot and name the concepts (next slide)."
+  },
+  {
+    "objectID": "slides/week01.html#the-bucket-has-weather-and-a-climate",
+    "href": "slides/week01.html#the-bucket-has-weather-and-a-climate",
+    "title": "Introduction to Climate Modeling",
+    "section": "The bucket has weather — and a climate",
+    "text": "The bucket has weather — and a climate\n\nThe level wiggles constantly (noisy tap) — that’s its weather\nBut its statistics are steady: mean ≈ 1, a typical spread, a typical excursion time — that’s its climate\n\n\nClimate = the statistics of a system. You’ve now defined it — on a bucket. Earth’s version: means, variability, extremes over ~30 years.\n\nThen switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: “I double the inflow — what’s the new level? number + reasoning + name”) → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. ~25 min in the notebook. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable."
   },
   {
     "objectID": "slides/week01.html#what-just-happened-part-1",
