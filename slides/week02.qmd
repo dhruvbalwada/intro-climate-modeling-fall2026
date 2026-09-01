@@ -1,0 +1,71 @@
+---
+title: "Energy Balance Modeling 1"
+subtitle: "Week 2 · Closing the 33 K gap"
+author: "Dhruv Balwada · Columbia Climate School · Fall 2026"
+format:
+  revealjs:
+    theme: [default]
+    slide-number: true
+    footer: "Intro to Climate Modeling · Week 2"
+    transition: none
+---
+
+## Where we left off
+
+$$T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4} = 255\ \mathrm{K} \qquad \text{but the surface is } 288\ \mathrm{K}$$
+
+- The 255 K is **real** — satellites measure Earth radiating to space at exactly this temperature
+- So the question isn't "why is our formula wrong" — it's **"why is the surface warmer than the planet's radiation to space?"**
+
+::: {.notes}
+5 min. Gently cold-call: "someone reconstruct last week's logic for us?" A year post-GR5001 + one week post-lecture — expect partial recall, rebuild it fast. Check-in: Lab 0 status by show of hands; due before next class!
+:::
+
+## Today: close the gap in four steps
+
+1. Why the atmosphere intervenes *(selective absorption)*
+2. The simplest greenhouse *(one pane of glass — on the board)*
+3. The picture professionals use *(emission height)*
+4. The 125-year-old objection — and how **you** will break it
+
+::: {.notes}
+Promise the payoff up front: "by 12:40 you can defeat an argument that fooled physicists for 40 years."
+:::
+
+{{< include topics/_selective_absorption.qmd >}}
+
+{{< include topics/_layer_model.qmd >}}
+
+## Break {.center background-color="#2c2c2c"}
+
+*10 minutes*
+
+{{< include topics/_emission_height.qmd >}}
+
+{{< include topics/_band_saturation.qmd >}}
+
+{{< include topics/_greenhouse_scaleup_bridge.qmd >}}
+
+## Homework 1 is out *(due Thu Oct 1)*
+
+1. **N panes of glass** — earn the $(N+1)^{1/4}$ formula, and why real CO₂ ≠ adding a pane
+2. **Response timescales** — how fast does a planet warm? *(sets up next week)*
+3. **The faint young Sun** — a mini-investigation
+4. **First contact with real data** — your model vs. observed temperatures & one CMIP6 run
+5. **Communication cell** — 150 words for a policymaker
+
+Submit: notebook in your repo → link on Courseworks. One free late HW per semester — don't spend it in week 4.
+
+::: {.notes}
+5-min tour, don't solve anything. Emphasize problem 4's point: every HW ends by holding the toy up against the real world. Office hours + TA sessions for help.
+:::
+
+## Next Thursday: time enters the model
+
+- The ocean sets the clock: why warming *lags* emissions
+- Your first numerical integration — and your first numerical **explosion** (on purpose)
+- **Lab 1, in class** → bring a working laptop, and **finish Lab 0 before Thursday**
+
+::: {.notes}
+End on the Lab 0 reminder — anyone without hub+GitHub working by next week starts Lab 1 behind. TAs will chase stragglers from the Courseworks submission list.
+:::

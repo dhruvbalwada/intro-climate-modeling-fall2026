@@ -1,0 +1,48 @@
+<!-- TOPIC BLOCK: the emission-height picture (~20 min). Currently played in: week 2. The single most important conceptual model of the course's first act. -->
+
+# Step 3: The picture professionals actually use {background-color="#1a3a5c"}
+
+## Where does Earth's radiation to space really come from?
+
+In the CO₂/H₂O bands the atmosphere is *optically thick*: surface photons are absorbed and re-emitted many times before escaping.
+
+Effectively, space "sees" radiation not from the ground but from an **effective emission height**:
+
+$$z_e \approx 5\text{–}6\ \mathrm{km}, \quad \text{where } T \approx 255\ \mathrm{K}$$
+
+<!-- FIGURE: schematic — temperature profile (lapse rate line), emission height marked at 255 K, surface at 288 K below; a second, higher z_e after adding CO2. Best drawn as a two-panel before/after. -->
+
+::: {.notes}
+Connect back: the 255 K from week 1 is REAL — satellites measure it. This slide says *where* it lives: ~5.5 km up. The layer model was a cartoon of this.
+:::
+
+## Add CO₂ → the radiating surface rises
+
+1. More CO₂ → atmosphere more opaque in the IR → **z_e rises**
+2. Higher = **colder** (lapse rate!) → planet radiates *less* to space
+3. Energy imbalance → the whole column warms...
+4. ...until the *new* emission height is back at 255 K
+5. The surface, ~6 km below along the lapse rate, ends up **warmer**
+
+$$\Delta T_s \approx \Gamma \cdot \Delta z_e \qquad (\sim150\ \mathrm{m\ rise} \approx 1\ \mathrm{K})$$
+
+::: {.notes}
+Walk the 5 steps slowly, twice if needed — this is the mental model to install for the whole course. Note what restores balance: not the surface "trapping" anything, but the planet's radiating level sliding up a fixed temperature ladder.
+:::
+
+## One sentence to keep
+
+> **Global warming = raising the height from which Earth radiates to space — with the surface dragged warmer along the lapse rate.**
+
+::: {.notes}
+Say it, let them write it, move on. This sentence defeats arguments the layer model can't (next block).
+:::
+
+## This picture makes free predictions
+
+- **The stratosphere should *cool*** as the surface warms (it sits above the emission level) — **observed** ✓, and a fingerprint pure solar warming would *not* produce
+- No lapse rate → no warming from raising $z_e$ → the lapse rate itself matters (week 9: lapse-rate feedback)
+
+::: {.notes}
+Stratospheric cooling: predicted by M&W 1967 (they saw it in Fig 16 last week), confirmed decades later by satellites/radiosondes. This is the honest counterweight to "models are tuned" — fingerprint predictions made before the observations existed.
+:::

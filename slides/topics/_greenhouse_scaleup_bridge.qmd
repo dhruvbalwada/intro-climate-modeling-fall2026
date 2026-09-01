@@ -1,0 +1,26 @@
+<!-- TOPIC BLOCK: scale-up & bridge for radiation (~10 min). Currently played in: week 2. Beat 2/3 of the weekly Play→Scale-up→Bridge template. -->
+
+# From today's toy to the real machine {background-color="#1a3a5c"}
+
+## Scale-up: radiation in a real climate model
+
+- Line-by-line absorption: physically exact, computationally hopeless at runtime
+- Models use **band schemes** ("correlated-k"), validated against line-by-line codes
+- Radiation is computed in every column, ~100 levels, every 1–3 model hours
+
+. . .
+
+Your layer model and a GCM's radiation code differ in **resolution, not in kind**.
+
+::: {.notes}
+The point of the scale-up beat every week: demystify. The radiation module of a CMIP model is the N-layer model with real spectroscopy and clever bookkeeping.
+:::
+
+## Bridge: the toy is the ruler
+
+- **Backward:** Manabe & Wetherald 1967 = today's chain done right the first time — real spectra + convection-pinned lapse rate → ECS ≈ 2.3 K, within today's assessed range
+- **Forward:** when CMIP models are compared, their CO₂ forcing is quoted through the same $5.35\ln(C/C_0)$ — the formula *you* now own
+
+::: {.notes}
+Close the loop explicitly — this is the weekly bridge sentence: "the simple model isn't a stepping stone we discard; it's the instrument the community measures the big models with." Next week's bridge is even stronger (their lab EBM is literally fit to every CMIP model).
+:::

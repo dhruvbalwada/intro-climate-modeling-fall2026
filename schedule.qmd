@@ -7,7 +7,7 @@ Slides and lab/homework links appear here as the semester progresses. Suggested 
 | Wk | Date (Thu) | Topic | Materials | Due |
 |----|-----------|-------|-----------|-----|
 | 1  | Sep 10 | Course overview · history of Earth system models · the model hierarchy | [slides](slides/week01.qmd) | Lab 0 out ([instructions](labs/lab0.qmd)) |
-| 2  | Sep 17 | Energy balance modeling 1: radiative balance & the greenhouse effect | *slides soon* | HW1 out |
+| 2  | Sep 17 | Energy balance modeling 1: radiative balance & the greenhouse effect | [slides](slides/week02.qmd) | HW1 out |
 | 3  | Sep 24 | Energy balance modeling 2: time dependence, ice-albedo, transport | | **Lab 1** (in class) · Lab 0 due |
 | 4  | Oct 1  | Circulation 1: box models of the large-scale circulation | | HW1 due · HW2 out |
 | 5  | Oct 8  | Circulation 2: inside a dynamical core | | **Lab 2** · project title due Fri Oct 9 |

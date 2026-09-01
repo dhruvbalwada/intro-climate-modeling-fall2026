@@ -1,0 +1,39 @@
+<!-- TOPIC BLOCK: selective absorption (~15 min). Currently played in: week 2. -->
+
+# Step 1: Why the atmosphere intervenes {background-color="#1a3a5c"}
+
+## Two streams of light that barely touch
+
+<!-- FIGURE: normalized blackbody curves for 5800 K (Sun) and 288 K (Earth) vs wavelength, log axis — the classic "two humps with a gap near 4 µm" figure. -->
+
+- Sun (5800 K): peaks near **0.5 µm** — *shortwave*
+- Earth (255–288 K): peaks near **10–15 µm** — *longwave*
+- Almost **no overlap** → energy in and energy out are separate bookkeeping
+
+::: {.notes}
+This spectral separation is a gift — it's why "solar in, infrared out" is a clean split and why the whole subject is tractable. GR5001 callback: they saw the Trenberth-style budget diagram; this is the physics under its two-column layout.
+:::
+
+## Who absorbs what
+
+<!-- FIGURE: atmospheric absorption spectrum by gas (the stacked per-gas absorption bands figure, e.g. from Goosse or Pierrehumbert) — visible window open, IR bands owned by H2O, CO2, O3, CH4. -->
+
+- **N₂ + O₂ = ~99% of the air — and nearly transparent in the infrared**
+- The absorbers are the *vibrating, polar* trace molecules: **H₂O, CO₂, CH₄, O₃, N₂O**
+- Nearly transparent at 0.5 µm, strongly absorbing at 10–15 µm
+
+::: {.notes}
+One sentence of molecular physics is enough: symmetric diatomic molecules have no dipole moment to grab infrared photons; triatomic benders and stretchers do. Don't go deeper unless asked.
+:::
+
+## The greenhouse effect is a *trace-gas* effect
+
+> "CO₂ is only 0.04% of the atmosphere!"
+
+. . .
+
+Correct — and that 0.04% (plus water vapor) is doing **all** of the work. Remove every trace gas and keep the 99%: Earth freezes.
+
+::: {.notes}
+Reframe the talking point as the actual story. Plant (don't fully develop) the week-9 distinction: H₂O is the biggest absorber, but it *condenses* — days of residence, slaved to temperature — so it's a **feedback**, an amplifier. CO₂ is the **forcing**, the control knob. Lacis et al. 2010 ran it: remove CO₂, the water vapor rains out, Earth ices over. Full treatment Nov 5.
+:::

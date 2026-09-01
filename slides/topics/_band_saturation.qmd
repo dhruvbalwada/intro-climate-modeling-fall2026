@@ -1,0 +1,62 @@
+<!-- TOPIC BLOCK: band saturation, the logarithm, and the Ångström activity (~35 min incl. 15-min activity). Currently played in: week 2. -->
+
+# Step 4: The 125-year-old objection {background-color="#1a3a5c"}
+
+## 1900: Ångström vs Arrhenius
+
+> "The CO₂ absorption band is **already saturated** — the center of the 15 µm band absorbs everything within meters. Adding more CO₂ can't do anything."
+> — Knut Ångström's lab assistant, 1900 (paraphrased)
+
+This argument killed interest in Arrhenius's work for decades. **It still circulates today.**
+
+By the end of this hour, you'll be able to break it. *(That's literally the next activity.)*
+
+::: {.notes}
+Frame it with respect — it's a GOOD objection, and the physics community bought it for ~40 years. Don't reveal the answer yet.
+:::
+
+## Look at the actual spectrum
+
+<!-- FIGURE: MODTRAN outgoing-IR spectrum screenshots, 280 ppm vs 560 ppm overlaid — the CO2 "bite" deepening at the WINGS while the band center barely moves. Take these from the U. Chicago MODTRAN web interface (modtran.spectral.ucar.edu / climatemodels.uchicago.edu). -->
+
+- Band **center**: opaque at 280 ppm, opaque at 560 ppm — Ångström was *right* about the center
+- Band **wings**: visibly deepening — this is where doubling acts
+
+::: {.notes}
+LIVE DEMO if wifi cooperates (U. Chicago MODTRAN, ~8 min): set 280 ppm, note outgoing flux; double to 560; the flux drops ~3 W/m²; zoom the band wings. Students see the forcing in measured-quantity space. Screenshots on this slide are the wifi-failure fallback — rehearse the demo once beforehand.
+:::
+
+## Why the response is a logarithm (not zero)
+
+Each doubling widens the effective opaque interval by roughly the **same spectral increment**:
+
+$$\Delta F \approx 5.35 \cdot \ln\!\left(\frac{C}{C_0}\right)\ \mathrm{W\,m^{-2}} \qquad \approx 3.7\ \mathrm{W\,m^{-2}\ per\ doubling}$$
+
+- Saturation is *why it's a log* — not why it's zero
+- This is why climate speaks in **doublings**, and why ECS is defined *per doubling*
+
+::: {.notes}
+280→560 ppm and 560→1120 ppm have the SAME forcing. Also note: this one-line formula is how CMIP-model forcings are quoted and compared — the toy is the ruler (bridge beat returns at the end).
+:::
+
+## Your turn: break Ångström *(pairs, ~12 min)*
+
+Here is the argument, verbatim:
+
+> *"The CO₂ band is already saturated — the atmosphere absorbs all the radiation in that band within a few hundred meters. More CO₂ cannot change the energy balance."*
+
+With your partner, write **the strongest 3–4 sentence rebuttal you can**. Use anything from today. Names on the slip; hand it in.
+
+::: {.notes}
+Circulate with the TAs. Most pairs will find the wings; the deeper rebuttal (emission height rises regardless — a saturated band just means z_e is HIGH, not that it can't go higher) is what the debrief adds. Slips → participation credit.
+:::
+
+## Debrief: three independent ways it fails
+
+1. **The wings aren't saturated** — and that's where doubling acts (you saw it in the spectrum)
+2. **The emission height rises regardless** — saturation means $z_e$ is high, not that it's stuck; higher is colder is less radiation
+3. **Thin, cold upper layers always radiate less** — there is no altitude where "more absorber" stops mattering
+
+::: {.notes}
+Argument 2 is the professional one — flag that pairs who found it were reasoning at the research level. Historical coda, 1 sentence: the 1940s–50s spectroscopy (partly military-funded, Plass et al.) resolved the band structure and revived CO₂ science.
+:::

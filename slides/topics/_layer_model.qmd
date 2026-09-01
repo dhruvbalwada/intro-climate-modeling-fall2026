@@ -1,0 +1,69 @@
+<!-- TOPIC BLOCK: the one-layer / N-layer greenhouse model (~30 min, board-heavy). Currently played in: week 2. -->
+
+# Step 2: One pane of glass {background-color="#1a3a5c"}
+
+## The simplest greenhouse: setup
+
+One atmospheric layer that is:
+
+- **transparent** to shortwave (sunlight passes through)
+- **perfectly absorbing** in longwave (nothing gets past it)
+- radiating $\sigma T_a^4$ **both up and down**
+
+<!-- FIGURE: simple schematic — surface, one layer, arrows: solar to surface; surface IR absorbed by layer; layer radiates up (to space) and down (to surface). Draw this on the board first; slide is the record. -->
+
+::: {.notes}
+BOARD, not slides, for the whole derivation (~15 min). Two budgets, two unknowns — ask the room to supply each term before writing it. This is the second board derivation of the course (after week 1's T_e); same culture: they follow, not admire.
+:::
+
+## The derivation (record)
+
+**Top of atmosphere:** what leaves = what enters
+$$\sigma T_a^4 = \tfrac{S_0}{4}(1-\alpha) \;\Rightarrow\; T_a = T_e = 255\ \mathrm{K}$$
+
+**Surface:** heated by Sun *and* by the sky
+$$\sigma T_s^4 = \tfrac{S_0}{4}(1-\alpha) + \sigma T_a^4 \;\Rightarrow\; T_s = 2^{1/4}\,T_e \approx 303\ \mathrm{K}$$
+
+::: {.notes}
+Pause on what fell out: the ATMOSPHERE sits at the emission temperature; the surface is warmer than both. The layer doesn't "trap" heat — it re-radiates downward. Kill the blanket metaphor here (blankets suppress convection; Wood's 1909 rock-salt greenhouse experiment if asked).
+:::
+
+## Three surprises from one tiny model
+
+1. The *atmosphere* radiates at 255 K — the surface hides beneath it, warmer
+2. The surface receives **more energy from the sky than from the Sun** (~340 vs ~168 W/m² in the real budget)
+3. It **overshoots**: 303 K predicted vs 288 K observed
+
+::: {.notes}
+#2 is the intuition-breaker — let it sit. It's in the observed surface budget (GR5001's diagram!): downwelling longwave beats absorbed solar at the ground. #3 is the productive failure that drives the next slide.
+:::
+
+## Why the overshoot? The best kind of wrong
+
+- The real atmosphere isn't a *perfect* absorber (windows, wings)
+- Deeper: **convection short-circuits radiation** — ~100 W/m² leaves the surface as evaporation + thermals, not photons
+- Pure radiative equilibrium would make the lower atmosphere absurdly steep and unstable → convection overturns it and **pins the lapse rate ≈ 6.5 K/km**
+
+. . .
+
+Automating exactly this repair = **Manabe & Wetherald 1967** (week 1's "most influential paper").
+
+::: {.notes}
+This is the week's 5-minute vertical-structure aside — the ONLY dose of RCE this week (thread returns Nov 5). GR5001 callback: their week 3 was convection; "you know why air rises — here's what that does to the greenhouse." M&W Fig 16 from last week can reappear for one beat.
+:::
+
+## N panes of glass
+
+$$T_s = (N+1)^{1/4}\, T_e$$
+
+| N | 0 | 1 | 2 | 3 | ... |
+|---|---|---|---|---|-----|
+| $T_s$ (K) | 255 | 303 | 336 | 361 | ... |
+
+More absorber → warmer surface, with **diminishing returns** — the first hint of a logarithm.
+
+**Venus:** ~90 bar of CO₂ ≈ *many* panes → 735 K.
+
+::: {.notes}
+Don't derive N-layer on the board (HW1 problem 1 does it — say so explicitly: "your first homework problem is to earn this formula"). Venus closes the loop on week 1's three-planet table. Runaway-greenhouse teaser: one sentence, week 9.
+:::
