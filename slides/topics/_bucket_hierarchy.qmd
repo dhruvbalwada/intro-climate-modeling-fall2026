@@ -17,6 +17,19 @@
 That's modeling. That's also this entire course, in one sitting.
 
 ::: {.notes}
+Before the models: pause on the raw data plot and name the concepts (next slide).
+:::
+
+## The bucket has weather — and a climate
+
+- The level **wiggles** constantly (noisy tap) — that's its *weather*
+- But its **statistics** are steady: mean ≈ 1, a typical spread, a typical excursion time — that's its *climate*
+
+. . .
+
+**Climate = the statistics of a system.** You've now defined it — on a bucket. Earth's version: means, variability, extremes over ~30 years.
+
+::: {.notes}
 Then switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: "I double the inflow — what's the new level? number + reasoning + name") → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. ~25 min in the notebook. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable.
 :::
 
