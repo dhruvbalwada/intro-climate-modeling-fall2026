@@ -1,0 +1,53 @@
+<!-- TOPIC BLOCK: the bucket model-hierarchy demo (~35 min incl. live notebook). Currently played in: week 1.
+     The live demo notebook lives in course_materials/demos/bucket_hierarchy.ipynb (PRIVATE until after class — the reveal is a surprise). -->
+
+# A system in my office {background-color="#1a3a5c"}
+
+*Before any climate: let's model something together.*
+
+## The rules of the game
+
+- I have a **system**: water flows in (with some "weather" in it), the level responds
+- I've measured inflow and level for a long time — you get the data
+- **I will not tell you what's inside**
+- Your job: a *simpler description* good enough to **predict situations we haven't seen**
+
+. . .
+
+That's modeling. That's also this entire course, in one sitting.
+
+::: {.notes}
+Then switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: "I double the inflow — what's the new level? number + reasoning + name") → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. ~25 min in the notebook. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable.
+:::
+
+## What just happened (part 1)
+
+1. A **model** = a simpler description of a complicated system, built *for a purpose*
+2. **Statistical models are real models** — but they interpolate; change the system and they fail *(week 13: remember this about AI)*
+3. **Budgets** — in − out = accumulation — are where physical modeling starts
+4. **Equilibrium budgets** already predict a lot *(and found the nonlinearity the line couldn't)*
+
+## What just happened (part 2)
+
+5. **Time dependence** = lags + adjustment, governed by a **stabilizing feedback** (fuller → drains harder)
+6. **Even physical models are calibrated** — we fitted $k$; we lived with the evaporation bias *(week 10 is entirely about this)*
+7. **Every model has a regime of validity** — discovered, usually, the hard way
+8. Different questions → different models: average level vs. flood timing. **"Best" depends on the question**
+
+::: {.notes}
+Read these fast — they just witnessed each one; the slides are the receipt. #8 replaces the old card-sort's job.
+:::
+
+## One more thing — the thing
+
+Today, when our models failed, we **opened the box and checked**.
+
+. . .
+
+**For the Earth, there is no box to open.**
+
+No spare planet, no truth-generator to read. Everything climate science knows about 2100 comes from models earning trust the way ours did today: *predicting things they weren't fitted to*.
+
+::: {.notes}
+Let this land in silence for a beat. It's the epistemological heart of the course and the honest answer to the tuning question raised in the hook. Optional aside: climate scientists simulate today's luxury deliberately — "perfect-model experiments," using one GCM as fake truth to test methods.
+:::

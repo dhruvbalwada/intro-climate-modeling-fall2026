@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Climate Modeling"
-subtitle: "Week 1 · Why model climate? A history in five rungs"
+subtitle: "Week 1 · Modeling a bucket, then a planet"
 author: "Dhruv Balwada · Columbia Climate School · Fall 2026"
 format:
   revealjs:
@@ -24,25 +24,25 @@ TAs: **Prani Nalluri** (pan2121) · **Chandanie Kutwaru** (ck3397)
 Office hours: **[TIME/PLACE]** · Everything lives on Courseworks + course website
 
 ::: {.notes}
-Let people settle. Introduce yourself briefly — 30 seconds, the longer version comes later in the "why oceans" slide if kept.
+~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept).
 :::
 
-## Before anything: three hands-up questions
+## Before we start: three hands-up questions
 
 1. Roughly what sets the Earth's average temperature? *(could you explain it to a friend?)*
 2. Have you written Python this year?
 3. Do you remember what "climate sensitivity" means?
 
 ::: {.notes}
-Ungraded diagnostic — you watched GR5001, they took it a year ago. Watch the hands: this calibrates how much refresher weeks 2–9 need. No judgment framing: "a year is a long time; that's expected and fine."
+Ungraded diagnostic — calibrates refresher dosage for weeks 2–9. Framing: "a year since GR5001 is a long time; that's expected."
 :::
 
 ## Every number on this figure came out of a model
 
-<!-- FIGURE: IPCC AR6 WG1 SPM.8-style panel — global temperature projections under SSP scenarios, with uncertainty bands. Source: IPCC AR6 SPM (freely reusable with attribution). -->
+<!-- FIGURE: IPCC AR6 WG1 SPM.8-style panel — global temperature projections under SSP scenarios with uncertainty bands. -->
 
 ::: {.notes}
-The hook. Let it sit. "Sea level in 2100, warming under net-zero, monsoon shifts — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them."
+The hook. "Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them."
 :::
 
 ## The question someone is already thinking
@@ -51,349 +51,196 @@ The hook. Let it sit. "Sea level in 2100, warming under net-zero, monsoon shifts
 
 . . .
 
-This is a *real* question, asked inside the field too.
+A *real* question — asked inside the field too. **November 12** is a full session on it.
 
-**November 12** — a full session on tuning, evaluation, and why matching the past doesn't guarantee the future.
-
-By December you'll answer it better than most working scientists.
+And in the next 40 minutes, you'll see the honest shape of the answer — using a bucket.
 
 ::: {.notes}
-Raise it proactively — trust move. Don't answer it now beyond one sentence: "the short version is: tuning is real, documented, and much narrower than the accusation implies — the long version needs the machinery we'll build first."
+Raise it proactively, don't answer beyond one sentence. The bucket demo's ending ("no box to open") IS the shape of the answer — say so when you get there.
 :::
 
-## What this course is
+{{< include topics/_bucket_hierarchy.qmd >}}
 
-Last year, GR5001 taught you **what the climate system does** — and how to interpret climate information.
+## This course = that exercise, for Earth
 
-This course **opens the machine that produces that information**:
+Last year GR5001 taught you **what the climate system does**. This course **opens the machine that predicts it**:
 
-- **Build** the model hierarchy yourselves (in Python)
-- **Understand** how the real Earth System Models work
-- **Analyze** their output the way practicing scientists do (CMIP6)
-- **Judge** what models can and cannot tell you
+- **Build** the model hierarchy yourselves, in Python *(weeks 1–8)*
+- **Understand** feedbacks, sensitivity, tuning — can we trust this? *(weeks 9–10)*
+- **Analyze** the real models' output the way scientists do — CMIP6 *(weeks 11–13)*
+- **Answer your own question** with model data *(final project)*
 
 ::: {.notes}
-The one-sentence identity: "you know what the climate does; now, how we know what it will do." Callbacks to GR5001 will happen every single week — most concepts get rebuilt, properly, with math and code. A year of decay is assumed and fine (Mingfang agrees).
+~5 min. The four acts, now motivated by the demo instead of asserted. By December: built models, run CMIP6 analyses, a research project, and an informed answer to the tuning question.
 :::
 
-## By December, you will have
+## Break {.center background-color="#2c2c2c"}
 
-- built working models: energy balance → feedbacks → carbon → transient warming
-- run experiments on them (broken them, fixed them, tuned them)
-- pulled real CMIP6 output from the cloud and made defensible figures
-- completed a research project answering a climate question **you** chose
-- an informed answer to "should I trust this model result?"
+*10 minutes*
 
 ::: {.notes}
-Concrete deliverables, incl. the portfolio value: the final project is a reproducible notebook they can show employers.
+~55–60 min in. After the break: the same hierarchy story, but as history — real people, real machines.
 :::
 
-## The semester in four acts
+# How we got here — the hierarchy, historically {background-color="#1a3a5c"}
 
-| Act | Weeks | Question |
-|-----|-------|----------|
-| I. The simplest model that captures global warming | 1–3 | How far can energy balance take us? |
-| II. Inside an Earth System Model | 4–8 | Circulation, land, carbon — what must be parameterized? |
-| III. Emergent behavior & credibility | 9–10 | Feedbacks, sensitivity, tuning — can we trust this? |
-| IV. The modeling enterprise | 11–13 | CMIP, projections, AI — how the world's climate information gets made |
-| Final projects | 14–15 | Your question, answered with model data |
-
-## The ladder we'll climb
-
-<!-- FIGURE: hierarchy ladder diagram — 0-D EBM → 1-D EBM/column → box models → EMIC → GCM → ESM, with "understanding" arrow pointing down and "completeness/cost" arrow pointing up. Build this as a simple graphic; it recurs all semester. -->
-
-Every rung still in active use. **The ladder is the course map — today we climb it historically.**
-
-::: {.notes}
-Key framing: not a ladder of progress where the top makes the bottom obsolete — a ladder where every rung has a permanent job. Today: meet each rung through the people and problems that created it.
-:::
-
-# Rung 1: The budget {background-color="#1a3a5c"}
-
-*Energy in = energy out*
+*Everyone you're about to meet was climbing the same ladder we just climbed.*
 
 ## 1896: Arrhenius computes the climate by hand
 
-<!-- FIGURE: Arrhenius's hand-computed table from the 1896 paper (public domain scan) next to a CMIP6 warming map — 125 years apart, same question. -->
+<!-- FIGURE: Arrhenius's hand-computed table (public domain scan) next to a CMIP6 warming map — 125 years apart, same question. -->
 
 - Motivated by **ice ages**, not fossil fuels
-- Months of hand calculation: radiative budget + water-vapor amplification
-- His answer for CO₂ doubling: **~5–6 °C** (modern: 2.5–4 °C)
-- The *structure* of the calculation is recognizably modern
+- Months of hand calculation: a radiative **budget** + water-vapor amplification
+- His CO₂-doubling answer: ~5–6 °C (modern: 2.5–4 °C) — high, but the *structure* is modern
+- He was doing exactly our Model 1: an **equilibrium budget**
 
 ::: {.notes}
-Story beats: Langley's infrared measurements as data; Arrhenius working through a difficult personal period; got the structure right, the number high. In 1908 he thought warming would take millennia and might be nice — why nobody panicked. 1938 Callendar: one sentence — linked rising CO₂ to observed warming from weather stations, was politely dismissed.
+~50 min total for the history segment — it's tightened; keep moving. Color: 1908 he guessed warming would take millennia and be pleasant → why nobody panicked. Callendar 1938 (station data, dismissed) in one breath. Tease: "we'll do Arrhenius's first step ourselves before you leave."
 :::
 
-## What Arrhenius's model *was*
+## 1922: Richardson's magnificent failure
 
-$$\text{absorbed sunlight} = \text{emitted infrared}$$
+<!-- FIGURE: the "forecast factory" illustration (64,000 human computers in an amphitheater). -->
 
-One equation. One perturbation (CO₂). One answer (a temperature).
+- Hand-integrated the fluid equations for a 6-hour forecast: **absurdly wrong**
+- But grid + finite differences + timestepping = **exactly what every model does today**
+- His failure: too-honest equations amplified noisy data
+
+::: {.notes}
+The forecast factory is a parallel supercomputer, 80 years early (week 5 callback). Bridge to next slide: the fix wasn't a bigger machine.
+:::
+
+## 1950: ENIAC — a smarter *simple* model wins
+
+Charney, Fjørtoft & von Neumann: first numerical forecast — by **simplifying** (one quasi-geostrophic level filtered out Richardson's noise).
 
 . . .
 
-So let's do his first step. Right now. Together.
+**Weather vs climate:** forecast = *initial-value problem* (chaos kills it in ~2 weeks); climate = *boundary-value problem* (statistics under a push).
+
+> The casino: no one predicts the next hand. The house margin is a certainty.
 
 ::: {.notes}
-Point at the ladder: rung 1 never retired. FaIR-type models running IPCC scenario numbers today are direct descendants. (Don't say FaIR yet — "the models the IPCC uses to score policy scenarios.") Then move to the board.
+Two beats on one slide to save time: the thesis anecdote + THE misconception-killer. If pressed on "but chaos!": forced response vs internal variability — the bucket's level statistics under doubled inflow were predictable even though its wiggles weren't.
+:::
+
+## 1956–1975: columns, spheres, coupling
+
+- **Phillips 1956:** two-level hemisphere → **jets emerged, uncoded** — put conservation on a grid and circulation is what balance looks like
+- **Manabe & Wetherald 1967:** the 1-D column done right — ECS ≈ 2.3 °C; predicted **stratospheric cooling** (observed decades later); voted most influential climate paper ever
+- **Manabe & Bryan 1969:** ocean coupled · **M&W 1975:** first 3-D CO₂ doubling → **polar amplification** predicted
+
+<!-- FIGURE: M&W 1967 Fig. 16 — profiles for 150/300/600 ppm. -->
+
+::: {.notes}
+Compressed from three slides. Manabe from Tokyo to GFDL 1958; "get one column right before the sphere." Fingerprint predictions made before observations = honest counterweight to the tuning worry.
+:::
+
+## 1979 → 2021: the error bar and the enterprise
+
+- **Charney Report 1979** (two GCMs on Earth): ECS = 1.5–4.5 °C → **AR6 2021:** 2.5–4 °C. *42 years to halve the bar — why so slow? (Nov 5.)*
+- **CMIP (1995→):** every center runs the *same* experiments — model spread becomes data
+- GCMs absorb carbon, chemistry, ice → **Earth System Models**
+- **2021: Nobel Prize** to Manabe & Hasselmann
+
+::: {.notes}
+Plant the week-9 mystery explicitly. CMIP = Act IV's subject; students touch CMIP6 data from HW1.
+:::
+
+## The frontier — and the philosophy
+
+**Today:** km-scale simulation · AI emulators *(remember lesson #2!)* · the unsolved problem: clouds *(week 13)*
+
+. . .
+
+**Held (2005):** keep the *whole* hierarchy — simulation ≠ understanding, and simple models still *discover* (a 1961 two-box model found a possible AMOC collapse before any GCM could).
+
+**"Which model is best?" is meaningless without "…for what question?"** — you proved this with a bucket an hour ago.
+
+::: {.notes}
+The demo did the heavy lifting; this slide just gives it names and a citation. If one reading gets recommended today: Held 2005, short and equation-free.
+:::
+
+# Now for real {background-color="#1a3a5c"}
+
+*Earth is a bucket.*
+
+## The mapping
+
+| bucket | Earth |
+|---|---|
+| tap (inflow F) | **sunlight** |
+| drain | **infrared radiation to space** |
+| water level h | **temperature T** |
+| fuller → drains harder | warmer → radiates harder *(the stabilizing feedback)* |
+| level lags the tap | warming lags emissions *(week 3: the ocean sets the clock)* |
+
+::: {.notes}
+The payoff slide of the day — the demo wasn't an analogy, it was the actual mathematical object of this course. ~15 min for this closing science segment.
 :::
 
 ## The first calculation *(live, on the board)*
 
-Energy in: sunlight intercepted by a disk — $\pi R^2 \cdot S_0(1-\alpha)$
+Energy in: sunlight on a disk — $\pi R^2 S_0(1-\alpha)$. Energy out: infrared from a sphere — $4\pi R^2 \sigma T^4$.
 
-Energy out: infrared radiated by a sphere — $4\pi R^2 \cdot \sigma T^4$
+$$T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4} \approx \mathbf{255\ K} = -18\,°\mathrm{C}\;\;(?!)$$
 
-. . .
-
-Balance them:
-
-$$T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4}$$
-
-With $S_0 = 1361$ W/m², $\alpha = 0.3$:  $\quad T_e \approx \mathbf{255\ K} = -18\,°\mathrm{C}$
-
-::: {.notes}
-Derive SLOWLY on the board; this slide is just the record. Emphasize the disk/sphere ratio → the famous ¼. Ask before revealing: "reasonable answer? Earth's actual average is about +15 °C…" Let the wrongness land. Also: in Lab 0 this week you'll plot this exact formula yourself — the verification notebook's plot is T_e vs albedo.
-:::
-
-## Three planets, one formula
-
-| | $T_e$ (this formula) | actual surface T |
+| | formula | actual |
 |---|---|---|
-| Mars | ~210 K | ~218 K — close |
+| Mars | ~210 K | ~218 K ✓ |
 | **Earth** | **255 K** | **288 K — off by 33 K** |
-| Venus | ~230 K | **~735 K — off by 500 K!** |
-
-. . .
-
-The error isn't distance from the Sun. **It's the atmosphere.**
+| Venus | ~230 K | **735 K — off by 500 K!** |
 
 ::: {.notes}
-Venus is the showstopper: FARTHER from the Sun in absorbed-energy terms than Earth (high albedo!), yet hot enough to melt lead. The gap between the columns IS the greenhouse effect, measured planet by planet.
+Board derivation, slowly — ask "why πR² in but 4πR² out?" before answering; sets the math culture. This is Arrhenius's step 1, and our Model-1 equilibrium budget for the planet. Venus kills "it's distance from the Sun." In Lab 0 this week they plot exactly this formula.
 :::
 
 ## 33 K — the most productive wrong answer in science
 
-That gap is the **greenhouse effect**, and closing it is where this course goes next:
+That gap **is the greenhouse effect**. Closing it:
 
-- **Week 2:** *why* — the layer model, and the picture professionals actually use
-- **Week 3:** *when* — make the model tick in time (the ocean sets the clock)
-- **Week 9:** *how much* — feedbacks decide whether 3.7 W/m² becomes 2 °C or 5 °C
-
-::: {.notes}
-The cliffhanger. One honest sentence: "the 255 K number is REAL — satellites measure Earth radiating to space at exactly this temperature. The question is why the surface below is warmer. Hold that for Thursday." Then back to the history ladder — Richardson next.
-:::
-
-# Rung 2: The forecast {background-color="#1a3a5c"}
-
-*Equations marched forward in time*
-
-## 1922: Richardson's magnificent failure
-
-<!-- FIGURE: illustration of Richardson's "forecast factory" (the amphitheater of 64,000 human computers) — several artist renderings are freely available. -->
-
-- Hand-integrated the fluid equations for a 6-hour forecast over Europe
-- Result: pressure change of **~145 hPa** — absurdly, spectacularly wrong
-- But the *method* — grid + finite differences + timestepping — is **exactly what every model does today**
+- **Week 2:** *why* — the layer model + the picture professionals use
+- **Week 3:** *when* — the model ticks in time; the ocean sets the clock
+- **Week 9:** *how much* — feedbacks decide whether 3.7 W/m² means 2 °C or 5 °C
 
 ::: {.notes}
-Why it failed: unfiltered gravity-wave noise in the initial conditions (don't dwell — "his equations were too honest; they amplified noisy data"). The forecast-factory image: 64,000 human computers with a conductor — it's literally a parallel supercomputer, 80 years early. Callback in week 5.
-:::
-
-## Weather vs climate — the distinction that saves us
-
-**Weather forecast** = *initial-value problem* — where does **this** trajectory go? Chaos (Lorenz) kills it beyond ~2 weeks.
-
-**Climate projection** = *boundary-value problem* — how do the **statistics** shift when you push the system?
-
-. . .
-
-> Casino analogy: no one can predict the next hand. The house margin is a certainty.
-
-::: {.notes}
-THE misconception-killer of week 1 — students will hear "chaos means you can't predict 2100" forever. GR5001 gave them weather-vs-climate qualitatively; this is the mathematical version. Lorenz: predictability of the first vs second kind.
-:::
-
-## 1950: ENIAC, and a lesson in modeling
-
-Charney, Fjørtoft & von Neumann: the **first numerical weather forecast**.
-
-Their winning move: **simplify** — filter Richardson's equations down to one level of quasi-geostrophic flow.
-
-. . .
-
-**Progress came from a smarter *simple* model, not a bigger computer.**
-
-::: {.notes}
-The course's thesis in one anecdote. The 24-hour forecast took ~24 hours of ENIAC time — "keeping pace with the weather." This moral repeats: Stommel (wk 4), the EBMs, FaIR.
-:::
-
-# Rung 3: The column {background-color="#1a3a5c"}
-
-*One vertical slice of atmosphere, done right*
-
-## 1967: Manabe & Wetherald
-
-<!-- FIGURE: M&W 1967 Fig. 16 — temperature profiles for 150/300/600 ppm CO2: surface warms, stratosphere cools. -->
-
-- 1-D radiative-**convective** column: real spectroscopy + convection pinning the lapse rate
-- CO₂ doubling → **ECS ≈ 2.3 °C** — within today's assessed range
-- 2015 poll of climate scientists: **the most influential climate-change paper ever**
-
-::: {.notes}
-Suki Manabe: arrived from Tokyo 1958, GFDL. The insight: get one column right before doing the sphere. Fig. 16's quiet bombshell — stratospheric *cooling* while the surface warms: a fingerprint prediction, made decades before it was observed, that pure solar warming would NOT produce. Week 2 builds the toy version; week 9 returns for feedbacks.
-:::
-
-# Rung 4: The sphere {background-color="#1a3a5c"}
-
-*General circulation models*
-
-## 1956: Phillips spins up a planet
-
-Two-level model, one hemisphere, a month of simulated time.
-
-**Jets and storm tracks appeared — nobody coded them.**
-
-. . .
-
-This is *emergence*: put conservation laws on a grid, and the general circulation is what falling into balance looks like.
-
-::: {.notes}
-Phillips's numerical experiment ran on a machine with ~5KB of memory. Emergence is week 5's big idea — plant the phrase "you never coded a Hadley cell" now.
-:::
-
-## The lineage to today
-
-- **1969** Manabe & Bryan: first **coupled** atmosphere–ocean model
-- **1975** Manabe & Wetherald: first 3-D CO₂-doubling experiment → **polar amplification** predicted
-- **1979** Charney Report: with *two* GCMs in the world, ECS = **1.5–4.5 °C**
-- **2021** AR6: ECS = **2.5–4 °C**
-
-. . .
-
-**42 years to narrow the bar by half.** Why so slow? *(Hold that thought until Nov 5.)*
-
-::: {.notes}
-Plant the week-9 mystery explicitly — it's the best cliffhanger the field has. Polar amplification: predicted in '75, now observed at ~4x global rate in the Arctic. Predictions-that-came-true list is the honest counterweight to the tuning question.
-:::
-
-# Rung 5: The enterprise {background-color="#1a3a5c"}
-
-*From models to a global scientific infrastructure*
-
-## Modeling becomes coordinated science
-
-- **1988** Hansen testifies to the Senate; **1990** first IPCC report
-- **1995→** **CMIP**: every modeling center runs the *same* experiments — models become comparable, and their spread becomes data
-- Carbon, chemistry, vegetation, ice sheets join → GCMs become **Earth System Models**
-- **2021** Nobel Prize in Physics: Manabe & Hasselmann
-
-::: {.notes}
-CMIP is Act IV's subject: the students will use CMIP6 data themselves from HW1 onward (lightly) and deeply from week 11. The Nobel framing: "physics recognized that climate physics is physics."
-:::
-
-## The frontier (where this course ends)
-
-- **Km-scale simulation**: resolving storms and ocean eddies globally — computationally heroic
-- **AI emulators**: neural networks forecasting weather competitively, now creeping into climate
-- The perpetually unsolved: **clouds**
-
-**Week 13:** what's hype, what's real.
-
-::: {.notes}
-One slide, no depth — just show the course reaches the present. GraphCast/NeuralGCM-class models by name only if asked.
-:::
-
-## Why keep the whole ladder? (Held, 2005)
-
-> Climate science needs a **hierarchy** of models the way biology needs model organisms.
-
-- **Simulation ≠ understanding** — you can simulate what you don't understand
-- A gap between them is *dangerous*: you can't tell trustworthy projections from artifacts
-- Simple models are where understanding lives — and they **discover** things (a 1961 two-box model found a possible AMOC collapse *before* any GCM could)
-
-::: {.notes}
-Held's essay is the intellectual backbone of the course design — say so. The Stommel teaser sets up week 4. If anyone wants one reading from today: this one, it's short and equation-free.
-:::
-
-## Fit for purpose
-
-**"Which model is best?" is meaningless without "...for what question?"**
-
-| Question | Right tool |
-|---|---|
-| Why is there a greenhouse effect? | pencil + 0-D EBM |
-| Will this El Niño bring drought? | initialized coupled GCM |
-| Warming in 2100 under scenario X? | ESM ensemble + simple-model emulator |
-| Could the AMOC collapse? | box model *(mechanism)* + ESM *(when/whether)* |
-
-::: {.notes}
-Note the last row deliberately has TWO answers — mechanism rung + projection rung. That's the segue to the activity, where several questions do too.
-:::
-
-## Your turn — match the question to the rung *(15 min)*
-
-In **pairs**: the handout lists **6 climate questions** and the **model hierarchy**.
-
-1. For each question: which rung(s)? *One minute of gut feeling, then argue.*
-2. Write your matches + one sentence of justification each
-3. Names on the slip, hand it in *(counts toward participation)*
-
-::: {.notes}
-Deliberately light. Circulate, listen. Debrief (5 min): call out that half the questions have two defensible answers — mechanism vs projection — and that noticing this IS the learning objective. Cuttable on the day if running long.
+Honest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. Cliffhanger, then logistics.
 :::
 
 ## How the course works
 
 | Component | Weight | Rhythm |
 |---|---|---|
-| Participation | 10% | in-class work, most weeks |
+| Participation | 10% | in-class work (like today's slips), most weeks |
 | Labs (5) | 10% | in class, weeks 3/5/7/9/11 — submit same day |
 | Homework (5) | 50% | ~biweekly, 2 weeks each |
 | Project proposal | 10% | title **Oct 9** · proposal **Oct 23** |
 | Final project | 20% | present Dec 10/17 · notebook due **Dec 18** |
 
 ::: {.notes}
-Flag the early project-title date NOW and again every week until week 5. Late policy: 10%/day, one free late HW (up to a week). AI policy per syllabus: disclose use; submitting work you didn't do is plagiarism regardless of author.
+~12 min for logistics. Flag the early project-title date NOW. Late policy: 10%/day, one free late HW. AI policy per syllabus: disclose; work you didn't do is plagiarism regardless of author.
 :::
 
 ## Where the work lives
 
-- **Compute:** course JupyterHub — login details on Courseworks *(browser only, nothing to install)*
-- **Code:** your own **private GitHub repo**, shared with me + TA
-- **Submitting = posting your repo link on Courseworks** (the timestamp)
-- Labs: notebooks we complete together in class, pushed by end of day
+- **Compute:** course JupyterHub — browser only, nothing to install *(details on Courseworks)*
+- **Code:** your own **private GitHub repo**, shared with me + the TAs
+- **Submitting = posting your repo link on Courseworks**
+- **Readings:** none required; weekly suggestions on Courseworks *(this week: Primer Ch. 1–2 + Held 2005)*
 
-**Lab 0 (ungraded, ~30 min): do it this week.** It makes all of the above work. Due before Lab 1 on **Sep 24**.
+**Lab 0 (~30 min, ungraded): do it this week** — due before Lab 1 on **Sep 24**.
 
-::: {.notes}
-Lab 0 is on Courseworks now. The setup clinic in ~15 minutes: stay and do it with us, or leave early if you're confident — but done before next Thursday is strongly advised so problems surface with a week of slack.
-:::
-
-## Readings & next week
-
-- **No required textbook.** Weekly *suggested* readings on Courseworks (this week: *Climate Modelling Primer* Ch. 1–2)
-- How to read them: skim first, write down 2–3 questions, bring them Thursday
-
-. . .
-
-**Next week:** closing the 33 K gap — the layer model, the emission-height picture, and why "the CO₂ bands are saturated" is wrong.
-
-::: {.notes}
-Optionally 2–3 min here: your own story — ocean modeler at LDEO, what you actually work on, why this course. Students consistently rate instructor-stakes moments highly.
-:::
-
-## Setup clinic — starting now *(optional, ~25 min)*
+## Setup clinic — starting now *(optional, ~20 min)*
 
 Open **Lab 0** on Courseworks:
 
-1. GitHub account → private repo → add me + TA
-2. Hub login → run `verify_setup.ipynb`
+1. GitHub account → private repo → add me + Prani + Chandanie
+2. Hub login → run `verify_setup.ipynb` *(it plots today's $T_e$ formula)*
 3. Push the notebook, post your repo link
 
-We circulate. Done = free to go. Stuck = that's exactly what this time is for.
+Done = free to go. Stuck = exactly what this time is for.
 
 ::: {.notes}
-Prani and Chandanie take GitHub questions, you take hub/login questions. Collect the card-sort slips before people drift out.
+Prani and Chandanie take GitHub questions, you take hub/login. Make sure the demo commitment slips are collected. Optionally 2 min before the clinic: your own story — ocean modeler at LDEO, why this course.
 :::
