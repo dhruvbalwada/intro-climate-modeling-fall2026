@@ -134,7 +134,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introduction to Climate Modeling</h1>
-  <p class="subtitle">Week 1 · Why model climate? A history in five rungs</p>
+  <p class="subtitle">Week 1 · Modeling a bucket, then a planet</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -155,7 +155,7 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 <p>TAs: <strong>Prani Nalluri</strong> (pan2121) · <strong>Chandanie Kutwaru</strong> (ck3397)</p>
 <p>Office hours: <strong>[TIME/PLACE]</strong> · Everything lives on Courseworks + course website</p>
 <aside class="notes">
-<p>Let people settle. Introduce yourself briefly — 30 seconds, the longer version comes later in the “why oceans” slide if kept.</p>
+<p>~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -168,15 +168,15 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           display:block!important;
       }</style></aside>
 </section>
-<section id="before-anything-three-hands-up-questions" class="slide level2">
-<h2>Before anything: three hands-up questions</h2>
+<section id="before-we-start-three-hands-up-questions" class="slide level2">
+<h2>Before we start: three hands-up questions</h2>
 <ol type="1">
 <li>Roughly what sets the Earth’s average temperature? <em>(could you explain it to a friend?)</em></li>
 <li>Have you written Python this year?</li>
 <li>Do you remember what “climate sensitivity” means?</li>
 </ol>
 <aside class="notes">
-<p>Ungraded diagnostic — you watched GR5001, they took it a year ago. Watch the hands: this calibrates how much refresher weeks 2–9 need. No judgment framing: “a year is a long time; that’s expected and fine.”</p>
+<p>Ungraded diagnostic — calibrates refresher dosage for weeks 2–9. Framing: “a year since GR5001 is a long time; that’s expected.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -191,9 +191,9 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 </section>
 <section id="every-number-on-this-figure-came-out-of-a-model" class="slide level2">
 <h2>Every number on this figure came out of a model</h2>
-<!-- FIGURE: IPCC AR6 WG1 SPM.8-style panel — global temperature projections under SSP scenarios, with uncertainty bands. Source: IPCC AR6 SPM (freely reusable with attribution). -->
+<!-- FIGURE: IPCC AR6 WG1 SPM.8-style panel — global temperature projections under SSP scenarios with uncertainty bands. -->
 <aside class="notes">
-<p>The hook. Let it sit. “Sea level in 2100, warming under net-zero, monsoon shifts — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them.”</p>
+<p>The hook. “Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -212,11 +212,42 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 <p>“Aren’t these models just <strong>tuned</strong> to give the answer the modelers expect?”</p>
 </blockquote>
 <div class="fragment">
-<p>This is a <em>real</em> question, asked inside the field too.</p>
-<p><strong>November 12</strong> — a full session on tuning, evaluation, and why matching the past doesn’t guarantee the future.</p>
-<p>By December you’ll answer it better than most working scientists.</p>
+<p>A <em>real</em> question — asked inside the field too. <strong>November 12</strong> is a full session on it.</p>
+<p>And in the next 40 minutes, you’ll see the honest shape of the answer — using a bucket.</p>
 <aside class="notes">
-<p>Raise it proactively — trust move. Don’t answer it now beyond one sentence: “the short version is: tuning is real, documented, and much narrower than the accusation implies — the long version needs the machinery we’ll build first.”</p>
+<p>Raise it proactively, don’t answer beyond one sentence. The bucket demo’s ending (“no box to open”) IS the shape of the answer — say so when you get there.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- TOPIC BLOCK: the bucket model-hierarchy demo (~35 min incl. live notebook). Currently played in: week 1.
+     The live demo notebook lives in course_materials/demos/bucket_hierarchy.ipynb (PRIVATE until after class — the reveal is a surprise). -->
+</div>
+</section></section>
+<section>
+<section id="a-system-in-my-office" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>A system in my office</h1>
+<p><em>Before any climate: let’s model something together.</em></p>
+</section>
+<section id="the-rules-of-the-game" class="slide level2">
+<h2>The rules of the game</h2>
+<ul>
+<li>I have a <strong>system</strong>: water flows in (with some “weather” in it), the level responds</li>
+<li>I’ve measured inflow and level for a long time — you get the data</li>
+<li><strong>I will not tell you what’s inside</strong></li>
+<li>Your job: a <em>simpler description</em> good enough to <strong>predict situations we haven’t seen</strong></li>
+</ul>
+<div class="fragment">
+<p>That’s modeling. That’s also this entire course, in one sitting.</p>
+<aside class="notes">
+<p>Then switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: “I double the inflow — what’s the new level? number + reasoning + name”) → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. ~25 min in the notebook. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -230,18 +261,25 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
       }</style></aside>
 </div>
 </section>
-<section id="what-this-course-is" class="slide level2">
-<h2>What this course is</h2>
-<p>Last year, GR5001 taught you <strong>what the climate system does</strong> — and how to interpret climate information.</p>
-<p>This course <strong>opens the machine that produces that information</strong>:</p>
-<ul>
-<li><strong>Build</strong> the model hierarchy yourselves (in Python)</li>
-<li><strong>Understand</strong> how the real Earth System Models work</li>
-<li><strong>Analyze</strong> their output the way practicing scientists do (CMIP6)</li>
-<li><strong>Judge</strong> what models can and cannot tell you</li>
-</ul>
+<section id="what-just-happened-part-1" class="slide level2">
+<h2>What just happened (part 1)</h2>
+<ol type="1">
+<li>A <strong>model</strong> = a simpler description of a complicated system, built <em>for a purpose</em></li>
+<li><strong>Statistical models are real models</strong> — but they interpolate; change the system and they fail <em>(week 13: remember this about AI)</em></li>
+<li><strong>Budgets</strong> — in − out = accumulation — are where physical modeling starts</li>
+<li><strong>Equilibrium budgets</strong> already predict a lot <em>(and found the nonlinearity the line couldn’t)</em></li>
+</ol>
+</section>
+<section id="what-just-happened-part-2" class="slide level2">
+<h2>What just happened (part 2)</h2>
+<ol start="5" type="1">
+<li><strong>Time dependence</strong> = lags + adjustment, governed by a <strong>stabilizing feedback</strong> (fuller → drains harder)</li>
+<li><strong>Even physical models are calibrated</strong> — we fitted <span class="math inline">\(k\)</span>; we lived with the evaporation bias <em>(week 10 is entirely about this)</em></li>
+<li><strong>Every model has a regime of validity</strong> — discovered, usually, the hard way</li>
+<li>Different questions → different models: average level vs.&nbsp;flood timing. <strong>“Best” depends on the question</strong></li>
+</ol>
 <aside class="notes">
-<p>The one-sentence identity: “you know what the climate does; now, how we know what it will do.” Callbacks to GR5001 will happen every single week — most concepts get rebuilt, properly, with math and code. A year of decay is assumed and fine (Mingfang agrees).</p>
+<p>Read these fast — they just witnessed each one; the slides are the receipt. #8 replaces the old card-sort’s job.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -254,17 +292,38 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           display:block!important;
       }</style></aside>
 </section>
-<section id="by-december-you-will-have" class="slide level2">
-<h2>By December, you will have</h2>
+<section id="one-more-thing-the-thing" class="slide level2">
+<h2>One more thing — the thing</h2>
+<p>Today, when our models failed, we <strong>opened the box and checked</strong>.</p>
+<div class="fragment">
+<p><strong>For the Earth, there is no box to open.</strong></p>
+<p>No spare planet, no truth-generator to read. Everything climate science knows about 2100 comes from models earning trust the way ours did today: <em>predicting things they weren’t fitted to</em>.</p>
+<aside class="notes">
+<p>Let this land in silence for a beat. It’s the epistemological heart of the course and the honest answer to the tuning question raised in the hook. Optional aside: climate scientists simulate today’s luxury deliberately — “perfect-model experiments,” using one GCM as fake truth to test methods.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="this-course-that-exercise-for-earth" class="slide level2">
+<h2>This course = that exercise, for Earth</h2>
+<p>Last year GR5001 taught you <strong>what the climate system does</strong>. This course <strong>opens the machine that predicts it</strong>:</p>
 <ul>
-<li>built working models: energy balance → feedbacks → carbon → transient warming</li>
-<li>run experiments on them (broken them, fixed them, tuned them)</li>
-<li>pulled real CMIP6 output from the cloud and made defensible figures</li>
-<li>completed a research project answering a climate question <strong>you</strong> chose</li>
-<li>an informed answer to “should I trust this model result?”</li>
+<li><strong>Build</strong> the model hierarchy yourselves, in Python <em>(weeks 1–8)</em></li>
+<li><strong>Understand</strong> feedbacks, sensitivity, tuning — can we trust this? <em>(weeks 9–10)</em></li>
+<li><strong>Analyze</strong> the real models’ output the way scientists do — CMIP6 <em>(weeks 11–13)</em></li>
+<li><strong>Answer your own question</strong> with model data <em>(final project)</em></li>
 </ul>
 <aside class="notes">
-<p>Concrete deliverables, incl.&nbsp;the portfolio value: the final project is a reproducible notebook they can show employers.</p>
+<p>~5 min. The four acts, now motivated by the demo instead of asserted. By December: built models, run CMIP6 analyses, a research project, and an informed answer to the tuning question.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -277,56 +336,11 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-semester-in-four-acts" class="slide level2">
-<h2>The semester in four acts</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 31%">
-<col style="width: 45%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Act</th>
-<th>Weeks</th>
-<th>Question</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>I. The simplest model that captures global warming</td>
-<td>1–3</td>
-<td>How far can energy balance take us?</td>
-</tr>
-<tr class="even">
-<td>II. Inside an Earth System Model</td>
-<td>4–8</td>
-<td>Circulation, land, carbon — what must be parameterized?</td>
-</tr>
-<tr class="odd">
-<td>III. Emergent behavior &amp; credibility</td>
-<td>9–10</td>
-<td>Feedbacks, sensitivity, tuning — can we trust this?</td>
-</tr>
-<tr class="even">
-<td>IV. The modeling enterprise</td>
-<td>11–13</td>
-<td>CMIP, projections, AI — how the world’s climate information gets made</td>
-</tr>
-<tr class="odd">
-<td>Final projects</td>
-<td>14–15</td>
-<td>Your question, answered with model data</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="the-ladder-well-climb" class="slide level2">
-<h2>The ladder we’ll climb</h2>
-<!-- FIGURE: hierarchy ladder diagram — 0-D EBM → 1-D EBM/column → box models → EMIC → GCM → ESM, with "understanding" arrow pointing down and "completeness/cost" arrow pointing up. Build this as a simple graphic; it recurs all semester. -->
-<p>Every rung still in active use. <strong>The ladder is the course map — today we climb it historically.</strong></p>
+<section id="break" class="slide level2 center" data-background-color="#2c2c2c">
+<h2>Break</h2>
+<p><em>10 minutes</em></p>
 <aside class="notes">
-<p>Key framing: not a ladder of progress where the top makes the bottom obsolete — a ladder where every rung has a permanent job. Today: meet each rung through the people and problems that created it.</p>
+<p>~55–60 min in. After the break: the same hierarchy story, but as history — real people, real machines.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -340,21 +354,21 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
       }</style></aside>
 </section></section>
 <section>
-<section id="rung-1-the-budget" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Rung 1: The budget</h1>
-<p><em>Energy in = energy out</em></p>
+<section id="how-we-got-here-the-hierarchy-historically" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>How we got here — the hierarchy, historically</h1>
+<p><em>Everyone you’re about to meet was climbing the same ladder we just climbed.</em></p>
 </section>
 <section id="arrhenius-computes-the-climate-by-hand" class="slide level2">
 <h2>1896: Arrhenius computes the climate by hand</h2>
-<!-- FIGURE: Arrhenius's hand-computed table from the 1896 paper (public domain scan) next to a CMIP6 warming map — 125 years apart, same question. -->
+<!-- FIGURE: Arrhenius's hand-computed table (public domain scan) next to a CMIP6 warming map — 125 years apart, same question. -->
 <ul>
 <li>Motivated by <strong>ice ages</strong>, not fossil fuels</li>
-<li>Months of hand calculation: radiative budget + water-vapor amplification</li>
-<li>His answer for CO₂ doubling: <strong>~5–6 °C</strong> (modern: 2.5–4 °C)</li>
-<li>The <em>structure</em> of the calculation is recognizably modern</li>
+<li>Months of hand calculation: a radiative <strong>budget</strong> + water-vapor amplification</li>
+<li>His CO₂-doubling answer: ~5–6 °C (modern: 2.5–4 °C) — high, but the <em>structure</em> is modern</li>
+<li>He was doing exactly our Model 1: an <strong>equilibrium budget</strong></li>
 </ul>
 <aside class="notes">
-<p>Story beats: Langley’s infrared measurements as data; Arrhenius working through a difficult personal period; got the structure right, the number high. In 1908 he thought warming would take millennia and might be nice — why nobody panicked. 1938 Callendar: one sentence — linked rising CO₂ to observed warming from weather stations, was politely dismissed.</p>
+<p>~50 min total for the history segment — it’s tightened; keep moving. Color: 1908 he guessed warming would take millennia and be pleasant → why nobody panicked. Callendar 1938 (station data, dismissed) in one breath. Tease: “we’ll do Arrhenius’s first step ourselves before you leave.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -367,14 +381,38 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-arrheniuss-model-was" class="slide level2">
-<h2>What Arrhenius’s model <em>was</em></h2>
-<p><span class="math display">\[\text{absorbed sunlight} = \text{emitted infrared}\]</span></p>
-<p>One equation. One perturbation (CO₂). One answer (a temperature).</p>
-<div class="fragment">
-<p>So let’s do his first step. Right now. Together.</p>
+<section id="richardsons-magnificent-failure" class="slide level2">
+<h2>1922: Richardson’s magnificent failure</h2>
+<!-- FIGURE: the "forecast factory" illustration (64,000 human computers in an amphitheater). -->
+<ul>
+<li>Hand-integrated the fluid equations for a 6-hour forecast: <strong>absurdly wrong</strong></li>
+<li>But grid + finite differences + timestepping = <strong>exactly what every model does today</strong></li>
+<li>His failure: too-honest equations amplified noisy data</li>
+</ul>
 <aside class="notes">
-<p>Point at the ladder: rung 1 never retired. FaIR-type models running IPCC scenario numbers today are direct descendants. (Don’t say FaIR yet — “the models the IPCC uses to score policy scenarios.”) Then move to the board.</p>
+<p>The forecast factory is a parallel supercomputer, 80 years early (week 5 callback). Bridge to next slide: the fix wasn’t a bigger machine.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="eniac-a-smarter-simple-model-wins" class="slide level2">
+<h2>1950: ENIAC — a smarter <em>simple</em> model wins</h2>
+<p>Charney, Fjørtoft &amp; von Neumann: first numerical forecast — by <strong>simplifying</strong> (one quasi-geostrophic level filtered out Richardson’s noise).</p>
+<div class="fragment">
+<p><strong>Weather vs climate:</strong> forecast = <em>initial-value problem</em> (chaos kills it in ~2 weeks); climate = <em>boundary-value problem</em> (statistics under a push).</p>
+<blockquote>
+<p>The casino: no one predicts the next hand. The house margin is a certainty.</p>
+</blockquote>
+<aside class="notes">
+<p>Two beats on one slide to save time: the thesis anecdote + THE misconception-killer. If pressed on “but chaos!”: forced response vs internal variability — the bucket’s level statistics under doubled inflow were predictable even though its wiggles weren’t.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -387,45 +425,144 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           display:block!important;
       }</style></aside>
 </div>
+</section>
+<section id="columns-spheres-coupling" class="slide level2">
+<h2>1956–1975: columns, spheres, coupling</h2>
+<ul>
+<li><strong>Phillips 1956:</strong> two-level hemisphere → <strong>jets emerged, uncoded</strong> — put conservation on a grid and circulation is what balance looks like</li>
+<li><strong>Manabe &amp; Wetherald 1967:</strong> the 1-D column done right — ECS ≈ 2.3 °C; predicted <strong>stratospheric cooling</strong> (observed decades later); voted most influential climate paper ever</li>
+<li><strong>Manabe &amp; Bryan 1969:</strong> ocean coupled · <strong>M&amp;W 1975:</strong> first 3-D CO₂ doubling → <strong>polar amplification</strong> predicted</li>
+</ul>
+<!-- FIGURE: M&W 1967 Fig. 16 — profiles for 150/300/600 ppm. -->
+<aside class="notes">
+<p>Compressed from three slides. Manabe from Tokyo to GFDL 1958; “get one column right before the sphere.” Fingerprint predictions made before observations = honest counterweight to the tuning worry.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-error-bar-and-the-enterprise" class="slide level2">
+<h2>1979 → 2021: the error bar and the enterprise</h2>
+<ul>
+<li><strong>Charney Report 1979</strong> (two GCMs on Earth): ECS = 1.5–4.5 °C → <strong>AR6 2021:</strong> 2.5–4 °C. <em>42 years to halve the bar — why so slow? (Nov 5.)</em></li>
+<li><strong>CMIP (1995→):</strong> every center runs the <em>same</em> experiments — model spread becomes data</li>
+<li>GCMs absorb carbon, chemistry, ice → <strong>Earth System Models</strong></li>
+<li><strong>2021: Nobel Prize</strong> to Manabe &amp; Hasselmann</li>
+</ul>
+<aside class="notes">
+<p>Plant the week-9 mystery explicitly. CMIP = Act IV’s subject; students touch CMIP6 data from HW1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-frontier-and-the-philosophy" class="slide level2">
+<h2>The frontier — and the philosophy</h2>
+<p><strong>Today:</strong> km-scale simulation · AI emulators <em>(remember lesson #2!)</em> · the unsolved problem: clouds <em>(week 13)</em></p>
+<div class="fragment">
+<p><strong>Held (2005):</strong> keep the <em>whole</em> hierarchy — simulation ≠ understanding, and simple models still <em>discover</em> (a 1961 two-box model found a possible AMOC collapse before any GCM could).</p>
+<p><strong>“Which model is best?” is meaningless without “…for what question?”</strong> — you proved this with a bucket an hour ago.</p>
+<aside class="notes">
+<p>The demo did the heavy lifting; this slide just gives it names and a citation. If one reading gets recommended today: Held 2005, short and equation-free.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section>
+<section id="now-for-real" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Now for real</h1>
+<p><em>Earth is a bucket.</em></p>
+</section>
+<section id="the-mapping" class="slide level2">
+<h2>The mapping</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>bucket</th>
+<th>Earth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tap (inflow F)</td>
+<td><strong>sunlight</strong></td>
+</tr>
+<tr class="even">
+<td>drain</td>
+<td><strong>infrared radiation to space</strong></td>
+</tr>
+<tr class="odd">
+<td>water level h</td>
+<td><strong>temperature T</strong></td>
+</tr>
+<tr class="even">
+<td>fuller → drains harder</td>
+<td>warmer → radiates harder <em>(the stabilizing feedback)</em></td>
+</tr>
+<tr class="odd">
+<td>level lags the tap</td>
+<td>warming lags emissions <em>(week 3: the ocean sets the clock)</em></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>The payoff slide of the day — the demo wasn’t an analogy, it was the actual mathematical object of this course. ~15 min for this closing science segment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-first-calculation-live-on-the-board" class="slide level2">
 <h2>The first calculation <em>(live, on the board)</em></h2>
-<p>Energy in: sunlight intercepted by a disk — <span class="math inline">\(\pi R^2 \cdot S_0(1-\alpha)\)</span></p>
-<p>Energy out: infrared radiated by a sphere — <span class="math inline">\(4\pi R^2 \cdot \sigma T^4\)</span></p>
-<div class="fragment">
-<p>Balance them:</p>
-<p><span class="math display">\[T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4}\]</span></p>
-<p>With <span class="math inline">\(S_0 = 1361\)</span> W/m², <span class="math inline">\(\alpha = 0.3\)</span>: <span class="math inline">\(\quad T_e \approx \mathbf{255\ K} = -18\,°\mathrm{C}\)</span></p>
-<aside class="notes">
-<p>Derive SLOWLY on the board; this slide is just the record. Emphasize the disk/sphere ratio → the famous ¼. Ask before revealing: “reasonable answer? Earth’s actual average is about +15 °C…” Let the wrongness land. Also: in Lab 0 this week you’ll plot this exact formula yourself — the verification notebook’s plot is T_e vs albedo.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="three-planets-one-formula" class="slide level2">
-<h2>Three planets, one formula</h2>
+<p>Energy in: sunlight on a disk — <span class="math inline">\(\pi R^2 S_0(1-\alpha)\)</span>. Energy out: infrared from a sphere — <span class="math inline">\(4\pi R^2 \sigma T^4\)</span>.</p>
+<p><span class="math display">\[T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4} \approx \mathbf{255\ K} = -18\,°\mathrm{C}\;\;(?!)\]</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th></th>
-<th><span class="math inline">\(T_e\)</span> (this formula)</th>
-<th>actual surface T</th>
+<th>formula</th>
+<th>actual</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Mars</td>
 <td>~210 K</td>
-<td>~218 K — close</td>
+<td>~218 K ✓</td>
 </tr>
 <tr class="even">
 <td><strong>Earth</strong></td>
@@ -435,14 +572,12 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 <tr class="odd">
 <td>Venus</td>
 <td>~230 K</td>
-<td><strong>~735 K — off by 500 K!</strong></td>
+<td><strong>735 K — off by 500 K!</strong></td>
 </tr>
 </tbody>
 </table>
-<div class="fragment">
-<p>The error isn’t distance from the Sun. <strong>It’s the atmosphere.</strong></p>
 <aside class="notes">
-<p>Venus is the showstopper: FARTHER from the Sun in absorbed-energy terms than Earth (high albedo!), yet hot enough to melt lead. The gap between the columns IS the greenhouse effect, measured planet by planet.</p>
+<p>Board derivation, slowly — ask “why πR² in but 4πR² out?” before answering; sets the math culture. This is Arrhenius’s step 1, and our Model-1 equilibrium budget for the planet. Venus kills “it’s distance from the Sun.” In Lab 0 this week they plot exactly this formula.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -454,309 +589,17 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
 <section id="k-the-most-productive-wrong-answer-in-science" class="slide level2">
 <h2>33 K — the most productive wrong answer in science</h2>
-<p>That gap is the <strong>greenhouse effect</strong>, and closing it is where this course goes next:</p>
+<p>That gap <strong>is the greenhouse effect</strong>. Closing it:</p>
 <ul>
-<li><strong>Week 2:</strong> <em>why</em> — the layer model, and the picture professionals actually use</li>
-<li><strong>Week 3:</strong> <em>when</em> — make the model tick in time (the ocean sets the clock)</li>
-<li><strong>Week 9:</strong> <em>how much</em> — feedbacks decide whether 3.7 W/m² becomes 2 °C or 5 °C</li>
+<li><strong>Week 2:</strong> <em>why</em> — the layer model + the picture professionals use</li>
+<li><strong>Week 3:</strong> <em>when</em> — the model ticks in time; the ocean sets the clock</li>
+<li><strong>Week 9:</strong> <em>how much</em> — feedbacks decide whether 3.7 W/m² means 2 °C or 5 °C</li>
 </ul>
 <aside class="notes">
-<p>The cliffhanger. One honest sentence: “the 255 K number is REAL — satellites measure Earth radiating to space at exactly this temperature. The question is why the surface below is warmer. Hold that for Thursday.” Then back to the history ladder — Richardson next.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="rung-2-the-forecast" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Rung 2: The forecast</h1>
-<p><em>Equations marched forward in time</em></p>
-</section>
-<section id="richardsons-magnificent-failure" class="slide level2">
-<h2>1922: Richardson’s magnificent failure</h2>
-<!-- FIGURE: illustration of Richardson's "forecast factory" (the amphitheater of 64,000 human computers) — several artist renderings are freely available. -->
-<ul>
-<li>Hand-integrated the fluid equations for a 6-hour forecast over Europe</li>
-<li>Result: pressure change of <strong>~145 hPa</strong> — absurdly, spectacularly wrong</li>
-<li>But the <em>method</em> — grid + finite differences + timestepping — is <strong>exactly what every model does today</strong></li>
-</ul>
-<aside class="notes">
-<p>Why it failed: unfiltered gravity-wave noise in the initial conditions (don’t dwell — “his equations were too honest; they amplified noisy data”). The forecast-factory image: 64,000 human computers with a conductor — it’s literally a parallel supercomputer, 80 years early. Callback in week 5.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="weather-vs-climate-the-distinction-that-saves-us" class="slide level2">
-<h2>Weather vs climate — the distinction that saves us</h2>
-<p><strong>Weather forecast</strong> = <em>initial-value problem</em> — where does <strong>this</strong> trajectory go? Chaos (Lorenz) kills it beyond ~2 weeks.</p>
-<p><strong>Climate projection</strong> = <em>boundary-value problem</em> — how do the <strong>statistics</strong> shift when you push the system?</p>
-<div class="fragment">
-<blockquote>
-<p>Casino analogy: no one can predict the next hand. The house margin is a certainty.</p>
-</blockquote>
-<aside class="notes">
-<p>THE misconception-killer of week 1 — students will hear “chaos means you can’t predict 2100” forever. GR5001 gave them weather-vs-climate qualitatively; this is the mathematical version. Lorenz: predictability of the first vs second kind.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="eniac-and-a-lesson-in-modeling" class="slide level2">
-<h2>1950: ENIAC, and a lesson in modeling</h2>
-<p>Charney, Fjørtoft &amp; von Neumann: the <strong>first numerical weather forecast</strong>.</p>
-<p>Their winning move: <strong>simplify</strong> — filter Richardson’s equations down to one level of quasi-geostrophic flow.</p>
-<div class="fragment">
-<p><strong>Progress came from a smarter <em>simple</em> model, not a bigger computer.</strong></p>
-<aside class="notes">
-<p>The course’s thesis in one anecdote. The 24-hour forecast took ~24 hours of ENIAC time — “keeping pace with the weather.” This moral repeats: Stommel (wk 4), the EBMs, FaIR.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section></section>
-<section>
-<section id="rung-3-the-column" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Rung 3: The column</h1>
-<p><em>One vertical slice of atmosphere, done right</em></p>
-</section>
-<section id="manabe-wetherald" class="slide level2">
-<h2>1967: Manabe &amp; Wetherald</h2>
-<!-- FIGURE: M&W 1967 Fig. 16 — temperature profiles for 150/300/600 ppm CO2: surface warms, stratosphere cools. -->
-<ul>
-<li>1-D radiative-<strong>convective</strong> column: real spectroscopy + convection pinning the lapse rate</li>
-<li>CO₂ doubling → <strong>ECS ≈ 2.3 °C</strong> — within today’s assessed range</li>
-<li>2015 poll of climate scientists: <strong>the most influential climate-change paper ever</strong></li>
-</ul>
-<aside class="notes">
-<p>Suki Manabe: arrived from Tokyo 1958, GFDL. The insight: get one column right before doing the sphere. Fig. 16’s quiet bombshell — stratospheric <em>cooling</em> while the surface warms: a fingerprint prediction, made decades before it was observed, that pure solar warming would NOT produce. Week 2 builds the toy version; week 9 returns for feedbacks.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="rung-4-the-sphere" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Rung 4: The sphere</h1>
-<p><em>General circulation models</em></p>
-</section>
-<section id="phillips-spins-up-a-planet" class="slide level2">
-<h2>1956: Phillips spins up a planet</h2>
-<p>Two-level model, one hemisphere, a month of simulated time.</p>
-<p><strong>Jets and storm tracks appeared — nobody coded them.</strong></p>
-<div class="fragment">
-<p>This is <em>emergence</em>: put conservation laws on a grid, and the general circulation is what falling into balance looks like.</p>
-<aside class="notes">
-<p>Phillips’s numerical experiment ran on a machine with ~5KB of memory. Emergence is week 5’s big idea — plant the phrase “you never coded a Hadley cell” now.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="the-lineage-to-today" class="slide level2">
-<h2>The lineage to today</h2>
-<ul>
-<li><strong>1969</strong> Manabe &amp; Bryan: first <strong>coupled</strong> atmosphere–ocean model</li>
-<li><strong>1975</strong> Manabe &amp; Wetherald: first 3-D CO₂-doubling experiment → <strong>polar amplification</strong> predicted</li>
-<li><strong>1979</strong> Charney Report: with <em>two</em> GCMs in the world, ECS = <strong>1.5–4.5 °C</strong></li>
-<li><strong>2021</strong> AR6: ECS = <strong>2.5–4 °C</strong></li>
-</ul>
-<div class="fragment">
-<p><strong>42 years to narrow the bar by half.</strong> Why so slow? <em>(Hold that thought until Nov 5.)</em></p>
-<aside class="notes">
-<p>Plant the week-9 mystery explicitly — it’s the best cliffhanger the field has. Polar amplification: predicted in ’75, now observed at ~4x global rate in the Arctic. Predictions-that-came-true list is the honest counterweight to the tuning question.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section></section>
-<section>
-<section id="rung-5-the-enterprise" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Rung 5: The enterprise</h1>
-<p><em>From models to a global scientific infrastructure</em></p>
-</section>
-<section id="modeling-becomes-coordinated-science" class="slide level2">
-<h2>Modeling becomes coordinated science</h2>
-<ul>
-<li><strong>1988</strong> Hansen testifies to the Senate; <strong>1990</strong> first IPCC report</li>
-<li><strong>1995→</strong> <strong>CMIP</strong>: every modeling center runs the <em>same</em> experiments — models become comparable, and their spread becomes data</li>
-<li>Carbon, chemistry, vegetation, ice sheets join → GCMs become <strong>Earth System Models</strong></li>
-<li><strong>2021</strong> Nobel Prize in Physics: Manabe &amp; Hasselmann</li>
-</ul>
-<aside class="notes">
-<p>CMIP is Act IV’s subject: the students will use CMIP6 data themselves from HW1 onward (lightly) and deeply from week 11. The Nobel framing: “physics recognized that climate physics is physics.”</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-frontier-where-this-course-ends" class="slide level2">
-<h2>The frontier (where this course ends)</h2>
-<ul>
-<li><strong>Km-scale simulation</strong>: resolving storms and ocean eddies globally — computationally heroic</li>
-<li><strong>AI emulators</strong>: neural networks forecasting weather competitively, now creeping into climate</li>
-<li>The perpetually unsolved: <strong>clouds</strong></li>
-</ul>
-<p><strong>Week 13:</strong> what’s hype, what’s real.</p>
-<aside class="notes">
-<p>One slide, no depth — just show the course reaches the present. GraphCast/NeuralGCM-class models by name only if asked.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="why-keep-the-whole-ladder-held-2005" class="slide level2">
-<h2>Why keep the whole ladder? (Held, 2005)</h2>
-<blockquote>
-<p>Climate science needs a <strong>hierarchy</strong> of models the way biology needs model organisms.</p>
-</blockquote>
-<ul>
-<li><strong>Simulation ≠ understanding</strong> — you can simulate what you don’t understand</li>
-<li>A gap between them is <em>dangerous</em>: you can’t tell trustworthy projections from artifacts</li>
-<li>Simple models are where understanding lives — and they <strong>discover</strong> things (a 1961 two-box model found a possible AMOC collapse <em>before</em> any GCM could)</li>
-</ul>
-<aside class="notes">
-<p>Held’s essay is the intellectual backbone of the course design — say so. The Stommel teaser sets up week 4. If anyone wants one reading from today: this one, it’s short and equation-free.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="fit-for-purpose" class="slide level2">
-<h2>Fit for purpose</h2>
-<p><strong>“Which model is best?” is meaningless without “…for what question?”</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Question</th>
-<th>Right tool</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Why is there a greenhouse effect?</td>
-<td>pencil + 0-D EBM</td>
-</tr>
-<tr class="even">
-<td>Will this El Niño bring drought?</td>
-<td>initialized coupled GCM</td>
-</tr>
-<tr class="odd">
-<td>Warming in 2100 under scenario X?</td>
-<td>ESM ensemble + simple-model emulator</td>
-</tr>
-<tr class="even">
-<td>Could the AMOC collapse?</td>
-<td>box model <em>(mechanism)</em> + ESM <em>(when/whether)</em></td>
-</tr>
-</tbody>
-</table>
-<aside class="notes">
-<p>Note the last row deliberately has TWO answers — mechanism rung + projection rung. That’s the segue to the activity, where several questions do too.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="your-turn-match-the-question-to-the-rung-15-min" class="slide level2">
-<h2>Your turn — match the question to the rung <em>(15 min)</em></h2>
-<p>In <strong>pairs</strong>: the handout lists <strong>6 climate questions</strong> and the <strong>model hierarchy</strong>.</p>
-<ol type="1">
-<li>For each question: which rung(s)? <em>One minute of gut feeling, then argue.</em></li>
-<li>Write your matches + one sentence of justification each</li>
-<li>Names on the slip, hand it in <em>(counts toward participation)</em></li>
-</ol>
-<aside class="notes">
-<p>Deliberately light. Circulate, listen. Debrief (5 min): call out that half the questions have two defensible answers — mechanism vs projection — and that noticing this IS the learning objective. Cuttable on the day if running long.</p>
+<p>Honest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. Cliffhanger, then logistics.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -783,7 +626,7 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 <tr class="odd">
 <td>Participation</td>
 <td>10%</td>
-<td>in-class work, most weeks</td>
+<td>in-class work (like today’s slips), most weeks</td>
 </tr>
 <tr class="even">
 <td>Labs (5)</td>
@@ -808,7 +651,7 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 </tbody>
 </table>
 <aside class="notes">
-<p>Flag the early project-title date NOW and again every week until week 5. Late policy: 10%/day, one free late HW (up to a week). AI policy per syllabus: disclose use; submitting work you didn’t do is plagiarism regardless of author.</p>
+<p>~12 min for logistics. Flag the early project-title date NOW. Late policy: 10%/day, one free late HW. AI policy per syllabus: disclose; work you didn’t do is plagiarism regardless of author.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -824,60 +667,24 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 <section id="where-the-work-lives" class="slide level2">
 <h2>Where the work lives</h2>
 <ul>
-<li><strong>Compute:</strong> course JupyterHub — login details on Courseworks <em>(browser only, nothing to install)</em></li>
-<li><strong>Code:</strong> your own <strong>private GitHub repo</strong>, shared with me + TA</li>
-<li><strong>Submitting = posting your repo link on Courseworks</strong> (the timestamp)</li>
-<li>Labs: notebooks we complete together in class, pushed by end of day</li>
+<li><strong>Compute:</strong> course JupyterHub — browser only, nothing to install <em>(details on Courseworks)</em></li>
+<li><strong>Code:</strong> your own <strong>private GitHub repo</strong>, shared with me + the TAs</li>
+<li><strong>Submitting = posting your repo link on Courseworks</strong></li>
+<li><strong>Readings:</strong> none required; weekly suggestions on Courseworks <em>(this week: Primer Ch. 1–2 + Held 2005)</em></li>
 </ul>
-<p><strong>Lab 0 (ungraded, ~30 min): do it this week.</strong> It makes all of the above work. Due before Lab 1 on <strong>Sep 24</strong>.</p>
-<aside class="notes">
-<p>Lab 0 is on Courseworks now. The setup clinic in ~15 minutes: stay and do it with us, or leave early if you’re confident — but done before next Thursday is strongly advised so problems surface with a week of slack.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p><strong>Lab 0 (~30 min, ungraded): do it this week</strong> — due before Lab 1 on <strong>Sep 24</strong>.</p>
 </section>
-<section id="readings-next-week" class="slide level2">
-<h2>Readings &amp; next week</h2>
-<ul>
-<li><strong>No required textbook.</strong> Weekly <em>suggested</em> readings on Courseworks (this week: <em>Climate Modelling Primer</em> Ch. 1–2)</li>
-<li>How to read them: skim first, write down 2–3 questions, bring them Thursday</li>
-</ul>
-<div class="fragment">
-<p><strong>Next week:</strong> closing the 33 K gap — the layer model, the emission-height picture, and why “the CO₂ bands are saturated” is wrong.</p>
-<aside class="notes">
-<p>Optionally 2–3 min here: your own story — ocean modeler at LDEO, what you actually work on, why this course. Students consistently rate instructor-stakes moments highly.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="setup-clinic-starting-now-optional-25-min" class="slide level2">
-<h2>Setup clinic — starting now <em>(optional, ~25 min)</em></h2>
+<section id="setup-clinic-starting-now-optional-20-min" class="slide level2">
+<h2>Setup clinic — starting now <em>(optional, ~20 min)</em></h2>
 <p>Open <strong>Lab 0</strong> on Courseworks:</p>
 <ol type="1">
-<li>GitHub account → private repo → add me + TA</li>
-<li>Hub login → run <code>verify_setup.ipynb</code></li>
+<li>GitHub account → private repo → add me + Prani + Chandanie</li>
+<li>Hub login → run <code>verify_setup.ipynb</code> <em>(it plots today’s <span class="math inline">\(T_e\)</span> formula)</em></li>
 <li>Push the notebook, post your repo link</li>
 </ol>
-<p>We circulate. Done = free to go. Stuck = that’s exactly what this time is for.</p>
+<p>Done = free to go. Stuck = exactly what this time is for.</p>
 <aside class="notes">
-<p>Prani and Chandanie take GitHub questions, you take hub/login questions. Collect the card-sort slips before people drift out.</p>
+<p>Prani and Chandanie take GitHub questions, you take hub/login. Make sure the demo commitment slips are collected. Optionally 2 min before the clinic: your own story — ocean modeler at LDEO, why this course.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
