@@ -13,7 +13,7 @@ By the end of this lab you will have: (1) a working JupyterHub login, (2) a GitH
 ## Part A — Accounts (10 min)
 
 1. **GitHub.** If you don't have an account, create one at [github.com/signup](https://github.com/signup). Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).
-2. **JupyterHub.** You will receive an invitation to the course computing hub at **[HUB-URL — to be announced on Courseworks]**. Log in with the credentials from the invite and confirm your server starts (click "Start My Server" and wait for the JupyterLab interface to load).
+2. **JupyterHub (LEAP hub).** Most of our modeling and data analysis happens on the LEAP computing hub. To get access, **fill out this form now** (approval takes a little time — do not leave it for lab day): [hub access request form](https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform). Use the same email/GitHub username as your course accounts. Once approved, log in at **[HUB-URL — announced on Courseworks]** and confirm your server starts (click "Start My Server" and wait for JupyterLab to load).
 
 > **If the hub won't start for you:** email the TAs with a screenshot. As a backup, every course notebook also runs on [Google Colab](https://colab.research.google.com) — but sort out your hub access this week regardless; we'll need it for the second half of the course.
 
