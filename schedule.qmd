@@ -2,22 +2,22 @@
 title: "Schedule"
 ---
 
-Slides and lab/homework links appear here as the semester progresses. Suggested readings are posted on Courseworks.
+Slides and lab/homework links appear here as the semester progresses. Additional suggested readings are posted on Courseworks. The **G&R** column points into [Gettelman & Rood, *Demystifying Climate Models* (free, open access)](https://link.springer.com/book/10.1007/978-3-662-48959-8) — a no-math companion read for each week.
 
-| Wk | Date (Thu) | Topic | Materials | Due |
-|----|-----------|-------|-----------|-----|
-| 1  | Sep 10 | Course overview · history of Earth system models · the model hierarchy | [slides](slides/week01.qmd) | Lab 0 out ([instructions](labs/lab0.qmd)) |
-| 2  | Sep 17 | Energy balance modeling 1: radiative balance & the greenhouse effect | [slides](slides/week02.qmd) | HW1 out |
-| 3  | Sep 24 | Energy balance modeling 2: time dependence, ice-albedo, transport | | **Lab 1** (in class) · Lab 0 due |
-| 4  | Oct 1  | Circulation 1: box models of the large-scale circulation | | HW1 due · HW2 out |
-| 5  | Oct 8  | Circulation 2: inside a dynamical core | | **Lab 2** · project title due Fri Oct 9 |
-| 6  | Oct 15 | Circulation 3: ocean, cryosphere & the parameterization problem | | HW2 due · HW3 out |
-| 7  | Oct 22 | Modeling the land surface | | **Lab 3** · proposal due Fri Oct 23 |
-| 8  | Oct 29 | Modeling the carbon cycle | | HW3 due · HW4 out |
-| 9  | Nov 5  | Climate feedbacks & climate sensitivity | | **Lab 4** |
-| 10 | Nov 12 | Climate model tuning & evaluation | | HW4 due |
-| 11 | Nov 19 | Protocols for climate model simulations: CMIP, SSPs, MIPs | | **Lab 5** · HW5 out |
-| 12 | Nov 26 | *No class (Thanksgiving)* — asynchronous: CMIP analysis in practice | | |
-| 13 | Dec 3  | Projections & the future of climate modeling | | HW5 due |
-| 14 | Dec 10 | Final project presentations | | |
-| 15 | Dec 17 | Final project presentations (if needed) | | notebook due Fri Dec 18 |
+| Wk | Date (Thu) | Topic | Materials | G&R | Due |
+|----|-----------|-------|-----------|-----|-----|
+| 1  | Sep 10 | Course overview · history of Earth system models · the model hierarchy | [slides](slides/week01.qmd) | Ch 1 · §4.4 | Lab 0 out ([instructions](labs/lab0.qmd)) |
+| 2  | Sep 17 | Energy balance modeling 1: radiative balance & the greenhouse effect | [slides](slides/week02.qmd) | §3.2, §3.4 | HW1 out |
+| 3  | Sep 24 | Energy balance modeling 2: time dependence, ice-albedo, transport | | Ch 4 | **Lab 1** (in class) · Lab 0 due |
+| 4  | Oct 1  | Circulation 1: box models of the large-scale circulation | | §6.1–6.2 | HW1 due · HW2 out |
+| 5  | Oct 8  | Circulation 2: inside a dynamical core | | Ch 5 | **Lab 2** · project title due Fri Oct 9 |
+| 6  | Oct 15 | Circulation 3: ocean, cryosphere & the parameterization problem | | §6.3–6.4, §5.6 | HW2 due · HW3 out |
+| 7  | Oct 22 | Modeling the land surface | | §7.1–7.2, §7.4 | **Lab 3** · proposal due Fri Oct 23 |
+| 8  | Oct 29 | Modeling the carbon cycle | | §6.5, §7.3 | HW3 due · HW4 out |
+| 9  | Nov 5  | Climate feedbacks & climate sensitivity | | Ch 8 | **Lab 4** |
+| 10 | Nov 12 | Climate model tuning & evaluation | | Ch 9 | HW4 due |
+| 11 | Nov 19 | Protocols for climate model simulations: CMIP, SSPs, MIPs | | Ch 10 | **Lab 5** · HW5 out |
+| 12 | Nov 26 | *No class (Thanksgiving)* — asynchronous: CMIP analysis in practice | | Ch 11 | |
+| 13 | Dec 3  | Projections & the future of climate modeling | | Ch 12–13 | HW5 due |
+| 14 | Dec 10 | Final project presentations | | | |
+| 15 | Dec 17 | Final project presentations (if needed) | | | notebook due Fri Dec 18 |
