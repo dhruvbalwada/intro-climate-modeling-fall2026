@@ -45,20 +45,6 @@ Ungraded diagnostic — calibrates refresher dosage for weeks 2–9. Framing: "a
 The hook. "Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them."
 :::
 
-## The question someone is already thinking
-
-> "Aren't these models just **tuned** to give the answer the modelers expect?"
-
-. . .
-
-A *real* question — asked inside the field too. **November 12** is a full session on it.
-
-And in the next 40 minutes, you'll see the honest shape of the answer — using a bucket.
-
-::: {.notes}
-Raise it proactively, don't answer beyond one sentence. The bucket demo's ending ("no box to open") IS the shape of the answer — say so when you get there.
-:::
-
 {{< include topics/_bucket_hierarchy.qmd >}}
 
 ## This course = that exercise, for Earth

@@ -62,5 +62,5 @@ Today, when our models failed, we **opened the box and checked**.
 No spare planet, no truth-generator to read. Everything climate science knows about 2100 comes from models earning trust the way ours did today: *predicting things they weren't fitted to*.
 
 ::: {.notes}
-Let this land in silence for a beat. It's the epistemological heart of the course and the honest answer to the tuning question raised in the hook. Optional aside: climate scientists simulate today's luxury deliberately — "perfect-model experiments," using one GCM as fake truth to test methods.
+Let this land in silence for a beat. It's the epistemological heart of the course — and quietly, the honest frame for the 'aren't models just tuned?' question, which gets its full session in week 10. Optional aside: climate scientists simulate today's luxury deliberately — "perfect-model experiments," using one GCM as fake truth to test methods.
 :::
