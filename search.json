@@ -245,6 +245,13 @@
     "text": "Five in-class labs (weeks 3, 5, 7, 9, 11), completed collaboratively during the lab portion of class and submitted the same day via your GitHub repo (link posted to Courseworks). Plus Lab 0, the ungraded setup lab everything depends on.\n\n\n\nLab\nWeek\nTopic\n\n\n\n\nLab 0\nbefore Sep 24\nToolchain setup: JupyterHub, GitHub, first notebook\n\n\nLab 1\n3\nEquilibrium & time-dependent energy balance models\n\n\nLab 2\n5\nSimple circulation models\n\n\nLab 3\n7\nSoil-moisture bucket model\n\n\nLab 4\n9\nSimulating albedo feedbacks\n\n\nLab 5\n11\nModeling transient climate change"
   },
   {
+    "objectID": "slides/week01.html#the-work-labs-homeworks-project",
+    "href": "slides/week01.html#the-work-labs-homeworks-project",
+    "title": "Introduction to Climate Modeling",
+    "section": "The work: labs, homeworks, project",
+    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation\n10%\nin-class work (like today’s slips), most weeks\n\n\nLabs (5)\n10%\nin class, weeks 3/5/7/9/11 — submit same day\n\n\nHomework (5)\n50%\n~biweekly notebooks, 2 weeks each\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n20%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nAll code in your own private GitHub repo; submitting = posting the repo link on Courseworks. Lab 0 (setup, ~30 min): this week — clinic at the end of today.\n\n~8 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
+  },
+  {
     "objectID": "slides/week01.html#before-we-start-three-hands-up-questions",
     "href": "slides/week01.html#before-we-start-three-hands-up-questions",
     "title": "Introduction to Climate Modeling",
@@ -305,7 +312,7 @@
     "href": "slides/week01.html#break",
     "title": "Introduction to Climate Modeling",
     "section": "Break",
-    "text": "Break\n10 minutes\n\n~55–60 min in. After the break: the same hierarchy story, but as history — real people, real machines."
+    "text": "Break\n10 minutes\n\n~55–60 min in. After the break: the real world — one thermometer, three models."
   },
   {
     "objectID": "slides/week01.html#central-park-daily-temperature-19952014",
@@ -341,13 +348,6 @@
     "title": "Introduction to Climate Modeling",
     "section": "33 K — the most productive wrong answer in science",
     "text": "33 K — the most productive wrong answer in science\nThat gap is the greenhouse effect. Closing it:\n\nWeek 2: why — the layer model + the picture professionals use\nWeek 3: when — the model ticks in time; the ocean sets the clock\nWeek 9: how much — feedbacks decide whether 3.7 W/m² means 2 °C or 5 °C\n\n\nHonest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. Cliffhanger, then logistics."
-  },
-  {
-    "objectID": "slides/week01.html#how-the-course-works",
-    "href": "slides/week01.html#how-the-course-works",
-    "title": "Introduction to Climate Modeling",
-    "section": "How the course works",
-    "text": "How the course works\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation\n10%\nin-class work (like today’s slips), most weeks\n\n\nLabs (5)\n10%\nin class, weeks 3/5/7/9/11 — submit same day\n\n\nHomework (5)\n50%\n~biweekly, 2 weeks each\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n20%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\n\n~12 min for logistics. Flag the early project-title date NOW. Late policy: 10%/day, one free late HW. AI policy per syllabus: disclose; work you didn’t do is plagiarism regardless of author."
   },
   {
     "objectID": "slides/week01.html#where-the-work-lives",
