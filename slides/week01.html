@@ -375,67 +375,26 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!-- TOPIC BLOCK: one thermometer, three models (~25 min incl. live notebook). Currently played in: week 1.
+     Live notebook: course_materials/demos/station_vs_models.ipynb (data cached as CSVs). -->
 </section></section>
 <section>
-<section id="how-we-got-here-the-hierarchy-historically" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>How we got here — the hierarchy, historically</h1>
-<p><em>Everyone you’re about to meet was climbing the same ladder we just climbed.</em></p>
+<section id="one-thermometer-three-models" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>One thermometer, three models</h1>
+<p><em>The bucket had a knowable truth. Now the real world.</em></p>
 </section>
-<section id="arrhenius-computes-the-climate-by-hand" class="slide level2">
-<h2>1896: Arrhenius computes the climate by hand</h2>
-<!-- FIGURE: Arrhenius's hand-computed table (public domain scan) next to a CMIP6 warming map — 125 years apart, same question. -->
-<ul>
-<li>Motivated by <strong>ice ages</strong>, not fossil fuels</li>
-<li>Months of hand calculation: a radiative <strong>budget</strong> + water-vapor amplification</li>
-<li>His CO₂-doubling answer: ~5–6 °C (modern: 2.5–4 °C) — high, but the <em>structure</em> is modern</li>
-<li>He was doing exactly our Model 1: an <strong>equilibrium budget</strong></li>
-</ul>
-<aside class="notes">
-<p>~50 min total for the history segment — it’s tightened; keep moving. Color: 1908 he guessed warming would take millennia and be pleasant → why nobody panicked. Callendar 1938 (station data, dismissed) in one breath. Tease: “we’ll do Arrhenius’s first step ourselves before you leave.”</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="richardsons-magnificent-failure" class="slide level2">
-<h2>1922: Richardson’s magnificent failure</h2>
-<!-- FIGURE: the "forecast factory" illustration (64,000 human computers in an amphitheater). -->
-<ul>
-<li>Hand-integrated the fluid equations for a 6-hour forecast: <strong>absurdly wrong</strong></li>
-<li>But grid + finite differences + timestepping = <strong>exactly what every model does today</strong></li>
-<li>His failure: too-honest equations amplified noisy data</li>
-</ul>
-<aside class="notes">
-<p>The forecast factory is a parallel supercomputer, 80 years early (week 5 callback). Bridge to next slide: the fix wasn’t a bigger machine.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="eniac-a-smarter-simple-model-wins" class="slide level2">
-<h2>1950: ENIAC — a smarter <em>simple</em> model wins</h2>
-<p>Charney, Fjørtoft &amp; von Neumann: first numerical forecast — by <strong>simplifying</strong> (one quasi-geostrophic level filtered out Richardson’s noise).</p>
+<section id="central-park-daily-temperature-19952014" class="slide level2">
+<h2>Central Park, daily temperature, 1995–2014</h2>
+<p>Three versions of the same place:</p>
+<ol type="1">
+<li><strong>The station</strong> — a real thermometer (NOAA GHCN)</li>
+<li><strong>ERA5 reanalysis</strong> — a weather model <em>corrected by observations</em> every few hours</li>
+<li><strong>A CMIP6 climate model</strong> — free-running: it makes its own weather</li>
+</ol>
 <div class="fragment">
-<p><strong>Weather vs climate:</strong> forecast = <em>initial-value problem</em> (chaos kills it in ~2 weeks); climate = <em>boundary-value problem</em> (statistics under a push).</p>
-<blockquote>
-<p>The casino: no one predicts the next hand. The house margin is a certainty.</p>
-</blockquote>
+<p><strong>Commit before we look:</strong> which of 2 and 3 will match the station <em>day by day</em>? Both? Neither? One?</p>
 <aside class="notes">
-<p>Two beats on one slide to save time: the thesis anecdote + THE misconception-killer. If pressed on “but chaos!”: forced response vs internal variability — the bucket’s level statistics under doubled inflow were predictable even though its wiggles weren’t.</p>
+<p>Switch to station_vs_models.ipynb and live-drive: obs + histogram → seasonal-fit statistical model (82% of variance — the most predictable thing in climate) → the reveal: ERA5 rides the black curve (r=0.94), CMIP6 ignores it (r=0.00) → fair comparison = statistics vs statistics → the three mean temperatures (13.1 / 11.5 / 10.2 °C): representativeness + bias. ~18 min in notebook.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -449,38 +408,16 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
       }</style></aside>
 </div>
 </section>
-<section id="columns-spheres-coupling" class="slide level2">
-<h2>1956–1975: columns, spheres, coupling</h2>
+<section id="what-that-just-taught-us" class="slide level2">
+<h2>What that just taught us</h2>
 <ul>
-<li><strong>Phillips 1956:</strong> two-level hemisphere → <strong>jets emerged, uncoded</strong> — put conservation on a grid and circulation is what balance looks like</li>
-<li><strong>Manabe &amp; Wetherald 1967:</strong> the 1-D column done right — ECS ≈ 2.3 °C; predicted <strong>stratospheric cooling</strong> (observed decades later); voted most influential climate paper ever</li>
-<li><strong>Manabe &amp; Bryan 1969:</strong> ocean coupled · <strong>M&amp;W 1975:</strong> first 3-D CO₂ doubling → <strong>polar amplification</strong> predicted</li>
-</ul>
-<!-- FIGURE: M&W 1967 Fig. 16 — profiles for 150/300/600 ppm. -->
-<aside class="notes">
-<p>Compressed from three slides. Manabe from Tokyo to GFDL 1958; “get one column right before the sphere.” Fingerprint predictions made before observations = honest counterweight to the tuning worry.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-error-bar-and-the-enterprise" class="slide level2">
-<h2>1979 → 2021: the error bar and the enterprise</h2>
-<ul>
-<li><strong>Charney Report 1979</strong> (two GCMs on Earth): ECS = 1.5–4.5 °C → <strong>AR6 2021:</strong> 2.5–4 °C. <em>42 years to halve the bar — why so slow? (Nov 5.)</em></li>
-<li><strong>CMIP (1995→):</strong> every center runs the <em>same</em> experiments — model spread becomes data</li>
-<li>GCMs absorb carbon, chemistry, ice → <strong>Earth System Models</strong></li>
-<li><strong>2021: Nobel Prize</strong> to Manabe &amp; Hasselmann</li>
+<li><strong>Know what kind of model you’re looking at</strong>: statistical fit · observation-corrected reanalysis · free-running model — each trustworthy for different things</li>
+<li>A free-running model matching weather day-by-day would be <em>suspicious</em>; matching the <strong>distribution</strong> is its actual job</li>
+<li>Differences ≠ failure: grid cell vs.&nbsp;park (representativeness), and genuine <strong>bias</strong> — diagnosed, published, corrected <em>(→ weeks 10, 13)</em></li>
+<li>The 5-parameter seasonal fit beats the CMIP6 model <em>at describing today</em> — and is mute about 2100. <strong>Fit for purpose.</strong></li>
 </ul>
 <aside class="notes">
-<p>Plant the week-9 mystery explicitly. CMIP = Act IV’s subject; students touch CMIP6 data from HW1.</p>
+<p>This is the real-world twin of the bucket’s “no box to open”: for Earth we never get the truth generator — models earn trust by their statistics and out-of-sample behavior.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -492,27 +429,6 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="the-frontier-and-the-philosophy" class="slide level2">
-<h2>The frontier — and the philosophy</h2>
-<p><strong>Today:</strong> km-scale simulation · AI emulators <em>(remember lesson #2!)</em> · the unsolved problem: clouds <em>(week 13)</em></p>
-<div class="fragment">
-<p><strong>Held (2005):</strong> keep the <em>whole</em> hierarchy — simulation ≠ understanding, and simple models still <em>discover</em> (a 1961 two-box model found a possible AMOC collapse before any GCM could).</p>
-<p><strong>“Which model is best?” is meaningless without “…for what question?”</strong> — you proved this with a bucket an hour ago.</p>
-<aside class="notes">
-<p>The demo did the heavy lifting; this slide just gives it names and a citation. If one reading gets recommended today: Held 2005, short and equation-free.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
 </section></section>
 <section>
 <section id="now-for-real" class="title-slide slide level1 center" data-background-color="#1a3a5c">

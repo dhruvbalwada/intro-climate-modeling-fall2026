@@ -315,46 +315,18 @@
     "text": "Break\n10 minutes\n\n~55–60 min in. After the break: the same hierarchy story, but as history — real people, real machines."
   },
   {
-    "objectID": "slides/week01.html#arrhenius-computes-the-climate-by-hand",
-    "href": "slides/week01.html#arrhenius-computes-the-climate-by-hand",
+    "objectID": "slides/week01.html#central-park-daily-temperature-19952014",
+    "href": "slides/week01.html#central-park-daily-temperature-19952014",
     "title": "Introduction to Climate Modeling",
-    "section": "1896: Arrhenius computes the climate by hand",
-    "text": "1896: Arrhenius computes the climate by hand\n\n\nMotivated by ice ages, not fossil fuels\nMonths of hand calculation: a radiative budget + water-vapor amplification\nHis CO₂-doubling answer: ~5–6 °C (modern: 2.5–4 °C) — high, but the structure is modern\nHe was doing exactly our Model 1: an equilibrium budget\n\n\n~50 min total for the history segment — it’s tightened; keep moving. Color: 1908 he guessed warming would take millennia and be pleasant → why nobody panicked. Callendar 1938 (station data, dismissed) in one breath. Tease: “we’ll do Arrhenius’s first step ourselves before you leave.”"
+    "section": "Central Park, daily temperature, 1995–2014",
+    "text": "Central Park, daily temperature, 1995–2014\nThree versions of the same place:\n\nThe station — a real thermometer (NOAA GHCN)\nERA5 reanalysis — a weather model corrected by observations every few hours\nA CMIP6 climate model — free-running: it makes its own weather\n\n\nCommit before we look: which of 2 and 3 will match the station day by day? Both? Neither? One?\n\nSwitch to station_vs_models.ipynb and live-drive: obs + histogram → seasonal-fit statistical model (82% of variance — the most predictable thing in climate) → the reveal: ERA5 rides the black curve (r=0.94), CMIP6 ignores it (r=0.00) → fair comparison = statistics vs statistics → the three mean temperatures (13.1 / 11.5 / 10.2 °C): representativeness + bias. ~18 min in notebook."
   },
   {
-    "objectID": "slides/week01.html#richardsons-magnificent-failure",
-    "href": "slides/week01.html#richardsons-magnificent-failure",
+    "objectID": "slides/week01.html#what-that-just-taught-us",
+    "href": "slides/week01.html#what-that-just-taught-us",
     "title": "Introduction to Climate Modeling",
-    "section": "1922: Richardson’s magnificent failure",
-    "text": "1922: Richardson’s magnificent failure\n\n\nHand-integrated the fluid equations for a 6-hour forecast: absurdly wrong\nBut grid + finite differences + timestepping = exactly what every model does today\nHis failure: too-honest equations amplified noisy data\n\n\nThe forecast factory is a parallel supercomputer, 80 years early (week 5 callback). Bridge to next slide: the fix wasn’t a bigger machine."
-  },
-  {
-    "objectID": "slides/week01.html#eniac-a-smarter-simple-model-wins",
-    "href": "slides/week01.html#eniac-a-smarter-simple-model-wins",
-    "title": "Introduction to Climate Modeling",
-    "section": "1950: ENIAC — a smarter simple model wins",
-    "text": "1950: ENIAC — a smarter simple model wins\nCharney, Fjørtoft & von Neumann: first numerical forecast — by simplifying (one quasi-geostrophic level filtered out Richardson’s noise).\n\nWeather vs climate: forecast = initial-value problem (chaos kills it in ~2 weeks); climate = boundary-value problem (statistics under a push).\n\nThe casino: no one predicts the next hand. The house margin is a certainty.\n\n\nTwo beats on one slide to save time: the thesis anecdote + THE misconception-killer. If pressed on “but chaos!”: forced response vs internal variability — the bucket’s level statistics under doubled inflow were predictable even though its wiggles weren’t."
-  },
-  {
-    "objectID": "slides/week01.html#columns-spheres-coupling",
-    "href": "slides/week01.html#columns-spheres-coupling",
-    "title": "Introduction to Climate Modeling",
-    "section": "1956–1975: columns, spheres, coupling",
-    "text": "1956–1975: columns, spheres, coupling\n\nPhillips 1956: two-level hemisphere → jets emerged, uncoded — put conservation on a grid and circulation is what balance looks like\nManabe & Wetherald 1967: the 1-D column done right — ECS ≈ 2.3 °C; predicted stratospheric cooling (observed decades later); voted most influential climate paper ever\nManabe & Bryan 1969: ocean coupled · M&W 1975: first 3-D CO₂ doubling → polar amplification predicted\n\n\n\nCompressed from three slides. Manabe from Tokyo to GFDL 1958; “get one column right before the sphere.” Fingerprint predictions made before observations = honest counterweight to the tuning worry."
-  },
-  {
-    "objectID": "slides/week01.html#the-error-bar-and-the-enterprise",
-    "href": "slides/week01.html#the-error-bar-and-the-enterprise",
-    "title": "Introduction to Climate Modeling",
-    "section": "1979 → 2021: the error bar and the enterprise",
-    "text": "1979 → 2021: the error bar and the enterprise\n\nCharney Report 1979 (two GCMs on Earth): ECS = 1.5–4.5 °C → AR6 2021: 2.5–4 °C. 42 years to halve the bar — why so slow? (Nov 5.)\nCMIP (1995→): every center runs the same experiments — model spread becomes data\nGCMs absorb carbon, chemistry, ice → Earth System Models\n2021: Nobel Prize to Manabe & Hasselmann\n\n\nPlant the week-9 mystery explicitly. CMIP = Act IV’s subject; students touch CMIP6 data from HW1."
-  },
-  {
-    "objectID": "slides/week01.html#the-frontier-and-the-philosophy",
-    "href": "slides/week01.html#the-frontier-and-the-philosophy",
-    "title": "Introduction to Climate Modeling",
-    "section": "The frontier — and the philosophy",
-    "text": "The frontier — and the philosophy\nToday: km-scale simulation · AI emulators (remember lesson #2!) · the unsolved problem: clouds (week 13)\n\nHeld (2005): keep the whole hierarchy — simulation ≠ understanding, and simple models still discover (a 1961 two-box model found a possible AMOC collapse before any GCM could).\n“Which model is best?” is meaningless without “…for what question?” — you proved this with a bucket an hour ago.\n\nThe demo did the heavy lifting; this slide just gives it names and a citation. If one reading gets recommended today: Held 2005, short and equation-free."
+    "section": "What that just taught us",
+    "text": "What that just taught us\n\nKnow what kind of model you’re looking at: statistical fit · observation-corrected reanalysis · free-running model — each trustworthy for different things\nA free-running model matching weather day-by-day would be suspicious; matching the distribution is its actual job\nDifferences ≠ failure: grid cell vs. park (representativeness), and genuine bias — diagnosed, published, corrected (→ weeks 10, 13)\nThe 5-parameter seasonal fit beats the CMIP6 model at describing today — and is mute about 2100. Fit for purpose.\n\n\nThis is the real-world twin of the bucket’s “no box to open”: for Earth we never get the truth generator — models earn trust by their statistics and out-of-sample behavior."
   },
   {
     "objectID": "slides/week01.html#the-mapping",
