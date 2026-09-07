@@ -5,7 +5,7 @@
 
 *The bucket had a knowable truth. Now the real world.*
 
-## Central Park, daily temperature, 1995–2014
+## Central Park, daily temperature, 1995–2014 {.smaller}
 
 Three versions of the same place:
 
@@ -21,7 +21,7 @@ Three versions of the same place:
 Switch to station_vs_models.ipynb and live-drive: obs + histogram → seasonal-fit statistical model (82% of variance — the most predictable thing in climate) → the reveal: ERA5 rides the black curve (r=0.94), CMIP6 ignores it (r=0.00) → fair comparison = statistics vs statistics → the three mean temperatures (13.1 / 11.5 / 10.2 °C): representativeness + bias. ~18 min in notebook.
 :::
 
-## What that just taught us
+## What that just taught us {.smaller}
 
 - **Know what kind of model you're looking at**: statistical fit · observation-corrected reanalysis · free-running model — each trustworthy for different things
 - A free-running model matching weather day-by-day would be *suspicious*; matching the **distribution** is its actual job

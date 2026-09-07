@@ -32,7 +32,7 @@ Intro and logistics
 ~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept).
 :::
 
-## The work: labs, homeworks, project
+## The work: labs, homeworks, project {.smaller}
 
 | Component | Weight | Rhythm |
 |---|---|---|

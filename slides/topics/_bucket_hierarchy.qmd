@@ -33,14 +33,14 @@ Before the models: pause on the raw data plot and name the concepts (next slide)
 Then switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: "I double the inflow — what's the new level? number + reasoning + name") → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. ~25 min in the notebook. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable.
 :::
 
-## What just happened (part 1)
+## What just happened (part 1) {.smaller}
 
 1. A **model** = a simpler description of a complicated system, built *for a purpose*
 2. **Statistical models are real models** — but they interpolate; change the system and they fail *(week 13: remember this about AI)*
 3. **Budgets** — in − out = accumulation — are where physical modeling starts
 4. **Equilibrium budgets** already predict a lot *(and found the nonlinearity the line couldn't)*
 
-## What just happened (part 2)
+## What just happened (part 2) {.smaller}
 
 5. **Time dependence** = lags + adjustment, governed by a **stabilizing feedback** (fuller → drains harder)
 6. **Even physical models are calibrated** — we fitted $k$; we lived with the evaporation bias *(week 10 is entirely about this)*
