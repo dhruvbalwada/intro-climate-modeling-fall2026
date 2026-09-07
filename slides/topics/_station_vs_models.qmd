@@ -1,0 +1,33 @@
+<!-- TOPIC BLOCK: one thermometer, three models (~25 min incl. live notebook). Currently played in: week 1.
+     Live notebook: course_materials/demos/station_vs_models.ipynb (data cached as CSVs). -->
+
+# One thermometer, three models {background-color="#1a3a5c"}
+
+*The bucket had a knowable truth. Now the real world.*
+
+## Central Park, daily temperature, 1995–2014
+
+Three versions of the same place:
+
+1. **The station** — a real thermometer (NOAA GHCN)
+2. **ERA5 reanalysis** — a weather model *corrected by observations* every few hours
+3. **A CMIP6 climate model** — free-running: it makes its own weather
+
+. . .
+
+**Commit before we look:** which of 2 and 3 will match the station *day by day*? Both? Neither? One?
+
+::: {.notes}
+Switch to station_vs_models.ipynb and live-drive: obs + histogram → seasonal-fit statistical model (82% of variance — the most predictable thing in climate) → the reveal: ERA5 rides the black curve (r=0.94), CMIP6 ignores it (r=0.00) → fair comparison = statistics vs statistics → the three mean temperatures (13.1 / 11.5 / 10.2 °C): representativeness + bias. ~18 min in notebook.
+:::
+
+## What that just taught us
+
+- **Know what kind of model you're looking at**: statistical fit · observation-corrected reanalysis · free-running model — each trustworthy for different things
+- A free-running model matching weather day-by-day would be *suspicious*; matching the **distribution** is its actual job
+- Differences ≠ failure: grid cell vs. park (representativeness), and genuine **bias** — diagnosed, published, corrected *(→ weeks 10, 13)*
+- The 5-parameter seasonal fit beats the CMIP6 model *at describing today* — and is mute about 2100. **Fit for purpose.**
+
+::: {.notes}
+This is the real-world twin of the bucket's "no box to open": for Earth we never get the truth generator — models earn trust by their statistics and out-of-sample behavior.
+:::
