@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Climate Modeling"
-subtitle: "Week 1 · Modeling a bucket, then a planet"
+subtitle: "Week 1"
 author: "Dhruv Balwada · Columbia Climate School · Fall 2026"
 format:
   revealjs:
@@ -14,17 +14,38 @@ format:
 # {.center}
 
 ::: {.r-fit-text}
-**Thursdays 10:10–12:40 · FRM 315 (The Forum)**
+Intro and logistics
 :::
+- Time: Thursdays 10:10–12:40 · FRM 315 (The Forum)
 
-Instructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)
+- Instructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)
 
-TAs: **Prani Nalluri** (pan2121) · **Chandanie Kutwaru** (ck3397)
+- TAs: **Prani Nalluri** (pan2121) · **Chandanie Kutwaru** (ck3397)
 
-Office hours: **[TIME/PLACE]** · Everything lives on Courseworks + course website
+- Office hours: **TBD** (TAs will organize)
+
+- Everything lives on Courseworks + course website
+
+
 
 ::: {.notes}
 ~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept).
+:::
+
+## The work: labs, homeworks, project
+
+| Component | Weight | Rhythm |
+|---|---|---|
+| Participation | 10% | in-class work (like today's slips), most weeks |
+| Labs (5) | 10% | in class, weeks 3/5/7/9/11 — submit same day |
+| Homework (5) | 50% | ~biweekly notebooks, 2 weeks each |
+| Project proposal | 10% | title **Oct 9** · proposal **Oct 23** |
+| Final project | 20% | present Dec 10/17 · notebook due **Dec 18** |
+
+All code in your own private GitHub repo; submitting = posting the repo link on Courseworks. **Lab 0 (setup, ~30 min): this week** — clinic at the end of today.
+
+::: {.notes}
+~8 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class.
 :::
 
 ## Before we start: three hands-up questions
@@ -65,7 +86,7 @@ Last year GR5001 taught you **what the climate system does**. This course **open
 *10 minutes*
 
 ::: {.notes}
-~55–60 min in. After the break: the same hierarchy story, but as history — real people, real machines.
+~55–60 min in. After the break: the real world — one thermometer, three models.
 :::
 
 {{< include topics/_station_vs_models.qmd >}}
@@ -114,20 +135,6 @@ That gap **is the greenhouse effect**. Closing it:
 
 ::: {.notes}
 Honest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. Cliffhanger, then logistics.
-:::
-
-## How the course works
-
-| Component | Weight | Rhythm |
-|---|---|---|
-| Participation | 10% | in-class work (like today's slips), most weeks |
-| Labs (5) | 10% | in class, weeks 3/5/7/9/11 — submit same day |
-| Homework (5) | 50% | ~biweekly, 2 weeks each |
-| Project proposal | 10% | title **Oct 9** · proposal **Oct 23** |
-| Final project | 20% | present Dec 10/17 · notebook due **Dec 18** |
-
-::: {.notes}
-~12 min for logistics. Flag the early project-title date NOW. Late policy: 10%/day, one free late HW. AI policy per syllabus: disclose; work you didn't do is plagiarism regardless of author.
 :::
 
 ## Where the work lives
