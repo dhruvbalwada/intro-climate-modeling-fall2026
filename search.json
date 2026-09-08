@@ -249,14 +249,14 @@
     "href": "slides/week01.html#intro-and-logistics",
     "title": "Introduction to Climate Modeling",
     "section": "Intro and logistics",
-    "text": "Intro and logistics\n\nTime: Thursdays 10:10–12:40 · FRM 315 (The Forum)\nInstructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)\nTAs: Prani Nalluri (pan2121) · Chandanie Kutwaru (ck3397)\nOffice hours: TBD (TAs will organize)\nEverything on Courseworks + the course website ↓\n\n\n\n~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept)."
+    "text": "Intro and logistics\n\nTime: Thursdays 10:10–12:40 · FRM 315 (The Forum)\nInstructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)\nTAs: Prani Nalluri (pan2121) · Chandanie Kutwaru (ck3397)\nOffice hours: TBD (TAs will organize)\nWe will work using Courseworks + the course website ↓"
   },
   {
     "objectID": "slides/week01.html#the-work-labs-homeworks-project",
     "href": "slides/week01.html#the-work-labs-homeworks-project",
     "title": "Introduction to Climate Modeling",
     "section": "The work: labs, homeworks, project",
-    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation\n10%\nin-class work (like today’s slips), most weeks\n\n\nLabs (5)\n10%\nin class, weeks 3/5/7/9/11 — submit same day\n\n\nHomework (5)\n50%\n~biweekly notebooks, 2 weeks each\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n20%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nAll code in your own private GitHub repo; submitting = posting the repo link on Courseworks. Lab 0 (setup, ~30 min): this week — clinic at the end of today.\n\n~8 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
+    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation\n5%\nin-class work (like today’s slips), most weeks\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~ever two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nSubmission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks. Lab 0 (setup, ~30 min): this week — clinic at the end of today.\n\n~8 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
   },
   {
     "objectID": "slides/week01.html#before-we-start-five-hands-up-questions",
@@ -270,7 +270,7 @@
     "href": "slides/week01.html#every-number-on-this-figure-came-out-of-a-model",
     "title": "Introduction to Climate Modeling",
     "section": "Every number on this figure came out of a model",
-    "text": "Every number on this figure came out of a model\n\n\nThe hook. “Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them.”"
+    "text": "Every number on this figure came out of a model\n\n\n\n\n\n\nIPCC AR6 WG1, Figure SPM.8 (2021)\n\n\nThe hook. “Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them.”"
   },
   {
     "objectID": "slides/week01.html#today-three-questions",
