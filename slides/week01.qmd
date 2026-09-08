@@ -60,6 +60,18 @@ Ungraded diagnostic — no judgment framing: "a year since GR5001 is a long time
 IPCC AR6 WG1, Figure SPM.8 (2021)
 :::
 
+## …and the past: model spread, observations on top
+
+![](images/ipcc_ar6_spm1.png){height="78%" fig-align="center"}
+
+::: {style="font-size:0.35em; color:#888;"}
+IPCC AR6 WG1, Figure SPM.1 (2021)
+:::
+
+::: {.notes}
+Panel (b): shaded bands = spread of climate-model ensembles (brown: human+natural forcing; green: natural only); black line = observations. Two things to say: (1) models don't just project the future — they reproduce the past, with quantified spread; (2) the observed line stays inside the band ONLY when human forcing is included. That's attribution, and they'll learn how it's done.
+:::
+
 ::: {.notes}
 The hook. "Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them."
 :::
