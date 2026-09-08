@@ -18,25 +18,23 @@ format:
 - Instructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)
 - TAs: **Prani Nalluri** (pan2121) · **Chandanie Kutwaru** (ck3397)
 - Office hours: **TBD** (TAs will organize)
-- Everything on Courseworks + **[the course website](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/)** ↓
+- We will work using Courseworks + **[the course website](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/)** ↓
 
 ![](images/site_qr.png){width="22%" fig-align="center"}
 
-::: {.notes}
-~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept).
-:::
 
 ## The work: labs, homeworks, project {.smaller}
 
 | Component | Weight | Rhythm |
 |---|---|---|
-| Participation | 10% | in-class work (like today's slips), most weeks |
-| Labs (5) | 10% | in class, weeks 3/5/7/9/11 — submit same day |
-| Homework (5) | 50% | ~biweekly notebooks, 2 weeks each |
+| Participation | 5% | in-class work (like today's slips), most weeks |
+| Labs | 10% | in class, almost every week — submit by end of week |
+| Homework (5) | 50% | ~ever two weeks |
 | Project proposal | 10% | title **Oct 9** · proposal **Oct 23** |
-| Final project | 20% | present Dec 10/17 · notebook due **Dec 18** |
+| Final project | 25% | present Dec 10/17 · notebook due **Dec 18** |
 
-All code in your own private GitHub repo; submitting = posting the repo link on Courseworks. **Lab 0 (setup, ~30 min): this week** — clinic at the end of today.
+#### Submission process
+All code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks. **Lab 0 (setup, ~30 min): this week** — clinic at the end of today.
 
 ::: {.notes}
 ~8 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class.
@@ -56,7 +54,11 @@ Ungraded diagnostic — no judgment framing: "a year since GR5001 is a long time
 
 ## Every number on this figure came out of a model
 
-<!-- FIGURE: IPCC AR6 WG1 SPM.8-style panel — global temperature projections under SSP scenarios with uncertainty bands. -->
+![](images/ipcc_ar6_spm8.png){height="82%" fig-align="center"}
+
+::: {style="font-size:0.35em; color:#888;"}
+IPCC AR6 WG1, Figure SPM.8 (2021)
+:::
 
 ::: {.notes}
 The hook. "Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them."
