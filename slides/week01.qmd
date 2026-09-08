@@ -66,7 +66,47 @@ Ungraded diagnostic — calibrates refresher dosage for weeks 2–9. Framing: "a
 The hook. "Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them."
 :::
 
+## Today: three questions
+
+1. **What is climate?**
+2. **What is a model?**
+3. **What is uncertainty?**
+
+Answered with a bucket, a thermometer — and one very famous figure.
+
+# 1 · What is climate? {background-color="#1a3a5c"}
+
+## Weather is the state. Climate is the distribution. {.smaller}
+
+- **Weather**: the value right now — a random variable, unpredictable in detail beyond ~2 weeks
+- **Climate**: the *distribution* those values are drawn from — mean, variability, **tails** — estimated over a chosen period (convention: ~30 years)
+- Climate change = the distribution shifting, widening, or reshaping — with very different consequences in the tails
+
+<!-- FIGURE: two-panel — a wiggly daily-temperature time series, and its histogram. (Generate from the Central Park data or reuse the station-demo figure.) -->
+
+::: {.notes}
+~5 min. Plant it abstractly here; both demos make it concrete (bucket histogram, Central Park histogram). Subtlety worth a sentence: climate itself must be *estimated* from a finite, possibly drifting record — the rarest extremes may not even be in your window.
+:::
+
+# 2 · What is a model? {background-color="#1a3a5c"}
+
 {{< include topics/_bucket_hierarchy.qmd >}}
+
+# 3 · What is uncertainty? {background-color="#1a3a5c"}
+
+## Three reasons a forecast can be wrong {.smaller}
+
+> "It's tough to make predictions, especially about the future."
+
+- **Model uncertainty** — wrong structure (missing overflow spout) or wrong parameters (mis-fitted k)
+- **Initial-condition uncertainty** — chaos: the wiggles can't be tracked beyond a horizon *(why CMIP6 ignored the actual weather)*
+- **Scenario uncertainty** — *we don't know what anyone will pour*: the inflow — or the emissions — is a human choice, not physics
+
+Different ones dominate at different time horizons. *(Week 11 makes this quantitative.)*
+
+::: {.notes}
+~5 min. Every item points back at something they just watched: the spout, the r=0.00, the doubled tap. For Earth by 2100, scenario uncertainty is often the biggest — a strangely hopeful fact: the largest unknown is a choice.
+:::
 
 ## This course = that exercise, for Earth
 
