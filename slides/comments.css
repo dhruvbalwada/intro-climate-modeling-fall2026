@@ -1,0 +1,13 @@
+/* DB review notes — visible sticky boxes on slides.
+   BEFORE CLASS / PUBLISH: uncomment the display:none line to hide all at once. */
+.db-comment {
+  background: #fff3b0;
+  border-left: 5px solid #e09f00;
+  color: #6b5000;
+  font-size: 0.5em;
+  padding: 0.4em 0.7em;
+  margin-top: 0.6em;
+  border-radius: 4px;
+  /* display: none; */
+}
+.db-comment::before { content: "📌 "; }

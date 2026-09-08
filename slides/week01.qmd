@@ -5,6 +5,7 @@ author: "Dhruv Balwada · Columbia Climate School · Fall 2026"
 format:
   revealjs:
     theme: [default]
+    css: comments.css
     slide-number: true
     chalkboard: false
     footer: "Intro to Climate Modeling · Week 1"

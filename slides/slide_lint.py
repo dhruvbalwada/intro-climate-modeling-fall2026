@@ -24,6 +24,7 @@ def lint(path):
     body = expand(path)
     body = re.sub(r"^---\n.*?\n---\n", "", body, flags=re.S)          # yaml
     body = re.sub(r"::: \{\.notes\}.*?\n:::", "", body, flags=re.S)   # speaker notes
+    body = re.sub(r"::: \{\.db-comment\}.*?\n:::", "", body, flags=re.S) # review notes
     body = re.sub(r"<!--.*?-->", "", body, flags=re.S)                # comments
     slides = re.split(r"\n(?=#{1,2} )", body)
     problems = []
