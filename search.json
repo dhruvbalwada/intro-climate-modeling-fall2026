@@ -245,6 +245,13 @@
     "text": "Five in-class labs (weeks 3, 5, 7, 9, 11), completed collaboratively during the lab portion of class and submitted the same day via your GitHub repo (link posted to Courseworks). Plus Lab 0, the ungraded setup lab everything depends on.\n\n\n\nLab\nWeek\nTopic\n\n\n\n\nLab 0\nbefore Sep 24\nToolchain setup: JupyterHub, GitHub, first notebook\n\n\nLab 1\n3\nEquilibrium & time-dependent energy balance models\n\n\nLab 2\n5\nSimple circulation models\n\n\nLab 3\n7\nSoil-moisture bucket model\n\n\nLab 4\n9\nSimulating albedo feedbacks\n\n\nLab 5\n11\nModeling transient climate change"
   },
   {
+    "objectID": "slides/week01.html#intro-and-logistics",
+    "href": "slides/week01.html#intro-and-logistics",
+    "title": "Introduction to Climate Modeling",
+    "section": "Intro and logistics",
+    "text": "Intro and logistics\n\nTime: Thursdays 10:10–12:40 · FRM 315 (The Forum)\nInstructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)\nTAs: Prani Nalluri (pan2121) · Chandanie Kutwaru (ck3397)\nOffice hours: TBD (TAs will organize)\nEverything lives on Courseworks + course website\n\n\n~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept)."
+  },
+  {
     "objectID": "slides/week01.html#the-work-labs-homeworks-project",
     "href": "slides/week01.html#the-work-labs-homeworks-project",
     "title": "Introduction to Climate Modeling",
