@@ -266,6 +266,20 @@
     "text": "Every number on this figure came out of a model\n\n\nThe hook. “Sea level in 2100, warming under net-zero — every quantitative claim about the climate future is a model output. This course is about whether — and when, and how much — to believe them.”"
   },
   {
+    "objectID": "slides/week01.html#today-three-questions",
+    "href": "slides/week01.html#today-three-questions",
+    "title": "Introduction to Climate Modeling",
+    "section": "Today: three questions",
+    "text": "Today: three questions\n\nWhat is climate?\nWhat is a model?\nWhat is uncertainty?\n\nAnswered with a bucket, a thermometer — and one very famous figure."
+  },
+  {
+    "objectID": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
+    "href": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
+    "title": "Introduction to Climate Modeling",
+    "section": "Weather is the state. Climate is the distribution.",
+    "text": "Weather is the state. Climate is the distribution.\n\nWeather: the value right now — a random variable, unpredictable in detail beyond ~2 weeks\nClimate: the distribution those values are drawn from — mean, variability, tails — estimated over a chosen period (convention: ~30 years)\nClimate change = the distribution shifting, widening, or reshaping — with very different consequences in the tails\n\n\n\n~5 min. Plant it abstractly here; both demos make it concrete (bucket histogram, Central Park histogram). Subtlety worth a sentence: climate itself must be estimated from a finite, possibly drifting record — the rarest extremes may not even be in your window."
+  },
+  {
     "objectID": "slides/week01.html#the-rules-of-the-game",
     "href": "slides/week01.html#the-rules-of-the-game",
     "title": "Introduction to Climate Modeling",
@@ -299,6 +313,13 @@
     "title": "Introduction to Climate Modeling",
     "section": "One more thing — the thing",
     "text": "One more thing — the thing\nToday, when our models failed, we opened the box and checked.\n\nFor the Earth, there is no box to open.\nNo spare planet, no truth-generator to read. Everything climate science knows about 2100 comes from models earning trust the way ours did today: predicting things they weren’t fitted to.\n\nLet this land in silence for a beat. It’s the epistemological heart of the course — and quietly, the honest frame for the ‘aren’t models just tuned?’ question, which gets its full session in week 10. Optional aside: climate scientists simulate today’s luxury deliberately — “perfect-model experiments,” using one GCM as fake truth to test methods."
+  },
+  {
+    "objectID": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
+    "href": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
+    "title": "Introduction to Climate Modeling",
+    "section": "Three reasons a forecast can be wrong",
+    "text": "Three reasons a forecast can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\n\nModel uncertainty — wrong structure (missing overflow spout) or wrong parameters (mis-fitted k)\nInitial-condition uncertainty — chaos: the wiggles can’t be tracked beyond a horizon (why CMIP6 ignored the actual weather)\nScenario uncertainty — we don’t know what anyone will pour: the inflow — or the emissions — is a human choice, not physics\n\nDifferent ones dominate at different time horizons. (Week 11 makes this quantitative.)\n\n~5 min. Every item points back at something they just watched: the spout, the r=0.00, the doubled tap. For Earth by 2100, scenario uncertainty is often the biggest — a strangely hopeful fact: the largest unknown is a choice."
   },
   {
     "objectID": "slides/week01.html#this-course-that-exercise-for-earth",
