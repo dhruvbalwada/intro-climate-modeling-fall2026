@@ -50,14 +50,16 @@ All code in your own private GitHub repo; submitting = posting the repo link on 
 ~8 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class.
 :::
 
-## Before we start: three hands-up questions
+## Before we start: five hands-up questions {.smaller}
 
 1. Roughly what sets the Earth's average temperature? *(could you explain it to a friend?)*
-2. Have you written Python this year?
-3. Do you remember what "climate sensitivity" means?
+2. Do you remember what "climate sensitivity" means?
+3. Have you come across **ordinary differential equations** — in any course?
+4. Have you written **Python** this year? *…keep your hand up if you've used it on climate or environmental data*
+5. Have you used **git/GitHub** before?
 
 ::: {.notes}
-Ungraded diagnostic — calibrates refresher dosage for weeks 2–9. Framing: "a year since GR5001 is a long time; that's expected."
+Ungraded diagnostic — no judgment framing: "a year since GR5001 is a long time; that's expected." Q3 calibrates the math pacing of weeks 2–3; Q4's second stage tells you how much xarray scaffolding labs need; Q5 tells the TAs the Lab-0 load. Worth jotting rough counts right after class.
 :::
 
 ## Every number on this figure came out of a model
