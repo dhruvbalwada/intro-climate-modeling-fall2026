@@ -259,11 +259,11 @@
     "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation\n10%\nin-class work (like today’s slips), most weeks\n\n\nLabs (5)\n10%\nin class, weeks 3/5/7/9/11 — submit same day\n\n\nHomework (5)\n50%\n~biweekly notebooks, 2 weeks each\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n20%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nAll code in your own private GitHub repo; submitting = posting the repo link on Courseworks. Lab 0 (setup, ~30 min): this week — clinic at the end of today.\n\n~8 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
   },
   {
-    "objectID": "slides/week01.html#before-we-start-three-hands-up-questions",
-    "href": "slides/week01.html#before-we-start-three-hands-up-questions",
+    "objectID": "slides/week01.html#before-we-start-five-hands-up-questions",
+    "href": "slides/week01.html#before-we-start-five-hands-up-questions",
     "title": "Introduction to Climate Modeling",
-    "section": "Before we start: three hands-up questions",
-    "text": "Before we start: three hands-up questions\n\nRoughly what sets the Earth’s average temperature? (could you explain it to a friend?)\nHave you written Python this year?\nDo you remember what “climate sensitivity” means?\n\n\nUngraded diagnostic — calibrates refresher dosage for weeks 2–9. Framing: “a year since GR5001 is a long time; that’s expected.”"
+    "section": "Before we start: five hands-up questions",
+    "text": "Before we start: five hands-up questions\n\nRoughly what sets the Earth’s average temperature? (could you explain it to a friend?)\nDo you remember what “climate sensitivity” means?\nHave you come across ordinary differential equations — in any course?\nHave you written Python this year? …keep your hand up if you’ve used it on climate or environmental data\nHave you used git/GitHub before?\n\n\nUngraded diagnostic — no judgment framing: “a year since GR5001 is a long time; that’s expected.” Q3 calibrates the math pacing of weeks 2–3; Q4’s second stage tells you how much xarray scaffolding labs need; Q5 tells the TAs the Lab-0 load. Worth jotting rough counts right after class."
   },
   {
     "objectID": "slides/week01.html#every-number-on-this-figure-came-out-of-a-model",
