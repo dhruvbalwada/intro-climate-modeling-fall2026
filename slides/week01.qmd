@@ -14,22 +14,13 @@ format:
 
 ## Intro and logistics
 
-:::: {.columns}
-::: {.column width="62%"}
 - Time: Thursdays 10:10–12:40 · FRM 315 (The Forum)
 - Instructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)
 - TAs: **Prani Nalluri** (pan2121) · **Chandanie Kutwaru** (ck3397)
 - Office hours: **TBD** (TAs will organize)
-- Everything lives on Courseworks + the course website:
+- Everything on Courseworks + **[the course website](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/)** ↓
 
-**[dhruvbalwada.github.io/intro-climate-modeling-fall2026](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/)**
-:::
-::: {.column width="38%"}
-![](images/site_qr.png){width="85%" fig-align="center"}
-:::
-::::
-
-
+![](images/site_qr.png){width="22%" fig-align="center"}
 
 ::: {.notes}
 ~12 min for title+poll+hook. Brief self-intro (30 s; the longer why-oceans version comes at the end if kept).
