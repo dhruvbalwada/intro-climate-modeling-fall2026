@@ -11,4 +11,8 @@ Labs are done in class, saved into your course GitHub repo, and submitted by pos
 - **[Lab 0c — The climate of NYC](lab0c_nyc_climate.ipynb)**: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6
 - **[Lab 0d — A bucket](lab0d_bucket.ipynb)**: budgets, equilibrium, stepping forward in time
 
+### Reference (optional)
+
+- **[Where our data comes from](getting_the_data.ipynb)**: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project
+
 *Want more Python? A fuller treatment of scientific Python for earth data is in the companion course site: [earth-ds-ml.github.io/summer_2026](https://earth-ds-ml.github.io/summer_2026/intro.html).*
