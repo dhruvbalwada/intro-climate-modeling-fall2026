@@ -171,6 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#station-observations-noaa-ghcn-daily" id="toc-station-observations-noaa-ghcn-daily" class="nav-link active" data-scroll-target="#station-observations-noaa-ghcn-daily">1. Station observations — NOAA GHCN-Daily</a></li>
   <li><a href="#reanalysis-era5" id="toc-reanalysis-era5" class="nav-link" data-scroll-target="#reanalysis-era5">2. Reanalysis — ERA5</a></li>
   <li><a href="#a-climate-model-cmip6-from-the-cloud" id="toc-a-climate-model-cmip6-from-the-cloud" class="nav-link" data-scroll-target="#a-climate-model-cmip6-from-the-cloud">3. A climate model — CMIP6 from the cloud</a></li>
+  <li><a href="#the-same-thing-for-eight-models" id="toc-the-same-thing-for-eight-models" class="nav-link" data-scroll-target="#the-same-thing-for-eight-models">4. The same thing, for eight models</a></li>
   <li><a href="#credit-where-due" id="toc-credit-where-due" class="nav-link" data-scroll-target="#credit-where-due">Credit where due</a></li>
   </ul>
 </nav>
@@ -280,18 +281,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="a-climate-model-cmip6-from-the-cloud">3. A climate model — CMIP6 from the cloud</h2>
 <p>This is the one we’ll use properly later in the course. Every CMIP6 simulation is catalogued in one big CSV; you filter it to the run you want, then open the data straight from cloud storage — <strong>without downloading the whole thing</strong> (<code>xarray</code> fetches only the chunks you touch).</p>
 <p>The search terms are the CMIP vocabulary you’ll learn later: <code>source_id</code> (which model), <code>experiment_id</code> (which experiment), <code>member_id</code> (which ensemble member), <code>table_id</code> (which output frequency), <code>variable_id</code> (which variable — <code>tas</code> is near-surface air temperature).</p>
-<div id="cell-9" class="cell">
+<div id="4e9d3f59" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cat <span class="op">=</span> pd.read_csv(<span class="st">"https://storage.googleapis.com/cmip6/pangeo-cmip6.csv"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(cat), <span class="st">"simulations in the catalog"</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sel <span class="op">=</span> cat[(cat.source_id <span class="op">==</span> <span class="st">"MPI-ESM1-2-HR"</span>) <span class="op">&amp;</span> (cat.experiment_id <span class="op">==</span> <span class="st">"historical"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>          <span class="op">&amp;</span> (cat.member_id <span class="op">==</span> <span class="st">"r1i1p1f1"</span>) <span class="op">&amp;</span> (cat.table_id <span class="op">==</span> <span class="st">"day"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="op">&amp;</span> (cat.variable_id <span class="op">==</span> <span class="st">"tas"</span>)]</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sel[[<span class="st">"source_id"</span>, <span class="st">"experiment_id"</span>, <span class="st">"member_id"</span>, <span class="st">"table_id"</span>, <span class="st">"variable_id"</span>, <span class="st">"zstore"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sel_all <span class="op">=</span> cat[(cat.experiment_id <span class="op">==</span> <span class="st">"historical"</span>) <span class="op">&amp;</span> (cat.member_id <span class="op">==</span> <span class="st">"r1i1p1f1"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>               <span class="op">&amp;</span> (cat.table_id <span class="op">==</span> <span class="st">"day"</span>) <span class="op">&amp;</span> (cat.variable_id <span class="op">==</span> <span class="st">"tas"</span>)]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sel <span class="op">=</span> cat[(cat.source_id <span class="op">==</span> <span class="st">"MPI-ESM1-2-HR"</span>) <span class="op">&amp;</span> (cat.experiment_id <span class="op">==</span> <span class="st">"historical"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>          <span class="op">&amp;</span> (cat.member_id <span class="op">==</span> <span class="st">"r1i1p1f1"</span>) <span class="op">&amp;</span> (cat.table_id <span class="op">==</span> <span class="st">"day"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>          <span class="op">&amp;</span> (cat.variable_id <span class="op">==</span> <span class="st">"tas"</span>)]</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>sel[[<span class="st">"source_id"</span>, <span class="st">"experiment_id"</span>, <span class="st">"member_id"</span>, <span class="st">"table_id"</span>, <span class="st">"variable_id"</span>, <span class="st">"zstore"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-10" class="cell">
+<div id="ec22b0a7" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_zarr(sel.zstore.iloc[<span class="dv">0</span>], consolidated<span class="op">=</span><span class="va">True</span>, storage_options<span class="op">=</span>{<span class="st">"token"</span>: <span class="st">"anon"</span>})</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ds</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -302,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>The nearest grid cell is ~100 km wide</strong> — here it lands at about 40.68 °N, 74.06 °W, partly over water. It is <em>not</em> Central Park.</li>
 <li><strong>Model calendars are their own thing</strong> (<code>cftime</code> objects, sometimes 360-day years), so converting to ordinary dates takes an extra step.</li>
 </ol>
-<div id="cell-12" class="cell">
+<div id="185c8447" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pt <span class="op">=</span> (ds.tas.sel(lat<span class="op">=</span>LAT, lon<span class="op">=</span>LON <span class="op">%</span> <span class="dv">360</span>, method<span class="op">=</span><span class="st">"nearest"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            .sel(time<span class="op">=</span><span class="bu">slice</span>(<span class="st">"1995"</span>, <span class="st">"2014"</span>)) <span class="op">-</span> <span class="fl">273.15</span>).load()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -312,6 +316,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>s.index <span class="op">=</span> pd.to_datetime(s.index.astype(<span class="bu">str</span>))     <span class="co"># cftime -&gt; ordinary dates</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>s.rename(<span class="st">"t_cmip6"</span>).to_csv(<span class="st">"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span>)</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>s.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-same-thing-for-eight-models" class="level2">
+<h2 class="anchored" data-anchor-id="the-same-thing-for-eight-models">4. The same thing, for eight models</h2>
+<p>One model is one opinion. The lab also uses an <strong>ensemble</strong>: the identical extraction, looped over eight modelling centres. Each model has its own grid, so “the cell nearest Central Park” is a different patch of the planet in each case — for the coarsest model it lands over the ocean.</p>
+<div id="0039b91c" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>MODELS <span class="op">=</span> [<span class="st">"MPI-ESM1-2-HR"</span>, <span class="st">"MPI-ESM1-2-LR"</span>, <span class="st">"CanESM5"</span>, <span class="st">"MIROC6"</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">"IPSL-CM6A-LR"</span>, <span class="st">"ACCESS-CM2"</span>, <span class="st">"NorESM2-LM"</span>, <span class="st">"GFDL-ESM4"</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>out <span class="op">=</span> {}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> MODELS:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        z <span class="op">=</span> sel_all[sel_all.source_id <span class="op">==</span> m].zstore.iloc[<span class="dv">0</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        ds_m <span class="op">=</span> xr.open_zarr(z, consolidated<span class="op">=</span><span class="va">True</span>, storage_options<span class="op">=</span>{<span class="st">"token"</span>: <span class="st">"anon"</span>})</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        pt_m <span class="op">=</span> (ds_m.tas.sel(lat<span class="op">=</span>LAT, lon<span class="op">=</span>LON <span class="op">%</span> <span class="dv">360</span>, method<span class="op">=</span><span class="st">"nearest"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                       .sel(time<span class="op">=</span><span class="bu">slice</span>(<span class="st">"1995"</span>, <span class="st">"2014"</span>)) <span class="op">-</span> <span class="fl">273.15</span>).load()</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        s_m <span class="op">=</span> pt_m.to_series()</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        s_m.index <span class="op">=</span> pd.to_datetime(s_m.index.astype(<span class="bu">str</span>)).normalize()</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        out[m] <span class="op">=</span> s_m[<span class="op">~</span>s_m.index.duplicated()]</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>m<span class="sc">:16s}</span><span class="ss"> cell </span><span class="sc">{</span><span class="bu">float</span>(pt_m.lat)<span class="sc">:6.2f}</span><span class="ss">N </span><span class="sc">{</span><span class="bu">float</span>(pt_m.lon)<span class="op">-</span><span class="dv">360</span><span class="sc">:7.2f}</span><span class="ss">E   mean </span><span class="sc">{</span>s_m<span class="sc">.</span>mean()<span class="sc">:5.2f}</span><span class="ss"> C"</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> exc:</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>m<span class="sc">:16s}</span><span class="ss"> FAILED (</span><span class="sc">{</span><span class="bu">type</span>(exc)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>models <span class="op">=</span> pd.DataFrame(out)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>models.index.name <span class="op">=</span> <span class="st">"time"</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>models.to_csv(<span class="st">"centralpark_cmip6_multimodel_1995-2014.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="credit-where-due" class="level2">
