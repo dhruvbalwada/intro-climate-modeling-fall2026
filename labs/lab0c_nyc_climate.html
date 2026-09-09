@@ -197,7 +197,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#weather-vs-climate" id="toc-weather-vs-climate" class="nav-link active" data-scroll-target="#weather-vs-climate">1. Weather vs climate</a></li>
+  <li><a href="#where-this-data-comes-from" id="toc-where-this-data-comes-from" class="nav-link active" data-scroll-target="#where-this-data-comes-from">Where this data comes from</a></li>
+  <li><a href="#weather-vs-climate" id="toc-weather-vs-climate" class="nav-link" data-scroll-target="#weather-vs-climate">1. Weather vs climate</a></li>
   <li><a href="#your-first-climate-model-fit-it-by-hand" id="toc-your-first-climate-model-fit-it-by-hand" class="nav-link" data-scroll-target="#your-first-climate-model-fit-it-by-hand">2. Your first climate model — fit it by hand</a></li>
   <li><a href="#two-more-nycs-a-reanalysis-and-a-climate-model" id="toc-two-more-nycs-a-reanalysis-and-a-climate-model" class="nav-link" data-scroll-target="#two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</a></li>
   </ul>
@@ -238,11 +239,42 @@ window.Quarto = {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<section id="where-this-data-comes-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-data-comes-from">Where this data comes from</h2>
+<p>Good practice: always know your data’s provenance. All three series cover 1995–2014 (the last 20 years of the CMIP6 historical experiment, so they overlap).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>column</th>
+<th>source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>t_obs</code></td>
+<td>NOAA NCEI <strong>GHCN-Daily</strong>, station <code>USW00094728</code> (NY City Central Park). Daily (TMAX+TMIN)/2.</td>
+</tr>
+<tr class="even">
+<td><code>t_era5</code></td>
+<td><strong>ERA5</strong> reanalysis, daily mean 2 m temperature (Copernicus/ECMWF), via the Open-Meteo archive API, nearest grid point to Central Park.</td>
+</tr>
+<tr class="odd">
+<td><code>t_cmip6</code></td>
+<td><strong>CMIP6 MPI-ESM1-2-HR</strong>, <code>historical</code>, <code>r1i1p1f1</code>, daily <code>tas</code>, from the Pangeo cloud archive; nearest grid cell (40.68 °N, 74.06 °W).</td>
+</tr>
+</tbody>
+</table>
+<p>The download script lives with the course materials (<code>fetch_station_data.py</code>) — we pre-extracted these so class doesn’t depend on live cloud access.</p>
 <p><code>t_obs</code> = the station thermometer (NOAA). <code>t_era5</code> = we’ll come back to that one.</p>
+</section>
 <section id="weather-vs-climate" class="level2">
 <h2 class="anchored" data-anchor-id="weather-vs-climate">1. Weather vs climate</h2>
 <p>Plot two years of data. Then plot the histogram of <strong>all 20 years</strong>.</p>
-<div id="cell-4" class="cell">
+<div id="cell-5" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax[<span class="dv">0</span>], lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_title(<span class="st">"two years of WEATHER"</span>)</span>
@@ -265,7 +297,7 @@ window.Quarto = {
 <li><span class="math inline">\(A\)</span> = ______ (what does it mean? units?)</li>
 </ul>
 <p><strong>Your job: pick values for <code>T0</code> and <code>A</code> by hand.</strong> Run the cell, look at the plot and the error, adjust, repeat. Stop when you can’t do better.</p>
-<div id="cell-6" class="cell">
+<div id="cell-7" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THESE TWO NUMBERS, run, look, repeat:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>T0 <span class="op">=</span> <span class="fl">10.0</span>    <span class="co"># °C</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A  <span class="op">=</span> <span class="fl">5.0</span>     <span class="co"># °C</span></span>
@@ -291,7 +323,7 @@ window.Quarto = {
 <section id="two-more-nycs-a-reanalysis-and-a-climate-model" class="level2">
 <h2 class="anchored" data-anchor-id="two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</h2>
 <p>The same location, from <strong>ERA5</strong> (a weather model continuously corrected by observations) and from a <strong>CMIP6 climate model</strong> (free-running — it invents its own weather).</p>
-<div id="cell-8" class="cell">
+<div id="cell-9" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>url2 <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> pd.read_csv(url2, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cm.index <span class="op">=</span> cm.index.normalize()</span>

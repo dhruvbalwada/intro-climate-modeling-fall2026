@@ -200,7 +200,14 @@
     "href": "labs/lab0c_nyc_climate.html",
     "title": "Lab 0b — The climate of New York City",
     "section": "",
-    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling\nDaily temperature in Central Park, 1995–2014. We’ll use it to answer, concretely: what is climate? and what is a model? — and to build your first climate model (it has two parameters).\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nurl = \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv\"\ndf = pd.read_csv(url, index_col=0, parse_dates=True)\ndf.head()\nt_obs = the station thermometer (NOAA). t_era5 = we’ll come back to that one."
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling\nDaily temperature in Central Park, 1995–2014. We’ll use it to answer, concretely: what is climate? and what is a model? — and to build your first climate model (it has two parameters).\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nurl = \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv\"\ndf = pd.read_csv(url, index_col=0, parse_dates=True)\ndf.head()"
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html#where-this-data-comes-from",
+    "href": "labs/lab0c_nyc_climate.html#where-this-data-comes-from",
+    "title": "Lab 0b — The climate of New York City",
+    "section": "Where this data comes from",
+    "text": "Where this data comes from\nGood practice: always know your data’s provenance. All three series cover 1995–2014 (the last 20 years of the CMIP6 historical experiment, so they overlap).\n\n\n\n\n\n\n\ncolumn\nsource\n\n\n\n\nt_obs\nNOAA NCEI GHCN-Daily, station USW00094728 (NY City Central Park). Daily (TMAX+TMIN)/2.\n\n\nt_era5\nERA5 reanalysis, daily mean 2 m temperature (Copernicus/ECMWF), via the Open-Meteo archive API, nearest grid point to Central Park.\n\n\nt_cmip6\nCMIP6 MPI-ESM1-2-HR, historical, r1i1p1f1, daily tas, from the Pangeo cloud archive; nearest grid cell (40.68 °N, 74.06 °W).\n\n\n\nThe download script lives with the course materials (fetch_station_data.py) — we pre-extracted these so class doesn’t depend on live cloud access.\nt_obs = the station thermometer (NOAA). t_era5 = we’ll come back to that one."
   },
   {
     "objectID": "labs/lab0c_nyc_climate.html#weather-vs-climate",
