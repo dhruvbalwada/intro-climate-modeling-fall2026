@@ -20,10 +20,11 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
 
 ## Part B — Orient to Jupyterhub and run the verification notebook
 
-1. Download [`verify_setup.ipynb`](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/verify_setup.ipynb) (right-click → save).
-2. On the hub: drag-and-drop the file into the JupyterLab file browser (left panel).
-3. Open it and run every cell (`Shift+Enter`, or Run ▸ Run All Cells).
-4. Fill in your name/UNI where indicated and make sure the final plot appears with no errors.
+1. What is Jupyterhub, and where things are.
+2. Open [`verify_setup.ipynb`](verify_setup.ipynb) on the course website and click the **Download this notebook** button at the top.
+3. On the hub: drag-and-drop the file into the JupyterLab file browser (left panel).
+4. Open it and run every cell (`Shift+Enter`, or Run ▸ Run All Cells).
+5. Fill in your name/UNI where indicated and make sure the final plot appears with no errors.
 
 ## Part C — Create your course repository (15 min)
 
