@@ -203,6 +203,7 @@ window.Quarto = {
   <li><a href="#where-this-data-comes-from" id="toc-where-this-data-comes-from" class="nav-link active" data-scroll-target="#where-this-data-comes-from">Where this data comes from</a></li>
   <li><a href="#weather-vs-climate" id="toc-weather-vs-climate" class="nav-link" data-scroll-target="#weather-vs-climate">1. Weather vs climate</a></li>
   <li><a href="#your-first-climate-model-seasonal-cycle-fit-by-eye" id="toc-your-first-climate-model-seasonal-cycle-fit-by-eye" class="nav-link" data-scroll-target="#your-first-climate-model-seasonal-cycle-fit-by-eye">2. Your first climate model — seasonal cycle fit by eye</a></li>
+  <li><a href="#b.-the-class-ensemble" id="toc-b.-the-class-ensemble" class="nav-link" data-scroll-target="#b.-the-class-ensemble">2b. The class ensemble</a></li>
   <li><a href="#two-more-nycs-a-reanalysis-and-a-climate-model" id="toc-two-more-nycs-a-reanalysis-and-a-climate-model" class="nav-link" data-scroll-target="#two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</a>
   <ul class="collapse">
   <li><a href="#a.-first-the-seasonal-cycle" id="toc-a.-first-the-seasonal-cycle" class="nav-link" data-scroll-target="#a.-first-the-seasonal-cycle">3a. First, the seasonal cycle</a></li>
@@ -428,78 +429,145 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <li>Where did your <span class="math inline">\(d_{peak}\)</span> end up? The Sun is strongest at the June solstice (day 172) — but that is almost certainly <strong>not</strong> where you put the peak. Why would the warmest day of the year <em>lag</em> the sunniest one?</li>
 </ol>
 </section>
+<section id="b.-the-class-ensemble" class="level2">
+<h2 class="anchored" data-anchor-id="b.-the-class-ensemble">2b. The class ensemble</h2>
+<p>Everyone fit the <em>same data</em> with the <em>same model</em> — so let’s put all of our answers together.</p>
+<p><strong>Type the class’s numbers into the cell below</strong> (we’ll read them out), then run it.</p>
+<div id="827818fd" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- COLLECTED IN CLASS: replace these with everyone's numbers ---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>class_T0    <span class="op">=</span> [<span class="fl">10.0</span>, <span class="fl">12.0</span>, <span class="fl">13.5</span>, <span class="fl">11.5</span>, <span class="fl">14.0</span>, <span class="fl">12.5</span>, <span class="fl">13.0</span>, <span class="fl">11.0</span>]   <span class="co"># °C</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>class_A     <span class="op">=</span> [ <span class="fl">5.0</span>, <span class="fl">10.0</span>, <span class="fl">12.5</span>,  <span class="fl">9.0</span>, <span class="fl">13.0</span>, <span class="fl">11.0</span>, <span class="fl">12.0</span>, <span class="fl">14.0</span>]   <span class="co"># °C</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>class_dpeak <span class="op">=</span> [ <span class="dv">172</span>,  <span class="dv">195</span>,  <span class="dv">210</span>,  <span class="dv">200</span>,  <span class="dv">215</span>,  <span class="dv">205</span>,  <span class="dv">190</span>,  <span class="dv">220</span>]   <span class="co"># day of year</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ----------------------------------------------------------------</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>doy_axis <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">366</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> seasonal(T0, A, d_peak, d<span class="op">=</span>doy_axis):</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> T0 <span class="op">+</span> A <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (d <span class="op">-</span> d_peak) <span class="op">/</span> <span class="dv">365</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="fl">3.8</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># every student's model</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T0_i, A_i, dp_i <span class="kw">in</span> <span class="bu">zip</span>(class_T0, class_A, class_dpeak):</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    ax.plot(doy_axis, seasonal(T0_i, A_i, dp_i), lw<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, alpha<span class="op">=</span><span class="fl">0.35</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># the class average of the parameters</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>T0_c, A_c, dp_c <span class="op">=</span> np.mean(class_T0), np.mean(class_A), np.mean(class_dpeak)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>ax.plot(doy_axis, seasonal(T0_c, A_c, dp_c), lw<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, label<span class="op">=</span><span class="st">"CLASS MEAN"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># and reality</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>obs_cycle <span class="op">=</span> df[<span class="st">"t_obs"</span>].groupby(df.index.dayofyear).mean()</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>ax.plot(obs_cycle.index, obs_cycle.values, lw<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"OBSERVED"</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"day of year"</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"every student's seasonal cycle, and the class mean"</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"class spread:  T0 </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">min</span>(class_T0)<span class="sc">:.1f}</span><span class="ss">–</span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(class_T0)<span class="sc">:.1f}</span><span class="ss"> °C   "</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"A </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">min</span>(class_A)<span class="sc">:.1f}</span><span class="ss">–</span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(class_A)<span class="sc">:.1f}</span><span class="ss"> °C   "</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"d_peak </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">min</span>(class_dpeak)<span class="sc">}</span><span class="ss">–</span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(class_dpeak)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"class mean :  T0 = </span><span class="sc">{</span>T0_c<span class="sc">:.1f}</span><span class="ss"> °C,  A = </span><span class="sc">{</span>A_c<span class="sc">:.1f}</span><span class="ss"> °C,  d_peak = </span><span class="sc">{</span>dp_c<span class="sc">:.0f}</span><span class="ss">"</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co"># keep the class-mean model around; we'll compare it in section 3</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_class"</span>] <span class="op">=</span> seasonal(T0_c, A_c, dp_c, df.index.dayofyear)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rmse(col):</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.sqrt(((df[<span class="st">"t_obs"</span>] <span class="op">-</span> col) <span class="op">**</span> <span class="dv">2</span>).mean())</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>indiv <span class="op">=</span> [rmse(seasonal(a, b, c, df.index.dayofyear)) <span class="cf">for</span> a, b, c <span class="kw">in</span> <span class="bu">zip</span>(class_T0, class_A, class_dpeak)]</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">RMSE: best individual </span><span class="sc">{</span><span class="bu">min</span>(indiv)<span class="sc">:.2f}</span><span class="ss"> °C · median individual </span><span class="sc">{</span>np<span class="sc">.</span>median(indiv)<span class="sc">:.2f}</span><span class="ss"> °C "</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"· CLASS MEAN </span><span class="sc">{</span>rmse(df[<span class="st">'t_class'</span>])<span class="sc">:.2f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class spread:  T0 10.0–14.0 °C   A 5.0–14.0 °C   d_peak 172–220
+class mean :  T0 = 12.2 °C,  A = 10.8 °C,  d_peak = 201
+
+RMSE: best individual 4.15 °C · median individual 4.62 °C · CLASS MEAN 4.27 °C</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-5-output-2.png" width="854" height="355" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Look at that last line.</strong> How does the class-mean model compare with a typical individual guess?</p>
+<p>This is not a trick: averaging many imperfect estimates tends to cancel their independent errors. Hold onto it — in section 4 the world’s climate modelling centres will play the role you just played, and the <em>multi-model mean</em> will behave the same way.</p>
+</section>
 <section id="two-more-nycs-a-reanalysis-and-a-climate-model" class="level2">
 <h2 class="anchored" data-anchor-id="two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</h2>
 <p>The same location, from <strong>ERA5</strong> (a weather model continuously corrected by observations) and from a <strong>CMIP6 climate model</strong> (free-running — it invents its own weather based on forcing from the sun and the dynamics of different parts of the Earth system).</p>
 <section id="a.-first-the-seasonal-cycle" class="level3">
 <h3 class="anchored" data-anchor-id="a.-first-the-seasonal-cycle">3a. First, the seasonal cycle</h3>
 <p>Before any statistics: do the three even have the same <em>climate</em>? Average every day-of-year over the 20 years.</p>
-<div id="0a7f9bca" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.6</span>), width_ratios<span class="op">=</span>[<span class="dv">3</span>, <span class="dv">2</span>])</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>doyg <span class="op">=</span> df.index.dayofyear</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                    (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(df[c].groupby(doyg).mean(), color<span class="op">=</span>col, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span>lab)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"day of year"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"mean seasonal cycle"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].legend()</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>),</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                    (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].hist(df[c].dropna(), bins<span class="op">=</span><span class="dv">40</span>, histtype<span class="op">=</span><span class="st">"step"</span>, lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab, density<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].set_title(<span class="st">"full distribution"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"20-year means:  "</span> <span class="op">+</span> <span class="st">"  ·  "</span>.join(</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>lab<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>df[c]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span> <span class="cf">for</span> c, lab <span class="kw">in</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    [(<span class="st">"t_obs"</span>,<span class="st">"station"</span>), (<span class="st">"t_era5"</span>,<span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>,<span class="st">"CMIP6"</span>)]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0a7f9bca" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.6</span>), width_ratios<span class="op">=</span>[<span class="dv">3</span>, <span class="dv">2</span>])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>doyg <span class="op">=</span> df.index.dayofyear</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                    (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(df[c].groupby(doyg).mean(), color<span class="op">=</span>col, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span>lab)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"t_class"</span> <span class="kw">in</span> df:      <span class="co"># from section 2b</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(df[<span class="st">"t_class"</span>].groupby(doyg).mean(), color<span class="op">=</span><span class="st">"tab:red"</span>, lw<span class="op">=</span><span class="dv">2</span>, ls<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="st">"class mean"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"day of year"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"mean seasonal cycle"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].legend()</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                    (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].hist(df[c].dropna(), bins<span class="op">=</span><span class="dv">40</span>, histtype<span class="op">=</span><span class="st">"step"</span>, lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab, density<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].set_title(<span class="st">"full distribution"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"20-year means:  "</span> <span class="op">+</span> <span class="st">"  ·  "</span>.join(</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>lab<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>df[c]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span> <span class="cf">for</span> c, lab <span class="kw">in</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    [(<span class="st">"t_obs"</span>,<span class="st">"station"</span>), (<span class="st">"t_era5"</span>,<span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>,<span class="st">"CMIP6"</span>)]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>20-year means:  station 13.1 °C  ·  ERA5 11.5 °C  ·  CMIP6 10.2 °C</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab0c_nyc_climate_files/figure-html/cell-5-output-2.png" width="1142" height="336" class="figure-img"></p>
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-6-output-2.png" width="1142" height="336" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>All three have a seasonal cycle of roughly the right shape and size — the climate model gets <em>the climate</em> broadly right, if a few degrees cold.</p>
+<p>All three have a seasonal cycle of roughly the right shape and size — the climate model gets <em>the climate</em> broadly right, if a few degrees cold. Even ERA5 is a bit colder than station data (why?).</p>
 </section>
 <section id="b.-now-the-weather" class="level3">
 <h3 class="anchored" data-anchor-id="b.-now-the-weather">3b. Now, the weather</h3>
 <p>Same three series, but zoomed in to individual days.</p>
-<div id="b393abca" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"six months of daily temperature"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b393abca" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"six months of daily temperature"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab0c_nyc_climate_files/figure-html/cell-6-output-1.png" width="1044" height="326" class="figure-img"></p>
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-7-output-1.png" width="1044" height="326" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>ERA5 rides along with the station; the CMIP6 model does its own thing entirely.</p>
-<p>To measure that, we compare <strong>anomalies</strong> — each series with <em>its own</em> seasonal cycle subtracted, so what’s left is only the weather. (Without this step the correlation would mostly measure “do they both have summers?”, which tells us nothing interesting.)</p>
-<div id="3c6bcb90" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># each series minus its own seasonal cycle -&gt; weather anomalies</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>anom <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> c: c <span class="op">-</span> c.groupby(doyg).transform(<span class="st">"mean"</span>))</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">3</span>))</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                    (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    anom[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"0.7"</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"anomaly [°C]"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"weather anomalies (seasonal cycle removed)"</span>)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"day-to-day correlation with the station, seasonal cycles removed:"</span>)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  ERA5  : r = </span><span class="sc">{</span>anom[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(anom[<span class="st">'t_era5'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  CMIP6 : r = </span><span class="sc">{</span>anom[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(anom[<span class="st">'t_cmip6'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To measure that, we compare <strong>anomalies</strong> — each series with <em>its own</em> seasonal cycle subtracted, so what’s left is mostly the weather. (Without this step the correlation would mostly measure “do they both have summers?”, which mixes information about seasonality and weather.)</p>
+<div id="3c6bcb90" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># each series minus its own seasonal cycle -&gt; weather anomalies</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>anom <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> c: c <span class="op">-</span> c.groupby(doyg).transform(<span class="st">"mean"</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">3</span>))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                    (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    anom[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"0.7"</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"anomaly [°C]"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"weather anomalies (seasonal cycle removed)"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"day-to-day correlation with the station, seasonal cycles removed:"</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  ERA5  : r = </span><span class="sc">{</span>anom[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(anom[<span class="st">'t_era5'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  CMIP6 : r = </span><span class="sc">{</span>anom[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(anom[<span class="st">'t_cmip6'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>day-to-day correlation with the station, seasonal cycles removed:
   ERA5  : r = 0.95
@@ -508,7 +576,7 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab0c_nyc_climate_files/figure-html/cell-7-output-2.png" width="1046" height="278" class="figure-img"></p>
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-8-output-2.png" width="1046" height="278" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -524,28 +592,28 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <section id="one-model-is-not-the-story" class="level2">
 <h2 class="anchored" data-anchor-id="one-model-is-not-the-story">4. One model is not the story</h2>
 <p>You just compared the observations to <strong>one</strong> climate model. But there are dozens, built by different groups, with different grids and different choices inside. Here are eight of them at this same location.</p>
-<div id="6cb9f3e3" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.8</span>), width_ratios<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">1</span>])</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean seasonal cycle: every model, plus observations</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> models.columns:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(models[m].groupby(models.index.dayofyear).mean(), lw<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span>m)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(df[<span class="st">"t_obs"</span>].groupby(df.index.dayofyear).mean(), lw<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"OBSERVED"</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"day of year"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"mean seasonal cycle: 8 CMIP6 models vs reality"</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">6</span>, ncol<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 20-year mean temperature: where does reality sit?</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> models.mean().sort_values()</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].barh(<span class="bu">range</span>(<span class="bu">len</span>(means)), means.values, color<span class="op">=</span><span class="st">"tab:orange"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(means)))<span class="op">;</span> ax[<span class="dv">1</span>].set_yticklabels(means.index, fontsize<span class="op">=</span><span class="dv">6</span>)</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axvline(df[<span class="st">"t_obs"</span>].mean(), color<span class="op">=</span><span class="st">"k"</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"station"</span>)</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axvline(df[<span class="st">"t_era5"</span>].mean(), color<span class="op">=</span><span class="st">"tab:blue"</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"ERA5"</span>)</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"20-year mean [°C]"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">7</span>)</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"model spread: </span><span class="sc">{</span>means<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.1f}</span><span class="ss"> to </span><span class="sc">{</span>means<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.1f}</span><span class="ss"> °C   (multi-model mean </span><span class="sc">{</span>means<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C)"</span>)</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"station </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · ERA5 </span><span class="sc">{</span>df[<span class="st">'t_era5'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6cb9f3e3" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.8</span>), width_ratios<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">1</span>])</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean seasonal cycle: every model, plus observations</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> models.columns:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(models[m].groupby(models.index.dayofyear).mean(), lw<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span>m)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(df[<span class="st">"t_obs"</span>].groupby(df.index.dayofyear).mean(), lw<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"OBSERVED"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"day of year"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"mean seasonal cycle: 8 CMIP6 models vs reality"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">6</span>, ncol<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 20-year mean temperature: where does reality sit?</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> models.mean().sort_values()</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].barh(<span class="bu">range</span>(<span class="bu">len</span>(means)), means.values, color<span class="op">=</span><span class="st">"tab:orange"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(means)))<span class="op">;</span> ax[<span class="dv">1</span>].set_yticklabels(means.index, fontsize<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axvline(df[<span class="st">"t_obs"</span>].mean(), color<span class="op">=</span><span class="st">"k"</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"station"</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axvline(df[<span class="st">"t_era5"</span>].mean(), color<span class="op">=</span><span class="st">"tab:blue"</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"ERA5"</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"20-year mean [°C]"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">7</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"model spread: </span><span class="sc">{</span>means<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.1f}</span><span class="ss"> to </span><span class="sc">{</span>means<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.1f}</span><span class="ss"> °C   (multi-model mean </span><span class="sc">{</span>means<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C)"</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"station </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · ERA5 </span><span class="sc">{</span>df[<span class="st">'t_era5'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>model spread: 9.5 to 15.5 °C   (multi-model mean 11.6 °C)
 station 13.1 °C · ERA5 11.5 °C</code></pre>
@@ -553,7 +621,7 @@ station 13.1 °C · ERA5 11.5 °C</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab0c_nyc_climate_files/figure-html/cell-8-output-2.png" width="1142" height="355" class="figure-img"></p>
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-9-output-2.png" width="1142" height="355" class="figure-img"></p>
 </figure>
 </div>
 </div>
