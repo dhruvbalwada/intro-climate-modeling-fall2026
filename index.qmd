@@ -16,13 +16,8 @@ Earth system and climate models are critically important tools for climate scien
 | Submission  | Private GitHub repos; links posted to Courseworks |
 | Computing   | Course JupyterHub (details on Courseworks) |
 
-## Grading
-
-Participation 10% · Labs (5, in class) 10% · Homework (5, biweekly) 50% · Project proposal 10% · Final project 20%. Full policies in the official syllabus on Courseworks.
-
 ## Key dates
 
-- **Sep 24** — Lab 0 (setup) due before class; Lab 1 in class
 - **Oct 9** — final project *title* due
 - **Oct 23** — final project *proposal* due (1 page)
 - **Dec 10 / 17** — project presentations

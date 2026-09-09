@@ -2,15 +2,10 @@
 title: "Labs"
 ---
 
-Five in-class labs (weeks 3, 5, 7, 9, 11), completed collaboratively during the lab portion of class and submitted the same day via your GitHub repo (link posted to Courseworks). Plus Lab 0, the ungraded setup lab everything depends on.
+Labs are done in class, saved into your course GitHub repo, and submitted by posting your repo link on Courseworks. This page grows week by week.
 
-| Lab | Week | Topic |
-|-----|------|-------|
-| [Lab 0a](lab0.qmd) | week 1, in class | Toolchain setup: JupyterHub, GitHub, repo, first notebook |
-| [Lab 0b](lab0b_nyc_climate.ipynb) | week 1, in class | The climate of NYC: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6 |
-| [Lab 0c](lab0c_bucket.ipynb) | week 1, in class | The bucket: budgets, equilibrium, stepping forward in time |
-| Lab 1 | 3 | Equilibrium & time-dependent energy balance models |
-| Lab 2 | 5 | Simple circulation models |
-| Lab 3 | 7 | Soil-moisture bucket model |
-| Lab 4 | 9 | Simulating albedo feedbacks |
-| Lab 5 | 11 | Modeling transient climate change |
+## Week 1 (Sep 10)
+
+- **[Lab 0a — Getting set up](lab0.qmd)**: GitHub account, private course repo, LEAP hub, first notebook
+- **[Lab 0b — The climate of NYC](lab0b_nyc_climate.ipynb)** *(download the .ipynb, upload to your hub)*: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6
+- **[Lab 0c — A bucket](lab0c_bucket.ipynb)** *(download, upload to hub)*: budgets, equilibrium, stepping forward in time
