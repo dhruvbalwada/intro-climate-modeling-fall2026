@@ -46,7 +46,7 @@
     "href": "slides/week02.html#the-simplest-greenhouse-setup",
     "title": "Energy Balance Modeling 1",
     "section": "The simplest greenhouse: setup",
-    "text": "The simplest greenhouse: setup\nOne atmospheric layer that is:\n\ntransparent to shortwave (sunlight passes through)\nperfectly absorbing in longwave (nothing gets past it)\nradiating \\(\\sigma T_a^4\\) both up and down\n\n\n\nBOARD, not slides, for the whole derivation (~15 min). Two budgets, two unknowns — ask the room to supply each term before writing it. This is the second board derivation of the course (after week 1’s T_e); same culture: they follow, not admire."
+    "text": "The simplest greenhouse: setup\nOne atmospheric layer that is:\n\ntransparent to shortwave (sunlight passes through)\nperfectly absorbing in longwave (nothing gets past it)\nradiating \\(\\sigma T_a^4\\) both up and down\n\n\n\nBOARD, not slides, for the whole derivation. Two budgets, two unknowns — ask the room to supply each term before writing it. This is the second board derivation of the course (after week 1’s T_e); same culture: they follow, not admire."
   },
   {
     "objectID": "slides/week02.html#the-derivation-record",
@@ -67,7 +67,7 @@
     "href": "slides/week02.html#why-the-overshoot-the-best-kind-of-wrong",
     "title": "Energy Balance Modeling 1",
     "section": "Why the overshoot? The best kind of wrong",
-    "text": "Why the overshoot? The best kind of wrong\n\nThe real atmosphere isn’t a perfect absorber (windows, wings)\nDeeper: convection short-circuits radiation — ~100 W/m² leaves the surface as evaporation + thermals, not photons\nPure radiative equilibrium would make the lower atmosphere absurdly steep and unstable → convection overturns it and pins the lapse rate ≈ 6.5 K/km\n\n\nAutomating exactly this repair = Manabe & Wetherald 1967 (week 1’s “most influential paper”).\n\nThis is the week’s 5-minute vertical-structure aside — the ONLY dose of RCE this week (thread returns Nov 5). GR5001 callback: their week 3 was convection; “you know why air rises — here’s what that does to the greenhouse.” M&W Fig 16 from last week can reappear for one beat."
+    "text": "Why the overshoot? The best kind of wrong\n\nThe real atmosphere isn’t a perfect absorber (windows, wings)\nDeeper: convection short-circuits radiation — ~100 W/m² leaves the surface as evaporation + thermals, not photons\nPure radiative equilibrium would make the lower atmosphere absurdly steep and unstable → convection overturns it and pins the lapse rate ≈ 6.5 K/km\n\n\nAutomating exactly this repair = Manabe & Wetherald 1967 (week 1’s “most influential paper”).\n\nThis is the week’s brief vertical-structure aside — the ONLY dose of RCE this week (thread returns Nov 5). GR5001 callback: their week 3 was convection; “you know why air rises — here’s what that does to the greenhouse.” M&W Fig 16 from last week can reappear for one beat."
   },
   {
     "objectID": "slides/week02.html#n-panes-of-glass",
@@ -81,7 +81,7 @@
     "href": "slides/week02.html#break",
     "title": "Energy Balance Modeling 1",
     "section": "Break",
-    "text": "Break\n10 minutes"
+    "text": "Break"
   },
   {
     "objectID": "slides/week02.html#where-does-earths-radiation-to-space-really-come-from",
@@ -123,7 +123,7 @@
     "href": "slides/week02.html#look-at-the-actual-spectrum",
     "title": "Energy Balance Modeling 1",
     "section": "Look at the actual spectrum",
-    "text": "Look at the actual spectrum\n\n\nBand center: opaque at 280 ppm, opaque at 560 ppm — Ångström was right about the center\nBand wings: visibly deepening — this is where doubling acts\n\n\nLIVE DEMO if wifi cooperates (U. Chicago MODTRAN, ~8 min): set 280 ppm, note outgoing flux; double to 560; the flux drops ~3 W/m²; zoom the band wings. Students see the forcing in measured-quantity space. Screenshots on this slide are the wifi-failure fallback — rehearse the demo once beforehand."
+    "text": "Look at the actual spectrum\n\n\nBand center: opaque at 280 ppm, opaque at 560 ppm — Ångström was right about the center\nBand wings: visibly deepening — this is where doubling acts\n\n\nLIVE DEMO if wifi cooperates (U. Chicago MODTRAN): set 280 ppm, note outgoing flux; double to 560; the flux drops ~3 W/m²; zoom the band wings. Students see the forcing in measured-quantity space. Screenshots on this slide are the wifi-failure fallback — rehearse the demo once beforehand."
   },
   {
     "objectID": "slides/week02.html#why-the-response-is-a-logarithm-not-zero",
@@ -133,11 +133,11 @@
     "text": "Why the response is a logarithm (not zero)\nEach doubling widens the effective opaque interval by roughly the same spectral increment:\n\\[\\Delta F \\approx 5.35 \\cdot \\ln\\!\\left(\\frac{C}{C_0}\\right)\\ \\mathrm{W\\,m^{-2}} \\qquad \\approx 3.7\\ \\mathrm{W\\,m^{-2}\\ per\\ doubling}\\]\n\nSaturation is why it’s a log — not why it’s zero\nThis is why climate speaks in doublings, and why ECS is defined per doubling\n\n\n280→560 ppm and 560→1120 ppm have the SAME forcing. Also note: this one-line formula is how CMIP-model forcings are quoted and compared — the toy is the ruler (bridge beat returns at the end)."
   },
   {
-    "objectID": "slides/week02.html#your-turn-break-ångström-pairs-12-min",
-    "href": "slides/week02.html#your-turn-break-ångström-pairs-12-min",
+    "objectID": "slides/week02.html#your-turn-break-ångström-in-pairs",
+    "href": "slides/week02.html#your-turn-break-ångström-in-pairs",
     "title": "Energy Balance Modeling 1",
-    "section": "Your turn: break Ångström (pairs, ~12 min)",
-    "text": "Your turn: break Ångström (pairs, ~12 min)\nHere is the argument, verbatim:\n\n“The CO₂ band is already saturated — the atmosphere absorbs all the radiation in that band within a few hundred meters. More CO₂ cannot change the energy balance.”\n\nWith your partner, write the strongest 3–4 sentence rebuttal you can. Use anything from today. Names on the slip; hand it in.\n\nCirculate with the TAs. Most pairs will find the wings; the deeper rebuttal (emission height rises regardless — a saturated band just means z_e is HIGH, not that it can’t go higher) is what the debrief adds. Slips → participation credit."
+    "section": "Your turn: break Ångström (in pairs)",
+    "text": "Your turn: break Ångström (in pairs)\nHere is the argument, verbatim:\n\n“The CO₂ band is already saturated — the atmosphere absorbs all the radiation in that band within a few hundred meters. More CO₂ cannot change the energy balance.”\n\nWith your partner, write the strongest 3–4 sentence rebuttal you can. Use anything from today. Names on the slip; hand it in.\n\nCirculate with the TAs. Most pairs will find the wings; the deeper rebuttal (emission height rises regardless — a saturated band just means z_e is HIGH, not that it can’t go higher) is what the debrief adds. Slips → participation credit."
   },
   {
     "objectID": "slides/week02.html#debrief-three-independent-ways-it-fails",
@@ -347,14 +347,14 @@
     "href": "slides/week01.html#intro-and-logistics",
     "title": "Introduction to Climate Modeling",
     "section": "Intro and logistics",
-    "text": "Intro and logistics\n\nTime: Thursdays 10:10–12:40 · FRM 315 (The Forum)\nInstructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)\nTAs: Prani Nalluri (pan2121) · Chandanie Kutwaru (ck3397)\nOffice hours: TBD (TAs will organize)\nWe will work using Courseworks + the course website ↓\n\n\n\n~8 min incl. 30-s self-intro."
+    "text": "Intro and logistics\n\nTime: Thursdays 10:10–12:40 · FRM 315 (The Forum)\nInstructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)\nTAs: Prani Nalluri (pan2121) · Chandanie Kutwaru (ck3397)\nOffice hours: TBD (TAs will organize)\nWe will work using Courseworks + the course website ↓\n\n\n\nBrief self-intro, then straight into the work."
   },
   {
     "objectID": "slides/week01.html#the-work-labs-homeworks-project",
     "href": "slides/week01.html#the-work-labs-homeworks-project",
     "title": "Introduction to Climate Modeling",
     "section": "The work: labs, homeworks, project",
-    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class presence\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~every two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nHomework submission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.\n\n~6 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
+    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class presence\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~every two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nHomework submission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.\n\nFlag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
   },
   {
     "objectID": "slides/week01.html#before-we-start",
@@ -364,32 +364,32 @@
     "text": "Before we start\n\nRoughly what sets the Earth’s average temperature? (could you explain it to a friend?)\nDo you remember what “climate sensitivity” means?\nHave you come across ordinary differential equations — in any course?\nHave you written Python this year? …keep your hand up if you’ve used it on climate or environmental data\nHave you used git/GitHub before?\n\n\nUngraded diagnostic — no judgment framing: “a year since GR5001 is a long time; that’s expected.” Q3 calibrates the math pacing of weeks 2–3; Q4’s second stage tells you how much xarray scaffolding labs need; Q5 tells the TAs how hands-on Lab 0a must be. Jot rough counts right after class."
   },
   {
-    "objectID": "slides/week01.html#lab-0a-checklist-30-min",
-    "href": "slides/week01.html#lab-0a-checklist-30-min",
+    "objectID": "slides/week01.html#lab-0a-checklist",
+    "href": "slides/week01.html#lab-0a-checklist",
     "title": "Introduction to Climate Modeling",
-    "section": "Lab 0a checklist (~30 min)",
-    "text": "Lab 0a checklist (~30 min)\nFollow the Lab 0 instructions on the course website:\n\nGitHub account (skip if you have one) → create your private course repo climate-modeling-f26-&lt;uni&gt; → add me + Prani + Chandanie as collaborators\nLEAP hub: log in at leap.2i2c.cloud (filled the access form? if it fails — hand up)\nStart your server, open JupyterLab, run the verification notebook\nSubmit: post your repo URL to the Courseworks “Lab 0” assignment\n\nDone early? Help a neighbor — explaining git is the best way to learn it.\n\n~30–35 min. Front-loads the setup pain while TAs are in the room instead of leaving it to students alone at home. TAs collect names of anyone without hub access."
+    "section": "Lab 0a checklist",
+    "text": "Lab 0a checklist\nFollow the Lab 0 instructions on the course website:\n\nGitHub account (skip if you have one) → create your private course repo climate-modeling-f26-&lt;uni&gt; → add me + Prani + Chandanie as collaborators\nLEAP hub: log in at leap.2i2c.cloud (filled the access form? if it fails — hand up)\nStart your server, open JupyterLab, run the verification notebook\nSubmit: post your repo URL to the Courseworks “Lab 0” assignment\n\nDone early? Help a neighbor — explaining git is the best way to learn it.\n\nFront-loads the setup pain while TAs are in the room instead of leaving it to students alone at home. TAs collect names of anyone without hub access."
   },
   {
     "objectID": "slides/week01.html#your-toolkit-in-one-slide",
     "href": "slides/week01.html#your-toolkit-in-one-slide",
     "title": "Introduction to Climate Modeling",
     "section": "Your toolkit, in one slide",
-    "text": "Your toolkit, in one slide\n\nJupyterLab (on the hub): notebooks are cells; Shift+Enter runs one; the kernel is the running Python\nnumpy — arrays and math: np.cos(...), arr.mean()\nmatplotlib — plots: plt.plot(t, h)\npandas / xarray — labeled data from files or the cloud: pd.read_csv(url)\nAI assistants: allowed and encouraged for coding help (disclose it; you must understand what you submit)\n\nWe learn these by using them — starting right after the break.\n\n~5 min max — a map, not a tutorial."
+    "text": "Your toolkit, in one slide\n\nJupyterLab (on the hub): notebooks are cells; Shift+Enter runs one; the kernel is the running Python\nnumpy — arrays and math: np.cos(...), arr.mean()\nmatplotlib — plots: plt.plot(t, h)\npandas / xarray — labeled data from files or the cloud: pd.read_csv(url)\nAI assistants: allowed and encouraged for coding help (disclose it; you must understand what you submit)\n\nWe learn these by using them — starting right after the break.\n\nA map, not a tutorial — we learn the tools by using them."
   },
   {
     "objectID": "slides/week01.html#break",
     "href": "slides/week01.html#break",
     "title": "Introduction to Climate Modeling",
     "section": "Break",
-    "text": "Break\n10 minutes\n\nTAs use the break to unblock hub/GitHub stragglers."
+    "text": "Break\n\nTAs use the break to unblock hub/GitHub stragglers."
   },
   {
     "objectID": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
     "href": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
     "title": "Introduction to Climate Modeling",
     "section": "Weather is the state. Climate is the distribution.",
-    "text": "Weather is the state. Climate is the distribution.\n\nWeather: the value right now — a random variable, unpredictable in detail beyond ~2 weeks\nClimate: the distribution those values are drawn from — mean, variability, tails — estimated over a chosen period (convention: ~30 years)\nClimate change = the distribution shifting, widening, or reshaping — with very different consequences in the tails\n\n\n~5 min abstract; Lab 0b makes it concrete with NYC data in a few minutes."
+    "text": "Weather is the state. Climate is the distribution.\n\nWeather: the value right now — a random variable, unpredictable in detail beyond ~2 weeks\nClimate: the distribution those values are drawn from — mean, variability, tails — estimated over a chosen period (convention: ~30 years)\nClimate change = the distribution shifting, widening, or reshaping — with very different consequences in the tails\n\n\nAbstract here; Lab 0b makes it concrete with NYC data shortly."
   },
   {
     "objectID": "slides/week01.html#every-number-on-this-figure-came-out-of-a-model",
@@ -410,28 +410,28 @@
     "href": "slides/week01.html#a-model-is",
     "title": "Introduction to Climate Modeling",
     "section": "A model is…",
-    "text": "A model is…\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\n~5 min — one slide of philosophy, then the labs make it real. The structure/parameters line pays off in ~15 minutes when everyone’s hand-fit differs."
+    "text": "A model is…\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
   },
   {
     "objectID": "slides/week01.html#lab-0b-the-climate-of-nyc",
     "href": "slides/week01.html#lab-0b-the-climate-of-nyc",
     "title": "Introduction to Climate Modeling",
     "section": "Lab 0b · The climate of NYC",
-    "text": "Lab 0b · The climate of NYC\nOpen lab0b_nyc_climate.ipynb (download from the Labs page, upload to your hub):\n\nPlot 20 years of Central Park temperature → what is the climate of NYC?\nFit a 2-parameter model by hand: \\(T_0 + A\\cos(2\\pi(d-201)/365)\\) — pick \\(T_0\\) and \\(A\\), check the error, iterate. What are the units?\nWhen you’re happy: shout out your \\(T_0\\), \\(A\\), RMSE — we collect them on the board\nThen: the same NYC from ERA5 and from a CMIP6 model — why are all three different?\n\n\n~30 min. The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that’s by design; it only owes you the distribution. Discussion prompts are in the notebook."
+    "text": "Lab 0b · The climate of NYC\nOpen lab0b_nyc_climate.ipynb (download from the Labs page, upload to your hub):\n\nPlot 20 years of Central Park temperature → what is the climate of NYC?\nFit a 2-parameter model by hand: \\(T_0 + A\\cos(2\\pi(d-201)/365)\\) — pick \\(T_0\\) and \\(A\\), check the error, iterate. What are the units?\nWhen you’re happy: shout out your \\(T_0\\), \\(A\\), RMSE — we collect them on the board\nThen: the same NYC from ERA5 and from a CMIP6 model — why are all three different?\n\n\nThe board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that’s by design; it only owes you the distribution. Discussion prompts are in the notebook."
   },
   {
     "objectID": "slides/week01.html#lab-0c-a-bucket-adding-time",
     "href": "slides/week01.html#lab-0c-a-bucket-adding-time",
     "title": "Introduction to Climate Modeling",
     "section": "Lab 0c · A bucket: adding time",
-    "text": "Lab 0c · A bucket: adding time\n(board first: a volume budget — in − out = accumulation)\n\\[A\\,\\frac{dh}{dt} = \\underbrace{F}_{\\text{forcing (external)}} - \\underbrace{k\\,h}_{\\text{drain (the system)}}\\]\nOpen lab0c_bucket.ipynb:\n\nEquilibrium: set \\(dh/dt=0\\) → \\(h^* = F/k\\) — check the units!\nFill in the Euler step and watch the level find its equilibrium\nAttack your own prediction three ways: vary \\(h_0\\) · vary \\(k\\) · vary \\(F\\)\n\n\n~30 min: ~10 on the board (derive the budget slowly — volumes, fluxes, units; which terms are external forcing vs properties of the system), ~20 in the lab. Say the feedback sentence explicitly: fuller → drains harder → that’s what makes equilibrium exist. The three experiments set up the closing section."
+    "text": "Lab 0c · A bucket: adding time\n(board first: a volume budget — in − out = accumulation)\n\\[A\\,\\frac{dh}{dt} = \\underbrace{F}_{\\text{forcing (external)}} - \\underbrace{k\\,h}_{\\text{drain (the system)}}\\]\nOpen lab0c_bucket.ipynb:\n\nEquilibrium: set \\(dh/dt=0\\) → \\(h^* = F/k\\) — check the units!\nFill in the Euler step and watch the level find its equilibrium\nAttack your own prediction three ways: vary \\(h_0\\) · vary \\(k\\) · vary \\(F\\)\n\n\nBoard first — derive the budget slowly: volumes, fluxes, units; which terms are external forcing vs properties of the system. Then the lab. Say the feedback sentence explicitly: fuller → drains harder → that’s what makes equilibrium exist. The three experiments set up the closing section."
   },
   {
     "objectID": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
     "href": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
     "title": "Introduction to Climate Modeling",
     "section": "Three reasons a forecast can be wrong",
-    "text": "Three reasons a forecast can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: feedback strengths — and everyone’s different \\(A\\) in Lab 0b)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons. (Week 11 quantifies this for the real Earth.)\n\n~7 min. Every bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+    "text": "Three reasons a forecast can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: feedback strengths — and everyone’s different \\(A\\) in Lab 0b)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons. (Week 11 quantifies this for the real Earth.)\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
   },
   {
     "objectID": "slides/week01.html#before-you-leave",
