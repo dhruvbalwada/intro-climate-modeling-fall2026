@@ -196,6 +196,90 @@
     "text": "Key dates\n\nOct 9 — final project title due\nOct 23 — final project proposal due (1 page)\nDec 10 / 17 — project presentations\nDec 18 — final project notebook due\n\nStart here: the schedule, then Lab 0."
   },
   {
+    "objectID": "labs/verify_setup.html",
+    "href": "labs/verify_setup.html",
+    "title": "Lab 0 — Setup Verification",
+    "section": "",
+    "text": "Introduction to Climate Modeling · Fall 2026\nRun every cell in this notebook (Shift+Enter). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.\nFill in the next cell first.\n# EDIT THIS CELL\nname = \"YOUR NAME HERE\"\nuni = \"YOUR UNI HERE\"\n\nprint(f\"Lab 0 submitted by {name} ({uni})\")"
+  },
+  {
+    "objectID": "labs/verify_setup.html#check-the-scientific-python-stack",
+    "href": "labs/verify_setup.html#check-the-scientific-python-stack",
+    "title": "Lab 0 — Setup Verification",
+    "section": "1. Check the scientific Python stack",
+    "text": "1. Check the scientific Python stack\nThese are the libraries we’ll use all semester. This cell just confirms they import and prints their versions.\n\nimport sys\nimport numpy as np\nimport matplotlib\nimport matplotlib.pyplot as plt\nimport xarray as xr\n\nprint(f\"python     {sys.version.split()[0]}\")\nprint(f\"numpy      {np.__version__}\")\nprint(f\"matplotlib {matplotlib.__version__}\")\nprint(f\"xarray     {xr.__version__}\")\nprint(\"\\nAll imports OK ✅\")"
+  },
+  {
+    "objectID": "labs/verify_setup.html#a-tiny-computation-and-a-preview-of-week-2",
+    "href": "labs/verify_setup.html#a-tiny-computation-and-a-preview-of-week-2",
+    "title": "Lab 0 — Setup Verification",
+    "section": "2. A tiny computation — and a preview of Week 2",
+    "text": "2. A tiny computation — and a preview of Week 2\nThe emission temperature of a planet is the temperature it must radiate at to balance the sunlight it absorbs:\n\\[T_e = \\left[\\frac{S_0(1-\\alpha)}{4\\sigma}\\right]^{1/4}\\]\nwhere \\(S_0\\) is the solar constant, \\(\\alpha\\) the planetary albedo (how reflective the planet is), and \\(\\sigma\\) the Stefan–Boltzmann constant. Next week we’ll derive this and discover why it gives the wrong answer for Earth’s surface — in the most interesting way possible.\nFor now: run the cell and look at the plot.\n\nS0 = 1361.0      # solar constant [W m-2]\nsigma = 5.67e-8  # Stefan-Boltzmann constant [W m-2 K-4]\n\nalbedo = np.linspace(0.0, 0.8, 100)\nT_e = (S0 * (1 - albedo) / (4 * sigma)) ** 0.25\n\nfig, ax = plt.subplots(figsize=(6, 4))\nax.plot(albedo, T_e, lw=2)\nax.axvline(0.3, ls=\"--\", color=\"gray\")\nax.axhline(255, ls=\"--\", color=\"gray\")\nax.plot(0.3, 255, \"o\", color=\"tab:red\", ms=8, zorder=5,\n        label=\"Earth: $\\\\alpha=0.3$, $T_e\\\\approx255$ K\")\nax.axhline(288, ls=\":\", color=\"tab:red\",\n           label=\"Earth's actual surface T = 288 K  (?!)\")\nax.set_xlabel(\"planetary albedo\")\nax.set_ylabel(\"emission temperature [K]\")\nax.set_title(f\"{name}'s first climate calculation\")\nax.legend()\nfig.tight_layout()\n\nThat 33 K gap between the dashed gray line and the dotted red line? That’s the greenhouse effect, and it’s where this course begins."
+  },
+  {
+    "objectID": "labs/verify_setup.html#check-xarray-our-data-workhorse",
+    "href": "labs/verify_setup.html#check-xarray-our-data-workhorse",
+    "title": "Lab 0 — Setup Verification",
+    "section": "3. Check xarray (our data workhorse)",
+    "text": "3. Check xarray (our data workhorse)\nLater in the course we’ll use xarray to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.\n\nda = xr.DataArray(\n    20 + 10 * np.random.randn(12, 4),\n    dims=[\"month\", \"station\"],\n    coords={\"month\": np.arange(1, 13)},\n    name=\"temperature\",\n    attrs={\"units\": \"degC\"},\n)\nprint(da.mean(dim=\"station\"))\nprint(\"\\nxarray OK ✅\")"
+  },
+  {
+    "objectID": "labs/verify_setup.html#done",
+    "href": "labs/verify_setup.html#done",
+    "title": "Lab 0 — Setup Verification",
+    "section": "Done!",
+    "text": "Done!\nIf everything above ran cleanly:\n\nSave this notebook (Ctrl+S / Cmd+S).\nFollow Part C of the Lab 0 instructions to put it in your private course repo.\nFollow Part D to post your repo link on Courseworks.\n\nSee you in class."
+  },
+  {
+    "objectID": "labs/index.html",
+    "href": "labs/index.html",
+    "title": "Labs",
+    "section": "",
+    "text": "Labs are done in class, saved into your course GitHub repo, and submitted by posting your repo link on Courseworks. This page grows week by week."
+  },
+  {
+    "objectID": "labs/index.html#week-1-sep-10",
+    "href": "labs/index.html#week-1-sep-10",
+    "title": "Labs",
+    "section": "Week 1 (Sep 10)",
+    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — The climate of NYC (download the .ipynb, upload to your hub): distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6\nLab 0c — A bucket (download, upload to hub): budgets, equilibrium, stepping forward in time"
+  },
+  {
+    "objectID": "labs/lab0a.html",
+    "href": "labs/lab0a.html",
+    "title": "Lab 0a — Getting set up",
+    "section": "",
+    "text": "By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks."
+  },
+  {
+    "objectID": "labs/lab0a.html#part-a-accounts",
+    "href": "labs/lab0a.html#part-a-accounts",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part A — Accounts",
+    "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope yoy did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
+  },
+  {
+    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub-and-run-the-verification-notebook",
+    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub-and-run-the-verification-notebook",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part B — Orient to Jupyterhub and run the verification notebook",
+    "text": "Part B — Orient to Jupyterhub and run the verification notebook\n\nDownload verify_setup.ipynb from the Courseworks Lab 0 assignment page.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
+  },
+  {
+    "objectID": "labs/lab0a.html#part-c-create-your-course-repository-15-min",
+    "href": "labs/lab0a.html#part-c-create-your-course-repository-15-min",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part C — Create your course repository (15 min)",
+    "text": "Part C — Create your course repository (15 min)\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add [INSTRUCTOR-GITHUB], [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nGitHub will ask you to authenticate — you’ll need a personal access token instead of your password: GitHub Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (scope: repo; set expiration to end of December). Paste the token when git push asks for a password. Save it somewhere — you’ll reuse it all semester."
+  },
+  {
+    "objectID": "labs/lab0a.html#part-d-tell-us-its-done-2-min",
+    "href": "labs/lab0a.html#part-d-tell-us-its-done-2-min",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part D — Tell us it’s done (2 min)",
+    "text": "Part D — Tell us it’s done (2 min)\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, staff added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
+  },
+  {
     "objectID": "labs/lab0c_bucket.html",
     "href": "labs/lab0c_bucket.html",
     "title": "Lab 0c — A bucket: your first time-dependent model",
@@ -229,55 +313,6 @@
     "title": "Lab 0c — A bucket: your first time-dependent model",
     "section": "4. Name what you just did",
     "text": "4. Name what you just did\nYou attacked one prediction from three directions. They have official names:\n\n\n\n\n\n\n\n\nyou varied\nuncertainty type\nEarth version\n\n\n\n\nh0\ninitial-condition uncertainty\ntoday’s exact weather state\n\n\nk\nmodel (parameter) uncertainty\nhow strong are the feedbacks?\n\n\nF\nscenario uncertainty\nwhat will humans emit?\n\n\n\nDiscuss: which mattered at short times? Which at long times? Keep this table — it comes back in week 11, quantified for the real Earth.\nBefore you leave: make sure this notebook and Lab 0b are saved in your course repo, and your repo link is posted on Courseworks."
-  },
-  {
-    "objectID": "labs/lab0.html",
-    "href": "labs/lab0.html",
-    "title": "Lab 0 — Getting Set Up",
-    "section": "",
-    "text": "Due: before class on Thursday, September 24 (Lab 1 happens in class that day and assumes all of this works). Time needed: ~30–45 minutes. Do it this week — if anything fails, come to office hours or email the TAs before Sep 24, not the night before.\nBy the end of this lab you will have: (1) a working JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and linked on Courseworks. This is the exact workflow you’ll use to submit every lab and homework this semester."
-  },
-  {
-    "objectID": "labs/lab0.html#part-a-accounts-10-min",
-    "href": "labs/lab0.html#part-a-accounts-10-min",
-    "title": "Lab 0 — Getting Set Up",
-    "section": "Part A — Accounts (10 min)",
-    "text": "Part A — Accounts (10 min)\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).\nJupyterHub (LEAP hub). Most of our modeling and data analysis happens on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — do not leave it for lab day): hub access request form. When filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1). Already have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud. Once approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\nIf the hub won’t start for you: email the TAs with a screenshot. As a backup, every course notebook also runs on Google Colab — but sort out your hub access this week regardless; we’ll need it for the second half of the course."
-  },
-  {
-    "objectID": "labs/lab0.html#part-b-run-the-verification-notebook-10-min",
-    "href": "labs/lab0.html#part-b-run-the-verification-notebook-10-min",
-    "title": "Lab 0 — Getting Set Up",
-    "section": "Part B — Run the verification notebook (10 min)",
-    "text": "Part B — Run the verification notebook (10 min)\n\nDownload verify_setup.ipynb from the Courseworks Lab 0 assignment page.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
-  },
-  {
-    "objectID": "labs/lab0.html#part-c-create-your-course-repository-15-min",
-    "href": "labs/lab0.html#part-c-create-your-course-repository-15-min",
-    "title": "Lab 0 — Getting Set Up",
-    "section": "Part C — Create your course repository (15 min)",
-    "text": "Part C — Create your course repository (15 min)\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add [INSTRUCTOR-GITHUB], [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nGitHub will ask you to authenticate — you’ll need a personal access token instead of your password: GitHub Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (scope: repo; set expiration to end of December). Paste the token when git push asks for a password. Save it somewhere — you’ll reuse it all semester."
-  },
-  {
-    "objectID": "labs/lab0.html#part-d-tell-us-its-done-2-min",
-    "href": "labs/lab0.html#part-d-tell-us-its-done-2-min",
-    "title": "Lab 0 — Getting Set Up",
-    "section": "Part D — Tell us it’s done (2 min)",
-    "text": "Part D — Tell us it’s done (2 min)\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, staff added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
-  },
-  {
-    "objectID": "labs/index.html",
-    "href": "labs/index.html",
-    "title": "Labs",
-    "section": "",
-    "text": "Labs are done in class, saved into your course GitHub repo, and submitted by posting your repo link on Courseworks. This page grows week by week."
-  },
-  {
-    "objectID": "labs/index.html#week-1-sep-10",
-    "href": "labs/index.html#week-1-sep-10",
-    "title": "Labs",
-    "section": "Week 1 (Sep 10)",
-    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub, first notebook\nLab 0b — The climate of NYC (download the .ipynb, upload to your hub): distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6\nLab 0c — A bucket (download, upload to hub): budgets, equilibrium, stepping forward in time"
   },
   {
     "objectID": "labs/lab0b_nyc_climate.html",

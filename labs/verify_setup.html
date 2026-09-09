@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 0 — Getting Set Up – Introduction to Climate Modeling</title>
+<title>Lab 0 — Setup Verification – Introduction to Climate Modeling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -109,6 +109,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -168,13 +197,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-a-accounts-10-min" id="toc-part-a-accounts-10-min" class="nav-link active" data-scroll-target="#part-a-accounts-10-min">Part A — Accounts (10 min)</a></li>
-  <li><a href="#part-b-run-the-verification-notebook-10-min" id="toc-part-b-run-the-verification-notebook-10-min" class="nav-link" data-scroll-target="#part-b-run-the-verification-notebook-10-min">Part B — Run the verification notebook (10 min)</a></li>
-  <li><a href="#part-c-create-your-course-repository-15-min" id="toc-part-c-create-your-course-repository-15-min" class="nav-link" data-scroll-target="#part-c-create-your-course-repository-15-min">Part C — Create your course repository (15 min)</a></li>
-  <li><a href="#part-d-tell-us-its-done-2-min" id="toc-part-d-tell-us-its-done-2-min" class="nav-link" data-scroll-target="#part-d-tell-us-its-done-2-min">Part D — Tell us it’s done (2 min)</a>
-  <ul class="collapse">
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
-  </ul></li>
+  <li><a href="#check-the-scientific-python-stack" id="toc-check-the-scientific-python-stack" class="nav-link active" data-scroll-target="#check-the-scientific-python-stack">1. Check the scientific Python stack</a></li>
+  <li><a href="#a-tiny-computation-and-a-preview-of-week-2" id="toc-a-tiny-computation-and-a-preview-of-week-2" class="nav-link" data-scroll-target="#a-tiny-computation-and-a-preview-of-week-2">2. A tiny computation — and a preview of Week 2</a></li>
+  <li><a href="#check-xarray-our-data-workhorse" id="toc-check-xarray-our-data-workhorse" class="nav-link" data-scroll-target="#check-xarray-our-data-workhorse">3. Check xarray (our data workhorse)</a></li>
+  <li><a href="#done" id="toc-done" class="nav-link" data-scroll-target="#done">Done!</a></li>
   </ul>
 </nav>
     </div>
@@ -183,8 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 0 — Getting Set Up</h1>
-<p class="subtitle lead">Ungraded, but required · due before class Sep 24</p>
+<h1 class="title">Lab 0 — Setup Verification</h1>
 </div>
 
 
@@ -201,68 +226,88 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Due: before class on Thursday, September 24</strong> (Lab 1 happens in class that day and assumes all of this works). <strong>Time needed: ~30–45 minutes.</strong> Do it this week — if anything fails, come to office hours or email the TAs <em>before</em> Sep 24, not the night before.</p>
-<p>By the end of this lab you will have: (1) a working JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and linked on Courseworks. This is the exact workflow you’ll use to submit every lab and homework this semester.</p>
-<hr>
-<section id="part-a-accounts-10-min" class="level2">
-<h2 class="anchored" data-anchor-id="part-a-accounts-10-min">Part A — Accounts (10 min)</h2>
-<ol type="1">
-<li><strong>GitHub.</strong> If you don’t have an account, create one at <a href="https://github.com/signup">github.com/signup</a>. Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).</li>
-<li><strong>JupyterHub (LEAP hub).</strong> Most of our modeling and data analysis happens on the LEAP computing hub. To get access, <strong>fill out this form now</strong> (approval takes a little time — do not leave it for lab day): <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform">hub access request form</a>. When filling the form: pick the <strong>Education tier</strong>, enter <strong>Dhruv Balwada</strong> as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1). <strong>Already have LEAP hub access from a previous class? Skip the form</strong> — just confirm you can still log in and access resources at <a href="https://leap.2i2c.cloud/">leap.2i2c.cloud</a>. Once approved, log in at <strong><a href="https://leap.2i2c.cloud/">leap.2i2c.cloud</a></strong> and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>If the hub won’t start for you:</strong> email the TAs with a screenshot. As a backup, every course notebook also runs on <a href="https://colab.research.google.com">Google Colab</a> — but sort out your hub access this week regardless; we’ll need it for the second half of the course.</p>
-</blockquote>
+<p><strong>Introduction to Climate Modeling · Fall 2026</strong></p>
+<p>Run every cell in this notebook (<code>Shift+Enter</code>). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.</p>
+<p><em>Fill in the next cell first.</em></p>
+<div id="cell-2" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THIS CELL</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"YOUR NAME HERE"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>uni <span class="op">=</span> <span class="st">"YOUR UNI HERE"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Lab 0 submitted by </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>uni<span class="sc">}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="check-the-scientific-python-stack" class="level2">
+<h2 class="anchored" data-anchor-id="check-the-scientific-python-stack">1. Check the scientific Python stack</h2>
+<p>These are the libraries we’ll use all semester. This cell just confirms they import and prints their versions.</p>
+<div id="cell-4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"python     </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">.</span>split()[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"numpy      </span><span class="sc">{</span>np<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"matplotlib </span><span class="sc">{</span>matplotlib<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"xarray     </span><span class="sc">{</span>xr<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">All imports OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="part-b-run-the-verification-notebook-10-min" class="level2">
-<h2 class="anchored" data-anchor-id="part-b-run-the-verification-notebook-10-min">Part B — Run the verification notebook (10 min)</h2>
-<ol type="1">
-<li>Download <code>verify_setup.ipynb</code> from the Courseworks Lab 0 assignment page.</li>
-<li>On the hub: drag-and-drop the file into the JupyterLab file browser (left panel).</li>
-<li>Open it and run every cell (<code>Shift+Enter</code>, or Run ▸ Run All Cells).</li>
-<li>Fill in your name/UNI where indicated and make sure the final plot appears with no errors.</li>
-</ol>
+<section id="a-tiny-computation-and-a-preview-of-week-2" class="level2">
+<h2 class="anchored" data-anchor-id="a-tiny-computation-and-a-preview-of-week-2">2. A tiny computation — and a preview of Week 2</h2>
+<p>The <strong>emission temperature</strong> of a planet is the temperature it must radiate at to balance the sunlight it absorbs:</p>
+<p><span class="math display">\[T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4}\]</span></p>
+<p>where <span class="math inline">\(S_0\)</span> is the solar constant, <span class="math inline">\(\alpha\)</span> the planetary albedo (how reflective the planet is), and <span class="math inline">\(\sigma\)</span> the Stefan–Boltzmann constant. Next week we’ll derive this and discover why it gives the <em>wrong</em> answer for Earth’s surface — in the most interesting way possible.</p>
+<p>For now: run the cell and look at the plot.</p>
+<div id="cell-6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>S0 <span class="op">=</span> <span class="fl">1361.0</span>      <span class="co"># solar constant [W m-2]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">5.67e-8</span>  <span class="co"># Stefan-Boltzmann constant [W m-2 K-4]</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="dv">100</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>T_e <span class="op">=</span> (S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> sigma)) <span class="op">**</span> <span class="fl">0.25</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.plot(albedo, T_e, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="fl">0.3</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">255</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="fl">0.3</span>, <span class="dv">255</span>, <span class="st">"o"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, ms<span class="op">=</span><span class="dv">8</span>, zorder<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">"Earth: $</span><span class="ch">\\</span><span class="st">alpha=0.3$, $T_e</span><span class="ch">\\</span><span class="st">approx255$ K"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">288</span>, ls<span class="op">=</span><span class="st">":"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="st">"Earth's actual surface T = 288 K  (?!)"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"planetary albedo"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"emission temperature [K]"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">'s first climate calculation"</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>That 33 K gap between the dashed gray line and the dotted red line? That’s the greenhouse effect, and it’s where this course begins.</p>
 </section>
-<section id="part-c-create-your-course-repository-15-min" class="level2">
-<h2 class="anchored" data-anchor-id="part-c-create-your-course-repository-15-min">Part C — Create your course repository (15 min)</h2>
-<ol type="1">
-<li>On GitHub, click <strong>New repository</strong>:
-<ul>
-<li>Name: <code>climate-modeling-f26-&lt;your-uni&gt;</code> (e.g., <code>climate-modeling-f26-ab1234</code>)</li>
-<li>Visibility: <strong>Private</strong> ← important</li>
-<li>Check “Add a README file”</li>
-</ul></li>
-<li>Add the teaching staff as collaborators: repo <strong>Settings → Collaborators → Add people</strong> — add <strong><code>[INSTRUCTOR-GITHUB]</code></strong>, <strong><code>[PRANI-GITHUB]</code></strong>, and <strong><code>[CHANDANIE-GITHUB]</code></strong>.</li>
-<li>Put your completed notebook in the repo. Two ways — pick one:
-<ul>
-<li><p><strong>Easy way (fine for today):</strong> on your repo’s GitHub page, <strong>Add file → Upload files</strong>, drag in the completed <code>verify_setup.ipynb</code> (download it from the hub first: right-click the file → Download), and click <em>Commit changes</em>.</p></li>
-<li><p><strong>Real way (we’ll all use this from Lab 1 on):</strong> in a hub Terminal (File → New → Terminal):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>your-username<span class="op">&gt;</span>/climate-modeling-f26-<span class="op">&lt;</span>uni<span class="op">&gt;</span>.git</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> verify_setup.ipynb climate-modeling-f26-<span class="op">&lt;</span>uni<span class="op">&gt;</span>/</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> climate-modeling-f26-<span class="op">&lt;</span>uni<span class="op">&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add verify_setup.ipynb</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Lab 0: verification notebook"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>GitHub will ask you to authenticate — you’ll need a <strong>personal access token</strong> instead of your password: GitHub <strong>Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token</strong> (scope: <code>repo</code>; set expiration to end of December). Paste the token when <code>git push</code> asks for a password. Save it somewhere — you’ll reuse it all semester.</p></li>
-</ul></li>
-</ol>
+<section id="check-xarray-our-data-workhorse" class="level2">
+<h2 class="anchored" data-anchor-id="check-xarray-our-data-workhorse">3. Check xarray (our data workhorse)</h2>
+<p>Later in the course we’ll use <code>xarray</code> to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.</p>
+<div id="cell-8" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> xr.DataArray(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.random.randn(<span class="dv">12</span>, <span class="dv">4</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span>[<span class="st">"month"</span>, <span class="st">"station"</span>],</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    coords<span class="op">=</span>{<span class="st">"month"</span>: np.arange(<span class="dv">1</span>, <span class="dv">13</span>)},</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"temperature"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    attrs<span class="op">=</span>{<span class="st">"units"</span>: <span class="st">"degC"</span>},</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(da.mean(dim<span class="op">=</span><span class="st">"station"</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">xarray OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="part-d-tell-us-its-done-2-min" class="level2">
-<h2 class="anchored" data-anchor-id="part-d-tell-us-its-done-2-min">Part D — Tell us it’s done (2 min)</h2>
-<p>On Courseworks, open the <strong>Lab 0</strong> assignment and submit <strong>the URL of your repository</strong> (e.g., <code>https://github.com/ab1234/climate-modeling-f26-ab1234</code>). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.</p>
-<hr>
-<section id="checklist" class="level3">
-<h3 class="anchored" data-anchor-id="checklist">Checklist</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Hub login works, server starts</label></li>
-<li><label><input type="checkbox"><code>verify_setup.ipynb</code> runs top to bottom with your name and a plot</label></li>
-<li><label><input type="checkbox">Private repo <code>climate-modeling-f26-&lt;uni&gt;</code> exists, staff added as collaborators</label></li>
-<li><label><input type="checkbox">Notebook is in the repo</label></li>
-<li><label><input type="checkbox">Repo URL posted to Courseworks Lab 0</label></li>
-</ul>
+<section id="done" class="level2">
+<h2 class="anchored" data-anchor-id="done">Done!</h2>
+<p>If everything above ran cleanly:</p>
+<ol type="1">
+<li>Save this notebook (<code>Ctrl+S</code> / <code>Cmd+S</code>).</li>
+<li>Follow <strong>Part C</strong> of the Lab 0 instructions to put it in your private course repo.</li>
+<li>Follow <strong>Part D</strong> to post your repo link on Courseworks.</li>
+</ol>
+<p>See you in class.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
