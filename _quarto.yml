@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - "labs/data/*"
 
 website:
   title: "Introduction to Climate Modeling"
