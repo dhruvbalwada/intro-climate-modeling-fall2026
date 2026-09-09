@@ -1,23 +1,24 @@
 ---
-title: "Lab 0 — Getting Set Up"
-subtitle: "Ungraded, but required · due before class Sep 24"
+title: "Lab 0a — Getting set up "
+subtitle: ""
 ---
 
-**Due: before class on Thursday, September 24** (Lab 1 happens in class that day and assumes all of this works).
-**Time needed: ~30–45 minutes.** Do it this week — if anything fails, come to office hours or email the TAs *before* Sep 24, not the night before.
-
-By the end of this lab you will have: (1) a working JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and linked on Courseworks. This is the exact workflow you'll use to submit every lab and homework this semester.
+By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks. 
 
 ---
 
-## Part A — Accounts (10 min)
+## Part A — Accounts 
 
-1. **GitHub.** If you don't have an account, create one at [github.com/signup](https://github.com/signup). Use a professional-ish username (it may end up on your CV — many of you will link to course projects later). Enable two-factor authentication (GitHub requires it).
-2. **JupyterHub (LEAP hub).** Most of our modeling and data analysis happens on the LEAP computing hub. To get access, **fill out this form now** (approval takes a little time — do not leave it for lab day): [hub access request form](https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform). When filling the form: pick the **Education tier**, enter **Dhruv Balwada** as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1). **Already have LEAP hub access from a previous class? Skip the form** — just confirm you can still log in and access resources at [leap.2i2c.cloud](https://leap.2i2c.cloud/). Once approved, log in at **[leap.2i2c.cloud](https://leap.2i2c.cloud/)** and confirm your server starts (click "Start My Server" and wait for JupyterLab to load).
+1. **GitHub.** If you don't have an account, create one at [github.com/signup](https://github.com/signup). Use a professional-ish username (it may end up on your CV — some of you may link to course projects later). 
+2. **JupyterHub (LEAP hub).** Most of our modeling and data analysis for this class will be done on the [LEAP computing hub](https://leap.2i2c.cloud/). To get access, **fill out this form now** (approval takes a little time — hope yoy did not leave it for today): [hub access request form](https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform). 
+   - When filling the form: pick the **Education tier**, enter **Dhruv Balwada** as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1). 
+   - **Already have LEAP hub access from a previous class? Skip the form** — just confirm you can still log in and access resources at [leap.2i2c.cloud](https://leap.2i2c.cloud/). 
+   - Once approved, log in at **[leap.2i2c.cloud](https://leap.2i2c.cloud/)** and confirm your server starts (click "Start My Server" and wait for JupyterLab to load).
 
-> **If the hub won't start for you:** email the TAs with a screenshot. As a backup, every course notebook also runs on [Google Colab](https://colab.research.google.com) — but sort out your hub access this week regardless; we'll need it for the second half of the course.
+> **If the hub won't start for you:** discuss with Sarika or the TAs.
 
-## Part B — Run the verification notebook (10 min)
+
+## Part B — Orient to Jupyterhub and run the verification notebook
 
 1. Download `verify_setup.ipynb` from the Courseworks Lab 0 assignment page.
 2. On the hub: drag-and-drop the file into the JupyterLab file browser (left panel).
