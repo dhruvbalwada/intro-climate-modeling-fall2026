@@ -1,6 +1,5 @@
 ---
-title: "Lab 0a — Getting set up "
-subtitle: ""
+title: "Lab 0a — Getting set up"
 ---
 
 By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks. 
@@ -10,7 +9,7 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
 ## Part A — Accounts 
 
 1. **GitHub.** If you don't have an account, create one at [github.com/signup](https://github.com/signup). Use a professional-ish username (it may end up on your CV — some of you may link to course projects later). 
-2. **JupyterHub (LEAP hub).** Most of our modeling and data analysis for this class will be done on the [LEAP computing hub](https://leap.2i2c.cloud/). To get access, **fill out this form now** (approval takes a little time — hope yoy did not leave it for today): [hub access request form](https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform). 
+2. **JupyterHub (LEAP hub).** Most of our modeling and data analysis for this class will be done on the [LEAP computing hub](https://leap.2i2c.cloud/). To get access, **fill out this form now** (approval takes a little time — hope you did not leave it for today): [hub access request form](https://docs.google.com/forms/d/e/1FAIpQLSf_-vvkU__-rnaQimXRxAN_xGdQlqLulbBUistmetrhQtTjHg/viewform). 
    - When filling the form: pick the **Education tier**, enter **Dhruv Balwada** as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1). 
    - **Already have LEAP hub access from a previous class? Skip the form** — just confirm you can still log in and access resources at [leap.2i2c.cloud](https://leap.2i2c.cloud/). 
    - Once approved, log in at **[leap.2i2c.cloud](https://leap.2i2c.cloud/)** and confirm your server starts (click "Start My Server" and wait for JupyterLab to load).
@@ -33,7 +32,7 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
    - Name: `climate-modeling-f26-<your-uni>` (e.g., `climate-modeling-f26-ab1234`)
    - Visibility: **Private** ← important
    - Check "Add a README file"
-2. Add the teaching staff as collaborators: repo **Settings → Collaborators → Add people** — add **`[INSTRUCTOR-GITHUB]`**, **`[PRANI-GITHUB]`**, and **`[CHANDANIE-GITHUB]`**.
+2. Add the teaching staff as collaborators: repo **Settings → Collaborators → Add people** — add **`dhruvbalwada`**, **`[PRANI-GITHUB]`**, and **`[CHANDANIE-GITHUB]`**.
 3. Put your completed notebook in the repo. Two ways — pick one:
    - **Easy way (fine for today):** on your repo's GitHub page, **Add file → Upload files**, drag in the completed `verify_setup.ipynb` (download it from the hub first: right-click the file → Download), and click *Commit changes*.
    - **Real way (we'll all use this from Lab 1 on):** in a hub Terminal (File → New → Terminal):
@@ -53,7 +52,7 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
 
      Credentials last **8 hours**; when they expire just run `gh-scoped-creds` again. *(This is why we use the `https://` clone URL above.)*
 
-## Part D — Submit your assignment
+## Part D — Submit your notebook as assignment
 
 On Courseworks, open the **Lab 0** assignment and submit **the URL of your repository** (e.g., `https://github.com/ab1234/climate-modeling-f26-ab1234`). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.
 
@@ -62,6 +61,6 @@ On Courseworks, open the **Lab 0** assignment and submit **the URL of your repos
 ### Checklist
 - [ ] Hub login works, server starts
 - [ ] `verify_setup.ipynb` runs top to bottom with your name and a plot
-- [ ] Private repo `climate-modeling-f26-<uni>` exists, staff added as collaborators
+- [ ] Private repo `climate-modeling-f26-<uni>` exists, instructor and TAs added as collaborators
 - [ ] Notebook is in the repo
 - [ ] Repo URL posted to Courseworks Lab 0
