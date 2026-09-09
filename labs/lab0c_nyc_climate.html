@@ -322,7 +322,7 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td><code>t_obs</code></td>
-<td>NOAA NCEI <strong>GHCN-Daily</strong>, station <code>USW00094728</code> (NY City Central Park). Daily (TMAX+TMIN)/2.</td>
+<td>NOAA NCEI <strong>GHCN-Daily</strong>, station <code>USW00094728</code> (NY City Central Park). Daily mean taken as (TMAX+TMIN)/2, the standard convention for long station records.</td>
 </tr>
 <tr class="even">
 <td><code>t_era5</code></td>
@@ -335,25 +335,6 @@ window.Quarto = {
 </tbody>
 </table>
 <p>The download script lives with the course materials (<code>fetch_station_data.py</code>) — we pre-extracted these so class doesn’t depend on live cloud access.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>A subtlety: “daily mean” isn’t one thing
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These three series are each labelled <em>daily mean temperature</em>, but they aren’t computed the same way:</p>
-<ul>
-<li><strong><code>t_obs</code></strong> is <span class="math inline">\((T_{max} + T_{min})/2\)</span> — the midpoint of the day’s extremes. (Weather stations have recorded max and min reliably for a century; true 24-hour means are patchier, so this is the standard workaround.)</li>
-<li><strong><code>t_era5</code></strong> and <strong><code>t_cmip6</code></strong> are <em>true</em> means — averages over all hours of the day.</li>
-</ul>
-<p>Does it matter? ERA5 gives us all three quantities, so we can check: the midpoint method comes out <strong>+0.20 °C warmer</strong> than the true daily mean at this location, consistently across seasons. So roughly 0.2 °C of the station–ERA5 difference you’ll find below is <em>methodological</em>, not physical.</p>
-<p>Worth internalising early: when you compare datasets, check that the thing being compared is actually the same thing.</p>
-</div>
-</div>
 <p>Three columns, three very different things: <strong><code>t_obs</code></strong> is a real thermometer, <strong><code>t_era5</code></strong> is a reanalysis, <strong><code>t_cmip6</code></strong> is a climate model. We’ll look at the observations first and bring the other two in at the end.</p>
 </section>
 <section id="weather-vs-climate" class="level2">
@@ -429,7 +410,7 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <div id="b393abca" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2000-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"six months, three versions of NYC"</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
@@ -449,7 +430,7 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab0c_nyc_climate_files/figure-html/cell-5-output-2.png" width="1044" height="326" class="figure-img"></p>
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-5-output-2.png" width="1046" height="326" class="figure-img"></p>
 </figure>
 </div>
 </div>
