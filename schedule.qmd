@@ -6,18 +6,18 @@ The schedule will be filled in as the semester progresses.
 
 | Wk | Date (Thu) | Topic | Materials | Due |
 |----|-----------|-------|-----------|-----|
-| 1  | Sep 10 | Introduction: what is climate, what is a model, what is uncertainty | [slides](slides/week01.qmd) · [labs](labs/index.qmd) | |
-| 2  | Sep 17 | TBD | | |
-| 3  | Sep 24 | TBD | | |
-| 4  | Oct 1  | TBD | | |
-| 5  | Oct 8  | TBD | | |
-| 6  | Oct 15 | TBD | | |
-| 7  | Oct 22 | TBD | | |
-| 8  | Oct 29 | TBD | | |
-| 9  | Nov 5  | TBD | | |
-| 10 | Nov 12 | TBD | | |
-| 11 | Nov 19 | TBD | | |
-| 12 | Nov 26 | *No class (Thanksgiving)* | | |
-| 13 | Dec 3  | TBD | | |
-| 14 | Dec 10 | Final project presentations | | |
-| 15 | Dec 17 | Final project presentations (if needed) | | |
+| 1  | Sep 10 | Introduction: what is climate, what is a model, what is uncertainty | [slides](slides/week01.qmd) · [labs](labs/index.qmd) | [Lab 0] |
+| 2  | Sep 17 | TBD | | | |
+| 3  | Sep 24 | TBD | | | |
+| 4  | Oct 1  | TBD | | | |
+| 5  | Oct 8  | TBD | | | |
+| 6  | Oct 15 | TBD | | | |
+| 7  | Oct 22 | TBD | | | |
+| 8  | Oct 29 | TBD | | | |
+| 9  | Nov 5  | TBD | | | |
+| 10 | Nov 12 | TBD | | | |
+| 11 | Nov 19 | TBD | | | |
+| 12 | Nov 26 | *No class (Thanksgiving)* | | | | |
+| 13 | Dec 3  | TBD | | | |
+| 14 | Dec 10 | Final project presentations | | | | |
+| 15 | Dec 17 | Final project presentations (if needed) | | | | |
