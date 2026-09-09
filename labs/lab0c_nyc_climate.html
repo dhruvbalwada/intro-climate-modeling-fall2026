@@ -342,9 +342,9 @@ window.Quarto = {
 <p>Plot two years of data. Then plot the histogram of <strong>all 20 years</strong>.</p>
 <div id="6e91d589" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax[<span class="dv">0</span>], lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2013"</span>].plot(ax<span class="op">=</span>ax[<span class="dv">0</span>], lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_title(<span class="st">"two years of WEATHER"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].hist(df[<span class="st">"t_obs"</span>].dropna(), bins<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">"k"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].hist(df[<span class="st">"t_obs"</span>].dropna(), bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">"k"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].set_title(<span class="st">"twenty years of CLIMATE (the distribution)"</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -367,29 +367,32 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <section id="your-first-climate-model-fit-it-by-hand" class="level2">
 <h2 class="anchored" data-anchor-id="your-first-climate-model-fit-it-by-hand">2. Your first climate model — fit it by hand</h2>
 <p>Most of the wiggle is the <strong>seasonal cycle</strong>. Let’s model temperature as:</p>
-<p><span class="math display">\[T(d) \,=\, T_0 \,+\, A\,\cos\!\big(2\pi\,(d - 201)/365\big)\]</span></p>
-<p>where <span class="math inline">\(d\)</span> = day of year, and the peak is pinned to July 20 (day 201). <strong>This model has exactly two parameters:</strong></p>
+<p><span class="math display">\[T(d) \,=\, T_0 \,+\, A\,\cos\!\big(2\pi\,(d - d_{peak})/365\big)\]</span></p>
+<p>where <span class="math inline">\(d\)</span> = day of year. <strong>Three parameters — and each one means something physical:</strong></p>
 <ul>
 <li><span class="math inline">\(T_0\)</span> = ______ (what does it mean? what are its units?)</li>
 <li><span class="math inline">\(A\)</span> = ______ (what does it mean? units?)</li>
+<li><span class="math inline">\(d_{peak}\)</span> = ______ (the day the cycle peaks — what sets it?)</li>
 </ul>
-<p><strong>Your job: pick values for <code>T0</code> and <code>A</code> by hand.</strong> Run the cell, look at the plot and the error, adjust, repeat. Stop when you can’t do better.</p>
+<p><strong>Your job: pick all three by hand.</strong> Run the cell, look at the plot and the error, adjust, repeat. Stop when you can’t do better.</p>
 <div id="73abfe2c" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THESE TWO NUMBERS, run, look, repeat:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>T0 <span class="op">=</span> <span class="fl">10.0</span>    <span class="co"># °C</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>A  <span class="op">=</span> <span class="fl">5.0</span>     <span class="co"># °C</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>doy <span class="op">=</span> df.index.dayofyear</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>] <span class="op">=</span> T0 <span class="op">+</span> A <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (doy <span class="op">-</span> <span class="dv">201</span>) <span class="op">/</span> <span class="dv">365</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">3.5</span>))</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"observations"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, label<span class="op">=</span><span class="ss">f"your model: T0=</span><span class="sc">{</span>T0<span class="sc">}</span><span class="ss">, A=</span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>rmse <span class="op">=</span> np.sqrt(((df[<span class="st">"t_obs"</span>] <span class="op">-</span> df[<span class="st">"t_model"</span>])<span class="op">**</span><span class="dv">2</span>).mean())</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"your model's error (RMSE): </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss"> °C"</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THESE THREE NUMBERS, run, look, repeat:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>T0    <span class="op">=</span> <span class="fl">10.0</span>    <span class="co"># °C</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>A     <span class="op">=</span> <span class="fl">5.0</span>     <span class="co"># °C</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>d_peak <span class="op">=</span> <span class="dv">172</span>    <span class="co"># day of year  (172 = June 21, the summer solstice — is that right?)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>doy <span class="op">=</span> df.index.dayofyear</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>] <span class="op">=</span> T0 <span class="op">+</span> A <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (doy <span class="op">-</span> d_peak) <span class="op">/</span> <span class="dv">365</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">3.5</span>))</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"observations"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">"tab:red"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                                  label<span class="op">=</span><span class="ss">f"your model: T0=</span><span class="sc">{</span>T0<span class="sc">}</span><span class="ss">, A=</span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">, d_peak=</span><span class="sc">{</span>d_peak<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>rmse <span class="op">=</span> np.sqrt(((df[<span class="st">"t_obs"</span>] <span class="op">-</span> df[<span class="st">"t_model"</span>])<span class="op">**</span><span class="dv">2</span>).mean())</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"your model's error (RMSE): </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss"> °C"</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -398,11 +401,15 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 </div>
 </div>
 </div>
-<p><strong>When you’re happy:</strong> shout out your <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, and RMSE — we’ll collect them on the board.</p>
+<p><strong>When you’re happy:</strong> shout out your <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(d_{peak}\)</span> and RMSE — we’ll collect them on the board.</p>
 <blockquote class="blockquote">
-<p>Everyone fit <em>the same data</em> with <em>the same model</em> — and got <strong>different numbers</strong>. That spread is <strong>parameter uncertainty</strong>, and you just experienced where it comes from. (A computer can minimize the error exactly — we’ll let it, in Lab 1 — but its answer is just one more point in this cloud, privileged only by its error being lowest.)</p>
+<p>Everyone fit <em>the same data</em> with <em>the same model</em> — and got <strong>different numbers</strong>. That spread is <strong>parameter uncertainty</strong>, and you just experienced where it comes from. (A computer can minimize the error exactly — we’ll let it, later — but its answer is just one more point in this cloud, privileged only by its error being lowest.)</p>
 </blockquote>
-<p><strong>Also discuss:</strong> your two-parameter model explains most of the variance. What physical fact makes the seasonal cycle so predictable, when next Tuesday’s weather isn’t?</p>
+<p><strong>Two things to notice:</strong></p>
+<ol type="1">
+<li>Your three-parameter model explains most of the variance. What physical fact makes the seasonal cycle so predictable, when next Tuesday’s weather isn’t?</li>
+<li>Where did your <span class="math inline">\(d_{peak}\)</span> end up? The Sun is strongest at the June solstice (day 172) — but that is almost certainly <strong>not</strong> where you put the peak. Why would the warmest day of the year <em>lag</em> the sunniest one? <em>(Hold that thought — it’s exactly what Lab 0d is about.)</em></li>
+</ol>
 </section>
 <section id="two-more-nycs-a-reanalysis-and-a-climate-model" class="level2">
 <h2 class="anchored" data-anchor-id="two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</h2>

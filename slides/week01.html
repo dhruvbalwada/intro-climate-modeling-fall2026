@@ -422,12 +422,12 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 <p>Open <strong><code>lab0c_nyc_climate.ipynb</code></strong> <em>(download from the <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/">Labs page</a>, upload to your hub)</em>:</p>
 <ol type="1">
 <li>Plot 20 years of Central Park temperature → <strong>what is the climate of NYC?</strong></li>
-<li><strong>Fit a 2-parameter model by hand</strong>: <span class="math inline">\(T_0 + A\cos(2\pi(d-201)/365)\)</span> — pick <span class="math inline">\(T_0\)</span> and <span class="math inline">\(A\)</span>, check the error, iterate. <em>What are the units?</em></li>
-<li>When you’re happy: <strong>shout out your <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, RMSE</strong> — we collect them on the board</li>
+<li><strong>Fit a 3-parameter model by hand</strong>: <span class="math inline">\(T_0 + A\cos(2\pi(d-d_{peak})/365)\)</span> — pick <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(d_{peak}\)</span>, check the error, iterate. <em>What are the units?</em></li>
+<li>When you’re happy: <strong>shout out your <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(d_{peak}\)</span>, RMSE</strong> — we collect them on the board</li>
 <li>Then: the same NYC from <strong>ERA5</strong> and from a <strong>CMIP6 model</strong> — why are all three different?</li>
 </ol>
 <aside class="notes">
-<p>The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that’s by design; it only owes you the distribution. Discussion prompts are in the notebook.</p>
+<p>The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Also watch d_peak: nobody will land on the solstice (day 172) — the ~1 month lag is thermal inertia, which is exactly Lab 0d’s subject. Best fit is T0=13.1, A=12.0, d_peak=205. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that’s by design; it only owes you the distribution. Discussion prompts are in the notebook.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
