@@ -259,25 +259,25 @@
     "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope yoy did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
   },
   {
-    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub-and-run-the-verification-notebook",
-    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub-and-run-the-verification-notebook",
+    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub",
+    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub",
     "title": "Lab 0a — Getting set up",
-    "section": "Part B — Orient to Jupyterhub and run the verification notebook",
-    "text": "Part B — Orient to Jupyterhub and run the verification notebook\n\nWhat is Jupyterhub, and where things are.\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
+    "section": "Part B — Orient to Jupyterhub",
+    "text": "Part B — Orient to Jupyterhub\n\nWhat is Jupyterhub, and where things are.\nAdding notebooks to your folders.\n\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\n\nRunning through code in a notebook (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors."
   },
   {
-    "objectID": "labs/lab0a.html#part-c-create-your-course-repository-15-min",
-    "href": "labs/lab0a.html#part-c-create-your-course-repository-15-min",
+    "objectID": "labs/lab0a.html#part-c-create-your-course-repository",
+    "href": "labs/lab0a.html#part-c-create-your-course-repository",
     "title": "Lab 0a — Getting set up",
-    "section": "Part C — Create your course repository (15 min)",
-    "text": "Part C — Create your course repository (15 min)\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add [INSTRUCTOR-GITHUB], [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nGitHub will ask you to authenticate — you’ll need a personal access token instead of your password: GitHub Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (scope: repo; set expiration to end of December). Paste the token when git push asks for a password. Save it somewhere — you’ll reuse it all semester."
+    "section": "Part C — Create your course repository",
+    "text": "Part C — Create your course repository\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add [INSTRUCTOR-GITHUB], [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nAuthenticating (no passwords, no tokens): the first time you push, run this in the terminal:\ngh-scoped-creds\nIt prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing “Only select repositories” and picking your climate-modeling-f26-&lt;uni&gt; repo. Then git push works.\nCredentials last 8 hours; when they expire just run gh-scoped-creds again. (This is why we use the https:// clone URL above.)"
   },
   {
-    "objectID": "labs/lab0a.html#part-d-tell-us-its-done-2-min",
-    "href": "labs/lab0a.html#part-d-tell-us-its-done-2-min",
+    "objectID": "labs/lab0a.html#part-d-submit-your-assignment",
+    "href": "labs/lab0a.html#part-d-submit-your-assignment",
     "title": "Lab 0a — Getting set up",
-    "section": "Part D — Tell us it’s done (2 min)",
-    "text": "Part D — Tell us it’s done (2 min)\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, staff added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
+    "section": "Part D — Submit your assignment",
+    "text": "Part D — Submit your assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, staff added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
   },
   {
     "objectID": "labs/lab0c_bucket.html",

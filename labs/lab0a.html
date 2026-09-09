@@ -169,9 +169,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#part-a-accounts" id="toc-part-a-accounts" class="nav-link active" data-scroll-target="#part-a-accounts">Part A — Accounts</a></li>
-  <li><a href="#part-b-orient-to-jupyterhub-and-run-the-verification-notebook" id="toc-part-b-orient-to-jupyterhub-and-run-the-verification-notebook" class="nav-link" data-scroll-target="#part-b-orient-to-jupyterhub-and-run-the-verification-notebook">Part B — Orient to Jupyterhub and run the verification notebook</a></li>
-  <li><a href="#part-c-create-your-course-repository-15-min" id="toc-part-c-create-your-course-repository-15-min" class="nav-link" data-scroll-target="#part-c-create-your-course-repository-15-min">Part C — Create your course repository (15 min)</a></li>
-  <li><a href="#part-d-tell-us-its-done-2-min" id="toc-part-d-tell-us-its-done-2-min" class="nav-link" data-scroll-target="#part-d-tell-us-its-done-2-min">Part D — Tell us it’s done (2 min)</a>
+  <li><a href="#part-b-orient-to-jupyterhub" id="toc-part-b-orient-to-jupyterhub" class="nav-link" data-scroll-target="#part-b-orient-to-jupyterhub">Part B — Orient to Jupyterhub</a></li>
+  <li><a href="#part-c-create-your-course-repository" id="toc-part-c-create-your-course-repository" class="nav-link" data-scroll-target="#part-c-create-your-course-repository">Part C — Create your course repository</a></li>
+  <li><a href="#part-d-submit-your-assignment" id="toc-part-d-submit-your-assignment" class="nav-link" data-scroll-target="#part-d-submit-your-assignment">Part D — Submit your assignment</a>
   <ul class="collapse">
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
   </ul></li>
@@ -217,18 +217,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>If the hub won’t start for you:</strong> discuss with Sarika or the TAs.</p>
 </blockquote>
 </section>
-<section id="part-b-orient-to-jupyterhub-and-run-the-verification-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="part-b-orient-to-jupyterhub-and-run-the-verification-notebook">Part B — Orient to Jupyterhub and run the verification notebook</h2>
+<section id="part-b-orient-to-jupyterhub" class="level2">
+<h2 class="anchored" data-anchor-id="part-b-orient-to-jupyterhub">Part B — Orient to Jupyterhub</h2>
 <ol type="1">
 <li>What is Jupyterhub, and where things are.</li>
+<li>Adding notebooks to your folders.
+<ol type="1">
 <li>Open <a href="../labs/verify_setup.html"><code>verify_setup.ipynb</code></a> on the course website and click the <strong>Download this notebook</strong> button at the top.</li>
 <li>On the hub: drag-and-drop the file into the JupyterLab file browser (left panel).</li>
-<li>Open it and run every cell (<code>Shift+Enter</code>, or Run ▸ Run All Cells).</li>
-<li>Fill in your name/UNI where indicated and make sure the final plot appears with no errors.</li>
+</ol></li>
+<li>Running through code in a notebook (<code>Shift+Enter</code>, or Run ▸ Run All Cells).</li>
+<li>Fill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors.</li>
 </ol>
 </section>
-<section id="part-c-create-your-course-repository-15-min" class="level2">
-<h2 class="anchored" data-anchor-id="part-c-create-your-course-repository-15-min">Part C — Create your course repository (15 min)</h2>
+<section id="part-c-create-your-course-repository" class="level2">
+<h2 class="anchored" data-anchor-id="part-c-create-your-course-repository">Part C — Create your course repository</h2>
 <ol type="1">
 <li>On GitHub, click <strong>New repository</strong>:
 <ul>
@@ -247,12 +250,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add verify_setup.ipynb</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Lab 0: verification notebook"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>GitHub will ask you to authenticate — you’ll need a <strong>personal access token</strong> instead of your password: GitHub <strong>Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token</strong> (scope: <code>repo</code>; set expiration to end of December). Paste the token when <code>git push</code> asks for a password. Save it somewhere — you’ll reuse it all semester.</p></li>
+<p><strong>Authenticating (no passwords, no tokens):</strong> the first time you push, run this in the terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh-scoped-creds</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing <strong>“Only select repositories”</strong> and picking your <code>climate-modeling-f26-&lt;uni&gt;</code> repo. Then <code>git push</code> works.</p>
+<p>Credentials last <strong>8 hours</strong>; when they expire just run <code>gh-scoped-creds</code> again. <em>(This is why we use the <code>https://</code> clone URL above.)</em></p></li>
 </ul></li>
 </ol>
 </section>
-<section id="part-d-tell-us-its-done-2-min" class="level2">
-<h2 class="anchored" data-anchor-id="part-d-tell-us-its-done-2-min">Part D — Tell us it’s done (2 min)</h2>
+<section id="part-d-submit-your-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="part-d-submit-your-assignment">Part D — Submit your assignment</h2>
 <p>On Courseworks, open the <strong>Lab 0</strong> assignment and submit <strong>the URL of your repository</strong> (e.g., <code>https://github.com/ab1234/climate-modeling-f26-ab1234</code>). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.</p>
 <hr>
 <section id="checklist" class="level3">
