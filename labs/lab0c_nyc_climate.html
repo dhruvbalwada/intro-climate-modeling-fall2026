@@ -238,9 +238,17 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. station thermometer (NOAA) + 2. ERA5 reanalysis — same file</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(base <span class="op">+</span> <span class="st">"centralpark_obs_era5_1995-2014.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. a CMIP6 climate model at the same location</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> pd.read_csv(base <span class="op">+</span> <span class="st">"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>cm.index <span class="op">=</span> cm.index.normalize()      <span class="co"># model timestamps sit at 12:00; align them to dates</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_cmip6"</span>] <span class="op">=</span> cm[<span class="st">"t_cmip6"</span>].reindex(df.index)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -251,9 +259,11 @@ window.Quarto = {
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">t_obs</th>
 <th data-quarto-table-cell-role="th">t_era5</th>
+<th data-quarto-table-cell-role="th">t_cmip6</th>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">DATE</th>
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th"></th>
 </tr>
@@ -263,26 +273,31 @@ window.Quarto = {
 <th data-quarto-table-cell-role="th">1995-01-01</th>
 <td>7.50</td>
 <td>5.1</td>
+<td>-3.799713</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1995-01-02</th>
 <td>2.25</td>
 <td>2.2</td>
+<td>-7.446625</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">1995-01-03</th>
 <td>-2.50</td>
 <td>-2.2</td>
+<td>-7.653137</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1995-01-04</th>
 <td>-2.75</td>
 <td>-2.1</td>
+<td>-5.104645</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">1995-01-05</th>
 <td>-6.10</td>
 <td>-6.4</td>
+<td>-4.841217</td>
 </tr>
 </tbody>
 </table>
@@ -320,7 +335,7 @@ window.Quarto = {
 </tbody>
 </table>
 <p>The download script lives with the course materials (<code>fetch_station_data.py</code>) — we pre-extracted these so class doesn’t depend on live cloud access.</p>
-<p><code>t_obs</code> = the station thermometer (NOAA). <code>t_era5</code> = we’ll come back to that one.</p>
+<p>Three columns, three very different things: <strong><code>t_obs</code></strong> is a real thermometer, <strong><code>t_era5</code></strong> is a reanalysis, <strong><code>t_cmip6</code></strong> is a climate model. We’ll look at the observations first and bring the other two in at the end.</p>
 </section>
 <section id="weather-vs-climate" class="level2">
 <h2 class="anchored" data-anchor-id="weather-vs-climate">1. Weather vs climate</h2>
@@ -393,23 +408,18 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <h2 class="anchored" data-anchor-id="two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</h2>
 <p>The same location, from <strong>ERA5</strong> (a weather model continuously corrected by observations) and from a <strong>CMIP6 climate model</strong> (free-running — it invents its own weather).</p>
 <div id="b393abca" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>url2 <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> pd.read_csv(url2, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cm.index <span class="op">=</span> cm.index.normalize()</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_cmip6"</span>] <span class="op">=</span> cm[<span class="st">"t_cmip6"</span>].reindex(df.index)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"six months, three versions of NYC"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>doyg <span class="op">=</span> df.index.dayofyear</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> c: c <span class="op">-</span> c.groupby(doyg).transform(<span class="st">"mean"</span>))  <span class="co"># each series minus its own seasonal cycle</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"day-to-day correlation with the station (seasonal cycles removed):"</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  ERA5  : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_era5'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  CMIP6 : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_cmip6'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">20-year means: station </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · ERA5 </span><span class="sc">{</span>df[<span class="st">'t_era5'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · CMIP6 </span><span class="sc">{</span>df[<span class="st">'t_cmip6'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"six months, three versions of NYC"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>doyg <span class="op">=</span> df.index.dayofyear</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> c: c <span class="op">-</span> c.groupby(doyg).transform(<span class="st">"mean"</span>))  <span class="co"># each series minus its own seasonal cycle</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"day-to-day correlation with the station (seasonal cycles removed):"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  ERA5  : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_era5'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  CMIP6 : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_cmip6'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">20-year means: station </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · ERA5 </span><span class="sc">{</span>df[<span class="st">'t_era5'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · CMIP6 </span><span class="sc">{</span>df[<span class="st">'t_cmip6'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>day-to-day correlation with the station (seasonal cycles removed):
   ERA5  : r = 0.95
