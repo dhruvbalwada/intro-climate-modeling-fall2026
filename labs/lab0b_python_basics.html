@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -108,6 +108,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -209,143 +212,835 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="notebooks" class="level2">
 <h2 class="anchored" data-anchor-id="notebooks">0. Notebooks</h2>
 <p>A notebook is a stack of <strong>cells</strong>. A cell is either text (like this) or code (like the next one). <code>Shift+Enter</code> runs the current cell and moves on. Cells share memory — a variable made in one cell exists in the next.</p>
-<div id="cell-3" class="cell">
+<div id="84c0819a" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello, climate"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>   <span class="co"># the last line's value is displayed automatically</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>hello, climate</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>4</code></pre>
+</div>
 </div>
 </section>
 <section id="variables-and-doing-arithmetic-with-them" class="level2">
 <h2 class="anchored" data-anchor-id="variables-and-doing-arithmetic-with-them">1. Variables, and doing arithmetic with them</h2>
-<div id="cell-5" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>S0 <span class="op">=</span> <span class="fl">1361.0</span>        <span class="co"># solar constant, W/m2   (a float)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> <span class="fl">0.3</span>       <span class="co"># fraction reflected     (a float)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>planet <span class="op">=</span> <span class="st">"Earth"</span>   <span class="co"># a string</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>absorbed <span class="op">=</span> S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> <span class="dv">4</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(planet, <span class="st">"absorbs"</span>, absorbed, <span class="st">"W/m2"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>planet<span class="sc">}</span><span class="ss"> absorbs </span><span class="sc">{</span>absorbed<span class="sc">:.1f}</span><span class="ss"> W/m2"</span>)   <span class="co"># f-string: nicer formatting</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="68e0a39d" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>S0 <span class="op">=</span> <span class="fl">1361.0</span>        <span class="co"># solar constant, W/m2   (a float)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> <span class="fl">0.3</span>       <span class="co"># fraction reflected     (a float)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>planet <span class="op">=</span> <span class="st">"Earth"</span>   <span class="co"># a string</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>absorbed <span class="op">=</span> S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> <span class="dv">4</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(planet, <span class="st">"absorbs"</span>, absorbed, <span class="st">"W/m2"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>planet<span class="sc">}</span><span class="ss"> absorbs </span><span class="sc">{</span>absorbed<span class="sc">:.1f}</span><span class="ss"> W/m2"</span>)   <span class="co"># f-string: nicer formatting</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Earth absorbs 238.17499999999998 W/m2
+Earth absorbs 238.2 W/m2</code></pre>
+</div>
 </div>
 <p><strong>Your turn:</strong> change the albedo to 0.75 (roughly Venus) and re-run. Does absorbed energy go up or down?</p>
 </section>
 <section id="functions" class="level2">
 <h2 class="anchored" data-anchor-id="functions">2. Functions</h2>
 <p>A function packages a calculation so you can reuse it.</p>
-<div id="cell-7" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> absorbed_solar(S0, albedo):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Solar energy absorbed per square metre of planet surface [W/m2]."""</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> <span class="dv">4</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(absorbed_solar(<span class="dv">1361</span>, <span class="fl">0.30</span>))   <span class="co"># Earth</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(absorbed_solar(<span class="dv">2601</span>, <span class="fl">0.75</span>))   <span class="co"># Venus</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6a00a44f" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> absorbed_solar(S0, albedo):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Solar energy absorbed per square metre of planet surface [W/m2]."""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> <span class="dv">4</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(absorbed_solar(<span class="dv">1361</span>, <span class="fl">0.30</span>))   <span class="co"># Earth</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(absorbed_solar(<span class="dv">2601</span>, <span class="fl">0.75</span>))   <span class="co"># Venus</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>238.17499999999998
+162.5625</code></pre>
+</div>
 </div>
 </section>
 <section id="loops" class="level2">
 <h2 class="anchored" data-anchor-id="loops">3. Loops</h2>
 <p>For repeating something — including <em>stepping a model forward in time</em>, which is what we do in Lab 0d.</p>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> year <span class="kw">in</span> [<span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>]:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(year, <span class="st">"→"</span>, year <span class="op">-</span> <span class="dv">1850</span>, <span class="st">"years since the pre-industrial baseline"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a list, built up inside a loop</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> []</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):        <span class="co"># range(5) gives 0,1,2,3,4</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    squares.append(i<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="98fa658f" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> year <span class="kw">in</span> [<span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>]:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(year, <span class="st">"→"</span>, year <span class="op">-</span> <span class="dv">1850</span>, <span class="st">"years since the pre-industrial baseline"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a list, built up inside a loop</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> []</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):        <span class="co"># range(5) gives 0,1,2,3,4</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    squares.append(i<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2020 → 170 years since the pre-industrial baseline
+2021 → 171 years since the pre-industrial baseline
+2022 → 172 years since the pre-industrial baseline
+[0, 1, 4, 9, 16]</code></pre>
+</div>
 </div>
 </section>
 <section id="numpy-arrays-of-numbers" class="level2">
 <h2 class="anchored" data-anchor-id="numpy-arrays-of-numbers">4. numpy — arrays of numbers</h2>
 <p>Lists are fine, but for data we use <strong>numpy arrays</strong>: math applies to the whole array at once (no loop needed), and they’re fast.</p>
-<div id="cell-11" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>temps <span class="op">=</span> np.array([<span class="fl">12.3</span>, <span class="fl">15.1</span>, <span class="fl">9.8</span>, <span class="fl">21.0</span>, <span class="fl">18.4</span>])   <span class="co"># °C</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"array:      "</span>, temps)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"in Kelvin:  "</span>, temps <span class="op">+</span> <span class="fl">273.15</span>)     <span class="co"># applies to every element</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"mean:       "</span>, temps.mean())</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"std dev:    "</span>, temps.std())</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"max:        "</span>, temps.<span class="bu">max</span>())</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"first two:  "</span>, temps[:<span class="dv">2</span>])          <span class="co"># indexing starts at 0</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"above 15:   "</span>, temps[temps <span class="op">&gt;</span> <span class="dv">15</span>])  <span class="co"># selecting by condition</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d1eee2e6" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>temps <span class="op">=</span> np.array([<span class="fl">12.3</span>, <span class="fl">15.1</span>, <span class="fl">9.8</span>, <span class="fl">21.0</span>, <span class="fl">18.4</span>])   <span class="co"># °C</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"array:      "</span>, temps)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"in Kelvin:  "</span>, temps <span class="op">+</span> <span class="fl">273.15</span>)     <span class="co"># applies to every element</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"mean:       "</span>, temps.mean())</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"std dev:    "</span>, temps.std())</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"max:        "</span>, temps.<span class="bu">max</span>())</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"first two:  "</span>, temps[:<span class="dv">2</span>])          <span class="co"># indexing starts at 0</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"above 15:   "</span>, temps[temps <span class="op">&gt;</span> <span class="dv">15</span>])  <span class="co"># selecting by condition</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>array:       [12.3 15.1  9.8 21.  18.4]
+in Kelvin:   [285.45 288.25 282.95 294.15 291.55]
+mean:        15.319999999999999
+std dev:     4.0345507804463185
+max:         21.0
+first two:   [12.3 15.1]
+above 15:    [15.1 21.  18.4]</code></pre>
 </div>
-<div id="cell-12" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arrays you generate rather than type out</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>days <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">365</span>)              <span class="co"># 0,1,2,...,364</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">5</span>)        <span class="co"># 5 evenly spaced values from 0 to 2pi</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(days[:<span class="dv">5</span>], <span class="st">"..."</span>, days[<span class="op">-</span><span class="dv">3</span>:])</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">round</span>(np.sin(x), <span class="dv">3</span>))         <span class="co"># math functions work on whole arrays</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="73e9d842" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arrays you generate rather than type out</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>days <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">365</span>)              <span class="co"># 0,1,2,...,364</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">5</span>)        <span class="co"># 5 evenly spaced values from 0 to 2pi</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(days[:<span class="dv">5</span>], <span class="st">"..."</span>, days[<span class="op">-</span><span class="dv">3</span>:])</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">round</span>(np.sin(x), <span class="dv">3</span>))         <span class="co"># math functions work on whole arrays</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0 1 2 3 4] ... [362 363 364]
+[ 0.  1.  0. -1. -0.]</code></pre>
+</div>
 </div>
 </section>
 <section id="matplotlib-making-a-figure" class="level2">
 <h2 class="anchored" data-anchor-id="matplotlib-making-a-figure">5. matplotlib — making a figure</h2>
 <p>Every plot you make this semester should have <strong>axis labels with units</strong>. Really.</p>
-<div id="cell-14" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>day <span class="op">=</span> np.arange(<span class="dv">365</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">12.5</span> <span class="op">+</span> <span class="fl">11.0</span> <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (day <span class="op">-</span> <span class="dv">201</span>) <span class="op">/</span> <span class="dv">365</span>)   <span class="co"># a fake seasonal cycle</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ax.plot(day, T, label<span class="op">=</span><span class="st">"model"</span>)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"day of year"</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"temperature [°C]"</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"a made-up seasonal cycle"</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="837c41d0" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>day <span class="op">=</span> np.arange(<span class="dv">365</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">12.5</span> <span class="op">+</span> <span class="fl">11.0</span> <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (day <span class="op">-</span> <span class="dv">201</span>) <span class="op">/</span> <span class="dv">365</span>)   <span class="co"># a fake seasonal cycle</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ax.plot(day, T, label<span class="op">=</span><span class="st">"model"</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"day of year"</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"temperature [°C]"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"a made-up seasonal cycle"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0b_python_basics_files/figure-html/cell-8-output-1.png" width="659" height="302" class="figure-img"></p>
+</figure>
 </div>
-<div id="cell-15" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># two other plot types you'll need constantly</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>noise <span class="op">=</span> np.random.default_rng(<span class="dv">0</span>).normal(<span class="dv">0</span>, <span class="dv">4</span>, size<span class="op">=</span><span class="dv">365</span>)   <span class="co"># fake "weather"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">3</span>))</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(day, T <span class="op">+</span> noise, lw<span class="op">=</span><span class="fl">0.8</span>)        <span class="co"># line</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"day"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_title(<span class="st">"with weather"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].hist(T <span class="op">+</span> noise, bins<span class="op">=</span><span class="dv">30</span>)            <span class="co"># histogram — a distribution!</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].set_title(<span class="st">"its distribution"</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="4288cc71" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># two other plot types you'll need constantly</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>noise <span class="op">=</span> np.random.default_rng(<span class="dv">0</span>).normal(<span class="dv">0</span>, <span class="dv">4</span>, size<span class="op">=</span><span class="dv">365</span>)   <span class="co"># fake "weather"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">3</span>))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(day, T <span class="op">+</span> noise, lw<span class="op">=</span><span class="fl">0.8</span>)        <span class="co"># line</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"day"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_title(<span class="st">"with weather"</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].hist(T <span class="op">+</span> noise, bins<span class="op">=</span><span class="dv">30</span>)            <span class="co"># histogram — a distribution!</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].set_title(<span class="st">"its distribution"</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0b_python_basics_files/figure-html/cell-9-output-1.png" width="950" height="278" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p><strong>Your turn:</strong> make the noise bigger (change <code>4</code> to <code>10</code>) and re-run. What happens to the histogram — and what would that mean for a place’s climate?</p>
 </section>
 <section id="pandas-tables-with-labels" class="level2">
 <h2 class="anchored" data-anchor-id="pandas-tables-with-labels">6. pandas — tables with labels</h2>
 <p>Real data comes with labels (dates, station names). <code>pandas</code> handles tables; we use it to read CSV files, including straight from a URL.</p>
-<div id="cell-17" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape, <span class="st">"rows × columns"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9c712b76" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape, <span class="st">"rows × columns"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(7305, 2) rows × columns</code></pre>
 </div>
-<div id="cell-18" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">"t_obs"</span>].mean())          <span class="co"># one column, its mean</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>].plot(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">2.5</span>), lw<span class="op">=</span><span class="fl">0.8</span>)   <span class="co"># slice by date, and plot</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"°C"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">t_obs</th>
+<th data-quarto-table-cell-role="th">t_era5</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">DATE</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1995-01-01</th>
+<td>7.50</td>
+<td>5.1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1995-01-02</th>
+<td>2.25</td>
+<td>2.2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1995-01-03</th>
+<td>-2.50</td>
+<td>-2.2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1995-01-04</th>
+<td>-2.75</td>
+<td>-2.1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1995-01-05</th>
+<td>-6.10</td>
+<td>-6.4</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="56a5b5ba" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">"t_obs"</span>].mean())          <span class="co"># one column, its mean</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>].plot(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">2.5</span>), lw<span class="op">=</span><span class="fl">0.8</span>)   <span class="co"># slice by date, and plot</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"°C"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13.055297741273101</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0b_python_basics_files/figure-html/cell-11-output-2.png" width="670" height="260" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="xarray-labeled-data-with-dimensions" class="level2">
 <h2 class="anchored" data-anchor-id="xarray-labeled-data-with-dimensions">7. xarray — labeled data with <em>dimensions</em></h2>
 <p>Climate model output isn’t a table: it’s temperature on (time × latitude × longitude), often many gigabytes. <code>xarray</code> is pandas for that world — you index by <strong>name</strong>, not by number. We’ll use it properly later in the course; here’s the flavor.</p>
-<div id="cell-20" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># a small fake "model output": temperature over 12 months and 5 latitudes</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">60</span>, <span class="op">-</span><span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">60</span>])</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>month <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">13</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="dv">30</span> <span class="op">*</span> np.cos(np.deg2rad(lat))[<span class="va">None</span>, :] <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>(month[:, <span class="va">None</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">12</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> xr.DataArray(data, dims<span class="op">=</span>[<span class="st">"month"</span>, <span class="st">"lat"</span>],</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                  coords<span class="op">=</span>{<span class="st">"month"</span>: month, <span class="st">"lat"</span>: lat},</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                  name<span class="op">=</span><span class="st">"temperature"</span>, attrs<span class="op">=</span>{<span class="st">"units"</span>: <span class="st">"degC"</span>})</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>da</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="01555c74" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># a small fake "model output": temperature over 12 months and 5 latitudes</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">60</span>, <span class="op">-</span><span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">60</span>])</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>month <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">13</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="dv">30</span> <span class="op">*</span> np.cos(np.deg2rad(lat))[<span class="va">None</span>, :] <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>(month[:, <span class="va">None</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">12</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> xr.DataArray(data, dims<span class="op">=</span>[<span class="st">"month"</span>, <span class="st">"lat"</span>],</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                  coords<span class="op">=</span>{<span class="st">"month"</span>: month, <span class="st">"lat"</span>: lat},</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                  name<span class="op">=</span><span class="st">"temperature"</span>, attrs<span class="op">=</span>{<span class="st">"units"</span>: <span class="st">"degC"</span>})</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>da</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewbox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewbox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in notebooks */
+
+:root {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base rgba(0, 0, 0, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, white)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 15))
+  );
+}
+
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base, rgba(255, 255, 255, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, #111111)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 15))
+  );
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+  line-height: 1.6;
+  padding-bottom: 4px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.xr-header {
+  border-bottom: solid 1px var(--xr-border-color);
+  margin-bottom: 4px;
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-obj-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type,
+.xr-group-box-contents > label {
+  color: var(--xr-font-color2);
+  display: block;
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item > input,
+.xr-group-box-contents > input,
+.xr-array-wrap > input {
+  display: block;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
+
+.xr-section-item > input + label,
+.xr-var-item > input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item > input:enabled + label,
+.xr-var-item > input:enabled + label,
+.xr-array-wrap > input:enabled + label,
+.xr-group-box-contents > input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item > input:focus-visible + label,
+.xr-var-item > input:focus-visible + label,
+.xr-array-wrap > input:focus-visible + label,
+.xr-group-box-contents > input:focus-visible + label {
+  outline: auto;
+}
+
+.xr-section-item > input:enabled + label:hover,
+.xr-var-item > input:enabled + label:hover,
+.xr-array-wrap > input:enabled + label:hover,
+.xr-group-box-contents > input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.xr-section-summary > em {
+  font-weight: normal;
+}
+
+.xr-span-grid {
+  grid-column-end: -1;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label > span {
+  display: inline-block;
+  padding-left: 0.6em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: "►";
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: "▼";
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details,
+.xr-group-box-contents > label {
+  padding-top: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in ~ .xr-section-details {
+  display: none;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-children {
+  display: inline-grid;
+  grid-template-columns: 100%;
+  grid-column: 1 / -1;
+  padding-top: 4px;
+}
+
+.xr-group-box {
+  display: inline-grid;
+  grid-template-columns: 0px 30px auto;
+}
+
+.xr-group-box-vline {
+  grid-column-start: 1;
+  border-right: 0.2em solid;
+  border-color: var(--xr-border-color);
+  width: 0px;
+}
+
+.xr-group-box-hline {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  height: 1em;
+  width: 26px;
+  border-bottom: 0.2em solid;
+  border-color: var(--xr-border-color);
+}
+
+.xr-group-box-contents {
+  grid-column-start: 3;
+  padding-bottom: 4px;
+}
+
+.xr-group-box-contents > label::before {
+  content: "📂";
+  padding-right: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label::before {
+  content: "📁";
+}
+
+.xr-group-box-contents > input:checked + label {
+  padding-bottom: 0px;
+}
+
+.xr-group-box-contents > input:checked ~ .xr-sections {
+  display: none;
+}
+
+.xr-group-box-contents > input + label > span {
+  display: none;
+}
+
+.xr-group-box-ellipsis {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: var(--xr-font-color2);
+  letter-spacing: 0.15em;
+  cursor: default;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: "(";
+}
+
+.xr-dim-list:after {
+  content: ")";
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  border-color: var(--xr-background-color-row-odd);
+  margin-bottom: 0;
+  padding-top: 2px;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+  border-color: var(--xr-background-color-row-even);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  border-top: 2px dotted var(--xr-background-color);
+  padding-bottom: 20px !important;
+  padding-top: 10px !important;
+}
+
+.xr-var-attrs-in + label,
+.xr-var-data-in + label,
+.xr-index-data-in + label {
+  padding: 0 1px;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-data > pre,
+.xr-index-data > pre,
+.xr-var-data > table > tbody > tr {
+  background-color: transparent !important;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.xr-var-attrs-in:checked + label > .xr-icon-file-text2,
+.xr-var-data-in:checked + label > .xr-icon-database,
+.xr-index-data-in:checked + label > .xr-icon-database {
+  color: var(--xr-font-color0);
+  filter: drop-shadow(1px 1px 5px var(--xr-font-color2));
+  stroke-width: 0.8px;
+}
+</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray 'temperature' (month: 12, lat: 5)&gt; Size: 480B
+array([[15.        , 25.98076211, 30.        , 25.98076211, 15.        ],
+       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],
+       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],
+       [20.        , 30.98076211, 35.        , 30.98076211, 20.        ],
+       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],
+       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],
+       [15.        , 25.98076211, 30.        , 25.98076211, 15.        ],
+       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ],
+       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],
+       [10.        , 20.98076211, 25.        , 20.98076211, 10.        ],
+       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],
+       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ]])
+Coordinates:
+  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12
+  * lat      (lat) int64 40B -60 -30 0 30 60
+Attributes:
+    units:    degC</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-obj-name">'temperature'</div><ul class="xr-dim-list"><li><span class="xr-has-index">month</span>: 12</li><li><span class="xr-has-index">lat</span>: 5</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-dbb979a8-f217-4405-aab9-fe897455102c" class="xr-array-in" type="checkbox" checked=""><label for="section-dbb979a8-f217-4405-aab9-fe897455102c" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>15.0 25.98 30.0 25.98 15.0 17.5 ... 10.67 12.5 23.48 27.5 23.48 12.5</span></div><div class="xr-array-data"><pre>array([[15.        , 25.98076211, 30.        , 25.98076211, 15.        ],
+       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],
+       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],
+       [20.        , 30.98076211, 35.        , 30.98076211, 20.        ],
+       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],
+       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],
+       [15.        , 25.98076211, 30.        , 25.98076211, 15.        ],
+       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ],
+       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],
+       [10.        , 20.98076211, 25.        , 20.98076211, 10.        ],
+       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],
+       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ]])</pre></div></div></li><li class="xr-section-item"><input id="section-c14eb4f9-9a25-4d36-b33d-4bd64df25a2d" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-c14eb4f9-9a25-4d36-b33d-4bd64df25a2d" class="xr-section-summary" title="Expand/collapse section">Coordinates: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">month</span></div><div class="xr-var-dims">(month)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">1 2 3 4 5 6 7 8 9 10 11 12</div><input id="attrs-6e842079-c52b-4e54-9fb2-481ec4c44d1e" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-6e842079-c52b-4e54-9fb2-481ec4c44d1e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-632b40fd-3bc9-4277-8650-cb543ab8da6f" class="xr-var-data-in" type="checkbox"><label for="data-632b40fd-3bc9-4277-8650-cb543ab8da6f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">lat</span></div><div class="xr-var-dims">(lat)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">-60 -30 0 30 60</div><input id="attrs-9c6e0419-26db-4aed-b005-cdeb00a95f72" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-9c6e0419-26db-4aed-b005-cdeb00a95f72" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-1e6bec28-fa86-4c8c-a1fe-5d997b3dbcb8" class="xr-var-data-in" type="checkbox"><label for="data-1e6bec28-fa86-4c8c-a1fe-5d997b3dbcb8" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([-60, -30,   0,  30,  60])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-95c02525-a5e7-4bd3-9a39-8763baee92f7" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-95c02525-a5e7-4bd3-9a39-8763baee92f7" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>degC</dd></dl></div></li></ul></div></div>
 </div>
-<div id="cell-21" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"equator, July:"</span>, <span class="bu">float</span>(da.sel(lat<span class="op">=</span><span class="dv">0</span>, month<span class="op">=</span><span class="dv">7</span>)), <span class="st">"°C"</span>)   <span class="co"># select BY NAME</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"annual mean at 60N:"</span>, <span class="bu">float</span>(da.sel(lat<span class="op">=</span><span class="dv">60</span>).mean(<span class="st">"month"</span>)), <span class="st">"°C"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>da.plot(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))<span class="op">;</span>   <span class="co"># xarray knows the labels, so it labels the plot for you</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="6720dc07" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"equator, July:"</span>, <span class="bu">float</span>(da.sel(lat<span class="op">=</span><span class="dv">0</span>, month<span class="op">=</span><span class="dv">7</span>)), <span class="st">"°C"</span>)   <span class="co"># select BY NAME</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"annual mean at 60N:"</span>, <span class="bu">float</span>(da.sel(lat<span class="op">=</span><span class="dv">60</span>).mean(<span class="st">"month"</span>)), <span class="st">"°C"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>da.plot(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))<span class="op">;</span>   <span class="co"># xarray knows the labels, so it labels the plot for you</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>equator, July: 30.0 °C
+annual mean at 60N: 15.000000000000005 °C</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0b_python_basics_files/figure-html/cell-13-output-2.png" width="499" height="287" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="thats-enough-to-start" class="level2">

@@ -241,7 +241,7 @@ window.Quarto = {
 <p>At equilibrium the level isn’t changing: <span class="math inline">\(dh/dt = 0\)</span>, so inflow = outflow:</p>
 <p><span class="math display">\[h^* = F / k\]</span></p>
 <p><strong>Check the units. Then compute it:</strong></p>
-<div id="cell-3" class="cell">
+<div id="332d250d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -251,6 +251,9 @@ window.Quarto = {
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>h_star <span class="op">=</span> F <span class="op">/</span> k</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"equilibrium level h* = </span><span class="sc">{</span>h_star<span class="sc">}</span><span class="ss"> m"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>equilibrium level h* = 2.0 m</code></pre>
+</div>
 </div>
 </section>
 <section id="step-forward-in-time" class="level2">
@@ -259,20 +262,30 @@ window.Quarto = {
 <p><span class="math display">\[h_{\text{next}} = h_{\text{now}} + \Delta t \cdot \frac{F - k\,h_{\text{now}}}{A}\]</span></p>
 <p><em>(This is called Euler’s method — it’s how almost every model marches time forward.)</em></p>
 <p><strong>Fill in the one missing line:</strong></p>
-<div id="cell-5" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_bucket(h0, F, k, A<span class="op">=</span><span class="fl">1.0</span>, dt<span class="op">=</span><span class="fl">0.1</span>, n_steps<span class="op">=</span><span class="dv">100</span>):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""March the bucket forward from level h0. Returns times and levels."""</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> np.zeros(n_steps)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    h[<span class="dv">0</span>] <span class="op">=</span> h0</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n_steps):</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        h[i] <span class="op">=</span> h[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">*</span> (...)   <span class="co"># &lt;-- FILL THIS IN (rate of change of h)</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.arange(n_steps) <span class="op">*</span> dt, h</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>t, h <span class="op">=</span> run_bucket(h0<span class="op">=</span><span class="fl">0.0</span>, F<span class="op">=</span><span class="fl">2.0</span>, k<span class="op">=</span><span class="fl">1.0</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.plot(t, h)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="fl">2.0</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>, label<span class="op">=</span><span class="st">"h* = F/k"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time [s]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"level h [m]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>Until you fill it in, the rate of change is zero — so your plot will be a <strong>flat line</strong>. That flat line is the model telling you it has no physics in it yet.</p>
+</blockquote>
+<div id="ce7879ac" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_bucket(h0, F, k, A<span class="op">=</span><span class="fl">1.0</span>, dt<span class="op">=</span><span class="fl">0.1</span>, n_steps<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""March the bucket forward from level h0. Returns times and levels."""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> np.zeros(n_steps)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    h[<span class="dv">0</span>] <span class="op">=</span> h0</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n_steps):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        h[i] <span class="op">=</span> h[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">*</span> <span class="fl">0.0</span>   <span class="co"># &lt;-- FILL THIS IN: what is dh/dt?</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.arange(n_steps) <span class="op">*</span> dt, h</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>t, h <span class="op">=</span> run_bucket(h0<span class="op">=</span><span class="fl">0.0</span>, F<span class="op">=</span><span class="fl">2.0</span>, k<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.plot(t, h)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="fl">2.0</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>, label<span class="op">=</span><span class="st">"h* = F/k"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time [s]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"level h [m]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0d_bucket_files/figure-html/cell-3-output-1.png" width="663" height="282" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>The level rises and <em>settles at the equilibrium</em> — the drain term pulls it there (fuller → drains harder → a <strong>stabilizing feedback</strong>).</p>
 </section>
@@ -280,20 +293,27 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="make-predictions-and-break-them-three-ways">3. Make predictions — and break them three ways</h2>
 <p>Our model predicts the level at t = 10 s. How much should we trust that number? Attack it from three directions:</p>
 <p><strong>(a) Initial conditions:</strong> run from <code>h0 = 0, 1, 3, 5</code>. Plot all four. Does the prediction at t = 10 s care about where you started? At t = 0.5 s?</p>
-<div id="cell-7" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h0 <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>]:</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    t, h <span class="op">=</span> run_bucket(h0<span class="op">=</span>h0, F<span class="op">=</span><span class="fl">2.0</span>, k<span class="op">=</span><span class="fl">1.0</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(t, h, label<span class="op">=</span><span class="ss">f"h0=</span><span class="sc">{</span>h0<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time [s]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"h [m]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6a9aa389" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h0 <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>]:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    t, h <span class="op">=</span> run_bucket(h0<span class="op">=</span>h0, F<span class="op">=</span><span class="fl">2.0</span>, k<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(t, h, label<span class="op">=</span><span class="ss">f"h0=</span><span class="sc">{</span>h0<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time [s]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"h [m]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0d_bucket_files/figure-html/cell-4-output-1.png" width="651" height="282" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p><strong>(b) Model parameters:</strong> suppose we only know the drain constant roughly: <span class="math inline">\(k = 1.0 \pm 0.2\)</span>. Run with <code>k = 0.8, 1.0, 1.2</code>. How wide is the prediction at t = 10 s?</p>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: copy the loop above, but vary k instead of h0.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e027f26f" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: copy the loop above, but vary k instead of h0.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>(c) Forcing:</strong> we don’t control the pourer. Run with <code>F = 1.5, 2.0, 2.5</code>. How wide now?</p>
-<div id="cell-11" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: vary F.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cb170d55" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: vary F.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="name-what-you-just-did" class="level2">

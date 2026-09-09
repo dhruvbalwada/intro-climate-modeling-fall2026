@@ -231,28 +231,39 @@ window.Quarto = {
 <p><strong>Introduction to Climate Modeling · Fall 2026</strong></p>
 <p>Run every cell in this notebook (<code>Shift+Enter</code>). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.</p>
 <p><em>Fill in the next cell first.</em></p>
-<div id="cell-2" class="cell">
+<div id="fa13e949" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THIS CELL</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"YOUR NAME HERE"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>uni <span class="op">=</span> <span class="st">"YOUR UNI HERE"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Lab 0 submitted by </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>uni<span class="sc">}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Lab 0 submitted by YOUR NAME HERE (YOUR UNI HERE)</code></pre>
+</div>
 </div>
 <section id="check-the-scientific-python-stack" class="level2">
 <h2 class="anchored" data-anchor-id="check-the-scientific-python-stack">1. Check the scientific Python stack</h2>
 <p>These are the libraries we’ll use all semester. This cell just confirms they import and prints their versions.</p>
-<div id="cell-4" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"python     </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">.</span>split()[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"numpy      </span><span class="sc">{</span>np<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"matplotlib </span><span class="sc">{</span>matplotlib<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"xarray     </span><span class="sc">{</span>xr<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">All imports OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="426f8d4e" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"python     </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">.</span>split()[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"numpy      </span><span class="sc">{</span>np<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"matplotlib </span><span class="sc">{</span>matplotlib<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"xarray     </span><span class="sc">{</span>xr<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">All imports OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>python     3.11.15
+numpy      2.4.6
+matplotlib 3.10.9
+xarray     2026.4.0
+
+All imports OK ✅</code></pre>
+</div>
 </div>
 </section>
 <section id="a-tiny-computation-and-a-preview-of-week-2" class="level2">
@@ -261,42 +272,61 @@ window.Quarto = {
 <p><span class="math display">\[T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4}\]</span></p>
 <p>where <span class="math inline">\(S_0\)</span> is the solar constant, <span class="math inline">\(\alpha\)</span> the planetary albedo (how reflective the planet is), and <span class="math inline">\(\sigma\)</span> the Stefan–Boltzmann constant. Next week we’ll derive this and discover why it gives the <em>wrong</em> answer for Earth’s surface — in the most interesting way possible.</p>
 <p>For now: run the cell and look at the plot.</p>
-<div id="cell-6" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>S0 <span class="op">=</span> <span class="fl">1361.0</span>      <span class="co"># solar constant [W m-2]</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">5.67e-8</span>  <span class="co"># Stefan-Boltzmann constant [W m-2 K-4]</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="dv">100</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>T_e <span class="op">=</span> (S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> sigma)) <span class="op">**</span> <span class="fl">0.25</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.plot(albedo, T_e, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="fl">0.3</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">255</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="fl">0.3</span>, <span class="dv">255</span>, <span class="st">"o"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, ms<span class="op">=</span><span class="dv">8</span>, zorder<span class="op">=</span><span class="dv">5</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">"Earth: $</span><span class="ch">\\</span><span class="st">alpha=0.3$, $T_e</span><span class="ch">\\</span><span class="st">approx255$ K"</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">288</span>, ls<span class="op">=</span><span class="st">":"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="st">"Earth's actual surface T = 288 K  (?!)"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"planetary albedo"</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"emission temperature [K]"</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">'s first climate calculation"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ea864414" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>S0 <span class="op">=</span> <span class="fl">1361.0</span>      <span class="co"># solar constant [W m-2]</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">5.67e-8</span>  <span class="co"># Stefan-Boltzmann constant [W m-2 K-4]</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="dv">100</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>T_e <span class="op">=</span> (S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> sigma)) <span class="op">**</span> <span class="fl">0.25</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ax.plot(albedo, T_e, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="fl">0.3</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">255</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="fl">0.3</span>, <span class="dv">255</span>, <span class="st">"o"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, ms<span class="op">=</span><span class="dv">8</span>, zorder<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">"Earth: $</span><span class="ch">\\</span><span class="st">alpha=0.3$, $T_e</span><span class="ch">\\</span><span class="st">approx255$ K"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">288</span>, ls<span class="op">=</span><span class="st">":"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="st">"Earth's actual surface T = 288 K  (?!)"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"planetary albedo"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"emission temperature [K]"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">'s first climate calculation"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="verify_setup_files/figure-html/cell-4-output-1.png" width="566" height="374" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>That 33 K gap between the dashed gray line and the dotted red line? That’s the greenhouse effect, and it’s where this course begins.</p>
 </section>
 <section id="check-xarray-our-data-workhorse" class="level2">
 <h2 class="anchored" data-anchor-id="check-xarray-our-data-workhorse">3. Check xarray (our data workhorse)</h2>
 <p>Later in the course we’ll use <code>xarray</code> to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.</p>
-<div id="cell-8" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> xr.DataArray(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.random.randn(<span class="dv">12</span>, <span class="dv">4</span>),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span>[<span class="st">"month"</span>, <span class="st">"station"</span>],</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    coords<span class="op">=</span>{<span class="st">"month"</span>: np.arange(<span class="dv">1</span>, <span class="dv">13</span>)},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"temperature"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    attrs<span class="op">=</span>{<span class="st">"units"</span>: <span class="st">"degC"</span>},</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(da.mean(dim<span class="op">=</span><span class="st">"station"</span>))</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">xarray OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="93398c2e" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> xr.DataArray(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.random.randn(<span class="dv">12</span>, <span class="dv">4</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span>[<span class="st">"month"</span>, <span class="st">"station"</span>],</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    coords<span class="op">=</span>{<span class="st">"month"</span>: np.arange(<span class="dv">1</span>, <span class="dv">13</span>)},</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"temperature"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    attrs<span class="op">=</span>{<span class="st">"units"</span>: <span class="st">"degC"</span>},</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(da.mean(dim<span class="op">=</span><span class="st">"station"</span>))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">xarray OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;xarray.DataArray 'temperature' (month: 12)&gt; Size: 96B
+array([14.72487592, 15.19987372, 27.42894929,  8.72903474, 13.18278137,
+       30.11251032, 17.08798637, 17.65211583, 11.84994864, 26.32145401,
+       19.72092686, 23.6554155 ])
+Coordinates:
+  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12
+Attributes:
+    units:    degC
+
+xarray OK ✅</code></pre>
+</div>
 </div>
 </section>
 <section id="done" class="level2">

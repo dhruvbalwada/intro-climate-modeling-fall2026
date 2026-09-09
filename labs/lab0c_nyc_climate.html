@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -108,6 +108,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -230,7 +233,7 @@ window.Quarto = {
 <p><em>Then upload it to <a href="https://leap.2i2c.cloud/">leap.2i2c.cloud</a> and open it there.</em></p>
 <p><em>Week 1, in class · Introduction to Climate Modeling</em></p>
 <p>Daily temperature in Central Park, 1995–2014. We’ll use it to answer, concretely: <strong>what is climate?</strong> and <strong>what is a model?</strong> — and to build your <em>first</em> climate model (it has two parameters).</p>
-<div id="cell-2" class="cell">
+<div id="459f9a9f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -238,6 +241,54 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">t_obs</th>
+<th data-quarto-table-cell-role="th">t_era5</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">DATE</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1995-01-01</th>
+<td>7.50</td>
+<td>5.1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1995-01-02</th>
+<td>2.25</td>
+<td>2.2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1995-01-03</th>
+<td>-2.50</td>
+<td>-2.2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1995-01-04</th>
+<td>-2.75</td>
+<td>-2.1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1995-01-05</th>
+<td>-6.10</td>
+<td>-6.4</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 <section id="where-this-data-comes-from" class="level2">
 <h2 class="anchored" data-anchor-id="where-this-data-comes-from">Where this data comes from</h2>
@@ -274,7 +325,7 @@ window.Quarto = {
 <section id="weather-vs-climate" class="level2">
 <h2 class="anchored" data-anchor-id="weather-vs-climate">1. Weather vs climate</h2>
 <p>Plot two years of data. Then plot the histogram of <strong>all 20 years</strong>.</p>
-<div id="cell-5" class="cell">
+<div id="6e91d589" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax[<span class="dv">0</span>], lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_title(<span class="st">"two years of WEATHER"</span>)</span>
@@ -284,6 +335,17 @@ window.Quarto = {
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"mean = </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C   std = </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>std()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"record low = </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.1f}</span><span class="ss"> °C   record high = </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>mean = 13.1 °C   std = 9.4 °C
+record low = -13.3 °C   record high = 34.5 °C</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-3-output-2.png" width="1046" height="326" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p><strong>Discuss:</strong> The mean and the histogram <em>are</em> NYC’s climate (over this chosen 20-year window). What can this distribution tell you that the mean alone can’t? <em>(Hint: which tail do heat waves live in?)</em></p>
 </section>
@@ -297,22 +359,29 @@ window.Quarto = {
 <li><span class="math inline">\(A\)</span> = ______ (what does it mean? units?)</li>
 </ul>
 <p><strong>Your job: pick values for <code>T0</code> and <code>A</code> by hand.</strong> Run the cell, look at the plot and the error, adjust, repeat. Stop when you can’t do better.</p>
-<div id="cell-7" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THESE TWO NUMBERS, run, look, repeat:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>T0 <span class="op">=</span> <span class="fl">10.0</span>    <span class="co"># °C</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A  <span class="op">=</span> <span class="fl">5.0</span>     <span class="co"># °C</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>doy <span class="op">=</span> df.index.dayofyear</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>] <span class="op">=</span> T0 <span class="op">+</span> A <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (doy <span class="op">-</span> <span class="dv">201</span>) <span class="op">/</span> <span class="dv">365</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">3.5</span>))</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"observations"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, label<span class="op">=</span><span class="ss">f"your model: T0=</span><span class="sc">{</span>T0<span class="sc">}</span><span class="ss">, A=</span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>rmse <span class="op">=</span> np.sqrt(((df[<span class="st">"t_obs"</span>] <span class="op">-</span> df[<span class="st">"t_model"</span>])<span class="op">**</span><span class="dv">2</span>).mean())</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"your model's error (RMSE): </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss"> °C"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="73abfe2c" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THESE TWO NUMBERS, run, look, repeat:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>T0 <span class="op">=</span> <span class="fl">10.0</span>    <span class="co"># °C</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>A  <span class="op">=</span> <span class="fl">5.0</span>     <span class="co"># °C</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>doy <span class="op">=</span> df.index.dayofyear</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>] <span class="op">=</span> T0 <span class="op">+</span> A <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> (doy <span class="op">-</span> <span class="dv">201</span>) <span class="op">/</span> <span class="dv">365</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">3.5</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_obs"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"observations"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_model"</span>][<span class="st">"2010"</span>:<span class="st">"2011"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, label<span class="op">=</span><span class="ss">f"your model: T0=</span><span class="sc">{</span>T0<span class="sc">}</span><span class="ss">, A=</span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>rmse <span class="op">=</span> np.sqrt(((df[<span class="st">"t_obs"</span>] <span class="op">-</span> df[<span class="st">"t_model"</span>])<span class="op">**</span><span class="dv">2</span>).mean())</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"your model's error (RMSE): </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss"> °C"</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-4-output-1.png" width="950" height="326" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p><strong>When you’re happy:</strong> shout out your <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, and RMSE — we’ll collect them on the board.</p>
 <blockquote class="blockquote">
@@ -323,24 +392,38 @@ window.Quarto = {
 <section id="two-more-nycs-a-reanalysis-and-a-climate-model" class="level2">
 <h2 class="anchored" data-anchor-id="two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</h2>
 <p>The same location, from <strong>ERA5</strong> (a weather model continuously corrected by observations) and from a <strong>CMIP6 climate model</strong> (free-running — it invents its own weather).</p>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>url2 <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> pd.read_csv(url2, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cm.index <span class="op">=</span> cm.index.normalize()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_cmip6"</span>] <span class="op">=</span> cm[<span class="st">"t_cmip6"</span>].reindex(df.index)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"six months, three versions of NYC"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>doyg <span class="op">=</span> df.index.dayofyear</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> c: c <span class="op">-</span> c.groupby(doyg).transform(<span class="st">"mean"</span>))  <span class="co"># each series minus its own seasonal cycle</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"day-to-day correlation with the station (seasonal cycles removed):"</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  ERA5  : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_era5'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  CMIP6 : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_cmip6'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">20-year means: station </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · ERA5 </span><span class="sc">{</span>df[<span class="st">'t_era5'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · CMIP6 </span><span class="sc">{</span>df[<span class="st">'t_cmip6'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b393abca" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>url2 <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> pd.read_csv(url2, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cm.index <span class="op">=</span> cm.index.normalize()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_cmip6"</span>] <span class="op">=</span> cm[<span class="st">"t_cmip6"</span>].reindex(df.index)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">3.5</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c, col, lab <span class="kw">in</span> [(<span class="st">"t_obs"</span>, <span class="st">"k"</span>, <span class="st">"station"</span>), (<span class="st">"t_era5"</span>, <span class="st">"tab:blue"</span>, <span class="st">"ERA5"</span>), (<span class="st">"t_cmip6"</span>, <span class="st">"tab:orange"</span>, <span class="st">"CMIP6 model"</span>)]:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    df[c][<span class="st">"2010-06"</span>:<span class="st">"2010-12"</span>].plot(ax<span class="op">=</span>ax, lw<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span>col, label<span class="op">=</span>lab)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"°C"</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> ax.set_title(<span class="st">"six months, three versions of NYC"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>doyg <span class="op">=</span> df.index.dayofyear</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> c: c <span class="op">-</span> c.groupby(doyg).transform(<span class="st">"mean"</span>))  <span class="co"># each series minus its own seasonal cycle</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"day-to-day correlation with the station (seasonal cycles removed):"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  ERA5  : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_era5'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  CMIP6 : r = </span><span class="sc">{</span>a[<span class="st">'t_obs'</span>]<span class="sc">.</span>corr(a[<span class="st">'t_cmip6'</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">20-year means: station </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · ERA5 </span><span class="sc">{</span>df[<span class="st">'t_era5'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · CMIP6 </span><span class="sc">{</span>df[<span class="st">'t_cmip6'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>day-to-day correlation with the station (seasonal cycles removed):
+  ERA5  : r = 0.95
+  CMIP6 : r = -0.01
+
+20-year means: station 13.1 °C · ERA5 11.5 °C · CMIP6 10.2 °C</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-5-output-2.png" width="1044" height="326" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p><strong>Discuss (the big ones):</strong></p>
 <ol type="1">
