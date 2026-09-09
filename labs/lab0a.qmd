@@ -18,15 +18,16 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
 > **If the hub won't start for you:** discuss with Sarika or the TAs.
 
 
-## Part B — Orient to Jupyterhub and run the verification notebook
+## Part B — Orient to Jupyterhub
 
 1. What is Jupyterhub, and where things are.
-2. Open [`verify_setup.ipynb`](verify_setup.ipynb) on the course website and click the **Download this notebook** button at the top.
-3. On the hub: drag-and-drop the file into the JupyterLab file browser (left panel).
-4. Open it and run every cell (`Shift+Enter`, or Run ▸ Run All Cells).
-5. Fill in your name/UNI where indicated and make sure the final plot appears with no errors.
+2. Adding notebooks to your folders. 
+   1. Open [`verify_setup.ipynb`](verify_setup.ipynb) on the course website and click the **Download this notebook** button at the top.
+   2. On the hub: drag-and-drop the file into the JupyterLab file browser (left panel).
+3. Running through code in a notebook (`Shift+Enter`, or Run ▸ Run All Cells).
+4. Fill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors.
 
-## Part C — Create your course repository (15 min)
+## Part C — Create your course repository 
 
 1. On GitHub, click **New repository**:
    - Name: `climate-modeling-f26-<your-uni>` (e.g., `climate-modeling-f26-ab1234`)
@@ -44,9 +45,15 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
      git commit -m "Lab 0: verification notebook"
      git push
      ```
-     GitHub will ask you to authenticate — you'll need a **personal access token** instead of your password: GitHub **Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token** (scope: `repo`; set expiration to end of December). Paste the token when `git push` asks for a password. Save it somewhere — you'll reuse it all semester.
+     **Authenticating (no passwords, no tokens):** the first time you push, run this in the terminal:
+     ```bash
+     gh-scoped-creds
+     ```
+     It prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing **"Only select repositories"** and picking your `climate-modeling-f26-<uni>` repo. Then `git push` works.
 
-## Part D — Tell us it's done (2 min)
+     Credentials last **8 hours**; when they expire just run `gh-scoped-creds` again. *(This is why we use the `https://` clone URL above.)*
+
+## Part D — Submit your assignment
 
 On Courseworks, open the **Lab 0** assignment and submit **the URL of your repository** (e.g., `https://github.com/ab1234/climate-modeling-f26-ab1234`). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.
 
