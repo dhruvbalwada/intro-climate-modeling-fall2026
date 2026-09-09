@@ -30,3 +30,7 @@ format:
     theme: cosmo
     toc: true
     link-external-newwindow: true
+
+execute:
+  enabled: true
+  freeze: auto
