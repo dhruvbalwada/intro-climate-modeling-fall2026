@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - "labs/data/*"
+    - "labs/*.ipynb"
 
 website:
   title: "Introduction to Climate Modeling"
