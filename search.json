@@ -336,6 +336,41 @@
     "text": "Part D — Submit your notebook as assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, instructor and TAs added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
   },
   {
+    "objectID": "labs/getting_the_data.html",
+    "href": "labs/getting_the_data.html",
+    "title": "Reference — where our data comes from",
+    "section": "",
+    "text": "⇩ Download this notebook (.ipynb)\nOptional reference — we won’t work through this in class.\nThe CSV files used in Lab 0c didn’t fall from the sky: they were downloaded from three public archives. This notebook shows exactly how, partly so the numbers are reproducible, and partly because getting data is a real skill you’ll need for your final project.\nThe cells here are not executed when this page is built (the downloads are slow, and the class shouldn’t depend on three servers being up). Download the notebook and run it yourself if you want the data fresh.\nAll three cover 1995–2014 — the last 20 years of the CMIP6 historical experiment, so they overlap.\nimport io, json, urllib.request\nimport pandas as pd\n\nLAT, LON = 40.78, -73.97          # Central Park\nY0, Y1 = \"1995-01-01\", \"2014-12-31\""
+  },
+  {
+    "objectID": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
+    "href": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
+    "title": "Reference — where our data comes from",
+    "section": "1. Station observations — NOAA GHCN-Daily",
+    "text": "1. Station observations — NOAA GHCN-Daily\nThe Global Historical Climatology Network holds daily records from tens of thousands of stations. Central Park is USW00094728. NOAA’s Access Data Service will hand you a CSV straight from a URL.\nNote we ask for TMAX and TMIN and average them: daily mean temperature (TAVG) is missing for many station-years, so (TMAX + TMIN)/2 is the standard workaround. That is a modelling choice, and it is not identical to a true daily mean.\n\nurl = (\"https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries\"\n       f\"&stations=USW00094728&startDate={Y0}&endDate={Y1}&dataTypes=TMAX,TMIN\"\n       \"&units=metric&format=csv\")\n\nobs = pd.read_csv(io.StringIO(urllib.request.urlopen(url, timeout=180).read().decode()))\nobs[\"DATE\"] = pd.to_datetime(obs[\"DATE\"])\nobs[\"t_obs\"] = (obs[\"TMAX\"] + obs[\"TMIN\"]) / 2\nobs = obs.set_index(\"DATE\")[[\"t_obs\"]]\nobs.head()"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#reanalysis-era5",
+    "href": "labs/getting_the_data.html#reanalysis-era5",
+    "title": "Reference — where our data comes from",
+    "section": "2. Reanalysis — ERA5",
+    "text": "2. Reanalysis — ERA5\nERA5 is a weather model run over the whole satellite/observation record, continuously nudged toward observations. The full archive is enormous; Open-Meteo offers a friendly API that extracts a single point for you.\nWatch the fine print: you asked for Central Park, but you get the nearest grid point — around 40.81 °N, 74.02 °W, and it represents an average over roughly 30 km, not a park.\n\nurl = (f\"https://archive-api.open-meteo.com/v1/era5?latitude={LAT}&longitude={LON}\"\n       f\"&start_date={Y0}&end_date={Y1}&daily=temperature_2m_mean\"\n       \"&timezone=America%2FNew_York\")\n\nj = json.load(urllib.request.urlopen(url, timeout=300))\nera = pd.DataFrame({\"DATE\": pd.to_datetime(j[\"daily\"][\"time\"]),\n                    \"t_era5\": j[\"daily\"][\"temperature_2m_mean\"]}).set_index(\"DATE\")\n\nprint(\"grid point actually returned:\", j[\"latitude\"], j[\"longitude\"])\nera.head()\n\n\nobs.join(era, how=\"outer\").to_csv(\"centralpark_obs_era5_1995-2014.csv\")"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
+    "href": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
+    "title": "Reference — where our data comes from",
+    "section": "3. A climate model — CMIP6 from the cloud",
+    "text": "3. A climate model — CMIP6 from the cloud\nThis is the one we’ll use properly later in the course. Every CMIP6 simulation is catalogued in one big CSV; you filter it to the run you want, then open the data straight from cloud storage — without downloading the whole thing (xarray fetches only the chunks you touch).\nThe search terms are the CMIP vocabulary you’ll learn later: source_id (which model), experiment_id (which experiment), member_id (which ensemble member), table_id (which output frequency), variable_id (which variable — tas is near-surface air temperature).\n\nimport xarray as xr\n\ncat = pd.read_csv(\"https://storage.googleapis.com/cmip6/pangeo-cmip6.csv\")\nprint(len(cat), \"simulations in the catalog\")\n\nsel = cat[(cat.source_id == \"MPI-ESM1-2-HR\") & (cat.experiment_id == \"historical\")\n          & (cat.member_id == \"r1i1p1f1\") & (cat.table_id == \"day\")\n          & (cat.variable_id == \"tas\")]\nsel[[\"source_id\", \"experiment_id\", \"member_id\", \"table_id\", \"variable_id\", \"zstore\"]]\n\n\nds = xr.open_zarr(sel.zstore.iloc[0], consolidated=True, storage_options={\"token\": \"anon\"})\nds\n\nFour things bite everyone the first time:\n\nLongitude runs 0–360, not −180–180. Central Park’s −73.97 becomes 286.03 (LON % 360).\nTemperature is in kelvin. Subtract 273.15.\nThe nearest grid cell is ~100 km wide — here it lands at about 40.68 °N, 74.06 °W, partly over water. It is not Central Park.\nModel calendars are their own thing (cftime objects, sometimes 360-day years), so converting to ordinary dates takes an extra step.\n\n\npt = (ds.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n            .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n\nprint(f\"grid cell used: {float(pt.lat):.2f} N, {float(pt.lon) - 360:.2f} E\")\n\ns = pt.to_series()\ns.index = pd.to_datetime(s.index.astype(str))     # cftime -&gt; ordinary dates\ns.rename(\"t_cmip6\").to_csv(\"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv\")\ns.head()"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#credit-where-due",
+    "href": "labs/getting_the_data.html#credit-where-due",
+    "title": "Reference — where our data comes from",
+    "section": "Credit where due",
+    "text": "Credit where due\n\nGHCN-Daily — NOAA National Centers for Environmental Information (US government work, public domain).\nERA5 — Copernicus Climate Change Service / ECMWF; served here by Open-Meteo.\nMPI-ESM1-2-HR — Max Planck Institute for Meteorology, distributed through CMIP6 (CC BY 4.0). Cloud copy hosted by Pangeo.\n\nCiting your data sources is not a formality — it’s how someone else (including future you) can check what you did.\nWant more of this? Working with real earth-science datasets — xarray, cloud archives, plotting, analysis — is the subject of the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
+  },
+  {
     "objectID": "labs/index.html",
     "href": "labs/index.html",
     "title": "Labs",
@@ -347,7 +382,7 @@
     "href": "labs/index.html#week-1-sep-10",
     "title": "Labs",
     "section": "Week 1 (Sep 10)",
-    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
+    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\n\nReference (optional)\n\nWhere our data comes from: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
   },
   {
     "objectID": "labs/lab0d_bucket.html",
@@ -410,7 +445,7 @@
     "href": "labs/verify_setup.html#check-xarray-our-data-workhorse",
     "title": "Lab 0 — Setup Verification",
     "section": "3. Check xarray (our data workhorse)",
-    "text": "3. Check xarray (our data workhorse)\nLater in the course we’ll use xarray to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.\n\nda = xr.DataArray(\n    20 + 10 * np.random.randn(12, 4),\n    dims=[\"month\", \"station\"],\n    coords={\"month\": np.arange(1, 13)},\n    name=\"temperature\",\n    attrs={\"units\": \"degC\"},\n)\nprint(da.mean(dim=\"station\"))\nprint(\"\\nxarray OK ✅\")\n\n&lt;xarray.DataArray 'temperature' (month: 12)&gt; Size: 96B\narray([14.72487592, 15.19987372, 27.42894929,  8.72903474, 13.18278137,\n       30.11251032, 17.08798637, 17.65211583, 11.84994864, 26.32145401,\n       19.72092686, 23.6554155 ])\nCoordinates:\n  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12\nAttributes:\n    units:    degC\n\nxarray OK ✅"
+    "text": "3. Check xarray (our data workhorse)\nLater in the course we’ll use xarray to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.\n\nda = xr.DataArray(\n    20 + 10 * np.random.randn(12, 4),\n    dims=[\"month\", \"station\"],\n    coords={\"month\": np.arange(1, 13)},\n    name=\"temperature\",\n    attrs={\"units\": \"degC\"},\n)\nprint(da.mean(dim=\"station\"))\nprint(\"\\nxarray OK ✅\")\n\n&lt;xarray.DataArray 'temperature' (month: 12)&gt; Size: 96B\narray([23.17888611, 23.26271069, 17.22814796, 20.15419686, 22.41996104,\n       26.91842328, 12.48528426, 23.73935501, 20.32277205, 20.49307876,\n       20.97235729, 22.81395741])\nCoordinates:\n  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12\nAttributes:\n    units:    degC\n\nxarray OK ✅"
   },
   {
     "objectID": "labs/verify_setup.html#done",

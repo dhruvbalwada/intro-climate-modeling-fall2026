@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Labs – Introduction to Climate Modeling</title>
+<title>Reference — where our data comes from – Introduction to Climate Modeling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../labs/index.html" aria-current="page"> 
+    <a class="nav-link" href="../labs/index.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
@@ -133,10 +168,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-1-sep-10" id="toc-week-1-sep-10" class="nav-link active" data-scroll-target="#week-1-sep-10">Week 1 (Sep 10)</a>
-  <ul class="collapse">
-  <li><a href="#reference-optional" id="toc-reference-optional" class="nav-link" data-scroll-target="#reference-optional">Reference (optional)</a></li>
-  </ul></li>
+  <li><a href="#station-observations-noaa-ghcn-daily" id="toc-station-observations-noaa-ghcn-daily" class="nav-link active" data-scroll-target="#station-observations-noaa-ghcn-daily">1. Station observations — NOAA GHCN-Daily</a></li>
+  <li><a href="#reanalysis-era5" id="toc-reanalysis-era5" class="nav-link" data-scroll-target="#reanalysis-era5">2. Reanalysis — ERA5</a></li>
+  <li><a href="#a-climate-model-cmip6-from-the-cloud" id="toc-a-climate-model-cmip6-from-the-cloud" class="nav-link" data-scroll-target="#a-climate-model-cmip6-from-the-cloud">3. A climate model — CMIP6 from the cloud</a></li>
+  <li><a href="#credit-where-due" id="toc-credit-where-due" class="nav-link" data-scroll-target="#credit-where-due">Credit where due</a></li>
   </ul>
 </nav>
     </div>
@@ -145,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Labs</h1>
+<h1 class="title">Reference — where our data comes from</h1>
 </div>
 
 
@@ -162,24 +197,134 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Labs are done in class, saved into your course GitHub repo, and submitted by posting your repo link on Courseworks. This page grows week by week.</p>
-<section id="week-1-sep-10" class="level2">
-<h2 class="anchored" data-anchor-id="week-1-sep-10">Week 1 (Sep 10)</h2>
-<ul>
-<li><strong><a href="../labs/lab0a.html">Lab 0a — Getting set up</a></strong>: GitHub account, private course repo, LEAP hub · verification notebook: <a href="../labs/verify_setup.html">verify_setup.ipynb</a></li>
-<li><strong><a href="../labs/lab0b_python_basics.html">Lab 0b — Python, just enough to start</a></strong>: notebooks, numpy, matplotlib, a first look at pandas and xarray</li>
-<li><strong><a href="../labs/lab0c_nyc_climate.html">Lab 0c — The climate of NYC</a></strong>: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6</li>
-<li><strong><a href="../labs/lab0d_bucket.html">Lab 0d — A bucket</a></strong>: budgets, equilibrium, stepping forward in time</li>
-</ul>
-<section id="reference-optional" class="level3">
-<h3 class="anchored" data-anchor-id="reference-optional">Reference (optional)</h3>
-<ul>
-<li><strong><a href="../labs/getting_the_data.html">Where our data comes from</a></strong>: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project</li>
-</ul>
-<p><em>Want more Python? A fuller treatment of scientific Python for earth data is in the companion course site: <a href="https://earth-ds-ml.github.io/summer_2026/intro.html">earth-ds-ml.github.io/summer_2026</a>.</em></p>
-
-
+<p><a class="btn btn-primary btn-sm" href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/getting_the_data.ipynb" download="">⇩ Download this notebook (.ipynb)</a></p>
+<p><em>Optional reference — we won’t work through this in class.</em></p>
+<p>The CSV files used in Lab 0c didn’t fall from the sky: they were downloaded from three public archives. This notebook shows exactly how, partly so the numbers are reproducible, and partly because <strong>getting data is a real skill</strong> you’ll need for your final project.</p>
+<p>The cells here are not executed when this page is built (the downloads are slow, and the class shouldn’t depend on three servers being up). Download the notebook and run it yourself if you want the data fresh.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>what</th>
+<th>source</th>
+<th>note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>station observations</td>
+<td>NOAA NCEI, GHCN-Daily</td>
+<td>one thermometer, Central Park</td>
+</tr>
+<tr class="even">
+<td>reanalysis</td>
+<td>ERA5 (Copernicus/ECMWF), via Open-Meteo</td>
+<td>model + observations, on a grid</td>
+</tr>
+<tr class="odd">
+<td>climate model</td>
+<td>CMIP6 MPI-ESM1-2-HR, via the Pangeo cloud archive</td>
+<td>free-running simulation</td>
+</tr>
+</tbody>
+</table>
+<p>All three cover <strong>1995–2014</strong> — the last 20 years of the CMIP6 <em>historical</em> experiment, so they overlap.</p>
+<div id="cell-2" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io, json, urllib.request</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>LAT, LON <span class="op">=</span> <span class="fl">40.78</span>, <span class="op">-</span><span class="fl">73.97</span>          <span class="co"># Central Park</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Y0, Y1 <span class="op">=</span> <span class="st">"1995-01-01"</span>, <span class="st">"2014-12-31"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="station-observations-noaa-ghcn-daily" class="level2">
+<h2 class="anchored" data-anchor-id="station-observations-noaa-ghcn-daily">1. Station observations — NOAA GHCN-Daily</h2>
+<p>The Global Historical Climatology Network holds daily records from tens of thousands of stations. Central Park is <code>USW00094728</code>. NOAA’s Access Data Service will hand you a CSV straight from a URL.</p>
+<p>Note we ask for <code>TMAX</code> and <code>TMIN</code> and average them: daily <em>mean</em> temperature (<code>TAVG</code>) is missing for many station-years, so <code>(TMAX + TMIN)/2</code> is the standard workaround. That is a modelling choice, and it is not identical to a true daily mean.</p>
+<div id="cell-4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> (<span class="st">"https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="ss">f"&amp;stations=USW00094728&amp;startDate=</span><span class="sc">{</span>Y0<span class="sc">}</span><span class="ss">&amp;endDate=</span><span class="sc">{</span>Y1<span class="sc">}</span><span class="ss">&amp;dataTypes=TMAX,TMIN"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"&amp;units=metric&amp;format=csv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>obs <span class="op">=</span> pd.read_csv(io.StringIO(urllib.request.urlopen(url, timeout<span class="op">=</span><span class="dv">180</span>).read().decode()))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>obs[<span class="st">"DATE"</span>] <span class="op">=</span> pd.to_datetime(obs[<span class="st">"DATE"</span>])</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>obs[<span class="st">"t_obs"</span>] <span class="op">=</span> (obs[<span class="st">"TMAX"</span>] <span class="op">+</span> obs[<span class="st">"TMIN"</span>]) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>obs <span class="op">=</span> obs.set_index(<span class="st">"DATE"</span>)[[<span class="st">"t_obs"</span>]]</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>obs.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
+<section id="reanalysis-era5" class="level2">
+<h2 class="anchored" data-anchor-id="reanalysis-era5">2. Reanalysis — ERA5</h2>
+<p>ERA5 is a weather model run over the whole satellite/observation record, continuously nudged toward observations. The full archive is enormous; <a href="https://open-meteo.com/">Open-Meteo</a> offers a friendly API that extracts a single point for you.</p>
+<p><strong>Watch the fine print:</strong> you asked for Central Park, but you get the <em>nearest grid point</em> — around 40.81 °N, 74.02 °W, and it represents an average over roughly 30 km, not a park.</p>
+<div id="cell-6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> (<span class="ss">f"https://archive-api.open-meteo.com/v1/era5?latitude=</span><span class="sc">{</span>LAT<span class="sc">}</span><span class="ss">&amp;longitude=</span><span class="sc">{</span>LON<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="ss">f"&amp;start_date=</span><span class="sc">{</span>Y0<span class="sc">}</span><span class="ss">&amp;end_date=</span><span class="sc">{</span>Y1<span class="sc">}</span><span class="ss">&amp;daily=temperature_2m_mean"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"&amp;timezone=America</span><span class="sc">%2F</span><span class="st">New_York"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> json.load(urllib.request.urlopen(url, timeout<span class="op">=</span><span class="dv">300</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>era <span class="op">=</span> pd.DataFrame({<span class="st">"DATE"</span>: pd.to_datetime(j[<span class="st">"daily"</span>][<span class="st">"time"</span>]),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"t_era5"</span>: j[<span class="st">"daily"</span>][<span class="st">"temperature_2m_mean"</span>]}).set_index(<span class="st">"DATE"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"grid point actually returned:"</span>, j[<span class="st">"latitude"</span>], j[<span class="st">"longitude"</span>])</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>era.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-7" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>obs.join(era, how<span class="op">=</span><span class="st">"outer"</span>).to_csv(<span class="st">"centralpark_obs_era5_1995-2014.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="a-climate-model-cmip6-from-the-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="a-climate-model-cmip6-from-the-cloud">3. A climate model — CMIP6 from the cloud</h2>
+<p>This is the one we’ll use properly later in the course. Every CMIP6 simulation is catalogued in one big CSV; you filter it to the run you want, then open the data straight from cloud storage — <strong>without downloading the whole thing</strong> (<code>xarray</code> fetches only the chunks you touch).</p>
+<p>The search terms are the CMIP vocabulary you’ll learn later: <code>source_id</code> (which model), <code>experiment_id</code> (which experiment), <code>member_id</code> (which ensemble member), <code>table_id</code> (which output frequency), <code>variable_id</code> (which variable — <code>tas</code> is near-surface air temperature).</p>
+<div id="cell-9" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cat <span class="op">=</span> pd.read_csv(<span class="st">"https://storage.googleapis.com/cmip6/pangeo-cmip6.csv"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(cat), <span class="st">"simulations in the catalog"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sel <span class="op">=</span> cat[(cat.source_id <span class="op">==</span> <span class="st">"MPI-ESM1-2-HR"</span>) <span class="op">&amp;</span> (cat.experiment_id <span class="op">==</span> <span class="st">"historical"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>          <span class="op">&amp;</span> (cat.member_id <span class="op">==</span> <span class="st">"r1i1p1f1"</span>) <span class="op">&amp;</span> (cat.table_id <span class="op">==</span> <span class="st">"day"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="op">&amp;</span> (cat.variable_id <span class="op">==</span> <span class="st">"tas"</span>)]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sel[[<span class="st">"source_id"</span>, <span class="st">"experiment_id"</span>, <span class="st">"member_id"</span>, <span class="st">"table_id"</span>, <span class="st">"variable_id"</span>, <span class="st">"zstore"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-10" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_zarr(sel.zstore.iloc[<span class="dv">0</span>], consolidated<span class="op">=</span><span class="va">True</span>, storage_options<span class="op">=</span>{<span class="st">"token"</span>: <span class="st">"anon"</span>})</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ds</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Four things bite everyone the first time:</p>
+<ol type="1">
+<li><strong>Longitude runs 0–360</strong>, not −180–180. Central Park’s −73.97 becomes <code>286.03</code> (<code>LON % 360</code>).</li>
+<li><strong>Temperature is in kelvin.</strong> Subtract 273.15.</li>
+<li><strong>The nearest grid cell is ~100 km wide</strong> — here it lands at about 40.68 °N, 74.06 °W, partly over water. It is <em>not</em> Central Park.</li>
+<li><strong>Model calendars are their own thing</strong> (<code>cftime</code> objects, sometimes 360-day years), so converting to ordinary dates takes an extra step.</li>
+</ol>
+<div id="cell-12" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pt <span class="op">=</span> (ds.tas.sel(lat<span class="op">=</span>LAT, lon<span class="op">=</span>LON <span class="op">%</span> <span class="dv">360</span>, method<span class="op">=</span><span class="st">"nearest"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            .sel(time<span class="op">=</span><span class="bu">slice</span>(<span class="st">"1995"</span>, <span class="st">"2014"</span>)) <span class="op">-</span> <span class="fl">273.15</span>).load()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"grid cell used: </span><span class="sc">{</span><span class="bu">float</span>(pt.lat)<span class="sc">:.2f}</span><span class="ss"> N, </span><span class="sc">{</span><span class="bu">float</span>(pt.lon) <span class="op">-</span> <span class="dv">360</span><span class="sc">:.2f}</span><span class="ss"> E"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pt.to_series()</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>s.index <span class="op">=</span> pd.to_datetime(s.index.astype(<span class="bu">str</span>))     <span class="co"># cftime -&gt; ordinary dates</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>s.rename(<span class="st">"t_cmip6"</span>).to_csv(<span class="st">"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>s.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="credit-where-due" class="level2">
+<h2 class="anchored" data-anchor-id="credit-where-due">Credit where due</h2>
+<ul>
+<li><strong>GHCN-Daily</strong> — NOAA National Centers for Environmental Information (US government work, public domain).</li>
+<li><strong>ERA5</strong> — Copernicus Climate Change Service / ECMWF; served here by Open-Meteo.</li>
+<li><strong>MPI-ESM1-2-HR</strong> — Max Planck Institute for Meteorology, distributed through CMIP6 (CC BY 4.0). Cloud copy hosted by <a href="https://pangeo.io/">Pangeo</a>.</li>
+</ul>
+<p>Citing your data sources is not a formality — it’s how someone else (including future you) can check what you did.</p>
+<p><strong>Want more of this?</strong> Working with real earth-science datasets — xarray, cloud archives, plotting, analysis — is the subject of the companion course site: <a href="https://earth-ds-ml.github.io/summer_2026/intro.html" class="uri">https://earth-ds-ml.github.io/summer_2026/intro.html</a></p>
+
+
 </section>
 
 </main> <!-- /main -->
