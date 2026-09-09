@@ -23,4 +23,4 @@ Earth system and climate models are critically important tools for climate scien
 - **Dec 10 / 17** — project presentations
 - **Dec 18** — final project notebook due
 
-Start here: the [schedule](schedule.qmd), then [Lab 0](labs/lab0.qmd).
+Start here: the [schedule](schedule.qmd), then [Lab 0](labs/lab0a.qmd).

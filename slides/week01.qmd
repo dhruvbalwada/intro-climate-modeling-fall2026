@@ -63,7 +63,7 @@ Ungraded diagnostic — no judgment framing: "a year since GR5001 is a long time
 
 ## Lab 0a checklist (~30 min) {.smaller}
 
-Follow the [Lab 0 instructions](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab0.html) on the course website:
+Follow the [Lab 0 instructions](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab0a.html) on the course website:
 
 1. **GitHub account** (skip if you have one) → create your **private course repo** `climate-modeling-f26-<uni>` → add me + Prani + Chandanie as collaborators
 2. **LEAP hub**: log in at [leap.2i2c.cloud](https://leap.2i2c.cloud/) *(filled the access form? if it fails — hand up)*

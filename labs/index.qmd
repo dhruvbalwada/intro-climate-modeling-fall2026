@@ -6,6 +6,6 @@ Labs are done in class, saved into your course GitHub repo, and submitted by pos
 
 ## Week 1 (Sep 10)
 
-- **[Lab 0a — Getting set up](lab0.qmd)**: GitHub account, private course repo, LEAP hub · verification notebook: [verify_setup.ipynb](verify_setup.ipynb)
+- **[Lab 0a — Getting set up](lab0a.qmd)**: GitHub account, private course repo, LEAP hub · verification notebook: [verify_setup.ipynb](verify_setup.ipynb)
 - **[Lab 0b — The climate of NYC](lab0b_nyc_climate.ipynb)** *(download the .ipynb, upload to your hub)*: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6
 - **[Lab 0c — A bucket](lab0c_bucket.ipynb)** *(download, upload to hub)*: budgets, equilibrium, stepping forward in time
