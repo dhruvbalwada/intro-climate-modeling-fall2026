@@ -84,7 +84,7 @@ Front-loads the setup pain while TAs are in the room instead of leaving it to st
 - **pandas / xarray** — labeled data from files or the cloud: `pd.read_csv(url)`
 - AI assistants: **allowed and encouraged** for coding help (disclose it; you must understand what you submit)
 
-We learn these by *using* them — starting right after the break.
+First stop: **Lab 0b — Python, just enough to start** (on the [Labs page](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/)).
 
 ::: {.notes}
 A map, not a tutorial — we learn the tools by using them.
@@ -105,7 +105,7 @@ TAs use the break to unblock hub/GitHub stragglers.
 - Climate change = the distribution shifting, widening, or reshaping — with very different consequences in the tails
 
 ::: {.notes}
-Abstract here; Lab 0b makes it concrete with NYC data shortly.
+Abstract here; Lab 0c makes it concrete with NYC data shortly.
 :::
 
 ## Every number on this figure came out of a model
@@ -145,9 +145,9 @@ Bands = spread of model ensembles (brown: human+natural; green: natural-only); b
 One slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone's hand-fit differs.
 :::
 
-## Lab 0b · The climate of NYC {.smaller}
+## Lab 0c · The climate of NYC {.smaller}
 
-Open **`lab0b_nyc_climate.ipynb`** *(download from the [Labs page](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/), upload to your hub)*:
+Open **`lab0c_nyc_climate.ipynb`** *(download from the [Labs page](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/), upload to your hub)*:
 
 1. Plot 20 years of Central Park temperature → **what is the climate of NYC?**
 2. **Fit a 2-parameter model by hand**: $T_0 + A\cos(2\pi(d-201)/365)$ — pick $T_0$ and $A$, check the error, iterate. *What are the units?*
@@ -158,13 +158,13 @@ Open **`lab0b_nyc_climate.ipynb`** *(download from the [Labs page](https://dhruv
 The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that's by design; it only owes you the distribution. Discussion prompts are in the notebook.
 :::
 
-## Lab 0c · A bucket: adding time {.smaller}
+## Lab 0d · A bucket: adding time {.smaller}
 
 *(board first: a volume budget — in − out = accumulation)*
 
 $$A\,\frac{dh}{dt} = \underbrace{F}_{\text{forcing (external)}} - \underbrace{k\,h}_{\text{drain (the system)}}$$
 
-Open **`lab0c_bucket.ipynb`**:
+Open **`lab0d_bucket.ipynb`**:
 
 1. Equilibrium: set $dh/dt=0$ → $h^* = F/k$ — *check the units!*
 2. **Fill in the Euler step** and watch the level find its equilibrium
@@ -194,7 +194,7 @@ Every bullet points at something they DID today. Worth saying aloud: by 2100 the
 
 ## Before you leave
 
-- **Lab 0b + 0c notebooks** → saved into your course repo
+- **Today's notebooks (0b, 0c, 0d)** → saved into your course repo
 - **Repo link** → posted on Courseworks *(that's your Lab 0 submission)*
 - Didn't finish? Complete at home **before next Thursday** — TAs + office hours can unblock you
 
