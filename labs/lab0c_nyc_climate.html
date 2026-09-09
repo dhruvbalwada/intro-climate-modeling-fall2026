@@ -204,6 +204,7 @@ window.Quarto = {
   <li><a href="#weather-vs-climate" id="toc-weather-vs-climate" class="nav-link" data-scroll-target="#weather-vs-climate">1. Weather vs climate</a></li>
   <li><a href="#your-first-climate-model-fit-it-by-hand" id="toc-your-first-climate-model-fit-it-by-hand" class="nav-link" data-scroll-target="#your-first-climate-model-fit-it-by-hand">2. Your first climate model — fit it by hand</a></li>
   <li><a href="#two-more-nycs-a-reanalysis-and-a-climate-model" id="toc-two-more-nycs-a-reanalysis-and-a-climate-model" class="nav-link" data-scroll-target="#two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</a></li>
+  <li><a href="#one-model-is-not-the-story" id="toc-one-model-is-not-the-story" class="nav-link" data-scroll-target="#one-model-is-not-the-story">4. One model is not the story</a></li>
   </ul>
 </nav>
     </div>
@@ -238,17 +239,25 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. station thermometer (NOAA) + 2. ERA5 reanalysis — same file</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(base <span class="op">+</span> <span class="st">"centralpark_obs_era5_1995-2014.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. a CMIP6 climate model at the same location</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> pd.read_csv(base <span class="op">+</span> <span class="st">"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>cm.index <span class="op">=</span> cm.index.normalize()      <span class="co"># model timestamps sit at 12:00; align them to dates</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_cmip6"</span>] <span class="op">=</span> cm[<span class="st">"t_cmip6"</span>].reindex(df.index)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># data lives next to this notebook on the course website;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># use a local copy if you have one, otherwise fetch over the web</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="st">"data/"</span> <span class="cf">if</span> Path(<span class="st">"data"</span>).is_dir() <span class="cf">else</span> <span class="st">"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. station thermometer (NOAA) + 2. ERA5 reanalysis — same file</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(base <span class="op">+</span> <span class="st">"centralpark_obs_era5_1995-2014.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. a CMIP6 climate model at the same location</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> pd.read_csv(base <span class="op">+</span> <span class="st">"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>cm.index <span class="op">=</span> cm.index.normalize()      <span class="co"># model timestamps sit at 12:00; align them to dates</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"t_cmip6"</span>] <span class="op">=</span> cm[<span class="st">"t_cmip6"</span>].reindex(df.index)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. eight CMIP6 models at the same location</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>models <span class="op">=</span> pd.read_csv(base <span class="op">+</span> <span class="st">"centralpark_cmip6_multimodel_1995-2014.csv"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                     index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -329,6 +338,10 @@ window.Quarto = {
 <td><strong>ERA5</strong> reanalysis, daily mean 2 m temperature (Copernicus/ECMWF), via the Open-Meteo archive API, nearest grid point to Central Park.</td>
 </tr>
 <tr class="odd">
+<td><code>models</code></td>
+<td>Eight <strong>CMIP6</strong> models (<code>historical</code>, <code>r1i1p1f1</code>, daily <code>tas</code>), same nearest-cell extraction, from the Pangeo cloud archive.</td>
+</tr>
+<tr class="even">
 <td><code>t_cmip6</code></td>
 <td><strong>CMIP6 MPI-ESM1-2-HR</strong>, <code>historical</code>, <code>r1i1p1f1</code>, daily <code>tas</code>, from the Pangeo cloud archive; nearest grid cell (40.68 °N, 74.06 °W).</td>
 </tr>
@@ -374,7 +387,7 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <li><span class="math inline">\(A\)</span> = ______ (what does it mean? units?)</li>
 <li><span class="math inline">\(d_{peak}\)</span> = ______ (the day the cycle peaks — what sets it?)</li>
 </ul>
-<p><strong>Your job: pick all three by hand.</strong> Run the cell, look at the plot and the error, adjust, repeat. Stop when you can’t do better.</p>
+<p><strong>Your job: pick all three by hand.</strong> Run the cell, look at the plot and the error, adjust, repeat. Stop when you think you have a good fit.</p>
 <div id="73abfe2c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THESE THREE NUMBERS, run, look, repeat:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>T0    <span class="op">=</span> <span class="fl">10.0</span>    <span class="co"># °C</span></span>
@@ -447,6 +460,50 @@ record low = -13.3 °C   record high = 34.5 °C</code></pre>
 <li>ERA5 tracks the station day-by-day; the CMIP6 model completely ignores it. Why is that <em>not</em> a failure of the CMIP6 model? What <em>should</em> it get right?</li>
 <li>All three 20-year means differ (station warmest, CMIP6 coldest). Give two <em>different kinds</em> of reasons why. <em>(One is about what a grid cell is; one is about the model being imperfect.)</em></li>
 <li>Your 2-parameter model has a lower RMSE at this station than the CMIP6 model. Is yours the better model? For what, and for what not?</li>
+</ol>
+</section>
+<section id="one-model-is-not-the-story" class="level2">
+<h2 class="anchored" data-anchor-id="one-model-is-not-the-story">4. One model is not the story</h2>
+<p>You just compared the observations to <strong>one</strong> climate model. But there are dozens, built by different groups, with different grids and different choices inside. Here are eight of them at this same location.</p>
+<div id="6cb9f3e3" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.8</span>), width_ratios<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">1</span>])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean seasonal cycle: every model, plus observations</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> models.columns:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(models[m].groupby(models.index.dayofyear).mean(), lw<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span>m)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(df[<span class="st">"t_obs"</span>].groupby(df.index.dayofyear).mean(), lw<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">"k"</span>, label<span class="op">=</span><span class="st">"OBSERVED"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"day of year"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">"°C"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"mean seasonal cycle: 8 CMIP6 models vs reality"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">6</span>, ncol<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 20-year mean temperature: where does reality sit?</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> models.mean().sort_values()</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].barh(<span class="bu">range</span>(<span class="bu">len</span>(means)), means.values, color<span class="op">=</span><span class="st">"tab:orange"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(means)))<span class="op">;</span> ax[<span class="dv">1</span>].set_yticklabels(means.index, fontsize<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axvline(df[<span class="st">"t_obs"</span>].mean(), color<span class="op">=</span><span class="st">"k"</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"station"</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axvline(df[<span class="st">"t_era5"</span>].mean(), color<span class="op">=</span><span class="st">"tab:blue"</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"ERA5"</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"20-year mean [°C]"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">7</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"model spread: </span><span class="sc">{</span>means<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.1f}</span><span class="ss"> to </span><span class="sc">{</span>means<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.1f}</span><span class="ss"> °C   (multi-model mean </span><span class="sc">{</span>means<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C)"</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"station </span><span class="sc">{</span>df[<span class="st">'t_obs'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C · ERA5 </span><span class="sc">{</span>df[<span class="st">'t_era5'</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> °C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>model spread: 9.5 to 15.5 °C   (multi-model mean 11.6 °C)
+station 13.1 °C · ERA5 11.5 °C</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab0c_nyc_climate_files/figure-html/cell-6-output-2.png" width="1142" height="355" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Discuss:</strong></p>
+<ol type="1">
+<li>Earlier, one model looked ~3 °C too cold and you might have concluded it was simply wrong. Where do the observations sit relative to the <em>whole</em> set of models?</li>
+<li>This spread — models disagreeing with each other — is called <strong>model uncertainty</strong>. What would you report to someone who asks “what is the climate of New York?” using this ensemble?</li>
+<li>The warmest model has the coarsest grid, and its nearest cell to Central Park sits over the <strong>ocean</strong>. Does that make it a bad model, or a model being asked the wrong question?</li>
 </ol>
 
 
