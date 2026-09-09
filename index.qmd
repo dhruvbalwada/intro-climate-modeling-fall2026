@@ -13,8 +13,8 @@ Earth system and climate models are critically important tools for climate scien
 | Instructor  | Dhruv Balwada · dbalwada@ldeo.columbia.edu |
 | TAs         | Prani Nalluri · pan2121@columbia.edu<br>Chandanie Kutwaru · ck3397@columbia.edu |
 | Office hours| **[DAYS/TIMES]**                           |
-| Submission  | Private GitHub repos; links posted to Courseworks |
-| Computing   | Course JupyterHub (details on Courseworks) |
+| Submission  | Private GitHub repos; submit by posting links on Courseworks |
+| Computing   | [LEAP JupyterHub](https://leap.2i2c.cloud/) — see [Lab 0a](labs/lab0a.qmd) for setup |
 
 ## Key dates
 
