@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\n\n\n\n2\nSep 17\nTBD\n\n\n\n\n3\nSep 24\nTBD\n\n\n\n\n4\nOct 1\nTBD\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
+    "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\n[Lab 0]\n\n\n2\nSep 17\nTBD\n\n\n\n\n3\nSep 24\nTBD\n\n\n\n\n4\nOct 1\nTBD\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
   },
   {
     "objectID": "slides/week02.html#where-we-left-off",
@@ -319,7 +319,7 @@
     "href": "slides/week01.html#the-work-labs-homeworks-project",
     "title": "Introduction to Climate Modeling",
     "section": "The work: labs, homeworks, project",
-    "text": "The work: labs, homeworks, project\n\n\n\n\n\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class work (like today’s slips), most weeks\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~ever two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nSubmission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks. Lab 0 starts in a few minutes — today is hands-on.\n\n~6 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
+    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class presence\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~every two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nHomework submission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.\n\n~6 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
   },
   {
     "objectID": "slides/week01.html#before-we-start",
