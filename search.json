@@ -200,7 +200,7 @@
     "href": "labs/verify_setup.html",
     "title": "Lab 0 — Setup Verification",
     "section": "",
-    "text": "Introduction to Climate Modeling · Fall 2026\nRun every cell in this notebook (Shift+Enter). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.\nFill in the next cell first.\n# EDIT THIS CELL\nname = \"YOUR NAME HERE\"\nuni = \"YOUR UNI HERE\"\n\nprint(f\"Lab 0 submitted by {name} ({uni})\")"
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nIntroduction to Climate Modeling · Fall 2026\nRun every cell in this notebook (Shift+Enter). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.\nFill in the next cell first.\n# EDIT THIS CELL\nname = \"YOUR NAME HERE\"\nuni = \"YOUR UNI HERE\"\n\nprint(f\"Lab 0 submitted by {name} ({uni})\")"
   },
   {
     "objectID": "labs/verify_setup.html#check-the-scientific-python-stack",
@@ -263,7 +263,7 @@
     "href": "labs/lab0a.html#part-b-orient-to-jupyterhub-and-run-the-verification-notebook",
     "title": "Lab 0a — Getting set up",
     "section": "Part B — Orient to Jupyterhub and run the verification notebook",
-    "text": "Part B — Orient to Jupyterhub and run the verification notebook\n\nDownload verify_setup.ipynb (right-click → save).\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
+    "text": "Part B — Orient to Jupyterhub and run the verification notebook\n\nWhat is Jupyterhub, and where things are.\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
   },
   {
     "objectID": "labs/lab0a.html#part-c-create-your-course-repository-15-min",
@@ -284,7 +284,7 @@
     "href": "labs/lab0c_bucket.html",
     "title": "Lab 0c — A bucket: your first time-dependent model",
     "section": "",
-    "text": "Week 1, in class · Introduction to Climate Modeling\nFrom the board: a bucket with water flowing in and draining out. Budget of water volume (\\(V = A\\,h\\)):\n\\[A\\,\\frac{dh}{dt} \\;=\\; \\underbrace{F}_{\\text{inflow (forcing — external)}} \\;-\\; \\underbrace{k\\,h}_{\\text{drain (property of the system)}}\\]"
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling\nFrom the board: a bucket with water flowing in and draining out. Budget of water volume (\\(V = A\\,h\\)):\n\\[A\\,\\frac{dh}{dt} \\;=\\; \\underbrace{F}_{\\text{inflow (forcing — external)}} \\;-\\; \\underbrace{k\\,h}_{\\text{drain (property of the system)}}\\]"
   },
   {
     "objectID": "labs/lab0c_bucket.html#equilibrium-no-time-needed",
@@ -319,7 +319,7 @@
     "href": "labs/lab0b_nyc_climate.html",
     "title": "Lab 0b — The climate of New York City",
     "section": "",
-    "text": "Week 1, in class · Introduction to Climate Modeling\nDaily temperature in Central Park, 1995–2014. We’ll use it to answer, concretely: what is climate? and what is a model? — and to build your first climate model (it has two parameters).\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nurl = \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv\"\ndf = pd.read_csv(url, index_col=0, parse_dates=True)\ndf.head()\nt_obs = the station thermometer (NOAA). t_era5 = we’ll come back to that one."
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling\nDaily temperature in Central Park, 1995–2014. We’ll use it to answer, concretely: what is climate? and what is a model? — and to build your first climate model (it has two parameters).\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nurl = \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/centralpark_obs_era5_1995-2014.csv\"\ndf = pd.read_csv(url, index_col=0, parse_dates=True)\ndf.head()\nt_obs = the station thermometer (NOAA). t_era5 = we’ll come back to that one."
   },
   {
     "objectID": "labs/lab0b_nyc_climate.html#weather-vs-climate",
