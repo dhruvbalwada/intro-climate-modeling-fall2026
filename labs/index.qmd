@@ -8,7 +8,7 @@ Labs are done in class, saved into your course GitHub repo, and submitted by pos
 
 - **[Lab 0a — Getting set up](lab0a.qmd)**: GitHub account, private course repo, LEAP hub · verification notebook: [verify_setup.ipynb](verify_setup.ipynb)
 - **[Lab 0b — Python, just enough to start](lab0b_python_basics.ipynb)**: notebooks, numpy, matplotlib, a first look at pandas and xarray
-- **[Lab 0c — The climate of NYC](lab0c_nyc_climate.ipynb)**: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6
+- **[Lab 0c — The climate of NYC](lab0c_nyc_climate.ipynb)**: distributions, a hand-fit 3-parameter model, ERA5 vs CMIP6
 - **[Lab 0d — A bucket](lab0d_bucket.ipynb)**: budgets, equilibrium, stepping forward in time
 
 ### Reference (optional)

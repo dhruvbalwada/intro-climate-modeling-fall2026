@@ -150,12 +150,12 @@ One slide of philosophy, then the labs make it real. The structure/parameters li
 Open **`lab0c_nyc_climate.ipynb`** *(download from the [Labs page](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/), upload to your hub)*:
 
 1. Plot 20 years of Central Park temperature → **what is the climate of NYC?**
-2. **Fit a 2-parameter model by hand**: $T_0 + A\cos(2\pi(d-201)/365)$ — pick $T_0$ and $A$, check the error, iterate. *What are the units?*
-3. When you're happy: **shout out your $T_0$, $A$, RMSE** — we collect them on the board
+2. **Fit a 3-parameter model by hand**: $T_0 + A\cos(2\pi(d-d_{peak})/365)$ — pick $T_0$, $A$, $d_{peak}$, check the error, iterate. *What are the units?*
+3. When you're happy: **shout out your $T_0$, $A$, $d_{peak}$, RMSE** — we collect them on the board
 4. Then: the same NYC from **ERA5** and from a **CMIP6 model** — why are all three different?
 
 ::: {.notes}
-The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that's by design; it only owes you the distribution. Discussion prompts are in the notebook.
+The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Also watch d_peak: nobody will land on the solstice (day 172) — the ~1 month lag is thermal inertia, which is exactly Lab 0d's subject. Best fit is T0=13.1, A=12.0, d_peak=205. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that's by design; it only owes you the distribution. Discussion prompts are in the notebook.
 :::
 
 ## Lab 0d · A bucket: adding time {.smaller}
