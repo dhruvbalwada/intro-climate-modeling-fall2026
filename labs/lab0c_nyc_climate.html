@@ -335,6 +335,25 @@ window.Quarto = {
 </tbody>
 </table>
 <p>The download script lives with the course materials (<code>fetch_station_data.py</code>) — we pre-extracted these so class doesn’t depend on live cloud access.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>A subtlety: “daily mean” isn’t one thing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These three series are each labelled <em>daily mean temperature</em>, but they aren’t computed the same way:</p>
+<ul>
+<li><strong><code>t_obs</code></strong> is <span class="math inline">\((T_{max} + T_{min})/2\)</span> — the midpoint of the day’s extremes. (Weather stations have recorded max and min reliably for a century; true 24-hour means are patchier, so this is the standard workaround.)</li>
+<li><strong><code>t_era5</code></strong> and <strong><code>t_cmip6</code></strong> are <em>true</em> means — averages over all hours of the day.</li>
+</ul>
+<p>Does it matter? ERA5 gives us all three quantities, so we can check: the midpoint method comes out <strong>+0.20 °C warmer</strong> than the true daily mean at this location, consistently across seasons. So roughly 0.2 °C of the station–ERA5 difference you’ll find below is <em>methodological</em>, not physical.</p>
+<p>Worth internalising early: when you compare datasets, check that the thing being compared is actually the same thing.</p>
+</div>
+</div>
 <p>Three columns, three very different things: <strong><code>t_obs</code></strong> is a real thermometer, <strong><code>t_era5</code></strong> is a reanalysis, <strong><code>t_cmip6</code></strong> is a climate model. We’ll look at the observations first and bring the other two in at the end.</p>
 </section>
 <section id="weather-vs-climate" class="level2">
