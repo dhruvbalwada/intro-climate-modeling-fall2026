@@ -1,4 +1,4 @@
-<!-- TOPIC BLOCK: band saturation, the logarithm, and the Ångström activity (~35 min incl. 15-min activity). Currently played in: week 2. -->
+<!-- TOPIC BLOCK: band saturation, the logarithm, and the Ångström activity Currently played in: week 2. -->
 
 # Step 4: The 125-year-old objection {background-color="#1a3a5c"}
 
@@ -23,7 +23,7 @@ Frame it with respect — it's a GOOD objection, and the physics community bough
 - Band **wings**: visibly deepening — this is where doubling acts
 
 ::: {.notes}
-LIVE DEMO if wifi cooperates (U. Chicago MODTRAN, ~8 min): set 280 ppm, note outgoing flux; double to 560; the flux drops ~3 W/m²; zoom the band wings. Students see the forcing in measured-quantity space. Screenshots on this slide are the wifi-failure fallback — rehearse the demo once beforehand.
+LIVE DEMO if wifi cooperates (U. Chicago MODTRAN): set 280 ppm, note outgoing flux; double to 560; the flux drops ~3 W/m²; zoom the band wings. Students see the forcing in measured-quantity space. Screenshots on this slide are the wifi-failure fallback — rehearse the demo once beforehand.
 :::
 
 ## Why the response is a logarithm (not zero)
@@ -39,7 +39,7 @@ $$\Delta F \approx 5.35 \cdot \ln\!\left(\frac{C}{C_0}\right)\ \mathrm{W\,m^{-2}
 280→560 ppm and 560→1120 ppm have the SAME forcing. Also note: this one-line formula is how CMIP-model forcings are quoted and compared — the toy is the ruler (bridge beat returns at the end).
 :::
 
-## Your turn: break Ångström *(pairs, ~12 min)*
+## Your turn: break Ångström *(in pairs)*
 
 Here is the argument, verbatim:
 

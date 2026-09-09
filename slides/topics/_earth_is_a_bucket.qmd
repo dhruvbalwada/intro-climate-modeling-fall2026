@@ -16,7 +16,7 @@
 | level lags the tap | warming lags emissions *(week 3: the ocean sets the clock)* |
 
 ::: {.notes}
-The payoff slide of the day — the demo wasn't an analogy, it was the actual mathematical object of this course. ~15 min for this closing science segment.
+The payoff slide of the day — the demo wasn't an analogy, it was the actual mathematical object of this course. 
 :::
 
 ## The first calculation *(live, on the board)*

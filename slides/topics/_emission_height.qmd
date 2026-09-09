@@ -1,4 +1,4 @@
-<!-- TOPIC BLOCK: the emission-height picture (~20 min). Currently played in: week 2. The single most important conceptual model of the course's first act. -->
+<!-- TOPIC BLOCK: the emission-height picture Currently played in: week 2. The single most important conceptual model of the course's first act. -->
 
 # Step 3: The picture professionals actually use {background-color="#1a3a5c"}
 

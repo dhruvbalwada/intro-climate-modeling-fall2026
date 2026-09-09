@@ -1,4 +1,4 @@
-<!-- TOPIC BLOCK: the one-layer / N-layer greenhouse model (~30 min, board-heavy). Currently played in: week 2. -->
+<!-- TOPIC BLOCK: the one-layer / N-layer greenhouse model Board-heavy. Currently played in: week 2. -->
 
 # Step 2: One pane of glass {background-color="#1a3a5c"}
 
@@ -13,7 +13,7 @@ One atmospheric layer that is:
 <!-- FIGURE: simple schematic — surface, one layer, arrows: solar to surface; surface IR absorbed by layer; layer radiates up (to space) and down (to surface). Draw this on the board first; slide is the record. -->
 
 ::: {.notes}
-BOARD, not slides, for the whole derivation (~15 min). Two budgets, two unknowns — ask the room to supply each term before writing it. This is the second board derivation of the course (after week 1's T_e); same culture: they follow, not admire.
+BOARD, not slides, for the whole derivation. Two budgets, two unknowns — ask the room to supply each term before writing it. This is the second board derivation of the course (after week 1's T_e); same culture: they follow, not admire.
 :::
 
 ## The derivation (record)
@@ -49,7 +49,7 @@ Pause on what fell out: the ATMOSPHERE sits at the emission temperature; the sur
 Automating exactly this repair = **Manabe & Wetherald 1967** (week 1's "most influential paper").
 
 ::: {.notes}
-This is the week's 5-minute vertical-structure aside — the ONLY dose of RCE this week (thread returns Nov 5). GR5001 callback: their week 3 was convection; "you know why air rises — here's what that does to the greenhouse." M&W Fig 16 from last week can reappear for one beat.
+This is the week's brief vertical-structure aside — the ONLY dose of RCE this week (thread returns Nov 5). GR5001 callback: their week 3 was convection; "you know why air rises — here's what that does to the greenhouse." M&W Fig 16 from last week can reappear for one beat.
 :::
 
 ## N panes of glass

@@ -23,7 +23,7 @@ format:
 ![](images/site_qr.png){width="22%" fig-align="center"}
 
 ::: {.notes}
-~8 min incl. 30-s self-intro.
+Brief self-intro, then straight into the work.
 :::
 
 ## The work: labs, homeworks, project {.smaller}
@@ -42,7 +42,7 @@ format:
 All code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks. 
 
 ::: {.notes}
-~6 min. Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class.
+Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class.
 :::
 
 ## Before we start {.smaller}
@@ -61,7 +61,7 @@ Ungraded diagnostic — no judgment framing: "a year since GR5001 is a long time
 
 *Laptops out. TAs are circulating. Nobody gets left behind.*
 
-## Lab 0a checklist (~30 min) {.smaller}
+## Lab 0a checklist {.smaller}
 
 Follow the [Lab 0 instructions](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab0a.html) on the course website:
 
@@ -73,7 +73,7 @@ Follow the [Lab 0 instructions](https://dhruvbalwada.github.io/intro-climate-mod
 Done early? Help a neighbor — explaining git is the best way to learn it.
 
 ::: {.notes}
-~30–35 min. Front-loads the setup pain while TAs are in the room instead of leaving it to students alone at home. TAs collect names of anyone without hub access.
+Front-loads the setup pain while TAs are in the room instead of leaving it to students alone at home. TAs collect names of anyone without hub access.
 :::
 
 ## Your toolkit, in one slide {.smaller}
@@ -87,12 +87,10 @@ Done early? Help a neighbor — explaining git is the best way to learn it.
 We learn these by *using* them — starting right after the break.
 
 ::: {.notes}
-~5 min max — a map, not a tutorial.
+A map, not a tutorial — we learn the tools by using them.
 :::
 
 ## Break {.center background-color="#2c2c2c"}
-
-*10 minutes*
 
 ::: {.notes}
 TAs use the break to unblock hub/GitHub stragglers.
@@ -107,7 +105,7 @@ TAs use the break to unblock hub/GitHub stragglers.
 - Climate change = the distribution shifting, widening, or reshaping — with very different consequences in the tails
 
 ::: {.notes}
-~5 min abstract; Lab 0b makes it concrete with NYC data in a few minutes.
+Abstract here; Lab 0b makes it concrete with NYC data shortly.
 :::
 
 ## Every number on this figure came out of a model
@@ -144,7 +142,7 @@ Bands = spread of model ensembles (brown: human+natural; green: natural-only); b
 - "best model" is meaningless without "…for what question?"
 
 ::: {.notes}
-~5 min — one slide of philosophy, then the labs make it real. The structure/parameters line pays off in ~15 minutes when everyone's hand-fit differs.
+One slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone's hand-fit differs.
 :::
 
 ## Lab 0b · The climate of NYC {.smaller}
@@ -157,7 +155,7 @@ Open **`lab0b_nyc_climate.ipynb`** *(download from the [Labs page](https://dhruv
 4. Then: the same NYC from **ERA5** and from a **CMIP6 model** — why are all three different?
 
 ::: {.notes}
-~30 min. The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that's by design; it only owes you the distribution. Discussion prompts are in the notebook.
+The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that's by design; it only owes you the distribution. Discussion prompts are in the notebook.
 :::
 
 ## Lab 0c · A bucket: adding time {.smaller}
@@ -173,7 +171,7 @@ Open **`lab0c_bucket.ipynb`**:
 3. Attack your own prediction three ways: vary $h_0$ · vary $k$ · vary $F$
 
 ::: {.notes}
-~30 min: ~10 on the board (derive the budget slowly — volumes, fluxes, units; which terms are external forcing vs properties of the system), ~20 in the lab. Say the feedback sentence explicitly: fuller → drains harder → that's what makes equilibrium exist. The three experiments set up the closing section.
+Board first — derive the budget slowly: volumes, fluxes, units; which terms are external forcing vs properties of the system. Then the lab. Say the feedback sentence explicitly: fuller → drains harder → that's what makes equilibrium exist. The three experiments set up the closing section.
 :::
 
 # 3 · What is uncertainty? {background-color="#1a3a5c"}
@@ -191,7 +189,7 @@ You just generated all three in the bucket:
 Different ones dominate at different horizons. *(Week 11 quantifies this for the real Earth.)*
 
 ::: {.notes}
-~7 min. Every bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice.
+Every bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice.
 :::
 
 ## Before you leave

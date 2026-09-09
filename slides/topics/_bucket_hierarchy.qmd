@@ -1,4 +1,4 @@
-<!-- TOPIC BLOCK: the bucket model-hierarchy demo (~35 min incl. live notebook). Currently played in: week 1.
+<!-- TOPIC BLOCK: the bucket model-hierarchy demo Currently played in: week 1.
      The live demo notebook lives in course_materials/demos/bucket_hierarchy.ipynb (PRIVATE until after class — the reveal is a surprise). -->
 
 # A system in my office {background-color="#1a3a5c"}
@@ -30,7 +30,7 @@ Before the models: pause on the raw data plot and name the concepts (next slide)
 **Climate = the statistics of a system.** You've now defined it — on a bucket. Earth's version: means, variability, extremes over ~30 years.
 
 ::: {.notes}
-Then switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: "I double the inflow — what's the new level? number + reasoning + name") → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. ~25 min in the notebook. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable.
+Then switch to the notebook (bucket_hierarchy.ipynb) and LIVE-DRIVE it: data → statistical fit → THE COMMITMENT MOMENT (slips of paper: "I double the inflow — what's the new level? number + reasoning + name") → regression fails publicly → budget thinking → equilibrium prediction ✓ → time-dependent model ✓ → the storm breaks it → the reveal. Collect slips (participation). Do NOT rush the commitment moment — the public stake is what makes the failure memorable.
 :::
 
 ## What just happened (part 1) {.smaller}

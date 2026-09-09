@@ -1,4 +1,4 @@
-<!-- TOPIC BLOCK: scale-up & bridge for radiation (~10 min). Currently played in: week 2. Beat 2/3 of the weekly Play→Scale-up→Bridge template. -->
+<!-- TOPIC BLOCK: scale-up & bridge for radiation Currently played in: week 2. Beat 2/3 of the weekly Play→Scale-up→Bridge template. -->
 
 # From today's toy to the real machine {background-color="#1a3a5c"}
 
