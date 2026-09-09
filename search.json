@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Slides and lab/homework links appear here as the semester progresses. Additional suggested readings are posted on Courseworks. The G&R column points into Gettelman & Rood, Demystifying Climate Models (free, open access) — a no-math companion read for each week.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nG&R\nDue\n\n\n\n\n1\nSep 10\nCourse overview · history of Earth system models · the model hierarchy\nslides\nCh 1 · §4.4\nLab 0 out (instructions)\n\n\n2\nSep 17\nEnergy balance modeling 1: radiative balance & the greenhouse effect\nslides\n§3.2, §3.4\nHW1 out\n\n\n3\nSep 24\nEnergy balance modeling 2: time dependence, ice-albedo, transport\n\nCh 4\nLab 1 (in class) · Lab 0 due\n\n\n4\nOct 1\nCirculation 1: box models of the large-scale circulation\n\n§6.1–6.2\nHW1 due · HW2 out\n\n\n5\nOct 8\nCirculation 2: inside a dynamical core\n\nCh 5\nLab 2 · project title due Fri Oct 9\n\n\n6\nOct 15\nCirculation 3: ocean, cryosphere & the parameterization problem\n\n§6.3–6.4, §5.6\nHW2 due · HW3 out\n\n\n7\nOct 22\nModeling the land surface\n\n§7.1–7.2, §7.4\nLab 3 · proposal due Fri Oct 23\n\n\n8\nOct 29\nModeling the carbon cycle\n\n§6.5, §7.3\nHW3 due · HW4 out\n\n\n9\nNov 5\nClimate feedbacks & climate sensitivity\n\nCh 8\nLab 4\n\n\n10\nNov 12\nClimate model tuning & evaluation\n\nCh 9\nHW4 due\n\n\n11\nNov 19\nProtocols for climate model simulations: CMIP, SSPs, MIPs\n\nCh 10\nLab 5 · HW5 out\n\n\n12\nNov 26\nNo class (Thanksgiving) — asynchronous: CMIP analysis in practice\n\nCh 11\n\n\n\n13\nDec 3\nProjections & the future of climate modeling\n\nCh 12–13\nHW5 due\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)\n\n\nnotebook due Fri Dec 18"
+    "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\n\n\n\n2\nSep 17\nTBD\n\n\n\n\n3\nSep 24\nTBD\n\n\n\n\n4\nOct 1\nTBD\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
   },
   {
     "objectID": "slides/week02.html#where-we-left-off",
@@ -189,18 +189,11 @@
     "text": "Logistics\n\n\n\n\n\n\n\nMeetings\nThursdays 10:10–12:40 · FRM 315 (The Forum)\n\n\nInstructor\nDhruv Balwada · dbalwada@ldeo.columbia.edu\n\n\nTAs\nPrani Nalluri · pan2121@columbia.eduChandanie Kutwaru · ck3397@columbia.edu\n\n\nOffice hours\n[DAYS/TIMES]\n\n\nSubmission\nPrivate GitHub repos; links posted to Courseworks\n\n\nComputing\nCourse JupyterHub (details on Courseworks)"
   },
   {
-    "objectID": "index.html#grading",
-    "href": "index.html#grading",
-    "title": "Introduction to Climate Modeling",
-    "section": "Grading",
-    "text": "Grading\nParticipation 10% · Labs (5, in class) 10% · Homework (5, biweekly) 50% · Project proposal 10% · Final project 20%. Full policies in the official syllabus on Courseworks."
-  },
-  {
     "objectID": "index.html#key-dates",
     "href": "index.html#key-dates",
     "title": "Introduction to Climate Modeling",
     "section": "Key dates",
-    "text": "Key dates\n\nSep 24 — Lab 0 (setup) due before class; Lab 1 in class\nOct 9 — final project title due\nOct 23 — final project proposal due (1 page)\nDec 10 / 17 — project presentations\nDec 18 — final project notebook due\n\nStart here: the schedule, then Lab 0."
+    "text": "Key dates\n\nOct 9 — final project title due\nOct 23 — final project proposal due (1 page)\nDec 10 / 17 — project presentations\nDec 18 — final project notebook due\n\nStart here: the schedule, then Lab 0."
   },
   {
     "objectID": "labs/lab0c_bucket.html",
@@ -277,7 +270,14 @@
     "href": "labs/index.html",
     "title": "Labs",
     "section": "",
-    "text": "Five in-class labs (weeks 3, 5, 7, 9, 11), completed collaboratively during the lab portion of class and submitted the same day via your GitHub repo (link posted to Courseworks). Plus Lab 0, the ungraded setup lab everything depends on.\n\n\n\nLab\nWeek\nTopic\n\n\n\n\nLab 0a\nweek 1, in class\nToolchain setup: JupyterHub, GitHub, repo, first notebook\n\n\nLab 0b\nweek 1, in class\nThe climate of NYC: distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6\n\n\nLab 0c\nweek 1, in class\nThe bucket: budgets, equilibrium, stepping forward in time\n\n\nLab 1\n3\nEquilibrium & time-dependent energy balance models\n\n\nLab 2\n5\nSimple circulation models\n\n\nLab 3\n7\nSoil-moisture bucket model\n\n\nLab 4\n9\nSimulating albedo feedbacks\n\n\nLab 5\n11\nModeling transient climate change"
+    "text": "Labs are done in class, saved into your course GitHub repo, and submitted by posting your repo link on Courseworks. This page grows week by week."
+  },
+  {
+    "objectID": "labs/index.html#week-1-sep-10",
+    "href": "labs/index.html#week-1-sep-10",
+    "title": "Labs",
+    "section": "Week 1 (Sep 10)",
+    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub, first notebook\nLab 0b — The climate of NYC (download the .ipynb, upload to your hub): distributions, a hand-fit 2-parameter model, ERA5 vs CMIP6\nLab 0c — A bucket (download, upload to hub): budgets, equilibrium, stepping forward in time"
   },
   {
     "objectID": "labs/lab0b_nyc_climate.html",
