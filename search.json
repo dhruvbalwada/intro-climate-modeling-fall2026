@@ -263,7 +263,7 @@
     "href": "labs/lab0a.html#part-b-orient-to-jupyterhub-and-run-the-verification-notebook",
     "title": "Lab 0a — Getting set up",
     "section": "Part B — Orient to Jupyterhub and run the verification notebook",
-    "text": "Part B — Orient to Jupyterhub and run the verification notebook\n\nDownload verify_setup.ipynb from the Courseworks Lab 0 assignment page.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
+    "text": "Part B — Orient to Jupyterhub and run the verification notebook\n\nDownload verify_setup.ipynb (right-click → save).\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\nOpen it and run every cell (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated and make sure the final plot appears with no errors."
   },
   {
     "objectID": "labs/lab0a.html#part-c-create-your-course-repository-15-min",
