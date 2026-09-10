@@ -109,11 +109,11 @@ IPCC AR6 WG1, Figure SPM.8, panel (a) (2021)
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](images/building_model.jpg){height="230px" fig-align="center"}
+![](images/building_model.jpg){height="185px" fig-align="center"}
 <div style="text-align:center; font-size:0.85em;"><em>physical</em> — a scale model of a building</div>
 :::
 ::: {.column width="50%"}
-![](images/code_model.png){height="230px" fig-align="center"}
+![](images/code_model.png){height="185px" fig-align="center"}
 <div style="text-align:center; font-size:0.85em;"><em>abstract</em> — equations, or code (this one is Lab 0d)</div>
 :::
 ::::

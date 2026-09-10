@@ -36,14 +36,19 @@ def lint(path):
         if head.startswith("# "):      # section divider — near-empty by design
             continue
         units, title = 0.0, re.sub(r"\{.*?\}", "", head.lstrip("# ")).strip()
+        in_columns = False
         for ln in lines[1:]:
             t = ln.strip()
+            if t.startswith(":::: {.columns"): in_columns = True
+            elif t == "::::": in_columns = False
             if not t or t in (":::", "::::") or t.startswith((":::: {", "::: {")):
                 continue
             if t == ". . .":
                 continue
             if t.startswith("!["):
-                units += 6.0 * (0.5 if "width" in t and re.search(r'width="?[1-5]\d%', t) else 1.0)
+                hpx = re.search(r'height="?(\d+)px', t)
+                base = (int(hpx.group(1)) / 55.0) if hpx else 6.0     # ~55px per line-unit
+                units += base * (0.5 if in_columns else 1.0)          # side-by-side images share a row
             elif t.startswith("|"):
                 units += 1.3                       # table row
             elif t.startswith(("$$",)):
