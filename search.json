@@ -546,18 +546,18 @@
     "text": "A model is…\n\n\n\n\nphysical — a scale model of a building\n\n\n\n\nabstract — equations, or code (this one is Lab 0d)\n\n\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nPhoto: Mak Faitre Sownia, CC BY-SA 4.0, via Wikimedia Commons\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
   },
   {
-    "objectID": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
-    "href": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
+    "objectID": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
+    "href": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
     "title": "Introduction to Climate Modeling",
-    "section": "Three reasons a forecast can be wrong",
-    "text": "Three reasons a forecast can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: we don’t know exact laws or our models can’t be exactly solved)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons.\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+    "section": "Three reasons a forecast model can be wrong",
+    "text": "Three reasons a forecast model can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: we don’t know exact laws or our models can’t be exactly solved)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons.\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
   },
   {
     "objectID": "slides/week01.html#how-the-three-trade-off-with-time",
     "href": "slides/week01.html#how-the-three-trade-off-with-time",
     "title": "Introduction to Climate Modeling",
     "section": "How the three trade off with time",
-    "text": "How the three trade off with time\n\n\n\n\nIndividual model runs under a low and a high scenario. For the next ~20 years the wiggles — internal variability — swamp the difference between scenarios.\n\n\n\n\nShare of the uncertainty in global temperature: internal variability dominates early, model uncertainty mid-century, scenario by 2100.\n\n\n\nLeft: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins & Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.\n\n\nMap the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+    "text": "How the three trade off with time\n\n\n\n\nIndividual model runs under a low and a high scenario. For the next ~20 years the wiggles — internal variability — swamp the difference between scenarios.\n\n\n\n\nShare of the uncertainty in global, annual-mean, 10-year-averaged temperature: internal variability dominates early, model uncertainty mid-century, scenario by 2100. That smoothing is why orange fades so fast — ask about one summer in one city and it stays orange much longer.\n\n\n\nLeft: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins & Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.\n\n\nMap the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
   },
   {
     "objectID": "slides/week01.html#before-you-leave",
