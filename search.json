@@ -508,7 +508,7 @@
     "href": "slides/week01.html#using-ai-in-this-course",
     "title": "Introduction to Climate Modeling",
     "section": "Using AI in this course",
-    "text": "Using AI in this course\n\nAllowed\n\nGoogle Gemini (free through CUIT); ChatGPT or Claude are fine too.\n\nDefault to asking it to teach you, not to do it for you. A standing prompt that works:\n\n“Never give me corrected code or direct syntax fixes. Explain the concept I’m missing.”\n\nGood at: explaining error messages, syntax, library APIs, what a function does\nBad at: judging scientific correctness, choosing the right analysis, subtle bugs, whether a result “looks right”\nYou are responsible for understanding — and being able to explain — everything you submit and for the errors that AI may make."
+    "text": "Using AI in this course\n\nAllowed\n\nGoogle Gemini (free through CUIT); ChatGPT or Claude are fine too.\n\nDefault to asking it to teach you, not to do it for you. A standing prompt that works:\n\n“Never give me corrected code or direct syntax fixes. Explain the concept I’m missing.”\n\nGood at: explaining error messages, syntax, library APIs, what a function does\nBad at: judging scientific correctness, choosing the right analysis, subtle bugs, whether a result “looks right”\nYou are responsible for understanding everything you submit and for the errors that AI may make."
   },
   {
     "objectID": "slides/week01.html#before-we-start",
@@ -529,14 +529,14 @@
     "href": "slides/week01.html#every-number-on-this-figure-came-out-of-a-model",
     "title": "Introduction to Climate Modeling",
     "section": "Every number on this figure came out of a model",
-    "text": "Every number on this figure came out of a model\n\n\n\n\n\n\nIPCC AR6 WG1, Figure SPM.8 (2021)\n\n\n“IPCC predicts climate — you’ve seen figures like this. Observations + models + uncertainty bands. By December you’ll know how each ingredient is made.”"
+    "text": "Every number on this figure came out of a model\n\n\nIPCC AR6 WG1, Figure SPM.8 (2021)\n\n\n“IPCC predicts climate — you’ve seen figures like this. Observations + models + uncertainty bands. By December you’ll know how each ingredient is made.”"
   },
   {
     "objectID": "slides/week01.html#and-the-past-model-spread-observations-on-top",
     "href": "slides/week01.html#and-the-past-model-spread-observations-on-top",
     "title": "Introduction to Climate Modeling",
     "section": "…and the past: model spread, observations on top",
-    "text": "…and the past: model spread, observations on top\n\n\n\n\n\n\nIPCC AR6 WG1, Figure SPM.1 (2021)\n\n\nBands = spread of model ensembles (brown: human+natural; green: natural-only); black = observations. Two beats: models reproduce the past with quantified spread; the obs stay inside the band only with human forcing — that’s attribution."
+    "text": "…and the past: model spread, observations on top\n\n\nIPCC AR6 WG1, Figure SPM.1 (2021)\n\n\nBands = spread of model ensembles (brown: human+natural; green: natural-only); black = observations. Two beats: models reproduce the past with quantified spread; the obs stay inside the band only with human forcing — that’s attribution."
   },
   {
     "objectID": "slides/week01.html#a-model-is",
