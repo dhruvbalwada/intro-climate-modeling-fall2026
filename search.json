@@ -550,14 +550,21 @@
     "href": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
     "title": "Introduction to Climate Modeling",
     "section": "Three reasons a forecast can be wrong",
-    "text": "Three reasons a forecast can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: feedback strengths — and everyone’s different \\(A\\) in Lab 0b)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons. (Week 11 quantifies this for the real Earth.)\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+    "text": "Three reasons a forecast can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: we don’t know exact laws or our models can’t be exactly solved)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons.\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+  },
+  {
+    "objectID": "slides/week01.html#how-the-three-trade-off-with-time",
+    "href": "slides/week01.html#how-the-three-trade-off-with-time",
+    "title": "Introduction to Climate Modeling",
+    "section": "How the three trade off with time",
+    "text": "How the three trade off with time\n\n\n\n\nIndividual model runs under a low and a high scenario. For the next ~20 years the wiggles — internal variability — swamp the difference between scenarios.\n\n\n\n\nShare of the uncertainty in global temperature: internal variability dominates early, model uncertainty mid-century, scenario by 2100.\n\n\n\nLeft: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins & Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.\n\n\nMap the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
   },
   {
     "objectID": "slides/week01.html#before-you-leave",
     "href": "slides/week01.html#before-you-leave",
     "title": "Introduction to Climate Modeling",
     "section": "Before you leave",
-    "text": "Before you leave\n\nToday’s notebooks (0b, 0c, 0d) → saved into your course repo\nRepo link → posted on Courseworks (that’s your Lab 0 submission)\nDidn’t finish? Complete at home before next Thursday — TAs + office hours can unblock you\n\n\nNext week: the Earth is a bucket — sunlight pours in, infrared drains out, and the level is the temperature. We’ll compute where the level settles… and get a spectacularly productive wrong answer.\n\nThe 255 K derivation + “Earth is a bucket” mapping now OPEN week 2 (parked in topics/_earth_is_a_bucket.qmd)."
+    "text": "Before you leave\n\nToday’s notebooks (0b, 0c, 0d) → saved into your course repo\nRepo link → posted on Courseworks (that’s your Lab 0 submission)\nDidn’t finish or want to play around more? Complete at home before next Thursday — TAs + office hours can unblock you\n\n\nNext week: the Earth is a bucket — sunlight pours in, infrared drains out, and the level is the heat (temperature)."
   },
   {
     "objectID": "project.html",
