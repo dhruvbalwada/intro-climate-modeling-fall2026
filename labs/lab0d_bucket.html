@@ -253,8 +253,10 @@ window.Quarto = {
 <p>The method here is the one we use for the whole course: <strong>find what drives the flow, find what resists it, and balance them.</strong> The two cases below differ only in the answer to “what resists?”</p>
 <section id="a-hole-in-the-bucket-nothing-resists" class="level3">
 <h3 class="anchored" data-anchor-id="a-hole-in-the-bucket-nothing-resists">A hole in the bucket — nothing resists</h3>
-<p>Water leaves through a hole with nothing to rub against, so nothing dissipates its energy. Take a parcel of water at the surface, a height <span class="math inline">\(h\)</span> above the hole, and let it make its way down: the potential energy it gives up shows up as motion, exactly as for a dropped ball.</p>
-<p><span class="math display">\[m g h \;=\; \tfrac{1}{2} m v^{2} \quad\Longrightarrow\quad v = \sqrt{2gh} \quad\Longrightarrow\quad Q = a\,v = a\sqrt{2gh} \;\propto\; \sqrt{h}\]</span></p>
+<p>Water leaves through a hole of area <span class="math inline">\(a\)</span> with nothing to rub against, so nothing dissipates its energy. (Careful with case: <strong><span class="math inline">\(A\)</span> is the bucket’s cross-section, <span class="math inline">\(a\)</span> is the opening’s</strong> — and <span class="math inline">\(a \ll A\)</span>.) Take a parcel of water at the surface, a height <span class="math inline">\(h\)</span> above the hole, and let it make its way down: the potential energy it gives up shows up as motion, exactly as for a dropped ball.</p>
+<p><span class="math display">\[m g h \;=\; \tfrac{1}{2} m v^{2} \quad\Longrightarrow\quad v = \sqrt{2gh} \]</span></p>
+<p>and the volume leaving per second is the jet’s speed times the area it flows through:</p>
+<p><span class="math display">\[Q = a\,v = a\sqrt{2gh} \;\propto\; \sqrt{h}\]</span></p>
 <p>This is <strong>Torricelli’s law</strong> (1643): the jet leaves at exactly the speed it would have had if it had fallen freely from the surface. It applies to a bathtub plughole, a hole punched in a can, a dam spillway.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -278,7 +280,7 @@ window.Quarto = {
 </section>
 <section id="a-narrow-tube-instead-viscosity-resists" class="level3">
 <h3 class="anchored" data-anchor-id="a-narrow-tube-instead-viscosity-resists">A narrow tube instead — viscosity resists</h3>
-<p>Replace the hole with a long thin pipe, or a plug of sand, and the picture changes completely.</p>
+<p>Replace the hole with a long thin pipe — radius <span class="math inline">\(r\)</span>, length <span class="math inline">\(L\)</span>, so the same opening area <span class="math inline">\(a=\pi r^{2}\)</span> — or with a plug of sand. The picture changes completely.</p>
 <p>Fluid touching a solid surface does not slide along it — it sticks. (This is the <strong>no-slip condition</strong>, an experimental fact about fluids and walls.) So inside the tube the water is stationary at the wall and fastest in the middle: neighbouring layers of fluid are sliding past one another.</p>
 <p>Viscosity is the resistance to exactly that sliding. <strong>Newton’s law of viscosity</strong> says the drag force per unit area between layers is proportional to how rapidly velocity changes across the flow:</p>
 <p><span class="math display">\[\tau \;=\; \mu \frac{dv}{dy} \;\sim\; \mu \frac{v}{r}\]</span></p>
