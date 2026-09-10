@@ -116,35 +116,11 @@ IPCC AR6 WG1, Figure SPM.8, panel (a) (2021)
 One slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone's hand-fit differs.
 :::
 
-## Lab 0c · The climate of NYC {.smaller}
+# Lab 0c · The climate of NYC {background-color="#1a3a5c"}
 
-Open **`lab0c_nyc_climate.ipynb`** *(download from the [Labs page](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/), upload to your hub)*:
 
-1. Plot 20 years of Central Park temperature → **what is the climate of NYC?**
-2. **Fit a 3-parameter model by hand**: $T_0 + A\cos(2\pi(d-d_{peak})/365)$ — pick $T_0$, $A$, $d_{peak}$, check the error, iterate. *What are the units?*
-3. When you're happy: **shout out your $T_0$, $A$, $d_{peak}$, RMSE** — we collect them on the board
-4. Then: the same NYC from **ERA5** and a **CMIP6 model** — why are all three different?
-5. Finally: **eight** CMIP6 models — where does reality sit among them?
+# Lab 0d · Modeling using budgets {background-color="#1a3a5c"}
 
-::: {.notes}
-The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Also watch d_peak: nobody will land on the solstice (day 172) — the ~1 month lag is thermal inertia, which is exactly Lab 0d's subject. Best fit is T0=13.1, A=12.0, d_peak=205. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that's by design; it only owes you the distribution. Then the ensemble: model means span 9.5–15.5 °C and the observations (13.1) sit INSIDE the spread — so 'the model is 3 °C cold' becomes 'models disagree, and that disagreement is model uncertainty'. Warmest model = coarsest grid, its cell sits over the ocean. Discussion prompts are in the notebook.
-:::
-
-## Lab 0d · A bucket: adding time {.smaller}
-
-*(board first: a volume budget — in − out = accumulation)*
-
-$$A\,\frac{dh}{dt} = \underbrace{F}_{\text{forcing (external)}} - \underbrace{k\,h}_{\text{drain (the system)}}$$
-
-Open **`lab0d_bucket.ipynb`**:
-
-1. Equilibrium: set $dh/dt=0$ → $h^* = F/k$ — *check the units!*
-2. **Fill in the Euler step** and watch the level find its equilibrium
-3. Attack your own prediction three ways: vary $h_0$ · vary $k$ · vary $F$
-
-::: {.notes}
-Board first — derive the budget slowly: volumes, fluxes, units; which terms are external forcing vs properties of the system. Then the lab. Say the feedback sentence explicitly: fuller → drains harder → that's what makes equilibrium exist. The three experiments set up the closing section.
-:::
 
 # 3 · What is uncertainty? {background-color="#1a3a5c"}
 
