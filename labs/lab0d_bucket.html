@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 0c — A bucket: your first time-dependent model – Introduction to Climate Modeling</title>
+<title>Lab 0d — A bucket: your first time-dependent model – Introduction to Climate Modeling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -197,7 +197,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#equilibrium-no-time-needed" id="toc-equilibrium-no-time-needed" class="nav-link active" data-scroll-target="#equilibrium-no-time-needed">1. Equilibrium — no time needed</a></li>
+  <li><a href="#from-the-board-writing-down-a-budget" id="toc-from-the-board-writing-down-a-budget" class="nav-link active" data-scroll-target="#from-the-board-writing-down-a-budget">From the board: writing down a budget</a></li>
+  <li><a href="#two-drain-laws-from-first-principles" id="toc-two-drain-laws-from-first-principles" class="nav-link" data-scroll-target="#two-drain-laws-from-first-principles">Two drain laws, from first principles</a>
+  <ul class="collapse">
+  <li><a href="#a-hole-in-the-bucket-energy-conservation" id="toc-a-hole-in-the-bucket-energy-conservation" class="nav-link" data-scroll-target="#a-hole-in-the-bucket-energy-conservation">A hole in the bucket — energy conservation</a></li>
+  <li><a href="#a-narrow-tube-instead-force-balance" id="toc-a-narrow-tube-instead-force-balance" class="nav-link" data-scroll-target="#a-narrow-tube-instead-force-balance">A narrow tube instead — force balance</a></li>
+  <li><a href="#so-which-law" id="toc-so-which-law" class="nav-link" data-scroll-target="#so-which-law">So which law?</a></li>
+  </ul></li>
+  <li><a href="#equilibrium-no-time-needed" id="toc-equilibrium-no-time-needed" class="nav-link" data-scroll-target="#equilibrium-no-time-needed">1. Equilibrium — no time needed</a></li>
   <li><a href="#step-forward-in-time" id="toc-step-forward-in-time" class="nav-link" data-scroll-target="#step-forward-in-time">2. Step forward in time</a></li>
   <li><a href="#make-predictions-and-break-them-three-ways" id="toc-make-predictions-and-break-them-three-ways" class="nav-link" data-scroll-target="#make-predictions-and-break-them-three-ways">3. Make predictions — and break them three ways</a></li>
   <li><a href="#name-what-you-just-did" id="toc-name-what-you-just-did" class="nav-link" data-scroll-target="#name-what-you-just-did">4. Name what you just did</a></li>
@@ -209,7 +216,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 0c — A bucket: your first <em>time-dependent</em> model</h1>
+<h1 class="title">Lab 0d — A bucket: your first <em>time-dependent</em> model</h1>
 </div>
 
 
@@ -229,13 +236,79 @@ window.Quarto = {
 <p><a class="btn btn-primary btn-sm" href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab0d_bucket.ipynb" download="">⇩ Download this notebook (.ipynb)</a></p>
 <p><em>Then upload it to <a href="https://leap.2i2c.cloud/">leap.2i2c.cloud</a> and open it there.</em></p>
 <p><em>Week 1, in class · Introduction to Climate Modeling</em></p>
-<p>From the board: a bucket with water flowing in and draining out. Budget of water volume (<span class="math inline">\(V = A\,h\)</span>):</p>
-<p><span class="math display">\[A\,\frac{dh}{dt} \;=\; \underbrace{F}_{\text{inflow (forcing — external)}} \;-\; \underbrace{k\,h}_{\text{drain (property of the system)}}\]</span></p>
+<section id="from-the-board-writing-down-a-budget" class="level2">
+<h2 class="anchored" data-anchor-id="from-the-board-writing-down-a-budget">From the board: writing down a budget</h2>
+<p>A bucket, with water pouring in and draining out. Track the volume of water, <span class="math inline">\(V = A\,h\)</span>:</p>
+<p><span class="math display">\[\underbrace{A\,\frac{dh}{dt}}_{\text{accumulation}} \;=\; \underbrace{F}_{\text{in}} \;-\; \underbrace{Q}_{\text{out}}\]</span></p>
 <ul>
 <li><span class="math inline">\(h\)</span> = water level [m], <span class="math inline">\(A\)</span> = bucket area [m²]</li>
-<li><span class="math inline">\(F\)</span> = inflow [m³/s] — someone pours; the bucket doesn’t decide</li>
-<li><span class="math inline">\(k h\)</span> = outflow [m³/s] — faster when fuller: set by the bucket itself (<span class="math inline">\(k\)</span> [m²/s])</li>
+<li><span class="math inline">\(F\)</span> = inflow [m³/s] — <strong>someone pours.</strong> The bucket doesn’t decide: this is <em>external forcing</em></li>
+<li><span class="math inline">\(Q\)</span> = outflow [m³/s] — <strong>the bucket decides</strong>, based on its own state</li>
 </ul>
+<p>That asymmetry is the whole game. The inflow is imposed; the outflow is the system <em>responding to itself</em> — a <strong>feedback</strong>. And it is the reason an equilibrium can exist at all:</p>
+<blockquote class="blockquote">
+<p><strong>Thought experiment.</strong> What if the drain were a pump running at a fixed rate <span class="math inline">\(c\)</span>, regardless of level? Then <span class="math inline">\(A\,dh/dt = F - c\)</span>: a constant. The bucket fills forever, or empties forever, and only sits still if <span class="math inline">\(F\)</span> happens to equal <span class="math inline">\(c\)</span> exactly. <strong>Equilibrium exists because outflow grows with level.</strong></p>
+</blockquote>
+<p>So <span class="math inline">\(Q\)</span> must increase with <span class="math inline">\(h\)</span>. But <em>how</em> it increases is a question about physics — and different plumbing gives different answers.</p>
+</section>
+<section id="two-drain-laws-from-first-principles" class="level2">
+<h2 class="anchored" data-anchor-id="two-drain-laws-from-first-principles">Two drain laws, from first principles</h2>
+<p>The method here is the one we use for the whole course: <strong>find what drives the flow, find what resists it, and balance them.</strong></p>
+<section id="a-hole-in-the-bucket-energy-conservation" class="level3">
+<h3 class="anchored" data-anchor-id="a-hole-in-the-bucket-energy-conservation">A hole in the bucket — energy conservation</h3>
+<p>Water falls freely through the hole; nothing dissipates energy on the way out. So potential energy becomes kinetic energy, exactly as for a dropped ball:</p>
+<p><span class="math display">\[m g h = \tfrac{1}{2} m v^{2} \quad\Longrightarrow\quad v = \sqrt{2 g h} \quad\Longrightarrow\quad Q = a\,v = a\sqrt{2 g h} \;\propto\; \sqrt{h}\]</span></p>
+<p>This is <strong>Torricelli’s law</strong> (1643): the jet leaves at exactly the speed it would have had if it had fallen from the surface. It applies to a bathtub plughole, a hole punched in a can, a dam spillway.</p>
+</section>
+<section id="a-narrow-tube-instead-force-balance" class="level3">
+<h3 class="anchored" data-anchor-id="a-narrow-tube-instead-force-balance">A narrow tube instead — force balance</h3>
+<p>Now let the water exit through something long and narrow: a thin pipe, a sand filter, soil. Here viscosity dissipates the energy, so we balance <em>forces</em> instead:</p>
+<p><span class="math display">\[\underbrace{\rho g h \cdot \pi r^{2}}_{\text{pressure pushing}} \;\sim\; \underbrace{\mu \frac{v}{r} \cdot 2\pi r L}_{\text{viscous drag}} \quad\Longrightarrow\quad v \sim \frac{\rho g h\, r^{2}}{\mu L} \quad\Longrightarrow\quad Q = v \pi r^{2} \;\propto\; h\]</span></p>
+<p>The outflow is <strong>linear</strong> in <span class="math inline">\(h\)</span>. This is groundwater draining from an aquifer, or water through a coffee filter.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Scaling arguments get the form right, not the constant
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Solving the flow properly (Poiseuille) gives <span class="math inline">\(Q = \pi r^{4}\rho g h / (8\mu L)\)</span> — our argument got every dependence right and missed only the factor of 8.</p>
+<p>That is a distinction worth keeping: <strong>physics fixes the <em>form</em> of a law; the constant in front comes from a full solution or from measurement.</strong> Form = the model’s <em>structure</em>; the constant = a <em>parameter</em>. Calibrating a model means pinning down the second, not the first.</p>
+</div>
+</div>
+</section>
+<section id="so-which-law" class="level3">
+<h3 class="anchored" data-anchor-id="so-which-law">So which law?</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>exit</th>
+<th>what resists the flow</th>
+<th>outflow</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>free hole</td>
+<td>nothing (inertia)</td>
+<td><span class="math inline">\(Q \propto \sqrt{h}\)</span></td>
+</tr>
+<tr class="even">
+<td>narrow tube, soil</td>
+<td>viscosity</td>
+<td><span class="math inline">\(Q \propto h\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Same bucket, different plumbing, different law. <strong>Choosing the law is a modelling decision</strong> — and one we have to justify from physics, not convenience.</p>
+<p>For the rest of today we use the <strong>linear</strong> law, <span class="math inline">\(Q = k\,h\)</span>, because it is the simplest thing with the right behaviour:</p>
+<p><span class="math display">\[A\,\frac{dh}{dt} \;=\; F \;-\; k\,h\]</span></p>
+<p>with <span class="math inline">\(k\)</span> [m²/s] the drain constant. <em>(Next week: a bucket whose drain law is <span class="math inline">\(h^{4}\)</span>. That one is a planet.)</em></p>
+</section>
+</section>
 <section id="equilibrium-no-time-needed" class="level2">
 <h2 class="anchored" data-anchor-id="equilibrium-no-time-needed">1. Equilibrium — no time needed</h2>
 <p>At equilibrium the level isn’t changing: <span class="math inline">\(dh/dt = 0\)</span>, so inflow = outflow:</p>
@@ -351,7 +424,7 @@ window.Quarto = {
 </tbody>
 </table>
 <p><strong>Discuss:</strong> which mattered at short times? Which at long times? Keep this table — it comes back in week 11, quantified for the real Earth.</p>
-<p><em>Before you leave: make sure this notebook and Lab 0b are saved in your course repo, and your repo link is posted on Courseworks.</em></p>
+<p><em>Before you leave: make sure today’s notebooks are saved in your course repo, and your repo link is posted on Courseworks.</em></p>
 
 
 </section>
