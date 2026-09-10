@@ -501,7 +501,14 @@
     "href": "slides/week01.html#the-work-labs-homeworks-project",
     "title": "Introduction to Climate Modeling",
     "section": "The work: labs, homeworks, project",
-    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class presence\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~every two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nHomework submission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.\n\nFlag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class."
+    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class presence\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~every two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nHomework submission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.\n\nFlag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW."
+  },
+  {
+    "objectID": "slides/week01.html#using-ai-in-this-course",
+    "href": "slides/week01.html#using-ai-in-this-course",
+    "title": "Introduction to Climate Modeling",
+    "section": "Using AI in this course",
+    "text": "Using AI in this course\n\nAllowed\n\nGoogle Gemini (free through CUIT); ChatGPT or Claude are fine too.\n\nDefault to asking it to teach you, not to do it for you. A standing prompt that works:\n\n“Never give me corrected code or direct syntax fixes. Explain the concept I’m missing.”\n\nGood at: explaining error messages, syntax, library APIs, what a function does\nBad at: judging scientific correctness, choosing the right analysis, subtle bugs, whether a result “looks right”\nYou are responsible for understanding — and being able to explain — everything you submit and for the errors that AI may make."
   },
   {
     "objectID": "slides/week01.html#before-we-start",
@@ -509,27 +516,6 @@
     "title": "Introduction to Climate Modeling",
     "section": "Before we start",
     "text": "Before we start\n\nRoughly what sets the Earth’s average temperature? (could you explain it to a friend?)\nDo you remember what “climate sensitivity” means?\nHave you come across ordinary differential equations — in any course?\nHave you written Python this year? …keep your hand up if you’ve used it on climate or environmental data\nHave you used git/GitHub before?\n\n\nUngraded diagnostic — no judgment framing: “a year since GR5001 is a long time; that’s expected.” Q3 calibrates the math pacing of weeks 2–3; Q4’s second stage tells you how much xarray scaffolding labs need; Q5 tells the TAs how hands-on Lab 0a must be. Jot rough counts right after class."
-  },
-  {
-    "objectID": "slides/week01.html#lab-0a-checklist",
-    "href": "slides/week01.html#lab-0a-checklist",
-    "title": "Introduction to Climate Modeling",
-    "section": "Lab 0a checklist",
-    "text": "Lab 0a checklist\nFollow the Lab 0 instructions on the course website:\n\nGitHub account (skip if you have one) → create your private course repo climate-modeling-f26-&lt;uni&gt; → add me + Prani + Chandanie as collaborators\nLEAP hub: log in at leap.2i2c.cloud (filled the access form? if it fails — hand up)\nStart your server, open JupyterLab, run the verification notebook\nSubmit: post your repo URL to the Courseworks “Lab 0” assignment\n\nDone early? Help a neighbor — explaining git is the best way to learn it.\n\nFront-loads the setup pain while TAs are in the room instead of leaving it to students alone at home. TAs collect names of anyone without hub access."
-  },
-  {
-    "objectID": "slides/week01.html#your-toolkit-in-one-slide",
-    "href": "slides/week01.html#your-toolkit-in-one-slide",
-    "title": "Introduction to Climate Modeling",
-    "section": "Your toolkit, in one slide",
-    "text": "Your toolkit, in one slide\n\nJupyterLab (on the hub): notebooks are cells; Shift+Enter runs one; the kernel is the running Python\nnumpy — arrays and math: np.cos(...), arr.mean()\nmatplotlib — plots: plt.plot(t, h)\npandas / xarray — labeled data from files or the cloud: pd.read_csv(url)\nAI assistants: allowed and encouraged for coding help (disclose it; you must understand what you submit)\n\nFirst stop: Lab 0b — Python, just enough to start (on the Labs page).\n\nA map, not a tutorial — we learn the tools by using them."
-  },
-  {
-    "objectID": "slides/week01.html#break",
-    "href": "slides/week01.html#break",
-    "title": "Introduction to Climate Modeling",
-    "section": "Break",
-    "text": "Break\n\nTAs use the break to unblock hub/GitHub stragglers."
   },
   {
     "objectID": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",

@@ -211,7 +211,7 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 <h4 id="homework-submission-process">Homework submission process</h4>
 <p>All code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.</p>
 <aside class="notes">
-<p>Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. AI policy: encouraged + disclosed — one line in each submission; understanding is tested in class.</p>
+<p>Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -223,6 +223,22 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="using-ai-in-this-course" class="slide level2 smaller">
+<h2>Using AI in this course</h2>
+<ul>
+<li><p><strong>Allowed</strong></p>
+<ul>
+<li><strong>Google Gemini</strong> (free through CUIT); ChatGPT or Claude are fine too.</li>
+</ul></li>
+<li><p><strong>Default to asking it to teach you, not to do it for you.</strong> A standing prompt that works:</p>
+<blockquote>
+<p><em>“Never give me corrected code or direct syntax fixes. Explain the concept I’m missing.”</em></p>
+</blockquote></li>
+<li><p><strong>Good at:</strong> explaining error messages, syntax, library APIs, what a function does</p></li>
+<li><p><strong>Bad at:</strong> judging scientific correctness, choosing the right analysis, subtle bugs, whether a result “looks right”</p></li>
+<li><p>You are responsible for understanding — and being able to explain — everything you submit and for the errors that AI may make.</p></li>
+</ul>
 </section>
 <section id="before-we-start" class="slide level2 smaller">
 <h2>Before we start</h2>
@@ -247,75 +263,11 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           display:block!important;
       }</style></aside>
 </section>
-<section>
 <section id="lab-0a-getting-set-up" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>Lab 0a · Getting set up</h1>
 <p><em>Laptops out. TAs are circulating. Nobody gets left behind.</em></p>
 </section>
-<section id="lab-0a-checklist" class="slide level2 smaller">
-<h2>Lab 0a checklist</h2>
-<p>Follow the <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab0a.html">Lab 0 instructions</a> on the course website:</p>
-<ol type="1">
-<li><strong>GitHub account</strong> (skip if you have one) → create your <strong>private course repo</strong> <code>climate-modeling-f26-&lt;uni&gt;</code> → add me + Prani + Chandanie as collaborators</li>
-<li><strong>LEAP hub</strong>: log in at <a href="https://leap.2i2c.cloud/">leap.2i2c.cloud</a> <em>(filled the access form? if it fails — hand up)</em></li>
-<li>Start your server, open JupyterLab, run the verification notebook</li>
-<li><strong>Submit</strong>: post your repo URL to the Courseworks “Lab 0” assignment</li>
-</ol>
-<p>Done early? Help a neighbor — explaining git is the best way to learn it.</p>
-<aside class="notes">
-<p>Front-loads the setup pain while TAs are in the room instead of leaving it to students alone at home. TAs collect names of anyone without hub access.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="your-toolkit-in-one-slide" class="slide level2 smaller">
-<h2>Your toolkit, in one slide</h2>
-<ul>
-<li><strong>JupyterLab</strong> (on the hub): notebooks are cells; <code>Shift+Enter</code> runs one; the kernel is the running Python</li>
-<li><strong>numpy</strong> — arrays and math: <code>np.cos(...)</code>, <code>arr.mean()</code></li>
-<li><strong>matplotlib</strong> — plots: <code>plt.plot(t, h)</code></li>
-<li><strong>pandas / xarray</strong> — labeled data from files or the cloud: <code>pd.read_csv(url)</code></li>
-<li>AI assistants: <strong>allowed and encouraged</strong> for coding help (disclose it; you must understand what you submit)</li>
-</ul>
-<p>First stop: <strong>Lab 0b — Python, just enough to start</strong> (on the <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/">Labs page</a>).</p>
-<aside class="notes">
-<p>A map, not a tutorial — we learn the tools by using them.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="break" class="slide level2 center" data-background-color="#2c2c2c">
-<h2>Break</h2>
-<aside class="notes">
-<p>TAs use the break to unblock hub/GitHub stragglers.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
+
 <section>
 <section id="what-is-climate" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>1 · What is climate?</h1>
