@@ -326,55 +326,17 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="lab-0c-the-climate-of-nyc" class="slide level2 smaller">
-<h2>Lab 0c · The climate of NYC</h2>
-<p>Open <strong><code>lab0c_nyc_climate.ipynb</code></strong> <em>(download from the <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/">Labs page</a>, upload to your hub)</em>:</p>
-<ol type="1">
-<li>Plot 20 years of Central Park temperature → <strong>what is the climate of NYC?</strong></li>
-<li><strong>Fit a 3-parameter model by hand</strong>: <span class="math inline">\(T_0 + A\cos(2\pi(d-d_{peak})/365)\)</span> — pick <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(d_{peak}\)</span>, check the error, iterate. <em>What are the units?</em></li>
-<li>When you’re happy: <strong>shout out your <span class="math inline">\(T_0\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(d_{peak}\)</span>, RMSE</strong> — we collect them on the board</li>
-<li>Then: the same NYC from <strong>ERA5</strong> and a <strong>CMIP6 model</strong> — why are all three different?</li>
-<li>Finally: <strong>eight</strong> CMIP6 models — where does reality sit among them?</li>
-</ol>
-<aside class="notes">
-<p>The board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Also watch d_peak: nobody will land on the solstice (day 172) — the ~1 month lag is thermal inertia, which is exactly Lab 0d’s subject. Best fit is T0=13.1, A=12.0, d_peak=205. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that’s by design; it only owes you the distribution. Then the ensemble: model means span 9.5–15.5 °C and the observations (13.1) sit INSIDE the spread — so ‘the model is 3 °C cold’ becomes ‘models disagree, and that disagreement is model uncertainty’. Warmest model = coarsest grid, its cell sits over the ocean. Discussion prompts are in the notebook.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="lab-0d-a-bucket-adding-time" class="slide level2 smaller">
-<h2>Lab 0d · A bucket: adding time</h2>
-<p><em>(board first: a volume budget — in − out = accumulation)</em></p>
-<p><span class="math display">\[A\,\frac{dh}{dt} = \underbrace{F}_{\text{forcing (external)}} - \underbrace{k\,h}_{\text{drain (the system)}}\]</span></p>
-<p>Open <strong><code>lab0d_bucket.ipynb</code></strong>:</p>
-<ol type="1">
-<li>Equilibrium: set <span class="math inline">\(dh/dt=0\)</span> → <span class="math inline">\(h^* = F/k\)</span> — <em>check the units!</em></li>
-<li><strong>Fill in the Euler step</strong> and watch the level find its equilibrium</li>
-<li>Attack your own prediction three ways: vary <span class="math inline">\(h_0\)</span> · vary <span class="math inline">\(k\)</span> · vary <span class="math inline">\(F\)</span></li>
-</ol>
-<aside class="notes">
-<p>Board first — derive the budget slowly: volumes, fluxes, units; which terms are external forcing vs properties of the system. Then the lab. Say the feedback sentence explicitly: fuller → drains harder → that’s what makes equilibrium exist. The three experiments set up the closing section.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section></section>
+<section id="lab-0c-the-climate-of-nyc" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Lab 0c · The climate of NYC</h1>
+
+</section>
+
+<section id="lab-0d-modeling-using-budgets" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Lab 0d · Modeling using budgets</h1>
+
+</section>
+
 <section>
 <section id="what-is-uncertainty" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>3 · What is uncertainty?</h1>

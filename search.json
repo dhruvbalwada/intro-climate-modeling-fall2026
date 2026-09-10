@@ -546,20 +546,6 @@
     "text": "A model is…\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
   },
   {
-    "objectID": "slides/week01.html#lab-0c-the-climate-of-nyc",
-    "href": "slides/week01.html#lab-0c-the-climate-of-nyc",
-    "title": "Introduction to Climate Modeling",
-    "section": "Lab 0c · The climate of NYC",
-    "text": "Lab 0c · The climate of NYC\nOpen lab0c_nyc_climate.ipynb (download from the Labs page, upload to your hub):\n\nPlot 20 years of Central Park temperature → what is the climate of NYC?\nFit a 3-parameter model by hand: \\(T_0 + A\\cos(2\\pi(d-d_{peak})/365)\\) — pick \\(T_0\\), \\(A\\), \\(d_{peak}\\), check the error, iterate. What are the units?\nWhen you’re happy: shout out your \\(T_0\\), \\(A\\), \\(d_{peak}\\), RMSE — we collect them on the board\nThen: the same NYC from ERA5 and a CMIP6 model — why are all three different?\nFinally: eight CMIP6 models — where does reality sit among them?\n\n\nThe board collection is the point: same data, same model, different answers = parameter uncertainty, experienced firsthand. Also watch d_peak: nobody will land on the solstice (day 172) — the ~1 month lag is thermal inertia, which is exactly Lab 0d’s subject. Best fit is T0=13.1, A=12.0, d_peak=205. Then the punchline in part 4: ERA5 tracks the weather (r≈0.95), the free-running CMIP6 model ignores it (r≈0) — and that’s by design; it only owes you the distribution. Then the ensemble: model means span 9.5–15.5 °C and the observations (13.1) sit INSIDE the spread — so ‘the model is 3 °C cold’ becomes ‘models disagree, and that disagreement is model uncertainty’. Warmest model = coarsest grid, its cell sits over the ocean. Discussion prompts are in the notebook."
-  },
-  {
-    "objectID": "slides/week01.html#lab-0d-a-bucket-adding-time",
-    "href": "slides/week01.html#lab-0d-a-bucket-adding-time",
-    "title": "Introduction to Climate Modeling",
-    "section": "Lab 0d · A bucket: adding time",
-    "text": "Lab 0d · A bucket: adding time\n(board first: a volume budget — in − out = accumulation)\n\\[A\\,\\frac{dh}{dt} = \\underbrace{F}_{\\text{forcing (external)}} - \\underbrace{k\\,h}_{\\text{drain (the system)}}\\]\nOpen lab0d_bucket.ipynb:\n\nEquilibrium: set \\(dh/dt=0\\) → \\(h^* = F/k\\) — check the units!\nFill in the Euler step and watch the level find its equilibrium\nAttack your own prediction three ways: vary \\(h_0\\) · vary \\(k\\) · vary \\(F\\)\n\n\nBoard first — derive the budget slowly: volumes, fluxes, units; which terms are external forcing vs properties of the system. Then the lab. Say the feedback sentence explicitly: fuller → drains harder → that’s what makes equilibrium exist. The three experiments set up the closing section."
-  },
-  {
     "objectID": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
     "href": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
     "title": "Introduction to Climate Modeling",
