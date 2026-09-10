@@ -253,12 +253,28 @@ window.Quarto = {
 <p>The method here is the one we use for the whole course: <strong>find what drives the flow, find what resists it, and balance them.</strong> The two cases below differ only in the answer to “what resists?”</p>
 <section id="a-hole-in-the-bucket-nothing-resists" class="level3">
 <h3 class="anchored" data-anchor-id="a-hole-in-the-bucket-nothing-resists">A hole in the bucket — nothing resists</h3>
-<p>Torricelli’s insight (1643) was that the jet leaves the hole at exactly the speed it would have reached by <em>falling</em> from the surface. That gives the answer immediately — <span class="math inline">\(mgh = \tfrac12 mv^2\)</span>, so <span class="math inline">\(v=\sqrt{2gh}\)</span> — but it hides why, so let’s do it properly.</p>
-<p>Follow a streamline from the free surface (point 1) down to the jet (point 2). If the fluid loses no energy on the way, <strong>Bernoulli’s equation</strong> says the sum of pressure, kinetic and potential terms is the same at both ends:</p>
+<p>Water leaves through a hole with nothing to rub against, so nothing dissipates its energy. Take a parcel of water at the surface, a height <span class="math inline">\(h\)</span> above the hole, and let it make its way down: the potential energy it gives up shows up as motion, exactly as for a dropped ball.</p>
+<p><span class="math display">\[m g h \;=\; \tfrac{1}{2} m v^{2} \quad\Longrightarrow\quad v = \sqrt{2gh} \quad\Longrightarrow\quad Q = a\,v = a\sqrt{2gh} \;\propto\; \sqrt{h}\]</span></p>
+<p>This is <strong>Torricelli’s law</strong> (1643): the jet leaves at exactly the speed it would have had if it had fallen freely from the surface. It applies to a bathtub plughole, a hole punched in a can, a dam spillway.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Aside: the same result, done more carefully (Bernoulli)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The falling-parcel argument gets the right answer, but the water is not actually in free fall — it is being pushed out by the weight of everything above it. The honest version follows a streamline from the free surface (point 1) to the jet (point 2) and uses <strong>Bernoulli’s equation</strong>, which says that without dissipation the sum of pressure, kinetic and potential terms is unchanged along the way:</p>
 <p><span class="math display">\[P_1 + \tfrac12\rho v_1^2 + \rho g z_1 \;=\; P_2 + \tfrac12\rho v_2^2 + \rho g z_2\]</span></p>
-<p>Three facts collapse this. The surface is open to the air and the jet emerges into the air, so <span class="math inline">\(P_1 = P_2\)</span> and <strong>the pressures cancel</strong>. The bucket is far wider than the hole, so the surface descends slowly: <span class="math inline">\(v_1 \approx 0\)</span>. And measuring height from the hole, <span class="math inline">\(z_1 = h\)</span>, <span class="math inline">\(z_2 = 0\)</span>. What is left is</p>
-<p><span class="math display">\[\rho g h = \tfrac12 \rho v^{2} \quad\Longrightarrow\quad v = \sqrt{2gh} \quad\Longrightarrow\quad Q = a\,v = a\sqrt{2gh} \;\propto\; \sqrt{h}\]</span></p>
-<p>Now we can see what is really going on: the jet is driven not by free fall but by the <strong>weight of the water column above it</strong>, and because nothing dissipates energy, all of that push turns into speed.</p>
+<p>Three facts collapse it. The surface is open to the air and the jet emerges into the air, so <span class="math inline">\(P_1 = P_2\)</span> and <strong>the pressures cancel</strong>. The bucket is far wider than the hole, so the surface descends slowly and <span class="math inline">\(v_1 \approx 0\)</span>. Measuring height from the hole, <span class="math inline">\(z_1 = h\)</span> and <span class="math inline">\(z_2 = 0\)</span>. What survives is <span class="math inline">\(\rho g h = \tfrac12 \rho v^{2}\)</span> — the same <span class="math inline">\(v=\sqrt{2gh}\)</span>.</p>
+<p>Two things this version makes visible that the falling-ball picture hides: what actually drives the jet (<strong>the pressure of the water column</strong>, with the atmosphere cancelling from both ends), and the assumption we are leaning on (<strong>no viscous dissipation</strong>) — which is precisely what stops being true in the next case.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="a-narrow-tube-instead-viscosity-resists" class="level3">
 <h3 class="anchored" data-anchor-id="a-narrow-tube-instead-viscosity-resists">A narrow tube instead — viscosity resists</h3>
