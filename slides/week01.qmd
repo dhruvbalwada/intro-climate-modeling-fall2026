@@ -79,26 +79,11 @@ Ungraded diagnostic — no judgment framing: "a year since GR5001 is a long time
 ## Weather is the state. Climate is the distribution. {.smaller}
 
 - **Weather**: the value right now — a random variable, unpredictable in detail beyond ~2 weeks
-- **Climate**: the *distribution* those values are drawn from — mean, variability, **tails** — estimated over a chosen period (convention: ~30 years)
-- Climate change = the distribution shifting, widening, or reshaping — with very different consequences in the tails
+- **Climate**: the *distribution* those values are drawn from — mean, variability, **tails** — estimated over a chosen period
+- Climate change = the distribution shifting, widening, or reshaping
 
-::: {.notes}
-Abstract here; Lab 0c makes it concrete with NYC data shortly.
-:::
 
-## Every number on this figure came out of a model
-
-![](images/ipcc_ar6_spm8.png){.r-stretch fig-align="center"}
-
-::: {style="font-size:0.35em; color:#888;"}
-IPCC AR6 WG1, Figure SPM.8 (2021)
-:::
-
-::: {.notes}
-"IPCC predicts climate — you've seen figures like this. Observations + models + uncertainty bands. By December you'll know how each ingredient is made."
-:::
-
-## …and the past: model spread, observations on top
+## 
 
 ![](images/ipcc_ar6_spm1.png){.r-stretch fig-align="center"}
 
@@ -106,9 +91,17 @@ IPCC AR6 WG1, Figure SPM.8 (2021)
 IPCC AR6 WG1, Figure SPM.1 (2021)
 :::
 
-::: {.notes}
-Bands = spread of model ensembles (brown: human+natural; green: natural-only); black = observations. Two beats: models reproduce the past with quantified spread; the obs stay inside the band only with human forcing — that's attribution.
+
+## 
+
+![](images/ipcc_ar6_spm8_panel_a.png){.r-stretch fig-align="center"}
+
+::: {style="font-size:0.35em; color:#888;"}
+IPCC AR6 WG1, Figure SPM.8, panel (a) (2021)
 :::
+
+
+
 
 # 2 · What is a model? {background-color="#1a3a5c"}
 
