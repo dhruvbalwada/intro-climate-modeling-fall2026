@@ -197,7 +197,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#from-the-board-writing-down-a-budget" id="toc-from-the-board-writing-down-a-budget" class="nav-link active" data-scroll-target="#from-the-board-writing-down-a-budget">1. From the board: writing down a budget</a></li>
+  <li><a href="#a-budget" id="toc-a-budget" class="nav-link active" data-scroll-target="#a-budget">1. A budget</a></li>
   <li><a href="#two-drain-laws-from-first-principles" id="toc-two-drain-laws-from-first-principles" class="nav-link" data-scroll-target="#two-drain-laws-from-first-principles">2. Two drain laws, from first principles</a>
   <ul class="collapse">
   <li><a href="#a-hole-in-the-bucket-nothing-resists-torricellis-law" id="toc-a-hole-in-the-bucket-nothing-resists-torricellis-law" class="nav-link" data-scroll-target="#a-hole-in-the-bucket-nothing-resists-torricellis-law">A hole in the bucket — nothing resists (Torricelli’s law)</a></li>
@@ -237,9 +237,10 @@ window.Quarto = {
 <p><a class="btn btn-primary btn-sm" href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab0d_bucket.ipynb" download="">⇩ Download this notebook (.ipynb)</a></p>
 <p><em>Then upload it to <a href="https://leap.2i2c.cloud/">leap.2i2c.cloud</a> and open it there.</em></p>
 <p><em>Week 1, in class · Introduction to Climate Modeling</em></p>
-<section id="from-the-board-writing-down-a-budget" class="level2">
-<h2 class="anchored" data-anchor-id="from-the-board-writing-down-a-budget">1. From the board: writing down a budget</h2>
-<p>A bucket, with water pouring in and draining out. Track the volume of water, <span class="math inline">\(V = A\,h\)</span>:</p>
+<section id="a-budget" class="level2">
+<h2 class="anchored" data-anchor-id="a-budget">1. A budget</h2>
+<p>Now let’s build our first model based on some physical principles: a bucket of water. While quite obvious (due to our intuition of the physical world), the volume in this bucket is conserved if we don’t add or remove any water. This is called a “conservation law”.</p>
+<p>With water pouring in and draining out, we can track the volume of water, <span class="math inline">\(V = A\,h\)</span>:</p>
 <p><span class="math display">\[\underbrace{A\,\frac{dh}{dt}}_{\text{accumulation}} \;=\; \underbrace{F}_{\text{in}} \;-\; \underbrace{Q}_{\text{out}}\]</span></p>
 <ul>
 <li><span class="math inline">\(h\)</span> = water level [m], <span class="math inline">\(A\)</span> = bucket area [m²]</li>
@@ -247,34 +248,44 @@ window.Quarto = {
 <li><span class="math inline">\(Q\)</span> = outflow [m³/s] — <strong>the bucket decides</strong>, based on its own state and the properties of the hole.</li>
 </ul>
 <p>-&gt; The inflow is imposed; the outflow is the system <em>responding to itself</em> — a <strong>feedback</strong>.</p>
-<p>So <span class="math inline">\(Q\)</span> depends on the system. But <em>how</em> is a question about physics — and different plumbing gives different answers.</p>
+<p>So <span class="math inline">\(Q\)</span> depends on the system. But <em>how</em> is a question about physics — and different plumbing at the outflow gives different answers.</p>
 </section>
 <section id="two-drain-laws-from-first-principles" class="level2">
 <h2 class="anchored" data-anchor-id="two-drain-laws-from-first-principles">2. Two drain laws, from first principles</h2>
-<p>Both laws below come from the same move, and it is the move behind almost every equation in this course: <strong>decide which two effects dominate, assume they balance, and neglect the rest.</strong> Physicists call this a <em>dominant balance</em>. The two cases differ only in which balance we assume.</p>
+<p>Different properties of the drain can give different flow rates, not just the size of the drain but also whether it is a hole or a pipe.</p>
+<p>We can figure out these outflow using a commonly used approach, which will be used in many laws in this course: <strong>decide which two effects dominate, assume they balance, and neglect the rest.</strong> Physicists call this a <em>dominant balance</em>. The two cases differ only in which balance we assume.</p>
 <section id="a-hole-in-the-bucket-nothing-resists-torricellis-law" class="level3">
 <h3 class="anchored" data-anchor-id="a-hole-in-the-bucket-nothing-resists-torricellis-law">A hole in the bucket — nothing resists (Torricelli’s law)</h3>
-<p>Water leaves through a hole of area <span class="math inline">\(a\)</span> with nothing to rub against, so nothing dissipates its energy. (Careful with case: <strong><span class="math inline">\(A\)</span> is the bucket’s cross-section, <span class="math inline">\(a\)</span> is the opening’s</strong> — and <span class="math inline">\(a \ll A\)</span>.) Take a parcel of water at the surface, a height <span class="math inline">\(h\)</span> above the hole, and let it make its way down: the potential energy it gives up shows up as motion, exactly as for a dropped ball.</p>
+<p>Water leaves through a hole of area <span class="math inline">\(a\)</span> with nothing to rub against, so nothing dissipates its energy.</p>
+<p>Take a parcel of water at the surface, a height <span class="math inline">\(h\)</span> above the hole, and let it make its way down: assume that all the potential energy it gives up gets converted to motion (or kinetic energy), exactly as for a dropped ball.</p>
 <p><span class="math display">\[\underbrace{m g h}_{\text{potential energy released}} \;=\; \underbrace{\tfrac{1}{2} m v^{2}}_{\text{kinetic energy gained}} \quad\Longrightarrow\quad v = \sqrt{2gh}\]</span></p>
 <p><strong>The balance we just assumed:</strong> <em>all</em> of the released potential energy becomes motion — nothing is lost to friction. Inertia dominates; viscosity is neglected.</p>
-<p>The volume leaving per second is then the jet’s speed times the area it flows through:</p>
+<p>The volume leaving per second [m³/s] is then the outflow jet’s speed times the area it flows through:</p>
 <p><span class="math display">\[Q = a\,v = a\sqrt{2gh} \;\propto\; \sqrt{h}\]</span></p>
-<p>This is <strong>Torricelli’s law</strong> (1643): the jet leaves at exactly the speed it would have had if it had fallen freely from the surface. It applies to a bathtub plughole, a hole punched in a can, a dam spillway.</p>
+<p>Note that: <strong><span class="math inline">\(A\)</span> is the bucket’s cross-section, <span class="math inline">\(a\)</span> is the opening’s</strong> — and <span class="math inline">\(a \ll A\)</span>.</p>
+<p>This is <strong>Torricelli’s law</strong> (1643): the jet leaves at exactly the speed it would have had if it had fallen freely from the surface.</p>
 <blockquote class="blockquote">
 <p><strong><em>Aside — the same result, done more carefully (Bernoulli).</em></strong></p>
 <p>The falling-parcel argument gets the right answer, but the water is not actually in free fall — it is being pushed out by the weight of everything above it. The honest version follows a streamline from the free surface (point 1) to the jet (point 2) and uses <strong>Bernoulli’s equation</strong>, which says that without dissipation the sum of pressure, kinetic and potential terms is unchanged along the way:</p>
 <p><span class="math display">\[P_1 + \tfrac12\rho v_1^2 + \rho g z_1 \;=\; P_2 + \tfrac12\rho v_2^2 + \rho g z_2\]</span></p>
 <p>Three facts collapse it. The surface is open to the air and the jet emerges into the air, so <span class="math inline">\(P_1 = P_2\)</span> and <strong>the pressures cancel</strong>. The bucket is far wider than the hole, so the surface descends slowly and <span class="math inline">\(v_1 \approx 0\)</span>. Measuring height from the hole, <span class="math inline">\(z_1 = h\)</span> and <span class="math inline">\(z_2 = 0\)</span>. What survives is <span class="math inline">\(\rho g h = \tfrac12 \rho v^{2}\)</span> — the same <span class="math inline">\(v=\sqrt{2gh}\)</span>.</p>
-<p>Two things this version makes visible that the falling-ball picture hides: what actually drives the jet (<strong>the pressure of the water column</strong>, with the atmosphere cancelling from both ends), and the assumption we are leaning on (<strong>no viscous dissipation</strong>) — which is precisely what stops being true in the next case.</p>
+<p>Two things this version makes visible that the falling-ball picture hides: what actually drives the jet (<strong>the pressure of the water column</strong>, with the atmosphere cancelling from both ends), and the assumption we are leaning on (<strong>no viscous dissipation</strong>, without which Bernoulli’s equation does not apply) — which is precisely what stops being true in the next case.</p>
 </blockquote>
 </section>
 <section id="a-narrow-tube-instead-viscosity-resists-poiseuilles-law" class="level3">
 <h3 class="anchored" data-anchor-id="a-narrow-tube-instead-viscosity-resists-poiseuilles-law">A narrow tube instead — viscosity resists (Poiseuille’s law)</h3>
-<p>Replace the hole with a long thin pipe — radius <span class="math inline">\(r\)</span>, length <span class="math inline">\(L\)</span>, so the same opening area <span class="math inline">\(a=\pi r^{2}\)</span> — or with a plug of sand. The picture changes completely.</p>
+<p>Replace the hole with a long thin pipe — radius <span class="math inline">\(r\)</span>, length <span class="math inline">\(L\)</span>, so the same opening area <span class="math inline">\(a=\pi r^{2}\)</span> — or with a plug of sand. In such a pipe the water is not free to move easily, and the friction or viscosity at the pipe wall starts to become important.</p>
 <p>Fluid touching a solid surface does not slide along it — it sticks. (This is the <strong>no-slip condition</strong>, an experimental fact about fluids and walls.) So inside the tube the water is stationary at the wall and fastest in the middle: neighbouring layers of fluid are sliding past one another.</p>
 <p>Viscosity is the resistance to exactly that sliding. <strong>Newton’s law of viscosity</strong> says the drag force per unit area between layers is proportional to how rapidly velocity changes across the flow:</p>
 <p><span class="math display">\[\tau \;=\; \mu \frac{dv}{dy} \;\sim\; \mu \frac{v}{r}\]</span></p>
-<p>using <span class="math inline">\(v/r\)</span> because the speed goes from roughly <span class="math inline">\(v\)</span> at the centre to zero at the wall, across a distance of about the tube radius <span class="math inline">\(r\)</span>. That stress acts over the whole inner wall of the tube, area <span class="math inline">\(2\pi r L\)</span>, so the total resisting force is <span class="math inline">\(\mu (v/r)\cdot 2\pi r L\)</span>.</p>
+<p>Checking the units keeps us honest here:</p>
+<ul>
+<li><span class="math inline">\(\tau\)</span> is a <strong>stress</strong> — a force spread over an area: [N m⁻²] = [Pa] = [kg m⁻¹ s⁻²]</li>
+<li><span class="math inline">\(dv/dy\)</span> is a <strong>velocity gradient</strong> — a speed divided by a distance: [(m s⁻¹)/m] = [s⁻¹]</li>
+<li>so <span class="math inline">\(\mu\)</span>, the <strong>dynamic viscosity</strong>, must carry [Pa s] = [kg m⁻¹ s⁻¹]</li>
+</ul>
+<p>For water <span class="math inline">\(\mu \approx 1\times10^{-3}\)</span> Pa s; air is about 50 times less viscous, honey about 10,000 times more.</p>
+<p>We used <span class="math inline">\(v/r\)</span> assuming that the speed goes from roughly <span class="math inline">\(v\)</span> at the centre to zero at the wall, across a distance of about the tube radius <span class="math inline">\(r\)</span>. That stress acts over the whole inner wall of the tube, area <span class="math inline">\(2\pi r L\)</span>, so the total resisting force is <span class="math inline">\(\mu (v/r)\cdot 2\pi r L\)</span>.</p>
 <p>Meanwhile the water is pushed by the pressure of the column above, <span class="math inline">\(\rho g h\)</span>, acting on the tube’s cross-section <span class="math inline">\(\pi r^2\)</span>.</p>
 <p><strong>The balance we now assume is a different one:</strong> the pressure force is opposed by viscous drag, and the two are in equilibrium. Nothing accelerates — the flow settles at whatever speed makes push and drag equal, exactly like a falling object reaching terminal velocity. Here viscosity dominates and inertia is neglected, the <em>opposite</em> choice from Torricelli:</p>
 <p><span class="math display">\[\underbrace{\rho g h \cdot \pi r^{2}}_{\text{pressure pushing}} \;\sim\; \underbrace{\mu \frac{v}{r}\cdot 2\pi r L}_{\text{wall drag}} \quad\Longrightarrow\quad v \sim \frac{\rho g h\, r^{2}}{\mu L} \quad\Longrightarrow\quad Q = v\,\pi r^{2} \;\propto\; h\]</span></p>
