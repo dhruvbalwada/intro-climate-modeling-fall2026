@@ -55,7 +55,7 @@ Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late 
 
 - **Good at:** explaining error messages, syntax, library APIs, what a function does
 - **Bad at:** judging scientific correctness, choosing the right analysis, subtle bugs, whether a result "looks right"
-- You are responsible for understanding — and being able to explain — everything you submit and for the errors that AI may make. 
+- You are responsible for understanding everything you submit and for the errors that AI may make. 
 
 
 ## Before we start {.smaller}
@@ -72,7 +72,7 @@ Ungraded diagnostic — no judgment framing: "a year since GR5001 is a long time
 
 # Lab 0a · Getting set up {background-color="#1a3a5c"}
 
-*Laptops out. TAs are circulating. Nobody gets left behind.*
+# Lab 0b · Python {background-color="#1a3a5c"}
 
 # 1 · What is climate? {background-color="#1a3a5c"}
 
@@ -88,7 +88,7 @@ Abstract here; Lab 0c makes it concrete with NYC data shortly.
 
 ## Every number on this figure came out of a model
 
-![](images/ipcc_ar6_spm8.png){height="82%" fig-align="center"}
+![](images/ipcc_ar6_spm8.png){.r-stretch fig-align="center"}
 
 ::: {style="font-size:0.35em; color:#888;"}
 IPCC AR6 WG1, Figure SPM.8 (2021)
@@ -100,7 +100,7 @@ IPCC AR6 WG1, Figure SPM.8 (2021)
 
 ## …and the past: model spread, observations on top
 
-![](images/ipcc_ar6_spm1.png){height="78%" fig-align="center"}
+![](images/ipcc_ar6_spm1.png){.r-stretch fig-align="center"}
 
 ::: {style="font-size:0.35em; color:#888;"}
 IPCC AR6 WG1, Figure SPM.1 (2021)
