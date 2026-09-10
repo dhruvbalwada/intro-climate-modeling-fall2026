@@ -543,7 +543,7 @@
     "href": "slides/week01.html#a-model-is",
     "title": "Introduction to Climate Modeling",
     "section": "A model is…",
-    "text": "A model is…\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
+    "text": "A model is…\n\n\n\n\nphysical — a scale model of a building\n\n\n\n\nabstract — equations, or code (this one is Lab 0d)\n\n\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nPhoto: Mak Faitre Sownia, CC BY-SA 4.0, via Wikimedia Commons\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
   },
   {
     "objectID": "slides/week01.html#three-reasons-a-forecast-can-be-wrong",
