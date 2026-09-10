@@ -107,10 +107,23 @@ IPCC AR6 WG1, Figure SPM.8, panel (a) (2021)
 
 ## A model is… {.smaller}
 
+:::: {.columns}
+::: {.column width="50%"}
+![](images/building_model.jpg){height="230px" fig-align="center"}
+<div style="text-align:center; font-size:0.85em;"><em>physical</em> — a scale model of a building</div>
+:::
+::: {.column width="50%"}
+![](images/code_model.png){height="230px" fig-align="center"}
+<div style="text-align:center; font-size:0.85em;"><em>abstract</em> — equations, or code (this one is Lab 0d)</div>
+:::
+::::
+
 - a **simplified representation of a system**, built *for a purpose* — prediction, explanation, communication
 - physical (a wind tunnel) or abstract (equations, code); climate models are **budgets** of energy, mass, momentum
 - every model has **structure** (the form you chose) and **parameters** (the numbers you fit)
 - "best model" is meaningless without "…for what question?"
+
+<div style="font-size:0.35em; color:#888;">Photo: Mak Faitre Sownia, CC BY-SA 4.0, via Wikimedia Commons</div>
 
 ::: {.notes}
 One slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone's hand-fit differs.
