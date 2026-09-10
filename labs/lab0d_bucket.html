@@ -274,7 +274,7 @@ window.Quarto = {
 </section>
 <section id="a-narrow-tube-instead-viscosity-resists-poiseuilles-law" class="level3">
 <h3 class="anchored" data-anchor-id="a-narrow-tube-instead-viscosity-resists-poiseuilles-law">A narrow tube instead — viscosity resists (Poiseuille’s law)</h3>
-<p>Replace the hole with a long thin pipe — radius <span class="math inline">\(r\)</span>, length <span class="math inline">\(L\)</span>, so the same opening area <span class="math inline">\(a=\pi r^{2}\)</span> — or with a plug of sand. In such a pipe the water is not free to move easily, and the friction or viscosity at the pipe wall starts to become important.</p>
+<p>Replace the hole with a long thin pipe — radius <span class="math inline">\(r\)</span>, length <span class="math inline">\(L\)</span>, so the same opening area <span class="math inline">\(a=\pi r^{2}\)</span>. In such a pipe the water is not free to move easily, and the friction or viscosity at the pipe wall starts to become important.</p>
 <p>Fluid touching a solid surface does not slide along it — it sticks. (This is the <strong>no-slip condition</strong>, an experimental fact about fluids and walls.) So inside the tube the water is stationary at the wall and fastest in the middle: neighbouring layers of fluid are sliding past one another.</p>
 <p>Viscosity is the resistance to exactly that sliding. <strong>Newton’s law of viscosity</strong> says the drag force per unit area between layers is proportional to how rapidly velocity changes across the flow:</p>
 <p><span class="math display">\[\tau \;=\; \mu \frac{dv}{dy} \;\sim\; \mu \frac{v}{r}\]</span></p>
@@ -286,14 +286,13 @@ window.Quarto = {
 </ul>
 <p>For water <span class="math inline">\(\mu \approx 1\times10^{-3}\)</span> Pa s; air is about 50 times less viscous, honey about 10,000 times more.</p>
 <p>We used <span class="math inline">\(v/r\)</span> as a “scaling” assuming that the speed goes from roughly <span class="math inline">\(v\)</span> at the centre to zero at the wall, across a distance of about the tube radius <span class="math inline">\(r\)</span>. That stress acts over the whole inner wall of the tube, area <span class="math inline">\(2\pi r L\)</span>, so the total resisting force is <span class="math inline">\(\mu (v/r)\cdot 2\pi r L\)</span>.</p>
-<p>Meanwhile the water is pushed along by the <strong>pressure</strong> of the column standing above the tube. Pressure is also a force spread over an area, and where it comes from is worth one line: a column of water of height <span class="math inline">\(h\)</span> sitting on an area <span class="math inline">\(a\)</span> has volume <span class="math inline">\(ah\)</span>, mass <span class="math inline">\(\rho a h\)</span>, and therefore weight <span class="math inline">\(\rho a h g\)</span>. Divide that weight by the area it presses on, and the area cancels:</p>
-<p><span class="math display">\[P \;=\; \frac{\text{weight of the column}}{\text{area}} \;=\; \frac{\rho\,a\,h\,g}{a} \;=\; \rho g h
+<p>Meanwhile the water is pushed along by the <strong>pressure</strong> of the column standing above the tube. In this case we can estimate the pressure as the force exerted by the weight of the fluid per unit area. So pressure on the inside is:</p>
+<p><span class="math display">\[P \;=\; \frac{\text{weight of the column}}{\text{area}} \;=\; \frac{\rho\,A\,h\,g}{A} \;=\; \rho g h
 \qquad [\text{kg m}^{-3}][\text{m s}^{-2}][\text{m}] = [\text{kg m}^{-1}\text{s}^{-2}] = [\text{Pa}]\]</span></p>
-<p>So the pressure at the bottom of a bucket does not care how wide the bucket is — only how deep the water is. And notice that <span class="math inline">\(\rho g h\)</span> carries <strong>the same units as the viscous stress <span class="math inline">\(\tau\)</span></strong>: both are forces spread over an area. That is exactly why the two can be set against each other in the next step.</p>
-<p>This pressure acts on the tube’s cross-section <span class="math inline">\(\pi r^2\)</span>.</p>
-<p><strong>The balance we now assume is a different one:</strong> the pressure force is opposed by viscous drag, and the two are in equilibrium. Nothing accelerates — the flow settles at whatever speed makes push and drag equal, exactly like a falling object reaching terminal velocity. Here viscosity dominates and inertia is neglected, the <em>opposite</em> choice from Torricelli:</p>
+<p>The pressure at the bottom of a bucket does not care how wide the bucket is — only how deep the water is. Pressure is also just a number at every point in the fluid, and acts equally in all directions, so pressure due to weight of water above the hole acts the same way into the hole. This pressure acts on the tube’s cross-section <span class="math inline">\(\pi r^2\)</span>.</p>
+<p><strong>The balance is now a force balance</strong>: the pressure force is opposed by viscous drag, and the two are in equilibrium. Nothing accelerates — the flow settles at whatever speed makes push and drag equal. Here viscosity dominates and inertia is neglected, the <em>opposite</em> choice from Torricelli:</p>
 <p><span class="math display">\[\underbrace{\rho g h \cdot \pi r^{2}}_{\text{pressure pushing}} \;\sim\; \underbrace{\mu \frac{v}{r}\cdot 2\pi r L}_{\text{wall drag}} \quad\Longrightarrow\quad v \sim \frac{\rho g h\, r^{2}}{\mu L} \quad\Longrightarrow\quad Q = v\,\pi r^{2} \;\propto\; h\]</span></p>
-<p>The outflow is <strong>linear</strong> in <span class="math inline">\(h\)</span>. Notice also <span class="math inline">\(Q \propto r^{4}\)</span>: halving the tube radius cuts the flow sixteenfold — which is why water races out of a hole but creeps through soil.</p>
+<p>The outflow is <strong>linear</strong> in <span class="math inline">\(h\)</span>. Notice also <span class="math inline">\(Q \propto r^{4}\)</span>: halving the tube radius cuts the flow sixteenfold.</p>
 <blockquote class="blockquote">
 <p><strong>Scaling arguments get the form right, not the constant.</strong></p>
 <p>Solving the flow exactly (Poiseuille) gives <span class="math inline">\(Q = \pi r^{4}\rho g h / (8\mu L)\)</span>. Our argument got every dependence right and missed only the factor of 8.</p>
@@ -334,38 +333,9 @@ window.Quarto = {
 </section>
 <section id="so-which-law" class="level3">
 <h3 class="anchored" data-anchor-id="so-which-law">So which law?</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>exit</th>
-<th>what resists</th>
-<th>what the driving goes into</th>
-<th>outflow</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>free hole</td>
-<td>nothing</td>
-<td>kinetic energy</td>
-<td><span class="math inline">\(Q \propto \sqrt{h}\)</span></td>
-</tr>
-<tr class="even">
-<td>narrow tube, soil</td>
-<td>viscous drag at the walls</td>
-<td>heat (dissipation)</td>
-<td><span class="math inline">\(Q \propto h\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Same bucket, different plumbing, different law. <strong>Choosing the law is a modelling decision</strong> — one to justify from physics, not convenience.</p>
-<p>For the rest of today we use the <strong>linear</strong> law, <span class="math inline">\(Q = k\,h\)</span>, because it is the simplest thing with the right behaviour:</p>
+<p><span class="math inline">\(Q \propto \sqrt{h}\)</span> or <span class="math inline">\(Q \propto h\)</span> ?</p>
+<p>Same bucket, different plumbing, different law. <strong>Choosing the law is a modelling decision</strong> — one to justify from physics and knowledge of the system, not convenience.</p>
+<p>For the rest of today we use the <strong>linear</strong> law, <span class="math inline">\(Q = k\,h\)</span>, because it is the simplest thing:</p>
 <p><span class="math display">\[A\,\frac{dh}{dt} \;=\; F \;-\; k\,h\]</span></p>
 <p>with <span class="math inline">\(k\)</span> [m²/s] the drain constant.</p>
 </section>
@@ -397,7 +367,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="step-forward-in-time">4. Step forward in time</h2>
 <p>The equation tells us the <em>rate of change</em> right now. So predict a small step ahead, over and over:</p>
 <p><span class="math display">\[h_{\text{next}} = h_{\text{now}} + \Delta t \cdot \frac{F - k\,h_{\text{now}}}{A}\]</span></p>
-<p><em>(This is called Euler’s method — it’s how almost every model marches time forward.)</em></p>
+<p><em>(This is called Euler’s method — it’s how we march time forward.)</em></p>
 <p><strong>Fill in the one missing line:</strong></p>
 <blockquote class="blockquote">
 <p>Until you fill it in, the rate of change is zero — so your plot will be a <strong>flat line</strong>. That flat line is the model telling you it has no physics in it yet.</p>
@@ -406,16 +376,18 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_bucket(h0, F, k, A<span class="op">=</span><span class="fl">1.0</span>, dt<span class="op">=</span><span class="fl">0.1</span>, n_steps<span class="op">=</span><span class="dv">100</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""March the bucket forward from level h0. Returns times and levels."""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> np.zeros(n_steps)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    h[<span class="dv">0</span>] <span class="op">=</span> h0</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    h[<span class="dv">0</span>] <span class="op">=</span> h0 <span class="co"># initial condition</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n_steps):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        h[i] <span class="op">=</span> h[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">*</span> <span class="fl">0.0</span>   <span class="co"># &lt;-- FILL THIS IN: what is dh/dt?</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        h[i] <span class="op">=</span> h[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">*</span> (F <span class="op">-</span> k<span class="op">*</span>h[i<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>A   <span class="co"># &lt;-- FILL THIS IN: what is dh/dt?</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.arange(n_steps) <span class="op">*</span> dt, h</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>t, h <span class="op">=</span> run_bucket(h0<span class="op">=</span><span class="fl">0.0</span>, F<span class="op">=</span><span class="fl">2.0</span>, k<span class="op">=</span><span class="fl">1.0</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.plot(t, h)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="fl">2.0</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>, label<span class="op">=</span><span class="st">"h* = F/k"</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time [s]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"level h [m]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.plot(t, h)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="fl">2.0</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>, label<span class="op">=</span><span class="st">"h* = F/k"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time [s]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"level h [m]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -487,7 +459,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><strong>Discuss:</strong> which mattered at short times? Which at long times? Keep this table — it comes back in week 11, quantified for the real Earth.</p>
+<p><strong>Discuss:</strong> which mattered at short times? Which at long times?</p>
 <p><em>Before you leave: make sure today’s notebooks are saved in your course repo, and your repo link is posted on Courseworks.</em></p>
 
 
