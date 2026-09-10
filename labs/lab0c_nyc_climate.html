@@ -209,7 +209,7 @@ window.Quarto = {
   <li><a href="#a.-first-the-seasonal-cycle" id="toc-a.-first-the-seasonal-cycle" class="nav-link" data-scroll-target="#a.-first-the-seasonal-cycle">3a. First, the seasonal cycle</a></li>
   <li><a href="#b.-now-the-weather" id="toc-b.-now-the-weather" class="nav-link" data-scroll-target="#b.-now-the-weather">3b. Now, the weather</a></li>
   </ul></li>
-  <li><a href="#one-model-is-not-the-story" id="toc-one-model-is-not-the-story" class="nav-link" data-scroll-target="#one-model-is-not-the-story">4. One model is not the story</a></li>
+  <li><a href="#one-cmip-model-is-not-the-all" id="toc-one-cmip-model-is-not-the-all" class="nav-link" data-scroll-target="#one-cmip-model-is-not-the-all">4. One CMIP model is not the all</a></li>
   </ul>
 </nav>
     </div>
@@ -492,7 +492,6 @@ RMSE: best individual 4.15 °C · median individual 4.62 °C · CLASS MEAN 4.27 
 </div>
 </div>
 <p><strong>Look at that last line.</strong> How does the class-mean model compare with a typical individual guess?</p>
-<p>This is not a trick: averaging many imperfect estimates tends to cancel their independent errors. Hold onto it — in section 4 the world’s climate modelling centres will play the role you just played, and the <em>multi-model mean</em> will behave the same way.</p>
 </section>
 <section id="two-more-nycs-a-reanalysis-and-a-climate-model" class="level2">
 <h2 class="anchored" data-anchor-id="two-more-nycs-a-reanalysis-and-a-climate-model">3. Two more “NYCs”: a reanalysis and a climate model</h2>
@@ -589,8 +588,8 @@ RMSE: best individual 4.15 °C · median individual 4.62 °C · CLASS MEAN 4.27 
 </ol>
 </section>
 </section>
-<section id="one-model-is-not-the-story" class="level2">
-<h2 class="anchored" data-anchor-id="one-model-is-not-the-story">4. One model is not the story</h2>
+<section id="one-cmip-model-is-not-the-all" class="level2">
+<h2 class="anchored" data-anchor-id="one-cmip-model-is-not-the-all">4. One CMIP model is not the all</h2>
 <p>You just compared the observations to <strong>one</strong> climate model. But there are dozens, built by different groups, with different grids and different choices inside. Here are eight of them at this same location.</p>
 <div id="6cb9f3e3" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.8</span>), width_ratios<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">1</span>])</span>
