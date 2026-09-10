@@ -176,7 +176,7 @@ Map the bucket onto the colours: varying h0 = orange, varying k = blue, varying 
 
 - **Today's notebooks (0b, 0c, 0d)** → saved into your course repo
 - **Repo link** → posted on Courseworks *(that's your Lab 0 submission)*
-- Didn't finish or want to play around more? Complete at home **before next Thursday** — TAs + office hours can unblock you
+- Didn't finish or want to play around more? Complete at home **before next Thursday** — TAs + office hours can unblock you.
 
 . . .
 
