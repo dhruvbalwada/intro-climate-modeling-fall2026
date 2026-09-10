@@ -137,7 +137,7 @@ One slide of philosophy, then the labs make it real. The structure/parameters li
 
 # 3 · What is uncertainty? {background-color="#1a3a5c"}
 
-## Three reasons a forecast can be wrong {.smaller}
+## Three reasons a forecast model can be wrong {.smaller}
 
 > "It's tough to make predictions, especially about the future."
 
@@ -162,7 +162,7 @@ Every bullet points at something they DID today. Worth saying aloud: by 2100 the
 :::
 ::: {.column width="50%"}
 ![](images/hawkins_fracvar_global_T.png){height="320px" fig-align="center"}
-<div style="font-size:0.8em; line-height:1.2;">Share of the uncertainty in global temperature: <span style="color:#f28c00"><b>internal variability</b></span> dominates early, <span style="color:#1f1fff"><b>model uncertainty</b></span> mid-century, <span style="color:#0a7a0a"><b>scenario</b></span> by 2100.</div>
+<div style="font-size:0.8em; line-height:1.2;">Share of the uncertainty in <b>global, annual-mean, 10-year-averaged</b> temperature: <span style="color:#f28c00"><b>internal variability</b></span> dominates early, <span style="color:#1f1fff"><b>model uncertainty</b></span> mid-century, <span style="color:#0a7a0a"><b>scenario</b></span> by 2100. <em>That smoothing is why orange fades so fast — ask about one summer in one city and it stays orange much longer.</em></div>
 :::
 ::::
 
