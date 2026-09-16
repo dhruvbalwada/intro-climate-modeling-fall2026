@@ -9,6 +9,7 @@ Earth system and climate models are critically important tools for climate scien
 
 |             |                                            |
 |-------------|--------------------------------------------|
+| Syllabus    | [Download the syllabus (.docx)](https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/syllabus/Intro_Climate_Modeling_Syllabus_Fall2026.docx) |
 | Meetings    | Thursdays 10:10–12:40 · FRM 315 (The Forum) |
 | Instructor  | Dhruv Balwada · dbalwada@ldeo.columbia.edu |
 | TAs         | Prani Nalluri · pan2121@columbia.edu<br>Chandanie Kutwaru · ck3397@columbia.edu |

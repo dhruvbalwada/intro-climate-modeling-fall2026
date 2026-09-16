@@ -13,8 +13,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: syllabus.qmd
-        text: Syllabus
       - href: schedule.qmd
         text: Schedule
       - href: labs/index.qmd
