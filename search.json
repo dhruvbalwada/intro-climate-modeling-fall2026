@@ -315,60 +315,88 @@
     "text": "That’s enough to start\nYou now have everything needed for the rest of today: arrays, a plot, a table read from a URL, and a loop.\nTwo habits worth keeping all semester:\n\nLabel your axes, with units.\nWhen something breaks, read the last line of the error first — it usually says exactly what’s wrong. AI assistants are also good at explaining errors; use them, and make sure you understand the fix.\n\nWant to go deeper? A fuller treatment of Python for earth and environmental data — numpy, pandas, xarray, plotting, working with real datasets — lives in the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
   },
   {
-    "objectID": "labs/github_setup.html",
-    "href": "labs/github_setup.html",
-    "title": "GitHub on the LEAP hub",
+    "objectID": "labs/lab0a.html",
+    "href": "labs/lab0a.html",
+    "title": "Lab 0a — Getting set up",
     "section": "",
-    "text": "Last week many of you got stuck pushing to GitHub from the hub. The gh-scoped-creds route has two traps: your repo must be added to the app’s list of repositories, and the login expires every 8 hours. Here is a simpler route that you set up once and then forget about.\nEverything here is done inside a hub terminal: on leap.2i2c.cloud, File → New → Terminal."
+    "text": "By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks."
   },
   {
-    "objectID": "labs/github_setup.html#tell-git-who-you-are-once",
-    "href": "labs/github_setup.html#tell-git-who-you-are-once",
-    "title": "GitHub on the LEAP hub",
-    "section": "1. Tell git who you are (once)",
-    "text": "1. Tell git who you are (once)\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your-uni@columbia.edu\"\nWithout this, git commit stops with “Please tell me who you are”."
+    "objectID": "labs/lab0a.html#part-a-accounts",
+    "href": "labs/lab0a.html#part-a-accounts",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part A — Accounts",
+    "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope you did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
   },
   {
-    "objectID": "labs/github_setup.html#make-a-personal-access-token-once",
-    "href": "labs/github_setup.html#make-a-personal-access-token-once",
-    "title": "GitHub on the LEAP hub",
-    "section": "2. Make a personal access token (once)",
-    "text": "2. Make a personal access token (once)\nA token is a long password that GitHub gives you for use from the command line. Treat it like a password: never paste it into a notebook, a file in your repo, or a chat.\n\nOn github.com, click your profile photo (top right) → Settings.\nIn the left sidebar, scroll to the bottom → Developer settings.\nPersonal access tokens → Tokens (classic) → Generate new token → Generate new token (classic). (Not the “fine-grained” kind — it works too, but has more knobs to get wrong.)\nNote: LEAP hub. Expiration: Custom → 2026-12-31. Scopes: tick the top-level repo box. Click Generate token.\nCopy the token now — GitHub shows it only once. Keep it somewhere private (a password manager, or a note on your laptop) until step 3 below is done."
+    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub",
+    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part B — Orient to Jupyterhub",
+    "text": "Part B — Orient to Jupyterhub\n\nWhat is Jupyterhub, and where things are.\nAdding notebooks to your folders.\n\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\n\nRunning through code in a notebook (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors."
   },
   {
-    "objectID": "labs/github_setup.html#save-it-on-the-hub-once",
-    "href": "labs/github_setup.html#save-it-on-the-hub-once",
-    "title": "GitHub on the LEAP hub",
-    "section": "3. Save it on the hub (once)",
-    "text": "3. Save it on the hub (once)\nIn the hub terminal:\ngit config --global --unset-all credential.helper   # clears any leftover gh-scoped-creds setting (harmless if there is none)\ngit config --global credential.helper store\nNow go to your repo and push:\ncd ~/climate-modeling-f26-&lt;your-uni&gt;\ngit push\nYou will be asked for a Username (your GitHub username) and a Password — paste the token, not your GitHub password. Nothing appears on screen while you paste; that is normal. Press Enter.\nThat’s it. The token is stored in your home directory on the hub (~/.git-credentials, readable only by you), and every later git push / git pull uses it without asking.\n\nAlready cloned with gh-scoped-creds last week? Nothing to redo — your clone uses the same https:// URL. Just run the two git config lines above and push."
+    "objectID": "labs/lab0a.html#part-c-create-your-course-repository",
+    "href": "labs/lab0a.html#part-c-create-your-course-repository",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part C — Create your course repository",
+    "text": "Part C — Create your course repository\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add dhruvbalwada, [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nMake a personal access token (needed for options 2 and 3 below; skip if you only do option 1). When git on the hub talks to GitHub it asks for a username and password — the password is not your GitHub password but a token:\n\nOn github.com: profile photo → Settings → bottom of the left sidebar → Developer settings.\nPersonal access tokens → Tokens (classic) → Generate new token → Generate new token (classic).\nNote: LEAP hub. Expiration: Custom → 2026-12-31. Scopes: tick the top-level repo box. Click Generate token.\nCopy the token now — GitHub shows it only once. Treat it like a password: never paste it into a notebook or a file in your repo.\n\nPut your completed notebook in the repo. Three ways — pick one.\n\n\nOption 1 — Upload on the GitHub website\nFine for today; from Lab 1 on we use option 2 or 3.\n\nOn the hub, right-click verify_setup.ipynb in the file browser → Download.\nOn your repo’s GitHub page: Add file → Upload files, drag the file in, click Commit changes.\n\n\n\nOption 2 — Using the Terminal\nOpen a hub terminal (File → New → Terminal). Each step is one command: run it, read what comes back, then go to the next. If something fails, note which step and see When git goes wrong.\n\nTell git your name (nothing printed = it worked):\ngit config --global user.name \"Your Name\"\nTell git your email:\ngit config --global user.email \"your-uni@columbia.edu\"\nClear any login setting left over from last week (harmless if there is none):\ngit config --global --unset-all credential.helper\nTell git to remember your token after you type it once:\ngit config --global credential.helper store\nClone your repo. Because it is private, this asks for a Username (your GitHub username) and a Password — paste the token (nothing appears while you paste; press Enter). A folder climate-modeling-f26-&lt;uni&gt; appears in the file browser:\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\nCopy the notebook into that folder:\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\nMove into the folder (the prompt changes to show the folder name):\ncd climate-modeling-f26-&lt;uni&gt;\nTell git to track the file:\ngit add verify_setup.ipynb\nRecord a snapshot with a message (git prints a summary like 1 file changed):\ngit commit -m \"Lab 0: verification notebook\"\nSend it to GitHub. This time no password is asked — step 4 remembered the token:\ngit push\nReload your repo page on github.com: the notebook should be there.\n\n\nTried gh-scoped-creds last week? Nothing to redo — your clone uses the same URL. Do steps 1–4, then continue from step 6 inside your existing folder.\n\n\n\nOption 3 — Using the JupyterHub Git interface\nSame thing, with buttons. The Git panel is in the hub’s left sidebar (the branching-arrows icon).\n\nGit panel → Clone a Repository → paste https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git → OK. It asks for credentials: username, and the token as the password.\nIn the file browser, drag verify_setup.ipynb into the new climate-modeling-f26-&lt;uni&gt; folder, then open that folder.\nGit panel: the file appears under Changed. Click its + to stage it, type a message in the box at the bottom, click Commit. The first time it asks for your name and email.\nClick the cloud-up Push icon at the top of the panel. If asked, give username + token again.\nReload your repo page on github.com: the notebook should be there.\n\nThe panel may ask for the token on every push. To stop that, run steps 3–4 of option 2 once in a terminal."
   },
   {
-    "objectID": "labs/github_setup.html#the-everyday-loop",
-    "href": "labs/github_setup.html#the-everyday-loop",
-    "title": "GitHub on the LEAP hub",
-    "section": "4. The everyday loop",
-    "text": "4. The everyday loop\nAfter you have worked on a notebook inside your repo folder:\ncd ~/climate-modeling-f26-&lt;your-uni&gt;\ngit add .\ngit commit -m \"Lab 0d: bucket model\"\ngit push\nThen check on github.com that the file is there. That repo URL, posted on Courseworks, is your submission.\nPrefer buttons? The hub has a Git panel in the left sidebar (the branching-arrows icon). Open your repo folder in the file browser, then in the Git panel: tick the changed files → write a message → Commit → click the cloud-up Push icon. If it asks for credentials, give your username and the token; after the first success it stops asking."
+    "objectID": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
+    "href": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part D — Submit your notebook as assignment",
+    "text": "Part D — Submit your notebook as assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official."
   },
   {
-    "objectID": "labs/github_setup.html#when-it-goes-wrong",
-    "href": "labs/github_setup.html#when-it-goes-wrong",
-    "title": "GitHub on the LEAP hub",
-    "section": "5. When it goes wrong",
-    "text": "5. When it goes wrong\n\n\n\nWhat you see\nWhat it means\nFix\n\n\n\n\nSupport for password authentication was removed\nYou typed your GitHub password\nUse the token as the password\n\n\nAuthentication failed\nWrong username, or a mistyped/expired token\nRun git config --global --unset-all credential.helper, redo step 3; if the token is lost, generate a new one\n\n\nRepository not found (but it exists on github.com)\nTypo in the URL — or, with gh-scoped-creds, your repo isn’t in the app’s list\nCheck git remote -v; for the app, see §6\n\n\nPermission denied (publickey)\nYou cloned with an ssh URL\ngit remote set-url origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git\n\n\nUpdates were rejected because the remote contains work\nThe repo changed on the website (e.g. you uploaded a file there)\ngit pull first, then git push\n\n\nPlease tell me who you are\nName/email not set\nStep 1\n\n\nterminal prompts disabled\nThe Git panel could not ask for a password\nPush from the terminal once (step 3); after that the panel works\n\n\n\nStill stuck? Ask a TA during the lab, or bring it to office hours. Your Lab 0 submission is not late while you are fixing this — but it must work before the first homework."
+    "objectID": "labs/lab0a.html#when-git-goes-wrong",
+    "href": "labs/lab0a.html#when-git-goes-wrong",
+    "title": "Lab 0a — Getting set up",
+    "section": "When git goes wrong",
+    "text": "When git goes wrong\nFrom Lab 1 on, saving your work to GitHub is the same three commands from inside your repo folder (or the same three clicks in the Git panel — stage, Commit, Push):\n\ngit add . — track everything you changed\ngit commit -m \"what you did\" — record a snapshot\ngit push — send it to GitHub\n\nWhen one of them fails:\n\n\n\n\n\n\n\n\nWhat you see\nWhat it means\nFix\n\n\n\n\nSupport for password authentication was removed\nYou typed your GitHub password\nUse the token as the password\n\n\nAuthentication failed\nWrong username, or a mistyped/expired token\nRun git config --global --unset-all credential.helper, then push again and re-enter the token; lost the token? generate a new one (Part C, step 3)\n\n\nRepository not found (but it exists on github.com)\nTypo in the URL\nCheck git remote -v against your repo page\n\n\nPermission denied (publickey)\nYou cloned with an ssh URL\ngit remote set-url origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git\n\n\nUpdates were rejected because the remote contains work\nThe repo changed on the website (e.g. you uploaded a file there)\ngit pull, then git push\n\n\nPlease tell me who you are\nName/email not set\nOption 2, steps 1–2\n\n\nterminal prompts disabled\nThe Git panel could not ask for a password\nRun option 2, steps 3–4, then push from the terminal once; after that the panel works\n\n\n\nStill stuck? Ask a TA during the lab or come to office hours. A fuller tour of git on the hub (branches, pulling, resolving conflicts) is in the LEAP GitHub tutorial — optional.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, instructor and TAs added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
   },
   {
-    "objectID": "labs/github_setup.html#sec-scoped",
-    "href": "labs/github_setup.html#sec-scoped",
-    "title": "GitHub on the LEAP hub",
-    "section": "6. Alternative: gh-scoped-creds",
-    "text": "6. Alternative: gh-scoped-creds\nIf you would rather not keep a token on the hub, gh-scoped-creds also works — with two things to know.\n\nIn a hub terminal run gh-scoped-creds. It prints a link and a code. Open the link, enter the code.\nThe first time, GitHub asks you to install the app on your account. Choose Only select repositories and pick climate-modeling-f26-&lt;your-uni&gt;. This is the step most people missed.\nCreated the repo after installing the app, or skipped step 2? Go to github.com/settings/installations → gh-scoped-creds → Configure → Repository access → Only select repositories → Select repositories → add your repo → Save. Then git push works.\nThe login lasts 8 hours. Next week, run gh-scoped-creds again before pushing.\n\nIf you have both set up, git will use whichever it finds first; to switch cleanly to the token route, run the --unset-all line in step 3."
+    "objectID": "labs/getting_the_data.html",
+    "href": "labs/getting_the_data.html",
+    "title": "Reference — where our data comes from",
+    "section": "",
+    "text": "⇩ Download this notebook (.ipynb)\nOptional reference — we won’t work through this in class.\nThe CSV files used in Lab 0c didn’t fall from the sky: they were downloaded from three public archives. This notebook shows exactly how, partly so the numbers are reproducible, and partly because getting data is a real skill you’ll need for your final project.\nThe cells here are not executed when this page is built (the downloads are slow, and the class shouldn’t depend on three servers being up). Download the notebook and run it yourself if you want the data fresh.\nAll three cover 1995–2014 — the last 20 years of the CMIP6 historical experiment, so they overlap.\nimport io, json, urllib.request\nimport pandas as pd\n\nLAT, LON = 40.78, -73.97          # Central Park\nY0, Y1 = \"1995-01-01\", \"2014-12-31\""
   },
   {
-    "objectID": "labs/github_setup.html#more",
-    "href": "labs/github_setup.html#more",
-    "title": "GitHub on the LEAP hub",
-    "section": "More",
-    "text": "More\nA fuller tour of git and GitHub on the hub — branches, pulling, resolving conflicts — is in the LEAP GitHub tutorial. For this course you only ever need §1–§4 above."
+    "objectID": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
+    "href": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
+    "title": "Reference — where our data comes from",
+    "section": "1. Station observations — NOAA GHCN-Daily",
+    "text": "1. Station observations — NOAA GHCN-Daily\nThe Global Historical Climatology Network holds daily records from tens of thousands of stations. Central Park is USW00094728. NOAA’s Access Data Service will hand you a CSV straight from a URL.\nNote we ask for TMAX and TMIN and average them: daily mean temperature (TAVG) is missing for many station-years, so (TMAX + TMIN)/2 is the standard workaround. That is a modelling choice, and it is not identical to a true daily mean: checked against ERA5 (which provides both), the midpoint runs about +0.2 °C warm here. ERA5 and CMIP6 below give true 24-hour means, so the three series are not quite like-for-like.\n\nurl = (\"https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries\"\n       f\"&stations=USW00094728&startDate={Y0}&endDate={Y1}&dataTypes=TMAX,TMIN\"\n       \"&units=metric&format=csv\")\n\nobs = pd.read_csv(io.StringIO(urllib.request.urlopen(url, timeout=180).read().decode()))\nobs[\"DATE\"] = pd.to_datetime(obs[\"DATE\"])\nobs[\"t_obs\"] = (obs[\"TMAX\"] + obs[\"TMIN\"]) / 2\nobs = obs.set_index(\"DATE\")[[\"t_obs\"]]\nobs.head()"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#reanalysis-era5",
+    "href": "labs/getting_the_data.html#reanalysis-era5",
+    "title": "Reference — where our data comes from",
+    "section": "2. Reanalysis — ERA5",
+    "text": "2. Reanalysis — ERA5\nERA5 is a weather model run over the whole satellite/observation record, continuously nudged toward observations. The full archive is enormous; Open-Meteo offers a friendly API that extracts a single point for you.\nWatch the fine print: you asked for Central Park, but you get the nearest grid point — around 40.81 °N, 74.02 °W, and it represents an average over roughly 30 km, not a park.\n\nurl = (f\"https://archive-api.open-meteo.com/v1/era5?latitude={LAT}&longitude={LON}\"\n       f\"&start_date={Y0}&end_date={Y1}&daily=temperature_2m_mean\"\n       \"&timezone=America%2FNew_York\")\n\nj = json.load(urllib.request.urlopen(url, timeout=300))\nera = pd.DataFrame({\"DATE\": pd.to_datetime(j[\"daily\"][\"time\"]),\n                    \"t_era5\": j[\"daily\"][\"temperature_2m_mean\"]}).set_index(\"DATE\")\n\nprint(\"grid point actually returned:\", j[\"latitude\"], j[\"longitude\"])\nera.head()\n\n\nobs.join(era, how=\"outer\").to_csv(\"centralpark_obs_era5_1995-2014.csv\")"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
+    "href": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
+    "title": "Reference — where our data comes from",
+    "section": "3. A climate model — CMIP6 from the cloud",
+    "text": "3. A climate model — CMIP6 from the cloud\nThis is the one we’ll use properly later in the course. Every CMIP6 simulation is catalogued in one big CSV; you filter it to the run you want, then open the data straight from cloud storage — without downloading the whole thing (xarray fetches only the chunks you touch).\nThe search terms are the CMIP vocabulary you’ll learn later: source_id (which model), experiment_id (which experiment), member_id (which ensemble member), table_id (which output frequency), variable_id (which variable — tas is near-surface air temperature).\n\nimport xarray as xr\n\ncat = pd.read_csv(\"https://storage.googleapis.com/cmip6/pangeo-cmip6.csv\")\nprint(len(cat), \"simulations in the catalog\")\n\nsel_all = cat[(cat.experiment_id == \"historical\") & (cat.member_id == \"r1i1p1f1\")\n               & (cat.table_id == \"day\") & (cat.variable_id == \"tas\")]\n\nsel = cat[(cat.source_id == \"MPI-ESM1-2-HR\") & (cat.experiment_id == \"historical\")\n          & (cat.member_id == \"r1i1p1f1\") & (cat.table_id == \"day\")\n          & (cat.variable_id == \"tas\")]\nsel[[\"source_id\", \"experiment_id\", \"member_id\", \"table_id\", \"variable_id\", \"zstore\"]]\n\n\nds = xr.open_zarr(sel.zstore.iloc[0], consolidated=True, storage_options={\"token\": \"anon\"})\nds\n\nFour things bite everyone the first time:\n\nLongitude runs 0–360, not −180–180. Central Park’s −73.97 becomes 286.03 (LON % 360).\nTemperature is in kelvin. Subtract 273.15.\nThe nearest grid cell is ~100 km wide — here it lands at about 40.68 °N, 74.06 °W, partly over water. It is not Central Park.\nModel calendars are their own thing (cftime objects, sometimes 360-day years), so converting to ordinary dates takes an extra step.\n\n\npt = (ds.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n            .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n\nprint(f\"grid cell used: {float(pt.lat):.2f} N, {float(pt.lon) - 360:.2f} E\")\n\ns = pt.to_series()\ns.index = pd.to_datetime(s.index.astype(str))     # cftime -&gt; ordinary dates\ns.rename(\"t_cmip6\").to_csv(\"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv\")\ns.head()"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#the-same-thing-for-eight-models",
+    "href": "labs/getting_the_data.html#the-same-thing-for-eight-models",
+    "title": "Reference — where our data comes from",
+    "section": "4. The same thing, for eight models",
+    "text": "4. The same thing, for eight models\nOne model is one opinion. The lab also uses an ensemble: the identical extraction, looped over eight modelling centres. Each model has its own grid, so “the cell nearest Central Park” is a different patch of the planet in each case — for the coarsest model it lands over the ocean.\n\nMODELS = [\"MPI-ESM1-2-HR\", \"MPI-ESM1-2-LR\", \"CanESM5\", \"MIROC6\",\n          \"IPSL-CM6A-LR\", \"ACCESS-CM2\", \"NorESM2-LM\", \"GFDL-ESM4\"]\n\nout = {}\nfor m in MODELS:\n    try:\n        z = sel_all[sel_all.source_id == m].zstore.iloc[0]\n        ds_m = xr.open_zarr(z, consolidated=True, storage_options={\"token\": \"anon\"})\n        pt_m = (ds_m.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n                       .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n        s_m = pt_m.to_series()\n        s_m.index = pd.to_datetime(s_m.index.astype(str)).normalize()\n        out[m] = s_m[~s_m.index.duplicated()]\n        print(f\"{m:16s} cell {float(pt_m.lat):6.2f}N {float(pt_m.lon)-360:7.2f}E   mean {s_m.mean():5.2f} C\")\n    except Exception as exc:\n        print(f\"{m:16s} FAILED ({type(exc).__name__})\")\n\nmodels = pd.DataFrame(out)\nmodels.index.name = \"time\"\nmodels.to_csv(\"centralpark_cmip6_multimodel_1995-2014.csv\")"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#credit-where-due",
+    "href": "labs/getting_the_data.html#credit-where-due",
+    "title": "Reference — where our data comes from",
+    "section": "Credit where due",
+    "text": "Credit where due\n\nGHCN-Daily — NOAA National Centers for Environmental Information (US government work, public domain).\nERA5 — Copernicus Climate Change Service / ECMWF; served here by Open-Meteo.\nMPI-ESM1-2-HR — Max Planck Institute for Meteorology, distributed through CMIP6 (CC BY 4.0). Cloud copy hosted by Pangeo.\n\nCiting your data sources is not a formality — it’s how someone else (including future you) can check what you did.\nWant more of this? Working with real earth-science datasets — xarray, cloud archives, plotting, analysis — is the subject of the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
   },
   {
     "objectID": "labs/github_tutorial_leap.html",
@@ -427,83 +455,6 @@
     "text": "5.1 Clone only a specific folder from a repository (sparse checkout)\nmkdir project1 && cd project1\ngit init\ngit remote add origin https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git\ngit sparse-checkout init --cone\ngit sparse-checkout set Project_Path\ngit pull origin main\nThe parent folder structure leading to the subfolder is still created, since Git keeps the necessary hierarchy.\n\nPracticing hands-on is essential for mastering any tool, and GitHub is no exception. There are far more operations, features, and potential issues than this tutorial covers; explore, search for solutions, and ask. If you run into an interesting problem, share it with the TAs so this page can improve.\nReferences\n\nhttps://docs.github.com/en/get-started\nhttps://training.github.com/downloads/github-git-cheat-sheet.pdf\nhttps://docs.2i2c.org/user/topics/data/git/"
   },
   {
-    "objectID": "labs/getting_the_data.html",
-    "href": "labs/getting_the_data.html",
-    "title": "Reference — where our data comes from",
-    "section": "",
-    "text": "⇩ Download this notebook (.ipynb)\nOptional reference — we won’t work through this in class.\nThe CSV files used in Lab 0c didn’t fall from the sky: they were downloaded from three public archives. This notebook shows exactly how, partly so the numbers are reproducible, and partly because getting data is a real skill you’ll need for your final project.\nThe cells here are not executed when this page is built (the downloads are slow, and the class shouldn’t depend on three servers being up). Download the notebook and run it yourself if you want the data fresh.\nAll three cover 1995–2014 — the last 20 years of the CMIP6 historical experiment, so they overlap.\nimport io, json, urllib.request\nimport pandas as pd\n\nLAT, LON = 40.78, -73.97          # Central Park\nY0, Y1 = \"1995-01-01\", \"2014-12-31\""
-  },
-  {
-    "objectID": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
-    "href": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
-    "title": "Reference — where our data comes from",
-    "section": "1. Station observations — NOAA GHCN-Daily",
-    "text": "1. Station observations — NOAA GHCN-Daily\nThe Global Historical Climatology Network holds daily records from tens of thousands of stations. Central Park is USW00094728. NOAA’s Access Data Service will hand you a CSV straight from a URL.\nNote we ask for TMAX and TMIN and average them: daily mean temperature (TAVG) is missing for many station-years, so (TMAX + TMIN)/2 is the standard workaround. That is a modelling choice, and it is not identical to a true daily mean: checked against ERA5 (which provides both), the midpoint runs about +0.2 °C warm here. ERA5 and CMIP6 below give true 24-hour means, so the three series are not quite like-for-like.\n\nurl = (\"https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries\"\n       f\"&stations=USW00094728&startDate={Y0}&endDate={Y1}&dataTypes=TMAX,TMIN\"\n       \"&units=metric&format=csv\")\n\nobs = pd.read_csv(io.StringIO(urllib.request.urlopen(url, timeout=180).read().decode()))\nobs[\"DATE\"] = pd.to_datetime(obs[\"DATE\"])\nobs[\"t_obs\"] = (obs[\"TMAX\"] + obs[\"TMIN\"]) / 2\nobs = obs.set_index(\"DATE\")[[\"t_obs\"]]\nobs.head()"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#reanalysis-era5",
-    "href": "labs/getting_the_data.html#reanalysis-era5",
-    "title": "Reference — where our data comes from",
-    "section": "2. Reanalysis — ERA5",
-    "text": "2. Reanalysis — ERA5\nERA5 is a weather model run over the whole satellite/observation record, continuously nudged toward observations. The full archive is enormous; Open-Meteo offers a friendly API that extracts a single point for you.\nWatch the fine print: you asked for Central Park, but you get the nearest grid point — around 40.81 °N, 74.02 °W, and it represents an average over roughly 30 km, not a park.\n\nurl = (f\"https://archive-api.open-meteo.com/v1/era5?latitude={LAT}&longitude={LON}\"\n       f\"&start_date={Y0}&end_date={Y1}&daily=temperature_2m_mean\"\n       \"&timezone=America%2FNew_York\")\n\nj = json.load(urllib.request.urlopen(url, timeout=300))\nera = pd.DataFrame({\"DATE\": pd.to_datetime(j[\"daily\"][\"time\"]),\n                    \"t_era5\": j[\"daily\"][\"temperature_2m_mean\"]}).set_index(\"DATE\")\n\nprint(\"grid point actually returned:\", j[\"latitude\"], j[\"longitude\"])\nera.head()\n\n\nobs.join(era, how=\"outer\").to_csv(\"centralpark_obs_era5_1995-2014.csv\")"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
-    "href": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
-    "title": "Reference — where our data comes from",
-    "section": "3. A climate model — CMIP6 from the cloud",
-    "text": "3. A climate model — CMIP6 from the cloud\nThis is the one we’ll use properly later in the course. Every CMIP6 simulation is catalogued in one big CSV; you filter it to the run you want, then open the data straight from cloud storage — without downloading the whole thing (xarray fetches only the chunks you touch).\nThe search terms are the CMIP vocabulary you’ll learn later: source_id (which model), experiment_id (which experiment), member_id (which ensemble member), table_id (which output frequency), variable_id (which variable — tas is near-surface air temperature).\n\nimport xarray as xr\n\ncat = pd.read_csv(\"https://storage.googleapis.com/cmip6/pangeo-cmip6.csv\")\nprint(len(cat), \"simulations in the catalog\")\n\nsel_all = cat[(cat.experiment_id == \"historical\") & (cat.member_id == \"r1i1p1f1\")\n               & (cat.table_id == \"day\") & (cat.variable_id == \"tas\")]\n\nsel = cat[(cat.source_id == \"MPI-ESM1-2-HR\") & (cat.experiment_id == \"historical\")\n          & (cat.member_id == \"r1i1p1f1\") & (cat.table_id == \"day\")\n          & (cat.variable_id == \"tas\")]\nsel[[\"source_id\", \"experiment_id\", \"member_id\", \"table_id\", \"variable_id\", \"zstore\"]]\n\n\nds = xr.open_zarr(sel.zstore.iloc[0], consolidated=True, storage_options={\"token\": \"anon\"})\nds\n\nFour things bite everyone the first time:\n\nLongitude runs 0–360, not −180–180. Central Park’s −73.97 becomes 286.03 (LON % 360).\nTemperature is in kelvin. Subtract 273.15.\nThe nearest grid cell is ~100 km wide — here it lands at about 40.68 °N, 74.06 °W, partly over water. It is not Central Park.\nModel calendars are their own thing (cftime objects, sometimes 360-day years), so converting to ordinary dates takes an extra step.\n\n\npt = (ds.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n            .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n\nprint(f\"grid cell used: {float(pt.lat):.2f} N, {float(pt.lon) - 360:.2f} E\")\n\ns = pt.to_series()\ns.index = pd.to_datetime(s.index.astype(str))     # cftime -&gt; ordinary dates\ns.rename(\"t_cmip6\").to_csv(\"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv\")\ns.head()"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#the-same-thing-for-eight-models",
-    "href": "labs/getting_the_data.html#the-same-thing-for-eight-models",
-    "title": "Reference — where our data comes from",
-    "section": "4. The same thing, for eight models",
-    "text": "4. The same thing, for eight models\nOne model is one opinion. The lab also uses an ensemble: the identical extraction, looped over eight modelling centres. Each model has its own grid, so “the cell nearest Central Park” is a different patch of the planet in each case — for the coarsest model it lands over the ocean.\n\nMODELS = [\"MPI-ESM1-2-HR\", \"MPI-ESM1-2-LR\", \"CanESM5\", \"MIROC6\",\n          \"IPSL-CM6A-LR\", \"ACCESS-CM2\", \"NorESM2-LM\", \"GFDL-ESM4\"]\n\nout = {}\nfor m in MODELS:\n    try:\n        z = sel_all[sel_all.source_id == m].zstore.iloc[0]\n        ds_m = xr.open_zarr(z, consolidated=True, storage_options={\"token\": \"anon\"})\n        pt_m = (ds_m.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n                       .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n        s_m = pt_m.to_series()\n        s_m.index = pd.to_datetime(s_m.index.astype(str)).normalize()\n        out[m] = s_m[~s_m.index.duplicated()]\n        print(f\"{m:16s} cell {float(pt_m.lat):6.2f}N {float(pt_m.lon)-360:7.2f}E   mean {s_m.mean():5.2f} C\")\n    except Exception as exc:\n        print(f\"{m:16s} FAILED ({type(exc).__name__})\")\n\nmodels = pd.DataFrame(out)\nmodels.index.name = \"time\"\nmodels.to_csv(\"centralpark_cmip6_multimodel_1995-2014.csv\")"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#credit-where-due",
-    "href": "labs/getting_the_data.html#credit-where-due",
-    "title": "Reference — where our data comes from",
-    "section": "Credit where due",
-    "text": "Credit where due\n\nGHCN-Daily — NOAA National Centers for Environmental Information (US government work, public domain).\nERA5 — Copernicus Climate Change Service / ECMWF; served here by Open-Meteo.\nMPI-ESM1-2-HR — Max Planck Institute for Meteorology, distributed through CMIP6 (CC BY 4.0). Cloud copy hosted by Pangeo.\n\nCiting your data sources is not a formality — it’s how someone else (including future you) can check what you did.\nWant more of this? Working with real earth-science datasets — xarray, cloud archives, plotting, analysis — is the subject of the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
-  },
-  {
-    "objectID": "labs/lab0a.html",
-    "href": "labs/lab0a.html",
-    "title": "Lab 0a — Getting set up",
-    "section": "",
-    "text": "By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-a-accounts",
-    "href": "labs/lab0a.html#part-a-accounts",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part A — Accounts",
-    "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope you did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub",
-    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part B — Orient to Jupyterhub",
-    "text": "Part B — Orient to Jupyterhub\n\nWhat is Jupyterhub, and where things are.\nAdding notebooks to your folders.\n\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\n\nRunning through code in a notebook (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-c-create-your-course-repository",
-    "href": "labs/lab0a.html#part-c-create-your-course-repository",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part C — Create your course repository",
-    "text": "Part C — Create your course repository\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add dhruvbalwada, [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nAuthenticating (no passwords, no tokens): the first time you push, run this in the terminal:\ngh-scoped-creds\nIt prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing “Only select repositories” and picking your climate-modeling-f26-&lt;uni&gt; repo. Then git push works.\nCredentials last 8 hours; when they expire just run gh-scoped-creds again. (This is why we use the https:// clone URL above.)"
-  },
-  {
-    "objectID": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
-    "href": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part D — Submit your notebook as assignment",
-    "text": "Part D — Submit your notebook as assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, instructor and TAs added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
-  },
-  {
     "objectID": "labs/index.html",
     "href": "labs/index.html",
     "title": "Labs",
@@ -515,7 +466,7 @@
     "href": "labs/index.html#week-1-sep-10",
     "title": "Labs",
     "section": "Week 1 (Sep 10)",
-    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 3-parameter model, ERA5 vs CMIP6\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\n\nReference (optional)\n\nWhere our data comes from: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
+    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 3-parameter model, ERA5 vs CMIP6\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\n\nReference (optional)\n\nWhere our data comes from: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project\nGitHub beginner tutorial (LEAP): the fuller git tour — branches, pulling, resolving conflicts\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
   },
   {
     "objectID": "labs/lab0d_bucket.html",
