@@ -1,7 +1,7 @@
 <!-- TOPIC BLOCK: "Earth is a bucket" + bare-rock 255K derivation + 33K cliffhanger.
-     Currently played in: week 2, right after Lab 0d + the uncertainty block. -->
+     PARKED from week 1 (2026-09-09 restructure). Intended: OPENING of week 2. -->
 
-# 4 · Now for real {background-color="#1a3a5c"}
+# Now for real {background-color="#1a3a5c"}
 
 *Earth is a bucket.*
 
@@ -9,15 +9,14 @@
 
 | bucket | Earth |
 |---|---|
-| tap (inflow $F$) | **sunlight** |
+| tap (inflow F) | **sunlight** |
 | drain | **infrared radiation to space** |
-| water level $h$ | **temperature $T$** |
-| drain law $Q = kh$ | $\sigma T^4$ *(Stefan–Boltzmann)* |
+| water level h | **temperature T** |
 | fuller → drains harder | warmer → radiates harder *(the stabilizing feedback)* |
-| level lags the tap | warming lags emissions *(soon: the ocean sets the clock)* |
+| level lags the tap | warming lags emissions *(week 3: the ocean sets the clock)* |
 
 ::: {.notes}
-The payoff slide of the day — the bucket you just built wasn't an analogy, it was the actual mathematical object of this course. Ask them to fill the right column before revealing it.
+The payoff slide of the day — the demo wasn't an analogy, it was the actual mathematical object of this course. 
 :::
 
 ## The first calculation *(live, on the board)*
@@ -26,8 +25,6 @@ Energy in: sunlight on a disk — $\pi R^2 S_0(1-\alpha)$. Energy out: infrared 
 
 $$T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4} \approx \mathbf{255\ K} = -18\,°\mathrm{C}\;\;(?!)$$
 
-*with $S_0 = 1361\ \mathrm{W\,m^{-2}}$, $\alpha \approx 0.30$, $\sigma = 5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}$*
-
 | | formula | actual |
 |---|---|---|
 | Mars | ~210 K | ~218 K ✓ |
@@ -35,17 +32,18 @@ $$T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4} \approx \mathbf{255\ K}
 | Venus | ~230 K | **735 K — off by 500 K!** |
 
 ::: {.notes}
-Board derivation, slowly — ask "why πR² in but 4πR² out?" before answering; sets the math culture. This is the bucket's equilibrium step (set the budget to zero) for the planet. Venus kills "it's distance from the Sun."
+Board derivation, slowly — ask "why πR² in but 4πR² out?" before answering; sets the math culture. This is Arrhenius's step 1, and our Model-1 equilibrium budget for the planet. Venus kills "it's distance from the Sun." In Lab 0 this week they plot exactly this formula.
 :::
 
 ## 33 K — the most productive wrong answer in science
 
 That gap **is the greenhouse effect**. Closing it:
 
-- **Next:** *why* — the layer model, then the picture professionals use
-- **Then:** *when* — the model ticks in time; the ocean sets the clock
-- **Later:** *how much* — feedbacks decide whether 3.7 W/m² means 2 °C or 5 °C
+- **Week 2:** *why* — the layer model + the picture professionals use
+- **Week 3:** *when* — the model ticks in time; the ocean sets the clock
+- **Week 9:** *how much* — feedbacks decide whether 3.7 W/m² means 2 °C or 5 °C
 
 ::: {.notes}
-Honest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. If time remains, go straight into "why".
+Honest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. Cliffhanger, then logistics.
 :::
+
