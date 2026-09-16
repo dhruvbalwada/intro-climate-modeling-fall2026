@@ -33,13 +33,15 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
    - Visibility: **Private** ← important
    - Check "Add a README file"
 2. Add the teaching staff as collaborators: repo **Settings → Collaborators → Add people** — add **`dhruvbalwada`**, **`[PRANI-GITHUB]`**, and **`[CHANDANIE-GITHUB]`**.
-3. **Make a personal access token** (needed for options 2 and 3 below; skip if you only do option 1). When git on the hub talks to GitHub it asks for a username and password — the password is **not** your GitHub password but a *token*:
+## Part D — Put your work in the repo
+
+1. **Make a personal access token** (needed for options 2 and 3 below; skip if you only do option 1 today). When git on the hub talks to GitHub it asks for a username and password — the password is **not** your GitHub password but a *token*:
    1. On [github.com](https://github.com): profile photo → **Settings** → bottom of the left sidebar → **Developer settings**.
    2. **Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)**.
    3. Note: `LEAP hub`. Expiration: **Custom → 2026-12-31**. Scopes: tick the top-level **`repo`** box. Click **Generate token**.
    4. **Copy the token now** — GitHub shows it only once. Treat it like a password: never paste it into a notebook or a file in your repo.
 
-4. **Put your completed notebook in the repo.** Three ways — pick one.
+2. **Put your completed notebook in the repo.** Three ways — pick one.
 
 ### Option 1 — Upload on the GitHub website
 
@@ -50,7 +52,7 @@ Fine for today; from Lab 1 on we use option 2 or 3.
 
 ### Option 2 — Using the Terminal
 
-Open a hub terminal (**File → New → Terminal**). Each step is **one command**: run it, read what comes back, then go to the next. If something fails, note which step and see [When git goes wrong](#when-git-goes-wrong).
+Open a hub terminal (**File → New → Terminal**). Each step is **one command**: run it, read what comes back, then go to the next. If something fails, note which step — that is what to tell a TA (or an AI assistant).
 
 **One-time setup** — do this today; you will not do it again all semester.
 
@@ -108,6 +110,7 @@ Same thing, with buttons. The **Git** panel is in the hub's left sidebar (the br
 **One-time setup**
 
 1. Git panel → **Clone a Repository** → paste `https://github.com/<your-username>/climate-modeling-f26-<uni>.git` → OK. It asks for credentials: username, and the **token** as the password.
+
 **Every time you save work**
 
 2. In the file browser, drag `verify_setup.ipynb` into the new `climate-modeling-f26-<uni>` folder, then open that folder.
@@ -117,8 +120,8 @@ Same thing, with buttons. The **Git** panel is in the hub's left sidebar (the br
 
 The panel may ask for the token on every push. To stop that, run steps 3–4 of option 2 once in a terminal.
 
-## Part D — Submit your notebook as assignment
+> **Want more git?** A more extensive reference — creating repos from the terminal, branches, pulling, resolving conflicts — is the [GitHub beginner tutorial (LEAP)](github_tutorial_leap.qmd). Optional.
+
+## Part E — Submit your notebook as assignment
 
 On Courseworks, open the **Lab 0** assignment and submit **the URL of your repository** (e.g., `https://github.com/ab1234/climate-modeling-f26-ab1234`). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.
-
-
