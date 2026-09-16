@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Dhruv Balwada · Columbia Climate School · Fall 2026">
-  <title>Introduction to Climate Modeling – From a bucket to a planet</title>
+  <title>Introduction to Climate Modeling – Energy Balance Modeling 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -34,72 +34,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="comments.css">
@@ -200,8 +134,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">From a bucket to a planet</h1>
-  <p class="subtitle">Week 2</p>
+  <h1 class="title">Energy Balance Modeling 1</h1>
+  <p class="subtitle">Week 2 · Closing the 33 K gap</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -212,20 +146,15 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
 </div>
 
 </section>
-<section id="last-week-this-week" class="slide level2">
-<h2>Last week, this week</h2>
+<section id="where-we-left-off" class="slide level2">
+<h2>Where we left off</h2>
+<p><span class="math display">\[T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4} = 255\ \mathrm{K} \qquad \text{but the surface is } 288\ \mathrm{K}\]</span></p>
 <ul>
-<li><strong>Last week:</strong> hub + GitHub, a Python warm-up, the climate of NYC — one thermometer, ERA5, eight CMIP6 models</li>
-<li><strong>Today:</strong>
-<ol type="1">
-<li><strong>Lab 0d</strong> — a bucket: budgets, equilibrium, stepping forward in time</li>
-<li><strong>What is uncertainty?</strong> — three reasons a forecast can be wrong</li>
-<li><strong>The Earth <em>is</em> a bucket</strong> — the first climate calculation</li>
-<li>If we get there: <strong>why is the surface warmer than the planet?</strong></li>
-</ol></li>
+<li>The 255 K is <strong>real</strong> — satellites measure Earth radiating to space at exactly this temperature</li>
+<li>So the question isn’t “why is our formula wrong” — it’s <strong>“why is the surface warmer than the planet’s radiation to space?”</strong></li>
 </ul>
 <aside class="notes">
-<p>Hands: who has a working hub login? Who managed to push to GitHub? Then the GitHub slide — don’t debug on the projector; TAs circulate during the lab.</p>
+<p>5 min. Gently cold-call: “someone reconstruct last week’s logic for us?” A year post-GR5001 + one week post-lecture — expect partial recall, rebuild it fast. Check-in: Lab 0 status by show of hands; due before next class!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -238,47 +167,16 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           display:block!important;
       }</style></aside>
 </section>
-<section id="github-a-simpler-way-to-log-in" class="slide level2 smaller">
-<h2>GitHub: a simpler way to log in</h2>
-<p>Last week <code>gh-scoped-creds</code> tripped many of you (the “select repositories” step, and the 8-hour expiry). New one-time setup — a <strong>personal access token</strong>:</p>
+<section id="today-close-the-gap-in-four-steps" class="slide level2">
+<h2>Today: close the gap in four steps</h2>
 <ol type="1">
-<li><p>On GitHub: profile photo → <strong>Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (classic)</strong>. Tick <code>repo</code>, expiry <strong>Dec 31, 2026</strong>, copy the token.</p></li>
-<li><p>In a hub terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-label="1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset-all</span> credential.helper</span>
-<span id="cb1-2"><a aria-label="2"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Next <code>git push</code>: username = your GitHub username, password = <strong>paste the token</strong> (nothing appears as you paste). It is saved; you won’t be asked again.</p></li>
-</ol>
-<p>Full instructions + common errors: <strong><a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/github_setup.html">GitHub on the LEAP hub</a></strong></p>
-<aside class="notes">
-<p>The page also keeps gh-scoped-creds as an alternative, with the missing step spelled out (adding the repo to the app’s list at github.com/settings/installations). Repo link on Courseworks remains the submission.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section>
-<section id="lab-0d-modeling-using-budgets" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Lab 0d · Modeling using budgets</h1>
-
-</section>
-<section id="the-plan" class="slide level2 smaller">
-<h2>The plan</h2>
-<ol type="1">
-<li><strong>A budget:</strong> <span class="math inline">\(A\,\dfrac{dh}{dt} = F - Q_\mathrm{out}\)</span></li>
-<li><strong>Two drain laws from two dominant balances:</strong> Torricelli <span class="math inline">\(Q \propto \sqrt{h}\)</span> · Poiseuille <span class="math inline">\(Q \propto h\)</span> — we adopt the linear one, <span class="math inline">\(Q = kh\)</span></li>
-<li><strong>Equilibrium:</strong> <span class="math inline">\(h^* = F/k\)</span> — the level the bucket <em>wants</em></li>
-<li><strong>Stepping in time:</strong> Euler, <span class="math inline">\(h_{n+1} = h_n + \Delta t\,(F - k h_n)/A\)</span></li>
-<li><strong>Play:</strong> vary <span class="math inline">\(h_0\)</span>, <span class="math inline">\(k\)</span>, <span class="math inline">\(F\)</span> — keep the plots, they come back in ten minutes</li>
+<li>Why the atmosphere intervenes <em>(selective absorption)</em></li>
+<li>The simplest greenhouse <em>(one pane of glass — on the board)</em></li>
+<li>The picture professionals use <em>(emission height)</em></li>
+<li>The 125-year-old objection — and how <strong>you</strong> will break it</li>
 </ol>
 <aside class="notes">
-<p>The notebook drives; the board carries the derivations (they are written out in Lab 0d for reading later). Step 5 is what the uncertainty slides point back at.</p>
+<p>Promise the payoff up front: “by 12:40 you can defeat an argument that fooled physicists for 40 years.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -290,204 +188,8 @@ Dhruv Balwada · Columbia Climate School · Fall 2026
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<!-- TOPIC BLOCK: what is uncertainty — three reasons + how they trade off with time.
-     Written for week 1 (2026-09-10), not reached; now played in week 2 right after Lab 0d. -->
-</section></section>
-<section>
-<section id="what-is-uncertainty" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>3 · What is uncertainty?</h1>
-
-</section>
-<section id="three-reasons-a-forecast-model-can-be-wrong" class="slide level2 smaller">
-<h2>Three reasons a forecast model can be wrong</h2>
-<blockquote>
-<p>“It’s tough to make predictions, especially about the future.”</p>
-</blockquote>
-<p>You just generated all three in the bucket:</p>
-<ul>
-<li><strong>Initial-condition uncertainty</strong> — you varied <span class="math inline">\(h_0\)</span>: matters early, forgotten later <em>(Earth: today’s exact weather)</em></li>
-<li><strong>Model uncertainty</strong> — you varied <span class="math inline">\(k\)</span>: parameters (and structure) <em>(Earth: we don’t know exact laws or our models can’t be exactly solved)</em></li>
-<li><strong>Scenario uncertainty</strong> — you varied <span class="math inline">\(F\)</span>: the pourer decides, not physics <em>(Earth: emissions)</em></li>
-</ul>
-<p>Different ones dominate at different horizons.</p>
-<aside class="notes">
-<p>Every bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="how-the-three-trade-off-with-time" class="slide level2 smaller">
-<h2>How the three trade off with time</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<img data-src="images/ipcc_ar6_faq4_1_temp.png" class="quarto-figure quarto-figure-center" height="320">
-<div style="font-size:0.8em; line-height:1.2;">
-Individual model runs under a low and a high scenario. For the next ~20 years the wiggles — <b>internal variability</b> — swamp the difference between scenarios.
-</div>
-</div><div class="column" style="width:50%;">
-<img data-src="images/hawkins_fracvar_global_T.png" class="quarto-figure quarto-figure-center" height="320">
-<div style="font-size:0.8em; line-height:1.2;">
-Share of the uncertainty in <b>global, annual-mean, 10-year-averaged</b> temperature: <span style="color:#f28c00"><b>internal variability</b></span> dominates early, <span style="color:#1f1fff"><b>model uncertainty</b></span> mid-century, <span style="color:#0a7a0a"><b>scenario</b></span> by 2100. <em>That smoothing is why orange fades so fast — ask about one summer in one city and it stays orange much longer.</em>
-</div>
-</div></div>
-<div style="font-size:0.35em; color:#888;">
-Left: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins &amp; Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.
-</div>
-<aside class="notes">
-<p>Map the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- TOPIC BLOCK: "Earth is a bucket" + bare-rock 255K derivation + 33K cliffhanger.
-     Currently played in: week 2, right after Lab 0d + the uncertainty block. -->
-</section></section>
-<section>
-<section id="now-for-real" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>4 · Now for real</h1>
-<p><em>Earth is a bucket.</em></p>
-</section>
-<section id="the-mapping" class="slide level2">
-<h2>The mapping</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>bucket</th>
-<th>Earth</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>tap (inflow <span class="math inline">\(F\)</span>)</td>
-<td><strong>sunlight</strong></td>
-</tr>
-<tr class="even">
-<td>drain</td>
-<td><strong>infrared radiation to space</strong></td>
-</tr>
-<tr class="odd">
-<td>water level <span class="math inline">\(h\)</span></td>
-<td><strong>temperature <span class="math inline">\(T\)</span></strong></td>
-</tr>
-<tr class="even">
-<td>drain law <span class="math inline">\(Q = kh\)</span></td>
-<td><span class="math inline">\(\sigma T^4\)</span> <em>(Stefan–Boltzmann)</em></td>
-</tr>
-<tr class="odd">
-<td>fuller → drains harder</td>
-<td>warmer → radiates harder <em>(the stabilizing feedback)</em></td>
-</tr>
-<tr class="even">
-<td>level lags the tap</td>
-<td>warming lags emissions <em>(soon: the ocean sets the clock)</em></td>
-</tr>
-</tbody>
-</table>
-<aside class="notes">
-<p>The payoff slide of the day — the bucket you just built wasn’t an analogy, it was the actual mathematical object of this course. Ask them to fill the right column before revealing it.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-first-calculation-live-on-the-board" class="slide level2">
-<h2>The first calculation <em>(live, on the board)</em></h2>
-<p>Energy in: sunlight on a disk — <span class="math inline">\(\pi R^2 S_0(1-\alpha)\)</span>. Energy out: infrared from a sphere — <span class="math inline">\(4\pi R^2 \sigma T^4\)</span>.</p>
-<p><span class="math display">\[T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4} \approx \mathbf{255\ K} = -18\,°\mathrm{C}\;\;(?!)\]</span></p>
-<p><em>with <span class="math inline">\(S_0 = 1361\ \mathrm{W\,m^{-2}}\)</span>, <span class="math inline">\(\alpha \approx 0.30\)</span>, <span class="math inline">\(\sigma = 5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}\)</span></em></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>formula</th>
-<th>actual</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mars</td>
-<td>~210 K</td>
-<td>~218 K ✓</td>
-</tr>
-<tr class="even">
-<td><strong>Earth</strong></td>
-<td><strong>255 K</strong></td>
-<td><strong>288 K — off by 33 K</strong></td>
-</tr>
-<tr class="odd">
-<td>Venus</td>
-<td>~230 K</td>
-<td><strong>735 K — off by 500 K!</strong></td>
-</tr>
-</tbody>
-</table>
-<aside class="notes">
-<p>Board derivation, slowly — ask “why πR² in but 4πR² out?” before answering; sets the math culture. This is the bucket’s equilibrium step (set the budget to zero) for the planet. Venus kills “it’s distance from the Sun.”</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="k-the-most-productive-wrong-answer-in-science" class="slide level2">
-<h2>33 K — the most productive wrong answer in science</h2>
-<p>That gap <strong>is the greenhouse effect</strong>. Closing it:</p>
-<ul>
-<li><strong>Next:</strong> <em>why</em> — the layer model, then the picture professionals use</li>
-<li><strong>Then:</strong> <em>when</em> — the model ticks in time; the ocean sets the clock</li>
-<li><strong>Later:</strong> <em>how much</em> — feedbacks decide whether 3.7 W/m² means 2 °C or 5 °C</li>
-</ul>
-<aside class="notes">
-<p>Honest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. If time remains, go straight into “why”.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section id="if-we-get-there-closing-the-33-k-gap" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>If we get there · Closing the 33 K gap</h1>
 <!-- TOPIC BLOCK: selective absorption Currently played in: week 2. -->
 </section>
-
 <section>
 <section id="step-1-why-the-atmosphere-intervenes" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>Step 1: Why the atmosphere intervenes</h1>
@@ -691,6 +393,9 @@ Left: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins &amp; Sutton (2009), updated f
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="break" class="slide level2 center" data-background-color="#2c2c2c">
+<h2>Break</h2>
 <!-- TOPIC BLOCK: the emission-height picture Currently played in: week 2. The single most important conceptual model of the course's first act. -->
 </section></section>
 <section>
@@ -943,15 +648,39 @@ Left: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins &amp; Sutton (2009), updated f
           display:block!important;
       }</style></aside>
 </section>
-<section id="before-you-leave" class="slide level2">
-<h2>Before you leave</h2>
+<section id="homework-1-is-out-due-thu-oct-1" class="slide level2">
+<h2>Homework 1 is out <em>(due Thu Oct 1)</em></h2>
+<ol type="1">
+<li><strong>N panes of glass</strong> — earn the <span class="math inline">\((N+1)^{1/4}\)</span> formula, and why real CO₂ ≠ adding a pane</li>
+<li><strong>Response timescales</strong> — how fast does a planet warm? <em>(sets up next week)</em></li>
+<li><strong>The faint young Sun</strong> — a mini-investigation</li>
+<li><strong>First contact with real data</strong> — your model vs.&nbsp;observed temperatures &amp; one CMIP6 run</li>
+<li><strong>Communication cell</strong> — 150 words for a policymaker</li>
+</ol>
+<p>Submit: notebook in your repo → link on Courseworks. One free late HW per semester — don’t spend it in week 4.</p>
+<aside class="notes">
+<p>5-min tour, don’t solve anything. Emphasize problem 4’s point: every HW ends by holding the toy up against the real world. Office hours + TA sessions for help.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="next-thursday-time-enters-the-model" class="slide level2">
+<h2>Next Thursday: time enters the model</h2>
 <ul>
-<li><strong>Lab 0d</strong> → saved into your course repo; <strong>repo link on Courseworks</strong> if you haven’t posted it yet</li>
-<li>GitHub still fighting you? Follow <strong><a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/github_setup.html">GitHub on the LEAP hub</a></strong> or bring it to office hours — it has to work before the first homework</li>
-<li><strong>Next week:</strong> we pick up wherever we stop today — closing the 33 K gap</li>
+<li>The ocean sets the clock: why warming <em>lags</em> emissions</li>
+<li>Your first numerical integration — and your first numerical <strong>explosion</strong> (on purpose)</li>
+<li><strong>Lab 1, in class</strong> → bring a working laptop, and <strong>finish Lab 0 before Thursday</strong></li>
 </ul>
 <aside class="notes">
-<p>End on the GitHub reminder — TAs chase stragglers from the Courseworks submission list.</p>
+<p>End on the Lab 0 reminder — anyone without hub+GitHub working by next week starts Lab 1 behind. TAs will chase stragglers from the Courseworks submission list.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

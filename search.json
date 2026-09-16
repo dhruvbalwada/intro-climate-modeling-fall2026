@@ -4,203 +4,175 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nReading\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\nG&R Ch 1 (optional)\nLab 0\n\n\n2\nSep 17\nA bucket: budgets and time-stepping · what is uncertainty · the Earth as a bucket (255 K)\nslides · labs\n\nLab 0d\n\n\n3\nSep 24\nTBD\n\n\n\n\n\n4\nOct 1\nTBD\n\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
+    "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nReading\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\nG&R Ch 1 (optional)\nLab 0\n\n\n2\nSep 17\nTBD\n\n\n\n\n\n3\nSep 24\nTBD\n\n\n\n\n\n4\nOct 1\nTBD\n\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
   },
   {
-    "objectID": "slides/week02.html#last-week-this-week",
-    "href": "slides/week02.html#last-week-this-week",
-    "title": "From a bucket to a planet",
-    "section": "Last week, this week",
-    "text": "Last week, this week\n\nLast week: hub + GitHub, a Python warm-up, the climate of NYC — one thermometer, ERA5, eight CMIP6 models\nToday:\n\nLab 0d — a bucket: budgets, equilibrium, stepping forward in time\nWhat is uncertainty? — three reasons a forecast can be wrong\nThe Earth is a bucket — the first climate calculation\nIf we get there: why is the surface warmer than the planet?\n\n\n\nHands: who has a working hub login? Who managed to push to GitHub? Then the GitHub slide — don’t debug on the projector; TAs circulate during the lab."
+    "objectID": "slides/week02.html#where-we-left-off",
+    "href": "slides/week02.html#where-we-left-off",
+    "title": "Energy Balance Modeling 1",
+    "section": "Where we left off",
+    "text": "Where we left off\n\\[T_e = \\left[\\frac{S_0(1-\\alpha)}{4\\sigma}\\right]^{1/4} = 255\\ \\mathrm{K} \\qquad \\text{but the surface is } 288\\ \\mathrm{K}\\]\n\nThe 255 K is real — satellites measure Earth radiating to space at exactly this temperature\nSo the question isn’t “why is our formula wrong” — it’s “why is the surface warmer than the planet’s radiation to space?”\n\n\n5 min. Gently cold-call: “someone reconstruct last week’s logic for us?” A year post-GR5001 + one week post-lecture — expect partial recall, rebuild it fast. Check-in: Lab 0 status by show of hands; due before next class!"
   },
   {
-    "objectID": "slides/week02.html#github-a-simpler-way-to-log-in",
-    "href": "slides/week02.html#github-a-simpler-way-to-log-in",
-    "title": "From a bucket to a planet",
-    "section": "GitHub: a simpler way to log in",
-    "text": "GitHub: a simpler way to log in\nLast week gh-scoped-creds tripped many of you (the “select repositories” step, and the 8-hour expiry). New one-time setup — a personal access token:\n\nOn GitHub: profile photo → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (classic). Tick repo, expiry Dec 31, 2026, copy the token.\nIn a hub terminal:\ngit config --global --unset-all credential.helper\ngit config --global credential.helper store\nNext git push: username = your GitHub username, password = paste the token (nothing appears as you paste). It is saved; you won’t be asked again.\n\nFull instructions + common errors: GitHub on the LEAP hub\n\nThe page also keeps gh-scoped-creds as an alternative, with the missing step spelled out (adding the repo to the app’s list at github.com/settings/installations). Repo link on Courseworks remains the submission."
-  },
-  {
-    "objectID": "slides/week02.html#the-plan",
-    "href": "slides/week02.html#the-plan",
-    "title": "From a bucket to a planet",
-    "section": "The plan",
-    "text": "The plan\n\nA budget: \\(A\\,\\dfrac{dh}{dt} = F - Q_\\mathrm{out}\\)\nTwo drain laws from two dominant balances: Torricelli \\(Q \\propto \\sqrt{h}\\) · Poiseuille \\(Q \\propto h\\) — we adopt the linear one, \\(Q = kh\\)\nEquilibrium: \\(h^* = F/k\\) — the level the bucket wants\nStepping in time: Euler, \\(h_{n+1} = h_n + \\Delta t\\,(F - k h_n)/A\\)\nPlay: vary \\(h_0\\), \\(k\\), \\(F\\) — keep the plots, they come back in ten minutes\n\n\nThe notebook drives; the board carries the derivations (they are written out in Lab 0d for reading later). Step 5 is what the uncertainty slides point back at."
-  },
-  {
-    "objectID": "slides/week02.html#three-reasons-a-forecast-model-can-be-wrong",
-    "href": "slides/week02.html#three-reasons-a-forecast-model-can-be-wrong",
-    "title": "From a bucket to a planet",
-    "section": "Three reasons a forecast model can be wrong",
-    "text": "Three reasons a forecast model can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: we don’t know exact laws or our models can’t be exactly solved)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons.\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
-  },
-  {
-    "objectID": "slides/week02.html#how-the-three-trade-off-with-time",
-    "href": "slides/week02.html#how-the-three-trade-off-with-time",
-    "title": "From a bucket to a planet",
-    "section": "How the three trade off with time",
-    "text": "How the three trade off with time\n\n\n\n\nIndividual model runs under a low and a high scenario. For the next ~20 years the wiggles — internal variability — swamp the difference between scenarios.\n\n\n\n\nShare of the uncertainty in global, annual-mean, 10-year-averaged temperature: internal variability dominates early, model uncertainty mid-century, scenario by 2100. That smoothing is why orange fades so fast — ask about one summer in one city and it stays orange much longer.\n\n\n\nLeft: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins & Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.\n\n\nMap the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
-  },
-  {
-    "objectID": "slides/week02.html#the-mapping",
-    "href": "slides/week02.html#the-mapping",
-    "title": "From a bucket to a planet",
-    "section": "The mapping",
-    "text": "The mapping\n\n\n\n\n\n\n\nbucket\nEarth\n\n\n\n\ntap (inflow \\(F\\))\nsunlight\n\n\ndrain\ninfrared radiation to space\n\n\nwater level \\(h\\)\ntemperature \\(T\\)\n\n\ndrain law \\(Q = kh\\)\n\\(\\sigma T^4\\) (Stefan–Boltzmann)\n\n\nfuller → drains harder\nwarmer → radiates harder (the stabilizing feedback)\n\n\nlevel lags the tap\nwarming lags emissions (soon: the ocean sets the clock)\n\n\n\n\nThe payoff slide of the day — the bucket you just built wasn’t an analogy, it was the actual mathematical object of this course. Ask them to fill the right column before revealing it."
-  },
-  {
-    "objectID": "slides/week02.html#the-first-calculation-live-on-the-board",
-    "href": "slides/week02.html#the-first-calculation-live-on-the-board",
-    "title": "From a bucket to a planet",
-    "section": "The first calculation (live, on the board)",
-    "text": "The first calculation (live, on the board)\nEnergy in: sunlight on a disk — \\(\\pi R^2 S_0(1-\\alpha)\\). Energy out: infrared from a sphere — \\(4\\pi R^2 \\sigma T^4\\).\n\\[T_e = \\left[\\frac{S_0(1-\\alpha)}{4\\sigma}\\right]^{1/4} \\approx \\mathbf{255\\ K} = -18\\,°\\mathrm{C}\\;\\;(?!)\\]\nwith \\(S_0 = 1361\\ \\mathrm{W\\,m^{-2}}\\), \\(\\alpha \\approx 0.30\\), \\(\\sigma = 5.67\\times10^{-8}\\ \\mathrm{W\\,m^{-2}\\,K^{-4}}\\)\n\n\n\n\nformula\nactual\n\n\n\n\nMars\n~210 K\n~218 K ✓\n\n\nEarth\n255 K\n288 K — off by 33 K\n\n\nVenus\n~230 K\n735 K — off by 500 K!\n\n\n\n\nBoard derivation, slowly — ask “why πR² in but 4πR² out?” before answering; sets the math culture. This is the bucket’s equilibrium step (set the budget to zero) for the planet. Venus kills “it’s distance from the Sun.”"
-  },
-  {
-    "objectID": "slides/week02.html#k-the-most-productive-wrong-answer-in-science",
-    "href": "slides/week02.html#k-the-most-productive-wrong-answer-in-science",
-    "title": "From a bucket to a planet",
-    "section": "33 K — the most productive wrong answer in science",
-    "text": "33 K — the most productive wrong answer in science\nThat gap is the greenhouse effect. Closing it:\n\nNext: why — the layer model, then the picture professionals use\nThen: when — the model ticks in time; the ocean sets the clock\nLater: how much — feedbacks decide whether 3.7 W/m² means 2 °C or 5 °C\n\n\nHonest note: 255 K is REAL — satellites measure Earth radiating at exactly this temperature. The puzzle is precise. If time remains, go straight into “why”."
+    "objectID": "slides/week02.html#today-close-the-gap-in-four-steps",
+    "href": "slides/week02.html#today-close-the-gap-in-four-steps",
+    "title": "Energy Balance Modeling 1",
+    "section": "Today: close the gap in four steps",
+    "text": "Today: close the gap in four steps\n\nWhy the atmosphere intervenes (selective absorption)\nThe simplest greenhouse (one pane of glass — on the board)\nThe picture professionals use (emission height)\nThe 125-year-old objection — and how you will break it\n\n\nPromise the payoff up front: “by 12:40 you can defeat an argument that fooled physicists for 40 years.”"
   },
   {
     "objectID": "slides/week02.html#two-streams-of-light-that-barely-touch",
     "href": "slides/week02.html#two-streams-of-light-that-barely-touch",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Two streams of light that barely touch",
     "text": "Two streams of light that barely touch\n\n\nSun (5800 K): peaks near 0.5 µm — shortwave\nEarth (255–288 K): peaks near 10–15 µm — longwave\nAlmost no overlap → energy in and energy out are separate bookkeeping\n\n\nThis spectral separation is a gift — it’s why “solar in, infrared out” is a clean split and why the whole subject is tractable. GR5001 callback: they saw the Trenberth-style budget diagram; this is the physics under its two-column layout."
   },
   {
     "objectID": "slides/week02.html#who-absorbs-what",
     "href": "slides/week02.html#who-absorbs-what",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Who absorbs what",
     "text": "Who absorbs what\n\n\nN₂ + O₂ = ~99% of the air — and nearly transparent in the infrared\nThe absorbers are the vibrating, polar trace molecules: H₂O, CO₂, CH₄, O₃, N₂O\nNearly transparent at 0.5 µm, strongly absorbing at 10–15 µm\n\n\nOne sentence of molecular physics is enough: symmetric diatomic molecules have no dipole moment to grab infrared photons; triatomic benders and stretchers do. Don’t go deeper unless asked."
   },
   {
     "objectID": "slides/week02.html#the-greenhouse-effect-is-a-trace-gas-effect",
     "href": "slides/week02.html#the-greenhouse-effect-is-a-trace-gas-effect",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "The greenhouse effect is a trace-gas effect",
     "text": "The greenhouse effect is a trace-gas effect\n\n“CO₂ is only 0.04% of the atmosphere!”\n\n\nCorrect — and that 0.04% (plus water vapor) is doing all of the work. Remove every trace gas and keep the 99%: Earth freezes.\n\nReframe the talking point as the actual story. Plant (don’t fully develop) the week-9 distinction: H₂O is the biggest absorber, but it condenses — days of residence, slaved to temperature — so it’s a feedback, an amplifier. CO₂ is the forcing, the control knob. Lacis et al. 2010 ran it: remove CO₂, the water vapor rains out, Earth ices over. Full treatment Nov 5."
   },
   {
     "objectID": "slides/week02.html#the-simplest-greenhouse-setup",
     "href": "slides/week02.html#the-simplest-greenhouse-setup",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "The simplest greenhouse: setup",
     "text": "The simplest greenhouse: setup\nOne atmospheric layer that is:\n\ntransparent to shortwave (sunlight passes through)\nperfectly absorbing in longwave (nothing gets past it)\nradiating \\(\\sigma T_a^4\\) both up and down\n\n\n\nBOARD, not slides, for the whole derivation. Two budgets, two unknowns — ask the room to supply each term before writing it. This is the second board derivation of the course (after week 1’s T_e); same culture: they follow, not admire."
   },
   {
     "objectID": "slides/week02.html#the-derivation-record",
     "href": "slides/week02.html#the-derivation-record",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "The derivation (record)",
     "text": "The derivation (record)\nTop of atmosphere: what leaves = what enters \\[\\sigma T_a^4 = \\tfrac{S_0}{4}(1-\\alpha) \\;\\Rightarrow\\; T_a = T_e = 255\\ \\mathrm{K}\\]\nSurface: heated by Sun and by the sky \\[\\sigma T_s^4 = \\tfrac{S_0}{4}(1-\\alpha) + \\sigma T_a^4 \\;\\Rightarrow\\; T_s = 2^{1/4}\\,T_e \\approx 303\\ \\mathrm{K}\\]\n\nPause on what fell out: the ATMOSPHERE sits at the emission temperature; the surface is warmer than both. The layer doesn’t “trap” heat — it re-radiates downward. Kill the blanket metaphor here (blankets suppress convection; Wood’s 1909 rock-salt greenhouse experiment if asked)."
   },
   {
     "objectID": "slides/week02.html#three-surprises-from-one-tiny-model",
     "href": "slides/week02.html#three-surprises-from-one-tiny-model",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Three surprises from one tiny model",
     "text": "Three surprises from one tiny model\n\nThe atmosphere radiates at 255 K — the surface hides beneath it, warmer\nThe surface receives more energy from the sky than from the Sun (~340 vs ~168 W/m² in the real budget)\nIt overshoots: 303 K predicted vs 288 K observed\n\n\n#2 is the intuition-breaker — let it sit. It’s in the observed surface budget (GR5001’s diagram!): downwelling longwave beats absorbed solar at the ground. #3 is the productive failure that drives the next slide."
   },
   {
     "objectID": "slides/week02.html#why-the-overshoot-the-best-kind-of-wrong",
     "href": "slides/week02.html#why-the-overshoot-the-best-kind-of-wrong",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Why the overshoot? The best kind of wrong",
     "text": "Why the overshoot? The best kind of wrong\n\nThe real atmosphere isn’t a perfect absorber (windows, wings)\nDeeper: convection short-circuits radiation — ~100 W/m² leaves the surface as evaporation + thermals, not photons\nPure radiative equilibrium would make the lower atmosphere absurdly steep and unstable → convection overturns it and pins the lapse rate ≈ 6.5 K/km\n\n\nAutomating exactly this repair = Manabe & Wetherald 1967 (week 1’s “most influential paper”).\n\nThis is the week’s brief vertical-structure aside — the ONLY dose of RCE this week (thread returns Nov 5). GR5001 callback: their week 3 was convection; “you know why air rises — here’s what that does to the greenhouse.” M&W Fig 16 from last week can reappear for one beat."
   },
   {
     "objectID": "slides/week02.html#n-panes-of-glass",
     "href": "slides/week02.html#n-panes-of-glass",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "N panes of glass",
     "text": "N panes of glass\n\\[T_s = (N+1)^{1/4}\\, T_e\\]\n\n\n\nN\n0\n1\n2\n3\n…\n\n\n\n\n\\(T_s\\) (K)\n255\n303\n336\n361\n…\n\n\n\nMore absorber → warmer surface, with diminishing returns — the first hint of a logarithm.\nVenus: ~90 bar of CO₂ ≈ many panes → 735 K.\n\nDon’t derive N-layer on the board (HW1 problem 1 does it — say so explicitly: “your first homework problem is to earn this formula”). Venus closes the loop on week 1’s three-planet table. Runaway-greenhouse teaser: one sentence, week 9."
   },
   {
+    "objectID": "slides/week02.html#break",
+    "href": "slides/week02.html#break",
+    "title": "Energy Balance Modeling 1",
+    "section": "Break",
+    "text": "Break"
+  },
+  {
     "objectID": "slides/week02.html#where-does-earths-radiation-to-space-really-come-from",
     "href": "slides/week02.html#where-does-earths-radiation-to-space-really-come-from",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Where does Earth’s radiation to space really come from?",
     "text": "Where does Earth’s radiation to space really come from?\nIn the CO₂/H₂O bands the atmosphere is optically thick: surface photons are absorbed and re-emitted many times before escaping.\nEffectively, space “sees” radiation not from the ground but from an effective emission height:\n\\[z_e \\approx 5\\text{–}6\\ \\mathrm{km}, \\quad \\text{where } T \\approx 255\\ \\mathrm{K}\\]\n\n\nConnect back: the 255 K from week 1 is REAL — satellites measure it. This slide says where it lives: ~5.5 km up. The layer model was a cartoon of this."
   },
   {
     "objectID": "slides/week02.html#add-co₂-the-radiating-surface-rises",
     "href": "slides/week02.html#add-co₂-the-radiating-surface-rises",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Add CO₂ → the radiating surface rises",
     "text": "Add CO₂ → the radiating surface rises\n\nMore CO₂ → atmosphere more opaque in the IR → z_e rises\nHigher = colder (lapse rate!) → planet radiates less to space\nEnergy imbalance → the whole column warms…\n…until the new emission height is back at 255 K\nThe surface, ~6 km below along the lapse rate, ends up warmer\n\n\\[\\Delta T_s \\approx \\Gamma \\cdot \\Delta z_e \\qquad (\\sim150\\ \\mathrm{m\\ rise} \\approx 1\\ \\mathrm{K})\\]\n\nWalk the 5 steps slowly, twice if needed — this is the mental model to install for the whole course. Note what restores balance: not the surface “trapping” anything, but the planet’s radiating level sliding up a fixed temperature ladder."
   },
   {
     "objectID": "slides/week02.html#one-sentence-to-keep",
     "href": "slides/week02.html#one-sentence-to-keep",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "One sentence to keep",
     "text": "One sentence to keep\n\nGlobal warming = raising the height from which Earth radiates to space — with the surface dragged warmer along the lapse rate.\n\n\nSay it, let them write it, move on. This sentence defeats arguments the layer model can’t (next block)."
   },
   {
     "objectID": "slides/week02.html#this-picture-makes-free-predictions",
     "href": "slides/week02.html#this-picture-makes-free-predictions",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "This picture makes free predictions",
     "text": "This picture makes free predictions\n\nThe stratosphere should cool as the surface warms (it sits above the emission level) — observed ✓, and a fingerprint pure solar warming would not produce\nNo lapse rate → no warming from raising \\(z_e\\) → the lapse rate itself matters (week 9: lapse-rate feedback)\n\n\nStratospheric cooling: predicted by M&W 1967 (they saw it in Fig 16 last week), confirmed decades later by satellites/radiosondes. This is the honest counterweight to “models are tuned” — fingerprint predictions made before the observations existed."
   },
   {
     "objectID": "slides/week02.html#ångström-vs-arrhenius",
     "href": "slides/week02.html#ångström-vs-arrhenius",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "1900: Ångström vs Arrhenius",
     "text": "1900: Ångström vs Arrhenius\n\n“The CO₂ absorption band is already saturated — the center of the 15 µm band absorbs everything within meters. Adding more CO₂ can’t do anything.” — Knut Ångström’s lab assistant, 1900 (paraphrased)\n\nThis argument killed interest in Arrhenius’s work for decades. It still circulates today.\nBy the end of this hour, you’ll be able to break it. (That’s literally the next activity.)\n\nFrame it with respect — it’s a GOOD objection, and the physics community bought it for ~40 years. Don’t reveal the answer yet."
   },
   {
     "objectID": "slides/week02.html#look-at-the-actual-spectrum",
     "href": "slides/week02.html#look-at-the-actual-spectrum",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Look at the actual spectrum",
     "text": "Look at the actual spectrum\n\n\nBand center: opaque at 280 ppm, opaque at 560 ppm — Ångström was right about the center\nBand wings: visibly deepening — this is where doubling acts\n\n\nLIVE DEMO if wifi cooperates (U. Chicago MODTRAN): set 280 ppm, note outgoing flux; double to 560; the flux drops ~3 W/m²; zoom the band wings. Students see the forcing in measured-quantity space. Screenshots on this slide are the wifi-failure fallback — rehearse the demo once beforehand."
   },
   {
     "objectID": "slides/week02.html#why-the-response-is-a-logarithm-not-zero",
     "href": "slides/week02.html#why-the-response-is-a-logarithm-not-zero",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Why the response is a logarithm (not zero)",
     "text": "Why the response is a logarithm (not zero)\nEach doubling widens the effective opaque interval by roughly the same spectral increment:\n\\[\\Delta F \\approx 5.35 \\cdot \\ln\\!\\left(\\frac{C}{C_0}\\right)\\ \\mathrm{W\\,m^{-2}} \\qquad \\approx 3.7\\ \\mathrm{W\\,m^{-2}\\ per\\ doubling}\\]\n\nSaturation is why it’s a log — not why it’s zero\nThis is why climate speaks in doublings, and why ECS is defined per doubling\n\n\n280→560 ppm and 560→1120 ppm have the SAME forcing. Also note: this one-line formula is how CMIP-model forcings are quoted and compared — the toy is the ruler (bridge beat returns at the end)."
   },
   {
     "objectID": "slides/week02.html#your-turn-break-ångström-in-pairs",
     "href": "slides/week02.html#your-turn-break-ångström-in-pairs",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Your turn: break Ångström (in pairs)",
     "text": "Your turn: break Ångström (in pairs)\nHere is the argument, verbatim:\n\n“The CO₂ band is already saturated — the atmosphere absorbs all the radiation in that band within a few hundred meters. More CO₂ cannot change the energy balance.”\n\nWith your partner, write the strongest 3–4 sentence rebuttal you can. Use anything from today. Names on the slip; hand it in.\n\nCirculate with the TAs. Most pairs will find the wings; the deeper rebuttal (emission height rises regardless — a saturated band just means z_e is HIGH, not that it can’t go higher) is what the debrief adds. Slips → participation credit."
   },
   {
     "objectID": "slides/week02.html#debrief-three-independent-ways-it-fails",
     "href": "slides/week02.html#debrief-three-independent-ways-it-fails",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Debrief: three independent ways it fails",
     "text": "Debrief: three independent ways it fails\n\nThe wings aren’t saturated — and that’s where doubling acts (you saw it in the spectrum)\nThe emission height rises regardless — saturation means \\(z_e\\) is high, not that it’s stuck; higher is colder is less radiation\nThin, cold upper layers always radiate less — there is no altitude where “more absorber” stops mattering\n\n\nArgument 2 is the professional one — flag that pairs who found it were reasoning at the research level. Historical coda, 1 sentence: the 1940s–50s spectroscopy (partly military-funded, Plass et al.) resolved the band structure and revived CO₂ science."
   },
   {
     "objectID": "slides/week02.html#scale-up-radiation-in-a-real-climate-model",
     "href": "slides/week02.html#scale-up-radiation-in-a-real-climate-model",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Scale-up: radiation in a real climate model",
     "text": "Scale-up: radiation in a real climate model\n\nLine-by-line absorption: physically exact, computationally hopeless at runtime\nModels use band schemes (“correlated-k”), validated against line-by-line codes\nRadiation is computed in every column, ~100 levels, every 1–3 model hours\n\n\nYour layer model and a GCM’s radiation code differ in resolution, not in kind.\n\nThe point of the scale-up beat every week: demystify. The radiation module of a CMIP model is the N-layer model with real spectroscopy and clever bookkeeping."
   },
   {
     "objectID": "slides/week02.html#bridge-the-toy-is-the-ruler",
     "href": "slides/week02.html#bridge-the-toy-is-the-ruler",
-    "title": "From a bucket to a planet",
+    "title": "Energy Balance Modeling 1",
     "section": "Bridge: the toy is the ruler",
     "text": "Bridge: the toy is the ruler\n\nBackward: Manabe & Wetherald 1967 = today’s chain done right the first time — real spectra + convection-pinned lapse rate → ECS ≈ 2.3 K, within today’s assessed range\nForward: when CMIP models are compared, their CO₂ forcing is quoted through the same \\(5.35\\ln(C/C_0)\\) — the formula you now own\n\n\nClose the loop explicitly — this is the weekly bridge sentence: “the simple model isn’t a stepping stone we discard; it’s the instrument the community measures the big models with.” Next week’s bridge is even stronger (their lab EBM is literally fit to every CMIP model)."
   },
   {
-    "objectID": "slides/week02.html#before-you-leave",
-    "href": "slides/week02.html#before-you-leave",
-    "title": "From a bucket to a planet",
-    "section": "Before you leave",
-    "text": "Before you leave\n\nLab 0d → saved into your course repo; repo link on Courseworks if you haven’t posted it yet\nGitHub still fighting you? Follow GitHub on the LEAP hub or bring it to office hours — it has to work before the first homework\nNext week: we pick up wherever we stop today — closing the 33 K gap\n\n\nEnd on the GitHub reminder — TAs chase stragglers from the Courseworks submission list."
+    "objectID": "slides/week02.html#homework-1-is-out-due-thu-oct-1",
+    "href": "slides/week02.html#homework-1-is-out-due-thu-oct-1",
+    "title": "Energy Balance Modeling 1",
+    "section": "Homework 1 is out (due Thu Oct 1)",
+    "text": "Homework 1 is out (due Thu Oct 1)\n\nN panes of glass — earn the \\((N+1)^{1/4}\\) formula, and why real CO₂ ≠ adding a pane\nResponse timescales — how fast does a planet warm? (sets up next week)\nThe faint young Sun — a mini-investigation\nFirst contact with real data — your model vs. observed temperatures & one CMIP6 run\nCommunication cell — 150 words for a policymaker\n\nSubmit: notebook in your repo → link on Courseworks. One free late HW per semester — don’t spend it in week 4.\n\n5-min tour, don’t solve anything. Emphasize problem 4’s point: every HW ends by holding the toy up against the real world. Office hours + TA sessions for help."
+  },
+  {
+    "objectID": "slides/week02.html#next-thursday-time-enters-the-model",
+    "href": "slides/week02.html#next-thursday-time-enters-the-model",
+    "title": "Energy Balance Modeling 1",
+    "section": "Next Thursday: time enters the model",
+    "text": "Next Thursday: time enters the model\n\nThe ocean sets the clock: why warming lags emissions\nYour first numerical integration — and your first numerical explosion (on purpose)\nLab 1, in class → bring a working laptop, and finish Lab 0 before Thursday\n\n\nEnd on the Lab 0 reminder — anyone without hub+GitHub working by next week starts Lab 1 behind. TAs will chase stragglers from the Courseworks submission list."
   },
   {
     "objectID": "index.html",
@@ -343,116 +315,39 @@
     "text": "That’s enough to start\nYou now have everything needed for the rest of today: arrays, a plot, a table read from a URL, and a loop.\nTwo habits worth keeping all semester:\n\nLabel your axes, with units.\nWhen something breaks, read the last line of the error first — it usually says exactly what’s wrong. AI assistants are also good at explaining errors; use them, and make sure you understand the fix.\n\nWant to go deeper? A fuller treatment of Python for earth and environmental data — numpy, pandas, xarray, plotting, working with real datasets — lives in the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
   },
   {
-    "objectID": "labs/github_setup.html",
-    "href": "labs/github_setup.html",
-    "title": "GitHub on the LEAP hub",
+    "objectID": "labs/lab0a.html",
+    "href": "labs/lab0a.html",
+    "title": "Lab 0a — Getting set up",
     "section": "",
-    "text": "Last week many of you got stuck pushing to GitHub from the hub. The gh-scoped-creds route has two traps: your repo must be added to the app’s list of repositories, and the login expires every 8 hours. Here is a simpler route that you set up once and then forget about.\nEverything here is done inside a hub terminal: on leap.2i2c.cloud, File → New → Terminal."
+    "text": "By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks."
   },
   {
-    "objectID": "labs/github_setup.html#tell-git-who-you-are-once",
-    "href": "labs/github_setup.html#tell-git-who-you-are-once",
-    "title": "GitHub on the LEAP hub",
-    "section": "1. Tell git who you are (once)",
-    "text": "1. Tell git who you are (once)\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your-uni@columbia.edu\"\nWithout this, git commit stops with “Please tell me who you are”."
+    "objectID": "labs/lab0a.html#part-a-accounts",
+    "href": "labs/lab0a.html#part-a-accounts",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part A — Accounts",
+    "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope you did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
   },
   {
-    "objectID": "labs/github_setup.html#make-a-personal-access-token-once",
-    "href": "labs/github_setup.html#make-a-personal-access-token-once",
-    "title": "GitHub on the LEAP hub",
-    "section": "2. Make a personal access token (once)",
-    "text": "2. Make a personal access token (once)\nA token is a long password that GitHub gives you for use from the command line. Treat it like a password: never paste it into a notebook, a file in your repo, or a chat.\n\nOn github.com, click your profile photo (top right) → Settings.\nIn the left sidebar, scroll to the bottom → Developer settings.\nPersonal access tokens → Tokens (classic) → Generate new token → Generate new token (classic). (Not the “fine-grained” kind — it works too, but has more knobs to get wrong.)\nNote: LEAP hub. Expiration: Custom → 2026-12-31. Scopes: tick the top-level repo box. Click Generate token.\nCopy the token now — GitHub shows it only once. Keep it somewhere private (a password manager, or a note on your laptop) until step 3 below is done."
+    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub",
+    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part B — Orient to Jupyterhub",
+    "text": "Part B — Orient to Jupyterhub\n\nWhat is Jupyterhub, and where things are.\nAdding notebooks to your folders.\n\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\n\nRunning through code in a notebook (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors."
   },
   {
-    "objectID": "labs/github_setup.html#save-it-on-the-hub-once",
-    "href": "labs/github_setup.html#save-it-on-the-hub-once",
-    "title": "GitHub on the LEAP hub",
-    "section": "3. Save it on the hub (once)",
-    "text": "3. Save it on the hub (once)\nIn the hub terminal:\ngit config --global --unset-all credential.helper   # clears any leftover gh-scoped-creds setting (harmless if there is none)\ngit config --global credential.helper store\nNow go to your repo and push:\ncd ~/climate-modeling-f26-&lt;your-uni&gt;\ngit push\nYou will be asked for a Username (your GitHub username) and a Password — paste the token, not your GitHub password. Nothing appears on screen while you paste; that is normal. Press Enter.\nThat’s it. The token is stored in your home directory on the hub (~/.git-credentials, readable only by you), and every later git push / git pull uses it without asking.\n\nAlready cloned with gh-scoped-creds last week? Nothing to redo — your clone uses the same https:// URL. Just run the two git config lines above and push."
+    "objectID": "labs/lab0a.html#part-c-create-your-course-repository",
+    "href": "labs/lab0a.html#part-c-create-your-course-repository",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part C — Create your course repository",
+    "text": "Part C — Create your course repository\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add dhruvbalwada, [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nAuthenticating (no passwords, no tokens): the first time you push, run this in the terminal:\ngh-scoped-creds\nIt prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing “Only select repositories” and picking your climate-modeling-f26-&lt;uni&gt; repo. Then git push works.\nCredentials last 8 hours; when they expire just run gh-scoped-creds again. (This is why we use the https:// clone URL above.)"
   },
   {
-    "objectID": "labs/github_setup.html#the-everyday-loop",
-    "href": "labs/github_setup.html#the-everyday-loop",
-    "title": "GitHub on the LEAP hub",
-    "section": "4. The everyday loop",
-    "text": "4. The everyday loop\nAfter you have worked on a notebook inside your repo folder:\ncd ~/climate-modeling-f26-&lt;your-uni&gt;\ngit add .\ngit commit -m \"Lab 0d: bucket model\"\ngit push\nThen check on github.com that the file is there. That repo URL, posted on Courseworks, is your submission.\nPrefer buttons? The hub has a Git panel in the left sidebar (the branching-arrows icon). Open your repo folder in the file browser, then in the Git panel: tick the changed files → write a message → Commit → click the cloud-up Push icon. If it asks for credentials, give your username and the token; after the first success it stops asking."
-  },
-  {
-    "objectID": "labs/github_setup.html#when-it-goes-wrong",
-    "href": "labs/github_setup.html#when-it-goes-wrong",
-    "title": "GitHub on the LEAP hub",
-    "section": "5. When it goes wrong",
-    "text": "5. When it goes wrong\n\n\n\nWhat you see\nWhat it means\nFix\n\n\n\n\nSupport for password authentication was removed\nYou typed your GitHub password\nUse the token as the password\n\n\nAuthentication failed\nWrong username, or a mistyped/expired token\nRun git config --global --unset-all credential.helper, redo step 3; if the token is lost, generate a new one\n\n\nRepository not found (but it exists on github.com)\nTypo in the URL — or, with gh-scoped-creds, your repo isn’t in the app’s list\nCheck git remote -v; for the app, see §6\n\n\nPermission denied (publickey)\nYou cloned with an ssh URL\ngit remote set-url origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git\n\n\nUpdates were rejected because the remote contains work\nThe repo changed on the website (e.g. you uploaded a file there)\ngit pull first, then git push\n\n\nPlease tell me who you are\nName/email not set\nStep 1\n\n\nterminal prompts disabled\nThe Git panel could not ask for a password\nPush from the terminal once (step 3); after that the panel works\n\n\n\nStill stuck? Ask a TA during the lab, or bring it to office hours. Your Lab 0 submission is not late while you are fixing this — but it must work before the first homework."
-  },
-  {
-    "objectID": "labs/github_setup.html#sec-scoped",
-    "href": "labs/github_setup.html#sec-scoped",
-    "title": "GitHub on the LEAP hub",
-    "section": "6. Alternative: gh-scoped-creds",
-    "text": "6. Alternative: gh-scoped-creds\nIf you would rather not keep a token on the hub, gh-scoped-creds also works — with two things to know.\n\nIn a hub terminal run gh-scoped-creds. It prints a link and a code. Open the link, enter the code.\nThe first time, GitHub asks you to install the app on your account. Choose Only select repositories and pick climate-modeling-f26-&lt;your-uni&gt;. This is the step most people missed.\nCreated the repo after installing the app, or skipped step 2? Go to github.com/settings/installations → gh-scoped-creds → Configure → Repository access → Only select repositories → Select repositories → add your repo → Save. Then git push works.\nThe login lasts 8 hours. Next week, run gh-scoped-creds again before pushing.\n\nIf you have both set up, git will use whichever it finds first; to switch cleanly to the token route, run the --unset-all line in step 3."
-  },
-  {
-    "objectID": "labs/github_setup.html#more",
-    "href": "labs/github_setup.html#more",
-    "title": "GitHub on the LEAP hub",
-    "section": "More",
-    "text": "More\nA fuller tour of git and GitHub on the hub — branches, pulling, resolving conflicts — is in the LEAP GitHub tutorial. For this course you only ever need §1–§4 above."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html",
-    "href": "labs/github_tutorial_leap.html",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "",
-    "text": "This is the general LEAP tutorial, kept here for reference. For this course, the short version — with the one-time login setup — is GitHub on the LEAP hub. One change from the original: the option of putting a token inside a clone URL has been removed, because the token would then be saved in plain text inside your repo settings.\nThis tutorial will guide you step-by-step through the basics of using GitHub. There are two methods for performing Git operations:\nYou will learn how to clone a repository to JupyterHub, create your own repository, push and pull changes, and work with branches."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html#step-1-generate-a-personal-access-token",
-    "href": "labs/github_tutorial_leap.html#step-1-generate-a-personal-access-token",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "Step 1: Generate a Personal Access Token",
-    "text": "Step 1: Generate a Personal Access Token\n\nLog in to GitHub.\nClick on your profile picture in the upper-right corner and select Settings.\nNavigate to Developer settings → Personal access tokens → Tokens (classic).\nClick Generate new token.\nSelect the scopes you need (e.g. repo for full repository access).\nCopy the generated token and store it securely."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html#step-2-use-the-token-for-authentication",
-    "href": "labs/github_tutorial_leap.html#step-2-use-the-token-for-authentication",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "Step 2: Use the token for authentication",
-    "text": "Step 2: Use the token for authentication\nWhen prompted for your GitHub credentials:\n\nEnter your GitHub username as usual.\nInstead of your password, paste the Personal Access Token.\n\nTo avoid being asked every time, run git config --global credential.helper store once; the token is saved after the first successful push."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html#using-the-terminal",
-    "href": "labs/github_tutorial_leap.html#using-the-terminal",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "2.1 Using the Terminal",
-    "text": "2.1 Using the Terminal\n\n2.1.1 Clone a repository to JupyterHub\n\nOpen the terminal in JupyterHub (File → New → Terminal).\nGo to the GitHub repository you want to clone, click Code, and copy the HTTPS link.\nClone it:\ngit clone https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git\n\n\n\n2.1.2 Create a repository\n\nStep 1: Log in to GitHub\n\nOpen a web browser and go to GitHub.\nLog in with your GitHub account credentials.\n\n\n\nStep 2: Navigate to the repository creation page\n\nIn the top-right corner of the GitHub page, click the + icon.\nSelect New repository from the dropdown menu.\n\n\n\nStep 3: Set up the repository\n\nChoose a repository name: enter a unique name, e.g. my-new-repo.\nAdd a description (optional).\nSelect repository visibility: Public (anyone can view) or Private (only you and collaborators).\nInitialize the repository (optional): select Add a README file; optionally add a .gitignore template or a license.\n\n\n\nStep 4: Create the repository\nClick the green Create repository button.\n\n\nStep 5: Add code to the repository\n\nCase 1: you do not have an existing local repository\ngit init\ngit remote add origin https://github.com/your-username/my-new-repo.git\ngit add .\ngit commit -m \"Initial commit\"\ngit push -u origin main\nCase 2: you already have a local repository (e.g. cloned from another repository, as in 2.1.1)\n\nCheck the current remote:\ngit remote -v\nRemove the link to the original repository:\ngit remote remove origin\nAdd the new repository as the remote:\ngit remote add origin https://github.com/your-username/New-Repository.git\nVerify the new remote:\ngit remote -v\nEnsure that the output shows the URL of the new repository.\n\n\n\n\n\n2.1.3 Push code to a GitHub repository\n\nStep 1: Ensure you have a Git repository\nNavigate to your project folder in the terminal and check:\ngit status\nIf it is not a repository, initialize one:\ngit init\n\n\nStep 2: Add the remote repository\ngit remote add origin https://github.com/your-username/your-repository.git\ngit remote -v\n\n\nStep 3: Add and commit changes\ngit add .\ngit commit -m \"Your commit message here\"\n\n\nStep 4: Push to GitHub\ngit push -u origin main\n\n\n\n2.1.4 Work with branches\nBranches let you work on different versions of a project simultaneously without interfering with the main codebase. Every Git repository starts with a default branch, typically called main.\ngit branch branch-name          # create a branch\ngit checkout branch-name        # switch to it\ngit checkout -b branch-name     # or: create and switch in one step\nMerging a finished branch into main:\ngit checkout main\ngit merge branch-name\nDeleting a merged branch:\ngit branch -d branch-name\nPushing a branch works like pushing main:\ngit add .\ngit commit -m \"Your commit message here\"\ngit push -u origin branch-name   # first push of this branch\ngit push                         # subsequent pushes\nThe -u option sets origin/branch-name as the upstream branch for future pushes and pulls.\n\n\n2.1.5 Pull\ngit pull fetches and merges changes from the remote repository into your local repository. First check which branch you are on:\ngit branch\nThe active branch is marked with an asterisk (*). Then:\ngit pull origin branch-name\nwhere origin is the remote repository and branch-name is the branch you want to pull from (e.g. main)."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html#using-the-jupyterhub-git-interface",
-    "href": "labs/github_tutorial_leap.html#using-the-jupyterhub-git-interface",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "2.2 Using the JupyterHub Git interface",
-    "text": "2.2 Using the JupyterHub Git interface\n\n2.2.1 Clone a repository\n\nOpen the Git tab in JupyterHub (in the left sidebar).\nClick Clone a Repository.\nPaste the HTTPS link of the repository and confirm. The repository is cloned into your current working directory.\n\n\n\n2.2.2 Create a repository\n\nCreate the repository on GitHub (+ → New repository, name, visibility, Create repository).\nIn JupyterHub, open the Git tab and click Initialize a Repository; use Commit to stage and commit changes and Push to upload them.\n\n\n\n2.2.3 Push changes\n\nIn the Git tab, select the changed files, add a commit message, and click Commit.\nClick Push to upload your commits.\n\n\n\n2.2.4 Pull changes\nClick Pull in the Git tab to fetch and merge changes from the remote repository.\n\n\n2.2.5 Work with branches\n\nCreate a branch: in the Git tab, go to the Branches section, click New Branch, enter a name and confirm.\nSwitch branches: select the branch from the branch dropdown.\n\n\nNote: if you have uncommitted changes, commit or stash them before switching branches to avoid conflicts.\n\n\nNote: the JupyterHub Git interface does not currently support merging or deleting branches. Use the terminal for those."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html#example-1-merge-conflict-during-pull",
-    "href": "labs/github_tutorial_leap.html#example-1-merge-conflict-during-pull",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "Example 1: merge conflict during pull",
-    "text": "Example 1: merge conflict during pull\nTwo developers work on the same file, example.txt, and both change the same line.\n\nInitial file: Hello World\nDeveloper A updates the file to Hello GitHub and pushes.\nDeveloper B, without pulling, updates the same line to Hello Git.\nThe conflict: when Developer B tries to push, Git rejects it:\nerror: failed to push some refs to 'origin/main'\nhint: Updates were rejected because the remote contains work that you do not have locally.\nhint: You may want to first integrate the remote changes (e.g., 'git pull ...') before pushing again.\nAfter git pull, Git marks the conflict in example.txt:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nHello Git\n=======\nHello GitHub\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main\nResolving: Developer B edits the file to keep the desired version, e.g. Hello Git and GitHub.\nFinal steps:\ngit add example.txt\ngit commit -m \"Resolve merge conflict in example.txt\"\ngit push origin main\n\nNote: to ignore the conflict and overwrite the remote with local changes, one can force-push (git push origin main --force). This discards other people’s work and can cause data loss — use only when necessary, and tell your team.\n\nIf two developers modify different parts of the same file, Git merges automatically. A conflict only occurs when both edit the same part."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html#example-2-file-move-during-pull",
-    "href": "labs/github_tutorial_leap.html#example-2-file-move-during-pull",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "Example 2: file move during pull",
-    "text": "Example 2: file move during pull\nYou move a file locally, but it still exists in its original location on the remote. Will a pull treat this as a conflict? No. A pull only touches files that changed on the remote since your last pull.\n\nIf the file changed on the remote: Git re-downloads it to its original location; your moved copy stays where you put it (Git treats them as two files).\nIf the file did not change on the remote: nothing happens; your moved file stays untouched."
-  },
-  {
-    "objectID": "labs/github_tutorial_leap.html#clone-only-a-specific-folder-from-a-repository-sparse-checkout",
-    "href": "labs/github_tutorial_leap.html#clone-only-a-specific-folder-from-a-repository-sparse-checkout",
-    "title": "GitHub beginner tutorial (LEAP)",
-    "section": "5.1 Clone only a specific folder from a repository (sparse checkout)",
-    "text": "5.1 Clone only a specific folder from a repository (sparse checkout)\nmkdir project1 && cd project1\ngit init\ngit remote add origin https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git\ngit sparse-checkout init --cone\ngit sparse-checkout set Project_Path\ngit pull origin main\nThe parent folder structure leading to the subfolder is still created, since Git keeps the necessary hierarchy.\n\nPracticing hands-on is essential for mastering any tool, and GitHub is no exception. There are far more operations, features, and potential issues than this tutorial covers; explore, search for solutions, and ask. If you run into an interesting problem, share it with the TAs so this page can improve.\nReferences\n\nhttps://docs.github.com/en/get-started\nhttps://training.github.com/downloads/github-git-cheat-sheet.pdf\nhttps://docs.2i2c.org/user/topics/data/git/"
+    "objectID": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
+    "href": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part D — Submit your notebook as assignment",
+    "text": "Part D — Submit your notebook as assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, instructor and TAs added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
   },
   {
     "objectID": "labs/getting_the_data.html",
@@ -497,41 +392,6 @@
     "text": "Credit where due\n\nGHCN-Daily — NOAA National Centers for Environmental Information (US government work, public domain).\nERA5 — Copernicus Climate Change Service / ECMWF; served here by Open-Meteo.\nMPI-ESM1-2-HR — Max Planck Institute for Meteorology, distributed through CMIP6 (CC BY 4.0). Cloud copy hosted by Pangeo.\n\nCiting your data sources is not a formality — it’s how someone else (including future you) can check what you did.\nWant more of this? Working with real earth-science datasets — xarray, cloud archives, plotting, analysis — is the subject of the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
   },
   {
-    "objectID": "labs/lab0a.html",
-    "href": "labs/lab0a.html",
-    "title": "Lab 0a — Getting set up",
-    "section": "",
-    "text": "By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-a-accounts",
-    "href": "labs/lab0a.html#part-a-accounts",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part A — Accounts",
-    "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope you did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub",
-    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part B — Orient to Jupyterhub",
-    "text": "Part B — Orient to Jupyterhub\n\nWhat is Jupyterhub, and where things are.\nAdding notebooks to your folders.\n\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\n\nRunning through code in a notebook (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-c-create-your-course-repository",
-    "href": "labs/lab0a.html#part-c-create-your-course-repository",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part C — Create your course repository",
-    "text": "Part C — Create your course repository\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add dhruvbalwada, [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nAuthenticating: the first time you push, git asks for a username and password. The password is not your GitHub password but a personal access token — a one-time setup that then works all semester. Follow GitHub on the LEAP hub (§1–§3); it also lists the common errors and their fixes. (This is why we use the https:// clone URL above.)"
-  },
-  {
-    "objectID": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
-    "href": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part D — Submit your notebook as assignment",
-    "text": "Part D — Submit your notebook as assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, instructor and TAs added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
-  },
-  {
     "objectID": "labs/index.html",
     "href": "labs/index.html",
     "title": "Labs",
@@ -543,14 +403,7 @@
     "href": "labs/index.html#week-1-sep-10",
     "title": "Labs",
     "section": "Week 1 (Sep 10)",
-    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 3-parameter model, ERA5 vs CMIP6"
-  },
-  {
-    "objectID": "labs/index.html#week-2-sep-17",
-    "href": "labs/index.html#week-2-sep-17",
-    "title": "Labs",
-    "section": "Week 2 (Sep 17)",
-    "text": "Week 2 (Sep 17)\n\nGitHub on the LEAP hub: the one-time login setup that replaces gh-scoped-creds, plus common errors and fixes — read this if pushing failed last week\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\n\nReference (optional)\n\nWhere our data comes from: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project\nGitHub beginner tutorial (LEAP): the fuller tour — branches, pulling, resolving conflicts\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
+    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 3-parameter model, ERA5 vs CMIP6\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\n\nReference (optional)\n\nWhere our data comes from: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
   },
   {
     "objectID": "labs/lab0d_bucket.html",
@@ -693,11 +546,25 @@
     "text": "A model is…\n\n\n\n\nphysical — a scale model of a building\n\n\n\n\nabstract — equations, or code (this one is Lab 0d)\n\n\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nPhoto: Mak Faitre Sownia, CC BY-SA 4.0, via Wikimedia Commons\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
   },
   {
+    "objectID": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
+    "href": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
+    "title": "Introduction to Climate Modeling",
+    "section": "Three reasons a forecast model can be wrong",
+    "text": "Three reasons a forecast model can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: we don’t know exact laws or our models can’t be exactly solved)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons.\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+  },
+  {
+    "objectID": "slides/week01.html#how-the-three-trade-off-with-time",
+    "href": "slides/week01.html#how-the-three-trade-off-with-time",
+    "title": "Introduction to Climate Modeling",
+    "section": "How the three trade off with time",
+    "text": "How the three trade off with time\n\n\n\n\nIndividual model runs under a low and a high scenario. For the next ~20 years the wiggles — internal variability — swamp the difference between scenarios.\n\n\n\n\nShare of the uncertainty in global, annual-mean, 10-year-averaged temperature: internal variability dominates early, model uncertainty mid-century, scenario by 2100. That smoothing is why orange fades so fast — ask about one summer in one city and it stays orange much longer.\n\n\n\nLeft: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins & Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.\n\n\nMap the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+  },
+  {
     "objectID": "slides/week01.html#before-you-leave",
     "href": "slides/week01.html#before-you-leave",
     "title": "Introduction to Climate Modeling",
     "section": "Before you leave",
-    "text": "Before you leave\n\nToday’s notebooks (0b, 0c) → saved into your course repo\nRepo link → posted on Courseworks (that’s your Lab 0 submission)\nDidn’t finish or want to play around more? Complete at home before next Thursday — TAs + office hours can unblock you.\n\n\nNext week: the Earth is a bucket — sunlight pours in, infrared drains out, and the level is the heat (temperature)."
+    "text": "Before you leave\n\nToday’s notebooks (0b, 0c, 0d) → saved into your course repo\nRepo link → posted on Courseworks (that’s your Lab 0 submission)\nDidn’t finish or want to play around more? Complete at home before next Thursday — TAs + office hours can unblock you.\n\n\nNext week: the Earth is a bucket — sunlight pours in, infrared drains out, and the level is the heat (temperature)."
   },
   {
     "objectID": "project.html",
