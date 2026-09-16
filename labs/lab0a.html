@@ -170,7 +170,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#part-a-accounts" id="toc-part-a-accounts" class="nav-link active" data-scroll-target="#part-a-accounts">Part A — Accounts</a></li>
   <li><a href="#part-b-orient-to-jupyterhub" id="toc-part-b-orient-to-jupyterhub" class="nav-link" data-scroll-target="#part-b-orient-to-jupyterhub">Part B — Orient to Jupyterhub</a></li>
-  <li><a href="#part-c-create-your-course-repository" id="toc-part-c-create-your-course-repository" class="nav-link" data-scroll-target="#part-c-create-your-course-repository">Part C — Create your course repository</a>
+  <li><a href="#part-c-create-your-course-repository" id="toc-part-c-create-your-course-repository" class="nav-link" data-scroll-target="#part-c-create-your-course-repository">Part C — Create your course repository</a></li>
+  <li><a href="#part-d-put-your-work-in-the-repo" id="toc-part-d-put-your-work-in-the-repo" class="nav-link" data-scroll-target="#part-d-put-your-work-in-the-repo">Part D — Put your work in the repo</a>
   <ul class="collapse">
   <li><a href="#option-1-upload-on-the-github-website" id="toc-option-1-upload-on-the-github-website" class="nav-link" data-scroll-target="#option-1-upload-on-the-github-website">Option 1 — Upload on the GitHub website</a></li>
   <li><a href="#option-2-using-the-terminal" id="toc-option-2-using-the-terminal" class="nav-link" data-scroll-target="#option-2-using-the-terminal">Option 2 — Using the Terminal</a></li>
@@ -235,21 +236,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="part-c-create-your-course-repository" class="level2">
 <h2 class="anchored" data-anchor-id="part-c-create-your-course-repository">Part C — Create your course repository</h2>
 <ol type="1">
-<li><p>On GitHub, click <strong>New repository</strong>:</p>
+<li>On GitHub, click <strong>New repository</strong>:
 <ul>
 <li>Name: <code>climate-modeling-f26-&lt;your-uni&gt;</code> (e.g., <code>climate-modeling-f26-ab1234</code>)</li>
 <li>Visibility: <strong>Private</strong> ← important</li>
 <li>Check “Add a README file”</li>
 </ul></li>
-<li><p>Add the teaching staff as collaborators: repo <strong>Settings → Collaborators → Add people</strong> — add <strong><code>dhruvbalwada</code></strong>, <strong><code>[PRANI-GITHUB]</code></strong>, and <strong><code>[CHANDANIE-GITHUB]</code></strong>. ## Part D — Put your work in the repo</p></li>
-<li><p><strong>Make a personal access token</strong> (needed for options 2 and 3 below; skip if you only do option 1 today). When git on the hub talks to GitHub it asks for a username and password — the password is <strong>not</strong> your GitHub password but a <em>token</em>:</p>
+<li>Add the teaching staff as collaborators: repo <strong>Settings → Collaborators → Add people</strong> — add <strong><code>dhruvbalwada</code></strong>, <strong><code>[PRANI-GITHUB]</code></strong>, and <strong><code>[CHANDANIE-GITHUB]</code></strong>.</li>
+</ol>
+</section>
+<section id="part-d-put-your-work-in-the-repo" class="level2">
+<h2 class="anchored" data-anchor-id="part-d-put-your-work-in-the-repo">Part D — Put your work in the repo</h2>
+<ol type="1">
+<li><strong>Make a personal access token</strong> (needed for options 2 and 3 below; skip if you only do option 1 today). When git on the hub talks to GitHub it asks for a username and password — the password is <strong>not</strong> your GitHub password but a <em>token</em>:
 <ol type="1">
 <li>On <a href="https://github.com">github.com</a>: profile photo → <strong>Settings</strong> → bottom of the left sidebar → <strong>Developer settings</strong>.</li>
 <li><strong>Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)</strong>.</li>
 <li>Note: <code>LEAP hub</code>. Expiration: <strong>Custom → 2026-12-31</strong>. Scopes: tick the top-level <strong><code>repo</code></strong> box. Click <strong>Generate token</strong>.</li>
 <li><strong>Copy the token now</strong> — GitHub shows it only once. Treat it like a password: never paste it into a notebook or a file in your repo.</li>
 </ol></li>
-<li><p><strong>Put your completed notebook in the repo.</strong> Three ways — pick one.</p></li>
+<li><strong>Put your completed notebook in the repo.</strong> Three ways — pick one.</li>
 </ol>
 <section id="option-1-upload-on-the-github-website" class="level3">
 <h3 class="anchored" data-anchor-id="option-1-upload-on-the-github-website">Option 1 — Upload on the GitHub website</h3>
