@@ -177,10 +177,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#option-3-using-the-jupyterhub-git-interface" id="toc-option-3-using-the-jupyterhub-git-interface" class="nav-link" data-scroll-target="#option-3-using-the-jupyterhub-git-interface">Option 3 — Using the JupyterHub Git interface</a></li>
   </ul></li>
   <li><a href="#part-d-submit-your-notebook-as-assignment" id="toc-part-d-submit-your-notebook-as-assignment" class="nav-link" data-scroll-target="#part-d-submit-your-notebook-as-assignment">Part D — Submit your notebook as assignment</a></li>
-  <li><a href="#when-git-goes-wrong" id="toc-when-git-goes-wrong" class="nav-link" data-scroll-target="#when-git-goes-wrong">When git goes wrong</a>
-  <ul class="collapse">
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -266,6 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="option-2-using-the-terminal" class="level3">
 <h3 class="anchored" data-anchor-id="option-2-using-the-terminal">Option 2 — Using the Terminal</h3>
 <p>Open a hub terminal (<strong>File → New → Terminal</strong>). Each step is <strong>one command</strong>: run it, read what comes back, then go to the next. If something fails, note which step and see <a href="#when-git-goes-wrong">When git goes wrong</a>.</p>
+<p><strong>One-time setup</strong> — do this today; you will not do it again all semester.</p>
 <ol type="1">
 <li><p>Tell git your name (nothing printed = it worked):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
@@ -277,7 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Clone your repo. Because it is private, this asks for a <strong>Username</strong> (your GitHub username) and a <strong>Password</strong> — paste the <strong>token</strong> (nothing appears while you paste; press Enter). A folder <code>climate-modeling-f26-&lt;uni&gt;</code> appears in the file browser:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>your-username<span class="op">&gt;</span>/climate-modeling-f26-<span class="op">&lt;</span>uni<span class="op">&gt;</span>.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Copy the notebook into that folder:</p>
+</ol>
+<p><strong>Every time you save work</strong> — today for <code>verify_setup.ipynb</code>, and again for every lab and homework.</p>
+<ol start="6" type="1">
+<li><p>Copy the notebook into your repo folder:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> verify_setup.ipynb climate-modeling-f26-<span class="op">&lt;</span>uni<span class="op">&gt;</span>/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Move into the folder (the prompt changes to show the folder name):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> climate-modeling-f26-<span class="op">&lt;</span>uni<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
@@ -296,12 +296,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="option-3-using-the-jupyterhub-git-interface" class="level3">
 <h3 class="anchored" data-anchor-id="option-3-using-the-jupyterhub-git-interface">Option 3 — Using the JupyterHub Git interface</h3>
 <p>Same thing, with buttons. The <strong>Git</strong> panel is in the hub’s left sidebar (the branching-arrows icon).</p>
+<p><strong>One-time setup</strong></p>
 <ol type="1">
-<li>Git panel → <strong>Clone a Repository</strong> → paste <code>https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git</code> → OK. It asks for credentials: username, and the <strong>token</strong> as the password.</li>
-<li>In the file browser, drag <code>verify_setup.ipynb</code> into the new <code>climate-modeling-f26-&lt;uni&gt;</code> folder, then open that folder.</li>
-<li>Git panel: the file appears under <strong>Changed</strong>. Click its <strong>+</strong> to stage it, type a message in the box at the bottom, click <strong>Commit</strong>. The first time it asks for your name and email.</li>
-<li>Click the cloud-up <strong>Push</strong> icon at the top of the panel. If asked, give username + token again.</li>
-<li>Reload your repo page on github.com: the notebook should be there.</li>
+<li><p>Git panel → <strong>Clone a Repository</strong> → paste <code>https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git</code> → OK. It asks for credentials: username, and the <strong>token</strong> as the password. <strong>Every time you save work</strong></p></li>
+<li><p>In the file browser, drag <code>verify_setup.ipynb</code> into the new <code>climate-modeling-f26-&lt;uni&gt;</code> folder, then open that folder.</p></li>
+<li><p>Git panel: the file appears under <strong>Changed</strong>. Click its <strong>+</strong> to stage it, type a message in the box at the bottom, click <strong>Commit</strong>. The first time it asks for your name and email.</p></li>
+<li><p>Click the cloud-up <strong>Push</strong> icon at the top of the panel. If asked, give username + token again.</p></li>
+<li><p>Reload your repo page on github.com: the notebook should be there.</p></li>
 </ol>
 <p>The panel may ask for the token on every push. To stop that, run steps 3–4 of option 2 once in a terminal.</p>
 </section>
@@ -309,81 +310,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="part-d-submit-your-notebook-as-assignment" class="level2">
 <h2 class="anchored" data-anchor-id="part-d-submit-your-notebook-as-assignment">Part D — Submit your notebook as assignment</h2>
 <p>On Courseworks, open the <strong>Lab 0</strong> assignment and submit <strong>the URL of your repository</strong> (e.g., <code>https://github.com/ab1234/climate-modeling-f26-ab1234</code>). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.</p>
-</section>
-<section id="when-git-goes-wrong" class="level2">
-<h2 class="anchored" data-anchor-id="when-git-goes-wrong">When git goes wrong</h2>
-<p>From Lab 1 on, saving your work to GitHub is the same three commands from inside your repo folder (or the same three clicks in the Git panel — stage, Commit, Push):</p>
-<ol type="1">
-<li><code>git add .</code> — track everything you changed</li>
-<li><code>git commit -m "what you did"</code> — record a snapshot</li>
-<li><code>git push</code> — send it to GitHub</li>
-</ol>
-<p>When one of them fails:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>What you see</th>
-<th>What it means</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>Support for password authentication was removed</code></td>
-<td>You typed your GitHub password</td>
-<td>Use the token as the password</td>
-</tr>
-<tr class="even">
-<td><code>Authentication failed</code></td>
-<td>Wrong username, or a mistyped/expired token</td>
-<td>Run <code>git config --global --unset-all credential.helper</code>, then push again and re-enter the token; lost the token? generate a new one (Part C, step 3)</td>
-</tr>
-<tr class="odd">
-<td><code>Repository not found</code> (but it exists on github.com)</td>
-<td>Typo in the URL</td>
-<td>Check <code>git remote -v</code> against your repo page</td>
-</tr>
-<tr class="even">
-<td><code>Permission denied (publickey)</code></td>
-<td>You cloned with an <code>ssh</code> URL</td>
-<td><code>git remote set-url origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git</code></td>
-</tr>
-<tr class="odd">
-<td><code>Updates were rejected because the remote contains work</code></td>
-<td>The repo changed on the website (e.g.&nbsp;you uploaded a file there)</td>
-<td><code>git pull</code>, then <code>git push</code></td>
-</tr>
-<tr class="even">
-<td><code>Please tell me who you are</code></td>
-<td>Name/email not set</td>
-<td>Option 2, steps 1–2</td>
-</tr>
-<tr class="odd">
-<td><code>terminal prompts disabled</code></td>
-<td>The Git panel could not ask for a password</td>
-<td>Run option 2, steps 3–4, then push from the terminal once; after that the panel works</td>
-</tr>
-</tbody>
-</table>
-<p>Still stuck? Ask a TA during the lab or come to office hours. A fuller tour of git on the hub (branches, pulling, resolving conflicts) is in the <a href="../labs/github_tutorial_leap.html">LEAP GitHub tutorial</a> — optional.</p>
-<hr>
-<section id="checklist" class="level3">
-<h3 class="anchored" data-anchor-id="checklist">Checklist</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Hub login works, server starts</label></li>
-<li><label><input type="checkbox"><code>verify_setup.ipynb</code> runs top to bottom with your name and a plot</label></li>
-<li><label><input type="checkbox">Private repo <code>climate-modeling-f26-&lt;uni&gt;</code> exists, instructor and TAs added as collaborators</label></li>
-<li><label><input type="checkbox">Notebook is in the repo</label></li>
-<li><label><input type="checkbox">Repo URL posted to Courseworks Lab 0</label></li>
-</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
