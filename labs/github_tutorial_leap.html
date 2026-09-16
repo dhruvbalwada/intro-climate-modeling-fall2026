@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>GitHub beginner tutorial (LEAP) – Introduction to Climate Modeling</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Introduction to Climate Modeling</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/index.html"> 
+<span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../project.html"> 
+<span class="menu-text">Final Project</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dhruvbalwada/intro-climate-modeling-fall2026"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#authenticate-with-a-github-personal-access-token-pat" id="toc-authenticate-with-a-github-personal-access-token-pat" class="nav-link active" data-scroll-target="#authenticate-with-a-github-personal-access-token-pat">01. Authenticate with a GitHub Personal Access Token (PAT)</a>
+  <ul class="collapse">
+  <li><a href="#step-1-generate-a-personal-access-token" id="toc-step-1-generate-a-personal-access-token" class="nav-link" data-scroll-target="#step-1-generate-a-personal-access-token">Step 1: Generate a Personal Access Token</a></li>
+  <li><a href="#step-2-use-the-token-for-authentication" id="toc-step-2-use-the-token-for-authentication" class="nav-link" data-scroll-target="#step-2-use-the-token-for-authentication">Step 2: Use the token for authentication</a></li>
+  </ul></li>
+  <li><a href="#github-basics-essential-operations" id="toc-github-basics-essential-operations" class="nav-link" data-scroll-target="#github-basics-essential-operations">02. GitHub basics: essential operations</a>
+  <ul class="collapse">
+  <li><a href="#using-the-terminal" id="toc-using-the-terminal" class="nav-link" data-scroll-target="#using-the-terminal">2.1 Using the Terminal</a>
+  <ul class="collapse">
+  <li><a href="#clone-a-repository-to-jupyterhub" id="toc-clone-a-repository-to-jupyterhub" class="nav-link" data-scroll-target="#clone-a-repository-to-jupyterhub">2.1.1 Clone a repository to JupyterHub</a></li>
+  <li><a href="#create-a-repository" id="toc-create-a-repository" class="nav-link" data-scroll-target="#create-a-repository">2.1.2 Create a repository</a></li>
+  <li><a href="#push-code-to-a-github-repository" id="toc-push-code-to-a-github-repository" class="nav-link" data-scroll-target="#push-code-to-a-github-repository">2.1.3 Push code to a GitHub repository</a></li>
+  <li><a href="#work-with-branches" id="toc-work-with-branches" class="nav-link" data-scroll-target="#work-with-branches">2.1.4 Work with branches</a></li>
+  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull">2.1.5 Pull</a></li>
+  </ul></li>
+  <li><a href="#using-the-jupyterhub-git-interface" id="toc-using-the-jupyterhub-git-interface" class="nav-link" data-scroll-target="#using-the-jupyterhub-git-interface">2.2 Using the JupyterHub Git interface</a>
+  <ul class="collapse">
+  <li><a href="#clone-a-repository" id="toc-clone-a-repository" class="nav-link" data-scroll-target="#clone-a-repository">2.2.1 Clone a repository</a></li>
+  <li><a href="#create-a-repository-1" id="toc-create-a-repository-1" class="nav-link" data-scroll-target="#create-a-repository-1">2.2.2 Create a repository</a></li>
+  <li><a href="#push-changes" id="toc-push-changes" class="nav-link" data-scroll-target="#push-changes">2.2.3 Push changes</a></li>
+  <li><a href="#pull-changes" id="toc-pull-changes" class="nav-link" data-scroll-target="#pull-changes">2.2.4 Pull changes</a></li>
+  <li><a href="#work-with-branches-1" id="toc-work-with-branches-1" class="nav-link" data-scroll-target="#work-with-branches-1">2.2.5 Work with branches</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#github-workflow-for-a-team" id="toc-github-workflow-for-a-team" class="nav-link" data-scroll-target="#github-workflow-for-a-team">03. GitHub workflow for a team</a></li>
+  <li><a href="#resolving-conflicts-and-common-git-issues" id="toc-resolving-conflicts-and-common-git-issues" class="nav-link" data-scroll-target="#resolving-conflicts-and-common-git-issues">04. Resolving conflicts and common Git issues</a>
+  <ul class="collapse">
+  <li><a href="#example-1-merge-conflict-during-pull" id="toc-example-1-merge-conflict-during-pull" class="nav-link" data-scroll-target="#example-1-merge-conflict-during-pull">Example 1: merge conflict during pull</a></li>
+  <li><a href="#example-2-file-move-during-pull" id="toc-example-2-file-move-during-pull" class="nav-link" data-scroll-target="#example-2-file-move-during-pull">Example 2: file move during pull</a></li>
+  </ul></li>
+  <li><a href="#other-useful-git-commands" id="toc-other-useful-git-commands" class="nav-link" data-scroll-target="#other-useful-git-commands">05. Other useful Git commands</a>
+  <ul class="collapse">
+  <li><a href="#clone-only-a-specific-folder-from-a-repository-sparse-checkout" id="toc-clone-only-a-specific-folder-from-a-repository-sparse-checkout" class="nav-link" data-scroll-target="#clone-only-a-specific-folder-from-a-repository-sparse-checkout">5.1 Clone only a specific folder from a repository (sparse checkout)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">GitHub beginner tutorial (LEAP)</h1>
+<p class="subtitle lead">Reference — adapted from the tutorial shared by Sarika at LEAP</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>This is the general LEAP tutorial, kept here for reference. For this course, the short version — with the one-time login setup — is <a href="../labs/github_setup.html">GitHub on the LEAP hub</a>. One change from the original: the option of putting a token inside a clone URL has been removed, because the token would then be saved in plain text inside your repo settings.</em></p>
+<p>This tutorial will guide you step-by-step through the basics of using GitHub. There are <strong>two methods</strong> for performing Git operations:</p>
+<ol type="1">
+<li><strong>Using the Terminal</strong>: ideal for users who prefer command-line control and flexibility.</li>
+<li><strong>Using the JupyterHub Git interface</strong>: a user-friendly interface for performing common Git tasks visually.</li>
+</ol>
+<p>You will learn how to clone a repository to JupyterHub, create your own repository, push and pull changes, and work with branches.</p>
+<section id="authenticate-with-a-github-personal-access-token-pat" class="level1">
+<h1>01. Authenticate with a GitHub Personal Access Token (PAT)</h1>
+<p>To access private repositories, or when GitHub requires additional security (for example, pushing code from the terminal for the first time), you use a Personal Access Token instead of your GitHub password.</p>
+<section id="step-1-generate-a-personal-access-token" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-generate-a-personal-access-token">Step 1: Generate a Personal Access Token</h2>
+<ol type="1">
+<li>Log in to GitHub.</li>
+<li>Click on your profile picture in the upper-right corner and select <strong>Settings</strong>.</li>
+<li>Navigate to <strong>Developer settings → Personal access tokens → Tokens (classic)</strong>.</li>
+<li>Click <strong>Generate new token</strong>.</li>
+<li>Select the scopes you need (e.g.&nbsp;<code>repo</code> for full repository access).</li>
+<li>Copy the generated token and store it securely.</li>
+</ol>
+</section>
+<section id="step-2-use-the-token-for-authentication" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-use-the-token-for-authentication">Step 2: Use the token for authentication</h2>
+<p>When prompted for your GitHub credentials:</p>
+<ul>
+<li>Enter your GitHub username as usual.</li>
+<li>Instead of your password, paste the Personal Access Token.</li>
+</ul>
+<p>To avoid being asked every time, run <code>git config --global credential.helper store</code> once; the token is saved after the first successful push.</p>
+</section>
+</section>
+<section id="github-basics-essential-operations" class="level1">
+<h1>02. GitHub basics: essential operations</h1>
+<section id="using-the-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-terminal">2.1 Using the Terminal</h2>
+<section id="clone-a-repository-to-jupyterhub" class="level3">
+<h3 class="anchored" data-anchor-id="clone-a-repository-to-jupyterhub">2.1.1 Clone a repository to JupyterHub</h3>
+<ol type="1">
+<li><p>Open the terminal in JupyterHub (<strong>File → New → Terminal</strong>).</p></li>
+<li><p>Go to the GitHub repository you want to clone, click <strong>Code</strong>, and copy the HTTPS link.</p></li>
+<li><p>Clone it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+</section>
+<section id="create-a-repository" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-repository">2.1.2 Create a repository</h3>
+<section id="step-1-log-in-to-github" class="level4">
+<h4 class="anchored" data-anchor-id="step-1-log-in-to-github">Step 1: Log in to GitHub</h4>
+<ol type="1">
+<li>Open a web browser and go to <a href="https://github.com">GitHub</a>.</li>
+<li>Log in with your GitHub account credentials.</li>
+</ol>
+</section>
+<section id="step-2-navigate-to-the-repository-creation-page" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-navigate-to-the-repository-creation-page">Step 2: Navigate to the repository creation page</h4>
+<ol type="1">
+<li>In the top-right corner of the GitHub page, click the <strong>+</strong> icon.</li>
+<li>Select <strong>New repository</strong> from the dropdown menu.</li>
+</ol>
+</section>
+<section id="step-3-set-up-the-repository" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-set-up-the-repository">Step 3: Set up the repository</h4>
+<ol type="1">
+<li><strong>Choose a repository name</strong>: enter a unique name, e.g.&nbsp;<code>my-new-repo</code>.</li>
+<li><strong>Add a description (optional)</strong>.</li>
+<li><strong>Select repository visibility</strong>: <strong>Public</strong> (anyone can view) or <strong>Private</strong> (only you and collaborators).</li>
+<li><strong>Initialize the repository (optional)</strong>: select <strong>Add a README file</strong>; optionally add a <code>.gitignore</code> template or a license.</li>
+</ol>
+</section>
+<section id="step-4-create-the-repository" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-create-the-repository">Step 4: Create the repository</h4>
+<p>Click the green <strong>Create repository</strong> button.</p>
+</section>
+<section id="step-5-add-code-to-the-repository" class="level4">
+<h4 class="anchored" data-anchor-id="step-5-add-code-to-the-repository">Step 5: Add code to the repository</h4>
+<ul>
+<li><p><strong>Case 1: you do not have an existing local repository</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/your-username/my-new-repo.git</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial commit"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Case 2: you already have a local repository</strong> (e.g.&nbsp;cloned from another repository, as in 2.1.1)</p>
+<ol type="1">
+<li><p>Check the current remote:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Remove the link to the original repository:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote remove origin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Add the new repository as the remote:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/your-username/New-Repository.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Verify the new remote:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ensure that the output shows the URL of the new repository.</p></li>
+</ol></li>
+</ul>
+</section>
+</section>
+<section id="push-code-to-a-github-repository" class="level3">
+<h3 class="anchored" data-anchor-id="push-code-to-a-github-repository">2.1.3 Push code to a GitHub repository</h3>
+<section id="step-1-ensure-you-have-a-git-repository" class="level4">
+<h4 class="anchored" data-anchor-id="step-1-ensure-you-have-a-git-repository">Step 1: Ensure you have a Git repository</h4>
+<p>Navigate to your project folder in the terminal and check:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If it is not a repository, initialize one:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-2-add-the-remote-repository" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-add-the-remote-repository">Step 2: Add the remote repository</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/your-username/your-repository.git</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-3-add-and-commit-changes" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-add-and-commit-changes">Step 3: Add and commit changes</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Your commit message here"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-4-push-to-github" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-push-to-github">Step 4: Push to GitHub</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="work-with-branches" class="level3">
+<h3 class="anchored" data-anchor-id="work-with-branches">2.1.4 Work with branches</h3>
+<p>Branches let you work on different versions of a project simultaneously without interfering with the main codebase. Every Git repository starts with a default branch, typically called <code>main</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch branch-name          <span class="co"># create a branch</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout branch-name        <span class="co"># switch to it</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> branch-name     <span class="co"># or: create and switch in one step</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Merging a finished branch into <code>main</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge branch-name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Deleting a merged branch:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> branch-name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pushing a branch works like pushing <code>main</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Your commit message here"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin branch-name   <span class="co"># first push of this branch</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push                         <span class="co"># subsequent pushes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>-u</code> option sets <code>origin/branch-name</code> as the upstream branch for future pushes and pulls.</p>
+</section>
+<section id="pull" class="level3">
+<h3 class="anchored" data-anchor-id="pull">2.1.5 Pull</h3>
+<p><code>git pull</code> fetches and merges changes from the remote repository into your local repository. First check which branch you are on:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The active branch is marked with an asterisk (<code>*</code>). Then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin branch-name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>where <code>origin</code> is the remote repository and <code>branch-name</code> is the branch you want to pull from (e.g.&nbsp;<code>main</code>).</p>
+</section>
+</section>
+<section id="using-the-jupyterhub-git-interface" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-jupyterhub-git-interface">2.2 Using the JupyterHub Git interface</h2>
+<section id="clone-a-repository" class="level3">
+<h3 class="anchored" data-anchor-id="clone-a-repository">2.2.1 Clone a repository</h3>
+<ol type="1">
+<li>Open the <strong>Git</strong> tab in JupyterHub (in the left sidebar).</li>
+<li>Click <strong>Clone a Repository</strong>.</li>
+<li>Paste the HTTPS link of the repository and confirm. The repository is cloned into your current working directory.</li>
+</ol>
+</section>
+<section id="create-a-repository-1" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-repository-1">2.2.2 Create a repository</h3>
+<ol type="1">
+<li>Create the repository on GitHub (<strong>+ → New repository</strong>, name, visibility, <strong>Create repository</strong>).</li>
+<li>In JupyterHub, open the <strong>Git</strong> tab and click <strong>Initialize a Repository</strong>; use <strong>Commit</strong> to stage and commit changes and <strong>Push</strong> to upload them.</li>
+</ol>
+</section>
+<section id="push-changes" class="level3">
+<h3 class="anchored" data-anchor-id="push-changes">2.2.3 Push changes</h3>
+<ol type="1">
+<li>In the <strong>Git</strong> tab, select the changed files, add a commit message, and click <strong>Commit</strong>.</li>
+<li>Click <strong>Push</strong> to upload your commits.</li>
+</ol>
+</section>
+<section id="pull-changes" class="level3">
+<h3 class="anchored" data-anchor-id="pull-changes">2.2.4 Pull changes</h3>
+<p>Click <strong>Pull</strong> in the <strong>Git</strong> tab to fetch and merge changes from the remote repository.</p>
+</section>
+<section id="work-with-branches-1" class="level3">
+<h3 class="anchored" data-anchor-id="work-with-branches-1">2.2.5 Work with branches</h3>
+<ul>
+<li><strong>Create a branch</strong>: in the <strong>Git</strong> tab, go to the Branches section, click <strong>New Branch</strong>, enter a name and confirm.</li>
+<li><strong>Switch branches</strong>: select the branch from the branch dropdown.</li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Note</strong>: if you have uncommitted changes, commit or stash them before switching branches to avoid conflicts.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Note</strong>: the JupyterHub Git interface does not currently support merging or deleting branches. Use the terminal for those.</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="github-workflow-for-a-team" class="level1">
+<h1>03. GitHub workflow for a team</h1>
+<ol type="1">
+<li><p><strong>Create a GitHub account</strong> and familiarize yourself with the interface.</p></li>
+<li><p><strong>Generate and save a Personal Access Token</strong> (section 01).</p></li>
+<li><p><strong>Create a team repository</strong>: one team member (team leader) creates it and invites the others as collaborators.</p></li>
+<li><p><strong>Clone the course repository</strong> to JupyterHub.</p></li>
+<li><p><strong>Unlink the course repository’s remote and link to the team’s repository:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote remove origin</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/your-team/team-repository.git</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Run and extend the project</strong> in JupyterHub.</p></li>
+<li><p><strong>Create a branch for your work</strong> once you’ve completed a part of the project, and push it for review:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> your-branch-name</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin your-branch-name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Collaborate on the branch</strong>: team members review and discuss; make additional changes, committing and pushing to the branch.</p></li>
+<li><p><strong>Merge the branch into <code>main</code></strong> once the team agrees it is ready:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge your-branch-name</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Pull changes from your target branch before pushing</strong>, so your local branch is synchronized with the remote:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin branch-name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Only pull if the remote branch has updates. If there are conflicts between your local changes and the pulled updates, Git will tell you: open the conflicting files, resolve the conflicts, then <code>git add &lt;file-name&gt;</code> and <code>git commit</code>.</p></li>
+<li><p><strong>Push your work</strong>: <code>git push</code>.</p></li>
+</ol>
+</section>
+<section id="resolving-conflicts-and-common-git-issues" class="level1">
+<h1>04. Resolving conflicts and common Git issues</h1>
+<section id="example-1-merge-conflict-during-pull" class="level2">
+<h2 class="anchored" data-anchor-id="example-1-merge-conflict-during-pull">Example 1: merge conflict during pull</h2>
+<p>Two developers work on the same file, <code>example.txt</code>, and both change the same line.</p>
+<ol type="1">
+<li><p><strong>Initial file</strong>: <code>Hello World</code></p></li>
+<li><p><strong>Developer A</strong> updates the file to <code>Hello GitHub</code> and pushes.</p></li>
+<li><p><strong>Developer B</strong>, without pulling, updates the same line to <code>Hello Git</code>.</p></li>
+<li><p><strong>The conflict</strong>: when Developer B tries to push, Git rejects it:</p>
+<pre class="text"><code>error: failed to push some refs to 'origin/main'
+hint: Updates were rejected because the remote contains work that you do not have locally.
+hint: You may want to first integrate the remote changes (e.g., 'git pull ...') before pushing again.</code></pre>
+<p>After <code>git pull</code>, Git marks the conflict in <code>example.txt</code>:</p>
+<pre class="text"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Hello Git
+=======
+Hello GitHub
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main</code></pre></li>
+<li><p><strong>Resolving</strong>: Developer B edits the file to keep the desired version, e.g.&nbsp;<code>Hello Git and GitHub</code>.</p></li>
+<li><p><strong>Final steps</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict in example.txt"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<p><strong>Note</strong>: to ignore the conflict and overwrite the remote with local changes, one can force-push (<code>git push origin main --force</code>). This discards other people’s work and can cause data loss — use only when necessary, and tell your team.</p>
+<blockquote class="blockquote">
+<p>If two developers modify <em>different</em> parts of the same file, Git merges automatically. A conflict only occurs when both edit the same part.</p>
+</blockquote>
+</section>
+<section id="example-2-file-move-during-pull" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-file-move-during-pull">Example 2: file move during pull</h2>
+<p>You move a file locally, but it still exists in its original location on the remote. Will a pull treat this as a conflict? <strong>No.</strong> A pull only touches files that changed on the remote since your last pull.</p>
+<ul>
+<li><strong>If the file changed on the remote</strong>: Git re-downloads it to its original location; your moved copy stays where you put it (Git treats them as two files).</li>
+<li><strong>If the file did not change on the remote</strong>: nothing happens; your moved file stays untouched.</li>
+</ul>
+</section>
+</section>
+<section id="other-useful-git-commands" class="level1">
+<h1>05. Other useful Git commands</h1>
+<section id="clone-only-a-specific-folder-from-a-repository-sparse-checkout" class="level2">
+<h2 class="anchored" data-anchor-id="clone-only-a-specific-folder-from-a-repository-sparse-checkout">5.1 Clone only a specific folder from a repository (sparse checkout)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> project1 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> project1</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> sparse-checkout init <span class="at">--cone</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> sparse-checkout set Project_Path</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The parent folder structure leading to the subfolder is still created, since Git keeps the necessary hierarchy.</p>
+<hr>
+<p>Practicing hands-on is essential for mastering any tool, and GitHub is no exception. There are far more operations, features, and potential issues than this tutorial covers; explore, search for solutions, and ask. If you run into an interesting problem, share it with the TAs so this page can improve.</p>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="https://docs.github.com/en/get-started" class="uri">https://docs.github.com/en/get-started</a></li>
+<li><a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf" class="uri">https://training.github.com/downloads/github-git-cheat-sheet.pdf</a></li>
+<li><a href="https://docs.2i2c.org/user/topics/data/git/" class="uri">https://docs.2i2c.org/user/topics/data/git/</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Dhruv Balwada · Columbia Climate School · Fall 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

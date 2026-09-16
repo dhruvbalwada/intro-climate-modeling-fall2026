@@ -7,510 +7,6 @@
     "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nReading\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\nG&R Ch 1 (optional)\nLab 0\n\n\n2\nSep 17\nTBD\n\n\n\n\n\n3\nSep 24\nTBD\n\n\n\n\n\n4\nOct 1\nTBD\n\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
   },
   {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "⇩ Download the syllabus (.docx)\nThe week-by-week schedule on this site is the live version and takes precedence over the planned outline below.\nSubject Code/Course Number CLMTG5065\nThursdays 10:10 am – 12:40 pm\nFRM 315 (The Forum)"
-  },
-  {
-    "objectID": "syllabus.html#instructor",
-    "href": "syllabus.html#instructor",
-    "title": "Syllabus",
-    "section": "Instructor",
-    "text": "Instructor\nDhruv Balwada\ndbalwada@ldeo.columbia.edu\nOffice hours: TBD (to be announced on Courseworks)"
-  },
-  {
-    "objectID": "syllabus.html#teaching-assistant",
-    "href": "syllabus.html#teaching-assistant",
-    "title": "Syllabus",
-    "section": "Teaching Assistant",
-    "text": "Teaching Assistant\nPrani Nalluri (pan2121@columbia.edu), Chandanie Kutwaru (ck3397@columbia.edu)"
-  },
-  {
-    "objectID": "syllabus.html#course-description",
-    "href": "syllabus.html#course-description",
-    "title": "Syllabus",
-    "section": "Course Description",
-    "text": "Course Description\nEarth system and climate models are critically important tools for climate science research. They are used to study climate variability in the past, determine how climate change has contributed to recent trends and extreme events, and understand how various natural and anthropogenic forcing affect the evolution of the climate system now and into the future. This class serves as an introduction to the history, development, process representations, and practical application of earth system models.\nStudents will learn the history and evolution of earth system modeling and how these models have been used to inform some of the most important topics in climate science (e.g., detection and attribution, future projections, climate sensitivity). Lectures, and associated lab work, will introduce the processes integrated into various components of earth system models (e.g., atmosphere, ocean, land, carbon cycle, etc), important interactions between these components (e.g., climate system feedbacks, climate sensitivity), and how earth system models are used for future projections. Students will familiarize themselves with the wealth of climate model simulation data available from free public archives (e.g., CMIP6, the Multi-Model Large Ensemble Project), the protocols used for designing and running simulations, and practical tools for analyzing these datasets.\nClassroom lectures will be supplemented by practical lab-assignments, where the students will use and develop their own models demonstrating the concepts learned in class. As a final project, students will develop their own research questions using available climate model simulations for their primary analyses.\nPrerequisites:\n\nCLMT GR5001 Dynamics of Climate Variability and Change\nCLMT GR5045 Computing and Research Methods for Climate (or proven familiarity with scientific programming)"
-  },
-  {
-    "objectID": "syllabus.html#course-objectives",
-    "href": "syllabus.html#course-objectives",
-    "title": "Syllabus",
-    "section": "Course Objectives",
-    "text": "Course Objectives\n\nDevelop a foundation in hierarchy of models of climate, used to assess and understand the climate system.\nHave a basic understanding of modern climate models, used to simulate the past and future climate.\nExposure to the Climate Model Intercomparison Project, the associated protocols, and how these datasets are used by the climate enterprise\nLearn how to interact with these models and datasets and analyze them\nComplete a project that requires formulating a climate relevant question, and using existing climate model data or data generated from a simple climate model to answer it."
-  },
-  {
-    "objectID": "syllabus.html#required-and-recommended-readings",
-    "href": "syllabus.html#required-and-recommended-readings",
-    "title": "Syllabus",
-    "section": "Required and Recommended Readings",
-    "text": "Required and Recommended Readings\nThere are no required readings.\nThe course is loosely based on a few books. There will be suggested readings from these texts each week as extra supplemental learning in addition to the classroom teaching:\n\nThe Climate Modeling Primer, 4th Ed, K. McGuffie & A. Henderson-Sellers\nClimate Dynamics, 2nd Ed. K. Cook\nClimate Change & Climate Modeling, J.D. Neelin\nDemystifying Climate Models: A Users Guide to Earth System Models, A. Gettelman & R. B. Rood (open access)\n\nThe students are not expected to purchase any of these. All suggested reading will be provided to the students through Courseworks or via email."
-  },
-  {
-    "objectID": "syllabus.html#method-of-evaluation",
-    "href": "syllabus.html#method-of-evaluation",
-    "title": "Syllabus",
-    "section": "Method of Evaluation",
-    "text": "Method of Evaluation\n\n\n\n\n\n\n\n\n\nActivity\nGrade\nWeek\nDue Date\n\n\n\n\nAttendance and class participation\n5%\nAll weeks\nContinuous\n\n\nLab sessions\n10%\n5 weeks\nAt the end of the day when lab session is held\n\n\nHomework\n50%\n5 weeks\n2 weeks after HW was assigned\n\n\nFinal project proposal\n10%\nWeeks 5 and 7\nTitle: Friday 9 October. Proposal: Friday 23 October.\n\n\nFinal project\n25%\nFinals week\n18 December"
-  },
-  {
-    "objectID": "syllabus.html#grades-definitions-and-scale",
-    "href": "syllabus.html#grades-definitions-and-scale",
-    "title": "Syllabus",
-    "section": "Grades: Definitions and Scale",
-    "text": "Grades: Definitions and Scale\nFinal grades are assigned to course average scores based on the following scale:\nA+ Rare performance. Reserved for highly exceptional achievement.\nA Excellent. Outstanding achievement.\nA- Excellent work, close to outstanding.\nB+ Very good. Solid achievement expected of most graduate students.\nB Good. Acceptable achievement.\nB- Acceptable achievement, but below what is generally expected of graduate students.\nC+ Fair achievement, above minimally acceptable level.\nC Fair achievement, but only minimally acceptable.\nC- Very low performance.\nF Failure. The course usually may not be repeated unless it is a required course."
-  },
-  {
-    "objectID": "syllabus.html#attendance-and-class-participation-5",
-    "href": "syllabus.html#attendance-and-class-participation-5",
-    "title": "Syllabus",
-    "section": "Attendance and Class Participation (5%)",
-    "text": "Attendance and Class Participation (5%)\nWe expect you to attend and actively participate in class. We may incorporate in-class group discussions and activities, which may require you to submit sample problems that you worked out individually or in a group, with help from TA and instructor. This work will be submitted in class on a physical piece of paper; please bring the necessary implements to class. There is no late submission for this work."
-  },
-  {
-    "objectID": "syllabus.html#lab-sessions-10",
-    "href": "syllabus.html#lab-sessions-10",
-    "title": "Syllabus",
-    "section": "Lab sessions (10%)",
-    "text": "Lab sessions (10%)\nThere will be a Lab session every few weeks, which would involve going over the computational aspects of the concepts that are being discussed in class. During these sessions the students would be required to use their laptops to follow along using the Jupyter notebooks that will be provided by the instructor or TA.\nThese notebooks will have follow along exercises, which should be completed collaboratively in class with the help of the instructor and TA. The students would be required to submit their work by the end of the day through Github."
-  },
-  {
-    "objectID": "syllabus.html#homework-assignments-50",
-    "href": "syllabus.html#homework-assignments-50",
-    "title": "Syllabus",
-    "section": "Homework Assignments (50%)",
-    "text": "Homework Assignments (50%)\nHomeworks will be assigned on roughly a bi-weekly basis following material presented in class.\nThere will be 5 assignments. Similar to the labs, these assignments will usually be in the form of Jupyter notebooks, with problems requiring data analysis, running simple simulations, and interpretation of results that are obtained. The solutions will be submitted through Github.\nDetails will be provided as needed."
-  },
-  {
-    "objectID": "syllabus.html#final-project-35-proposal-10-project-25",
-    "href": "syllabus.html#final-project-35-proposal-10-project-25",
-    "title": "Syllabus",
-    "section": "Final project (35% = proposal 10% + project 25%)",
-    "text": "Final project (35% = proposal 10% + project 25%)\nAs a final project, students will develop their own research questions using either available climate model simulations for their primary analyses, or by generating data using any of the simpler models discussed in class or those relevant to the field. The project should be submitted as a reproducible Jupyter notebook documenting the analysis that was undertaken and the insights that were drawn from the data, model, and analysis.\nExamples of past projects and the submission process can be found on https://earth-env-data-science.github.io/projects.html\nTopics should be submitted to the instructor by Friday of the 5th week of classes (October 9) for approval, and a short proposal will be due in week 7, Friday October 23 (1 page max). Timely submission of these components will count towards 10% of the grade, and late assignment policy (see below) would apply.\nThe project proposal must include a short write up of the planned work, annotated reference to any papers that will be used to design the project, and a confirmation that the datasets needed for the project have been identified and checked for accessibility.\nThe final project will require an in class presentation, which will take place on 10 or 17 December. The students will also be required to submit a final project Jupyter notebook, which will be due on 18 December, and will be evaluated in lieu of a final exam."
-  },
-  {
-    "objectID": "syllabus.html#late-assignment-policy",
-    "href": "syllabus.html#late-assignment-policy",
-    "title": "Syllabus",
-    "section": "Late Assignment Policy",
-    "text": "Late Assignment Policy\nIf an assignment is received after the posted deadline, it will be penalized by 10% of the total earned grade for each day late, up to a maximum of one week (7 days).\nTo accommodate exceptional circumstances (e.g., health issues, family emergencies, or religious holidays), each student is allowed one late homework assignment without penalty (up to one week)."
-  },
-  {
-    "objectID": "syllabus.html#course-schedule",
-    "href": "syllabus.html#course-schedule",
-    "title": "Syllabus",
-    "section": "Course Schedule",
-    "text": "Course Schedule\nThe table below is the planned outline. The live week-by-week schedule, with slides and labs, is on the course website: https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTopics Covered\n\n\nDescription\n\n\nHomeworks\n\n\n\n\nWeek 1, 10 Sept\n\n\nCourse Overview and History of Earth System Models\n\n\n\nHistory and motivation for earth system modeling, overview of model hierarchy from simple to complex\n\n\nSuggested reading: A Climate Modeling Primer Chapter 1 and 2\n\n\n\n\n\n\n\nWeek 2, 17 Sept\n\n\nEnergy Balance Modeling 1\n\n\n\nRadiative balance, greenhouse effect, 0 and 1D EBMs\n\n\nSuggested reading: A Climate Modeling Primer Chapter 3\n\n\n\n\n\n\n\nWeek 3, 24 Sept\n\n\nEnergy Balance Modeling 2\n\n\n\nTime dependent EBMs, ice-albedo feedbacks, diffusive energy transport\n\n\nSuggested reading: A Climate Modeling Primer Chapter 3\n\n\n\n\n\n\n\nWeek 4, 1 Oct\n\n\nModeling Circulation Processes in the Ocean and Atmosphere 1\n\n\n\nBox models for large scale circulations\n\n\nSuggested readings: A Climate Modeling Primer Chapter 4\n\n\n\nHW1 due\n\n\n\n\nWeek 5, 8 Oct\n\n\nModeling Circulation Processes in the Ocean and Atmosphere 2\n\n\n\n3D models of the climate system components - atmosphere\n\n\nSuggested reading: A Climate Modeling Primer Chapter 4, 5\n\n\n\nFinal project title due (9 Oct)\n\n\n\n\nWeek 6, 15 Oct\n\n\nModeling Circulation Processes in the Ocean and Atmosphere 3\n\n\n\n3D models of the climate system components - ocean and cryosphere\n\n\nSuggested reading: A Climate Modeling Primer Chapter 5\n\n\n\nHW2 due\n\n\n\n\nWeek 7, 22 Oct\n\n\nModeling the Land Surface\n\n\nLand-atmosphere interactions, surface energy and water budgets, soil and vegetation models  Suggested reading: A Climate Modeling Primer Chapter 5\n\n\nFinal project proposal due (23 Oct)\n\n\n\n\nWeek 8, 29 Oct\n\n\nModeling the Carbon Cycle\n\n\nOcean and terrestrial carbon reservoirs, biogeochemical cycles  Suggested reading: A Climate Modeling Primer Chapter 5\n\n\nHW3 due\n\n\n\n\nWeek 9, 5 Nov\n\n\nClimate System Feedback and Climate Sensitivity\n\n\n\nWater vapor, ice-albedo, cloud, lapse-rate feedback, ECS, TCR\n\n\nSuggested reading: A Climate Modeling Primer Chapter 1, 5\n\n\n\n\n\n\n\nWeek 10, 12 Nov\n\n\nClimate model tuning and evaluation\n\n\nObservational constraints, model tuning strategies, skill metrics, model intercomparison\n\n\nHW4 due\n\n\n\n\nWeek 11, 19 Nov\n\n\nProtocols for climate model simulations\n\n\nCMIP6/7 experimental design, SSPs, MIPs\n\n\n\n\n\n\nWeek 12, 26 Nov — Thanksgiving, no class (asynchronous)\n\n\nCoupled Model Intercomparisons\n\n\nCMIP6 data access and analysis, experiments and ensembles\n\n\n\n\n\n\nWeek 13, 3 Dec\n\n\nClimate model projections and future of climate modeling\n\n\nTransient climate response, regional projections, downscaling, detection and attribution, use of AI for enhancing models and projections.\n\n\nHW 5 due\n\n\n\n\nWeek 14/15, 10/17 Dec\n\n\nFinal project presentations\n\n\nStudent presentations of final projects\n\n\nFinal project due 18 Dec"
-  },
-  {
-    "objectID": "syllabus.html#columbia-climate-school-policies",
-    "href": "syllabus.html#columbia-climate-school-policies",
-    "title": "Syllabus",
-    "section": "COLUMBIA CLIMATE SCHOOL POLICIES",
-    "text": "COLUMBIA CLIMATE SCHOOL POLICIES\n\nInclusive Excellence\nThe Climate School aims to advance knowledge and educate leaders for equitable solutions to climate and sustainability challenges. Using an interdisciplinary approach, the School encourages engagement of diverse perspectives on climate variability and its impacts. The classroom should be a welcoming environment where a variety of perspectives and lived experiences enable us to collaboratively define challenges and identify solutions.\nThe Climate School has adopted the Inclusive Excellence framework, which helps to build institutional capacity and effectiveness in promoting equal access, belonging, and success throughout our community. The Office of Inclusive Excellence supports student access, success, education, and scholarship.\nShould you wish to discuss the School’s environment or your engagement inside or outside of the classroom, please do not hesitate to contact Willie Williams (Assistant Dean for Inclusive Excellence) at 332.277.3697 or wwilliams@climate.columbia.edu.\n\n\nNames/Pronouns\nYou deserve to be addressed in a manner that reflects your identity. Please see https://universitylife.columbia.edu/pronouns for more information on university policies and services.\n\n\nReligious Observance\nIt is the policy of the Columbia Climate School to respect its members’ observance of their major religious holidays. Students should notify instructors at the beginning of the semester about their wishes to observe holidays on days when class sessions are scheduled. Where academic scheduling conflicts prove unavoidable, no student will be penalized for absence due to religious reasons, and alternative solutions will be identified.\n\n\nStudent Wellness Message\nMental and physical health is important while undergoing graduate studies. While maintaining good health is a priority, occasional stress is an unavoidable part of a graduate education. Please know that there are resources on campus to help you cope with the pressures of student life. These include support groups and workshops on managing stress, healthy eating and life management. For resources for coping with stress, anxiety, and other specific health related concerns, please visit Columbia Health.\n\n\nAccessibility\nColumbia is committed to providing equal access to qualified students with documented disabilities. A student’s disability status and reasonable accommodations are individually determined based upon disability documentation and related information gathered through the intake process.\nIn order to receive disability-related academic accommodations, students must first be registered with the Office of Disability Services (ODS). More information on the ODS registration process is available online at www.health.columbia.edu/ods. Please allow for at least two weeks to complete the ODS registration process. Students are encouraged to contact ODS at the start of the semester.\nStudents who have, or think they may have, a disability are invited to contact ODS for a confidential discussion at 212.854.2388 (V) 212.854.2378 (TTY), or by email at disability@columbia.edu. If you have already registered with ODS and would like your professor(s) notified of your recommended accommodations, contact Natalie Unwin-Kuruneri (natalie@climate.columbia.edu)\nwho serves as the ODS liaison to the Climate School.\n\n\nAcademic Integrity\nThe Columbia Climate School holds each member of its community responsible for understanding and abiding by the Academic Integrity and Community Standards. Ignorance of policies and standards concerning academic dishonesty shall not be a defense in any disciplinary proceedings.\nStudents should be aware that academic dishonesty (for example, plagiarism, cheating on an examination, or dishonesty in dealing with a faculty member or other university official) are particularly serious offenses and will be dealt with severely under Dean’s Discipline. It is essential to the academic integrity and vitality of this community that graduate students do their own work and properly acknowledge the circumstances, ideas, sources, and assistance upon which that work is based. Academic honesty in class assignments and exams is expected of all students at all times.\nUse of Artificial Intelligence (AI) is also subject to these integrity standards and must never be employed for a use that would be considered plagiarism if that material were sourced from a human author. For example, submitting work under your name that you did not personally write is not allowed, regardless of whether it was written by another author or by an AI tool. Individual faculty may have different policies on other ways students may use or not use AI in a particular class. Students should assume all use of AI is forbidden unless told otherwise.\n\n\nCopyright Policy\nPlease note – Due to copyright restrictions, online access to this material is limited to instructors and students currently registered for this course. Please be advised that by clicking the link to the electronic materials in this course, you have read and accept the following:\nThe copyright law of the United States (Title 17, United States Code) governs the making of photocopies or other reproductions of copyrighted materials. Under certain conditions specified in the law, libraries and archives are authorized to furnish a photocopy or other reproduction. One of these specified conditions is that the photocopy or reproduction is not to be “used for any purpose other than private study, scholarship, or research.” If a user makes a request for, or later uses, a photocopy or reproduction for purposes in excess of “fair use,” that user may be liable for copyright infringement."
-  },
-  {
-    "objectID": "syllabus.html#additional-resources",
-    "href": "syllabus.html#additional-resources",
-    "title": "Syllabus",
-    "section": "ADDITIONAL RESOURCES",
-    "text": "ADDITIONAL RESOURCES\n\nColumbia University Library\nColumbia’s extensive library system ranks in the top five academic libraries in the nation, with many of its services and resources available online: https://library.columbia.edu/.\n\n\nColumbia Writing Center\nThe Columbia Writing Center aids undergraduate and graduate students with writing consultations for specific writing projects, writing productivity sessions, and workshops. The Writing Center offers these services for free to current Columbia students. Read more about their services on their website. You can also contact the center at writingcenter@columbia.edu with questions."
-  },
-  {
-    "objectID": "slides/week01.html#intro-and-logistics",
-    "href": "slides/week01.html#intro-and-logistics",
-    "title": "Introduction to Climate Modeling",
-    "section": "Intro and logistics",
-    "text": "Intro and logistics\n\nTime: Thursdays 10:10–12:40 · FRM 315 (The Forum)\nInstructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)\nTAs: Prani Nalluri (pan2121) · Chandanie Kutwaru (ck3397)\nOffice hours: TBD (TAs will organize)\nWe will work using Courseworks + the course website ↓\n\n\n\nBrief self-intro, then straight into the work."
-  },
-  {
-    "objectID": "slides/week01.html#the-work-labs-homeworks-project",
-    "href": "slides/week01.html#the-work-labs-homeworks-project",
-    "title": "Introduction to Climate Modeling",
-    "section": "The work: labs, homeworks, project",
-    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class presence\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~every two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nHomework submission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.\n\nFlag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW."
-  },
-  {
-    "objectID": "slides/week01.html#using-ai-in-this-course",
-    "href": "slides/week01.html#using-ai-in-this-course",
-    "title": "Introduction to Climate Modeling",
-    "section": "Using AI in this course",
-    "text": "Using AI in this course\n\nAllowed\n\nGoogle Gemini (free through CUIT); ChatGPT or Claude are fine too.\n\nDefault to asking it to teach you, not to do it for you. A standing prompt that works:\n\n“Never give me corrected code or direct syntax fixes. Explain the concept I’m missing.”\n\nGood at: explaining error messages, syntax, library APIs, what a function does\nBad at: judging scientific correctness, choosing the right analysis, subtle bugs, whether a result “looks right”\nYou are responsible for understanding everything you submit and for the errors that AI may make."
-  },
-  {
-    "objectID": "slides/week01.html#before-we-start",
-    "href": "slides/week01.html#before-we-start",
-    "title": "Introduction to Climate Modeling",
-    "section": "Before we start",
-    "text": "Before we start\n\nRoughly what sets the Earth’s average temperature? (could you explain it to a friend?)\nDo you remember what “climate sensitivity” means?\nHave you come across ordinary differential equations — in any course?\nHave you written Python this year? …keep your hand up if you’ve used it on climate or environmental data\nHave you used git/GitHub before?\n\n\nUngraded diagnostic — no judgment framing: “a year since GR5001 is a long time; that’s expected.” Q3 calibrates the math pacing of weeks 2–3; Q4’s second stage tells you how much xarray scaffolding labs need; Q5 tells the TAs how hands-on Lab 0a must be. Jot rough counts right after class."
-  },
-  {
-    "objectID": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
-    "href": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
-    "title": "Introduction to Climate Modeling",
-    "section": "Weather is the state. Climate is the distribution.",
-    "text": "Weather is the state. Climate is the distribution.\n\nWeather: the value right now — a random variable, unpredictable in detail beyond ~2 weeks\nClimate: the distribution those values are drawn from — mean, variability, tails — estimated over a chosen period\nClimate change = the distribution shifting, widening, or reshaping"
-  },
-  {
-    "objectID": "slides/week01.html#section",
-    "href": "slides/week01.html#section",
-    "title": "Introduction to Climate Modeling",
-    "section": "",
-    "text": "IPCC AR6 WG1, Figure SPM.1 (2021)"
-  },
-  {
-    "objectID": "slides/week01.html#section-1",
-    "href": "slides/week01.html#section-1",
-    "title": "Introduction to Climate Modeling",
-    "section": "",
-    "text": "IPCC AR6 WG1, Figure SPM.8, panel (a) (2021)"
-  },
-  {
-    "objectID": "slides/week01.html#a-model-is",
-    "href": "slides/week01.html#a-model-is",
-    "title": "Introduction to Climate Modeling",
-    "section": "A model is…",
-    "text": "A model is…\n\n\n\n\nphysical — a scale model of a building\n\n\n\n\nabstract — equations, or code (this one is Lab 0d)\n\n\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nPhoto: Mak Faitre Sownia, CC BY-SA 4.0, via Wikimedia Commons\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
-  },
-  {
-    "objectID": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
-    "href": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
-    "title": "Introduction to Climate Modeling",
-    "section": "Three reasons a forecast model can be wrong",
-    "text": "Three reasons a forecast model can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: we don’t know exact laws or our models can’t be exactly solved)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons.\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
-  },
-  {
-    "objectID": "slides/week01.html#how-the-three-trade-off-with-time",
-    "href": "slides/week01.html#how-the-three-trade-off-with-time",
-    "title": "Introduction to Climate Modeling",
-    "section": "How the three trade off with time",
-    "text": "How the three trade off with time\n\n\n\n\nIndividual model runs under a low and a high scenario. For the next ~20 years the wiggles — internal variability — swamp the difference between scenarios.\n\n\n\n\nShare of the uncertainty in global, annual-mean, 10-year-averaged temperature: internal variability dominates early, model uncertainty mid-century, scenario by 2100. That smoothing is why orange fades so fast — ask about one summer in one city and it stays orange much longer.\n\n\n\nLeft: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins & Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.\n\n\nMap the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
-  },
-  {
-    "objectID": "slides/week01.html#before-you-leave",
-    "href": "slides/week01.html#before-you-leave",
-    "title": "Introduction to Climate Modeling",
-    "section": "Before you leave",
-    "text": "Before you leave\n\nToday’s notebooks (0b, 0c, 0d) → saved into your course repo\nRepo link → posted on Courseworks (that’s your Lab 0 submission)\nDidn’t finish or want to play around more? Complete at home before next Thursday — TAs + office hours can unblock you.\n\n\nNext week: the Earth is a bucket — sunlight pours in, infrared drains out, and the level is the heat (temperature)."
-  },
-  {
-    "objectID": "labs/verify_setup.html",
-    "href": "labs/verify_setup.html",
-    "title": "Lab 0 — Setup Verification",
-    "section": "",
-    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nIntroduction to Climate Modeling · Fall 2026\nRun every cell in this notebook (Shift+Enter). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.\nFill in the next cell first.\n# EDIT THIS CELL\nname = \"YOUR NAME HERE\"\nuni = \"YOUR UNI HERE\"\n\nprint(f\"Lab 0 submitted by {name} ({uni})\")\n\nLab 0 submitted by YOUR NAME HERE (YOUR UNI HERE)"
-  },
-  {
-    "objectID": "labs/verify_setup.html#check-the-scientific-python-stack",
-    "href": "labs/verify_setup.html#check-the-scientific-python-stack",
-    "title": "Lab 0 — Setup Verification",
-    "section": "1. Check the scientific Python stack",
-    "text": "1. Check the scientific Python stack\nThese are the libraries we’ll use all semester. This cell just confirms they import and prints their versions.\n\nimport sys\nimport numpy as np\nimport matplotlib\nimport matplotlib.pyplot as plt\nimport xarray as xr\n\nprint(f\"python     {sys.version.split()[0]}\")\nprint(f\"numpy      {np.__version__}\")\nprint(f\"matplotlib {matplotlib.__version__}\")\nprint(f\"xarray     {xr.__version__}\")\nprint(\"\\nAll imports OK ✅\")\n\npython     3.11.15\nnumpy      2.4.6\nmatplotlib 3.10.9\nxarray     2026.4.0\n\nAll imports OK ✅"
-  },
-  {
-    "objectID": "labs/verify_setup.html#a-tiny-computation-and-a-preview-of-week-2",
-    "href": "labs/verify_setup.html#a-tiny-computation-and-a-preview-of-week-2",
-    "title": "Lab 0 — Setup Verification",
-    "section": "2. A tiny computation — and a preview of Week 2",
-    "text": "2. A tiny computation — and a preview of Week 2\nThe emission temperature of a planet is the temperature it must radiate at to balance the sunlight it absorbs:\n\\[T_e = \\left[\\frac{S_0(1-\\alpha)}{4\\sigma}\\right]^{1/4}\\]\nwhere \\(S_0\\) is the solar constant, \\(\\alpha\\) the planetary albedo (how reflective the planet is), and \\(\\sigma\\) the Stefan–Boltzmann constant. Next week we’ll derive this and discover why it gives the wrong answer for Earth’s surface — in the most interesting way possible.\nFor now: run the cell and look at the plot.\n\nS0 = 1361.0      # solar constant [W m-2]\nsigma = 5.67e-8  # Stefan-Boltzmann constant [W m-2 K-4]\n\nalbedo = np.linspace(0.0, 0.8, 100)\nT_e = (S0 * (1 - albedo) / (4 * sigma)) ** 0.25\n\nfig, ax = plt.subplots(figsize=(6, 4))\nax.plot(albedo, T_e, lw=2)\nax.axvline(0.3, ls=\"--\", color=\"gray\")\nax.axhline(255, ls=\"--\", color=\"gray\")\nax.plot(0.3, 255, \"o\", color=\"tab:red\", ms=8, zorder=5,\n        label=\"Earth: $\\\\alpha=0.3$, $T_e\\\\approx255$ K\")\nax.axhline(288, ls=\":\", color=\"tab:red\",\n           label=\"Earth's actual surface T = 288 K  (?!)\")\nax.set_xlabel(\"planetary albedo\")\nax.set_ylabel(\"emission temperature [K]\")\nax.set_title(f\"{name}'s first climate calculation\")\nax.legend()\nfig.tight_layout()\n\n\n\n\n\n\n\n\nThat 33 K gap between the dashed gray line and the dotted red line? That’s the greenhouse effect, and it’s where this course begins."
-  },
-  {
-    "objectID": "labs/verify_setup.html#check-xarray-our-data-workhorse",
-    "href": "labs/verify_setup.html#check-xarray-our-data-workhorse",
-    "title": "Lab 0 — Setup Verification",
-    "section": "3. Check xarray (our data workhorse)",
-    "text": "3. Check xarray (our data workhorse)\nLater in the course we’ll use xarray to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.\n\nda = xr.DataArray(\n    20 + 10 * np.random.randn(12, 4),\n    dims=[\"month\", \"station\"],\n    coords={\"month\": np.arange(1, 13)},\n    name=\"temperature\",\n    attrs={\"units\": \"degC\"},\n)\nprint(da.mean(dim=\"station\"))\nprint(\"\\nxarray OK ✅\")\n\n&lt;xarray.DataArray 'temperature' (month: 12)&gt; Size: 96B\narray([22.93892471, 10.94889651, 25.2580202 , 20.55694466, 14.90834561,\n       27.02762739, 25.62253631, 17.55929104, 19.5433179 , 23.48915813,\n       18.05039101, 17.86739252])\nCoordinates:\n  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12\nAttributes:\n    units:    degC\n\nxarray OK ✅"
-  },
-  {
-    "objectID": "labs/verify_setup.html#done",
-    "href": "labs/verify_setup.html#done",
-    "title": "Lab 0 — Setup Verification",
-    "section": "Done!",
-    "text": "Done!\nIf everything above ran cleanly:\n\nSave this notebook (Ctrl+S / Cmd+S).\nFollow Part C of the Lab 0 instructions to put it in your private course repo.\nFollow Part D to post your repo link on Courseworks.\n\nSee you in class."
-  },
-  {
-    "objectID": "labs/lab0d_bucket.html",
-    "href": "labs/lab0d_bucket.html",
-    "title": "Lab 0d — A bucket: your first time-dependent model",
-    "section": "",
-    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling"
-  },
-  {
-    "objectID": "labs/lab0d_bucket.html#a-budget",
-    "href": "labs/lab0d_bucket.html#a-budget",
-    "title": "Lab 0d — A bucket: your first time-dependent model",
-    "section": "1. A budget",
-    "text": "1. A budget\nNow let’s build our first model based on some physical principles: a bucket of water. While quite obvious (due to our intuition of the physical world), the volume in this bucket is conserved if we don’t add or remove any water. This is called a “conservation law”.\nWith water pouring in and draining out, we can track the volume of water, \\(V = A\\,h\\):\n\\[\\underbrace{A\\,\\frac{dh}{dt}}_{\\text{accumulation}} \\;=\\; \\underbrace{F}_{\\text{in}} \\;-\\; \\underbrace{Q}_{\\text{out}}\\]\n\n\\(h\\) = water level [m], \\(A\\) = bucket area [m²]\n\\(F\\) = inflow [m³/s] — someone pours. The bucket doesn’t decide: this is external forcing\n\\(Q\\) = outflow [m³/s] — the bucket decides, based on its own state and the properties of the hole.\n\n-&gt; The inflow is imposed; the outflow is the system responding to itself — a feedback.\nSo \\(Q\\) depends on the system. But how is a question about physics — and different plumbing at the outflow gives different answers."
-  },
-  {
-    "objectID": "labs/lab0d_bucket.html#two-drain-laws-from-first-principles",
-    "href": "labs/lab0d_bucket.html#two-drain-laws-from-first-principles",
-    "title": "Lab 0d — A bucket: your first time-dependent model",
-    "section": "2. Two drain laws, from first principles",
-    "text": "2. Two drain laws, from first principles\nDifferent properties of the drain can give different flow rates, not just the size of the drain but also whether it is a hole or a pipe.\nWe can figure out these outflow using a commonly used approach, which will be used in many laws in this course: decide which two effects dominate, assume they balance, and neglect the rest. Physicists call this a dominant balance. The two cases differ only in which balance we assume.\n\nA hole in the bucket — nothing resists (Torricelli’s law)\nWater leaves through a hole of area \\(a\\) with nothing to rub against, so nothing dissipates its energy.\nTake a parcel of water at the surface, a height \\(h\\) above the hole, and let it make its way down: assume that all the potential energy it gives up gets converted to motion (or kinetic energy), exactly as for a dropped ball.\n\\[\\underbrace{m g h}_{\\text{potential energy released}} \\;=\\; \\underbrace{\\tfrac{1}{2} m v^{2}}_{\\text{kinetic energy gained}} \\quad\\Longrightarrow\\quad v = \\sqrt{2gh}\\]\nThe balance we just assumed: all of the released potential energy becomes motion — nothing is lost to friction. Inertia dominates; viscosity is neglected.\nThe volume leaving per second [m³/s] is then the outflow jet’s speed times the area it flows through:\n\\[Q = a\\,v = a\\sqrt{2gh} \\;\\propto\\; \\sqrt{h}\\]\nNote that: \\(A\\) is the bucket’s cross-section, \\(a\\) is the opening’s — and \\(a \\ll A\\).\nThis is Torricelli’s law (1643): the jet leaves at exactly the speed it would have had if it had fallen freely from the surface.\n\nAside — the same result, done more carefully (Bernoulli).\nThe falling-parcel argument gets the right answer, but the water is not actually in free fall — it is being pushed out by the weight of everything above it. The honest version follows a streamline from the free surface (point 1) to the jet (point 2) and uses Bernoulli’s equation, which says that without dissipation the sum of pressure, kinetic and potential terms is unchanged along the way:\n\\[P_1 + \\tfrac12\\rho v_1^2 + \\rho g z_1 \\;=\\; P_2 + \\tfrac12\\rho v_2^2 + \\rho g z_2\\]\nThree facts collapse it. The surface is open to the air and the jet emerges into the air, so \\(P_1 = P_2\\) and the pressures cancel. The bucket is far wider than the hole, so the surface descends slowly and \\(v_1 \\approx 0\\). Measuring height from the hole, \\(z_1 = h\\) and \\(z_2 = 0\\). What survives is \\(\\rho g h = \\tfrac12 \\rho v^{2}\\) — the same \\(v=\\sqrt{2gh}\\).\nTwo things this version makes visible that the falling-ball picture hides: what actually drives the jet (the pressure of the water column, with the atmosphere cancelling from both ends), and the assumption we are leaning on (no viscous dissipation, without which Bernoulli’s equation does not apply) — which is precisely what stops being true in the next case.\n\n\n\nA narrow tube instead — viscosity resists (Poiseuille’s law)\nReplace the hole with a long thin pipe — radius \\(r\\), length \\(L\\), so the same opening area \\(a=\\pi r^{2}\\). In such a pipe the water is not free to move easily, and the friction or viscosity at the pipe wall starts to become important.\nFluid touching a solid surface does not slide along it — it sticks. (This is the no-slip condition, an experimental fact about fluids and walls.) So inside the tube the water is stationary at the wall and fastest in the middle: neighbouring layers of fluid are sliding past one another.\nViscosity is the resistance to exactly that sliding. Newton’s law of viscosity says the drag force per unit area between layers is proportional to how rapidly velocity changes across the flow:\n\\[\\tau \\;=\\; \\mu \\frac{dv}{dy} \\;\\sim\\; \\mu \\frac{v}{r}\\]\nChecking the units keeps us honest here:\n\n\\(\\tau\\) is a stress — a force spread over an area: [N m⁻²] = [Pa] = [kg m⁻¹ s⁻²]\n\\(dv/dy\\) is a velocity gradient — a speed divided by a distance: [(m s⁻¹)/m] = [s⁻¹]\nso \\(\\mu\\), the dynamic viscosity, must carry [Pa s] = [kg m⁻¹ s⁻¹]\n\nFor water \\(\\mu \\approx 1\\times10^{-3}\\) Pa s; air is about 50 times less viscous, honey about 10,000 times more.\nWe used \\(v/r\\) as a “scaling” assuming that the speed goes from roughly \\(v\\) at the centre to zero at the wall, across a distance of about the tube radius \\(r\\). That stress acts over the whole inner wall of the tube, area \\(2\\pi r L\\), so the total resisting force is \\(\\mu (v/r)\\cdot 2\\pi r L\\).\nMeanwhile the water is pushed along by the pressure of the column standing above the tube. In this case we can estimate the pressure as the force exerted by the weight of the fluid per unit area. So pressure on the inside is:\n\\[P \\;=\\; \\frac{\\text{weight of the column}}{\\text{area}} \\;=\\; \\frac{\\rho\\,A\\,h\\,g}{A} \\;=\\; \\rho g h\n\\qquad [\\text{kg m}^{-3}][\\text{m s}^{-2}][\\text{m}] = [\\text{kg m}^{-1}\\text{s}^{-2}] = [\\text{Pa}]\\]\nThe pressure at the bottom of a bucket does not care how wide the bucket is — only how deep the water is. Pressure is also just a number at every point in the fluid, and acts equally in all directions, so pressure due to weight of water above the hole acts the same way into the hole. This pressure acts on the tube’s cross-section \\(\\pi r^2\\).\nThe balance is now a force balance: the pressure force is opposed by viscous drag, and the two are in equilibrium. Nothing accelerates — the flow settles at whatever speed makes push and drag equal. Here viscosity dominates and inertia is neglected, the opposite choice from Torricelli:\n\\[\\underbrace{\\rho g h \\cdot \\pi r^{2}}_{\\text{pressure pushing}} \\;\\sim\\; \\underbrace{\\mu \\frac{v}{r}\\cdot 2\\pi r L}_{\\text{wall drag}} \\quad\\Longrightarrow\\quad v \\sim \\frac{\\rho g h\\, r^{2}}{\\mu L} \\quad\\Longrightarrow\\quad Q = v\\,\\pi r^{2} \\;\\propto\\; h\\]\nThe outflow is linear in \\(h\\). Notice also \\(Q \\propto r^{4}\\): halving the tube radius cuts the flow sixteenfold.\n\nScaling arguments get the form right, not the constant.\nSolving the flow exactly (Poiseuille) gives \\(Q = \\pi r^{4}\\rho g h / (8\\mu L)\\). Our argument got every dependence right and missed only the factor of 8.\nWorth keeping: physics fixes the form of a law; the number in front comes from a full solution or from measurement. Form = the model’s structure; the number = a parameter. Calibrating a model means pinning down the second, not the first.\n\n\n\nThe real lesson: laws come from assumed balances\nNeither derivation solved the full equations of fluid motion. Each one picked two terms, set them equal, and threw the rest away:\n\n\n\n\n\n\n\n\n\nassumed balance\nneglected\n\n\n\n\nTorricelli\npotential energy \\(\\leftrightarrow\\) kinetic energy\nviscous dissipation\n\n\nPoiseuille\npressure force \\(\\leftrightarrow\\) viscous drag\ninertia (acceleration)\n\n\n\nBoth effects are always present. Which one you may neglect depends on the situation — for pipe flow the deciding ratio of inertia to viscosity is the Reynolds number. Choose the wrong balance and you get a confident, wrong law.\nThis is how nearly every equation in this course will be built. Next week we write a balance between absorbed sunlight and emitted infrared, and neglect everything else — and a planet’s temperature falls out of it.\n\n\nSo which law?\n\\(Q \\propto \\sqrt{h}\\) or \\(Q \\propto h\\) ?\nSame bucket, different plumbing, different law. Choosing the law is a modelling decision — one to justify from physics and knowledge of the system, not convenience.\nFor the rest of today we use the linear law, \\(Q = k\\,h\\), because it is the simplest thing:\n\\[A\\,\\frac{dh}{dt} \\;=\\; F \\;-\\; k\\,h\\]\nwith \\(k\\) [m²/s] the drain constant."
-  },
-  {
-    "objectID": "labs/lab0d_bucket.html#equilibrium-no-time-needed",
-    "href": "labs/lab0d_bucket.html#equilibrium-no-time-needed",
-    "title": "Lab 0d — A bucket: your first time-dependent model",
-    "section": "3. Equilibrium — no time needed",
-    "text": "3. Equilibrium — no time needed\n\nThought experiment. What if the drain were a pump running at a fixed rate \\(c\\), regardless of level? Then \\(A\\,dh/dt = F - c\\): a constant. The bucket fills forever, or empties forever, and only sits still if \\(F\\) happens to equal \\(c\\) exactly. Equilibrium exists because outflow grows with level.\n\nAt equilibrium the level isn’t changing: \\(dh/dt = 0\\), so inflow = outflow:\n\\[h^* = F / k\\]\nCheck the units. Then compute it:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nA = 1.0    # m^2\nF = 2.0    # m^3/s\nk = 1.0    # m^2/s\n\nh_star = F / k\nprint(f\"equilibrium level h* = {h_star} m\")\n\nequilibrium level h* = 2.0 m"
-  },
-  {
-    "objectID": "labs/lab0d_bucket.html#step-forward-in-time",
-    "href": "labs/lab0d_bucket.html#step-forward-in-time",
-    "title": "Lab 0d — A bucket: your first time-dependent model",
-    "section": "4. Step forward in time",
-    "text": "4. Step forward in time\nThe equation tells us the rate of change right now. So predict a small step ahead, over and over:\n\\[h_{\\text{next}} = h_{\\text{now}} + \\Delta t \\cdot \\frac{F - k\\,h_{\\text{now}}}{A}\\]\n(This is called Euler’s method — it’s how we march time forward.)\nFill in the one missing line:\n\nUntil you fill it in, the rate of change is zero — so your plot will be a flat line. That flat line is the model telling you it has no physics in it yet.\n\n\ndef run_bucket(h0, F, k, A=1.0, dt=0.1, n_steps=100):\n    \"\"\"March the bucket forward from level h0. Returns times and levels.\"\"\"\n    h = np.zeros(n_steps)\n    h[0] = h0 # initial condition\n    for i in range(1, n_steps):\n        h[i] = h[i-1] + dt * (F - k*h[i-1])/A   # &lt;-- FILL THIS IN: what is dh/dt?\n    return np.arange(n_steps) * dt, h\n\nt, h = run_bucket(h0=0.0, F=2.0, k=1.0)\n\n\nplt.figure(figsize=(8, 3))\nplt.plot(t, h)\nplt.axhline(2.0, ls=\"--\", color=\"gray\", label=\"h* = F/k\")\nplt.xlabel(\"time [s]\"); plt.ylabel(\"level h [m]\"); plt.legend();\n\n\n\n\n\n\n\n\nThe level rises and settles at the equilibrium — the drain term pulls it there (fuller → drains harder → a stabilizing feedback)."
-  },
-  {
-    "objectID": "labs/lab0d_bucket.html#make-predictions-and-break-them-three-ways",
-    "href": "labs/lab0d_bucket.html#make-predictions-and-break-them-three-ways",
-    "title": "Lab 0d — A bucket: your first time-dependent model",
-    "section": "5. Make predictions — and break them three ways",
-    "text": "5. Make predictions — and break them three ways\nOur model predicts the level at t = 10 s. How much should we trust that number? Attack it from three directions:\n(a) Initial conditions: run from h0 = 0, 1, 3, 5. Plot all four. Does the prediction at t = 10 s care about where you started? At t = 0.5 s?\n\nplt.figure(figsize=(8, 3))\nfor h0 in [0, 1, 3, 5]:\n    t, h = run_bucket(h0=h0, F=2.0, k=1.0)\n    plt.plot(t, h, label=f\"h0={h0}\")\nplt.xlabel(\"time [s]\"); plt.ylabel(\"h [m]\"); plt.legend();\n\n\n\n\n\n\n\n\n(b) Model parameters: suppose we only know the drain constant roughly: \\(k = 1.0 \\pm 0.2\\). Run with k = 0.8, 1.0, 1.2. How wide is the prediction at t = 10 s?\n\n# YOUR TURN: copy the loop above, but vary k instead of h0.\n\n(c) Forcing: we don’t control the pourer. Run with F = 1.5, 2.0, 2.5. How wide now?\n\n# YOUR TURN: vary F."
-  },
-  {
-    "objectID": "labs/lab0d_bucket.html#name-what-you-just-did",
-    "href": "labs/lab0d_bucket.html#name-what-you-just-did",
-    "title": "Lab 0d — A bucket: your first time-dependent model",
-    "section": "6. Name what you just did",
-    "text": "6. Name what you just did\nYou attacked one prediction from three directions. They have official names:\n\n\n\n\n\n\n\n\nyou varied\nuncertainty type\nEarth version\n\n\n\n\nh0\ninitial-condition uncertainty\ntoday’s exact weather state\n\n\nk\nmodel (parameter) uncertainty\nhow strong are the feedbacks?\n\n\nF\nscenario uncertainty\nwhat will humans emit?\n\n\n\nDiscuss: which mattered at short times? Which at long times?\nBefore you leave: make sure today’s notebooks are saved in your course repo, and your repo link is posted on Courseworks."
-  },
-  {
-    "objectID": "labs/index.html",
-    "href": "labs/index.html",
-    "title": "Labs",
-    "section": "",
-    "text": "Labs are done in class, saved into your course GitHub repo, and submitted by posting your repo link on Courseworks. This page grows week by week."
-  },
-  {
-    "objectID": "labs/index.html#week-1-sep-10",
-    "href": "labs/index.html#week-1-sep-10",
-    "title": "Labs",
-    "section": "Week 1 (Sep 10)",
-    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 3-parameter model, ERA5 vs CMIP6\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\n\nReference (optional)\n\nWhere our data comes from: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
-  },
-  {
-    "objectID": "labs/getting_the_data.html",
-    "href": "labs/getting_the_data.html",
-    "title": "Reference — where our data comes from",
-    "section": "",
-    "text": "⇩ Download this notebook (.ipynb)\nOptional reference — we won’t work through this in class.\nThe CSV files used in Lab 0c didn’t fall from the sky: they were downloaded from three public archives. This notebook shows exactly how, partly so the numbers are reproducible, and partly because getting data is a real skill you’ll need for your final project.\nThe cells here are not executed when this page is built (the downloads are slow, and the class shouldn’t depend on three servers being up). Download the notebook and run it yourself if you want the data fresh.\nAll three cover 1995–2014 — the last 20 years of the CMIP6 historical experiment, so they overlap.\nimport io, json, urllib.request\nimport pandas as pd\n\nLAT, LON = 40.78, -73.97          # Central Park\nY0, Y1 = \"1995-01-01\", \"2014-12-31\""
-  },
-  {
-    "objectID": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
-    "href": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
-    "title": "Reference — where our data comes from",
-    "section": "1. Station observations — NOAA GHCN-Daily",
-    "text": "1. Station observations — NOAA GHCN-Daily\nThe Global Historical Climatology Network holds daily records from tens of thousands of stations. Central Park is USW00094728. NOAA’s Access Data Service will hand you a CSV straight from a URL.\nNote we ask for TMAX and TMIN and average them: daily mean temperature (TAVG) is missing for many station-years, so (TMAX + TMIN)/2 is the standard workaround. That is a modelling choice, and it is not identical to a true daily mean: checked against ERA5 (which provides both), the midpoint runs about +0.2 °C warm here. ERA5 and CMIP6 below give true 24-hour means, so the three series are not quite like-for-like.\n\nurl = (\"https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries\"\n       f\"&stations=USW00094728&startDate={Y0}&endDate={Y1}&dataTypes=TMAX,TMIN\"\n       \"&units=metric&format=csv\")\n\nobs = pd.read_csv(io.StringIO(urllib.request.urlopen(url, timeout=180).read().decode()))\nobs[\"DATE\"] = pd.to_datetime(obs[\"DATE\"])\nobs[\"t_obs\"] = (obs[\"TMAX\"] + obs[\"TMIN\"]) / 2\nobs = obs.set_index(\"DATE\")[[\"t_obs\"]]\nobs.head()"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#reanalysis-era5",
-    "href": "labs/getting_the_data.html#reanalysis-era5",
-    "title": "Reference — where our data comes from",
-    "section": "2. Reanalysis — ERA5",
-    "text": "2. Reanalysis — ERA5\nERA5 is a weather model run over the whole satellite/observation record, continuously nudged toward observations. The full archive is enormous; Open-Meteo offers a friendly API that extracts a single point for you.\nWatch the fine print: you asked for Central Park, but you get the nearest grid point — around 40.81 °N, 74.02 °W, and it represents an average over roughly 30 km, not a park.\n\nurl = (f\"https://archive-api.open-meteo.com/v1/era5?latitude={LAT}&longitude={LON}\"\n       f\"&start_date={Y0}&end_date={Y1}&daily=temperature_2m_mean\"\n       \"&timezone=America%2FNew_York\")\n\nj = json.load(urllib.request.urlopen(url, timeout=300))\nera = pd.DataFrame({\"DATE\": pd.to_datetime(j[\"daily\"][\"time\"]),\n                    \"t_era5\": j[\"daily\"][\"temperature_2m_mean\"]}).set_index(\"DATE\")\n\nprint(\"grid point actually returned:\", j[\"latitude\"], j[\"longitude\"])\nera.head()\n\n\nobs.join(era, how=\"outer\").to_csv(\"centralpark_obs_era5_1995-2014.csv\")"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
-    "href": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
-    "title": "Reference — where our data comes from",
-    "section": "3. A climate model — CMIP6 from the cloud",
-    "text": "3. A climate model — CMIP6 from the cloud\nThis is the one we’ll use properly later in the course. Every CMIP6 simulation is catalogued in one big CSV; you filter it to the run you want, then open the data straight from cloud storage — without downloading the whole thing (xarray fetches only the chunks you touch).\nThe search terms are the CMIP vocabulary you’ll learn later: source_id (which model), experiment_id (which experiment), member_id (which ensemble member), table_id (which output frequency), variable_id (which variable — tas is near-surface air temperature).\n\nimport xarray as xr\n\ncat = pd.read_csv(\"https://storage.googleapis.com/cmip6/pangeo-cmip6.csv\")\nprint(len(cat), \"simulations in the catalog\")\n\nsel_all = cat[(cat.experiment_id == \"historical\") & (cat.member_id == \"r1i1p1f1\")\n               & (cat.table_id == \"day\") & (cat.variable_id == \"tas\")]\n\nsel = cat[(cat.source_id == \"MPI-ESM1-2-HR\") & (cat.experiment_id == \"historical\")\n          & (cat.member_id == \"r1i1p1f1\") & (cat.table_id == \"day\")\n          & (cat.variable_id == \"tas\")]\nsel[[\"source_id\", \"experiment_id\", \"member_id\", \"table_id\", \"variable_id\", \"zstore\"]]\n\n\nds = xr.open_zarr(sel.zstore.iloc[0], consolidated=True, storage_options={\"token\": \"anon\"})\nds\n\nFour things bite everyone the first time:\n\nLongitude runs 0–360, not −180–180. Central Park’s −73.97 becomes 286.03 (LON % 360).\nTemperature is in kelvin. Subtract 273.15.\nThe nearest grid cell is ~100 km wide — here it lands at about 40.68 °N, 74.06 °W, partly over water. It is not Central Park.\nModel calendars are their own thing (cftime objects, sometimes 360-day years), so converting to ordinary dates takes an extra step.\n\n\npt = (ds.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n            .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n\nprint(f\"grid cell used: {float(pt.lat):.2f} N, {float(pt.lon) - 360:.2f} E\")\n\ns = pt.to_series()\ns.index = pd.to_datetime(s.index.astype(str))     # cftime -&gt; ordinary dates\ns.rename(\"t_cmip6\").to_csv(\"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv\")\ns.head()"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#the-same-thing-for-eight-models",
-    "href": "labs/getting_the_data.html#the-same-thing-for-eight-models",
-    "title": "Reference — where our data comes from",
-    "section": "4. The same thing, for eight models",
-    "text": "4. The same thing, for eight models\nOne model is one opinion. The lab also uses an ensemble: the identical extraction, looped over eight modelling centres. Each model has its own grid, so “the cell nearest Central Park” is a different patch of the planet in each case — for the coarsest model it lands over the ocean.\n\nMODELS = [\"MPI-ESM1-2-HR\", \"MPI-ESM1-2-LR\", \"CanESM5\", \"MIROC6\",\n          \"IPSL-CM6A-LR\", \"ACCESS-CM2\", \"NorESM2-LM\", \"GFDL-ESM4\"]\n\nout = {}\nfor m in MODELS:\n    try:\n        z = sel_all[sel_all.source_id == m].zstore.iloc[0]\n        ds_m = xr.open_zarr(z, consolidated=True, storage_options={\"token\": \"anon\"})\n        pt_m = (ds_m.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n                       .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n        s_m = pt_m.to_series()\n        s_m.index = pd.to_datetime(s_m.index.astype(str)).normalize()\n        out[m] = s_m[~s_m.index.duplicated()]\n        print(f\"{m:16s} cell {float(pt_m.lat):6.2f}N {float(pt_m.lon)-360:7.2f}E   mean {s_m.mean():5.2f} C\")\n    except Exception as exc:\n        print(f\"{m:16s} FAILED ({type(exc).__name__})\")\n\nmodels = pd.DataFrame(out)\nmodels.index.name = \"time\"\nmodels.to_csv(\"centralpark_cmip6_multimodel_1995-2014.csv\")"
-  },
-  {
-    "objectID": "labs/getting_the_data.html#credit-where-due",
-    "href": "labs/getting_the_data.html#credit-where-due",
-    "title": "Reference — where our data comes from",
-    "section": "Credit where due",
-    "text": "Credit where due\n\nGHCN-Daily — NOAA National Centers for Environmental Information (US government work, public domain).\nERA5 — Copernicus Climate Change Service / ECMWF; served here by Open-Meteo.\nMPI-ESM1-2-HR — Max Planck Institute for Meteorology, distributed through CMIP6 (CC BY 4.0). Cloud copy hosted by Pangeo.\n\nCiting your data sources is not a formality — it’s how someone else (including future you) can check what you did.\nWant more of this? Working with real earth-science datasets — xarray, cloud archives, plotting, analysis — is the subject of the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
-  },
-  {
-    "objectID": "labs/lab0a.html",
-    "href": "labs/lab0a.html",
-    "title": "Lab 0a — Getting set up",
-    "section": "",
-    "text": "By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-a-accounts",
-    "href": "labs/lab0a.html#part-a-accounts",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part A — Accounts",
-    "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope you did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub",
-    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part B — Orient to Jupyterhub",
-    "text": "Part B — Orient to Jupyterhub\n\nWhat is Jupyterhub, and where things are.\nAdding notebooks to your folders.\n\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\n\nRunning through code in a notebook (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors."
-  },
-  {
-    "objectID": "labs/lab0a.html#part-c-create-your-course-repository",
-    "href": "labs/lab0a.html#part-c-create-your-course-repository",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part C — Create your course repository",
-    "text": "Part C — Create your course repository\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add dhruvbalwada, [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nAuthenticating (no passwords, no tokens): the first time you push, run this in the terminal:\ngh-scoped-creds\nIt prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing “Only select repositories” and picking your climate-modeling-f26-&lt;uni&gt; repo. Then git push works.\nCredentials last 8 hours; when they expire just run gh-scoped-creds again. (This is why we use the https:// clone URL above.)"
-  },
-  {
-    "objectID": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
-    "href": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
-    "title": "Lab 0a — Getting set up",
-    "section": "Part D — Submit your notebook as assignment",
-    "text": "Part D — Submit your notebook as assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, instructor and TAs added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html",
-    "href": "labs/lab0b_python_basics.html",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "",
-    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nThis is a quick tour of the four tools we use all semester: Python, numpy (numbers), matplotlib (plots), and a first look at pandas / xarray (labeled data). Run every cell, change things, break things.\nIf you already know all this — skim it, then help a neighbor."
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#notebooks",
-    "href": "labs/lab0b_python_basics.html#notebooks",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "0. Notebooks",
-    "text": "0. Notebooks\nA notebook is a stack of cells. A cell is either text (like this) or code (like the next one). Shift+Enter runs the current cell and moves on. Cells share memory — a variable made in one cell exists in the next.\n\nprint(\"hello, climate\")\n2 + 2   # the last line's value is displayed automatically\n\nhello, climate\n\n\n4"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#variables-and-doing-arithmetic-with-them",
-    "href": "labs/lab0b_python_basics.html#variables-and-doing-arithmetic-with-them",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "1. Variables, and doing arithmetic with them",
-    "text": "1. Variables, and doing arithmetic with them\n\nS0 = 1361.0        # solar constant, W/m2   (a float)\nalbedo = 0.3       # fraction reflected     (a float)\nplanet = \"Earth\"   # a string\n\nabsorbed = S0 * (1 - albedo) / 4\nprint(planet, \"absorbs\", absorbed, \"W/m2\")\nprint(f\"{planet} absorbs {absorbed:.1f} W/m2\")   # f-string: nicer formatting\n\nEarth absorbs 238.17499999999998 W/m2\nEarth absorbs 238.2 W/m2\n\n\nYour turn: change the albedo to 0.75 (roughly Venus) and re-run. Does absorbed energy go up or down?"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#functions",
-    "href": "labs/lab0b_python_basics.html#functions",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "2. Functions",
-    "text": "2. Functions\nA function packages a calculation so you can reuse it.\n\ndef absorbed_solar(S0, albedo):\n    \"\"\"Solar energy absorbed per square metre of planet surface [W/m2].\"\"\"\n    return S0 * (1 - albedo) / 4\n\nprint(absorbed_solar(1361, 0.30))   # Earth\nprint(absorbed_solar(2601, 0.75))   # Venus\n\n238.17499999999998\n162.5625"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#loops",
-    "href": "labs/lab0b_python_basics.html#loops",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "3. Loops",
-    "text": "3. Loops\nFor repeating something — including stepping a model forward in time, which is what we do in Lab 0d.\n\nfor year in [2020, 2021, 2022]:\n    print(year, \"→\", year - 1850, \"years since the pre-industrial baseline\")\n\n# a list, built up inside a loop\nsquares = []\nfor i in range(5):        # range(5) gives 0,1,2,3,4\n    squares.append(i**2)\nprint(squares)\n\n2020 → 170 years since the pre-industrial baseline\n2021 → 171 years since the pre-industrial baseline\n2022 → 172 years since the pre-industrial baseline\n[0, 1, 4, 9, 16]"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#numpy-arrays-of-numbers",
-    "href": "labs/lab0b_python_basics.html#numpy-arrays-of-numbers",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "4. numpy — arrays of numbers",
-    "text": "4. numpy — arrays of numbers\nLists are fine, but for data we use numpy arrays: math applies to the whole array at once (no loop needed), and they’re fast.\n\nimport numpy as np\n\ntemps = np.array([12.3, 15.1, 9.8, 21.0, 18.4])   # °C\n\nprint(\"array:      \", temps)\nprint(\"in Kelvin:  \", temps + 273.15)     # applies to every element\nprint(\"mean:       \", temps.mean())\nprint(\"std dev:    \", temps.std())\nprint(\"max:        \", temps.max())\nprint(\"first two:  \", temps[:2])          # indexing starts at 0\nprint(\"above 15:   \", temps[temps &gt; 15])  # selecting by condition\n\narray:       [12.3 15.1  9.8 21.  18.4]\nin Kelvin:   [285.45 288.25 282.95 294.15 291.55]\nmean:        15.319999999999999\nstd dev:     4.0345507804463185\nmax:         21.0\nfirst two:   [12.3 15.1]\nabove 15:    [15.1 21.  18.4]\n\n\n\n# arrays you generate rather than type out\ndays = np.arange(0, 365)              # 0,1,2,...,364\nx = np.linspace(0, 2*np.pi, 5)        # 5 evenly spaced values from 0 to 2pi\n\nprint(days[:5], \"...\", days[-3:])\nprint(np.round(np.sin(x), 3))         # math functions work on whole arrays\n\n[0 1 2 3 4] ... [362 363 364]\n[ 0.  1.  0. -1. -0.]"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#matplotlib-making-a-figure",
-    "href": "labs/lab0b_python_basics.html#matplotlib-making-a-figure",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "5. matplotlib — making a figure",
-    "text": "5. matplotlib — making a figure\nEvery plot you make this semester should have axis labels with units. Really.\n\nimport matplotlib.pyplot as plt\n\nday = np.arange(365)\nT = 12.5 + 11.0 * np.cos(2 * np.pi * (day - 201) / 365)   # a fake seasonal cycle\n\nfig, ax = plt.subplots(figsize=(8, 3))\nax.plot(day, T, label=\"model\")\nax.set_xlabel(\"day of year\")\nax.set_ylabel(\"temperature [°C]\")\nax.set_title(\"a made-up seasonal cycle\")\nax.legend();\n\n\n\n\n\n\n\n\n\n# two other plot types you'll need constantly\nnoise = np.random.default_rng(0).normal(0, 4, size=365)   # fake \"weather\"\n\nfig, ax = plt.subplots(1, 2, figsize=(10, 3))\nax[0].plot(day, T + noise, lw=0.8)        # line\nax[0].set_xlabel(\"day\"); ax[0].set_ylabel(\"°C\"); ax[0].set_title(\"with weather\")\nax[1].hist(T + noise, bins=30)            # histogram — a distribution!\nax[1].set_xlabel(\"°C\"); ax[1].set_title(\"its distribution\")\nplt.tight_layout()\n\n\n\n\n\n\n\n\nYour turn: make the noise bigger (change 4 to 10) and re-run. What happens to the histogram — and what would that mean for a place’s climate?"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#pandas-tables-with-labels",
-    "href": "labs/lab0b_python_basics.html#pandas-tables-with-labels",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "6. pandas — tables with labels",
-    "text": "6. pandas — tables with labels\nReal data comes with labels (dates, station names). pandas handles tables; we use it to read CSV files, including straight from a URL.\n\nimport pandas as pd\n\nfrom pathlib import Path\nbase = \"data/\" if Path(\"data\").is_dir() else \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/\"\nurl = base + \"centralpark_obs_era5_1995-2014.csv\"\ndf = pd.read_csv(url, index_col=0, parse_dates=True)\n\nprint(df.shape, \"rows × columns\")\ndf.head()\n\n(7305, 2) rows × columns\n\n\n\n\n\n\n\n\n\nt_obs\nt_era5\n\n\nDATE\n\n\n\n\n\n\n1995-01-01\n7.50\n5.1\n\n\n1995-01-02\n2.25\n2.2\n\n\n1995-01-03\n-2.50\n-2.2\n\n\n1995-01-04\n-2.75\n-2.1\n\n\n1995-01-05\n-6.10\n-6.4\n\n\n\n\n\n\n\n\nprint(df[\"t_obs\"].mean())          # one column, its mean\ndf[\"t_obs\"][\"2010\"].plot(figsize=(8, 2.5), lw=0.8)   # slice by date, and plot\nplt.ylabel(\"°C\");\n\n13.055297741273101"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#xarray-labeled-data-with-dimensions",
-    "href": "labs/lab0b_python_basics.html#xarray-labeled-data-with-dimensions",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "7. xarray — labeled data with dimensions",
-    "text": "7. xarray — labeled data with dimensions\nClimate model output isn’t a table: it’s temperature on (time × latitude × longitude), often many gigabytes. xarray is pandas for that world — you index by name, not by number. We’ll use it properly later in the course; here’s the flavor.\n\nimport xarray as xr\n\n# a small fake \"model output\": temperature over 12 months and 5 latitudes\nlat = np.array([-60, -30, 0, 30, 60])\nmonth = np.arange(1, 13)\ndata = 30 * np.cos(np.deg2rad(lat))[None, :] + 5 * np.sin(2*np.pi*(month[:, None]-1)/12)\n\nda = xr.DataArray(data, dims=[\"month\", \"lat\"],\n                  coords={\"month\": month, \"lat\": lat},\n                  name=\"temperature\", attrs={\"units\": \"degC\"})\nda\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n&lt;xarray.DataArray 'temperature' (month: 12, lat: 5)&gt; Size: 480B\narray([[15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [20.        , 30.98076211, 35.        , 30.98076211, 20.        ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [10.        , 20.98076211, 25.        , 20.98076211, 10.        ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ]])\nCoordinates:\n  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12\n  * lat      (lat) int64 40B -60 -30 0 30 60\nAttributes:\n    units:    degCxarray.DataArray'temperature'month: 12lat: 515.0 25.98 30.0 25.98 15.0 17.5 ... 10.67 12.5 23.48 27.5 23.48 12.5array([[15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [20.        , 30.98076211, 35.        , 30.98076211, 20.        ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [10.        , 20.98076211, 25.        , 20.98076211, 10.        ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ]])Coordinates: (2)month(month)int641 2 3 4 5 6 7 8 9 10 11 12array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])lat(lat)int64-60 -30 0 30 60array([-60, -30,   0,  30,  60])Attributes: (1)units :degC\n\n\n\nprint(\"equator, July:\", float(da.sel(lat=0, month=7)), \"°C\")   # select BY NAME\nprint(\"annual mean at 60N:\", float(da.sel(lat=60).mean(\"month\")), \"°C\")\n\nda.plot(figsize=(6, 3));   # xarray knows the labels, so it labels the plot for you\n\nequator, July: 30.0 °C\nannual mean at 60N: 15.000000000000005 °C"
-  },
-  {
-    "objectID": "labs/lab0b_python_basics.html#thats-enough-to-start",
-    "href": "labs/lab0b_python_basics.html#thats-enough-to-start",
-    "title": "Lab 0b — Python, just enough to start",
-    "section": "That’s enough to start",
-    "text": "That’s enough to start\nYou now have everything needed for the rest of today: arrays, a plot, a table read from a URL, and a loop.\nTwo habits worth keeping all semester:\n\nLabel your axes, with units.\nWhen something breaks, read the last line of the error first — it usually says exactly what’s wrong. AI assistants are also good at explaining errors; use them, and make sure you understand the fix.\n\nWant to go deeper? A fuller treatment of Python for earth and environmental data — numpy, pandas, xarray, plotting, working with real datasets — lives in the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
-  },
-  {
-    "objectID": "labs/lab0c_nyc_climate.html",
-    "href": "labs/lab0c_nyc_climate.html",
-    "title": "Lab 0c — Climate of New York City",
-    "section": "",
-    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling\nDaily temperature in Central Park, 1995–2014. We’ll use it to answer, concretely: what is climate? and what is a model? — and to build your first climate model.\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfrom pathlib import Path\n\n# data lives next to this notebook on the course website;\n# use a local copy if you have one, otherwise fetch over the web\nbase = \"data/\" if Path(\"data\").is_dir() else \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/\"\n\n# 1. station thermometer (NOAA) + 2. ERA5 reanalysis — same file\ndf = pd.read_csv(base + \"centralpark_obs_era5_1995-2014.csv\", index_col=0, parse_dates=True)\n\n# 3. a CMIP6 climate model at the same location\ncm = pd.read_csv(base + \"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv\", index_col=0, parse_dates=True)\ncm.index = cm.index.normalize()      # model timestamps sit at 12:00; align them to dates\ndf[\"t_cmip6\"] = cm[\"t_cmip6\"].reindex(df.index)\n\n# 4. eight CMIP6 models at the same location\nmodels = pd.read_csv(base + \"centralpark_cmip6_multimodel_1995-2014.csv\",\n                     index_col=0, parse_dates=True)\n\ndf.head()\n\n\n\n\n\n\n\n\nt_obs\nt_era5\nt_cmip6\n\n\nDATE\n\n\n\n\n\n\n\n1995-01-01\n7.50\n5.1\n-3.799713\n\n\n1995-01-02\n2.25\n2.2\n-7.446625\n\n\n1995-01-03\n-2.50\n-2.2\n-7.653137\n\n\n1995-01-04\n-2.75\n-2.1\n-5.104645\n\n\n1995-01-05\n-6.10\n-6.4\n-4.841217"
-  },
-  {
-    "objectID": "labs/lab0c_nyc_climate.html#where-this-data-comes-from",
-    "href": "labs/lab0c_nyc_climate.html#where-this-data-comes-from",
-    "title": "Lab 0c — Climate of New York City",
-    "section": "Where this data comes from",
-    "text": "Where this data comes from\nGood practice: always know your data’s provenance. All three series cover 1995–2014 (the last 20 years of the CMIP6 historical experiment, so they overlap).\n\n\n\n\n\n\n\ncolumn\nsource\n\n\n\n\nt_obs\nNOAA NCEI GHCN-Daily, station USW00094728 (NY City Central Park). Daily mean taken as (TMAX+TMIN)/2, the standard convention for long station records.\n\n\nt_era5\nERA5 reanalysis, daily mean 2 m temperature (Copernicus/ECMWF), via the Open-Meteo archive API, nearest grid point to Central Park.\n\n\nmodels\nEight CMIP6 models (historical, r1i1p1f1, daily tas), same nearest-cell extraction, from the Pangeo cloud archive.\n\n\nt_cmip6\nCMIP6 MPI-ESM1-2-HR, historical, r1i1p1f1, daily tas, from the Pangeo cloud archive; nearest grid cell (40.68 °N, 74.06 °W).\n\n\n\nCurious how these were downloaded? It’s all in the optional reference notebook, Where our data comes from. We pre-extracted the files so class doesn’t depend on live cloud access.\nThree columns, three very different things: t_obs is a real thermometer, t_era5 is a reanalysis, t_cmip6 is a climate model. We’ll look at the observations first and bring the other two in at the end."
-  },
-  {
-    "objectID": "labs/lab0c_nyc_climate.html#weather-vs-climate",
-    "href": "labs/lab0c_nyc_climate.html#weather-vs-climate",
-    "title": "Lab 0c — Climate of New York City",
-    "section": "1. Weather vs climate",
-    "text": "1. Weather vs climate\nPlot a few years of data. Then plot the histogram of all 20 years.\n\nfig, ax = plt.subplots(1, 2, figsize=(11, 3.5))\ndf[\"t_obs\"][\"2010\":\"2013\"].plot(ax=ax[0], lw=0.8, color=\"k\")\nax[0].set_ylabel(\"°C\"); ax[0].set_title(\"two years of WEATHER\")\nax[1].hist(df[\"t_obs\"].dropna(), bins=30, color=\"k\", alpha=0.7)\nax[1].set_xlabel(\"°C\"); ax[1].set_title(\"twenty years of CLIMATE (the distribution)\")\nplt.tight_layout()\n\nprint(f\"mean = {df['t_obs'].mean():.1f} °C   std = {df['t_obs'].std():.1f} °C\")\nprint(f\"record low = {df['t_obs'].min():.1f} °C   record high = {df['t_obs'].max():.1f} °C\")\n\nmean = 13.1 °C   std = 9.4 °C\nrecord low = -13.3 °C   record high = 34.5 °C\n\n\n\n\n\n\n\n\n\nThere are many aspects to the climate: the mean, the spread of the distribution, the seasonal cycle, variability about the seasonal cycle, days in top 5th percentile, etc, etc."
-  },
-  {
-    "objectID": "labs/lab0c_nyc_climate.html#your-first-climate-model-seasonal-cycle-fit-by-eye",
-    "href": "labs/lab0c_nyc_climate.html#your-first-climate-model-seasonal-cycle-fit-by-eye",
-    "title": "Lab 0c — Climate of New York City",
-    "section": "2. Your first climate model — seasonal cycle fit by eye",
-    "text": "2. Your first climate model — seasonal cycle fit by eye\nMost of the wiggle is the seasonal cycle. Let’s model temperature as:\n\\[T(d) \\,=\\, T_0 \\,+\\, A\\,\\cos\\!\\big(2\\pi\\,(d - d_{peak})/365 days\\big)\\]\nwhere \\(d\\) = day of year. Three parameters — and each one means something physical:\n\n\\(T_0\\) = ______ (what does it mean? what are its units?)\n\\(A\\) = ______ (what does it mean? units?)\n\\(d_{peak}\\) = ______ (the day the cycle peaks — what sets it?)\n\nYour job: pick all three by hand. Run the cell, look at the plot and the error, adjust, repeat. Stop when you think you have a good fit.\nWhen you’re happy: note your \\(T_0\\), \\(A\\), \\(d_{peak}\\) and RMSE — we’ll collect them.\n\n# EDIT THESE THREE NUMBERS, run, look, repeat:\nT0    = 10.0    # °C\nA     = 5.0     # °C\nd_peak = 172    # day of year  (172 = June 21, the summer solstice — is that right?)\n\ndoy = df.index.dayofyear\ndf[\"t_model\"] = T0 + A * np.cos(2 * np.pi * (doy - d_peak) / 365)\n\nfig, ax = plt.subplots(figsize=(10, 3.5))\ndf[\"t_obs\"][\"2010\":\"2011\"].plot(ax=ax, lw=0.8, color=\"k\", label=\"observations\")\ndf[\"t_model\"][\"2010\":\"2011\"].plot(ax=ax, lw=2.5, color=\"tab:red\",\n                                  label=f\"your model: T0={T0}, A={A}, d_peak={d_peak}\")\nax.set_ylabel(\"°C\"); ax.legend()\n\nrmse = np.sqrt(((df[\"t_obs\"] - df[\"t_model\"])**2).mean())\nax.set_title(f\"your model's error (RMSE): {rmse:.2f} °C\")\nplt.tight_layout()\n\n\n\n\n\n\n\n\n\nEveryone fit the same data with the same model — and got different numbers. That spread is parameter uncertainty, and you just experienced where it comes from. (A computer can minimize the error too, in some mathematically defined manner.)\n\nFew things to notice:\n\nYour three-parameter model explains lot of the variance. What physical fact makes the seasonal cycle so predictable, when next Tuesday’s weather isn’t?\nWhere did your \\(d_{peak}\\) end up? The Sun is strongest at the June solstice (day 172) — but that is almost certainly not where you put the peak. Why would the warmest day of the year lag the sunniest one?"
-  },
-  {
-    "objectID": "labs/lab0c_nyc_climate.html#b.-the-class-ensemble",
-    "href": "labs/lab0c_nyc_climate.html#b.-the-class-ensemble",
-    "title": "Lab 0c — Climate of New York City",
-    "section": "2b. The class ensemble",
-    "text": "2b. The class ensemble\nEveryone fit the same data with the same model — so let’s put all of our answers together.\nType the class’s numbers into the cell below (we’ll read them out), then run it.\n\n# --- COLLECTED IN CLASS: replace these with everyone's numbers ---\nclass_T0    = [10.0, 12.0, 13.5, 11.5, 14.0, 12.5, 13.0, 11.0]   # °C\nclass_A     = [ 5.0, 10.0, 12.5,  9.0, 13.0, 11.0, 12.0, 14.0]   # °C\nclass_dpeak = [ 172,  195,  210,  200,  215,  205,  190,  220]   # day of year\n# ----------------------------------------------------------------\n\ndoy_axis = np.arange(1, 366)\n\ndef seasonal(T0, A, d_peak, d=doy_axis):\n    return T0 + A * np.cos(2 * np.pi * (d - d_peak) / 365)\n\nfig, ax = plt.subplots(figsize=(9, 3.8))\n\n# every student's model\nfor T0_i, A_i, dp_i in zip(class_T0, class_A, class_dpeak):\n    ax.plot(doy_axis, seasonal(T0_i, A_i, dp_i), lw=1, color=\"tab:red\", alpha=0.35)\n\n# the class average of the parameters\nT0_c, A_c, dp_c = np.mean(class_T0), np.mean(class_A), np.mean(class_dpeak)\nax.plot(doy_axis, seasonal(T0_c, A_c, dp_c), lw=3, color=\"tab:red\", label=\"CLASS MEAN\")\n\n# and reality\nobs_cycle = df[\"t_obs\"].groupby(df.index.dayofyear).mean()\nax.plot(obs_cycle.index, obs_cycle.values, lw=3, color=\"k\", label=\"OBSERVED\")\n\nax.set_xlabel(\"day of year\"); ax.set_ylabel(\"°C\"); ax.legend()\nax.set_title(\"every student's seasonal cycle, and the class mean\")\nplt.tight_layout()\n\nprint(f\"class spread:  T0 {np.min(class_T0):.1f}–{np.max(class_T0):.1f} °C   \"\n      f\"A {np.min(class_A):.1f}–{np.max(class_A):.1f} °C   \"\n      f\"d_peak {np.min(class_dpeak)}–{np.max(class_dpeak)}\")\nprint(f\"class mean :  T0 = {T0_c:.1f} °C,  A = {A_c:.1f} °C,  d_peak = {dp_c:.0f}\")\n\n# keep the class-mean model around; we'll compare it in section 3\ndf[\"t_class\"] = seasonal(T0_c, A_c, dp_c, df.index.dayofyear)\n\ndef rmse(col):\n    return np.sqrt(((df[\"t_obs\"] - col) ** 2).mean())\n\nindiv = [rmse(seasonal(a, b, c, df.index.dayofyear)) for a, b, c in zip(class_T0, class_A, class_dpeak)]\nprint(f\"\\nRMSE: best individual {min(indiv):.2f} °C · median individual {np.median(indiv):.2f} °C \"\n      f\"· CLASS MEAN {rmse(df['t_class']):.2f} °C\")\n\nclass spread:  T0 10.0–14.0 °C   A 5.0–14.0 °C   d_peak 172–220\nclass mean :  T0 = 12.2 °C,  A = 10.8 °C,  d_peak = 201\n\nRMSE: best individual 4.15 °C · median individual 4.62 °C · CLASS MEAN 4.27 °C\n\n\n\n\n\n\n\n\n\nLook at that last line. How does the class-mean model compare with a typical individual guess?"
-  },
-  {
-    "objectID": "labs/lab0c_nyc_climate.html#two-more-nycs-a-reanalysis-and-a-climate-model",
-    "href": "labs/lab0c_nyc_climate.html#two-more-nycs-a-reanalysis-and-a-climate-model",
-    "title": "Lab 0c — Climate of New York City",
-    "section": "3. Two more “NYCs”: a reanalysis and a climate model",
-    "text": "3. Two more “NYCs”: a reanalysis and a climate model\nThe same location, from ERA5 (a weather model continuously corrected by observations) and from a CMIP6 climate model (free-running — it invents its own weather based on forcing from the sun and the dynamics of different parts of the Earth system).\n\n3a. First, the seasonal cycle\nBefore any statistics: do the three even have the same climate? Average every day-of-year over the 20 years.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 3.6), width_ratios=[3, 2])\n\ndoyg = df.index.dayofyear\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"),\n                    (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    ax[0].plot(df[c].groupby(doyg).mean(), color=col, lw=2, label=lab)\nif \"t_class\" in df:      # from section 2b\n    ax[0].plot(df[\"t_class\"].groupby(doyg).mean(), color=\"tab:red\", lw=2, ls=\"--\", label=\"class mean\")\nax[0].set_xlabel(\"day of year\"); ax[0].set_ylabel(\"°C\")\nax[0].set_title(\"mean seasonal cycle\"); ax[0].legend()\n\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"),\n                    (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    ax[1].hist(df[c].dropna(), bins=40, histtype=\"step\", lw=2, color=col, label=lab, density=True)\nax[1].set_xlabel(\"°C\"); ax[1].set_title(\"full distribution\"); ax[1].legend(fontsize=8)\nplt.tight_layout()\n\nprint(\"20-year means:  \" + \"  ·  \".join(\n    f\"{lab} {df[c].mean():.1f} °C\" for c, lab in\n    [(\"t_obs\",\"station\"), (\"t_era5\",\"ERA5\"), (\"t_cmip6\",\"CMIP6\")]))\n\n20-year means:  station 13.1 °C  ·  ERA5 11.5 °C  ·  CMIP6 10.2 °C\n\n\n\n\n\n\n\n\n\nAll three have a seasonal cycle of roughly the right shape and size — the climate model gets the climate broadly right, if a few degrees cold. Even ERA5 is a bit colder than station data (why?).\n\n\n3b. Now, the weather\nSame three series, but zoomed in to individual days.\n\nfig, ax = plt.subplots(figsize=(11, 3.5))\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"), (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    df[c][\"2010-06\":\"2010-12\"].plot(ax=ax, lw=1.2, color=col, label=lab)\nax.set_ylabel(\"°C\"); ax.legend(); ax.set_title(\"six months of daily temperature\")\nplt.tight_layout()\n\n\n\n\n\n\n\n\nERA5 rides along with the station; the CMIP6 model does its own thing entirely.\nTo measure that, we compare anomalies — each series with its own seasonal cycle subtracted, so what’s left is mostly the weather. (Without this step the correlation would mostly measure “do they both have summers?”, which mixes information about seasonality and weather.)\n\n# each series minus its own seasonal cycle -&gt; weather anomalies\nanom = df.apply(lambda c: c - c.groupby(doyg).transform(\"mean\"))\n\nfig, ax = plt.subplots(figsize=(11, 3))\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"),\n                    (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    anom[c][\"2010-06\":\"2010-12\"].plot(ax=ax, lw=1.2, color=col, label=lab)\nax.axhline(0, color=\"0.7\", lw=0.8)\nax.set_ylabel(\"anomaly [°C]\"); ax.legend(); ax.set_title(\"weather anomalies (seasonal cycle removed)\")\nplt.tight_layout()\n\nprint(\"day-to-day correlation with the station, seasonal cycles removed:\")\nprint(f\"  ERA5  : r = {anom['t_obs'].corr(anom['t_era5']):.2f}\")\nprint(f\"  CMIP6 : r = {anom['t_obs'].corr(anom['t_cmip6']):.2f}\")\n\nday-to-day correlation with the station, seasonal cycles removed:\n  ERA5  : r = 0.95\n  CMIP6 : r = -0.01\n\n\n\n\n\n\n\n\n\nDiscuss (the big ones):\n\nERA5 tracks the station day-by-day; the CMIP6 model completely ignores it. Why is that not a failure of the CMIP6 model? What should it get right — and did it, in 3a?\nAll three 20-year means differ (station warmest, CMIP6 coldest). Give two different kinds of reasons why. (One is about what a grid cell is; one is about the model being imperfect.)\nYour three-parameter model has a lower RMSE at this station than the CMIP6 model. Is yours the better model? For what, and for what not?"
-  },
-  {
-    "objectID": "labs/lab0c_nyc_climate.html#one-cmip-model-is-not-the-all",
-    "href": "labs/lab0c_nyc_climate.html#one-cmip-model-is-not-the-all",
-    "title": "Lab 0c — Climate of New York City",
-    "section": "4. One CMIP model is not the all",
-    "text": "4. One CMIP model is not the all\nYou just compared the observations to one climate model. But there are dozens, built by different groups, with different grids and different choices inside. Here are eight of them at this same location.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 3.8), width_ratios=[2, 1])\n\n# mean seasonal cycle: every model, plus observations\nfor m in models.columns:\n    ax[0].plot(models[m].groupby(models.index.dayofyear).mean(), lw=1, alpha=0.7, label=m)\nax[0].plot(df[\"t_obs\"].groupby(df.index.dayofyear).mean(), lw=3, color=\"k\", label=\"OBSERVED\")\nax[0].set_xlabel(\"day of year\"); ax[0].set_ylabel(\"°C\")\nax[0].set_title(\"mean seasonal cycle: 8 CMIP6 models vs reality\")\nax[0].legend(fontsize=6, ncol=2)\n\n# 20-year mean temperature: where does reality sit?\nmeans = models.mean().sort_values()\nax[1].barh(range(len(means)), means.values, color=\"tab:orange\", alpha=0.6)\nax[1].set_yticks(range(len(means))); ax[1].set_yticklabels(means.index, fontsize=6)\nax[1].axvline(df[\"t_obs\"].mean(), color=\"k\", lw=2, label=\"station\")\nax[1].axvline(df[\"t_era5\"].mean(), color=\"tab:blue\", lw=2, label=\"ERA5\")\nax[1].set_xlabel(\"20-year mean [°C]\"); ax[1].legend(fontsize=7)\nplt.tight_layout()\n\nprint(f\"model spread: {means.min():.1f} to {means.max():.1f} °C   (multi-model mean {means.mean():.1f} °C)\")\nprint(f\"station {df['t_obs'].mean():.1f} °C · ERA5 {df['t_era5'].mean():.1f} °C\")\n\nmodel spread: 9.5 to 15.5 °C   (multi-model mean 11.6 °C)\nstation 13.1 °C · ERA5 11.5 °C\n\n\n\n\n\n\n\n\n\nDiscuss:\n\nEarlier, one model looked ~3 °C too cold and you might have concluded it was simply wrong. Where do the observations sit relative to the whole set of models?\nThis spread — models disagreeing with each other — is called model uncertainty. What would you report to someone who asks “what is the climate of New York?” using this ensemble?\nThe warmest model has the coarsest grid, and its nearest cell to Central Park sits over the ocean. Does that make it a bad model, or a model being asked the wrong question?"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Introduction to Climate Modeling",
-    "section": "",
-    "text": "Earth system and climate models are critically important tools for climate science — used to study past climate variability, attribute recent trends and extremes, and project the evolution of the climate system under natural and anthropogenic forcing. This course opens the machine: you will build the hierarchy of climate models yourself in Python, understand how full Earth System Models work, analyze their output (CMIP6) the way practicing scientists do, and learn to judge what models can and cannot tell you."
-  },
-  {
-    "objectID": "index.html#logistics",
-    "href": "index.html#logistics",
-    "title": "Introduction to Climate Modeling",
-    "section": "Logistics",
-    "text": "Logistics\n\n\n\nMeetings\nThursdays 10:10–12:40 · FRM 315 (The Forum)\n\n\nInstructor\nDhruv Balwada · dbalwada@ldeo.columbia.edu\n\n\nTAs\nPrani Nalluri · pan2121@columbia.eduChandanie Kutwaru · ck3397@columbia.edu\n\n\nOffice hours\n[DAYS/TIMES]\n\n\nSubmission\nPrivate GitHub repos; submit by posting links on Courseworks\n\n\nComputing\nLEAP JupyterHub — see Lab 0a for setup"
-  },
-  {
-    "objectID": "index.html#key-dates",
-    "href": "index.html#key-dates",
-    "title": "Introduction to Climate Modeling",
-    "section": "Key dates",
-    "text": "Key dates\n\nOct 9 — final project title due\nOct 23 — final project proposal due (1 page)\nDec 10 / 17 — project presentations\nDec 18 — final project notebook due\n\nStart here: the schedule, then Lab 0."
-  },
-  {
     "objectID": "slides/week02.html#where-we-left-off",
     "href": "slides/week02.html#where-we-left-off",
     "title": "Energy Balance Modeling 1",
@@ -677,6 +173,510 @@
     "title": "Energy Balance Modeling 1",
     "section": "Next Thursday: time enters the model",
     "text": "Next Thursday: time enters the model\n\nThe ocean sets the clock: why warming lags emissions\nYour first numerical integration — and your first numerical explosion (on purpose)\nLab 1, in class → bring a working laptop, and finish Lab 0 before Thursday\n\n\nEnd on the Lab 0 reminder — anyone without hub+GitHub working by next week starts Lab 1 behind. TAs will chase stragglers from the Courseworks submission list."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to Climate Modeling",
+    "section": "",
+    "text": "Earth system and climate models are critically important tools for climate science — used to study past climate variability, attribute recent trends and extremes, and project the evolution of the climate system under natural and anthropogenic forcing. This course opens the machine: you will build the hierarchy of climate models yourself in Python, understand how full Earth System Models work, analyze their output (CMIP6) the way practicing scientists do, and learn to judge what models can and cannot tell you."
+  },
+  {
+    "objectID": "index.html#logistics",
+    "href": "index.html#logistics",
+    "title": "Introduction to Climate Modeling",
+    "section": "Logistics",
+    "text": "Logistics\n\n\n\nSyllabus\nDownload the syllabus (.docx)\n\n\nMeetings\nThursdays 10:10–12:40 · FRM 315 (The Forum)\n\n\nInstructor\nDhruv Balwada · dbalwada@ldeo.columbia.edu\n\n\nTAs\nPrani Nalluri · pan2121@columbia.eduChandanie Kutwaru · ck3397@columbia.edu\n\n\nOffice hours\n[DAYS/TIMES]\n\n\nSubmission\nPrivate GitHub repos; submit by posting links on Courseworks\n\n\nComputing\nLEAP JupyterHub — see Lab 0a for setup"
+  },
+  {
+    "objectID": "index.html#key-dates",
+    "href": "index.html#key-dates",
+    "title": "Introduction to Climate Modeling",
+    "section": "Key dates",
+    "text": "Key dates\n\nOct 9 — final project title due\nOct 23 — final project proposal due (1 page)\nDec 10 / 17 — project presentations\nDec 18 — final project notebook due\n\nStart here: the schedule, then Lab 0."
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html",
+    "href": "labs/lab0c_nyc_climate.html",
+    "title": "Lab 0c — Climate of New York City",
+    "section": "",
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling\nDaily temperature in Central Park, 1995–2014. We’ll use it to answer, concretely: what is climate? and what is a model? — and to build your first climate model.\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfrom pathlib import Path\n\n# data lives next to this notebook on the course website;\n# use a local copy if you have one, otherwise fetch over the web\nbase = \"data/\" if Path(\"data\").is_dir() else \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/\"\n\n# 1. station thermometer (NOAA) + 2. ERA5 reanalysis — same file\ndf = pd.read_csv(base + \"centralpark_obs_era5_1995-2014.csv\", index_col=0, parse_dates=True)\n\n# 3. a CMIP6 climate model at the same location\ncm = pd.read_csv(base + \"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv\", index_col=0, parse_dates=True)\ncm.index = cm.index.normalize()      # model timestamps sit at 12:00; align them to dates\ndf[\"t_cmip6\"] = cm[\"t_cmip6\"].reindex(df.index)\n\n# 4. eight CMIP6 models at the same location\nmodels = pd.read_csv(base + \"centralpark_cmip6_multimodel_1995-2014.csv\",\n                     index_col=0, parse_dates=True)\n\ndf.head()\n\n\n\n\n\n\n\n\nt_obs\nt_era5\nt_cmip6\n\n\nDATE\n\n\n\n\n\n\n\n1995-01-01\n7.50\n5.1\n-3.799713\n\n\n1995-01-02\n2.25\n2.2\n-7.446625\n\n\n1995-01-03\n-2.50\n-2.2\n-7.653137\n\n\n1995-01-04\n-2.75\n-2.1\n-5.104645\n\n\n1995-01-05\n-6.10\n-6.4\n-4.841217"
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html#where-this-data-comes-from",
+    "href": "labs/lab0c_nyc_climate.html#where-this-data-comes-from",
+    "title": "Lab 0c — Climate of New York City",
+    "section": "Where this data comes from",
+    "text": "Where this data comes from\nGood practice: always know your data’s provenance. All three series cover 1995–2014 (the last 20 years of the CMIP6 historical experiment, so they overlap).\n\n\n\n\n\n\n\ncolumn\nsource\n\n\n\n\nt_obs\nNOAA NCEI GHCN-Daily, station USW00094728 (NY City Central Park). Daily mean taken as (TMAX+TMIN)/2, the standard convention for long station records.\n\n\nt_era5\nERA5 reanalysis, daily mean 2 m temperature (Copernicus/ECMWF), via the Open-Meteo archive API, nearest grid point to Central Park.\n\n\nmodels\nEight CMIP6 models (historical, r1i1p1f1, daily tas), same nearest-cell extraction, from the Pangeo cloud archive.\n\n\nt_cmip6\nCMIP6 MPI-ESM1-2-HR, historical, r1i1p1f1, daily tas, from the Pangeo cloud archive; nearest grid cell (40.68 °N, 74.06 °W).\n\n\n\nCurious how these were downloaded? It’s all in the optional reference notebook, Where our data comes from. We pre-extracted the files so class doesn’t depend on live cloud access.\nThree columns, three very different things: t_obs is a real thermometer, t_era5 is a reanalysis, t_cmip6 is a climate model. We’ll look at the observations first and bring the other two in at the end."
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html#weather-vs-climate",
+    "href": "labs/lab0c_nyc_climate.html#weather-vs-climate",
+    "title": "Lab 0c — Climate of New York City",
+    "section": "1. Weather vs climate",
+    "text": "1. Weather vs climate\nPlot a few years of data. Then plot the histogram of all 20 years.\n\nfig, ax = plt.subplots(1, 2, figsize=(11, 3.5))\ndf[\"t_obs\"][\"2010\":\"2013\"].plot(ax=ax[0], lw=0.8, color=\"k\")\nax[0].set_ylabel(\"°C\"); ax[0].set_title(\"two years of WEATHER\")\nax[1].hist(df[\"t_obs\"].dropna(), bins=30, color=\"k\", alpha=0.7)\nax[1].set_xlabel(\"°C\"); ax[1].set_title(\"twenty years of CLIMATE (the distribution)\")\nplt.tight_layout()\n\nprint(f\"mean = {df['t_obs'].mean():.1f} °C   std = {df['t_obs'].std():.1f} °C\")\nprint(f\"record low = {df['t_obs'].min():.1f} °C   record high = {df['t_obs'].max():.1f} °C\")\n\nmean = 13.1 °C   std = 9.4 °C\nrecord low = -13.3 °C   record high = 34.5 °C\n\n\n\n\n\n\n\n\n\nThere are many aspects to the climate: the mean, the spread of the distribution, the seasonal cycle, variability about the seasonal cycle, days in top 5th percentile, etc, etc."
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html#your-first-climate-model-seasonal-cycle-fit-by-eye",
+    "href": "labs/lab0c_nyc_climate.html#your-first-climate-model-seasonal-cycle-fit-by-eye",
+    "title": "Lab 0c — Climate of New York City",
+    "section": "2. Your first climate model — seasonal cycle fit by eye",
+    "text": "2. Your first climate model — seasonal cycle fit by eye\nMost of the wiggle is the seasonal cycle. Let’s model temperature as:\n\\[T(d) \\,=\\, T_0 \\,+\\, A\\,\\cos\\!\\big(2\\pi\\,(d - d_{peak})/365 days\\big)\\]\nwhere \\(d\\) = day of year. Three parameters — and each one means something physical:\n\n\\(T_0\\) = ______ (what does it mean? what are its units?)\n\\(A\\) = ______ (what does it mean? units?)\n\\(d_{peak}\\) = ______ (the day the cycle peaks — what sets it?)\n\nYour job: pick all three by hand. Run the cell, look at the plot and the error, adjust, repeat. Stop when you think you have a good fit.\nWhen you’re happy: note your \\(T_0\\), \\(A\\), \\(d_{peak}\\) and RMSE — we’ll collect them.\n\n# EDIT THESE THREE NUMBERS, run, look, repeat:\nT0    = 10.0    # °C\nA     = 5.0     # °C\nd_peak = 172    # day of year  (172 = June 21, the summer solstice — is that right?)\n\ndoy = df.index.dayofyear\ndf[\"t_model\"] = T0 + A * np.cos(2 * np.pi * (doy - d_peak) / 365)\n\nfig, ax = plt.subplots(figsize=(10, 3.5))\ndf[\"t_obs\"][\"2010\":\"2011\"].plot(ax=ax, lw=0.8, color=\"k\", label=\"observations\")\ndf[\"t_model\"][\"2010\":\"2011\"].plot(ax=ax, lw=2.5, color=\"tab:red\",\n                                  label=f\"your model: T0={T0}, A={A}, d_peak={d_peak}\")\nax.set_ylabel(\"°C\"); ax.legend()\n\nrmse = np.sqrt(((df[\"t_obs\"] - df[\"t_model\"])**2).mean())\nax.set_title(f\"your model's error (RMSE): {rmse:.2f} °C\")\nplt.tight_layout()\n\n\n\n\n\n\n\n\n\nEveryone fit the same data with the same model — and got different numbers. That spread is parameter uncertainty, and you just experienced where it comes from. (A computer can minimize the error too, in some mathematically defined manner.)\n\nFew things to notice:\n\nYour three-parameter model explains lot of the variance. What physical fact makes the seasonal cycle so predictable, when next Tuesday’s weather isn’t?\nWhere did your \\(d_{peak}\\) end up? The Sun is strongest at the June solstice (day 172) — but that is almost certainly not where you put the peak. Why would the warmest day of the year lag the sunniest one?"
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html#b.-the-class-ensemble",
+    "href": "labs/lab0c_nyc_climate.html#b.-the-class-ensemble",
+    "title": "Lab 0c — Climate of New York City",
+    "section": "2b. The class ensemble",
+    "text": "2b. The class ensemble\nEveryone fit the same data with the same model — so let’s put all of our answers together.\nType the class’s numbers into the cell below (we’ll read them out), then run it.\n\n# --- COLLECTED IN CLASS: replace these with everyone's numbers ---\nclass_T0    = [10.0, 12.0, 13.5, 11.5, 14.0, 12.5, 13.0, 11.0]   # °C\nclass_A     = [ 5.0, 10.0, 12.5,  9.0, 13.0, 11.0, 12.0, 14.0]   # °C\nclass_dpeak = [ 172,  195,  210,  200,  215,  205,  190,  220]   # day of year\n# ----------------------------------------------------------------\n\ndoy_axis = np.arange(1, 366)\n\ndef seasonal(T0, A, d_peak, d=doy_axis):\n    return T0 + A * np.cos(2 * np.pi * (d - d_peak) / 365)\n\nfig, ax = plt.subplots(figsize=(9, 3.8))\n\n# every student's model\nfor T0_i, A_i, dp_i in zip(class_T0, class_A, class_dpeak):\n    ax.plot(doy_axis, seasonal(T0_i, A_i, dp_i), lw=1, color=\"tab:red\", alpha=0.35)\n\n# the class average of the parameters\nT0_c, A_c, dp_c = np.mean(class_T0), np.mean(class_A), np.mean(class_dpeak)\nax.plot(doy_axis, seasonal(T0_c, A_c, dp_c), lw=3, color=\"tab:red\", label=\"CLASS MEAN\")\n\n# and reality\nobs_cycle = df[\"t_obs\"].groupby(df.index.dayofyear).mean()\nax.plot(obs_cycle.index, obs_cycle.values, lw=3, color=\"k\", label=\"OBSERVED\")\n\nax.set_xlabel(\"day of year\"); ax.set_ylabel(\"°C\"); ax.legend()\nax.set_title(\"every student's seasonal cycle, and the class mean\")\nplt.tight_layout()\n\nprint(f\"class spread:  T0 {np.min(class_T0):.1f}–{np.max(class_T0):.1f} °C   \"\n      f\"A {np.min(class_A):.1f}–{np.max(class_A):.1f} °C   \"\n      f\"d_peak {np.min(class_dpeak)}–{np.max(class_dpeak)}\")\nprint(f\"class mean :  T0 = {T0_c:.1f} °C,  A = {A_c:.1f} °C,  d_peak = {dp_c:.0f}\")\n\n# keep the class-mean model around; we'll compare it in section 3\ndf[\"t_class\"] = seasonal(T0_c, A_c, dp_c, df.index.dayofyear)\n\ndef rmse(col):\n    return np.sqrt(((df[\"t_obs\"] - col) ** 2).mean())\n\nindiv = [rmse(seasonal(a, b, c, df.index.dayofyear)) for a, b, c in zip(class_T0, class_A, class_dpeak)]\nprint(f\"\\nRMSE: best individual {min(indiv):.2f} °C · median individual {np.median(indiv):.2f} °C \"\n      f\"· CLASS MEAN {rmse(df['t_class']):.2f} °C\")\n\nclass spread:  T0 10.0–14.0 °C   A 5.0–14.0 °C   d_peak 172–220\nclass mean :  T0 = 12.2 °C,  A = 10.8 °C,  d_peak = 201\n\nRMSE: best individual 4.15 °C · median individual 4.62 °C · CLASS MEAN 4.27 °C\n\n\n\n\n\n\n\n\n\nLook at that last line. How does the class-mean model compare with a typical individual guess?"
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html#two-more-nycs-a-reanalysis-and-a-climate-model",
+    "href": "labs/lab0c_nyc_climate.html#two-more-nycs-a-reanalysis-and-a-climate-model",
+    "title": "Lab 0c — Climate of New York City",
+    "section": "3. Two more “NYCs”: a reanalysis and a climate model",
+    "text": "3. Two more “NYCs”: a reanalysis and a climate model\nThe same location, from ERA5 (a weather model continuously corrected by observations) and from a CMIP6 climate model (free-running — it invents its own weather based on forcing from the sun and the dynamics of different parts of the Earth system).\n\n3a. First, the seasonal cycle\nBefore any statistics: do the three even have the same climate? Average every day-of-year over the 20 years.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 3.6), width_ratios=[3, 2])\n\ndoyg = df.index.dayofyear\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"),\n                    (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    ax[0].plot(df[c].groupby(doyg).mean(), color=col, lw=2, label=lab)\nif \"t_class\" in df:      # from section 2b\n    ax[0].plot(df[\"t_class\"].groupby(doyg).mean(), color=\"tab:red\", lw=2, ls=\"--\", label=\"class mean\")\nax[0].set_xlabel(\"day of year\"); ax[0].set_ylabel(\"°C\")\nax[0].set_title(\"mean seasonal cycle\"); ax[0].legend()\n\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"),\n                    (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    ax[1].hist(df[c].dropna(), bins=40, histtype=\"step\", lw=2, color=col, label=lab, density=True)\nax[1].set_xlabel(\"°C\"); ax[1].set_title(\"full distribution\"); ax[1].legend(fontsize=8)\nplt.tight_layout()\n\nprint(\"20-year means:  \" + \"  ·  \".join(\n    f\"{lab} {df[c].mean():.1f} °C\" for c, lab in\n    [(\"t_obs\",\"station\"), (\"t_era5\",\"ERA5\"), (\"t_cmip6\",\"CMIP6\")]))\n\n20-year means:  station 13.1 °C  ·  ERA5 11.5 °C  ·  CMIP6 10.2 °C\n\n\n\n\n\n\n\n\n\nAll three have a seasonal cycle of roughly the right shape and size — the climate model gets the climate broadly right, if a few degrees cold. Even ERA5 is a bit colder than station data (why?).\n\n\n3b. Now, the weather\nSame three series, but zoomed in to individual days.\n\nfig, ax = plt.subplots(figsize=(11, 3.5))\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"), (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    df[c][\"2010-06\":\"2010-12\"].plot(ax=ax, lw=1.2, color=col, label=lab)\nax.set_ylabel(\"°C\"); ax.legend(); ax.set_title(\"six months of daily temperature\")\nplt.tight_layout()\n\n\n\n\n\n\n\n\nERA5 rides along with the station; the CMIP6 model does its own thing entirely.\nTo measure that, we compare anomalies — each series with its own seasonal cycle subtracted, so what’s left is mostly the weather. (Without this step the correlation would mostly measure “do they both have summers?”, which mixes information about seasonality and weather.)\n\n# each series minus its own seasonal cycle -&gt; weather anomalies\nanom = df.apply(lambda c: c - c.groupby(doyg).transform(\"mean\"))\n\nfig, ax = plt.subplots(figsize=(11, 3))\nfor c, col, lab in [(\"t_obs\", \"k\", \"station\"), (\"t_era5\", \"tab:blue\", \"ERA5\"),\n                    (\"t_cmip6\", \"tab:orange\", \"CMIP6 model\")]:\n    anom[c][\"2010-06\":\"2010-12\"].plot(ax=ax, lw=1.2, color=col, label=lab)\nax.axhline(0, color=\"0.7\", lw=0.8)\nax.set_ylabel(\"anomaly [°C]\"); ax.legend(); ax.set_title(\"weather anomalies (seasonal cycle removed)\")\nplt.tight_layout()\n\nprint(\"day-to-day correlation with the station, seasonal cycles removed:\")\nprint(f\"  ERA5  : r = {anom['t_obs'].corr(anom['t_era5']):.2f}\")\nprint(f\"  CMIP6 : r = {anom['t_obs'].corr(anom['t_cmip6']):.2f}\")\n\nday-to-day correlation with the station, seasonal cycles removed:\n  ERA5  : r = 0.95\n  CMIP6 : r = -0.01\n\n\n\n\n\n\n\n\n\nDiscuss (the big ones):\n\nERA5 tracks the station day-by-day; the CMIP6 model completely ignores it. Why is that not a failure of the CMIP6 model? What should it get right — and did it, in 3a?\nAll three 20-year means differ (station warmest, CMIP6 coldest). Give two different kinds of reasons why. (One is about what a grid cell is; one is about the model being imperfect.)\nYour three-parameter model has a lower RMSE at this station than the CMIP6 model. Is yours the better model? For what, and for what not?"
+  },
+  {
+    "objectID": "labs/lab0c_nyc_climate.html#one-cmip-model-is-not-the-all",
+    "href": "labs/lab0c_nyc_climate.html#one-cmip-model-is-not-the-all",
+    "title": "Lab 0c — Climate of New York City",
+    "section": "4. One CMIP model is not the all",
+    "text": "4. One CMIP model is not the all\nYou just compared the observations to one climate model. But there are dozens, built by different groups, with different grids and different choices inside. Here are eight of them at this same location.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 3.8), width_ratios=[2, 1])\n\n# mean seasonal cycle: every model, plus observations\nfor m in models.columns:\n    ax[0].plot(models[m].groupby(models.index.dayofyear).mean(), lw=1, alpha=0.7, label=m)\nax[0].plot(df[\"t_obs\"].groupby(df.index.dayofyear).mean(), lw=3, color=\"k\", label=\"OBSERVED\")\nax[0].set_xlabel(\"day of year\"); ax[0].set_ylabel(\"°C\")\nax[0].set_title(\"mean seasonal cycle: 8 CMIP6 models vs reality\")\nax[0].legend(fontsize=6, ncol=2)\n\n# 20-year mean temperature: where does reality sit?\nmeans = models.mean().sort_values()\nax[1].barh(range(len(means)), means.values, color=\"tab:orange\", alpha=0.6)\nax[1].set_yticks(range(len(means))); ax[1].set_yticklabels(means.index, fontsize=6)\nax[1].axvline(df[\"t_obs\"].mean(), color=\"k\", lw=2, label=\"station\")\nax[1].axvline(df[\"t_era5\"].mean(), color=\"tab:blue\", lw=2, label=\"ERA5\")\nax[1].set_xlabel(\"20-year mean [°C]\"); ax[1].legend(fontsize=7)\nplt.tight_layout()\n\nprint(f\"model spread: {means.min():.1f} to {means.max():.1f} °C   (multi-model mean {means.mean():.1f} °C)\")\nprint(f\"station {df['t_obs'].mean():.1f} °C · ERA5 {df['t_era5'].mean():.1f} °C\")\n\nmodel spread: 9.5 to 15.5 °C   (multi-model mean 11.6 °C)\nstation 13.1 °C · ERA5 11.5 °C\n\n\n\n\n\n\n\n\n\nDiscuss:\n\nEarlier, one model looked ~3 °C too cold and you might have concluded it was simply wrong. Where do the observations sit relative to the whole set of models?\nThis spread — models disagreeing with each other — is called model uncertainty. What would you report to someone who asks “what is the climate of New York?” using this ensemble?\nThe warmest model has the coarsest grid, and its nearest cell to Central Park sits over the ocean. Does that make it a bad model, or a model being asked the wrong question?"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html",
+    "href": "labs/lab0b_python_basics.html",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "",
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nThis is a quick tour of the four tools we use all semester: Python, numpy (numbers), matplotlib (plots), and a first look at pandas / xarray (labeled data). Run every cell, change things, break things.\nIf you already know all this — skim it, then help a neighbor."
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#notebooks",
+    "href": "labs/lab0b_python_basics.html#notebooks",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "0. Notebooks",
+    "text": "0. Notebooks\nA notebook is a stack of cells. A cell is either text (like this) or code (like the next one). Shift+Enter runs the current cell and moves on. Cells share memory — a variable made in one cell exists in the next.\n\nprint(\"hello, climate\")\n2 + 2   # the last line's value is displayed automatically\n\nhello, climate\n\n\n4"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#variables-and-doing-arithmetic-with-them",
+    "href": "labs/lab0b_python_basics.html#variables-and-doing-arithmetic-with-them",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "1. Variables, and doing arithmetic with them",
+    "text": "1. Variables, and doing arithmetic with them\n\nS0 = 1361.0        # solar constant, W/m2   (a float)\nalbedo = 0.3       # fraction reflected     (a float)\nplanet = \"Earth\"   # a string\n\nabsorbed = S0 * (1 - albedo) / 4\nprint(planet, \"absorbs\", absorbed, \"W/m2\")\nprint(f\"{planet} absorbs {absorbed:.1f} W/m2\")   # f-string: nicer formatting\n\nEarth absorbs 238.17499999999998 W/m2\nEarth absorbs 238.2 W/m2\n\n\nYour turn: change the albedo to 0.75 (roughly Venus) and re-run. Does absorbed energy go up or down?"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#functions",
+    "href": "labs/lab0b_python_basics.html#functions",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "2. Functions",
+    "text": "2. Functions\nA function packages a calculation so you can reuse it.\n\ndef absorbed_solar(S0, albedo):\n    \"\"\"Solar energy absorbed per square metre of planet surface [W/m2].\"\"\"\n    return S0 * (1 - albedo) / 4\n\nprint(absorbed_solar(1361, 0.30))   # Earth\nprint(absorbed_solar(2601, 0.75))   # Venus\n\n238.17499999999998\n162.5625"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#loops",
+    "href": "labs/lab0b_python_basics.html#loops",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "3. Loops",
+    "text": "3. Loops\nFor repeating something — including stepping a model forward in time, which is what we do in Lab 0d.\n\nfor year in [2020, 2021, 2022]:\n    print(year, \"→\", year - 1850, \"years since the pre-industrial baseline\")\n\n# a list, built up inside a loop\nsquares = []\nfor i in range(5):        # range(5) gives 0,1,2,3,4\n    squares.append(i**2)\nprint(squares)\n\n2020 → 170 years since the pre-industrial baseline\n2021 → 171 years since the pre-industrial baseline\n2022 → 172 years since the pre-industrial baseline\n[0, 1, 4, 9, 16]"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#numpy-arrays-of-numbers",
+    "href": "labs/lab0b_python_basics.html#numpy-arrays-of-numbers",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "4. numpy — arrays of numbers",
+    "text": "4. numpy — arrays of numbers\nLists are fine, but for data we use numpy arrays: math applies to the whole array at once (no loop needed), and they’re fast.\n\nimport numpy as np\n\ntemps = np.array([12.3, 15.1, 9.8, 21.0, 18.4])   # °C\n\nprint(\"array:      \", temps)\nprint(\"in Kelvin:  \", temps + 273.15)     # applies to every element\nprint(\"mean:       \", temps.mean())\nprint(\"std dev:    \", temps.std())\nprint(\"max:        \", temps.max())\nprint(\"first two:  \", temps[:2])          # indexing starts at 0\nprint(\"above 15:   \", temps[temps &gt; 15])  # selecting by condition\n\narray:       [12.3 15.1  9.8 21.  18.4]\nin Kelvin:   [285.45 288.25 282.95 294.15 291.55]\nmean:        15.319999999999999\nstd dev:     4.0345507804463185\nmax:         21.0\nfirst two:   [12.3 15.1]\nabove 15:    [15.1 21.  18.4]\n\n\n\n# arrays you generate rather than type out\ndays = np.arange(0, 365)              # 0,1,2,...,364\nx = np.linspace(0, 2*np.pi, 5)        # 5 evenly spaced values from 0 to 2pi\n\nprint(days[:5], \"...\", days[-3:])\nprint(np.round(np.sin(x), 3))         # math functions work on whole arrays\n\n[0 1 2 3 4] ... [362 363 364]\n[ 0.  1.  0. -1. -0.]"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#matplotlib-making-a-figure",
+    "href": "labs/lab0b_python_basics.html#matplotlib-making-a-figure",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "5. matplotlib — making a figure",
+    "text": "5. matplotlib — making a figure\nEvery plot you make this semester should have axis labels with units. Really.\n\nimport matplotlib.pyplot as plt\n\nday = np.arange(365)\nT = 12.5 + 11.0 * np.cos(2 * np.pi * (day - 201) / 365)   # a fake seasonal cycle\n\nfig, ax = plt.subplots(figsize=(8, 3))\nax.plot(day, T, label=\"model\")\nax.set_xlabel(\"day of year\")\nax.set_ylabel(\"temperature [°C]\")\nax.set_title(\"a made-up seasonal cycle\")\nax.legend();\n\n\n\n\n\n\n\n\n\n# two other plot types you'll need constantly\nnoise = np.random.default_rng(0).normal(0, 4, size=365)   # fake \"weather\"\n\nfig, ax = plt.subplots(1, 2, figsize=(10, 3))\nax[0].plot(day, T + noise, lw=0.8)        # line\nax[0].set_xlabel(\"day\"); ax[0].set_ylabel(\"°C\"); ax[0].set_title(\"with weather\")\nax[1].hist(T + noise, bins=30)            # histogram — a distribution!\nax[1].set_xlabel(\"°C\"); ax[1].set_title(\"its distribution\")\nplt.tight_layout()\n\n\n\n\n\n\n\n\nYour turn: make the noise bigger (change 4 to 10) and re-run. What happens to the histogram — and what would that mean for a place’s climate?"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#pandas-tables-with-labels",
+    "href": "labs/lab0b_python_basics.html#pandas-tables-with-labels",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "6. pandas — tables with labels",
+    "text": "6. pandas — tables with labels\nReal data comes with labels (dates, station names). pandas handles tables; we use it to read CSV files, including straight from a URL.\n\nimport pandas as pd\n\nfrom pathlib import Path\nbase = \"data/\" if Path(\"data\").is_dir() else \"https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/data/\"\nurl = base + \"centralpark_obs_era5_1995-2014.csv\"\ndf = pd.read_csv(url, index_col=0, parse_dates=True)\n\nprint(df.shape, \"rows × columns\")\ndf.head()\n\n(7305, 2) rows × columns\n\n\n\n\n\n\n\n\n\nt_obs\nt_era5\n\n\nDATE\n\n\n\n\n\n\n1995-01-01\n7.50\n5.1\n\n\n1995-01-02\n2.25\n2.2\n\n\n1995-01-03\n-2.50\n-2.2\n\n\n1995-01-04\n-2.75\n-2.1\n\n\n1995-01-05\n-6.10\n-6.4\n\n\n\n\n\n\n\n\nprint(df[\"t_obs\"].mean())          # one column, its mean\ndf[\"t_obs\"][\"2010\"].plot(figsize=(8, 2.5), lw=0.8)   # slice by date, and plot\nplt.ylabel(\"°C\");\n\n13.055297741273101"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#xarray-labeled-data-with-dimensions",
+    "href": "labs/lab0b_python_basics.html#xarray-labeled-data-with-dimensions",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "7. xarray — labeled data with dimensions",
+    "text": "7. xarray — labeled data with dimensions\nClimate model output isn’t a table: it’s temperature on (time × latitude × longitude), often many gigabytes. xarray is pandas for that world — you index by name, not by number. We’ll use it properly later in the course; here’s the flavor.\n\nimport xarray as xr\n\n# a small fake \"model output\": temperature over 12 months and 5 latitudes\nlat = np.array([-60, -30, 0, 30, 60])\nmonth = np.arange(1, 13)\ndata = 30 * np.cos(np.deg2rad(lat))[None, :] + 5 * np.sin(2*np.pi*(month[:, None]-1)/12)\n\nda = xr.DataArray(data, dims=[\"month\", \"lat\"],\n                  coords={\"month\": month, \"lat\": lat},\n                  name=\"temperature\", attrs={\"units\": \"degC\"})\nda\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n&lt;xarray.DataArray 'temperature' (month: 12, lat: 5)&gt; Size: 480B\narray([[15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [20.        , 30.98076211, 35.        , 30.98076211, 20.        ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [10.        , 20.98076211, 25.        , 20.98076211, 10.        ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ]])\nCoordinates:\n  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12\n  * lat      (lat) int64 40B -60 -30 0 30 60\nAttributes:\n    units:    degCxarray.DataArray'temperature'month: 12lat: 515.0 25.98 30.0 25.98 15.0 17.5 ... 10.67 12.5 23.48 27.5 23.48 12.5array([[15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [20.        , 30.98076211, 35.        , 30.98076211, 20.        ],\n       [19.33012702, 30.31088913, 34.33012702, 30.31088913, 19.33012702],\n       [17.5       , 28.48076211, 32.5       , 28.48076211, 17.5       ],\n       [15.        , 25.98076211, 30.        , 25.98076211, 15.        ],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [10.        , 20.98076211, 25.        , 20.98076211, 10.        ],\n       [10.66987298, 21.65063509, 25.66987298, 21.65063509, 10.66987298],\n       [12.5       , 23.48076211, 27.5       , 23.48076211, 12.5       ]])Coordinates: (2)month(month)int641 2 3 4 5 6 7 8 9 10 11 12array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])lat(lat)int64-60 -30 0 30 60array([-60, -30,   0,  30,  60])Attributes: (1)units :degC\n\n\n\nprint(\"equator, July:\", float(da.sel(lat=0, month=7)), \"°C\")   # select BY NAME\nprint(\"annual mean at 60N:\", float(da.sel(lat=60).mean(\"month\")), \"°C\")\n\nda.plot(figsize=(6, 3));   # xarray knows the labels, so it labels the plot for you\n\nequator, July: 30.0 °C\nannual mean at 60N: 15.000000000000005 °C"
+  },
+  {
+    "objectID": "labs/lab0b_python_basics.html#thats-enough-to-start",
+    "href": "labs/lab0b_python_basics.html#thats-enough-to-start",
+    "title": "Lab 0b — Python, just enough to start",
+    "section": "That’s enough to start",
+    "text": "That’s enough to start\nYou now have everything needed for the rest of today: arrays, a plot, a table read from a URL, and a loop.\nTwo habits worth keeping all semester:\n\nLabel your axes, with units.\nWhen something breaks, read the last line of the error first — it usually says exactly what’s wrong. AI assistants are also good at explaining errors; use them, and make sure you understand the fix.\n\nWant to go deeper? A fuller treatment of Python for earth and environmental data — numpy, pandas, xarray, plotting, working with real datasets — lives in the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
+  },
+  {
+    "objectID": "labs/github_setup.html",
+    "href": "labs/github_setup.html",
+    "title": "GitHub on the LEAP hub",
+    "section": "",
+    "text": "Last week many of you got stuck pushing to GitHub from the hub. The gh-scoped-creds route has two traps: your repo must be added to the app’s list of repositories, and the login expires every 8 hours. Here is a simpler route that you set up once and then forget about.\nEverything here is done inside a hub terminal: on leap.2i2c.cloud, File → New → Terminal."
+  },
+  {
+    "objectID": "labs/github_setup.html#tell-git-who-you-are-once",
+    "href": "labs/github_setup.html#tell-git-who-you-are-once",
+    "title": "GitHub on the LEAP hub",
+    "section": "1. Tell git who you are (once)",
+    "text": "1. Tell git who you are (once)\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your-uni@columbia.edu\"\nWithout this, git commit stops with “Please tell me who you are”."
+  },
+  {
+    "objectID": "labs/github_setup.html#make-a-personal-access-token-once",
+    "href": "labs/github_setup.html#make-a-personal-access-token-once",
+    "title": "GitHub on the LEAP hub",
+    "section": "2. Make a personal access token (once)",
+    "text": "2. Make a personal access token (once)\nA token is a long password that GitHub gives you for use from the command line. Treat it like a password: never paste it into a notebook, a file in your repo, or a chat.\n\nOn github.com, click your profile photo (top right) → Settings.\nIn the left sidebar, scroll to the bottom → Developer settings.\nPersonal access tokens → Tokens (classic) → Generate new token → Generate new token (classic). (Not the “fine-grained” kind — it works too, but has more knobs to get wrong.)\nNote: LEAP hub. Expiration: Custom → 2026-12-31. Scopes: tick the top-level repo box. Click Generate token.\nCopy the token now — GitHub shows it only once. Keep it somewhere private (a password manager, or a note on your laptop) until step 3 below is done."
+  },
+  {
+    "objectID": "labs/github_setup.html#save-it-on-the-hub-once",
+    "href": "labs/github_setup.html#save-it-on-the-hub-once",
+    "title": "GitHub on the LEAP hub",
+    "section": "3. Save it on the hub (once)",
+    "text": "3. Save it on the hub (once)\nIn the hub terminal:\ngit config --global --unset-all credential.helper   # clears any leftover gh-scoped-creds setting (harmless if there is none)\ngit config --global credential.helper store\nNow go to your repo and push:\ncd ~/climate-modeling-f26-&lt;your-uni&gt;\ngit push\nYou will be asked for a Username (your GitHub username) and a Password — paste the token, not your GitHub password. Nothing appears on screen while you paste; that is normal. Press Enter.\nThat’s it. The token is stored in your home directory on the hub (~/.git-credentials, readable only by you), and every later git push / git pull uses it without asking.\n\nAlready cloned with gh-scoped-creds last week? Nothing to redo — your clone uses the same https:// URL. Just run the two git config lines above and push."
+  },
+  {
+    "objectID": "labs/github_setup.html#the-everyday-loop",
+    "href": "labs/github_setup.html#the-everyday-loop",
+    "title": "GitHub on the LEAP hub",
+    "section": "4. The everyday loop",
+    "text": "4. The everyday loop\nAfter you have worked on a notebook inside your repo folder:\ncd ~/climate-modeling-f26-&lt;your-uni&gt;\ngit add .\ngit commit -m \"Lab 0d: bucket model\"\ngit push\nThen check on github.com that the file is there. That repo URL, posted on Courseworks, is your submission.\nPrefer buttons? The hub has a Git panel in the left sidebar (the branching-arrows icon). Open your repo folder in the file browser, then in the Git panel: tick the changed files → write a message → Commit → click the cloud-up Push icon. If it asks for credentials, give your username and the token; after the first success it stops asking."
+  },
+  {
+    "objectID": "labs/github_setup.html#when-it-goes-wrong",
+    "href": "labs/github_setup.html#when-it-goes-wrong",
+    "title": "GitHub on the LEAP hub",
+    "section": "5. When it goes wrong",
+    "text": "5. When it goes wrong\n\n\n\nWhat you see\nWhat it means\nFix\n\n\n\n\nSupport for password authentication was removed\nYou typed your GitHub password\nUse the token as the password\n\n\nAuthentication failed\nWrong username, or a mistyped/expired token\nRun git config --global --unset-all credential.helper, redo step 3; if the token is lost, generate a new one\n\n\nRepository not found (but it exists on github.com)\nTypo in the URL — or, with gh-scoped-creds, your repo isn’t in the app’s list\nCheck git remote -v; for the app, see §6\n\n\nPermission denied (publickey)\nYou cloned with an ssh URL\ngit remote set-url origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git\n\n\nUpdates were rejected because the remote contains work\nThe repo changed on the website (e.g. you uploaded a file there)\ngit pull first, then git push\n\n\nPlease tell me who you are\nName/email not set\nStep 1\n\n\nterminal prompts disabled\nThe Git panel could not ask for a password\nPush from the terminal once (step 3); after that the panel works\n\n\n\nStill stuck? Ask a TA during the lab, or bring it to office hours. Your Lab 0 submission is not late while you are fixing this — but it must work before the first homework."
+  },
+  {
+    "objectID": "labs/github_setup.html#sec-scoped",
+    "href": "labs/github_setup.html#sec-scoped",
+    "title": "GitHub on the LEAP hub",
+    "section": "6. Alternative: gh-scoped-creds",
+    "text": "6. Alternative: gh-scoped-creds\nIf you would rather not keep a token on the hub, gh-scoped-creds also works — with two things to know.\n\nIn a hub terminal run gh-scoped-creds. It prints a link and a code. Open the link, enter the code.\nThe first time, GitHub asks you to install the app on your account. Choose Only select repositories and pick climate-modeling-f26-&lt;your-uni&gt;. This is the step most people missed.\nCreated the repo after installing the app, or skipped step 2? Go to github.com/settings/installations → gh-scoped-creds → Configure → Repository access → Only select repositories → Select repositories → add your repo → Save. Then git push works.\nThe login lasts 8 hours. Next week, run gh-scoped-creds again before pushing.\n\nIf you have both set up, git will use whichever it finds first; to switch cleanly to the token route, run the --unset-all line in step 3."
+  },
+  {
+    "objectID": "labs/github_setup.html#more",
+    "href": "labs/github_setup.html#more",
+    "title": "GitHub on the LEAP hub",
+    "section": "More",
+    "text": "More\nA fuller tour of git and GitHub on the hub — branches, pulling, resolving conflicts — is in the LEAP GitHub tutorial. For this course you only ever need §1–§4 above."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html",
+    "href": "labs/github_tutorial_leap.html",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "",
+    "text": "This is the general LEAP tutorial, kept here for reference. For this course, the short version — with the one-time login setup — is GitHub on the LEAP hub. One change from the original: the option of putting a token inside a clone URL has been removed, because the token would then be saved in plain text inside your repo settings.\nThis tutorial will guide you step-by-step through the basics of using GitHub. There are two methods for performing Git operations:\nYou will learn how to clone a repository to JupyterHub, create your own repository, push and pull changes, and work with branches."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html#step-1-generate-a-personal-access-token",
+    "href": "labs/github_tutorial_leap.html#step-1-generate-a-personal-access-token",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "Step 1: Generate a Personal Access Token",
+    "text": "Step 1: Generate a Personal Access Token\n\nLog in to GitHub.\nClick on your profile picture in the upper-right corner and select Settings.\nNavigate to Developer settings → Personal access tokens → Tokens (classic).\nClick Generate new token.\nSelect the scopes you need (e.g. repo for full repository access).\nCopy the generated token and store it securely."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html#step-2-use-the-token-for-authentication",
+    "href": "labs/github_tutorial_leap.html#step-2-use-the-token-for-authentication",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "Step 2: Use the token for authentication",
+    "text": "Step 2: Use the token for authentication\nWhen prompted for your GitHub credentials:\n\nEnter your GitHub username as usual.\nInstead of your password, paste the Personal Access Token.\n\nTo avoid being asked every time, run git config --global credential.helper store once; the token is saved after the first successful push."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html#using-the-terminal",
+    "href": "labs/github_tutorial_leap.html#using-the-terminal",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "2.1 Using the Terminal",
+    "text": "2.1 Using the Terminal\n\n2.1.1 Clone a repository to JupyterHub\n\nOpen the terminal in JupyterHub (File → New → Terminal).\nGo to the GitHub repository you want to clone, click Code, and copy the HTTPS link.\nClone it:\ngit clone https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git\n\n\n\n2.1.2 Create a repository\n\nStep 1: Log in to GitHub\n\nOpen a web browser and go to GitHub.\nLog in with your GitHub account credentials.\n\n\n\nStep 2: Navigate to the repository creation page\n\nIn the top-right corner of the GitHub page, click the + icon.\nSelect New repository from the dropdown menu.\n\n\n\nStep 3: Set up the repository\n\nChoose a repository name: enter a unique name, e.g. my-new-repo.\nAdd a description (optional).\nSelect repository visibility: Public (anyone can view) or Private (only you and collaborators).\nInitialize the repository (optional): select Add a README file; optionally add a .gitignore template or a license.\n\n\n\nStep 4: Create the repository\nClick the green Create repository button.\n\n\nStep 5: Add code to the repository\n\nCase 1: you do not have an existing local repository\ngit init\ngit remote add origin https://github.com/your-username/my-new-repo.git\ngit add .\ngit commit -m \"Initial commit\"\ngit push -u origin main\nCase 2: you already have a local repository (e.g. cloned from another repository, as in 2.1.1)\n\nCheck the current remote:\ngit remote -v\nRemove the link to the original repository:\ngit remote remove origin\nAdd the new repository as the remote:\ngit remote add origin https://github.com/your-username/New-Repository.git\nVerify the new remote:\ngit remote -v\nEnsure that the output shows the URL of the new repository.\n\n\n\n\n\n2.1.3 Push code to a GitHub repository\n\nStep 1: Ensure you have a Git repository\nNavigate to your project folder in the terminal and check:\ngit status\nIf it is not a repository, initialize one:\ngit init\n\n\nStep 2: Add the remote repository\ngit remote add origin https://github.com/your-username/your-repository.git\ngit remote -v\n\n\nStep 3: Add and commit changes\ngit add .\ngit commit -m \"Your commit message here\"\n\n\nStep 4: Push to GitHub\ngit push -u origin main\n\n\n\n2.1.4 Work with branches\nBranches let you work on different versions of a project simultaneously without interfering with the main codebase. Every Git repository starts with a default branch, typically called main.\ngit branch branch-name          # create a branch\ngit checkout branch-name        # switch to it\ngit checkout -b branch-name     # or: create and switch in one step\nMerging a finished branch into main:\ngit checkout main\ngit merge branch-name\nDeleting a merged branch:\ngit branch -d branch-name\nPushing a branch works like pushing main:\ngit add .\ngit commit -m \"Your commit message here\"\ngit push -u origin branch-name   # first push of this branch\ngit push                         # subsequent pushes\nThe -u option sets origin/branch-name as the upstream branch for future pushes and pulls.\n\n\n2.1.5 Pull\ngit pull fetches and merges changes from the remote repository into your local repository. First check which branch you are on:\ngit branch\nThe active branch is marked with an asterisk (*). Then:\ngit pull origin branch-name\nwhere origin is the remote repository and branch-name is the branch you want to pull from (e.g. main)."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html#using-the-jupyterhub-git-interface",
+    "href": "labs/github_tutorial_leap.html#using-the-jupyterhub-git-interface",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "2.2 Using the JupyterHub Git interface",
+    "text": "2.2 Using the JupyterHub Git interface\n\n2.2.1 Clone a repository\n\nOpen the Git tab in JupyterHub (in the left sidebar).\nClick Clone a Repository.\nPaste the HTTPS link of the repository and confirm. The repository is cloned into your current working directory.\n\n\n\n2.2.2 Create a repository\n\nCreate the repository on GitHub (+ → New repository, name, visibility, Create repository).\nIn JupyterHub, open the Git tab and click Initialize a Repository; use Commit to stage and commit changes and Push to upload them.\n\n\n\n2.2.3 Push changes\n\nIn the Git tab, select the changed files, add a commit message, and click Commit.\nClick Push to upload your commits.\n\n\n\n2.2.4 Pull changes\nClick Pull in the Git tab to fetch and merge changes from the remote repository.\n\n\n2.2.5 Work with branches\n\nCreate a branch: in the Git tab, go to the Branches section, click New Branch, enter a name and confirm.\nSwitch branches: select the branch from the branch dropdown.\n\n\nNote: if you have uncommitted changes, commit or stash them before switching branches to avoid conflicts.\n\n\nNote: the JupyterHub Git interface does not currently support merging or deleting branches. Use the terminal for those."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html#example-1-merge-conflict-during-pull",
+    "href": "labs/github_tutorial_leap.html#example-1-merge-conflict-during-pull",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "Example 1: merge conflict during pull",
+    "text": "Example 1: merge conflict during pull\nTwo developers work on the same file, example.txt, and both change the same line.\n\nInitial file: Hello World\nDeveloper A updates the file to Hello GitHub and pushes.\nDeveloper B, without pulling, updates the same line to Hello Git.\nThe conflict: when Developer B tries to push, Git rejects it:\nerror: failed to push some refs to 'origin/main'\nhint: Updates were rejected because the remote contains work that you do not have locally.\nhint: You may want to first integrate the remote changes (e.g., 'git pull ...') before pushing again.\nAfter git pull, Git marks the conflict in example.txt:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nHello Git\n=======\nHello GitHub\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main\nResolving: Developer B edits the file to keep the desired version, e.g. Hello Git and GitHub.\nFinal steps:\ngit add example.txt\ngit commit -m \"Resolve merge conflict in example.txt\"\ngit push origin main\n\nNote: to ignore the conflict and overwrite the remote with local changes, one can force-push (git push origin main --force). This discards other people’s work and can cause data loss — use only when necessary, and tell your team.\n\nIf two developers modify different parts of the same file, Git merges automatically. A conflict only occurs when both edit the same part."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html#example-2-file-move-during-pull",
+    "href": "labs/github_tutorial_leap.html#example-2-file-move-during-pull",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "Example 2: file move during pull",
+    "text": "Example 2: file move during pull\nYou move a file locally, but it still exists in its original location on the remote. Will a pull treat this as a conflict? No. A pull only touches files that changed on the remote since your last pull.\n\nIf the file changed on the remote: Git re-downloads it to its original location; your moved copy stays where you put it (Git treats them as two files).\nIf the file did not change on the remote: nothing happens; your moved file stays untouched."
+  },
+  {
+    "objectID": "labs/github_tutorial_leap.html#clone-only-a-specific-folder-from-a-repository-sparse-checkout",
+    "href": "labs/github_tutorial_leap.html#clone-only-a-specific-folder-from-a-repository-sparse-checkout",
+    "title": "GitHub beginner tutorial (LEAP)",
+    "section": "5.1 Clone only a specific folder from a repository (sparse checkout)",
+    "text": "5.1 Clone only a specific folder from a repository (sparse checkout)\nmkdir project1 && cd project1\ngit init\ngit remote add origin https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git\ngit sparse-checkout init --cone\ngit sparse-checkout set Project_Path\ngit pull origin main\nThe parent folder structure leading to the subfolder is still created, since Git keeps the necessary hierarchy.\n\nPracticing hands-on is essential for mastering any tool, and GitHub is no exception. There are far more operations, features, and potential issues than this tutorial covers; explore, search for solutions, and ask. If you run into an interesting problem, share it with the TAs so this page can improve.\nReferences\n\nhttps://docs.github.com/en/get-started\nhttps://training.github.com/downloads/github-git-cheat-sheet.pdf\nhttps://docs.2i2c.org/user/topics/data/git/"
+  },
+  {
+    "objectID": "labs/getting_the_data.html",
+    "href": "labs/getting_the_data.html",
+    "title": "Reference — where our data comes from",
+    "section": "",
+    "text": "⇩ Download this notebook (.ipynb)\nOptional reference — we won’t work through this in class.\nThe CSV files used in Lab 0c didn’t fall from the sky: they were downloaded from three public archives. This notebook shows exactly how, partly so the numbers are reproducible, and partly because getting data is a real skill you’ll need for your final project.\nThe cells here are not executed when this page is built (the downloads are slow, and the class shouldn’t depend on three servers being up). Download the notebook and run it yourself if you want the data fresh.\nAll three cover 1995–2014 — the last 20 years of the CMIP6 historical experiment, so they overlap.\nimport io, json, urllib.request\nimport pandas as pd\n\nLAT, LON = 40.78, -73.97          # Central Park\nY0, Y1 = \"1995-01-01\", \"2014-12-31\""
+  },
+  {
+    "objectID": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
+    "href": "labs/getting_the_data.html#station-observations-noaa-ghcn-daily",
+    "title": "Reference — where our data comes from",
+    "section": "1. Station observations — NOAA GHCN-Daily",
+    "text": "1. Station observations — NOAA GHCN-Daily\nThe Global Historical Climatology Network holds daily records from tens of thousands of stations. Central Park is USW00094728. NOAA’s Access Data Service will hand you a CSV straight from a URL.\nNote we ask for TMAX and TMIN and average them: daily mean temperature (TAVG) is missing for many station-years, so (TMAX + TMIN)/2 is the standard workaround. That is a modelling choice, and it is not identical to a true daily mean: checked against ERA5 (which provides both), the midpoint runs about +0.2 °C warm here. ERA5 and CMIP6 below give true 24-hour means, so the three series are not quite like-for-like.\n\nurl = (\"https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries\"\n       f\"&stations=USW00094728&startDate={Y0}&endDate={Y1}&dataTypes=TMAX,TMIN\"\n       \"&units=metric&format=csv\")\n\nobs = pd.read_csv(io.StringIO(urllib.request.urlopen(url, timeout=180).read().decode()))\nobs[\"DATE\"] = pd.to_datetime(obs[\"DATE\"])\nobs[\"t_obs\"] = (obs[\"TMAX\"] + obs[\"TMIN\"]) / 2\nobs = obs.set_index(\"DATE\")[[\"t_obs\"]]\nobs.head()"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#reanalysis-era5",
+    "href": "labs/getting_the_data.html#reanalysis-era5",
+    "title": "Reference — where our data comes from",
+    "section": "2. Reanalysis — ERA5",
+    "text": "2. Reanalysis — ERA5\nERA5 is a weather model run over the whole satellite/observation record, continuously nudged toward observations. The full archive is enormous; Open-Meteo offers a friendly API that extracts a single point for you.\nWatch the fine print: you asked for Central Park, but you get the nearest grid point — around 40.81 °N, 74.02 °W, and it represents an average over roughly 30 km, not a park.\n\nurl = (f\"https://archive-api.open-meteo.com/v1/era5?latitude={LAT}&longitude={LON}\"\n       f\"&start_date={Y0}&end_date={Y1}&daily=temperature_2m_mean\"\n       \"&timezone=America%2FNew_York\")\n\nj = json.load(urllib.request.urlopen(url, timeout=300))\nera = pd.DataFrame({\"DATE\": pd.to_datetime(j[\"daily\"][\"time\"]),\n                    \"t_era5\": j[\"daily\"][\"temperature_2m_mean\"]}).set_index(\"DATE\")\n\nprint(\"grid point actually returned:\", j[\"latitude\"], j[\"longitude\"])\nera.head()\n\n\nobs.join(era, how=\"outer\").to_csv(\"centralpark_obs_era5_1995-2014.csv\")"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
+    "href": "labs/getting_the_data.html#a-climate-model-cmip6-from-the-cloud",
+    "title": "Reference — where our data comes from",
+    "section": "3. A climate model — CMIP6 from the cloud",
+    "text": "3. A climate model — CMIP6 from the cloud\nThis is the one we’ll use properly later in the course. Every CMIP6 simulation is catalogued in one big CSV; you filter it to the run you want, then open the data straight from cloud storage — without downloading the whole thing (xarray fetches only the chunks you touch).\nThe search terms are the CMIP vocabulary you’ll learn later: source_id (which model), experiment_id (which experiment), member_id (which ensemble member), table_id (which output frequency), variable_id (which variable — tas is near-surface air temperature).\n\nimport xarray as xr\n\ncat = pd.read_csv(\"https://storage.googleapis.com/cmip6/pangeo-cmip6.csv\")\nprint(len(cat), \"simulations in the catalog\")\n\nsel_all = cat[(cat.experiment_id == \"historical\") & (cat.member_id == \"r1i1p1f1\")\n               & (cat.table_id == \"day\") & (cat.variable_id == \"tas\")]\n\nsel = cat[(cat.source_id == \"MPI-ESM1-2-HR\") & (cat.experiment_id == \"historical\")\n          & (cat.member_id == \"r1i1p1f1\") & (cat.table_id == \"day\")\n          & (cat.variable_id == \"tas\")]\nsel[[\"source_id\", \"experiment_id\", \"member_id\", \"table_id\", \"variable_id\", \"zstore\"]]\n\n\nds = xr.open_zarr(sel.zstore.iloc[0], consolidated=True, storage_options={\"token\": \"anon\"})\nds\n\nFour things bite everyone the first time:\n\nLongitude runs 0–360, not −180–180. Central Park’s −73.97 becomes 286.03 (LON % 360).\nTemperature is in kelvin. Subtract 273.15.\nThe nearest grid cell is ~100 km wide — here it lands at about 40.68 °N, 74.06 °W, partly over water. It is not Central Park.\nModel calendars are their own thing (cftime objects, sometimes 360-day years), so converting to ordinary dates takes an extra step.\n\n\npt = (ds.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n            .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n\nprint(f\"grid cell used: {float(pt.lat):.2f} N, {float(pt.lon) - 360:.2f} E\")\n\ns = pt.to_series()\ns.index = pd.to_datetime(s.index.astype(str))     # cftime -&gt; ordinary dates\ns.rename(\"t_cmip6\").to_csv(\"centralpark_cmip6_MPI-ESM1-2-HR_1995-2014.csv\")\ns.head()"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#the-same-thing-for-eight-models",
+    "href": "labs/getting_the_data.html#the-same-thing-for-eight-models",
+    "title": "Reference — where our data comes from",
+    "section": "4. The same thing, for eight models",
+    "text": "4. The same thing, for eight models\nOne model is one opinion. The lab also uses an ensemble: the identical extraction, looped over eight modelling centres. Each model has its own grid, so “the cell nearest Central Park” is a different patch of the planet in each case — for the coarsest model it lands over the ocean.\n\nMODELS = [\"MPI-ESM1-2-HR\", \"MPI-ESM1-2-LR\", \"CanESM5\", \"MIROC6\",\n          \"IPSL-CM6A-LR\", \"ACCESS-CM2\", \"NorESM2-LM\", \"GFDL-ESM4\"]\n\nout = {}\nfor m in MODELS:\n    try:\n        z = sel_all[sel_all.source_id == m].zstore.iloc[0]\n        ds_m = xr.open_zarr(z, consolidated=True, storage_options={\"token\": \"anon\"})\n        pt_m = (ds_m.tas.sel(lat=LAT, lon=LON % 360, method=\"nearest\")\n                       .sel(time=slice(\"1995\", \"2014\")) - 273.15).load()\n        s_m = pt_m.to_series()\n        s_m.index = pd.to_datetime(s_m.index.astype(str)).normalize()\n        out[m] = s_m[~s_m.index.duplicated()]\n        print(f\"{m:16s} cell {float(pt_m.lat):6.2f}N {float(pt_m.lon)-360:7.2f}E   mean {s_m.mean():5.2f} C\")\n    except Exception as exc:\n        print(f\"{m:16s} FAILED ({type(exc).__name__})\")\n\nmodels = pd.DataFrame(out)\nmodels.index.name = \"time\"\nmodels.to_csv(\"centralpark_cmip6_multimodel_1995-2014.csv\")"
+  },
+  {
+    "objectID": "labs/getting_the_data.html#credit-where-due",
+    "href": "labs/getting_the_data.html#credit-where-due",
+    "title": "Reference — where our data comes from",
+    "section": "Credit where due",
+    "text": "Credit where due\n\nGHCN-Daily — NOAA National Centers for Environmental Information (US government work, public domain).\nERA5 — Copernicus Climate Change Service / ECMWF; served here by Open-Meteo.\nMPI-ESM1-2-HR — Max Planck Institute for Meteorology, distributed through CMIP6 (CC BY 4.0). Cloud copy hosted by Pangeo.\n\nCiting your data sources is not a formality — it’s how someone else (including future you) can check what you did.\nWant more of this? Working with real earth-science datasets — xarray, cloud archives, plotting, analysis — is the subject of the companion course site: https://earth-ds-ml.github.io/summer_2026/intro.html"
+  },
+  {
+    "objectID": "labs/lab0a.html",
+    "href": "labs/lab0a.html",
+    "title": "Lab 0a — Getting set up",
+    "section": "",
+    "text": "By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2) a GitHub account with a private course repository shared with the teaching staff, and (3) one completed notebook pushed to that repository and submitted on Courseworks."
+  },
+  {
+    "objectID": "labs/lab0a.html#part-a-accounts",
+    "href": "labs/lab0a.html#part-a-accounts",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part A — Accounts",
+    "text": "Part A — Accounts\n\nGitHub. If you don’t have an account, create one at github.com/signup. Use a professional-ish username (it may end up on your CV — some of you may link to course projects later).\nJupyterHub (LEAP hub). Most of our modeling and data analysis for this class will be done on the LEAP computing hub. To get access, fill out this form now (approval takes a little time — hope you did not leave it for today): hub access request form.\n\nWhen filling the form: pick the Education tier, enter Dhruv Balwada as primary contact, and use the same email/GitHub username as your course accounts (you need a GitHub account first — see step 1).\nAlready have LEAP hub access from a previous class? Skip the form — just confirm you can still log in and access resources at leap.2i2c.cloud.\nOnce approved, log in at leap.2i2c.cloud and confirm your server starts (click “Start My Server” and wait for JupyterLab to load).\n\n\n\nIf the hub won’t start for you: discuss with Sarika or the TAs."
+  },
+  {
+    "objectID": "labs/lab0a.html#part-b-orient-to-jupyterhub",
+    "href": "labs/lab0a.html#part-b-orient-to-jupyterhub",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part B — Orient to Jupyterhub",
+    "text": "Part B — Orient to Jupyterhub\n\nWhat is Jupyterhub, and where things are.\nAdding notebooks to your folders.\n\nOpen verify_setup.ipynb on the course website and click the Download this notebook button at the top.\nOn the hub: drag-and-drop the file into the JupyterLab file browser (left panel).\n\nRunning through code in a notebook (Shift+Enter, or Run ▸ Run All Cells).\nFill in your name/UNI where indicated in the notebook and make sure the final plot appears with no errors."
+  },
+  {
+    "objectID": "labs/lab0a.html#part-c-create-your-course-repository",
+    "href": "labs/lab0a.html#part-c-create-your-course-repository",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part C — Create your course repository",
+    "text": "Part C — Create your course repository\n\nOn GitHub, click New repository:\n\nName: climate-modeling-f26-&lt;your-uni&gt; (e.g., climate-modeling-f26-ab1234)\nVisibility: Private ← important\nCheck “Add a README file”\n\nAdd the teaching staff as collaborators: repo Settings → Collaborators → Add people — add dhruvbalwada, [PRANI-GITHUB], and [CHANDANIE-GITHUB].\nPut your completed notebook in the repo. Two ways — pick one:\n\nEasy way (fine for today): on your repo’s GitHub page, Add file → Upload files, drag in the completed verify_setup.ipynb (download it from the hub first: right-click the file → Download), and click Commit changes.\nReal way (we’ll all use this from Lab 1 on): in a hub Terminal (File → New → Terminal):\ngit clone https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git\ncp verify_setup.ipynb climate-modeling-f26-&lt;uni&gt;/\ncd climate-modeling-f26-&lt;uni&gt;\ngit add verify_setup.ipynb\ngit commit -m \"Lab 0: verification notebook\"\ngit push\nAuthenticating (no passwords, no tokens): the first time you push, run this in the terminal:\ngh-scoped-creds\nIt prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing “Only select repositories” and picking your climate-modeling-f26-&lt;uni&gt; repo. Then git push works.\nCredentials last 8 hours; when they expire just run gh-scoped-creds again. (This is why we use the https:// clone URL above.)"
+  },
+  {
+    "objectID": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
+    "href": "labs/lab0a.html#part-d-submit-your-notebook-as-assignment",
+    "title": "Lab 0a — Getting set up",
+    "section": "Part D — Submit your notebook as assignment",
+    "text": "Part D — Submit your notebook as assignment\nOn Courseworks, open the Lab 0 assignment and submit the URL of your repository (e.g., https://github.com/ab1234/climate-modeling-f26-ab1234). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.\n\n\nChecklist\n\nHub login works, server starts\nverify_setup.ipynb runs top to bottom with your name and a plot\nPrivate repo climate-modeling-f26-&lt;uni&gt; exists, instructor and TAs added as collaborators\nNotebook is in the repo\nRepo URL posted to Courseworks Lab 0"
+  },
+  {
+    "objectID": "labs/index.html",
+    "href": "labs/index.html",
+    "title": "Labs",
+    "section": "",
+    "text": "Labs are done in class, saved into your course GitHub repo, and submitted by posting your repo link on Courseworks. This page grows week by week."
+  },
+  {
+    "objectID": "labs/index.html#week-1-sep-10",
+    "href": "labs/index.html#week-1-sep-10",
+    "title": "Labs",
+    "section": "Week 1 (Sep 10)",
+    "text": "Week 1 (Sep 10)\n\nLab 0a — Getting set up: GitHub account, private course repo, LEAP hub · verification notebook: verify_setup.ipynb\nLab 0b — Python, just enough to start: notebooks, numpy, matplotlib, a first look at pandas and xarray\nLab 0c — The climate of NYC: distributions, a hand-fit 3-parameter model, ERA5 vs CMIP6\nLab 0d — A bucket: budgets, equilibrium, stepping forward in time\n\n\nReference (optional)\n\nWhere our data comes from: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project\n\nWant more Python? A fuller treatment of scientific Python for earth data is in the companion course site: earth-ds-ml.github.io/summer_2026."
+  },
+  {
+    "objectID": "labs/lab0d_bucket.html",
+    "href": "labs/lab0d_bucket.html",
+    "title": "Lab 0d — A bucket: your first time-dependent model",
+    "section": "",
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nWeek 1, in class · Introduction to Climate Modeling"
+  },
+  {
+    "objectID": "labs/lab0d_bucket.html#a-budget",
+    "href": "labs/lab0d_bucket.html#a-budget",
+    "title": "Lab 0d — A bucket: your first time-dependent model",
+    "section": "1. A budget",
+    "text": "1. A budget\nNow let’s build our first model based on some physical principles: a bucket of water. While quite obvious (due to our intuition of the physical world), the volume in this bucket is conserved if we don’t add or remove any water. This is called a “conservation law”.\nWith water pouring in and draining out, we can track the volume of water, \\(V = A\\,h\\):\n\\[\\underbrace{A\\,\\frac{dh}{dt}}_{\\text{accumulation}} \\;=\\; \\underbrace{F}_{\\text{in}} \\;-\\; \\underbrace{Q}_{\\text{out}}\\]\n\n\\(h\\) = water level [m], \\(A\\) = bucket area [m²]\n\\(F\\) = inflow [m³/s] — someone pours. The bucket doesn’t decide: this is external forcing\n\\(Q\\) = outflow [m³/s] — the bucket decides, based on its own state and the properties of the hole.\n\n-&gt; The inflow is imposed; the outflow is the system responding to itself — a feedback.\nSo \\(Q\\) depends on the system. But how is a question about physics — and different plumbing at the outflow gives different answers."
+  },
+  {
+    "objectID": "labs/lab0d_bucket.html#two-drain-laws-from-first-principles",
+    "href": "labs/lab0d_bucket.html#two-drain-laws-from-first-principles",
+    "title": "Lab 0d — A bucket: your first time-dependent model",
+    "section": "2. Two drain laws, from first principles",
+    "text": "2. Two drain laws, from first principles\nDifferent properties of the drain can give different flow rates, not just the size of the drain but also whether it is a hole or a pipe.\nWe can figure out these outflow using a commonly used approach, which will be used in many laws in this course: decide which two effects dominate, assume they balance, and neglect the rest. Physicists call this a dominant balance. The two cases differ only in which balance we assume.\n\nA hole in the bucket — nothing resists (Torricelli’s law)\nWater leaves through a hole of area \\(a\\) with nothing to rub against, so nothing dissipates its energy.\nTake a parcel of water at the surface, a height \\(h\\) above the hole, and let it make its way down: assume that all the potential energy it gives up gets converted to motion (or kinetic energy), exactly as for a dropped ball.\n\\[\\underbrace{m g h}_{\\text{potential energy released}} \\;=\\; \\underbrace{\\tfrac{1}{2} m v^{2}}_{\\text{kinetic energy gained}} \\quad\\Longrightarrow\\quad v = \\sqrt{2gh}\\]\nThe balance we just assumed: all of the released potential energy becomes motion — nothing is lost to friction. Inertia dominates; viscosity is neglected.\nThe volume leaving per second [m³/s] is then the outflow jet’s speed times the area it flows through:\n\\[Q = a\\,v = a\\sqrt{2gh} \\;\\propto\\; \\sqrt{h}\\]\nNote that: \\(A\\) is the bucket’s cross-section, \\(a\\) is the opening’s — and \\(a \\ll A\\).\nThis is Torricelli’s law (1643): the jet leaves at exactly the speed it would have had if it had fallen freely from the surface.\n\nAside — the same result, done more carefully (Bernoulli).\nThe falling-parcel argument gets the right answer, but the water is not actually in free fall — it is being pushed out by the weight of everything above it. The honest version follows a streamline from the free surface (point 1) to the jet (point 2) and uses Bernoulli’s equation, which says that without dissipation the sum of pressure, kinetic and potential terms is unchanged along the way:\n\\[P_1 + \\tfrac12\\rho v_1^2 + \\rho g z_1 \\;=\\; P_2 + \\tfrac12\\rho v_2^2 + \\rho g z_2\\]\nThree facts collapse it. The surface is open to the air and the jet emerges into the air, so \\(P_1 = P_2\\) and the pressures cancel. The bucket is far wider than the hole, so the surface descends slowly and \\(v_1 \\approx 0\\). Measuring height from the hole, \\(z_1 = h\\) and \\(z_2 = 0\\). What survives is \\(\\rho g h = \\tfrac12 \\rho v^{2}\\) — the same \\(v=\\sqrt{2gh}\\).\nTwo things this version makes visible that the falling-ball picture hides: what actually drives the jet (the pressure of the water column, with the atmosphere cancelling from both ends), and the assumption we are leaning on (no viscous dissipation, without which Bernoulli’s equation does not apply) — which is precisely what stops being true in the next case.\n\n\n\nA narrow tube instead — viscosity resists (Poiseuille’s law)\nReplace the hole with a long thin pipe — radius \\(r\\), length \\(L\\), so the same opening area \\(a=\\pi r^{2}\\). In such a pipe the water is not free to move easily, and the friction or viscosity at the pipe wall starts to become important.\nFluid touching a solid surface does not slide along it — it sticks. (This is the no-slip condition, an experimental fact about fluids and walls.) So inside the tube the water is stationary at the wall and fastest in the middle: neighbouring layers of fluid are sliding past one another.\nViscosity is the resistance to exactly that sliding. Newton’s law of viscosity says the drag force per unit area between layers is proportional to how rapidly velocity changes across the flow:\n\\[\\tau \\;=\\; \\mu \\frac{dv}{dy} \\;\\sim\\; \\mu \\frac{v}{r}\\]\nChecking the units keeps us honest here:\n\n\\(\\tau\\) is a stress — a force spread over an area: [N m⁻²] = [Pa] = [kg m⁻¹ s⁻²]\n\\(dv/dy\\) is a velocity gradient — a speed divided by a distance: [(m s⁻¹)/m] = [s⁻¹]\nso \\(\\mu\\), the dynamic viscosity, must carry [Pa s] = [kg m⁻¹ s⁻¹]\n\nFor water \\(\\mu \\approx 1\\times10^{-3}\\) Pa s; air is about 50 times less viscous, honey about 10,000 times more.\nWe used \\(v/r\\) as a “scaling” assuming that the speed goes from roughly \\(v\\) at the centre to zero at the wall, across a distance of about the tube radius \\(r\\). That stress acts over the whole inner wall of the tube, area \\(2\\pi r L\\), so the total resisting force is \\(\\mu (v/r)\\cdot 2\\pi r L\\).\nMeanwhile the water is pushed along by the pressure of the column standing above the tube. In this case we can estimate the pressure as the force exerted by the weight of the fluid per unit area. So pressure on the inside is:\n\\[P \\;=\\; \\frac{\\text{weight of the column}}{\\text{area}} \\;=\\; \\frac{\\rho\\,A\\,h\\,g}{A} \\;=\\; \\rho g h\n\\qquad [\\text{kg m}^{-3}][\\text{m s}^{-2}][\\text{m}] = [\\text{kg m}^{-1}\\text{s}^{-2}] = [\\text{Pa}]\\]\nThe pressure at the bottom of a bucket does not care how wide the bucket is — only how deep the water is. Pressure is also just a number at every point in the fluid, and acts equally in all directions, so pressure due to weight of water above the hole acts the same way into the hole. This pressure acts on the tube’s cross-section \\(\\pi r^2\\).\nThe balance is now a force balance: the pressure force is opposed by viscous drag, and the two are in equilibrium. Nothing accelerates — the flow settles at whatever speed makes push and drag equal. Here viscosity dominates and inertia is neglected, the opposite choice from Torricelli:\n\\[\\underbrace{\\rho g h \\cdot \\pi r^{2}}_{\\text{pressure pushing}} \\;\\sim\\; \\underbrace{\\mu \\frac{v}{r}\\cdot 2\\pi r L}_{\\text{wall drag}} \\quad\\Longrightarrow\\quad v \\sim \\frac{\\rho g h\\, r^{2}}{\\mu L} \\quad\\Longrightarrow\\quad Q = v\\,\\pi r^{2} \\;\\propto\\; h\\]\nThe outflow is linear in \\(h\\). Notice also \\(Q \\propto r^{4}\\): halving the tube radius cuts the flow sixteenfold.\n\nScaling arguments get the form right, not the constant.\nSolving the flow exactly (Poiseuille) gives \\(Q = \\pi r^{4}\\rho g h / (8\\mu L)\\). Our argument got every dependence right and missed only the factor of 8.\nWorth keeping: physics fixes the form of a law; the number in front comes from a full solution or from measurement. Form = the model’s structure; the number = a parameter. Calibrating a model means pinning down the second, not the first.\n\n\n\nThe real lesson: laws come from assumed balances\nNeither derivation solved the full equations of fluid motion. Each one picked two terms, set them equal, and threw the rest away:\n\n\n\n\n\n\n\n\n\nassumed balance\nneglected\n\n\n\n\nTorricelli\npotential energy \\(\\leftrightarrow\\) kinetic energy\nviscous dissipation\n\n\nPoiseuille\npressure force \\(\\leftrightarrow\\) viscous drag\ninertia (acceleration)\n\n\n\nBoth effects are always present. Which one you may neglect depends on the situation — for pipe flow the deciding ratio of inertia to viscosity is the Reynolds number. Choose the wrong balance and you get a confident, wrong law.\nThis is how nearly every equation in this course will be built. Next week we write a balance between absorbed sunlight and emitted infrared, and neglect everything else — and a planet’s temperature falls out of it.\n\n\nSo which law?\n\\(Q \\propto \\sqrt{h}\\) or \\(Q \\propto h\\) ?\nSame bucket, different plumbing, different law. Choosing the law is a modelling decision — one to justify from physics and knowledge of the system, not convenience.\nFor the rest of today we use the linear law, \\(Q = k\\,h\\), because it is the simplest thing:\n\\[A\\,\\frac{dh}{dt} \\;=\\; F \\;-\\; k\\,h\\]\nwith \\(k\\) [m²/s] the drain constant."
+  },
+  {
+    "objectID": "labs/lab0d_bucket.html#equilibrium-no-time-needed",
+    "href": "labs/lab0d_bucket.html#equilibrium-no-time-needed",
+    "title": "Lab 0d — A bucket: your first time-dependent model",
+    "section": "3. Equilibrium — no time needed",
+    "text": "3. Equilibrium — no time needed\n\nThought experiment. What if the drain were a pump running at a fixed rate \\(c\\), regardless of level? Then \\(A\\,dh/dt = F - c\\): a constant. The bucket fills forever, or empties forever, and only sits still if \\(F\\) happens to equal \\(c\\) exactly. Equilibrium exists because outflow grows with level.\n\nAt equilibrium the level isn’t changing: \\(dh/dt = 0\\), so inflow = outflow:\n\\[h^* = F / k\\]\nCheck the units. Then compute it:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nA = 1.0    # m^2\nF = 2.0    # m^3/s\nk = 1.0    # m^2/s\n\nh_star = F / k\nprint(f\"equilibrium level h* = {h_star} m\")\n\nequilibrium level h* = 2.0 m"
+  },
+  {
+    "objectID": "labs/lab0d_bucket.html#step-forward-in-time",
+    "href": "labs/lab0d_bucket.html#step-forward-in-time",
+    "title": "Lab 0d — A bucket: your first time-dependent model",
+    "section": "4. Step forward in time",
+    "text": "4. Step forward in time\nThe equation tells us the rate of change right now. So predict a small step ahead, over and over:\n\\[h_{\\text{next}} = h_{\\text{now}} + \\Delta t \\cdot \\frac{F - k\\,h_{\\text{now}}}{A}\\]\n(This is called Euler’s method — it’s how we march time forward.)\nFill in the one missing line:\n\nUntil you fill it in, the rate of change is zero — so your plot will be a flat line. That flat line is the model telling you it has no physics in it yet.\n\n\ndef run_bucket(h0, F, k, A=1.0, dt=0.1, n_steps=100):\n    \"\"\"March the bucket forward from level h0. Returns times and levels.\"\"\"\n    h = np.zeros(n_steps)\n    h[0] = h0 # initial condition\n    for i in range(1, n_steps):\n        h[i] = h[i-1] + dt * (F - k*h[i-1])/A   # &lt;-- FILL THIS IN: what is dh/dt?\n    return np.arange(n_steps) * dt, h\n\nt, h = run_bucket(h0=0.0, F=2.0, k=1.0)\n\n\nplt.figure(figsize=(8, 3))\nplt.plot(t, h)\nplt.axhline(2.0, ls=\"--\", color=\"gray\", label=\"h* = F/k\")\nplt.xlabel(\"time [s]\"); plt.ylabel(\"level h [m]\"); plt.legend();\n\n\n\n\n\n\n\n\nThe level rises and settles at the equilibrium — the drain term pulls it there (fuller → drains harder → a stabilizing feedback)."
+  },
+  {
+    "objectID": "labs/lab0d_bucket.html#make-predictions-and-break-them-three-ways",
+    "href": "labs/lab0d_bucket.html#make-predictions-and-break-them-three-ways",
+    "title": "Lab 0d — A bucket: your first time-dependent model",
+    "section": "5. Make predictions — and break them three ways",
+    "text": "5. Make predictions — and break them three ways\nOur model predicts the level at t = 10 s. How much should we trust that number? Attack it from three directions:\n(a) Initial conditions: run from h0 = 0, 1, 3, 5. Plot all four. Does the prediction at t = 10 s care about where you started? At t = 0.5 s?\n\nplt.figure(figsize=(8, 3))\nfor h0 in [0, 1, 3, 5]:\n    t, h = run_bucket(h0=h0, F=2.0, k=1.0)\n    plt.plot(t, h, label=f\"h0={h0}\")\nplt.xlabel(\"time [s]\"); plt.ylabel(\"h [m]\"); plt.legend();\n\n\n\n\n\n\n\n\n(b) Model parameters: suppose we only know the drain constant roughly: \\(k = 1.0 \\pm 0.2\\). Run with k = 0.8, 1.0, 1.2. How wide is the prediction at t = 10 s?\n\n# YOUR TURN: copy the loop above, but vary k instead of h0.\n\n(c) Forcing: we don’t control the pourer. Run with F = 1.5, 2.0, 2.5. How wide now?\n\n# YOUR TURN: vary F."
+  },
+  {
+    "objectID": "labs/lab0d_bucket.html#name-what-you-just-did",
+    "href": "labs/lab0d_bucket.html#name-what-you-just-did",
+    "title": "Lab 0d — A bucket: your first time-dependent model",
+    "section": "6. Name what you just did",
+    "text": "6. Name what you just did\nYou attacked one prediction from three directions. They have official names:\n\n\n\n\n\n\n\n\nyou varied\nuncertainty type\nEarth version\n\n\n\n\nh0\ninitial-condition uncertainty\ntoday’s exact weather state\n\n\nk\nmodel (parameter) uncertainty\nhow strong are the feedbacks?\n\n\nF\nscenario uncertainty\nwhat will humans emit?\n\n\n\nDiscuss: which mattered at short times? Which at long times?\nBefore you leave: make sure today’s notebooks are saved in your course repo, and your repo link is posted on Courseworks."
+  },
+  {
+    "objectID": "labs/verify_setup.html",
+    "href": "labs/verify_setup.html",
+    "title": "Lab 0 — Setup Verification",
+    "section": "",
+    "text": "⇩ Download this notebook (.ipynb)\nThen upload it to leap.2i2c.cloud and open it there.\nIntroduction to Climate Modeling · Fall 2026\nRun every cell in this notebook (Shift+Enter). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.\nFill in the next cell first.\n# EDIT THIS CELL\nname = \"YOUR NAME HERE\"\nuni = \"YOUR UNI HERE\"\n\nprint(f\"Lab 0 submitted by {name} ({uni})\")\n\nLab 0 submitted by YOUR NAME HERE (YOUR UNI HERE)"
+  },
+  {
+    "objectID": "labs/verify_setup.html#check-the-scientific-python-stack",
+    "href": "labs/verify_setup.html#check-the-scientific-python-stack",
+    "title": "Lab 0 — Setup Verification",
+    "section": "1. Check the scientific Python stack",
+    "text": "1. Check the scientific Python stack\nThese are the libraries we’ll use all semester. This cell just confirms they import and prints their versions.\n\nimport sys\nimport numpy as np\nimport matplotlib\nimport matplotlib.pyplot as plt\nimport xarray as xr\n\nprint(f\"python     {sys.version.split()[0]}\")\nprint(f\"numpy      {np.__version__}\")\nprint(f\"matplotlib {matplotlib.__version__}\")\nprint(f\"xarray     {xr.__version__}\")\nprint(\"\\nAll imports OK ✅\")\n\npython     3.11.15\nnumpy      2.4.6\nmatplotlib 3.10.9\nxarray     2026.4.0\n\nAll imports OK ✅"
+  },
+  {
+    "objectID": "labs/verify_setup.html#a-tiny-computation-and-a-preview-of-week-2",
+    "href": "labs/verify_setup.html#a-tiny-computation-and-a-preview-of-week-2",
+    "title": "Lab 0 — Setup Verification",
+    "section": "2. A tiny computation — and a preview of Week 2",
+    "text": "2. A tiny computation — and a preview of Week 2\nThe emission temperature of a planet is the temperature it must radiate at to balance the sunlight it absorbs:\n\\[T_e = \\left[\\frac{S_0(1-\\alpha)}{4\\sigma}\\right]^{1/4}\\]\nwhere \\(S_0\\) is the solar constant, \\(\\alpha\\) the planetary albedo (how reflective the planet is), and \\(\\sigma\\) the Stefan–Boltzmann constant. Next week we’ll derive this and discover why it gives the wrong answer for Earth’s surface — in the most interesting way possible.\nFor now: run the cell and look at the plot.\n\nS0 = 1361.0      # solar constant [W m-2]\nsigma = 5.67e-8  # Stefan-Boltzmann constant [W m-2 K-4]\n\nalbedo = np.linspace(0.0, 0.8, 100)\nT_e = (S0 * (1 - albedo) / (4 * sigma)) ** 0.25\n\nfig, ax = plt.subplots(figsize=(6, 4))\nax.plot(albedo, T_e, lw=2)\nax.axvline(0.3, ls=\"--\", color=\"gray\")\nax.axhline(255, ls=\"--\", color=\"gray\")\nax.plot(0.3, 255, \"o\", color=\"tab:red\", ms=8, zorder=5,\n        label=\"Earth: $\\\\alpha=0.3$, $T_e\\\\approx255$ K\")\nax.axhline(288, ls=\":\", color=\"tab:red\",\n           label=\"Earth's actual surface T = 288 K  (?!)\")\nax.set_xlabel(\"planetary albedo\")\nax.set_ylabel(\"emission temperature [K]\")\nax.set_title(f\"{name}'s first climate calculation\")\nax.legend()\nfig.tight_layout()\n\n\n\n\n\n\n\n\nThat 33 K gap between the dashed gray line and the dotted red line? That’s the greenhouse effect, and it’s where this course begins."
+  },
+  {
+    "objectID": "labs/verify_setup.html#check-xarray-our-data-workhorse",
+    "href": "labs/verify_setup.html#check-xarray-our-data-workhorse",
+    "title": "Lab 0 — Setup Verification",
+    "section": "3. Check xarray (our data workhorse)",
+    "text": "3. Check xarray (our data workhorse)\nLater in the course we’ll use xarray to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.\n\nda = xr.DataArray(\n    20 + 10 * np.random.randn(12, 4),\n    dims=[\"month\", \"station\"],\n    coords={\"month\": np.arange(1, 13)},\n    name=\"temperature\",\n    attrs={\"units\": \"degC\"},\n)\nprint(da.mean(dim=\"station\"))\nprint(\"\\nxarray OK ✅\")\n\n&lt;xarray.DataArray 'temperature' (month: 12)&gt; Size: 96B\narray([22.93892471, 10.94889651, 25.2580202 , 20.55694466, 14.90834561,\n       27.02762739, 25.62253631, 17.55929104, 19.5433179 , 23.48915813,\n       18.05039101, 17.86739252])\nCoordinates:\n  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12\nAttributes:\n    units:    degC\n\nxarray OK ✅"
+  },
+  {
+    "objectID": "labs/verify_setup.html#done",
+    "href": "labs/verify_setup.html#done",
+    "title": "Lab 0 — Setup Verification",
+    "section": "Done!",
+    "text": "Done!\nIf everything above ran cleanly:\n\nSave this notebook (Ctrl+S / Cmd+S).\nFollow Part C of the Lab 0 instructions to put it in your private course repo.\nFollow Part D to post your repo link on Courseworks.\n\nSee you in class."
+  },
+  {
+    "objectID": "slides/week01.html#intro-and-logistics",
+    "href": "slides/week01.html#intro-and-logistics",
+    "title": "Introduction to Climate Modeling",
+    "section": "Intro and logistics",
+    "text": "Intro and logistics\n\nTime: Thursdays 10:10–12:40 · FRM 315 (The Forum)\nInstructor: Dhruv Balwada (dbalwada@ldeo.columbia.edu)\nTAs: Prani Nalluri (pan2121) · Chandanie Kutwaru (ck3397)\nOffice hours: TBD (TAs will organize)\nWe will work using Courseworks + the course website ↓\n\n\n\nBrief self-intro, then straight into the work."
+  },
+  {
+    "objectID": "slides/week01.html#the-work-labs-homeworks-project",
+    "href": "slides/week01.html#the-work-labs-homeworks-project",
+    "title": "Introduction to Climate Modeling",
+    "section": "The work: labs, homeworks, project",
+    "text": "The work: labs, homeworks, project\n\n\n\nComponent\nWeight\nRhythm\n\n\n\n\nParticipation/attendance\n5%\nin-class presence\n\n\nLabs\n10%\nin class, almost every week — submit by end of week\n\n\nHomework (5)\n50%\n~every two weeks\n\n\nProject proposal\n10%\ntitle Oct 9 · proposal Oct 23\n\n\nFinal project\n25%\npresent Dec 10/17 · notebook due Dec 18\n\n\n\nHomework submission process\nAll code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks.\n\nFlag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW."
+  },
+  {
+    "objectID": "slides/week01.html#using-ai-in-this-course",
+    "href": "slides/week01.html#using-ai-in-this-course",
+    "title": "Introduction to Climate Modeling",
+    "section": "Using AI in this course",
+    "text": "Using AI in this course\n\nAllowed\n\nGoogle Gemini (free through CUIT); ChatGPT or Claude are fine too.\n\nDefault to asking it to teach you, not to do it for you. A standing prompt that works:\n\n“Never give me corrected code or direct syntax fixes. Explain the concept I’m missing.”\n\nGood at: explaining error messages, syntax, library APIs, what a function does\nBad at: judging scientific correctness, choosing the right analysis, subtle bugs, whether a result “looks right”\nYou are responsible for understanding everything you submit and for the errors that AI may make."
+  },
+  {
+    "objectID": "slides/week01.html#before-we-start",
+    "href": "slides/week01.html#before-we-start",
+    "title": "Introduction to Climate Modeling",
+    "section": "Before we start",
+    "text": "Before we start\n\nRoughly what sets the Earth’s average temperature? (could you explain it to a friend?)\nDo you remember what “climate sensitivity” means?\nHave you come across ordinary differential equations — in any course?\nHave you written Python this year? …keep your hand up if you’ve used it on climate or environmental data\nHave you used git/GitHub before?\n\n\nUngraded diagnostic — no judgment framing: “a year since GR5001 is a long time; that’s expected.” Q3 calibrates the math pacing of weeks 2–3; Q4’s second stage tells you how much xarray scaffolding labs need; Q5 tells the TAs how hands-on Lab 0a must be. Jot rough counts right after class."
+  },
+  {
+    "objectID": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
+    "href": "slides/week01.html#weather-is-the-state.-climate-is-the-distribution.",
+    "title": "Introduction to Climate Modeling",
+    "section": "Weather is the state. Climate is the distribution.",
+    "text": "Weather is the state. Climate is the distribution.\n\nWeather: the value right now — a random variable, unpredictable in detail beyond ~2 weeks\nClimate: the distribution those values are drawn from — mean, variability, tails — estimated over a chosen period\nClimate change = the distribution shifting, widening, or reshaping"
+  },
+  {
+    "objectID": "slides/week01.html#section",
+    "href": "slides/week01.html#section",
+    "title": "Introduction to Climate Modeling",
+    "section": "",
+    "text": "IPCC AR6 WG1, Figure SPM.1 (2021)"
+  },
+  {
+    "objectID": "slides/week01.html#section-1",
+    "href": "slides/week01.html#section-1",
+    "title": "Introduction to Climate Modeling",
+    "section": "",
+    "text": "IPCC AR6 WG1, Figure SPM.8, panel (a) (2021)"
+  },
+  {
+    "objectID": "slides/week01.html#a-model-is",
+    "href": "slides/week01.html#a-model-is",
+    "title": "Introduction to Climate Modeling",
+    "section": "A model is…",
+    "text": "A model is…\n\n\n\n\nphysical — a scale model of a building\n\n\n\n\nabstract — equations, or code (this one is Lab 0d)\n\n\n\na simplified representation of a system, built for a purpose — prediction, explanation, communication\nphysical (a wind tunnel) or abstract (equations, code); climate models are budgets of energy, mass, momentum\nevery model has structure (the form you chose) and parameters (the numbers you fit)\n“best model” is meaningless without “…for what question?”\n\n\nPhoto: Mak Faitre Sownia, CC BY-SA 4.0, via Wikimedia Commons\n\n\nOne slide of philosophy, then the labs make it real. The structure/parameters line pays off once everyone’s hand-fit differs."
+  },
+  {
+    "objectID": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
+    "href": "slides/week01.html#three-reasons-a-forecast-model-can-be-wrong",
+    "title": "Introduction to Climate Modeling",
+    "section": "Three reasons a forecast model can be wrong",
+    "text": "Three reasons a forecast model can be wrong\n\n“It’s tough to make predictions, especially about the future.”\n\nYou just generated all three in the bucket:\n\nInitial-condition uncertainty — you varied \\(h_0\\): matters early, forgotten later (Earth: today’s exact weather)\nModel uncertainty — you varied \\(k\\): parameters (and structure) (Earth: we don’t know exact laws or our models can’t be exactly solved)\nScenario uncertainty — you varied \\(F\\): the pourer decides, not physics (Earth: emissions)\n\nDifferent ones dominate at different horizons.\n\nEvery bullet points at something they DID today. Worth saying aloud: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+  },
+  {
+    "objectID": "slides/week01.html#how-the-three-trade-off-with-time",
+    "href": "slides/week01.html#how-the-three-trade-off-with-time",
+    "title": "Introduction to Climate Modeling",
+    "section": "How the three trade off with time",
+    "text": "How the three trade off with time\n\n\n\n\nIndividual model runs under a low and a high scenario. For the next ~20 years the wiggles — internal variability — swamp the difference between scenarios.\n\n\n\n\nShare of the uncertainty in global, annual-mean, 10-year-averaged temperature: internal variability dominates early, model uncertainty mid-century, scenario by 2100. That smoothing is why orange fades so fast — ask about one summer in one city and it stays orange much longer.\n\n\n\nLeft: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins & Sutton (2009), updated for CMIP5 by E. Hawkins, Climate Lab Book, CC BY-SA 4.0.\n\n\nMap the bucket onto the colours: varying h0 = orange, varying k = blue, varying F = green. Left panel is the intuition (you cannot tell the scenarios apart before ~2040); right panel is the bookkeeping. Closing line: by 2100 the biggest uncertainty is the scenario — the largest unknown is a choice."
+  },
+  {
+    "objectID": "slides/week01.html#before-you-leave",
+    "href": "slides/week01.html#before-you-leave",
+    "title": "Introduction to Climate Modeling",
+    "section": "Before you leave",
+    "text": "Before you leave\n\nToday’s notebooks (0b, 0c, 0d) → saved into your course repo\nRepo link → posted on Courseworks (that’s your Lab 0 submission)\nDidn’t finish or want to play around more? Complete at home before next Thursday — TAs + office hours can unblock you.\n\n\nNext week: the Earth is a bucket — sunlight pours in, infrared drains out, and the level is the heat (temperature)."
   },
   {
     "objectID": "project.html",

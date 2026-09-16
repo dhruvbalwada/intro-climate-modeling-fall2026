@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 0 — Setup Verification – Introduction to Climate Modeling</title>
+<title>GitHub on the LEAP hub – Introduction to Climate Modeling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -109,35 +109,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -197,10 +168,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#check-the-scientific-python-stack" id="toc-check-the-scientific-python-stack" class="nav-link active" data-scroll-target="#check-the-scientific-python-stack">1. Check the scientific Python stack</a></li>
-  <li><a href="#a-tiny-computation-and-a-preview-of-week-2" id="toc-a-tiny-computation-and-a-preview-of-week-2" class="nav-link" data-scroll-target="#a-tiny-computation-and-a-preview-of-week-2">2. A tiny computation — and a preview of Week 2</a></li>
-  <li><a href="#check-xarray-our-data-workhorse" id="toc-check-xarray-our-data-workhorse" class="nav-link" data-scroll-target="#check-xarray-our-data-workhorse">3. Check xarray (our data workhorse)</a></li>
-  <li><a href="#done" id="toc-done" class="nav-link" data-scroll-target="#done">Done!</a></li>
+  <li><a href="#tell-git-who-you-are-once" id="toc-tell-git-who-you-are-once" class="nav-link active" data-scroll-target="#tell-git-who-you-are-once">1. Tell git who you are (once)</a></li>
+  <li><a href="#make-a-personal-access-token-once" id="toc-make-a-personal-access-token-once" class="nav-link" data-scroll-target="#make-a-personal-access-token-once">2. Make a personal access token (once)</a></li>
+  <li><a href="#save-it-on-the-hub-once" id="toc-save-it-on-the-hub-once" class="nav-link" data-scroll-target="#save-it-on-the-hub-once">3. Save it on the hub (once)</a></li>
+  <li><a href="#the-everyday-loop" id="toc-the-everyday-loop" class="nav-link" data-scroll-target="#the-everyday-loop">4. The everyday loop</a></li>
+  <li><a href="#when-it-goes-wrong" id="toc-when-it-goes-wrong" class="nav-link" data-scroll-target="#when-it-goes-wrong">5. When it goes wrong</a></li>
+  <li><a href="#sec-scoped" id="toc-sec-scoped" class="nav-link" data-scroll-target="#sec-scoped">6. Alternative: <code>gh-scoped-creds</code></a></li>
+  <li><a href="#more" id="toc-more" class="nav-link" data-scroll-target="#more">More</a></li>
   </ul>
 </nav>
     </div>
@@ -209,7 +183,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 0 — Setup Verification</h1>
+<h1 class="title">GitHub on the LEAP hub</h1>
+<p class="subtitle lead">Logging in so that <code>git push</code> works — and what to do when it doesn’t</p>
 </div>
 
 
@@ -226,118 +201,113 @@ window.Quarto = {
 </header>
 
 
-<p><a class="btn btn-primary btn-sm" href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/verify_setup.ipynb" download="">⇩ Download this notebook (.ipynb)</a></p>
-<p><em>Then upload it to <a href="https://leap.2i2c.cloud/">leap.2i2c.cloud</a> and open it there.</em></p>
-<p><strong>Introduction to Climate Modeling · Fall 2026</strong></p>
-<p>Run every cell in this notebook (<code>Shift+Enter</code>). If all cells run without errors and the plot at the end appears, your environment works. Then follow the Lab 0 instructions to put this notebook in your course GitHub repository.</p>
-<p><em>Fill in the next cell first.</em></p>
-<div id="fa13e949" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDIT THIS CELL</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"YOUR NAME HERE"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>uni <span class="op">=</span> <span class="st">"YOUR UNI HERE"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Lab 0 submitted by </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>uni<span class="sc">}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Lab 0 submitted by YOUR NAME HERE (YOUR UNI HERE)</code></pre>
-</div>
-</div>
-<section id="check-the-scientific-python-stack" class="level2">
-<h2 class="anchored" data-anchor-id="check-the-scientific-python-stack">1. Check the scientific Python stack</h2>
-<p>These are the libraries we’ll use all semester. This cell just confirms they import and prints their versions.</p>
-<div id="426f8d4e" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"python     </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">.</span>split()[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"numpy      </span><span class="sc">{</span>np<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"matplotlib </span><span class="sc">{</span>matplotlib<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"xarray     </span><span class="sc">{</span>xr<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">All imports OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>python     3.11.15
-numpy      2.4.6
-matplotlib 3.10.9
-xarray     2026.4.0
-
-All imports OK ✅</code></pre>
-</div>
-</div>
+<p>Last week many of you got stuck pushing to GitHub from the hub. The <code>gh-scoped-creds</code> route has two traps: your repo must be added to the app’s list of repositories, and the login expires every 8 hours. Here is a simpler route that you set up <strong>once</strong> and then forget about.</p>
+<p><em>Everything here is done inside a hub terminal: on <a href="https://leap.2i2c.cloud">leap.2i2c.cloud</a>, <strong>File → New → Terminal</strong>.</em></p>
+<section id="tell-git-who-you-are-once" class="level2">
+<h2 class="anchored" data-anchor-id="tell-git-who-you-are-once">1. Tell git who you are (once)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your-uni@columbia.edu"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Without this, <code>git commit</code> stops with <em>“Please tell me who you are”</em>.</p>
 </section>
-<section id="a-tiny-computation-and-a-preview-of-week-2" class="level2">
-<h2 class="anchored" data-anchor-id="a-tiny-computation-and-a-preview-of-week-2">2. A tiny computation — and a preview of Week 2</h2>
-<p>The <strong>emission temperature</strong> of a planet is the temperature it must radiate at to balance the sunlight it absorbs:</p>
-<p><span class="math display">\[T_e = \left[\frac{S_0(1-\alpha)}{4\sigma}\right]^{1/4}\]</span></p>
-<p>where <span class="math inline">\(S_0\)</span> is the solar constant, <span class="math inline">\(\alpha\)</span> the planetary albedo (how reflective the planet is), and <span class="math inline">\(\sigma\)</span> the Stefan–Boltzmann constant. Next week we’ll derive this and discover why it gives the <em>wrong</em> answer for Earth’s surface — in the most interesting way possible.</p>
-<p>For now: run the cell and look at the plot.</p>
-<div id="ea864414" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>S0 <span class="op">=</span> <span class="fl">1361.0</span>      <span class="co"># solar constant [W m-2]</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">5.67e-8</span>  <span class="co"># Stefan-Boltzmann constant [W m-2 K-4]</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="dv">100</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>T_e <span class="op">=</span> (S0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> albedo) <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> sigma)) <span class="op">**</span> <span class="fl">0.25</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ax.plot(albedo, T_e, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="fl">0.3</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">255</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="fl">0.3</span>, <span class="dv">255</span>, <span class="st">"o"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>, ms<span class="op">=</span><span class="dv">8</span>, zorder<span class="op">=</span><span class="dv">5</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">"Earth: $</span><span class="ch">\\</span><span class="st">alpha=0.3$, $T_e</span><span class="ch">\\</span><span class="st">approx255$ K"</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">288</span>, ls<span class="op">=</span><span class="st">":"</span>, color<span class="op">=</span><span class="st">"tab:red"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="st">"Earth's actual surface T = 288 K  (?!)"</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"planetary albedo"</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"emission temperature [K]"</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">'s first climate calculation"</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="verify_setup_files/figure-html/cell-4-output-1.png" width="566" height="374" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>That 33 K gap between the dashed gray line and the dotted red line? That’s the greenhouse effect, and it’s where this course begins.</p>
-</section>
-<section id="check-xarray-our-data-workhorse" class="level2">
-<h2 class="anchored" data-anchor-id="check-xarray-our-data-workhorse">3. Check xarray (our data workhorse)</h2>
-<p>Later in the course we’ll use <code>xarray</code> to analyze output from real climate models. This cell just makes a tiny labeled dataset and takes a mean.</p>
-<div id="93398c2e" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> xr.DataArray(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.random.randn(<span class="dv">12</span>, <span class="dv">4</span>),</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span>[<span class="st">"month"</span>, <span class="st">"station"</span>],</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    coords<span class="op">=</span>{<span class="st">"month"</span>: np.arange(<span class="dv">1</span>, <span class="dv">13</span>)},</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"temperature"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    attrs<span class="op">=</span>{<span class="st">"units"</span>: <span class="st">"degC"</span>},</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(da.mean(dim<span class="op">=</span><span class="st">"station"</span>))</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">xarray OK ✅"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;xarray.DataArray 'temperature' (month: 12)&gt; Size: 96B
-array([22.93892471, 10.94889651, 25.2580202 , 20.55694466, 14.90834561,
-       27.02762739, 25.62253631, 17.55929104, 19.5433179 , 23.48915813,
-       18.05039101, 17.86739252])
-Coordinates:
-  * month    (month) int64 96B 1 2 3 4 5 6 7 8 9 10 11 12
-Attributes:
-    units:    degC
-
-xarray OK ✅</code></pre>
-</div>
-</div>
-</section>
-<section id="done" class="level2">
-<h2 class="anchored" data-anchor-id="done">Done!</h2>
-<p>If everything above ran cleanly:</p>
+<section id="make-a-personal-access-token-once" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-personal-access-token-once">2. Make a personal access token (once)</h2>
+<p>A token is a long password that GitHub gives you for use from the command line. <strong>Treat it like a password: never paste it into a notebook, a file in your repo, or a chat.</strong></p>
 <ol type="1">
-<li>Save this notebook (<code>Ctrl+S</code> / <code>Cmd+S</code>).</li>
-<li>Follow <strong>Part C</strong> of the Lab 0 instructions to put it in your private course repo.</li>
-<li>Follow <strong>Part D</strong> to post your repo link on Courseworks.</li>
+<li>On <a href="https://github.com">github.com</a>, click your profile photo (top right) → <strong>Settings</strong>.</li>
+<li>In the left sidebar, scroll to the bottom → <strong>Developer settings</strong>.</li>
+<li><strong>Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)</strong>. <em>(Not the “fine-grained” kind — it works too, but has more knobs to get wrong.)</em></li>
+<li>Note: <code>LEAP hub</code>. Expiration: <strong>Custom → 2026-12-31</strong>. Scopes: tick the top-level <strong><code>repo</code></strong> box. Click <strong>Generate token</strong>.</li>
+<li><strong>Copy the token now</strong> — GitHub shows it only once. Keep it somewhere private (a password manager, or a note on your laptop) until step 3 below is done.</li>
 </ol>
-<p>See you in class.</p>
+</section>
+<section id="save-it-on-the-hub-once" class="level2">
+<h2 class="anchored" data-anchor-id="save-it-on-the-hub-once">3. Save it on the hub (once)</h2>
+<p>In the hub terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset-all</span> credential.helper   <span class="co"># clears any leftover gh-scoped-creds setting (harmless if there is none)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now go to your repo and push:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/climate-modeling-f26-<span class="op">&lt;</span>your-uni<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You will be asked for a <strong>Username</strong> (your GitHub username) and a <strong>Password</strong> — paste the <strong>token</strong>, not your GitHub password. <em>Nothing appears on screen while you paste; that is normal. Press Enter.</em></p>
+<p>That’s it. The token is stored in your home directory on the hub (<code>~/.git-credentials</code>, readable only by you), and every later <code>git push</code> / <code>git pull</code> uses it without asking.</p>
+<blockquote class="blockquote">
+<p><strong>Already cloned with <code>gh-scoped-creds</code> last week?</strong> Nothing to redo — your clone uses the same <code>https://</code> URL. Just run the two <code>git config</code> lines above and push.</p>
+</blockquote>
+</section>
+<section id="the-everyday-loop" class="level2">
+<h2 class="anchored" data-anchor-id="the-everyday-loop">4. The everyday loop</h2>
+<p>After you have worked on a notebook inside your repo folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/climate-modeling-f26-<span class="op">&lt;</span>your-uni<span class="op">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Lab 0d: bucket model"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then check on github.com that the file is there. That repo URL, posted on Courseworks, is your submission.</p>
+<p><strong>Prefer buttons?</strong> The hub has a Git panel in the left sidebar (the branching-arrows icon). Open your repo folder in the file browser, then in the Git panel: tick the changed files → write a message → <strong>Commit</strong> → click the cloud-up <strong>Push</strong> icon. If it asks for credentials, give your username and the token; after the first success it stops asking.</p>
+</section>
+<section id="when-it-goes-wrong" class="level2">
+<h2 class="anchored" data-anchor-id="when-it-goes-wrong">5. When it goes wrong</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>What you see</th>
+<th>What it means</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Support for password authentication was removed</code></td>
+<td>You typed your GitHub password</td>
+<td>Use the token as the password</td>
+</tr>
+<tr class="even">
+<td><code>Authentication failed</code></td>
+<td>Wrong username, or a mistyped/expired token</td>
+<td>Run <code>git config --global --unset-all credential.helper</code>, redo step 3; if the token is lost, generate a new one</td>
+</tr>
+<tr class="odd">
+<td><code>Repository not found</code> (but it exists on github.com)</td>
+<td>Typo in the URL — or, with <code>gh-scoped-creds</code>, your repo isn’t in the app’s list</td>
+<td>Check <code>git remote -v</code>; for the app, see <a href="#sec-scoped">§6</a></td>
+</tr>
+<tr class="even">
+<td><code>Permission denied (publickey)</code></td>
+<td>You cloned with an <code>ssh</code> URL</td>
+<td><code>git remote set-url origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git</code></td>
+</tr>
+<tr class="odd">
+<td><code>Updates were rejected because the remote contains work</code></td>
+<td>The repo changed on the website (e.g.&nbsp;you uploaded a file there)</td>
+<td><code>git pull</code> first, then <code>git push</code></td>
+</tr>
+<tr class="even">
+<td><code>Please tell me who you are</code></td>
+<td>Name/email not set</td>
+<td>Step 1</td>
+</tr>
+<tr class="odd">
+<td><code>terminal prompts disabled</code></td>
+<td>The Git panel could not ask for a password</td>
+<td>Push from the terminal once (step 3); after that the panel works</td>
+</tr>
+</tbody>
+</table>
+<p>Still stuck? Ask a TA during the lab, or bring it to office hours. Your Lab 0 submission is not late while you are fixing this — but it must work before the first homework.</p>
+</section>
+<section id="sec-scoped" class="level2">
+<h2 class="anchored" data-anchor-id="sec-scoped">6. Alternative: <code>gh-scoped-creds</code></h2>
+<p>If you would rather not keep a token on the hub, <code>gh-scoped-creds</code> also works — with two things to know.</p>
+<ol type="1">
+<li>In a hub terminal run <code>gh-scoped-creds</code>. It prints a link and a code. Open the link, enter the code.</li>
+<li><strong>The first time</strong>, GitHub asks you to install the app on your account. Choose <strong>Only select repositories</strong> and pick <code>climate-modeling-f26-&lt;your-uni&gt;</code>. <strong>This is the step most people missed.</strong></li>
+<li>Created the repo <em>after</em> installing the app, or skipped step 2? Go to <a href="https://github.com/settings/installations">github.com/settings/installations</a> → <strong>gh-scoped-creds → Configure → Repository access → Only select repositories → Select repositories</strong> → add your repo → <strong>Save</strong>. Then <code>git push</code> works.</li>
+<li>The login lasts <strong>8 hours</strong>. Next week, run <code>gh-scoped-creds</code> again before pushing.</li>
+</ol>
+<p>If you have both set up, git will use whichever it finds first; to switch cleanly to the token route, run the <code>--unset-all</code> line in step 3.</p>
+</section>
+<section id="more" class="level2">
+<h2 class="anchored" data-anchor-id="more">More</h2>
+<p>A fuller tour of git and GitHub on the hub — branches, pulling, resolving conflicts — is in the <a href="../labs/github_tutorial_leap.html">LEAP GitHub tutorial</a>. For this course you only ever need §1–§4 above.</p>
 
 
 </section>
