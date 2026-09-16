@@ -33,28 +33,106 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
    - Visibility: **Private** ← important
    - Check "Add a README file"
 2. Add the teaching staff as collaborators: repo **Settings → Collaborators → Add people** — add **`dhruvbalwada`**, **`[PRANI-GITHUB]`**, and **`[CHANDANIE-GITHUB]`**.
-3. Put your completed notebook in the repo. Two ways — pick one:
-   - **Easy way (fine for today):** on your repo's GitHub page, **Add file → Upload files**, drag in the completed `verify_setup.ipynb` (download it from the hub first: right-click the file → Download), and click *Commit changes*.
-   - **Real way (we'll all use this from Lab 1 on):** in a hub Terminal (File → New → Terminal):
-     ```bash
-     git clone https://github.com/<your-username>/climate-modeling-f26-<uni>.git
-     cp verify_setup.ipynb climate-modeling-f26-<uni>/
-     cd climate-modeling-f26-<uni>
-     git add verify_setup.ipynb
-     git commit -m "Lab 0: verification notebook"
-     git push
-     ```
-     **Authenticating (no passwords, no tokens):** the first time you push, run this in the terminal:
-     ```bash
-     gh-scoped-creds
-     ```
-     It prints a link and a code. Open the link, enter the code, and — the first time only — install the GitHub App on your account, choosing **"Only select repositories"** and picking your `climate-modeling-f26-<uni>` repo. Then `git push` works.
+3. **Make a personal access token** (needed for options 2 and 3 below; skip if you only do option 1). When git on the hub talks to GitHub it asks for a username and password — the password is **not** your GitHub password but a *token*:
+   1. On [github.com](https://github.com): profile photo → **Settings** → bottom of the left sidebar → **Developer settings**.
+   2. **Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)**.
+   3. Note: `LEAP hub`. Expiration: **Custom → 2026-12-31**. Scopes: tick the top-level **`repo`** box. Click **Generate token**.
+   4. **Copy the token now** — GitHub shows it only once. Treat it like a password: never paste it into a notebook or a file in your repo.
 
-     Credentials last **8 hours**; when they expire just run `gh-scoped-creds` again. *(This is why we use the `https://` clone URL above.)*
+4. **Put your completed notebook in the repo.** Three ways — pick one.
+
+### Option 1 — Upload on the GitHub website
+
+Fine for today; from Lab 1 on we use option 2 or 3.
+
+1. On the hub, right-click `verify_setup.ipynb` in the file browser → **Download**.
+2. On your repo's GitHub page: **Add file → Upload files**, drag the file in, click **Commit changes**.
+
+### Option 2 — Using the Terminal
+
+Open a hub terminal (**File → New → Terminal**). Each step is **one command**: run it, read what comes back, then go to the next. If something fails, note which step and see [When git goes wrong](#when-git-goes-wrong).
+
+1. Tell git your name (nothing printed = it worked):
+   ```bash
+   git config --global user.name "Your Name"
+   ```
+2. Tell git your email:
+   ```bash
+   git config --global user.email "your-uni@columbia.edu"
+   ```
+3. Clear any login setting left over from last week (harmless if there is none):
+   ```bash
+   git config --global --unset-all credential.helper
+   ```
+4. Tell git to remember your token after you type it once:
+   ```bash
+   git config --global credential.helper store
+   ```
+5. Clone your repo. Because it is private, this asks for a **Username** (your GitHub username) and a **Password** — paste the **token** (nothing appears while you paste; press Enter). A folder `climate-modeling-f26-<uni>` appears in the file browser:
+   ```bash
+   git clone https://github.com/<your-username>/climate-modeling-f26-<uni>.git
+   ```
+6. Copy the notebook into that folder:
+   ```bash
+   cp verify_setup.ipynb climate-modeling-f26-<uni>/
+   ```
+7. Move into the folder (the prompt changes to show the folder name):
+   ```bash
+   cd climate-modeling-f26-<uni>
+   ```
+8. Tell git to track the file:
+   ```bash
+   git add verify_setup.ipynb
+   ```
+9. Record a snapshot with a message (git prints a summary like `1 file changed`):
+   ```bash
+   git commit -m "Lab 0: verification notebook"
+   ```
+10. Send it to GitHub. This time no password is asked — step 4 remembered the token:
+    ```bash
+    git push
+    ```
+11. Reload your repo page on github.com: the notebook should be there.
+
+> **Tried `gh-scoped-creds` last week?** Nothing to redo — your clone uses the same URL. Do steps 1–4, then continue from step 6 inside your existing folder.
+
+### Option 3 — Using the JupyterHub Git interface
+
+Same thing, with buttons. The **Git** panel is in the hub's left sidebar (the branching-arrows icon).
+
+1. Git panel → **Clone a Repository** → paste `https://github.com/<your-username>/climate-modeling-f26-<uni>.git` → OK. It asks for credentials: username, and the **token** as the password.
+2. In the file browser, drag `verify_setup.ipynb` into the new `climate-modeling-f26-<uni>` folder, then open that folder.
+3. Git panel: the file appears under **Changed**. Click its **+** to stage it, type a message in the box at the bottom, click **Commit**. The first time it asks for your name and email.
+4. Click the cloud-up **Push** icon at the top of the panel. If asked, give username + token again.
+5. Reload your repo page on github.com: the notebook should be there.
+
+The panel may ask for the token on every push. To stop that, run steps 3–4 of option 2 once in a terminal.
 
 ## Part D — Submit your notebook as assignment
 
 On Courseworks, open the **Lab 0** assignment and submit **the URL of your repository** (e.g., `https://github.com/ab1234/climate-modeling-f26-ab1234`). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.
+
+## When git goes wrong
+
+From Lab 1 on, saving your work to GitHub is the same three commands from inside your repo folder (or the same three clicks in the Git panel — stage, Commit, Push):
+
+1. `git add .` — track everything you changed
+2. `git commit -m "what you did"` — record a snapshot
+3. `git push` — send it to GitHub
+
+When one of them fails:
+
+| What you see | What it means | Fix |
+|---|---|---|
+| `Support for password authentication was removed` | You typed your GitHub password | Use the token as the password |
+| `Authentication failed` | Wrong username, or a mistyped/expired token | Run `git config --global --unset-all credential.helper`, then push again and re-enter the token; lost the token? generate a new one (Part C, step 3) |
+| `Repository not found` (but it exists on github.com) | Typo in the URL | Check `git remote -v` against your repo page |
+| `Permission denied (publickey)` | You cloned with an `ssh` URL | `git remote set-url origin https://github.com/<user>/<repo>.git` |
+| `Updates were rejected because the remote contains work` | The repo changed on the website (e.g. you uploaded a file there) | `git pull`, then `git push` |
+| `Please tell me who you are` | Name/email not set | Option 2, steps 1–2 |
+| `terminal prompts disabled` | The Git panel could not ask for a password | Run option 2, steps 3–4, then push from the terminal once; after that the panel works |
+
+Still stuck? Ask a TA during the lab or come to office hours. A fuller tour of git on the hub (branches, pulling, resolving conflicts) is in the [LEAP GitHub tutorial](github_tutorial_leap.qmd) — optional.
 
 ---
 
