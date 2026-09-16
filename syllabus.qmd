@@ -1,0 +1,310 @@
+---
+title: "Syllabus"
+---
+
+<a class="btn btn-primary btn-sm" href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/syllabus/Intro_Climate_Modeling_Syllabus_Fall2026.docx" download>&#8681; Download the syllabus (.docx)</a>
+
+*The week-by-week [schedule](schedule.qmd) on this site is the live version and takes precedence over the planned outline below.*
+
+
+*Subject Code/Course Number CLMTG5065*
+
+*Thursdays 10:10 am – 12:40 pm*
+
+*FRM 315 (The Forum)*
+
+## Instructor
+
+Dhruv Balwada
+
+dbalwada@ldeo.columbia.edu
+
+Office hours: TBD (to be announced on Courseworks)
+
+## Teaching Assistant
+
+Prani Nalluri (pan2121@columbia.edu), Chandanie Kutwaru (ck3397@columbia.edu)
+
+## Course Description
+
+Earth system and climate models are critically important tools for climate science research. They are used to study climate variability in the past, determine how climate change has contributed to recent trends and extreme events, and understand how various natural and anthropogenic forcing affect the evolution of the climate system now and into the future. This class serves as an introduction to the history, development, process representations, and practical application of earth system models.
+
+Students will learn the history and evolution of earth system modeling and how these models have been used to inform some of the most important topics in climate science (e.g., detection and attribution, future projections, climate sensitivity). Lectures, and associated lab work, will introduce the processes integrated into various components of earth system models (e.g., atmosphere, ocean, land, carbon cycle, etc), important interactions between these components (e.g., climate system feedbacks, climate sensitivity), and how earth system models are used for future projections. Students will familiarize themselves with the wealth of climate model simulation data available from free public archives (e.g., CMIP6, the Multi-Model Large Ensemble Project), the protocols used for designing and running simulations, and practical tools for analyzing these datasets.
+
+Classroom lectures will be supplemented by practical lab-assignments, where the students will use and develop their own models demonstrating the concepts learned in class. As a final project, students will develop their own research questions using available climate model simulations for their primary analyses.
+
+Prerequisites:
+
+- CLMT GR5001 Dynamics of Climate Variability and Change
+
+- CLMT GR5045 Computing and Research Methods for Climate (or proven familiarity with scientific programming)
+
+## Course Objectives
+
+- Develop a foundation in hierarchy of models of climate, used to assess and understand the climate system.
+
+- Have a basic understanding of modern climate models, used to simulate the past and future climate.
+
+- Exposure to the Climate Model Intercomparison Project, the associated protocols, and how these datasets are used by the climate enterprise
+
+- Learn how to interact with these models and datasets and analyze them
+
+- Complete a project that requires formulating a climate relevant question, and using existing climate model data or data generated from a simple climate model to answer it.
+
+## Required and Recommended Readings
+
+There are no required readings.
+
+The course is loosely based on a few books. There will be suggested readings from these texts each week as extra supplemental learning in addition to the classroom teaching:
+
+- [<u>The Climate Modeling Primer</u>](https://www.wiley.com/en-us/The+Climate+Modelling+Primer%2C+4th+Edition-p-9781118747186), 4th Ed, K. McGuffie & A. Henderson-Sellers
+
+- [<u>Climate Dynamics</u>](https://press.princeton.edu/books/hardcover/9780691231006/climate-dynamics-2nd-edition), 2nd Ed. K. Cook
+
+- [<u>Climate Change & Climate Modeling</u>](https://www.cambridge.org/core/books/climate-change-and-climate-modeling/0C39568B7AFB5F796EBFCF1F275780D6), J.D. Neelin
+
+- [<u>Demystifying Climate Models: A Users Guide to Earth System Models</u>](https://link.springer.com/book/10.1007/978-3-662-48959-8), A. Gettelman & R. B. Rood (open access)
+
+<u>The students are not expected to purchase any of these.</u> All suggested reading will be provided to the students through Courseworks or via email.
+
+## Method of Evaluation
+
+| **Activity** | **Grade** | **Week** | **Due Date** |
+|----|----|----|----|
+| Attendance and class participation | 5% | All weeks | Continuous |
+| Lab sessions | 10% | 5 weeks | At the end of the day when lab session is held |
+| Homework | 50% | 5 weeks | 2 weeks after HW was assigned |
+| Final project proposal | 10% | Weeks 5 and 7 | Title: Friday 9 October. Proposal: Friday 23 October. |
+| Final project | 25% | Finals week | 18 December |
+
+## Grades: Definitions and Scale
+
+Final grades are assigned to course average scores based on the following scale:
+
+A+ Rare performance. Reserved for highly exceptional achievement.
+
+A Excellent. Outstanding achievement.
+
+A- Excellent work, close to outstanding.
+
+B+ Very good. Solid achievement expected of most graduate students.
+
+B Good. Acceptable achievement.
+
+B- Acceptable achievement, but below what is generally expected of graduate students.
+
+C+ Fair achievement, above minimally acceptable level.
+
+C Fair achievement, but only minimally acceptable.
+
+C- Very low performance.
+
+F Failure. The course usually may not be repeated unless it is a required course.
+
+## Attendance and Class Participation (5%)
+
+We expect you to attend and actively participate in class. We may incorporate in-class group discussions and activities, which may require you to submit sample problems that you worked out individually or in a group, with help from TA and instructor. This work will be submitted in class on a physical piece of paper; please bring the necessary implements to class. There is no late submission for this work.
+
+## Lab sessions (10%)
+
+There will be a Lab session every few weeks, which would involve going over the computational aspects of the concepts that are being discussed in class. During these sessions the students would be required to use their laptops to follow along using the *Jupyter notebooks* that will be provided by the instructor or TA.
+
+These notebooks will have follow along exercises, which should be completed collaboratively in class with the help of the instructor and TA. The students would be required to submit their work by the end of the day through Github.
+
+## Homework Assignments (50%)
+
+Homeworks will be assigned on roughly a bi-weekly basis following material presented in class.
+
+There will be 5 assignments. Similar to the labs, these assignments will usually be in the form of *Jupyter notebooks*, with problems requiring data analysis, running simple simulations, and interpretation of results that are obtained. The solutions will be submitted through Github.
+
+Details will be provided as needed.
+
+## Final project (35% = proposal 10% + project 25%)
+
+As a final project, students will develop their own research questions using either available climate model simulations for their primary analyses, or by generating data using any of the simpler models discussed in class or those relevant to the field. The project should be submitted as a reproducible Jupyter notebook documenting the analysis that was undertaken and the insights that were drawn from the data, model, and analysis.
+
+Examples of past projects and the submission process can be found on [<u>https://earth-env-data-science.github.io/projects.html</u>](https://earth-env-data-science.github.io/projects.html)
+
+Topics should be submitted to the instructor by Friday of the 5th week of classes (October 9) for approval, and a short proposal will be due in week 7, Friday October 23 (1 page max). Timely submission of these components will count towards 10% of the grade, and late assignment policy (see below) would apply.
+
+The project proposal must include a short write up of the planned work, annotated reference to any papers that will be used to design the project, and a confirmation that the datasets needed for the project have been identified and checked for accessibility.
+
+The final project will require an in class presentation, which will take place on 10 or 17 December. The students will also be required to submit a final project Jupyter notebook, which will be due on 18 December, and will be evaluated in lieu of a final exam.
+
+## Late Assignment Policy
+
+If an assignment is received after the posted deadline, it will be penalized by 10% of the total earned grade for each day late, up to a maximum of one week (7 days).
+
+To accommodate exceptional circumstances (e.g., health issues, family emergencies, or religious holidays), each student is allowed one late homework assignment without penalty (up to one week).
+
+## Course Schedule
+
+The table below is the planned outline. The live week-by-week schedule, with slides and labs, is on the course website: https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/
+
+<table class="table table-striped">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 33%" />
+<col style="width: 32%" />
+<col style="width: 23%" />
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Date</strong></td>
+<td><strong>Topics Covered</strong></td>
+<td><strong>Description</strong></td>
+<td><strong>Homeworks</strong></td>
+</tr>
+<tr>
+<td>Week 1, 10 Sept</td>
+<td>Course Overview and History of Earth System Models</td>
+<td><p>History and motivation for earth system modeling, overview of model hierarchy from simple to complex</p>
+<p>Suggested reading: A Climate Modeling Primer Chapter 1 and 2</p></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 2, 17 Sept</td>
+<td>Energy Balance Modeling 1</td>
+<td><p>Radiative balance, greenhouse effect, 0 and 1D EBMs</p>
+<p>Suggested reading: A Climate Modeling Primer Chapter 3</p></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 3, 24 Sept</td>
+<td>Energy Balance Modeling 2</td>
+<td><p>Time dependent EBMs, ice-albedo feedbacks, diffusive energy transport</p>
+<p>Suggested reading: A Climate Modeling Primer Chapter 3</p></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 4, 1 Oct</td>
+<td>Modeling Circulation Processes in the Ocean and Atmosphere 1</td>
+<td><p>Box models for large scale circulations</p>
+<p>Suggested readings: A Climate Modeling Primer Chapter 4</p></td>
+<td>HW1 due</td>
+</tr>
+<tr>
+<td>Week 5, 8 Oct</td>
+<td>Modeling Circulation Processes in the Ocean and Atmosphere 2</td>
+<td><p>3D models of the climate system components - atmosphere</p>
+<p>Suggested reading: A Climate Modeling Primer Chapter 4, 5</p></td>
+<td>Final project title due (9 Oct)</td>
+</tr>
+<tr>
+<td>Week 6, 15 Oct</td>
+<td>Modeling Circulation Processes in the Ocean and Atmosphere 3</td>
+<td><p>3D models of the climate system components - ocean and cryosphere</p>
+<p>Suggested reading: A Climate Modeling Primer Chapter 5</p></td>
+<td>HW2 due</td>
+</tr>
+<tr>
+<td>Week 7, 22 Oct</td>
+<td>Modeling the Land Surface</td>
+<td>Land-atmosphere interactions, surface energy and water budgets, soil and vegetation models<br />
+<br />
+Suggested reading: A Climate Modeling Primer Chapter 5</td>
+<td>Final project proposal due (23 Oct)</td>
+</tr>
+<tr>
+<td>Week 8, 29 Oct</td>
+<td>Modeling the Carbon Cycle</td>
+<td>Ocean and terrestrial carbon reservoirs, biogeochemical cycles<br />
+<br />
+Suggested reading: A Climate Modeling Primer Chapter 5</td>
+<td>HW3 due</td>
+</tr>
+<tr>
+<td>Week 9, 5 Nov</td>
+<td>Climate System Feedback and Climate Sensitivity</td>
+<td><p>Water vapor, ice-albedo, cloud, lapse-rate feedback, ECS, TCR</p>
+<p>Suggested reading: A Climate Modeling Primer Chapter 1, 5</p></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 10, 12 Nov</td>
+<td>Climate model tuning and evaluation</td>
+<td>Observational constraints, model tuning strategies, skill metrics, model intercomparison</td>
+<td>HW4 due</td>
+</tr>
+<tr>
+<td>Week 11, 19 Nov</td>
+<td>Protocols for climate model simulations</td>
+<td>CMIP6/7 experimental design, SSPs, MIPs</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 12, 26 Nov — Thanksgiving, no class (asynchronous)</td>
+<td>Coupled Model Intercomparisons</td>
+<td>CMIP6 data access and analysis, experiments and ensembles</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 13, 3 Dec</td>
+<td>Climate model projections and future of climate modeling</td>
+<td>Transient climate response, regional projections, downscaling, detection and attribution, use of AI for enhancing models and projections.</td>
+<td>HW 5 due</td>
+</tr>
+<tr>
+<td>Week 14/15, 10/17 Dec</td>
+<td>Final project presentations</td>
+<td>Student presentations of final projects</td>
+<td>Final project due 18 Dec</td>
+</tr>
+</tbody>
+</table>
+
+## COLUMBIA CLIMATE SCHOOL POLICIES
+
+### Inclusive Excellence
+
+The Climate School aims to advance knowledge and educate leaders for equitable solutions to climate and sustainability challenges. Using an interdisciplinary approach, the School encourages engagement of diverse perspectives on climate variability and its impacts. The classroom should be a welcoming environment where a variety of perspectives and lived experiences enable us to collaboratively define challenges and identify solutions.
+
+The Climate School has adopted the Inclusive Excellence framework, which helps to build institutional capacity and effectiveness in promoting equal access, belonging, and success throughout our community. The Office of Inclusive Excellence supports student access, success, education, and scholarship.
+
+Should you wish to discuss the School's environment or your engagement inside or outside of the classroom, please do not hesitate to contact Willie Williams (Assistant Dean for Inclusive Excellence) at 332.277.3697 or wwilliams@climate.columbia.edu.
+
+### Names/Pronouns
+
+You deserve to be addressed in a manner that reflects your identity. Please see [<u>https://universitylife.columbia.edu/pronouns</u>](https://universitylife.columbia.edu/pronouns) for more information on university policies and services.
+
+### Religious Observance
+
+It is the policy of the Columbia Climate School to respect its members’ observance of their major religious holidays. Students should notify instructors at the beginning of the semester about their wishes to observe holidays on days when class sessions are scheduled. Where academic scheduling conflicts prove unavoidable, no student will be penalized for absence due to religious reasons, and alternative solutions will be identified.
+
+### Student Wellness Message
+
+Mental and physical health is important while undergoing graduate studies. While maintaining good health is a priority, occasional stress is an unavoidable part of a graduate education. Please know that there are resources on campus to help you cope with the pressures of student life. These include support groups and workshops on managing stress, healthy eating and life management. For resources for coping with stress, anxiety, and other specific health related concerns, please visit [<u>Columbia Health</u>](https://www.health.columbia.edu/).
+
+### Accessibility
+
+Columbia is committed to providing equal access to qualified students with documented disabilities. A student’s disability status and reasonable accommodations are individually determined based upon disability documentation and related information gathered through the intake process.
+
+In order to receive disability-related academic accommodations, students must first be registered with the Office of Disability Services (ODS). More information on the ODS registration process is available online at [<u>www.health.columbia.edu/ods</u>](http://www.health.columbia.edu/ods). Please allow for at least two weeks to complete the ODS registration process. Students are encouraged to contact ODS at the start of the semester.
+
+Students who have, or think they may have, a disability are invited to contact ODS for a confidential discussion at 212.854.2388 (V) 212.854.2378 (TTY), or by email at disability@columbia.edu. If you have already registered with ODS and would like your professor(s) notified of your recommended accommodations, contact Natalie Unwin-Kuruneri ([<u>natalie@climate.columbia.edu</u>](http://natalie@climate.columbia.edu))
+
+who serves as the ODS liaison to the Climate School.
+
+### Academic Integrity
+
+The Columbia Climate School holds each member of its community responsible for understanding and abiding by the [<u>Academic Integrity and Community Standards</u>](https://gsas.columbia.edu/content/academic-integrity-and-responsible-conduct-research.). Ignorance of policies and standards concerning academic dishonesty shall not be a defense in any disciplinary proceedings.
+
+Students should be aware that academic dishonesty (for example, plagiarism, cheating on an examination, or dishonesty in dealing with a faculty member or other university official) are particularly serious offenses and will be dealt with severely under [<u>Dean’s Discipline</u>](https://gsas.columbia.edu/content/deans-discipline). It is essential to the academic integrity and vitality of this community that graduate students do their own work and properly acknowledge the circumstances, ideas, sources, and assistance upon which that work is based. Academic honesty in class assignments and exams is expected of all students at all times.
+
+Use of Artificial Intelligence (AI) is also subject to these integrity standards and must never be employed for a use that would be considered plagiarism if that material were sourced from a human author. For example, submitting work under your name that you did not personally write is not allowed, regardless of whether it was written by another author or by an AI tool. Individual faculty may have different policies on other ways students may use or not use AI in a particular class. **Students should assume all use of AI is forbidden unless told otherwise.**
+
+### Copyright Policy
+
+Please note -- Due to copyright restrictions, online access to this material is limited to instructors and students currently registered for this course. Please be advised that by clicking the link to the electronic materials in this course, you have read and accept the following:
+
+*The copyright law of the United States (Title 17, United States Code) governs the making of photocopies or other reproductions of copyrighted materials. Under certain conditions specified in the law, libraries and archives are authorized to furnish a photocopy or other reproduction. One of these specified conditions is that the photocopy or reproduction is not to be "used for any purpose other than private study, scholarship, or research." If a user makes a request for, or later uses, a photocopy or reproduction for purposes in excess of "fair use," that user may be liable for copyright infringement.*
+
+## ADDITIONAL RESOURCES
+
+### Columbia University Library
+
+Columbia’s extensive library system ranks in the top five academic libraries in the nation, with many of its services and resources available online: [<u>https://library.columbia.edu/</u>](https://library.columbia.edu/).
+
+### Columbia Writing Center
+
+The [<u>Columbia Writing Center</u>](https://www.college.columbia.edu/core/uwp/writing-center) aids undergraduate and graduate students with writing consultations for specific writing projects, writing productivity sessions, and workshops. The Writing Center offers these services for free to current Columbia students. Read more about their services on their [<u>website</u>](https://www.college.columbia.edu/core/uwp/writing-center). You can also contact the center at writingcenter@columbia.edu with questions.
