@@ -12,10 +12,10 @@ format:
     transition: none
 ---
 
-# Lab 0d · Modeling using budgets {background-color="#1a3a5c"}
+# From week 1 · Lab 0d · Modeling using budgets {background-color="#1a3a5c"}
 
 
-# 3 · What is uncertainty? {background-color="#1a3a5c"}
+# From week 1 · 3 · What is uncertainty? {background-color="#1a3a5c"}
 
 ## Three reasons a forecast model can be wrong {.smaller}
 
