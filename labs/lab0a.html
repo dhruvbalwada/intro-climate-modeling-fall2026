@@ -176,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#option-2-using-the-terminal" id="toc-option-2-using-the-terminal" class="nav-link" data-scroll-target="#option-2-using-the-terminal">Option 2 — Using the Terminal</a></li>
   <li><a href="#option-3-using-the-jupyterhub-git-interface" id="toc-option-3-using-the-jupyterhub-git-interface" class="nav-link" data-scroll-target="#option-3-using-the-jupyterhub-git-interface">Option 3 — Using the JupyterHub Git interface</a></li>
   </ul></li>
-  <li><a href="#part-d-submit-your-notebook-as-assignment" id="toc-part-d-submit-your-notebook-as-assignment" class="nav-link" data-scroll-target="#part-d-submit-your-notebook-as-assignment">Part D — Submit your notebook as assignment</a></li>
+  <li><a href="#part-e-submit-your-notebook-as-assignment" id="toc-part-e-submit-your-notebook-as-assignment" class="nav-link" data-scroll-target="#part-e-submit-your-notebook-as-assignment">Part E — Submit your notebook as assignment</a></li>
   </ul>
 </nav>
     </div>
@@ -235,21 +235,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="part-c-create-your-course-repository" class="level2">
 <h2 class="anchored" data-anchor-id="part-c-create-your-course-repository">Part C — Create your course repository</h2>
 <ol type="1">
-<li>On GitHub, click <strong>New repository</strong>:
+<li><p>On GitHub, click <strong>New repository</strong>:</p>
 <ul>
 <li>Name: <code>climate-modeling-f26-&lt;your-uni&gt;</code> (e.g., <code>climate-modeling-f26-ab1234</code>)</li>
 <li>Visibility: <strong>Private</strong> ← important</li>
 <li>Check “Add a README file”</li>
 </ul></li>
-<li>Add the teaching staff as collaborators: repo <strong>Settings → Collaborators → Add people</strong> — add <strong><code>dhruvbalwada</code></strong>, <strong><code>[PRANI-GITHUB]</code></strong>, and <strong><code>[CHANDANIE-GITHUB]</code></strong>.</li>
-<li><strong>Make a personal access token</strong> (needed for options 2 and 3 below; skip if you only do option 1). When git on the hub talks to GitHub it asks for a username and password — the password is <strong>not</strong> your GitHub password but a <em>token</em>:
+<li><p>Add the teaching staff as collaborators: repo <strong>Settings → Collaborators → Add people</strong> — add <strong><code>dhruvbalwada</code></strong>, <strong><code>[PRANI-GITHUB]</code></strong>, and <strong><code>[CHANDANIE-GITHUB]</code></strong>. ## Part D — Put your work in the repo</p></li>
+<li><p><strong>Make a personal access token</strong> (needed for options 2 and 3 below; skip if you only do option 1 today). When git on the hub talks to GitHub it asks for a username and password — the password is <strong>not</strong> your GitHub password but a <em>token</em>:</p>
 <ol type="1">
 <li>On <a href="https://github.com">github.com</a>: profile photo → <strong>Settings</strong> → bottom of the left sidebar → <strong>Developer settings</strong>.</li>
 <li><strong>Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)</strong>.</li>
 <li>Note: <code>LEAP hub</code>. Expiration: <strong>Custom → 2026-12-31</strong>. Scopes: tick the top-level <strong><code>repo</code></strong> box. Click <strong>Generate token</strong>.</li>
 <li><strong>Copy the token now</strong> — GitHub shows it only once. Treat it like a password: never paste it into a notebook or a file in your repo.</li>
 </ol></li>
-<li><strong>Put your completed notebook in the repo.</strong> Three ways — pick one.</li>
+<li><p><strong>Put your completed notebook in the repo.</strong> Three ways — pick one.</p></li>
 </ol>
 <section id="option-1-upload-on-the-github-website" class="level3">
 <h3 class="anchored" data-anchor-id="option-1-upload-on-the-github-website">Option 1 — Upload on the GitHub website</h3>
@@ -261,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="option-2-using-the-terminal" class="level3">
 <h3 class="anchored" data-anchor-id="option-2-using-the-terminal">Option 2 — Using the Terminal</h3>
-<p>Open a hub terminal (<strong>File → New → Terminal</strong>). Each step is <strong>one command</strong>: run it, read what comes back, then go to the next. If something fails, note which step and see <a href="#when-git-goes-wrong">When git goes wrong</a>.</p>
+<p>Open a hub terminal (<strong>File → New → Terminal</strong>). Each step is <strong>one command</strong>: run it, read what comes back, then go to the next. If something fails, note which step — that is what to tell a TA (or an AI assistant).</p>
 <p><strong>One-time setup</strong> — do this today; you will not do it again all semester.</p>
 <ol type="1">
 <li><p>Tell git your name (nothing printed = it worked):</p>
@@ -298,17 +298,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Same thing, with buttons. The <strong>Git</strong> panel is in the hub’s left sidebar (the branching-arrows icon).</p>
 <p><strong>One-time setup</strong></p>
 <ol type="1">
-<li><p>Git panel → <strong>Clone a Repository</strong> → paste <code>https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git</code> → OK. It asks for credentials: username, and the <strong>token</strong> as the password. <strong>Every time you save work</strong></p></li>
-<li><p>In the file browser, drag <code>verify_setup.ipynb</code> into the new <code>climate-modeling-f26-&lt;uni&gt;</code> folder, then open that folder.</p></li>
-<li><p>Git panel: the file appears under <strong>Changed</strong>. Click its <strong>+</strong> to stage it, type a message in the box at the bottom, click <strong>Commit</strong>. The first time it asks for your name and email.</p></li>
-<li><p>Click the cloud-up <strong>Push</strong> icon at the top of the panel. If asked, give username + token again.</p></li>
-<li><p>Reload your repo page on github.com: the notebook should be there.</p></li>
+<li>Git panel → <strong>Clone a Repository</strong> → paste <code>https://github.com/&lt;your-username&gt;/climate-modeling-f26-&lt;uni&gt;.git</code> → OK. It asks for credentials: username, and the <strong>token</strong> as the password.</li>
+</ol>
+<p><strong>Every time you save work</strong></p>
+<ol start="2" type="1">
+<li>In the file browser, drag <code>verify_setup.ipynb</code> into the new <code>climate-modeling-f26-&lt;uni&gt;</code> folder, then open that folder.</li>
+<li>Git panel: the file appears under <strong>Changed</strong>. Click its <strong>+</strong> to stage it, type a message in the box at the bottom, click <strong>Commit</strong>. The first time it asks for your name and email.</li>
+<li>Click the cloud-up <strong>Push</strong> icon at the top of the panel. If asked, give username + token again.</li>
+<li>Reload your repo page on github.com: the notebook should be there.</li>
 </ol>
 <p>The panel may ask for the token on every push. To stop that, run steps 3–4 of option 2 once in a terminal.</p>
+<blockquote class="blockquote">
+<p><strong>Want more git?</strong> A more extensive reference — creating repos from the terminal, branches, pulling, resolving conflicts — is the <a href="../labs/github_tutorial_leap.html">GitHub beginner tutorial (LEAP)</a>. Optional.</p>
+</blockquote>
 </section>
 </section>
-<section id="part-d-submit-your-notebook-as-assignment" class="level2">
-<h2 class="anchored" data-anchor-id="part-d-submit-your-notebook-as-assignment">Part D — Submit your notebook as assignment</h2>
+<section id="part-e-submit-your-notebook-as-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="part-e-submit-your-notebook-as-assignment">Part E — Submit your notebook as assignment</h2>
 <p>On Courseworks, open the <strong>Lab 0</strong> assignment and submit <strong>the URL of your repository</strong> (e.g., <code>https://github.com/ab1234/climate-modeling-f26-ab1234</code>). That link-posting step is how every submission works this term: work lives in your repo, the Courseworks link + timestamp is what makes it official.</p>
 
 
