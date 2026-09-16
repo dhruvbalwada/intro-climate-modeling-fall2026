@@ -177,10 +177,10 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>2</td>
 <td>Sep 17</td>
-<td>TBD</td>
+<td>A bucket: budgets and time-stepping · what is uncertainty · the Earth as a bucket (255 K)</td>
+<td><a href="./slides/week02.html">slides</a> · <a href="./labs/index.html">labs</a></td>
 <td></td>
-<td></td>
-<td></td>
+<td>Lab 0d</td>
 </tr>
 <tr class="odd">
 <td>3</td>
@@ -365,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/dhruvbalwada\.github\.io\/intro-climate-modeling-fall2026\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

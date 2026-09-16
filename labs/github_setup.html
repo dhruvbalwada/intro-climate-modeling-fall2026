@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Climate Modeling</title>
+<title>GitHub on the LEAP hub – Introduction to Climate Modeling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +26,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to Climate Modeling</span>
     </a>
   </div>
@@ -95,19 +130,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> 
+    <a class="nav-link" href="../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs/index.html"> 
+    <a class="nav-link" href="../labs/index.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./project.html"> 
+    <a class="nav-link" href="../project.html"> 
 <span class="menu-text">Final Project</span></a>
   </li>  
 </ul>
@@ -133,8 +168,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics">Logistics</a></li>
-  <li><a href="#key-dates" id="toc-key-dates" class="nav-link" data-scroll-target="#key-dates">Key dates</a></li>
+  <li><a href="#tell-git-who-you-are-once" id="toc-tell-git-who-you-are-once" class="nav-link active" data-scroll-target="#tell-git-who-you-are-once">1. Tell git who you are (once)</a></li>
+  <li><a href="#make-a-personal-access-token-once" id="toc-make-a-personal-access-token-once" class="nav-link" data-scroll-target="#make-a-personal-access-token-once">2. Make a personal access token (once)</a></li>
+  <li><a href="#save-it-on-the-hub-once" id="toc-save-it-on-the-hub-once" class="nav-link" data-scroll-target="#save-it-on-the-hub-once">3. Save it on the hub (once)</a></li>
+  <li><a href="#the-everyday-loop" id="toc-the-everyday-loop" class="nav-link" data-scroll-target="#the-everyday-loop">4. The everyday loop</a></li>
+  <li><a href="#when-it-goes-wrong" id="toc-when-it-goes-wrong" class="nav-link" data-scroll-target="#when-it-goes-wrong">5. When it goes wrong</a></li>
+  <li><a href="#sec-scoped" id="toc-sec-scoped" class="nav-link" data-scroll-target="#sec-scoped">6. Alternative: <code>gh-scoped-creds</code></a></li>
+  <li><a href="#more" id="toc-more" class="nav-link" data-scroll-target="#more">More</a></li>
   </ul>
 </nav>
     </div>
@@ -143,8 +183,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Climate Modeling</h1>
-<p class="subtitle lead">Columbia Climate School · Fall 2026</p>
+<h1 class="title">GitHub on the LEAP hub</h1>
+<p class="subtitle lead">Logging in so that <code>git push</code> works — and what to do when it doesn’t</p>
 </div>
 
 
@@ -161,47 +201,113 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Earth system and climate models are critically important tools for climate science — used to study past climate variability, attribute recent trends and extremes, and project the evolution of the climate system under natural and anthropogenic forcing. This course opens the machine: you will <strong>build</strong> the hierarchy of climate models yourself in Python, <strong>understand</strong> how full Earth System Models work, <strong>analyze</strong> their output (CMIP6) the way practicing scientists do, and learn to <strong>judge</strong> what models can and cannot tell you.</p>
-<section id="logistics" class="level2">
-<h2 class="anchored" data-anchor-id="logistics">Logistics</h2>
+<p>Last week many of you got stuck pushing to GitHub from the hub. The <code>gh-scoped-creds</code> route has two traps: your repo must be added to the app’s list of repositories, and the login expires every 8 hours. Here is a simpler route that you set up <strong>once</strong> and then forget about.</p>
+<p><em>Everything here is done inside a hub terminal: on <a href="https://leap.2i2c.cloud">leap.2i2c.cloud</a>, <strong>File → New → Terminal</strong>.</em></p>
+<section id="tell-git-who-you-are-once" class="level2">
+<h2 class="anchored" data-anchor-id="tell-git-who-you-are-once">1. Tell git who you are (once)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your-uni@columbia.edu"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Without this, <code>git commit</code> stops with <em>“Please tell me who you are”</em>.</p>
+</section>
+<section id="make-a-personal-access-token-once" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-personal-access-token-once">2. Make a personal access token (once)</h2>
+<p>A token is a long password that GitHub gives you for use from the command line. <strong>Treat it like a password: never paste it into a notebook, a file in your repo, or a chat.</strong></p>
+<ol type="1">
+<li>On <a href="https://github.com">github.com</a>, click your profile photo (top right) → <strong>Settings</strong>.</li>
+<li>In the left sidebar, scroll to the bottom → <strong>Developer settings</strong>.</li>
+<li><strong>Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)</strong>. <em>(Not the “fine-grained” kind — it works too, but has more knobs to get wrong.)</em></li>
+<li>Note: <code>LEAP hub</code>. Expiration: <strong>Custom → 2026-12-31</strong>. Scopes: tick the top-level <strong><code>repo</code></strong> box. Click <strong>Generate token</strong>.</li>
+<li><strong>Copy the token now</strong> — GitHub shows it only once. Keep it somewhere private (a password manager, or a note on your laptop) until step 3 below is done.</li>
+</ol>
+</section>
+<section id="save-it-on-the-hub-once" class="level2">
+<h2 class="anchored" data-anchor-id="save-it-on-the-hub-once">3. Save it on the hub (once)</h2>
+<p>In the hub terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset-all</span> credential.helper   <span class="co"># clears any leftover gh-scoped-creds setting (harmless if there is none)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now go to your repo and push:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/climate-modeling-f26-<span class="op">&lt;</span>your-uni<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You will be asked for a <strong>Username</strong> (your GitHub username) and a <strong>Password</strong> — paste the <strong>token</strong>, not your GitHub password. <em>Nothing appears on screen while you paste; that is normal. Press Enter.</em></p>
+<p>That’s it. The token is stored in your home directory on the hub (<code>~/.git-credentials</code>, readable only by you), and every later <code>git push</code> / <code>git pull</code> uses it without asking.</p>
+<blockquote class="blockquote">
+<p><strong>Already cloned with <code>gh-scoped-creds</code> last week?</strong> Nothing to redo — your clone uses the same <code>https://</code> URL. Just run the two <code>git config</code> lines above and push.</p>
+</blockquote>
+</section>
+<section id="the-everyday-loop" class="level2">
+<h2 class="anchored" data-anchor-id="the-everyday-loop">4. The everyday loop</h2>
+<p>After you have worked on a notebook inside your repo folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/climate-modeling-f26-<span class="op">&lt;</span>your-uni<span class="op">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Lab 0d: bucket model"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then check on github.com that the file is there. That repo URL, posted on Courseworks, is your submission.</p>
+<p><strong>Prefer buttons?</strong> The hub has a Git panel in the left sidebar (the branching-arrows icon). Open your repo folder in the file browser, then in the Git panel: tick the changed files → write a message → <strong>Commit</strong> → click the cloud-up <strong>Push</strong> icon. If it asks for credentials, give your username and the token; after the first success it stops asking.</p>
+</section>
+<section id="when-it-goes-wrong" class="level2">
+<h2 class="anchored" data-anchor-id="when-it-goes-wrong">5. When it goes wrong</h2>
 <table class="caption-top table">
+<thead>
+<tr class="header">
+<th>What you see</th>
+<th>What it means</th>
+<th>Fix</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Meetings</td>
-<td>Thursdays 10:10–12:40 · FRM 315 (The Forum)</td>
+<td><code>Support for password authentication was removed</code></td>
+<td>You typed your GitHub password</td>
+<td>Use the token as the password</td>
 </tr>
 <tr class="even">
-<td>Instructor</td>
-<td>Dhruv Balwada · dbalwada@ldeo.columbia.edu</td>
+<td><code>Authentication failed</code></td>
+<td>Wrong username, or a mistyped/expired token</td>
+<td>Run <code>git config --global --unset-all credential.helper</code>, redo step 3; if the token is lost, generate a new one</td>
 </tr>
 <tr class="odd">
-<td>TAs</td>
-<td>Prani Nalluri · pan2121@columbia.edu<br>Chandanie Kutwaru · ck3397@columbia.edu</td>
+<td><code>Repository not found</code> (but it exists on github.com)</td>
+<td>Typo in the URL — or, with <code>gh-scoped-creds</code>, your repo isn’t in the app’s list</td>
+<td>Check <code>git remote -v</code>; for the app, see <a href="#sec-scoped">§6</a></td>
 </tr>
 <tr class="even">
-<td>Office hours</td>
-<td><strong>[DAYS/TIMES]</strong></td>
+<td><code>Permission denied (publickey)</code></td>
+<td>You cloned with an <code>ssh</code> URL</td>
+<td><code>git remote set-url origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git</code></td>
 </tr>
 <tr class="odd">
-<td>Submission</td>
-<td>Private GitHub repos; submit by posting links on Courseworks</td>
+<td><code>Updates were rejected because the remote contains work</code></td>
+<td>The repo changed on the website (e.g.&nbsp;you uploaded a file there)</td>
+<td><code>git pull</code> first, then <code>git push</code></td>
 </tr>
 <tr class="even">
-<td>Computing</td>
-<td><a href="https://leap.2i2c.cloud/">LEAP JupyterHub</a> — see <a href="./labs/lab0a.html">Lab 0a</a> for setup</td>
+<td><code>Please tell me who you are</code></td>
+<td>Name/email not set</td>
+<td>Step 1</td>
+</tr>
+<tr class="odd">
+<td><code>terminal prompts disabled</code></td>
+<td>The Git panel could not ask for a password</td>
+<td>Push from the terminal once (step 3); after that the panel works</td>
 </tr>
 </tbody>
 </table>
+<p>Still stuck? Ask a TA during the lab, or bring it to office hours. Your Lab 0 submission is not late while you are fixing this — but it must work before the first homework.</p>
 </section>
-<section id="key-dates" class="level2">
-<h2 class="anchored" data-anchor-id="key-dates">Key dates</h2>
-<ul>
-<li><strong>Oct 9</strong> — final project <em>title</em> due</li>
-<li><strong>Oct 23</strong> — final project <em>proposal</em> due (1 page)</li>
-<li><strong>Dec 10 / 17</strong> — project presentations</li>
-<li><strong>Dec 18</strong> — final project notebook due</li>
-</ul>
-<p>Start here: the <a href="./schedule.html">schedule</a>, then <a href="./labs/lab0a.html">Lab 0</a>.</p>
+<section id="sec-scoped" class="level2">
+<h2 class="anchored" data-anchor-id="sec-scoped">6. Alternative: <code>gh-scoped-creds</code></h2>
+<p>If you would rather not keep a token on the hub, <code>gh-scoped-creds</code> also works — with two things to know.</p>
+<ol type="1">
+<li>In a hub terminal run <code>gh-scoped-creds</code>. It prints a link and a code. Open the link, enter the code.</li>
+<li><strong>The first time</strong>, GitHub asks you to install the app on your account. Choose <strong>Only select repositories</strong> and pick <code>climate-modeling-f26-&lt;your-uni&gt;</code>. <strong>This is the step most people missed.</strong></li>
+<li>Created the repo <em>after</em> installing the app, or skipped step 2? Go to <a href="https://github.com/settings/installations">github.com/settings/installations</a> → <strong>gh-scoped-creds → Configure → Repository access → Only select repositories → Select repositories</strong> → add your repo → <strong>Save</strong>. Then <code>git push</code> works.</li>
+<li>The login lasts <strong>8 hours</strong>. Next week, run <code>gh-scoped-creds</code> again before pushing.</li>
+</ol>
+<p>If you have both set up, git will use whichever it finds first; to switch cleanly to the token route, run the <code>--unset-all</code> line in step 3.</p>
+</section>
+<section id="more" class="level2">
+<h2 class="anchored" data-anchor-id="more">More</h2>
+<p>A fuller tour of git and GitHub on the hub — branches, pulling, resolving conflicts — is in the <a href="../labs/github_tutorial_leap.html">LEAP GitHub tutorial</a>. For this course you only ever need §1–§4 above.</p>
 
 
 </section>
