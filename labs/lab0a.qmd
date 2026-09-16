@@ -33,6 +33,8 @@ By the end of this lab you should have: (1) a working LEAP JupyterHub login, (2)
    - Visibility: **Private** ← important
    - Check "Add a README file"
 2. Add the teaching staff as collaborators: repo **Settings → Collaborators → Add people** — add **`dhruvbalwada`**, **`[PRANI-GITHUB]`**, and **`[CHANDANIE-GITHUB]`**.
+
+
 ## Part D — Put your work in the repo
 
 1. **Make a personal access token** (needed for options 2 and 3 below; skip if you only do option 1 today). When git on the hub talks to GitHub it asks for a username and password — the password is **not** your GitHub password but a *token*:
