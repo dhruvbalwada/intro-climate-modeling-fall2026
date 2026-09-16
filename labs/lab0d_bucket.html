@@ -401,7 +401,10 @@ window.Quarto = {
 <section id="make-predictions-and-break-them-three-ways" class="level2">
 <h2 class="anchored" data-anchor-id="make-predictions-and-break-them-three-ways">5. Make predictions — and break them three ways</h2>
 <p>Our model predicts the level at t = 10 s. How much should we trust that number? Attack it from three directions:</p>
-<p><strong>(a) Initial conditions:</strong> run from <code>h0 = 0, 1, 3, 5</code>. Plot all four. Does the prediction at t = 10 s care about where you started? At t = 0.5 s?</p>
+<p><strong>(a) Initial conditions:</strong> run from <code>h0 = 0, 1, 3, 5</code>, keeping <code>F = 2.0</code> and <code>k = 1.0</code> fixed. Plot all four. Does the prediction at t = 10 s care about where you started? At t = 0.5 s?</p>
+<blockquote class="blockquote">
+<p>In each of (a), (b), (c) we change <strong>one</strong> parameter and hold the other two fixed — otherwise you can’t tell which change caused what you see.</p>
+</blockquote>
 <div id="6a9aa389" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h0 <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>]:</span>
@@ -418,11 +421,14 @@ window.Quarto = {
 </div>
 <p><strong>(b) Model parameters:</strong> suppose we only know the drain constant roughly: <span class="math inline">\(k = 1.0 \pm 0.2\)</span>. Run with <code>k = 0.8, 1.0, 1.2</code>. How wide is the prediction at t = 10 s?</p>
 <div id="e027f26f" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: copy the loop above, but vary k instead of h0.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: copy the loop above, but vary k instead of h0.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Change ONLY k: try k = 0.5, 1.0, 2.0, 4.0, and keep h0 = 0.0 and F = 2.0 fixed in every run.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (If you varied two things at once, you couldn't tell which one caused the change.)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>(c) Forcing:</strong> we don’t control the pourer. Run with <code>F = 1.5, 2.0, 2.5</code>. How wide now?</p>
 <div id="cb170d55" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: vary F.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR TURN: vary F.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Change ONLY F: try F = 1.0, 2.0, 3.0, 4.0, and keep h0 = 0.0 and k = 1.0 fixed in every run.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="name-what-you-just-did" class="level2">
