@@ -1,0 +1,308 @@
+---
+title: "GitHub beginner tutorial (LEAP)"
+subtitle: "Reference — adapted from the tutorial shared by Sarika at LEAP"
+toc: true
+---
+
+*This is the general LEAP tutorial, kept here for reference. For this course, the short version — with the one-time login setup — is [GitHub on the LEAP hub](github_setup.qmd). One change from the original: the option of putting a token inside a clone URL has been removed, because the token would then be saved in plain text inside your repo settings.*
+
+This tutorial will guide you step-by-step through the basics of using GitHub. There are **two methods** for performing Git operations:
+
+1. **Using the Terminal**: ideal for users who prefer command-line control and flexibility.
+2. **Using the JupyterHub Git interface**: a user-friendly interface for performing common Git tasks visually.
+
+You will learn how to clone a repository to JupyterHub, create your own repository, push and pull changes, and work with branches.
+
+# 01. Authenticate with a GitHub Personal Access Token (PAT)
+
+To access private repositories, or when GitHub requires additional security (for example, pushing code from the terminal for the first time), you use a Personal Access Token instead of your GitHub password.
+
+## Step 1: Generate a Personal Access Token
+
+1. Log in to GitHub.
+2. Click on your profile picture in the upper-right corner and select **Settings**.
+3. Navigate to **Developer settings → Personal access tokens → Tokens (classic)**.
+4. Click **Generate new token**.
+5. Select the scopes you need (e.g. `repo` for full repository access).
+6. Copy the generated token and store it securely.
+
+## Step 2: Use the token for authentication
+
+When prompted for your GitHub credentials:
+
+- Enter your GitHub username as usual.
+- Instead of your password, paste the Personal Access Token.
+
+To avoid being asked every time, run `git config --global credential.helper store` once; the token is saved after the first successful push.
+
+# 02. GitHub basics: essential operations
+
+## 2.1 Using the Terminal
+
+### 2.1.1 Clone a repository to JupyterHub
+
+1. Open the terminal in JupyterHub (**File → New → Terminal**).
+2. Go to the GitHub repository you want to clone, click **Code**, and copy the HTTPS link.
+3. Clone it:
+   ```bash
+   git clone https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git
+   ```
+
+### 2.1.2 Create a repository
+
+#### Step 1: Log in to GitHub
+
+1. Open a web browser and go to [GitHub](https://github.com).
+2. Log in with your GitHub account credentials.
+
+#### Step 2: Navigate to the repository creation page
+
+1. In the top-right corner of the GitHub page, click the **+** icon.
+2. Select **New repository** from the dropdown menu.
+
+#### Step 3: Set up the repository
+
+1. **Choose a repository name**: enter a unique name, e.g. `my-new-repo`.
+2. **Add a description (optional)**.
+3. **Select repository visibility**: **Public** (anyone can view) or **Private** (only you and collaborators).
+4. **Initialize the repository (optional)**: select **Add a README file**; optionally add a `.gitignore` template or a license.
+
+#### Step 4: Create the repository
+
+Click the green **Create repository** button.
+
+#### Step 5: Add code to the repository
+
+- **Case 1: you do not have an existing local repository**
+  ```bash
+  git init
+  git remote add origin https://github.com/your-username/my-new-repo.git
+  git add .
+  git commit -m "Initial commit"
+  git push -u origin main
+  ```
+
+- **Case 2: you already have a local repository** (e.g. cloned from another repository, as in 2.1.1)
+
+  1. Check the current remote:
+     ```bash
+     git remote -v
+     ```
+  2. Remove the link to the original repository:
+     ```bash
+     git remote remove origin
+     ```
+  3. Add the new repository as the remote:
+     ```bash
+     git remote add origin https://github.com/your-username/New-Repository.git
+     ```
+  4. Verify the new remote:
+     ```bash
+     git remote -v
+     ```
+  Ensure that the output shows the URL of the new repository.
+
+### 2.1.3 Push code to a GitHub repository
+
+#### Step 1: Ensure you have a Git repository
+
+Navigate to your project folder in the terminal and check:
+```bash
+git status
+```
+If it is not a repository, initialize one:
+```bash
+git init
+```
+
+#### Step 2: Add the remote repository
+
+```bash
+git remote add origin https://github.com/your-username/your-repository.git
+git remote -v
+```
+
+#### Step 3: Add and commit changes
+
+```bash
+git add .
+git commit -m "Your commit message here"
+```
+
+#### Step 4: Push to GitHub
+
+```bash
+git push -u origin main
+```
+
+### 2.1.4 Work with branches
+
+Branches let you work on different versions of a project simultaneously without interfering with the main codebase. Every Git repository starts with a default branch, typically called `main`.
+
+```bash
+git branch branch-name          # create a branch
+git checkout branch-name        # switch to it
+git checkout -b branch-name     # or: create and switch in one step
+```
+
+Merging a finished branch into `main`:
+```bash
+git checkout main
+git merge branch-name
+```
+
+Deleting a merged branch:
+```bash
+git branch -d branch-name
+```
+
+Pushing a branch works like pushing `main`:
+```bash
+git add .
+git commit -m "Your commit message here"
+git push -u origin branch-name   # first push of this branch
+git push                         # subsequent pushes
+```
+The `-u` option sets `origin/branch-name` as the upstream branch for future pushes and pulls.
+
+### 2.1.5 Pull
+
+`git pull` fetches and merges changes from the remote repository into your local repository. First check which branch you are on:
+```bash
+git branch
+```
+The active branch is marked with an asterisk (`*`). Then:
+```bash
+git pull origin branch-name
+```
+where `origin` is the remote repository and `branch-name` is the branch you want to pull from (e.g. `main`).
+
+## 2.2 Using the JupyterHub Git interface
+
+### 2.2.1 Clone a repository
+
+1. Open the **Git** tab in JupyterHub (in the left sidebar).
+2. Click **Clone a Repository**.
+3. Paste the HTTPS link of the repository and confirm. The repository is cloned into your current working directory.
+
+### 2.2.2 Create a repository
+
+1. Create the repository on GitHub (**+ → New repository**, name, visibility, **Create repository**).
+2. In JupyterHub, open the **Git** tab and click **Initialize a Repository**; use **Commit** to stage and commit changes and **Push** to upload them.
+
+### 2.2.3 Push changes
+
+1. In the **Git** tab, select the changed files, add a commit message, and click **Commit**.
+2. Click **Push** to upload your commits.
+
+### 2.2.4 Pull changes
+
+Click **Pull** in the **Git** tab to fetch and merge changes from the remote repository.
+
+### 2.2.5 Work with branches
+
+- **Create a branch**: in the **Git** tab, go to the Branches section, click **New Branch**, enter a name and confirm.
+- **Switch branches**: select the branch from the branch dropdown.
+
+> **Note**: if you have uncommitted changes, commit or stash them before switching branches to avoid conflicts.
+
+> **Note**: the JupyterHub Git interface does not currently support merging or deleting branches. Use the terminal for those.
+
+# 03. GitHub workflow for a team
+
+1. **Create a GitHub account** and familiarize yourself with the interface.
+2. **Generate and save a Personal Access Token** (section 01).
+3. **Create a team repository**: one team member (team leader) creates it and invites the others as collaborators.
+4. **Clone the course repository** to JupyterHub.
+5. **Unlink the course repository's remote and link to the team's repository:**
+   ```bash
+   git remote remove origin
+   git remote add origin https://github.com/your-team/team-repository.git
+   git remote -v
+   ```
+6. **Run and extend the project** in JupyterHub.
+7. **Create a branch for your work** once you've completed a part of the project, and push it for review:
+   ```bash
+   git checkout -b your-branch-name
+   git push -u origin your-branch-name
+   ```
+8. **Collaborate on the branch**: team members review and discuss; make additional changes, committing and pushing to the branch.
+9. **Merge the branch into `main`** once the team agrees it is ready:
+   ```bash
+   git checkout main
+   git merge your-branch-name
+   git push origin main
+   ```
+10. **Pull changes from your target branch before pushing**, so your local branch is synchronized with the remote:
+    ```bash
+    git pull origin branch-name
+    ```
+    Only pull if the remote branch has updates. If there are conflicts between your local changes and the pulled updates, Git will tell you: open the conflicting files, resolve the conflicts, then `git add <file-name>` and `git commit`.
+11. **Push your work**: `git push`.
+
+# 04. Resolving conflicts and common Git issues
+
+## Example 1: merge conflict during pull
+
+Two developers work on the same file, `example.txt`, and both change the same line.
+
+1. **Initial file**: `Hello World`
+2. **Developer A** updates the file to `Hello GitHub` and pushes.
+3. **Developer B**, without pulling, updates the same line to `Hello Git`.
+4. **The conflict**: when Developer B tries to push, Git rejects it:
+   ```text
+   error: failed to push some refs to 'origin/main'
+   hint: Updates were rejected because the remote contains work that you do not have locally.
+   hint: You may want to first integrate the remote changes (e.g., 'git pull ...') before pushing again.
+   ```
+   After `git pull`, Git marks the conflict in `example.txt`:
+   ```text
+   <<<<<<< HEAD
+   Hello Git
+   =======
+   Hello GitHub
+   >>>>>>> origin/main
+   ```
+5. **Resolving**: Developer B edits the file to keep the desired version, e.g. `Hello Git and GitHub`.
+6. **Final steps**:
+   ```bash
+   git add example.txt
+   git commit -m "Resolve merge conflict in example.txt"
+   git push origin main
+   ```
+
+**Note**: to ignore the conflict and overwrite the remote with local changes, one can force-push (`git push origin main --force`). This discards other people's work and can cause data loss — use only when necessary, and tell your team.
+
+> If two developers modify *different* parts of the same file, Git merges automatically. A conflict only occurs when both edit the same part.
+
+## Example 2: file move during pull
+
+You move a file locally, but it still exists in its original location on the remote. Will a pull treat this as a conflict? **No.** A pull only touches files that changed on the remote since your last pull.
+
+- **If the file changed on the remote**: Git re-downloads it to its original location; your moved copy stays where you put it (Git treats them as two files).
+- **If the file did not change on the remote**: nothing happens; your moved file stays untouched.
+
+# 05. Other useful Git commands
+
+## 5.1 Clone only a specific folder from a repository (sparse checkout)
+
+```bash
+mkdir project1 && cd project1
+git init
+git remote add origin https://github.com/leap-stc/LEAPCourse-Climate-Pred-Challenges.git
+git sparse-checkout init --cone
+git sparse-checkout set Project_Path
+git pull origin main
+```
+
+The parent folder structure leading to the subfolder is still created, since Git keeps the necessary hierarchy.
+
+---
+
+Practicing hands-on is essential for mastering any tool, and GitHub is no exception. There are far more operations, features, and potential issues than this tutorial covers; explore, search for solutions, and ask. If you run into an interesting problem, share it with the TAs so this page can improve.
+
+**References**
+
+- <https://docs.github.com/en/get-started>
+- <https://training.github.com/downloads/github-git-cheat-sheet.pdf>
+- <https://docs.2i2c.org/user/topics/data/git/>
