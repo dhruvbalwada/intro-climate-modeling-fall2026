@@ -33,3 +33,16 @@
 .reveal .slides section.ebm-intro .partial-layer-image { text-align: center; }
 .reveal .slides section.ebm-intro .partial-layer-image p { margin: 0; }
 .reveal .slides section.ebm-intro .partial-layer-image img { height: 350px; width: auto; margin: 0; }
+
+/* Keep full-size equations while reserving space for the slide footer.
+   MathJax's default 1em vertical margins were pushing dense slides off canvas. */
+.reveal .slides section.ebm-intro .MathJax_Display { margin: 0.5em 0 !important; }
+.reveal .slides section.ebm-intro mjx-container[display="true"] { margin: 0.5em 0 !important; }
+
+/* Diagrams have accessible alt text rather than visible paragraph captions.
+   Block layout also removes the inline-image baseline gap. */
+.reveal .slides section.ebm-intro .budget-image img,
+.reveal .slides section.ebm-intro .atmosphere-intro-image img,
+.reveal .slides section.ebm-intro .spectrum-image img,
+.reveal .slides section.ebm-intro .one-layer-image img,
+.reveal .slides section.ebm-intro .partial-layer-image img { display: block; margin-inline: auto; }
