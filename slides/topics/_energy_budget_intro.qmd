@@ -1,0 +1,152 @@
+<!-- First three EBM slides. Source: instructor notes, chapter 2, sections 2.1 and 2.5. -->
+
+## From a water budget to an energy budget {#water-to-energy .ebm-intro}
+
+Inflow minus outflow changes what a reservoir stores.
+
+:::: {.columns}
+::: {.column width="48%"}
+
+::: {.model-label}
+The bucket stores water
+:::
+
+$$\frac{dV}{dt}=F_{\mathrm{in}}-F_{\mathrm{out}}$$
+
+::: {.units}
+$V$: water volume, $\mathrm{m^3}$\
+$F$: water flow rate, $\mathrm{m^3\,s^{-1}}$
+:::
+
+:::
+::: {.column width="48%"}
+
+::: {.model-label}
+The planet stores energy
+:::
+
+$$\frac{dU}{dt}=P_{\mathrm{absorbed}}-P_{\mathrm{emitted}}$$
+
+::: {.units}
+$U$: internal energy, $\mathrm{J}$\
+$P$: power, $\mathrm{W=J\,s^{-1}}$
+:::
+
+:::
+::::
+
+::: {.area-definition}
+For the planet, divide by its fixed surface area $A_p=4\pi R^2$:
+
+$$E=\frac{U}{A_p}\quad[\mathrm{J\,m^{-2}}],\qquad
+Q=\frac{P}{A_p}\quad[\mathrm{W\,m^{-2}}].$$
+
+::: {.units}
+$E$ is stored energy per area. $Q$ is a global-mean energy flux.
+:::
+:::
+
+::: {.notes}
+Start with the bucket equation students already used. A stored amount and a rate have different units. Here U denotes internal energy relative to a fixed reference; in this model we track its temperature-related changes. P_absorbed already subtracts reflected sunlight. Dividing by area changes how we report the budget, not the conservation law. Q here means radiative energy flux, not the water drainage rate called Q in Lab 0d. The mean includes the night side. No assumption of equilibrium is required.
+
+Source: course instructor notes, chapter 2, section "From a water budget to an energy budget".
+:::
+
+## Energy storage and temperature {#energy-storage-temperature .ebm-intro}
+
+The stored amount determines the state we observe.
+
+:::: {.columns}
+::: {.column width="48%"}
+
+::: {.model-label}
+Bucket: volume and water level
+:::
+
+$$\Delta V=A_b\,\Delta h$$
+
+$$\frac{dV}{dt}=A_b\frac{dh}{dt}$$
+
+::: {.units}
+$A_b$: bucket cross-sectional area, $\mathrm{m^2}$\
+$h$: water level, $\mathrm{m}$
+:::
+
+:::
+::: {.column width="48%"}
+
+::: {.model-label}
+Planet: energy and temperature
+:::
+
+$$\Delta E=C\,\Delta T$$
+
+$$\frac{dE}{dt}=C\frac{dT}{dt}$$
+
+::: {.units}
+$C$: heat capacity per area, $\mathrm{J\,m^{-2}\,K^{-1}}$\
+$T$: temperature, $\mathrm{K}$
+:::
+
+:::
+::::
+
+::: {.assumption}
+Ordinary heat capacity $C_{\mathrm{total}}$ has units $\mathrm{J\,K^{-1}}$. Here we use $C=C_{\mathrm{total}}/A_p$, because our energy budget is **per unit area**.
+
+We assume constant $C$, no phase changes, and negligible mechanical work.
+:::
+
+::: {.prompt}
+For the same added energy per area, does a larger $C$ give more or less warming?
+:::
+
+::: {.notes}
+Answer: less warming, since Delta T = Delta E / C. Use a wider bucket as the parallel: the same added water gives a smaller rise. We conserve energy, while temperature describes the reservoir's state. Changes in internal energy matter here, so we do not need an absolute zero for U or E. Ordinary heat capacity C_total is the energy needed to warm the whole modeled reservoir by 1 K, in J/K. For a mass m with specific heat capacity c, C_total = mc, where c has units J/kg/K. We divide C_total by the same planetary area used to define E. Our C therefore has units J/m^2/K and must not be divided by area again. Its numerical value and the effective amount of material taking part in the heating remain unspecified. We are not assuming the entire solid planet warms uniformly. Defer C = rho c H until it helps answer a question.
+
+Source: course instructor notes, chapter 2, "Connecting energy storage to temperature".
+:::
+
+## Our first climate model {#first-energy-balance-model .ebm-intro}
+
+:::: {.columns}
+::: {.column width="46%"}
+
+<div class="flow-labels"><span class="solar-label">Absorbed<br>sunlight</span><span class="thermal-label">Thermal radiation<br>to space</span></div>
+
+::: {.budget-image}
+![Bare-rock energy budget. Sunlight carries energy down to the surface, while thermal radiation carries energy from the surface across the boundary to space.](images/bare_rock_budget.svg)
+:::
+
+:::
+::: {.column width="50%"}
+
+::: {.model-label}
+Our assumptions
+:::
+
+- No atmosphere.
+- One temperature $T$ for the effective surface reservoir.
+- Radiative exchanges only. Neglect heat from the interior.
+
+::: {.units}
+Absorbed sunlight already excludes the reflected portion.
+:::
+
+:::
+::::
+
+::: {.full-budget}
+$$\frac{dE}{dt}=C\frac{dT}{dt}
+=Q_{\mathrm{absorbed}}-Q_{\mathrm{emitted}}$$
+:::
+
+::: {.response-line}
+Positive imbalance: warming. Zero: steady temperature. Negative: cooling.
+:::
+
+::: {.notes}
+Trace the two arrows and identify the system boundary before reading the equation. The drawing is a schematic surface section of a spherical planet. Fluxes are global means in W m^-2 and C is positive. This model represents the energy of an effective heated reservoir with one temperature, rather than resolving rock temperature at every depth or location. Equal input and output mean constant stored energy even though radiation continues to flow. We have not set dT/dt to zero. Next we need expressions for absorbed sunlight and thermal emission; stop before introducing those formulas in this block.
+
+Figure: cropped from the original energy-flow schematic in the course notes, atmosphere_energy_flows.svg. Source: instructor notes, chapter 2, energy budget and heat-capacity sections.
+:::

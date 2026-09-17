@@ -1,0 +1,87 @@
+## Partial infrared absorption {#partial-absorption-fluxes .ebm-intro}
+
+The layer absorbs a fraction $\epsilon$ of surface infrared radiation. The fraction $1-\epsilon$ escapes directly to space, with $0\leq\epsilon\leq1$.
+
+::: {.partial-layer-image}
+![Partial-absorption model. Net sunlight Q reaches the surface. Of total surface emission sigma Ts to the fourth power, epsilon is absorbed by the atmosphere and one minus epsilon escapes directly to space. Atmospheric emission is epsilon sigma Ta to the fourth power in each direction.](images/one_layer_partial_absorption.svg)
+:::
+
+Kirchhoff's law links absorption and emission: the layer emits $\epsilon\sigma T_a^4$ **upward and downward**.
+
+::: {.assumption}
+We use one $\epsilon$ across all longwave wavelengths: the **gray approximation**. We neglect longwave reflection and keep the surface black in the longwave.
+:::
+
+::: {.notes}
+Reintroduce the direct surface-to-space path from the earlier qualitative diagram. The two red arrows partition one total surface emission sigma Ts^4. They are not two additional emissions. The atmosphere absorbs epsilon sigma Ts^4, and the remainder passes through without heating the layer. The purple arrows each carry epsilon sigma Ta^4. Kirchhoff's law applies wavelength by wavelength under local thermodynamic equilibrium. A single common coefficient for these broadband fluxes requires our additional gray assumption, rather than following from Kirchhoff's law alone. The same epsilon multiplies atmospheric absorption and emission, but the temperatures in the fluxes differ. Sunlight and albedo remain prescribed, the layer remains transparent to sunlight, and we still omit convection and evaporation. Q already accounts for reflected sunlight. Epsilon describes radiative behavior, not a CO2 concentration. Arrow widths are schematic.
+
+Source: course instructor notes, chapter 2, "Introduce one absorption parameter" and "Revise the arrows, then the budgets". Diagram panel reused from Lab 1, figures/one_layer_fluxes.svg.
+:::
+
+## Budgets with partial absorption {#partial-absorption-budgets .ebm-intro}
+
+::: {.model-label}
+Surface
+:::
+
+$$C_s\frac{dT_s}{dt}=Q+\epsilon\sigma T_a^4-\sigma T_s^4$$
+
+::: {.units}
+The surface still loses its **entire** emission, wherever that radiation goes.
+:::
+
+::: {.model-label}
+Atmosphere
+:::
+
+$$C_a\frac{dT_a}{dt}=\epsilon\sigma T_s^4-2\epsilon\sigma T_a^4$$
+
+::: {.units}
+Only the absorbed fraction heats the layer. Emission leaves in both directions.
+:::
+
+Adding the budgets gives:
+
+$$C_s\frac{dT_s}{dt}+C_a\frac{dT_a}{dt}
+=Q-\left[(1-\epsilon)\sigma T_s^4+\epsilon\sigma T_a^4\right].$$
+
+::: {.assumption}
+The bracket is outgoing longwave radiation (**OLR**): direct surface radiation + upward atmospheric emission.
+:::
+
+::: {.notes}
+Trace each term on the preceding diagram. A common mistake is to put epsilon in front of the surface's emitted flux in the surface budget. The surface loses all sigma Ts^4, regardless of whether the atmosphere absorbs it or it reaches space. Another mistake is to count transmitted radiation as heating the layer. The atmosphere's two loss terms both carry epsilon, consistent with its absorptivity under the gray assumption. Adding the equations cancels downward atmospheric radiation and leaves the unabsorbed part of surface emission plus upward atmospheric emission as the losses to space. This whole-system balance holds throughout adjustment, not just at equilibrium. All terms have units W/m^2. Q=(1-alpha)S0/4. Cs and Ca remain constant heat capacities per unit area.
+
+Source: course instructor notes, chapter 2, "Revise the arrows, then the budgets", and the Lab 1 model equations.
+:::
+
+## Equilibrium with partial absorption {#partial-absorption-equilibrium .ebm-intro}
+
+Set both temperature tendencies to zero. For $\epsilon>0$, the atmospheric balance gives:
+
+$$0=\epsilon\sigma T_s^4-2\epsilon\sigma T_a^4,
+\qquad T_a^4=\frac{T_s^4}{2}.$$
+
+Substitute into the surface balance:
+
+$$0=Q+\frac{\epsilon}{2}\sigma T_s^4-\sigma T_s^4,
+\qquad Q=(1-\epsilon/2)\sigma T_s^4.$$
+
+$$T_s=\left[\frac{Q}{\sigma(1-\epsilon/2)}\right]^{1/4}$$
+
+| Absorption | Equilibrium surface temperature |
+|:---|:---|
+| $\epsilon=0$: transparent layer | $(Q/\sigma)^{1/4}\approx255\ \mathrm{K}$ |
+| $\epsilon=1$: fully absorbing layer | $(2Q/\sigma)^{1/4}\approx303\ \mathrm{K}$ |
+
+::: {.assumption}
+At $\epsilon=0$, solve the surface budget directly. The atmospheric budget becomes $0=0$ and leaves $T_a$ undetermined.
+:::
+
+::: {.notes}
+In the atmospheric equilibrium equation, divide by epsilon sigma only when epsilon is positive. This gives Ta^4=Ts^4/2, or Ta=Ts/2^(1/4). Substituting into the surface budget gives the expression displayed. For positive epsilon, the cancellation in the atmospheric equation does not mean atmospheric temperature is independent of epsilon: it follows the changing surface temperature. The surface formula extends continuously to epsilon=0, but at exactly zero the atmosphere neither absorbs nor emits, so it retains its initial temperature in this model. We must not use the divided atmospheric equation to assign its temperature there.
+
+For fixed Q, surface equilibrium temperature increases with epsilon. The endpoints recover our earlier models. Intermediate values can give a temperature near Earth's roughly 288 K, which students will explore in Lab 1. Matching one observed temperature is calibration, not validation of the whole model. In general Ta is no longer the effective emission temperature because radiation to space comes from both reservoirs. At equilibrium, OLR still equals Q. Heat capacities affect adjustment but not this equilibrium.
+
+Source: course instructor notes, chapter 2, "Solve for equilibrium" and "Check the endpoints and interpret the result".
+:::

@@ -1,0 +1,58 @@
+## A fully absorbing atmospheric layer {#fully-absorbing-layer .ebm-intro}
+
+Two reservoirs: surface at $T_s$ and one atmospheric layer at $T_a$.
+
+::: {.one-layer-image}
+![Fully absorbing one-layer model. Net sunlight reaches the surface. The atmosphere absorbs all surface infrared radiation and emits upward to space and downward to the surface. No surface radiation escapes directly to space.](images/one_layer_fully_absorbing.svg)
+:::
+
+- The layer transmits all sunlight and absorbs all surface longwave radiation.
+- In the longwave, both surface and layer act as blackbodies. The layer emits **upward and downward**.
+
+::: {.assumption}
+Keep prescribed albedo: $Q=(1-\alpha)S_0/4$ reaches the surface. Omit convection and evaporation.
+:::
+
+::: {.notes}
+Compare with the preceding diagram: the direct surface-to-space arrow has disappeared. This is a deliberately idealized limit, not a claim that the real atmosphere absorbs every infrared wavelength. We retain the net solar input Q after reflection, even though this idealized layer itself transmits all sunlight. The surface absorbs the downward longwave radiation completely. Surface emission is sigma Ts^4. Each face of the layer emits sigma Ta^4. One atmospheric temperature represents a reservoir, not a resolved vertical temperature profile or the actual temperature at the top of the atmosphere. All quantities are fluxes per unit planetary area. The schematic arrows indicate directions, not magnitudes.
+
+Source: course instructor notes, chapter 2, one-layer model assumptions. Figure adapted from atmosphere_energy_flows.svg, with direct longwave transmission removed.
+:::
+
+## Two reservoirs, two energy budgets {#one-layer-time-dependent-budgets .ebm-intro}
+
+Each budget follows **rate of storage = input − output**, with $Q=(1-\alpha)S_0/4$.
+
+::: {.model-label}
+Surface
+:::
+
+$$C_s\frac{dT_s}{dt}=Q+\sigma T_a^4-\sigma T_s^4$$
+
+::: {.units}
+Absorbed sunlight + downward atmospheric radiation − surface emission.
+:::
+
+::: {.model-label}
+Atmosphere
+:::
+
+$$C_a\frac{dT_a}{dt}=\sigma T_s^4-2\sigma T_a^4$$
+
+::: {.units}
+Absorbed surface radiation − upward and downward atmospheric emission.
+:::
+
+::: {.assumption}
+$C_s$ and $C_a$ are constant heat capacities **per unit area**, in $\mathrm{J\,m^{-2}\,K^{-1}}$. We leave their values unspecified for now.
+:::
+
+::: {.prompt}
+Why does atmospheric emission have a factor of two, but surface emission does not?
+:::
+
+::: {.notes}
+Trace each term back to the preceding diagram. The surface absorbs net sunlight and downward atmospheric longwave radiation, and emits upward. The atmosphere absorbs all upward surface longwave radiation and emits from both faces. Each atmospheric emission term is sigma Ta^4, giving two terms in the atmospheric loss. The surface is the lower boundary and radiates upward into the atmosphere only in this model. The factor of two counts two emitting faces. It is unrelated to the factor of four used to average sunlight over a sphere. The left sides are rates of energy storage per unit area, with units W/m^2, matching every right-hand term. Neither reservoir needs to be in equilibrium. Temperatures are in kelvin. We have not yet set the time derivatives to zero or chosen heat capacities. Pause here before combining the equations or solving their equilibrium.
+
+Source: course instructor notes, chapter 2, time-dependent surface and atmospheric energy budgets.
+:::

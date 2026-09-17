@@ -1,0 +1,90 @@
+## The whole-system energy budget {#one-layer-whole-system .ebm-intro}
+
+Add the surface and atmospheric budgets:
+
+$$\begin{aligned}
+C_s\frac{dT_s}{dt}+C_a\frac{dT_a}{dt}
+&=(Q+\sigma T_a^4-\sigma T_s^4)\\
+&\quad +(\sigma T_s^4-\sigma T_a^4-\sigma T_a^4).
+\end{aligned}$$
+
+Surface emission and downward atmospheric radiation are **internal transfers**. Each is a loss from one reservoir and a gain for the other.
+
+$$C_s\frac{dT_s}{dt}+C_a\frac{dT_a}{dt}=Q-\sigma T_a^4$$
+
+::: {.response-line}
+Total rate of energy storage = absorbed sunlight − radiation escaping to space.
+:::
+
+::: {.prompt}
+Does zero total energy imbalance guarantee that both temperatures are steady?
+:::
+
+::: {.notes}
+Read the two parentheses as surface input minus output, then atmospheric input minus output. We have expanded the atmospheric loss into upward and downward emission. The negative surface-emission term cancels the atmospheric gain. The positive downward-radiation term cancels one atmospheric loss. The remaining atmospheric loss is emission to space. This is conservation for a boundary enclosing both reservoirs and holds during adjustment as well as at equilibrium. All terms have units W/m^2. No energy is created by the internal exchanges.
+
+Answer to the question: no. One reservoir could gain energy while the other loses an equal amount. Equilibrium of this model requires both dTs/dt and dTa/dt to vanish separately. A zero total imbalance at one instant is insufficient.
+
+Source: course instructor notes, chapter 2, "Add the budgets to check conservation".
+:::
+
+## Equilibrium of the one-layer model {#one-layer-equilibrium .ebm-intro}
+
+Set **both** $dT_s/dt=0$ and $dT_a/dt=0$:
+
+$$\begin{aligned}
+\text{Surface:}\quad Q+\sigma T_a^4&=\sigma T_s^4\\
+\text{Atmosphere:}\quad \sigma T_s^4&=2\sigma T_a^4.
+\end{aligned}$$
+
+Substitute the atmospheric balance into the surface balance:
+
+$$Q+\sigma T_a^4=2\sigma T_a^4,\qquad Q=\sigma T_a^4.$$
+
+With $Q\approx238\ \mathrm{W\,m^{-2}}$:
+
+$$T_a=\left(\frac{Q}{\sigma}\right)^{1/4}\approx255\ \mathrm{K}$$
+
+$$T_s=2^{1/4}T_a\approx303\ \mathrm{K}$$
+
+::: {.assumption}
+Heat capacities drop out again. The surface is warmer even though absorbed sunlight is unchanged.
+:::
+
+::: {.notes}
+The atmospheric balance gives Ts^4 = 2 Ta^4, hence Ts = 2^(1/4) Ta when taking positive roots in kelvin. Use Q = 238.175 W/m^2 and sigma = 5.67e-8 W/m^2/K^4 to obtain Ta = 254.58 K and Ts = 302.75 K, conventionally rounded to 255 and 303 K.
+
+Check the fluxes verbally: the surface receives about 238 W/m^2 from sunlight plus 238 from the atmosphere and emits about 476. The atmosphere receives 476 and emits 238 upward plus 238 downward. Only 238 enters and leaves the whole system. The larger surface emission represents internal exchange. It does not imply that the atmosphere creates energy. Downward radiation can flow from a cooler atmosphere to a warmer surface while the net longwave exchange remains upward from the warmer surface.
+
+The atmospheric layer equals the effective emission temperature in this particular model because it supplies all outgoing thermal radiation as a blackbody. This is not a measurement of the real top-of-atmosphere temperature. We still have not specified the heat capacities or solved the transient response.
+
+Source: course instructor notes, chapter 2, "Equilibrium as a special case" and "Check the equilibrium fluxes numerically".
+:::
+
+## Now the model surface is too warm {#one-layer-too-warm .ebm-intro}
+
+| Model or reference | Mean surface temperature |
+|:---|:---:|
+| Bare-rock model | $\approx255\ \mathrm{K}$ |
+| Fully absorbing one-layer model | $\approx303\ \mathrm{K}$ |
+| Earth | $\approx288\ \mathrm{K}$ |
+
+Adding the atmosphere separates **surface temperature** from **the temperature that sets emission to space**. But the model now overshoots.
+
+::: {.prompt}
+Does the atmosphere have to absorb all the surface's infrared radiation?
+:::
+
+Our next refinement: **partial absorption**, allowing some surface radiation to escape directly to space.
+
+::: {.assumption}
+Other simplifications remain, including one atmospheric temperature and no convection or evaporation. Partial absorption is only one refinement.
+:::
+
+::: {.notes}
+The temperature comparison is for the same prescribed sunlight and albedo in both models. Adding a physically meaningful process need not immediately produce the correct numerical answer. We have explained how a surface can be warmer than the effective emission temperature while conserving energy, but have not made a complete model of Earth's climate.
+
+Real atmospheric absorption varies with wavelength, as discussed earlier. Some surface infrared radiation passes through relatively transparent wavelength ranges. Recall the direct surface-to-space arrow in the general energy-pathways diagram, which disappeared in the fully absorbing limit. We now have a physical reason to restore it. Partial absorption alone is not a complete explanation of the discrepancy. Matching Earth's mean surface temperature would not validate every assumption or guarantee correct responses to perturbations. In the next block we can introduce a longwave absorption fraction and, consistently with Kirchhoff's law under a gray approximation, reduce the layer's emission too. Do not change absorption alone while retaining blackbody atmospheric emission.
+
+Source: course instructor notes, chapter 2, "What did adding a layer accomplish?" and "An atmosphere that absorbs only some infrared radiation".
+:::

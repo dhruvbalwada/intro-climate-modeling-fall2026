@@ -1,0 +1,88 @@
+<!-- Three slides specifying the incoming and outgoing terms. No equilibrium solution yet. -->
+
+## Sunlight averaged over the planet {#sunlight-disk-sphere .ebm-intro}
+
+$S_0$ is solar power per unit area **perpendicular to the rays**.
+
+Near Earth's orbit: $S_0\approx1361\ \mathrm{W\,m^{-2}}$.
+
+| Which area? | Size | Role in the budget |
+|:---|:---:|:---|
+| The planet's shadow: a disk | $\pi R^2$ | Intercepts sunlight |
+| The whole surface: a sphere | $4\pi R^2$ | Defines our global average |
+
+$$P_{\mathrm{incident}}=S_0\pi R^2$$
+
+$$Q_{\mathrm{incident}}=\frac{P_{\mathrm{incident}}}{4\pi R^2}
+=\frac{S_0\pi R^2}{4\pi R^2}
+=\frac{S_0}{4}\approx340\ \mathrm{W\,m^{-2}}$$
+
+::: {.assumption}
+This average includes the night side. Individual locations receive different amounts.
+:::
+
+::: {.notes}
+Imagine a screen behind the planet, perpendicular to parallel sunlight. Its circular shadow tells us how much of the beam the planet intercepts. The day side is a hemisphere, but tilted patches intercept less energy per unit surface area than patches facing the Sun. Counting the shadow accounts for that tilt. We then divide the intercepted power by the entire planetary area to define a global mean. The factor four does not require rotation or uniform temperature. It is not a measurement of local sunlight everywhere. 1361 is an approximate measured solar irradiance near Earth's orbit; 340 follows from dividing it by four. Hold S0 fixed in this model. We have not subtracted reflected sunlight yet.
+
+Source: course instructor notes, chapter 2, "A disk intercepts; a sphere provides the averaging area".
+:::
+
+## Albedo and absorbed sunlight {#albedo-absorbed-sunlight .ebm-intro}
+
+**Albedo $\alpha$** is the fraction of incoming sunlight reflected to space.
+
+$$Q_{\mathrm{reflected}}=\alpha\frac{S_0}{4}$$
+
+$$Q_{\mathrm{absorbed}}=Q_{\mathrm{incident}}-Q_{\mathrm{reflected}}
+=(1-\alpha)\frac{S_0}{4}$$
+
+For $S_0=1361\ \mathrm{W\,m^{-2}}$ and $\alpha=0.30$:
+
+$$Q_{\mathrm{absorbed}}=0.70\times\frac{1361}{4}
+\approx238\ \mathrm{W\,m^{-2}}$$
+
+::: {.assumption}
+We borrow $\alpha=0.30$ from present-day Earth, including its clouds and atmosphere. This is a reference choice for our bare-rock model.
+:::
+
+::: {.prompt}
+If albedo increases while sunlight stays fixed, does the planet absorb more energy or less?
+:::
+
+::: {.notes}
+Answer: less, because a larger fraction is reflected. Alpha is dimensionless, between zero and one. Present-day Earth's reflected fraction is approximately 0.30; it combines reflection by clouds, the atmosphere, and the surface. An actual atmosphere-free planet need not have this albedo. With the unrounded numbers, incident flux is 340.25 W/m^2, reflected flux 102.075, and absorbed flux 238.175. Approximate values are sufficient here. Reflected sunlight never enters our thermal energy reservoir, so the storage equation uses absorbed sunlight rather than total incident sunlight. For fixed S0 and alpha, this term acts like the bucket's imposed constant inflow. No equilibrium assumption yet.
+
+Source: course instructor notes, chapter 2, "Reflection reduces the absorbed fraction".
+:::
+
+## Thermal emission from the surface {#surface-thermal-emission .ebm-intro}
+
+The surface loses stored energy by emitting radiation, even at night.
+
+For a blackbody surface, the **Stefan–Boltzmann law** gives
+
+$$Q_{\mathrm{emitted}}=\sigma T^4$$
+
+::: {.units}
+$T$ must be in **kelvin**. $\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}$.
+:::
+
+::: {.assumption}
+We treat Earth's surface as a perfect blackbody at thermal wavelengths, with one temperature. The law already gives flux per unit emitting area, so there is no extra factor of four.
+:::
+
+::: {.area-definition}
+Our energy budget now has both radiation terms:
+
+$$C\frac{dT}{dt}=\frac{(1-\alpha)S_0}{4}-\sigma T^4.$$
+:::
+
+::: {.response-line}
+With sunlight and albedo fixed, a warmer surface loses energy faster.
+:::
+
+::: {.notes}
+Thermal radiation carries energy away from the material and depends on its temperature. Reflected sunlight redirects incoming solar energy. These are different processes. At Earthlike temperatures, thermal emission is mainly infrared. A surface at zero Celsius still emits, because zero Celsius is about 273 K. Emissivity one is a simplifying assumption for thermal wavelengths, consistent with nonzero solar albedo because the wavelength ranges differ. The total emitted power is 4 pi R^2 sigma T^4, so dividing by surface area gives sigma T^4 directly. For a nonuniform surface, average T^4 would matter, not the fourth power of average T. Our one-temperature model deliberately omits that structure. Connect increasing emission with the bucket's increasing drainage as water level rises. We have now specified the time-dependent model but have not solved its equilibrium. The next block will set dT/dt to zero and examine the temperature it gives.
+
+Source: course instructor notes, chapter 2, "How does the planet lose energy?" and "The time-dependent energy balance model".
+:::

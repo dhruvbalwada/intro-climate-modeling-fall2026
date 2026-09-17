@@ -1,0 +1,131 @@
+<!-- Bridge from the bare-rock equilibrium through spectra to atmospheric energy flows. -->
+
+## The bare-rock equilibrium {#bare-rock-equilibrium .ebm-intro}
+
+At equilibrium, temperature is steady: $dT/dt=0$.
+
+$$0=\frac{(1-\alpha)S_0}{4}-\sigma T_{\mathrm{eq}}^4$$
+
+Move emission to the other side, then divide by $\sigma$:
+
+$$\sigma T_{\mathrm{eq}}^4=\frac{(1-\alpha)S_0}{4},
+\qquad T_{\mathrm{eq}}^4=\frac{(1-\alpha)S_0}{4\sigma}.$$
+
+Take the positive fourth root:
+
+$$T_{\mathrm{eq}}=\left[\frac{(1-\alpha)S_0}{4\sigma}\right]^{1/4}.$$
+
+::: {.assumption}
+Heat capacity drops out because no energy accumulates. Sunlight and thermal radiation still flow through the system.
+:::
+
+::: {.notes}
+Begin with the full differential equation on the preceding slide. We impose equilibrium rather than assuming all situations are in equilibrium. The left side C dT/dt becomes zero for any finite positive C. Equality of the two fluxes gives the first rearrangement. The bracket in the final expression has units K^4. Select the positive root because T is absolute temperature. Keep the assumptions from the earlier slides: prescribed sunlight and albedo, one surface temperature, no atmosphere, and blackbody thermal emission. Increasing C changes how fast temperature responds but not this equilibrium.
+
+Source: course instructor notes, chapter 2, "Finding the balance".
+:::
+
+## A surface temperature that is too cold {#bare-rock-temperature-gap .ebm-intro}
+
+Using $S_0=1361\ \mathrm{W\,m^{-2}}$, $\alpha=0.30$, and the Stefan–Boltzmann constant:
+
+$$T_{\mathrm{eq}}=\left(\frac{238.2}{5.67\times10^{-8}}\right)^{1/4}
+\mathrm{K}\approx255\ \mathrm{K}.$$
+
+| | Temperature in kelvin | Temperature in Celsius |
+|:---|:---:|:---:|
+| Our bare-rock model | $\approx255\ \mathrm{K}$ | $\approx-18\,^{\circ}\mathrm{C}$ |
+| Earth's mean surface | $\approx288\ \mathrm{K}$ | $\approx15\,^{\circ}\mathrm{C}$ |
+
+::: {.assumption}
+We use Earth's present-day albedo, even though our model has no atmosphere. A truly airless Earth would have a different albedo.
+:::
+
+::: {.prompt}
+Could a larger heat capacity close this roughly 33 K gap?
+:::
+
+::: {.notes}
+Answer: no. With sunlight, albedo, and emission unchanged, C cannot change the equilibrium. Our unrounded calculation gives about 254.6 K or -18.6 C. The slide uses the conventional rounded reference values 255 K and -18 C; Earth’s 288 K mean is also approximate. For this model at equilibrium, both incoming and outgoing fluxes are about 238 W/m^2. About 255 K is also Earth's effective emission temperature: the blackbody temperature corresponding to the outgoing thermal flux. It is not an actual temperature at the top of the atmosphere, nor a direct measurement of a uniformly cold Earth. The model identifies the emitting surface with the surface whose temperature we observe; the atmosphere will separate those concepts. The comparison motivates changing the radiation pathways rather than tuning heat capacity.
+
+Source: course instructor notes, chapter 2, "What have we learned about Earth?".
+:::
+
+## What changes when we add an atmosphere? {#adding-an-atmosphere .ebm-intro}
+
+Our model surface is too cold.
+
+So far, we have assumed that **all radiation emitted by the surface escapes directly to space**.
+
+An atmosphere can **absorb and emit radiation**, changing that energy flow.
+
+::: {.prompt}
+To understand how, first compare the wavelengths of sunlight and Earth's radiation.
+:::
+
+::: {.notes}
+Connect this step to the preceding temperature comparison. Increasing heat capacity cannot change the equilibrium of our bare-rock model. We now add a missing part of the physical system: the atmosphere and its interaction with radiation. Keep the prescribed solar input and albedo for this next model so we can isolate the effect of atmospheric longwave absorption and emission. The following spectrum slide explains why incoming sunlight and outgoing terrestrial radiation can interact differently with the same atmosphere. We will then connect absorption to emission with Kirchhoff's law, trace the energy flows, and write separate budgets.
+
+Source: course instructor notes, chapter 2, "Why the atmosphere intervenes".
+:::
+
+## Sunlight versus Earth's radiation {#sunlight-earth-radiation .ebm-intro}
+
+::: {.spectrum-image}
+![Ideal blackbody spectra at 5800 K and 288 K peak near 0.5 and 10 micrometers. Each curve is divided by its own peak, so their heights do not compare total power.](images/planck_spectra.svg)
+:::
+
+The atmosphere's absorption depends on wavelength. It transmits much of the Sun's **shortwave** radiation but absorbs strongly in parts of Earth's **longwave** infrared.
+
+::: {.notes}
+Both curves describe thermal emission. The hotter Sun emits most strongly at much shorter wavelengths than Earth's surface. Shortwave includes visible and near-infrared sunlight. Longwave here refers to terrestrial infrared. The graph shows idealized emission per unit wavelength, with a logarithmic wavelength axis. Each curve has its own normalization, so equal peak heights do not mean equal power. These are source spectra, not solar irradiance received at Earth. The wavelength contrast alone does not explain the greenhouse effect: atmospheric absorption also varies with wavelength. Water vapor, carbon dioxide, and clouds absorb terrestrial infrared. The next diagram shows how that absorption and atmospheric emission change the energy pathways.
+
+Source and figure: course instructor notes, chapter 2, "Why the atmosphere intervenes", and the accompanying Planck-law calculation in planck_spectra.py.
+:::
+
+## Kirchhoff's law: absorption and emission {#kirchhoffs-law .ebm-intro}
+
+**At a given wavelength, a good absorber is also a good emitter.**
+
+$$\text{absorptivity at }\lambda = \text{emissivity at }\lambda$$
+
+- **Absorptivity:** the fraction of incoming radiation a material absorbs.
+- **Emissivity:** its emission relative to a blackbody at the **same temperature and wavelength**.
+
+The atmosphere absorbs and emits strongly in some infrared bands, while absorbing weakly at many wavelengths of sunlight.
+
+::: {.assumption}
+This law applies under local thermodynamic equilibrium, a good approximation for the lower atmosphere. The amount emitted also depends on temperature.
+:::
+
+::: {.prompt}
+Our atmospheric budget therefore needs emission as well as absorption.
+:::
+
+::: {.notes}
+The equality applies at the same wavelength and for corresponding directions, at the material's temperature. Both coefficients range from zero to one. A good emitter means efficient relative to a blackbody at its own temperature, not necessarily a large absolute flux. A cold good emitter can radiate less than a warmer weak emitter. Local thermodynamic equilibrium concerns the local molecular populations. It does not require the atmosphere to have the same temperature as the surface, or require either reservoir's energy budget to be in equilibrium. Do not equate shortwave absorptivity with longwave emissivity. In particular, one minus solar albedo does not give thermal emissivity. Atmospheric thermal emission occurs in all directions, giving both upward and downward fluxes in our layer model. It is distinct from reflection of surface radiation. Kirchhoff's law alone does not set the atmosphere's temperature. That comes from its energy budget.
+
+Source: course instructor notes, chapter 2, discussion of Kirchhoff's law and the gray longwave approximation.
+:::
+
+## The atmosphere changes the energy flows {#atmospheric-energy-pathways .ebm-intro}
+
+The atmosphere absorbs some surface infrared radiation and emits upward and downward.
+
+::: {.atmosphere-intro-image}
+![Atmospheric energy pathways. Sunlight reaches the surface. Some surface thermal radiation is absorbed by the atmosphere and some passes directly to space. The atmosphere emits radiation upward to space and downward to the surface.](images/atmosphere_flux_intro.svg)
+:::
+
+::: {.response-line}
+**Surface emission can differ from radiation escaping to space.**
+:::
+
+::: {.units}
+Schematic: reflection, solar absorption in air, and nonradiative transfers omitted.
+:::
+
+::: {.notes}
+Use the diagram to revisit the assumption that every unit of energy emitted by the surface immediately escapes to space. Trace the red path absorbed in the atmosphere, the directly transmitted red path, and both purple atmospheric emission paths. Downward radiation adds an input to the surface. Upward atmospheric radiation contributes to the planet's loss to space. Water vapor and CO2 are examples of gases that absorb infrared radiation; clouds contribute too. Absorption depends on wavelength, so transmitting sunlight does not imply transmitting all terrestrial infrared. The arrows are schematic, not flux magnitudes. The Sun arrow denotes absorbed solar input, with reflection already subtracted. This general diagram allows partial transmission, which we remove on the next slide when introducing the fully absorbing one-layer limit. It does not yet specify a quantitative layer model. The whole planet still balances absorbed sunlight and radiation escaping to space at equilibrium. We next specify the assumptions and write separate energy budgets for the surface and atmosphere.
+
+Figure: atmospheric panel adapted from the original course-note figure atmosphere_energy_flows.svg. Source: instructor notes, chapter 2, "Why the atmosphere intervenes".
+:::
