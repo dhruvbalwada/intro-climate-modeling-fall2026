@@ -72,7 +72,7 @@ Source: course instructor notes, chapter 2, "Why the atmosphere intervenes".
 ## Sunlight versus Earth's radiation {#sunlight-earth-radiation .ebm-intro}
 
 ::: {.spectrum-image}
-![Ideal blackbody spectra at 5800 K and 288 K peak near 0.5 and 10 micrometers. Each curve is divided by its own peak, so their heights do not compare total power.](images/planck_spectra.svg)
+![](images/planck_spectra.svg){fig-alt="Ideal blackbody spectra at 5800 K and 288 K peak near 0.5 and 10 micrometers. Each curve is divided by its own peak, so their heights do not compare total power."}
 :::
 
 The atmosphere's absorption depends on wavelength. It transmits much of the Sun's **shortwave** radiation but absorbs strongly in parts of Earth's **longwave** infrared.
@@ -113,7 +113,7 @@ Source: course instructor notes, chapter 2, discussion of Kirchhoff's law and th
 The atmosphere absorbs some surface infrared radiation and emits upward and downward.
 
 ::: {.atmosphere-intro-image}
-![Atmospheric energy pathways. Sunlight reaches the surface. Some surface thermal radiation is absorbed by the atmosphere and some passes directly to space. The atmosphere emits radiation upward to space and downward to the surface.](images/atmosphere_flux_intro.svg)
+![](images/atmosphere_flux_intro.svg){fig-alt="Atmospheric energy pathways. Sunlight reaches the surface. Some surface thermal radiation is absorbed by the atmosphere and some passes directly to space. The atmosphere emits radiation upward to space and downward to the surface."}
 :::
 
 ::: {.response-line}

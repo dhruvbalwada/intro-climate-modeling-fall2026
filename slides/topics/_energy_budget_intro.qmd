@@ -115,7 +115,7 @@ Source: course instructor notes, chapter 2, "Connecting energy storage to temper
 <div class="flow-labels"><span class="solar-label">Absorbed<br>sunlight</span><span class="thermal-label">Thermal radiation<br>to space</span></div>
 
 ::: {.budget-image}
-![Bare-rock energy budget. Sunlight carries energy down to the surface, while thermal radiation carries energy from the surface across the boundary to space.](images/bare_rock_budget.svg)
+![](images/bare_rock_budget.svg){fig-alt="Bare-rock energy budget. Sunlight carries energy down to the surface, while thermal radiation carries energy from the surface across the boundary to space."}
 :::
 
 :::

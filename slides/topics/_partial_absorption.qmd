@@ -3,10 +3,10 @@
 The layer absorbs a fraction $\epsilon$ of surface infrared radiation. The fraction $1-\epsilon$ escapes directly to space, with $0\leq\epsilon\leq1$.
 
 ::: {.partial-layer-image}
-![Partial-absorption model. Net sunlight Q reaches the surface. Of total surface emission sigma Ts to the fourth power, epsilon is absorbed by the atmosphere and one minus epsilon escapes directly to space. Atmospheric emission is epsilon sigma Ta to the fourth power in each direction.](images/one_layer_partial_absorption.svg)
+![](images/one_layer_partial_absorption.svg){fig-alt="Partial-absorption model. Net sunlight Q reaches the surface. Of total surface emission sigma Ts to the fourth power, epsilon is absorbed by the atmosphere and one minus epsilon escapes directly to space. Atmospheric emission is epsilon sigma Ta to the fourth power in each direction."}
 :::
 
-Kirchhoff's law links absorption and emission: the layer emits $\epsilon\sigma T_a^4$ **upward and downward**.
+By Kirchhoff's law, the layer emits $\epsilon\sigma T_a^4$ **in each direction**.
 
 ::: {.assumption}
 We use one $\epsilon$ across all longwave wavelengths: the **gray approximation**. We neglect longwave reflection and keep the surface black in the longwave.

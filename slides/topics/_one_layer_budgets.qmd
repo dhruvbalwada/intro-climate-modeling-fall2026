@@ -3,7 +3,7 @@
 Two reservoirs: surface at $T_s$ and one atmospheric layer at $T_a$.
 
 ::: {.one-layer-image}
-![Fully absorbing one-layer model. Net sunlight reaches the surface. The atmosphere absorbs all surface infrared radiation and emits upward to space and downward to the surface. No surface radiation escapes directly to space.](images/one_layer_fully_absorbing.svg)
+![](images/one_layer_fully_absorbing.svg){fig-alt="Fully absorbing one-layer model. Net sunlight reaches the surface. The atmosphere absorbs all surface infrared radiation and emits upward to space and downward to the surface. No surface radiation escapes directly to space."}
 :::
 
 - The layer transmits all sunlight and absorbs all surface longwave radiation.
