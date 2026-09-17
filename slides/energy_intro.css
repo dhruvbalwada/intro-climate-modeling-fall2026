@@ -1,0 +1,35 @@
+/* Scoped to the energy-budget teaching slides. */
+.reveal .slides section.ebm-intro { font-size: 29px; }
+.reveal .slides section.ebm-intro h2 { font-size: 44px; margin-bottom: 20px; }
+.reveal .slides section.ebm-intro p { margin: 0 0 15px; }
+.reveal .slides section.ebm-intro .columns { gap: 38px; }
+.reveal .slides section.ebm-intro .column { min-width: 0; }
+.reveal .slides section.ebm-intro .model-label { font-weight: 650; margin-bottom: 8px; }
+.reveal .slides section.ebm-intro .units { font-size: 24px; line-height: 1.4; }
+.reveal .slides section.ebm-intro .area-definition { border-top: 1px solid #bbb; margin-top: 20px; padding-top: 15px; }
+.reveal .slides section.ebm-intro .assumption { font-size: 24px; margin-top: 14px; }
+.reveal .slides section.ebm-intro .prompt { border-top: 1px solid #bbb; padding-top: 14px; margin-top: 16px; font-size: 27px; }
+.reveal .slides section.ebm-intro .flow-labels { display: flex; justify-content: space-around; font-size: 24px; line-height: 1.2; text-align: center; }
+.reveal .slides section.ebm-intro .solar-label { color: #a46b00; }
+.reveal .slides section.ebm-intro .thermal-label { color: #b4422e; }
+.reveal .slides section.ebm-intro .budget-image { margin: 0; }
+.reveal .slides section.ebm-intro .budget-image img { height: 300px; width: auto; margin: 0; }
+.reveal .slides section.ebm-intro ul { margin-top: 6px; }
+.reveal .slides section.ebm-intro li { margin-bottom: 12px; }
+.reveal .slides section.ebm-intro .full-budget { font-size: 33px; margin-top: 8px; }
+.reveal .slides section.ebm-intro .response-line { font-size: 26px; text-align: center; }
+.reveal .slides section.ebm-intro table { font-size: 26px; margin: 18px 0; width: 100%; }
+.reveal .slides section.ebm-intro th,
+.reveal .slides section.ebm-intro td { padding: 10px 12px; }
+.reveal .slides section.ebm-intro .atmosphere-intro-image { text-align: center; }
+.reveal .slides section.ebm-intro .atmosphere-intro-image p { margin: 0; }
+.reveal .slides section.ebm-intro .atmosphere-intro-image img { height: 405px; width: auto; margin: 0; }
+.reveal .slides section.ebm-intro .spectrum-image,
+.reveal .slides section.ebm-intro .one-layer-image { text-align: center; }
+.reveal .slides section.ebm-intro .spectrum-image p,
+.reveal .slides section.ebm-intro .one-layer-image p { margin: 0; }
+.reveal .slides section.ebm-intro .spectrum-image img { height: 430px; width: auto; margin: 0; }
+.reveal .slides section.ebm-intro .one-layer-image img { height: 300px; width: auto; margin: 0; }
+.reveal .slides section.ebm-intro .partial-layer-image { text-align: center; }
+.reveal .slides section.ebm-intro .partial-layer-image p { margin: 0; }
+.reveal .slides section.ebm-intro .partial-layer-image img { height: 350px; width: auto; margin: 0; }

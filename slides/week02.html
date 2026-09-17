@@ -37,6 +37,7 @@
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="comments.css">
+  <link rel="stylesheet" href="energy_intro.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -213,11 +214,763 @@ Left: IPCC AR6 WG1 FAQ 4.1 (2021). Right: Hawkins &amp; Sutton (2009), updated f
           display:block!important;
       }</style></aside>
 </section></section>
+<section>
 <section id="now-onto-week-2" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>Now onto week 2</h1>
-
-
+<!-- First three EBM slides. Source: instructor notes, chapter 2, sections 2.1 and 2.5. -->
 </section>
+<section id="water-to-energy" class="slide level2 ebm-intro">
+<h2>From a water budget to an energy budget</h2>
+<p>Inflow minus outflow changes what a reservoir stores.</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="model-label">
+<p>The bucket stores water</p>
+</div>
+<p><span class="math display">\[\frac{dV}{dt}=F_{\mathrm{in}}-F_{\mathrm{out}}\]</span></p>
+<div class="units">
+<p><span class="math inline">\(V\)</span>: water volume, <span class="math inline">\(\mathrm{m^3}\)</span><br>
+<span class="math inline">\(F\)</span>: water flow rate, <span class="math inline">\(\mathrm{m^3\,s^{-1}}\)</span></p>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="model-label">
+<p>The planet stores energy</p>
+</div>
+<p><span class="math display">\[\frac{dU}{dt}=P_{\mathrm{absorbed}}-P_{\mathrm{emitted}}\]</span></p>
+<div class="units">
+<p><span class="math inline">\(U\)</span>: internal energy, <span class="math inline">\(\mathrm{J}\)</span><br>
+<span class="math inline">\(P\)</span>: power, <span class="math inline">\(\mathrm{W=J\,s^{-1}}\)</span></p>
+</div>
+</div></div>
+<div class="area-definition">
+<p>For the planet, divide by its fixed surface area <span class="math inline">\(A_p=4\pi R^2\)</span>:</p>
+<p><span class="math display">\[E=\frac{U}{A_p}\quad[\mathrm{J\,m^{-2}}],\qquad
+Q=\frac{P}{A_p}\quad[\mathrm{W\,m^{-2}}].\]</span></p>
+<div class="units">
+<p><span class="math inline">\(E\)</span> is stored energy per area. <span class="math inline">\(Q\)</span> is a global-mean energy flux.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Start with the bucket equation students already used. A stored amount and a rate have different units. Here U denotes internal energy relative to a fixed reference; in this model we track its temperature-related changes. P_absorbed already subtracts reflected sunlight. Dividing by area changes how we report the budget, not the conservation law. Q here means radiative energy flux, not the water drainage rate called Q in Lab 0d. The mean includes the night side. No assumption of equilibrium is required.</p>
+<p>Source: course instructor notes, chapter 2, section “From a water budget to an energy budget”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="energy-storage-temperature" class="slide level2 ebm-intro">
+<h2>Energy storage and temperature</h2>
+<p>The stored amount determines the state we observe.</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="model-label">
+<p>Bucket: volume and water level</p>
+</div>
+<p><span class="math display">\[\Delta V=A_b\,\Delta h\]</span></p>
+<p><span class="math display">\[\frac{dV}{dt}=A_b\frac{dh}{dt}\]</span></p>
+<div class="units">
+<p><span class="math inline">\(A_b\)</span>: bucket cross-sectional area, <span class="math inline">\(\mathrm{m^2}\)</span><br>
+<span class="math inline">\(h\)</span>: water level, <span class="math inline">\(\mathrm{m}\)</span></p>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="model-label">
+<p>Planet: energy and temperature</p>
+</div>
+<p><span class="math display">\[\Delta E=C\,\Delta T\]</span></p>
+<p><span class="math display">\[\frac{dE}{dt}=C\frac{dT}{dt}\]</span></p>
+<div class="units">
+<p><span class="math inline">\(C\)</span>: heat capacity per area, <span class="math inline">\(\mathrm{J\,m^{-2}\,K^{-1}}\)</span><br>
+<span class="math inline">\(T\)</span>: temperature, <span class="math inline">\(\mathrm{K}\)</span></p>
+</div>
+</div></div>
+<div class="assumption">
+<p>Ordinary heat capacity <span class="math inline">\(C_{\mathrm{total}}\)</span> has units <span class="math inline">\(\mathrm{J\,K^{-1}}\)</span>. Here we use <span class="math inline">\(C=C_{\mathrm{total}}/A_p\)</span>, because our energy budget is <strong>per unit area</strong>.</p>
+<p>We assume constant <span class="math inline">\(C\)</span>, no phase changes, and negligible mechanical work.</p>
+</div>
+<div class="prompt">
+<p>For the same added energy per area, does a larger <span class="math inline">\(C\)</span> give more or less warming?</p>
+</div>
+<aside class="notes">
+<p>Answer: less warming, since Delta T = Delta E / C. Use a wider bucket as the parallel: the same added water gives a smaller rise. We conserve energy, while temperature describes the reservoir’s state. Changes in internal energy matter here, so we do not need an absolute zero for U or E. Ordinary heat capacity C_total is the energy needed to warm the whole modeled reservoir by 1 K, in J/K. For a mass m with specific heat capacity c, C_total = mc, where c has units J/kg/K. We divide C_total by the same planetary area used to define E. Our C therefore has units J/m^2/K and must not be divided by area again. Its numerical value and the effective amount of material taking part in the heating remain unspecified. We are not assuming the entire solid planet warms uniformly. Defer C = rho c H until it helps answer a question.</p>
+<p>Source: course instructor notes, chapter 2, “Connecting energy storage to temperature”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="first-energy-balance-model" class="slide level2 ebm-intro">
+<h2>Our first climate model</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<div class="flow-labels">
+<span class="solar-label">Absorbed<br>sunlight</span><span class="thermal-label">Thermal radiation<br>to space</span>
+</div>
+<div class="budget-image">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/bare_rock_budget.svg"></p>
+<figcaption>Bare-rock energy budget. Sunlight carries energy down to the surface, while thermal radiation carries energy from the surface across the boundary to space.</figcaption>
+</figure>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="model-label">
+<p>Our assumptions</p>
+</div>
+<ul>
+<li>No atmosphere.</li>
+<li>One temperature <span class="math inline">\(T\)</span> for the effective surface reservoir.</li>
+<li>Radiative exchanges only. Neglect heat from the interior.</li>
+</ul>
+<div class="units">
+<p>Absorbed sunlight already excludes the reflected portion.</p>
+</div>
+</div></div>
+<div class="full-budget">
+<p><span class="math display">\[\frac{dE}{dt}=C\frac{dT}{dt}
+=Q_{\mathrm{absorbed}}-Q_{\mathrm{emitted}}\]</span></p>
+</div>
+<div class="response-line">
+<p>Positive imbalance: warming. Zero: steady temperature. Negative: cooling.</p>
+</div>
+<aside class="notes">
+<p>Trace the two arrows and identify the system boundary before reading the equation. The drawing is a schematic surface section of a spherical planet. Fluxes are global means in W m^-2 and C is positive. This model represents the energy of an effective heated reservoir with one temperature, rather than resolving rock temperature at every depth or location. Equal input and output mean constant stored energy even though radiation continues to flow. We have not set dT/dt to zero. Next we need expressions for absorbed sunlight and thermal emission; stop before introducing those formulas in this block.</p>
+<p>Figure: cropped from the original energy-flow schematic in the course notes, atmosphere_energy_flows.svg. Source: instructor notes, chapter 2, energy budget and heat-capacity sections.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- Three slides specifying the incoming and outgoing terms. No equilibrium solution yet. -->
+</section>
+<section id="sunlight-disk-sphere" class="slide level2 ebm-intro">
+<h2>Sunlight averaged over the planet</h2>
+<p><span class="math inline">\(S_0\)</span> is solar power per unit area <strong>perpendicular to the rays</strong>.</p>
+<p>Near Earth’s orbit: <span class="math inline">\(S_0\approx1361\ \mathrm{W\,m^{-2}}\)</span>.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 38%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Which area?</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: left;">Role in the budget</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">The planet’s shadow: a disk</td>
+<td style="text-align: center;"><span class="math inline">\(\pi R^2\)</span></td>
+<td style="text-align: left;">Intercepts sunlight</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The whole surface: a sphere</td>
+<td style="text-align: center;"><span class="math inline">\(4\pi R^2\)</span></td>
+<td style="text-align: left;">Defines our global average</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[P_{\mathrm{incident}}=S_0\pi R^2\]</span></p>
+<p><span class="math display">\[Q_{\mathrm{incident}}=\frac{P_{\mathrm{incident}}}{4\pi R^2}
+=\frac{S_0\pi R^2}{4\pi R^2}
+=\frac{S_0}{4}\approx340\ \mathrm{W\,m^{-2}}\]</span></p>
+<div class="assumption">
+<p>This average includes the night side. Individual locations receive different amounts.</p>
+</div>
+<aside class="notes">
+<p>Imagine a screen behind the planet, perpendicular to parallel sunlight. Its circular shadow tells us how much of the beam the planet intercepts. The day side is a hemisphere, but tilted patches intercept less energy per unit surface area than patches facing the Sun. Counting the shadow accounts for that tilt. We then divide the intercepted power by the entire planetary area to define a global mean. The factor four does not require rotation or uniform temperature. It is not a measurement of local sunlight everywhere. 1361 is an approximate measured solar irradiance near Earth’s orbit; 340 follows from dividing it by four. Hold S0 fixed in this model. We have not subtracted reflected sunlight yet.</p>
+<p>Source: course instructor notes, chapter 2, “A disk intercepts; a sphere provides the averaging area”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="albedo-absorbed-sunlight" class="slide level2 ebm-intro">
+<h2>Albedo and absorbed sunlight</h2>
+<p><strong>Albedo <span class="math inline">\(\alpha\)</span></strong> is the fraction of incoming sunlight reflected to space.</p>
+<p><span class="math display">\[Q_{\mathrm{reflected}}=\alpha\frac{S_0}{4}\]</span></p>
+<p><span class="math display">\[Q_{\mathrm{absorbed}}=Q_{\mathrm{incident}}-Q_{\mathrm{reflected}}
+=(1-\alpha)\frac{S_0}{4}\]</span></p>
+<p>For <span class="math inline">\(S_0=1361\ \mathrm{W\,m^{-2}}\)</span> and <span class="math inline">\(\alpha=0.30\)</span>:</p>
+<p><span class="math display">\[Q_{\mathrm{absorbed}}=0.70\times\frac{1361}{4}
+\approx238\ \mathrm{W\,m^{-2}}\]</span></p>
+<div class="assumption">
+<p>We borrow <span class="math inline">\(\alpha=0.30\)</span> from present-day Earth, including its clouds and atmosphere. This is a reference choice for our bare-rock model.</p>
+</div>
+<div class="prompt">
+<p>If albedo increases while sunlight stays fixed, does the planet absorb more energy or less?</p>
+</div>
+<aside class="notes">
+<p>Answer: less, because a larger fraction is reflected. Alpha is dimensionless, between zero and one. Present-day Earth’s reflected fraction is approximately 0.30; it combines reflection by clouds, the atmosphere, and the surface. An actual atmosphere-free planet need not have this albedo. With the unrounded numbers, incident flux is 340.25 W/m^2, reflected flux 102.075, and absorbed flux 238.175. Approximate values are sufficient here. Reflected sunlight never enters our thermal energy reservoir, so the storage equation uses absorbed sunlight rather than total incident sunlight. For fixed S0 and alpha, this term acts like the bucket’s imposed constant inflow. No equilibrium assumption yet.</p>
+<p>Source: course instructor notes, chapter 2, “Reflection reduces the absorbed fraction”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="surface-thermal-emission" class="slide level2 ebm-intro">
+<h2>Thermal emission from the surface</h2>
+<p>The surface loses stored energy by emitting radiation, even at night.</p>
+<p>For a blackbody surface, the <strong>Stefan–Boltzmann law</strong> gives</p>
+<p><span class="math display">\[Q_{\mathrm{emitted}}=\sigma T^4\]</span></p>
+<div class="units">
+<p><span class="math inline">\(T\)</span> must be in <strong>kelvin</strong>. <span class="math inline">\(\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}\)</span>.</p>
+</div>
+<div class="assumption">
+<p>We treat Earth’s surface as a perfect blackbody at thermal wavelengths, with one temperature. The law already gives flux per unit emitting area, so there is no extra factor of four.</p>
+</div>
+<div class="area-definition">
+<p>Our energy budget now has both radiation terms:</p>
+<p><span class="math display">\[C\frac{dT}{dt}=\frac{(1-\alpha)S_0}{4}-\sigma T^4.\]</span></p>
+</div>
+<div class="response-line">
+<p>With sunlight and albedo fixed, a warmer surface loses energy faster.</p>
+</div>
+<aside class="notes">
+<p>Thermal radiation carries energy away from the material and depends on its temperature. Reflected sunlight redirects incoming solar energy. These are different processes. At Earthlike temperatures, thermal emission is mainly infrared. A surface at zero Celsius still emits, because zero Celsius is about 273 K. Emissivity one is a simplifying assumption for thermal wavelengths, consistent with nonzero solar albedo because the wavelength ranges differ. The total emitted power is 4 pi R^2 sigma T^4, so dividing by surface area gives sigma T^4 directly. For a nonuniform surface, average T^4 would matter, not the fourth power of average T. Our one-temperature model deliberately omits that structure. Connect increasing emission with the bucket’s increasing drainage as water level rises. We have now specified the time-dependent model but have not solved its equilibrium. The next block will set dT/dt to zero and examine the temperature it gives.</p>
+<p>Source: course instructor notes, chapter 2, “How does the planet lose energy?” and “The time-dependent energy balance model”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- Bridge from the bare-rock equilibrium through spectra to atmospheric energy flows. -->
+</section>
+<section id="bare-rock-equilibrium" class="slide level2 ebm-intro">
+<h2>The bare-rock equilibrium</h2>
+<p>At equilibrium, temperature is steady: <span class="math inline">\(dT/dt=0\)</span>.</p>
+<p><span class="math display">\[0=\frac{(1-\alpha)S_0}{4}-\sigma T_{\mathrm{eq}}^4\]</span></p>
+<p>Move emission to the other side, then divide by <span class="math inline">\(\sigma\)</span>:</p>
+<p><span class="math display">\[\sigma T_{\mathrm{eq}}^4=\frac{(1-\alpha)S_0}{4},
+\qquad T_{\mathrm{eq}}^4=\frac{(1-\alpha)S_0}{4\sigma}.\]</span></p>
+<p>Take the positive fourth root:</p>
+<p><span class="math display">\[T_{\mathrm{eq}}=\left[\frac{(1-\alpha)S_0}{4\sigma}\right]^{1/4}.\]</span></p>
+<div class="assumption">
+<p>Heat capacity drops out because no energy accumulates. Sunlight and thermal radiation still flow through the system.</p>
+</div>
+<aside class="notes">
+<p>Begin with the full differential equation on the preceding slide. We impose equilibrium rather than assuming all situations are in equilibrium. The left side C dT/dt becomes zero for any finite positive C. Equality of the two fluxes gives the first rearrangement. The bracket in the final expression has units K^4. Select the positive root because T is absolute temperature. Keep the assumptions from the earlier slides: prescribed sunlight and albedo, one surface temperature, no atmosphere, and blackbody thermal emission. Increasing C changes how fast temperature responds but not this equilibrium.</p>
+<p>Source: course instructor notes, chapter 2, “Finding the balance”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bare-rock-temperature-gap" class="slide level2 ebm-intro">
+<h2>A surface temperature that is too cold</h2>
+<p>Using <span class="math inline">\(S_0=1361\ \mathrm{W\,m^{-2}}\)</span>, <span class="math inline">\(\alpha=0.30\)</span>, and the Stefan–Boltzmann constant:</p>
+<p><span class="math display">\[T_{\mathrm{eq}}=\left(\frac{238.2}{5.67\times10^{-8}}\right)^{1/4}
+\mathrm{K}\approx255\ \mathrm{K}.\]</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Temperature in kelvin</th>
+<th style="text-align: center;">Temperature in Celsius</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Our bare-rock model</td>
+<td style="text-align: center;"><span class="math inline">\(\approx255\ \mathrm{K}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\approx-18\,^{\circ}\mathrm{C}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Earth’s mean surface</td>
+<td style="text-align: center;"><span class="math inline">\(\approx288\ \mathrm{K}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\approx15\,^{\circ}\mathrm{C}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="assumption">
+<p>We use Earth’s present-day albedo, even though our model has no atmosphere. A truly airless Earth would have a different albedo.</p>
+</div>
+<div class="prompt">
+<p>Could a larger heat capacity close this roughly 33 K gap?</p>
+</div>
+<aside class="notes">
+<p>Answer: no. With sunlight, albedo, and emission unchanged, C cannot change the equilibrium. Our unrounded calculation gives about 254.6 K or -18.6 C. The slide uses the conventional rounded reference values 255 K and -18 C; Earth’s 288 K mean is also approximate. For this model at equilibrium, both incoming and outgoing fluxes are about 238 W/m^2. About 255 K is also Earth’s effective emission temperature: the blackbody temperature corresponding to the outgoing thermal flux. It is not an actual temperature at the top of the atmosphere, nor a direct measurement of a uniformly cold Earth. The model identifies the emitting surface with the surface whose temperature we observe; the atmosphere will separate those concepts. The comparison motivates changing the radiation pathways rather than tuning heat capacity.</p>
+<p>Source: course instructor notes, chapter 2, “What have we learned about Earth?”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="adding-an-atmosphere" class="slide level2 ebm-intro">
+<h2>What changes when we add an atmosphere?</h2>
+<p>Our model surface is too cold.</p>
+<p>So far, we have assumed that <strong>all radiation emitted by the surface escapes directly to space</strong>.</p>
+<p>An atmosphere can <strong>absorb and emit radiation</strong>, changing that energy flow.</p>
+<div class="prompt">
+<p>To understand how, first compare the wavelengths of sunlight and Earth’s radiation.</p>
+</div>
+<aside class="notes">
+<p>Connect this step to the preceding temperature comparison. Increasing heat capacity cannot change the equilibrium of our bare-rock model. We now add a missing part of the physical system: the atmosphere and its interaction with radiation. Keep the prescribed solar input and albedo for this next model so we can isolate the effect of atmospheric longwave absorption and emission. The following spectrum slide explains why incoming sunlight and outgoing terrestrial radiation can interact differently with the same atmosphere. We will then connect absorption to emission with Kirchhoff’s law, trace the energy flows, and write separate budgets.</p>
+<p>Source: course instructor notes, chapter 2, “Why the atmosphere intervenes”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sunlight-earth-radiation" class="slide level2 ebm-intro">
+<h2>Sunlight versus Earth’s radiation</h2>
+<div class="spectrum-image">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/planck_spectra.svg"></p>
+<figcaption>Ideal blackbody spectra at 5800 K and 288 K peak near 0.5 and 10 micrometers. Each curve is divided by its own peak, so their heights do not compare total power.</figcaption>
+</figure>
+</div>
+</div>
+<p>The atmosphere’s absorption depends on wavelength. It transmits much of the Sun’s <strong>shortwave</strong> radiation but absorbs strongly in parts of Earth’s <strong>longwave</strong> infrared.</p>
+<aside class="notes">
+<p>Both curves describe thermal emission. The hotter Sun emits most strongly at much shorter wavelengths than Earth’s surface. Shortwave includes visible and near-infrared sunlight. Longwave here refers to terrestrial infrared. The graph shows idealized emission per unit wavelength, with a logarithmic wavelength axis. Each curve has its own normalization, so equal peak heights do not mean equal power. These are source spectra, not solar irradiance received at Earth. The wavelength contrast alone does not explain the greenhouse effect: atmospheric absorption also varies with wavelength. Water vapor, carbon dioxide, and clouds absorb terrestrial infrared. The next diagram shows how that absorption and atmospheric emission change the energy pathways.</p>
+<p>Source and figure: course instructor notes, chapter 2, “Why the atmosphere intervenes”, and the accompanying Planck-law calculation in planck_spectra.py.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="kirchhoffs-law" class="slide level2 ebm-intro">
+<h2>Kirchhoff’s law: absorption and emission</h2>
+<p><strong>At a given wavelength, a good absorber is also a good emitter.</strong></p>
+<p><span class="math display">\[\text{absorptivity at }\lambda = \text{emissivity at }\lambda\]</span></p>
+<ul>
+<li><strong>Absorptivity:</strong> the fraction of incoming radiation a material absorbs.</li>
+<li><strong>Emissivity:</strong> its emission relative to a blackbody at the <strong>same temperature and wavelength</strong>.</li>
+</ul>
+<p>The atmosphere absorbs and emits strongly in some infrared bands, while absorbing weakly at many wavelengths of sunlight.</p>
+<div class="assumption">
+<p>This law applies under local thermodynamic equilibrium, a good approximation for the lower atmosphere. The amount emitted also depends on temperature.</p>
+</div>
+<div class="prompt">
+<p>Our atmospheric budget therefore needs emission as well as absorption.</p>
+</div>
+<aside class="notes">
+<p>The equality applies at the same wavelength and for corresponding directions, at the material’s temperature. Both coefficients range from zero to one. A good emitter means efficient relative to a blackbody at its own temperature, not necessarily a large absolute flux. A cold good emitter can radiate less than a warmer weak emitter. Local thermodynamic equilibrium concerns the local molecular populations. It does not require the atmosphere to have the same temperature as the surface, or require either reservoir’s energy budget to be in equilibrium. Do not equate shortwave absorptivity with longwave emissivity. In particular, one minus solar albedo does not give thermal emissivity. Atmospheric thermal emission occurs in all directions, giving both upward and downward fluxes in our layer model. It is distinct from reflection of surface radiation. Kirchhoff’s law alone does not set the atmosphere’s temperature. That comes from its energy budget.</p>
+<p>Source: course instructor notes, chapter 2, discussion of Kirchhoff’s law and the gray longwave approximation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="atmospheric-energy-pathways" class="slide level2 ebm-intro">
+<h2>The atmosphere changes the energy flows</h2>
+<p>The atmosphere absorbs some surface infrared radiation and emits upward and downward.</p>
+<div class="atmosphere-intro-image">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/atmosphere_flux_intro.svg"></p>
+<figcaption>Atmospheric energy pathways. Sunlight reaches the surface. Some surface thermal radiation is absorbed by the atmosphere and some passes directly to space. The atmosphere emits radiation upward to space and downward to the surface.</figcaption>
+</figure>
+</div>
+</div>
+<div class="response-line">
+<p><strong>Surface emission can differ from radiation escaping to space.</strong></p>
+</div>
+<div class="units">
+<p>Schematic: reflection, solar absorption in air, and nonradiative transfers omitted.</p>
+</div>
+<aside class="notes">
+<p>Use the diagram to revisit the assumption that every unit of energy emitted by the surface immediately escapes to space. Trace the red path absorbed in the atmosphere, the directly transmitted red path, and both purple atmospheric emission paths. Downward radiation adds an input to the surface. Upward atmospheric radiation contributes to the planet’s loss to space. Water vapor and CO2 are examples of gases that absorb infrared radiation; clouds contribute too. Absorption depends on wavelength, so transmitting sunlight does not imply transmitting all terrestrial infrared. The arrows are schematic, not flux magnitudes. The Sun arrow denotes absorbed solar input, with reflection already subtracted. This general diagram allows partial transmission, which we remove on the next slide when introducing the fully absorbing one-layer limit. It does not yet specify a quantitative layer model. The whole planet still balances absorbed sunlight and radiation escaping to space at equilibrium. We next specify the assumptions and write separate energy budgets for the surface and atmosphere.</p>
+<p>Figure: atmospheric panel adapted from the original course-note figure atmosphere_energy_flows.svg. Source: instructor notes, chapter 2, “Why the atmosphere intervenes”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="fully-absorbing-layer" class="slide level2 ebm-intro">
+<h2>A fully absorbing atmospheric layer</h2>
+<p>Two reservoirs: surface at <span class="math inline">\(T_s\)</span> and one atmospheric layer at <span class="math inline">\(T_a\)</span>.</p>
+<div class="one-layer-image">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/one_layer_fully_absorbing.svg"></p>
+<figcaption>Fully absorbing one-layer model. Net sunlight reaches the surface. The atmosphere absorbs all surface infrared radiation and emits upward to space and downward to the surface. No surface radiation escapes directly to space.</figcaption>
+</figure>
+</div>
+</div>
+<ul>
+<li>The layer transmits all sunlight and absorbs all surface longwave radiation.</li>
+<li>In the longwave, both surface and layer act as blackbodies. The layer emits <strong>upward and downward</strong>.</li>
+</ul>
+<div class="assumption">
+<p>Keep prescribed albedo: <span class="math inline">\(Q=(1-\alpha)S_0/4\)</span> reaches the surface. Omit convection and evaporation.</p>
+</div>
+<aside class="notes">
+<p>Compare with the preceding diagram: the direct surface-to-space arrow has disappeared. This is a deliberately idealized limit, not a claim that the real atmosphere absorbs every infrared wavelength. We retain the net solar input Q after reflection, even though this idealized layer itself transmits all sunlight. The surface absorbs the downward longwave radiation completely. Surface emission is sigma Ts^4. Each face of the layer emits sigma Ta^4. One atmospheric temperature represents a reservoir, not a resolved vertical temperature profile or the actual temperature at the top of the atmosphere. All quantities are fluxes per unit planetary area. The schematic arrows indicate directions, not magnitudes.</p>
+<p>Source: course instructor notes, chapter 2, one-layer model assumptions. Figure adapted from atmosphere_energy_flows.svg, with direct longwave transmission removed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-layer-time-dependent-budgets" class="slide level2 ebm-intro">
+<h2>Two reservoirs, two energy budgets</h2>
+<p>Each budget follows <strong>rate of storage = input − output</strong>, with <span class="math inline">\(Q=(1-\alpha)S_0/4\)</span>.</p>
+<div class="model-label">
+<p>Surface</p>
+</div>
+<p><span class="math display">\[C_s\frac{dT_s}{dt}=Q+\sigma T_a^4-\sigma T_s^4\]</span></p>
+<div class="units">
+<p>Absorbed sunlight + downward atmospheric radiation − surface emission.</p>
+</div>
+<div class="model-label">
+<p>Atmosphere</p>
+</div>
+<p><span class="math display">\[C_a\frac{dT_a}{dt}=\sigma T_s^4-2\sigma T_a^4\]</span></p>
+<div class="units">
+<p>Absorbed surface radiation − upward and downward atmospheric emission.</p>
+</div>
+<div class="assumption">
+<p><span class="math inline">\(C_s\)</span> and <span class="math inline">\(C_a\)</span> are constant heat capacities <strong>per unit area</strong>, in <span class="math inline">\(\mathrm{J\,m^{-2}\,K^{-1}}\)</span>. We leave their values unspecified for now.</p>
+</div>
+<div class="prompt">
+<p>Why does atmospheric emission have a factor of two, but surface emission does not?</p>
+</div>
+<aside class="notes">
+<p>Trace each term back to the preceding diagram. The surface absorbs net sunlight and downward atmospheric longwave radiation, and emits upward. The atmosphere absorbs all upward surface longwave radiation and emits from both faces. Each atmospheric emission term is sigma Ta^4, giving two terms in the atmospheric loss. The surface is the lower boundary and radiates upward into the atmosphere only in this model. The factor of two counts two emitting faces. It is unrelated to the factor of four used to average sunlight over a sphere. The left sides are rates of energy storage per unit area, with units W/m^2, matching every right-hand term. Neither reservoir needs to be in equilibrium. Temperatures are in kelvin. We have not yet set the time derivatives to zero or chosen heat capacities. Pause here before combining the equations or solving their equilibrium.</p>
+<p>Source: course instructor notes, chapter 2, time-dependent surface and atmospheric energy budgets.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-layer-whole-system" class="slide level2 ebm-intro">
+<h2>The whole-system energy budget</h2>
+<p>Add the surface and atmospheric budgets:</p>
+<p><span class="math display">\[\begin{aligned}
+C_s\frac{dT_s}{dt}+C_a\frac{dT_a}{dt}
+&amp;=(Q+\sigma T_a^4-\sigma T_s^4)\\
+&amp;\quad +(\sigma T_s^4-\sigma T_a^4-\sigma T_a^4).
+\end{aligned}\]</span></p>
+<p>Surface emission and downward atmospheric radiation are <strong>internal transfers</strong>. Each is a loss from one reservoir and a gain for the other.</p>
+<p><span class="math display">\[C_s\frac{dT_s}{dt}+C_a\frac{dT_a}{dt}=Q-\sigma T_a^4\]</span></p>
+<div class="response-line">
+<p>Total rate of energy storage = absorbed sunlight − radiation escaping to space.</p>
+</div>
+<div class="prompt">
+<p>Does zero total energy imbalance guarantee that both temperatures are steady?</p>
+</div>
+<aside class="notes">
+<p>Read the two parentheses as surface input minus output, then atmospheric input minus output. We have expanded the atmospheric loss into upward and downward emission. The negative surface-emission term cancels the atmospheric gain. The positive downward-radiation term cancels one atmospheric loss. The remaining atmospheric loss is emission to space. This is conservation for a boundary enclosing both reservoirs and holds during adjustment as well as at equilibrium. All terms have units W/m^2. No energy is created by the internal exchanges.</p>
+<p>Answer to the question: no. One reservoir could gain energy while the other loses an equal amount. Equilibrium of this model requires both dTs/dt and dTa/dt to vanish separately. A zero total imbalance at one instant is insufficient.</p>
+<p>Source: course instructor notes, chapter 2, “Add the budgets to check conservation”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-layer-equilibrium" class="slide level2 ebm-intro">
+<h2>Equilibrium of the one-layer model</h2>
+<p>Set <strong>both</strong> <span class="math inline">\(dT_s/dt=0\)</span> and <span class="math inline">\(dT_a/dt=0\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+\text{Surface:}\quad Q+\sigma T_a^4&amp;=\sigma T_s^4\\
+\text{Atmosphere:}\quad \sigma T_s^4&amp;=2\sigma T_a^4.
+\end{aligned}\]</span></p>
+<p>Substitute the atmospheric balance into the surface balance:</p>
+<p><span class="math display">\[Q+\sigma T_a^4=2\sigma T_a^4,\qquad Q=\sigma T_a^4.\]</span></p>
+<p>With <span class="math inline">\(Q\approx238\ \mathrm{W\,m^{-2}}\)</span>:</p>
+<p><span class="math display">\[T_a=\left(\frac{Q}{\sigma}\right)^{1/4}\approx255\ \mathrm{K}\]</span></p>
+<p><span class="math display">\[T_s=2^{1/4}T_a\approx303\ \mathrm{K}\]</span></p>
+<div class="assumption">
+<p>Heat capacities drop out again. The surface is warmer even though absorbed sunlight is unchanged.</p>
+</div>
+<aside class="notes">
+<p>The atmospheric balance gives Ts^4 = 2 Ta^4, hence Ts = 2^(1/4) Ta when taking positive roots in kelvin. Use Q = 238.175 W/m^2 and sigma = 5.67e-8 W/m<sup>2/K</sup>4 to obtain Ta = 254.58 K and Ts = 302.75 K, conventionally rounded to 255 and 303 K.</p>
+<p>Check the fluxes verbally: the surface receives about 238 W/m^2 from sunlight plus 238 from the atmosphere and emits about 476. The atmosphere receives 476 and emits 238 upward plus 238 downward. Only 238 enters and leaves the whole system. The larger surface emission represents internal exchange. It does not imply that the atmosphere creates energy. Downward radiation can flow from a cooler atmosphere to a warmer surface while the net longwave exchange remains upward from the warmer surface.</p>
+<p>The atmospheric layer equals the effective emission temperature in this particular model because it supplies all outgoing thermal radiation as a blackbody. This is not a measurement of the real top-of-atmosphere temperature. We still have not specified the heat capacities or solved the transient response.</p>
+<p>Source: course instructor notes, chapter 2, “Equilibrium as a special case” and “Check the equilibrium fluxes numerically”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-layer-too-warm" class="slide level2 ebm-intro">
+<h2>Now the model surface is too warm</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model or reference</th>
+<th style="text-align: center;">Mean surface temperature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bare-rock model</td>
+<td style="text-align: center;"><span class="math inline">\(\approx255\ \mathrm{K}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fully absorbing one-layer model</td>
+<td style="text-align: center;"><span class="math inline">\(\approx303\ \mathrm{K}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Earth</td>
+<td style="text-align: center;"><span class="math inline">\(\approx288\ \mathrm{K}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Adding the atmosphere separates <strong>surface temperature</strong> from <strong>the temperature that sets emission to space</strong>. But the model now overshoots.</p>
+<div class="prompt">
+<p>Does the atmosphere have to absorb all the surface’s infrared radiation?</p>
+</div>
+<p>Our next refinement: <strong>partial absorption</strong>, allowing some surface radiation to escape directly to space.</p>
+<div class="assumption">
+<p>Other simplifications remain, including one atmospheric temperature and no convection or evaporation. Partial absorption is only one refinement.</p>
+</div>
+<aside class="notes">
+<p>The temperature comparison is for the same prescribed sunlight and albedo in both models. Adding a physically meaningful process need not immediately produce the correct numerical answer. We have explained how a surface can be warmer than the effective emission temperature while conserving energy, but have not made a complete model of Earth’s climate.</p>
+<p>Real atmospheric absorption varies with wavelength, as discussed earlier. Some surface infrared radiation passes through relatively transparent wavelength ranges. Recall the direct surface-to-space arrow in the general energy-pathways diagram, which disappeared in the fully absorbing limit. We now have a physical reason to restore it. Partial absorption alone is not a complete explanation of the discrepancy. Matching Earth’s mean surface temperature would not validate every assumption or guarantee correct responses to perturbations. In the next block we can introduce a longwave absorption fraction and, consistently with Kirchhoff’s law under a gray approximation, reduce the layer’s emission too. Do not change absorption alone while retaining blackbody atmospheric emission.</p>
+<p>Source: course instructor notes, chapter 2, “What did adding a layer accomplish?” and “An atmosphere that absorbs only some infrared radiation”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="partial-absorption-fluxes" class="slide level2 ebm-intro">
+<h2>Partial infrared absorption</h2>
+<p>The layer absorbs a fraction <span class="math inline">\(\epsilon\)</span> of surface infrared radiation. The fraction <span class="math inline">\(1-\epsilon\)</span> escapes directly to space, with <span class="math inline">\(0\leq\epsilon\leq1\)</span>.</p>
+<div class="partial-layer-image">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/one_layer_partial_absorption.svg"></p>
+<figcaption>Partial-absorption model. Net sunlight Q reaches the surface. Of total surface emission sigma Ts to the fourth power, epsilon is absorbed by the atmosphere and one minus epsilon escapes directly to space. Atmospheric emission is epsilon sigma Ta to the fourth power in each direction.</figcaption>
+</figure>
+</div>
+</div>
+<p>Kirchhoff’s law links absorption and emission: the layer emits <span class="math inline">\(\epsilon\sigma T_a^4\)</span> <strong>upward and downward</strong>.</p>
+<div class="assumption">
+<p>We use one <span class="math inline">\(\epsilon\)</span> across all longwave wavelengths: the <strong>gray approximation</strong>. We neglect longwave reflection and keep the surface black in the longwave.</p>
+</div>
+<aside class="notes">
+<p>Reintroduce the direct surface-to-space path from the earlier qualitative diagram. The two red arrows partition one total surface emission sigma Ts^4. They are not two additional emissions. The atmosphere absorbs epsilon sigma Ts^4, and the remainder passes through without heating the layer. The purple arrows each carry epsilon sigma Ta^4. Kirchhoff’s law applies wavelength by wavelength under local thermodynamic equilibrium. A single common coefficient for these broadband fluxes requires our additional gray assumption, rather than following from Kirchhoff’s law alone. The same epsilon multiplies atmospheric absorption and emission, but the temperatures in the fluxes differ. Sunlight and albedo remain prescribed, the layer remains transparent to sunlight, and we still omit convection and evaporation. Q already accounts for reflected sunlight. Epsilon describes radiative behavior, not a CO2 concentration. Arrow widths are schematic.</p>
+<p>Source: course instructor notes, chapter 2, “Introduce one absorption parameter” and “Revise the arrows, then the budgets”. Diagram panel reused from Lab 1, figures/one_layer_fluxes.svg.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="partial-absorption-budgets" class="slide level2 ebm-intro">
+<h2>Budgets with partial absorption</h2>
+<div class="model-label">
+<p>Surface</p>
+</div>
+<p><span class="math display">\[C_s\frac{dT_s}{dt}=Q+\epsilon\sigma T_a^4-\sigma T_s^4\]</span></p>
+<div class="units">
+<p>The surface still loses its <strong>entire</strong> emission, wherever that radiation goes.</p>
+</div>
+<div class="model-label">
+<p>Atmosphere</p>
+</div>
+<p><span class="math display">\[C_a\frac{dT_a}{dt}=\epsilon\sigma T_s^4-2\epsilon\sigma T_a^4\]</span></p>
+<div class="units">
+<p>Only the absorbed fraction heats the layer. Emission leaves in both directions.</p>
+</div>
+<p>Adding the budgets gives:</p>
+<p><span class="math display">\[C_s\frac{dT_s}{dt}+C_a\frac{dT_a}{dt}
+=Q-\left[(1-\epsilon)\sigma T_s^4+\epsilon\sigma T_a^4\right].\]</span></p>
+<div class="assumption">
+<p>The bracket is outgoing longwave radiation (<strong>OLR</strong>): direct surface radiation + upward atmospheric emission.</p>
+</div>
+<aside class="notes">
+<p>Trace each term on the preceding diagram. A common mistake is to put epsilon in front of the surface’s emitted flux in the surface budget. The surface loses all sigma Ts^4, regardless of whether the atmosphere absorbs it or it reaches space. Another mistake is to count transmitted radiation as heating the layer. The atmosphere’s two loss terms both carry epsilon, consistent with its absorptivity under the gray assumption. Adding the equations cancels downward atmospheric radiation and leaves the unabsorbed part of surface emission plus upward atmospheric emission as the losses to space. This whole-system balance holds throughout adjustment, not just at equilibrium. All terms have units W/m^2. Q=(1-alpha)S0/4. Cs and Ca remain constant heat capacities per unit area.</p>
+<p>Source: course instructor notes, chapter 2, “Revise the arrows, then the budgets”, and the Lab 1 model equations.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="partial-absorption-equilibrium" class="slide level2 ebm-intro">
+<h2>Equilibrium with partial absorption</h2>
+<p>Set both temperature tendencies to zero. For <span class="math inline">\(\epsilon&gt;0\)</span>, the atmospheric balance gives:</p>
+<p><span class="math display">\[0=\epsilon\sigma T_s^4-2\epsilon\sigma T_a^4,
+\qquad T_a^4=\frac{T_s^4}{2}.\]</span></p>
+<p>Substitute into the surface balance:</p>
+<p><span class="math display">\[0=Q+\frac{\epsilon}{2}\sigma T_s^4-\sigma T_s^4,
+\qquad Q=(1-\epsilon/2)\sigma T_s^4.\]</span></p>
+<p><span class="math display">\[T_s=\left[\frac{Q}{\sigma(1-\epsilon/2)}\right]^{1/4}\]</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Absorption</th>
+<th style="text-align: left;">Equilibrium surface temperature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\epsilon=0\)</span>: transparent layer</td>
+<td style="text-align: left;"><span class="math inline">\((Q/\sigma)^{1/4}\approx255\ \mathrm{K}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\epsilon=1\)</span>: fully absorbing layer</td>
+<td style="text-align: left;"><span class="math inline">\((2Q/\sigma)^{1/4}\approx303\ \mathrm{K}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="assumption">
+<p>At <span class="math inline">\(\epsilon=0\)</span>, solve the surface budget directly. The atmospheric budget becomes <span class="math inline">\(0=0\)</span> and leaves <span class="math inline">\(T_a\)</span> undetermined.</p>
+</div>
+<aside class="notes">
+<p>In the atmospheric equilibrium equation, divide by epsilon sigma only when epsilon is positive. This gives Ta<sup>4=Ts</sup>4/2, or Ta=Ts/2^(1/4). Substituting into the surface budget gives the expression displayed. For positive epsilon, the cancellation in the atmospheric equation does not mean atmospheric temperature is independent of epsilon: it follows the changing surface temperature. The surface formula extends continuously to epsilon=0, but at exactly zero the atmosphere neither absorbs nor emits, so it retains its initial temperature in this model. We must not use the divided atmospheric equation to assign its temperature there.</p>
+<p>For fixed Q, surface equilibrium temperature increases with epsilon. The endpoints recover our earlier models. Intermediate values can give a temperature near Earth’s roughly 288 K, which students will explore in Lab 1. Matching one observed temperature is calibration, not validation of the whole model. In general Ta is no longer the effective emission temperature because radiation to space comes from both reservoirs. At equilibrium, OLR still equals Q. Heat capacities affect adjustment but not this equilibrium.</p>
+<p>Source: course instructor notes, chapter 2, “Solve for equilibrium” and “Check the endpoints and interpret the result”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
