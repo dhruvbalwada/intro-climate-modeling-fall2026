@@ -7,8 +7,8 @@ The schedule will be filled in as the semester progresses.
 | Wk | Date (Thu) | Topic | Materials | Reading | Due |
 |----|-----------|-------|-----------|---------|-----|
 | 1  | Sep 10 | Introduction: what is climate, what is a model, what is uncertainty | [slides](slides/week01.qmd) · [labs](labs/index.qmd) | [G&R Ch 1](https://link.springer.com/book/10.1007/978-3-662-48959-8) *(optional)* | Lab 0 |
-| 2  | Sep 17 | Energy balance models: equilibrium and adjustment | [Week 2 materials](week02.qmd) · [slides](slides/week02.qmd) | | |
-| 3  | Sep 24 | Climate adjustment, radiative forcing, and feedbacks | [slides](slides/week03.qmd) · [Lab 1b](labs/lab1b_adjustment.ipynb) · [Lab 1a (optional)](labs/lab1a_equilibrium.ipynb) | | |
+| 2  | Sep 17 | Energy balance models: equilibrium and adjustment | [slides](slides/week02.qmd) · [Lab 1a (optional)](labs/lab1a_equilibrium.ipynb) · [Lab 1b](labs/lab1b_adjustment.ipynb) | | |
+| 3  | Sep 24 | Climate adjustment, radiative forcing, and feedbacks | [slides](slides/week03.qmd) · [Lab 1b](labs/lab1b_adjustment.ipynb) · [Lab 1a (optional)](labs/lab1a_equilibrium.ipynb) | | [Lab 1b](labs/lab1b_adjustment.ipynb) |
 | 4  | Oct 1  | TBD | | | |
 | 5  | Oct 8  | TBD | | | |
 | 6  | Oct 15 | TBD | | | |
