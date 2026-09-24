@@ -312,14 +312,14 @@
     "href": "labs/index.html#week-2-sep-17",
     "title": "Labs",
     "section": "Week 2 (Sep 17)",
-    "text": "Week 2 (Sep 17)\nSee Week 2 materials for slides, LEAP instructions, and the submission checklist.\n\nLab 1a — Equilibrium and energy conservation: calculate equilibrium temperatures, vary atmospheric absorption, and check energy budgets · Download notebook\nLab 1b — Adjustment over time: use forward Euler to follow warming, compare heat capacities, and track changing fluxes · Download notebook"
+    "text": "Week 2 (Sep 17)\nFind the slides and lab links in the schedule. For LEAP, GitHub, and submission instructions, see Lab 0a.\n\nLab 1a — Equilibrium and energy conservation: calculate equilibrium temperatures, vary atmospheric absorption, and check energy budgets · Download notebook\nLab 1b — Adjustment over time: use forward Euler to follow warming, compare heat capacities, and track changing fluxes · Download notebook"
   },
   {
     "objectID": "labs/index.html#week-3-sep-24",
     "href": "labs/index.html#week-3-sep-24",
     "title": "Labs",
     "section": "Week 3 (Sep 24)",
-    "text": "Week 3 (Sep 24)\n\nLab 1b — Adjustment over time: complete all four sections in class, including the changing-flux experiments and discussion · Download notebook\nLab 1a — Equilibrium and energy conservation: optional practice with equilibrium temperatures and energy budgets.\n\nFind the slides and lab links in the schedule."
+    "text": "Week 3 (Sep 24)\nLab 1b is due this week. Save your completed notebook in your course GitHub repository and submit the repository link on Courseworks.\n\nLab 1b — Adjustment over time: complete all four sections in class, including the changing-flux experiments and discussion · Download notebook\nLab 1a — Equilibrium and energy conservation: optional practice with equilibrium temperatures and energy budgets.\n\nFind the slides and lab links in the schedule."
   },
   {
     "objectID": "labs/index.html#reference-optional",
@@ -900,6 +900,6 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nReading\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\nG&R Ch 1 (optional)\nLab 0\n\n\n2\nSep 17\nEnergy balance models: equilibrium and adjustment\nWeek 2 materials · slides\n\n\n\n\n3\nSep 24\nClimate adjustment, radiative forcing, and feedbacks\nslides · Lab 1b · Lab 1a (optional)\n\n\n\n\n4\nOct 1\nTBD\n\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
+    "text": "The schedule will be filled in as the semester progresses.\n\n\n\nWk\nDate (Thu)\nTopic\nMaterials\nReading\nDue\n\n\n\n\n1\nSep 10\nIntroduction: what is climate, what is a model, what is uncertainty\nslides · labs\nG&R Ch 1 (optional)\nLab 0\n\n\n2\nSep 17\nEnergy balance models: equilibrium and adjustment\nslides · Lab 1a (optional) · Lab 1b\n\n\n\n\n3\nSep 24\nClimate adjustment, radiative forcing, and feedbacks\nslides · Lab 1b · Lab 1a (optional)\n\nLab 1b\n\n\n4\nOct 1\nTBD\n\n\n\n\n\n5\nOct 8\nTBD\n\n\n\n\n\n6\nOct 15\nTBD\n\n\n\n\n\n7\nOct 22\nTBD\n\n\n\n\n\n8\nOct 29\nTBD\n\n\n\n\n\n9\nNov 5\nTBD\n\n\n\n\n\n10\nNov 12\nTBD\n\n\n\n\n\n11\nNov 19\nTBD\n\n\n\n\n\n12\nNov 26\nNo class (Thanksgiving)\n\n\n\n\n\n13\nDec 3\nTBD\n\n\n\n\n\n14\nDec 10\nFinal project presentations\n\n\n\n\n\n15\nDec 17\nFinal project presentations (if needed)"
   }
 ]
