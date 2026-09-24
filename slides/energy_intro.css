@@ -46,3 +46,10 @@
 .reveal .slides section.ebm-intro .spectrum-image img,
 .reveal .slides section.ebm-intro .one-layer-image img,
 .reveal .slides section.ebm-intro .partial-layer-image img { display: block; margin-inline: auto; }
+
+/* Three reveal stages share one position in the lab summary. */
+.reveal #adjustment-summary .r-stack { align-items: start; }
+.reveal #adjustment-summary .adjustment-stage { width: 100%; }
+.reveal #adjustment-summary .adjustment-stage img { display: block; width: 100%; height: 355px; object-fit: contain; margin: 0 auto 8px; }
+.reveal #adjustment-summary .adjustment-stage p { margin-bottom: 10px; }
+.reveal #adjustment-summary .units { font-size: 20px; margin-top: 12px; }

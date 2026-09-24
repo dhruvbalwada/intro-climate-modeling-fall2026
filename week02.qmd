@@ -23,15 +23,15 @@ Both notebooks need only NumPy and Matplotlib. The flux diagrams are embedded, s
 
 ## How we will work
 
-Start with **Lab 1a** in pairs. Complete the cells marked **TODO**, test the equilibrium limits, explore atmospheric absorption, and check conservation of energy. The supplied checks will fail until the TODOs are completed; work cell by cell rather than choosing Run All at the start.
+**Updated for Week 3:** Lab 1a is optional practice. Complete the cells marked **TODO**, test the equilibrium limits, explore atmospheric absorption, and check conservation of energy. The supplied checks will fail until the TODOs are completed; work cell by cell rather than choosing Run All at the start.
 
-Then move to **Lab 1b**, which uses the same forward Euler method as the bucket model. Its integration and plotting code are supplied. Before running each experiment, write what you expect and why, then explain the results in your own words.
+We will complete **Lab 1b** in class in Week 3. It uses the same forward Euler method as the bucket model. Its integration and plotting code are supplied. Before running each experiment, write what you expect and why, then explain the results in your own words.
 
-**Lab 1b, Section 5:** finish the changing-flux activity in class if time permits; otherwise complete it at home before submitting.
+Complete all four sections, including the changing-flux activity and discussion in **Section 4**. Week 3 slides and lab links are listed directly in the [schedule](schedule.qmd).
 
 ## Before submitting
 
-- Complete the code and written responses in both notebooks.
+- Complete the code and written responses in each assigned notebook.
 - Restart the kernel and run each completed notebook from top to bottom. Check that the tests pass and the figures appear.
 - Save the notebooks with their outputs in your private course GitHub repository, and commit and push your work.
 - Submit your repository link on Courseworks following the existing course instructions. Check Courseworks for the deadline.
