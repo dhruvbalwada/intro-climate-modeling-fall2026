@@ -202,8 +202,7 @@ window.Quarto = {
   <li><a href="#before-running-what-do-you-expect" id="toc-before-running-what-do-you-expect" class="nav-link" data-scroll-target="#before-running-what-do-you-expect">Before running: what do you expect?</a></li>
   <li><a href="#follow-the-adjustment" id="toc-follow-the-adjustment" class="nav-link" data-scroll-target="#follow-the-adjustment">2. Follow the adjustment</a></li>
   <li><a href="#give-the-surface-more-heat-capacity" id="toc-give-the-surface-more-heat-capacity" class="nav-link" data-scroll-target="#give-the-surface-more-heat-capacity">3. Give the surface more heat capacity</a></li>
-  <li><a href="#discussion-equilibrium-versus-transient-warming" id="toc-discussion-equilibrium-versus-transient-warming" class="nav-link" data-scroll-target="#discussion-equilibrium-versus-transient-warming">4. Discussion: equilibrium versus transient warming</a></li>
-  <li><a href="#follow-the-changing-fluxes-finish-in-class-or-at-home" id="toc-follow-the-changing-fluxes-finish-in-class-or-at-home" class="nav-link" data-scroll-target="#follow-the-changing-fluxes-finish-in-class-or-at-home">5. Follow the changing fluxes — finish in class or at home</a>
+  <li><a href="#how-the-radiation-budget-changes-during-adjustment" id="toc-how-the-radiation-budget-changes-during-adjustment" class="nav-link" data-scroll-target="#how-the-radiation-budget-changes-during-adjustment">4. How the radiation budget changes during adjustment</a>
   <ul class="collapse">
   <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion questions</a></li>
   </ul></li>
@@ -234,8 +233,8 @@ window.Quarto = {
 
 
 <p><a class="btn btn-primary btn-sm" href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab1b_adjustment.ipynb" download="">Download this notebook (.ipynb)</a></p>
-<p>Upload it to <a href="https://leap.2i2c.cloud/">LEAP</a> and open it with a Python kernel. See <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/week02.html">Week 2 materials</a> for instructions.</p>
-<p><strong>In-class activity · work with a partner · follows notebook 1a</strong></p>
+<p>Upload it to <a href="https://leap.2i2c.cloud/">LEAP</a> and open it with a Python kernel.</p>
+<p><strong>In-class activity · uses the model discussed in class</strong></p>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
@@ -243,7 +242,7 @@ window.Quarto = {
 <li>Use energy imbalances to explain how two reservoirs warm.</li>
 <li>Test how surface heat capacity changes adjustment without changing equilibrium.</li>
 </ul>
-<p>The integration and plotting code are supplied. Your work is to state what you expect and why, run the experiments, and explain the results in the response cells. Read each question before running the cells below it. Save your notebook with plots and your own written responses. Finish Section 5 at home before submission if we do not reach it in class.</p>
+<p>The integration and plotting code are supplied. Your work is to state what you expect and why, run the experiments, and explain the results in the response cells. Read each question before running the cells below it. Save your notebook with plots and your own written responses. Complete all four sections in class, including the changing-flux experiments and discussion in Section 4.</p>
 <p>This notebook runs independently of 1a and needs only NumPy and Matplotlib. Run cells in order. It uses the same model and constants as 1a.</p>
 </section>
 <section id="from-equilibrium-to-rates-of-change" class="level2">
@@ -257,7 +256,7 @@ window.Quarto = {
 </section>
 <section id="before-running-what-do-you-expect" class="level2">
 <h2 class="anchored" data-anchor-id="before-running-what-do-you-expect">Before running: what do you expect?</h2>
-<p>Start from the 288 K equilibrium found in notebook 1a. At <span class="math inline">\(t=0\)</span>, increase <span class="math inline">\(\epsilon\)</span> from its fitted value (about 0.779) to 0.82 and hold it there. <strong>Do you expect the surface to warm or cool?</strong> Explain your reasoning before running the model.</p>
+<p>Start from the 288 K equilibrium discussed in class (also explored in optional notebook 1a). At <span class="math inline">\(t=0\)</span>, increase <span class="math inline">\(\epsilon\)</span> from its fitted value (about 0.779) to 0.82 and hold it there. <strong>Do you expect the surface to warm or cool?</strong> Explain your reasoning before running the model.</p>
 <p><strong>Your expectation and reasoning:</strong></p>
 <p><em>Write here.</em></p>
 <div id="cell-4" class="cell">
@@ -275,7 +274,7 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Cs <span class="op">=</span> <span class="fl">1.0e8</span>          <span class="co"># J m^-2 K^-1</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Ca <span class="op">=</span> <span class="fl">1.0e7</span>          <span class="co"># J m^-2 K^-1</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Recover the fitted initial equilibrium from notebook 1a.</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the fitted initial equilibrium discussed in class.</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>epsilon_old <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> Q <span class="op">/</span> (sigma <span class="op">*</span> <span class="fl">288.0</span><span class="op">**</span><span class="dv">4</span>))</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>epsilon_new <span class="op">=</span> <span class="fl">0.82</span>  <span class="co"># prescribed absorption experiment, NOT a CO2 concentration</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
@@ -284,27 +283,33 @@ window.Quarto = {
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="dv">0</span> <span class="op">&lt;</span> epsilon <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Atmospheric equilibrium requires 0 &lt; epsilon &lt;= 1'</span>)</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    Ts <span class="op">=</span> (Q <span class="op">/</span> (sigma <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> epsilon <span class="op">/</span> <span class="dv">2</span>)))<span class="op">**</span><span class="fl">0.25</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([Ts, Ts <span class="op">/</span> <span class="dv">2</span><span class="op">**</span><span class="fl">0.25</span>])</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> budgets(temperature, epsilon):</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Net surface/air heating, OLR, and planetary imbalance, all W m^-2.</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">    temperature can be [Ts, Ta] or an array with shape (time, 2).</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    temperature <span class="op">=</span> np.asarray(temperature)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    Ts, Ta <span class="op">=</span> temperature[..., <span class="dv">0</span>], temperature[..., <span class="dv">1</span>]</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    surface_emission <span class="op">=</span> sigma <span class="op">*</span> Ts<span class="op">**</span><span class="dv">4</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    air_emission <span class="op">=</span> epsilon <span class="op">*</span> sigma <span class="op">*</span> Ta<span class="op">**</span><span class="dv">4</span>  <span class="co"># in EACH direction</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    Rs <span class="op">=</span> Q <span class="op">+</span> air_emission <span class="op">-</span> surface_emission</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    Ra <span class="op">=</span> epsilon <span class="op">*</span> surface_emission <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> air_emission</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    OLR <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> epsilon) <span class="op">*</span> surface_emission <span class="op">+</span> air_emission</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> Q <span class="op">-</span> OLR</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Rs, Ra, OLR, N</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> equilibrium(epsilon_old)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> equilibrium(epsilon_new)</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Absorption step: </span><span class="sc">{</span>epsilon_old<span class="sc">:.4f}</span><span class="ss"> → </span><span class="sc">{</span>epsilon_new<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Initial equilibrium: Ts = </span><span class="sc">{</span>initial[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss"> K; Ta = </span><span class="sc">{</span>initial[<span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss"> K'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store the two temperatures in a fixed order: [surface, atmosphere].</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([Ts, Ts <span class="op">/</span> <span class="dv">2</span><span class="op">**</span><span class="fl">0.25</span>])</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> budgets(temperature, epsilon):</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Net surface/air heating, OLR, and planetary imbalance, all W m^-2.</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">    temperature can be [Ts, Ta] or an array with shape (time, 2).</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    temperature <span class="op">=</span> np.asarray(temperature)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The last axis holds [Ts, Ta]. The ... selects every preceding row,</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># so this works for one temperature pair or a whole time history.</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    Ts, Ta <span class="op">=</span> temperature[..., <span class="dv">0</span>], temperature[..., <span class="dv">1</span>]</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    surface_emission <span class="op">=</span> sigma <span class="op">*</span> Ts<span class="op">**</span><span class="dv">4</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    air_emission <span class="op">=</span> epsilon <span class="op">*</span> sigma <span class="op">*</span> Ta<span class="op">**</span><span class="dv">4</span>  <span class="co"># in EACH direction</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Net heating = incoming minus outgoing radiation for each reservoir.</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    Rs <span class="op">=</span> Q <span class="op">+</span> air_emission <span class="op">-</span> surface_emission</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    Ra <span class="op">=</span> epsilon <span class="op">*</span> surface_emission <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> air_emission</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    OLR <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> epsilon) <span class="op">*</span> surface_emission <span class="op">+</span> air_emission</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> Q <span class="op">-</span> OLR</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Rs, Ra, OLR, N</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># These are temperature pairs [Ts, Ta], both in kelvin.</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> equilibrium(epsilon_old)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co"># The target is an analytic endpoint for comparison, not an input to the time stepping.</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> equilibrium(epsilon_new)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Absorption step: </span><span class="sc">{</span>epsilon_old<span class="sc">:.4f}</span><span class="ss"> → </span><span class="sc">{</span>epsilon_new<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Initial equilibrium: Ts = </span><span class="sc">{</span>initial[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss"> K; Ta = </span><span class="sc">{</span>initial[<span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss"> K'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-5" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Store the old and immediate post-step budgets for later comparisons.</span></span>
@@ -321,52 +326,73 @@ window.Quarto = {
 <p>We use illustrative <span class="math inline">\(C_s\)</span> and <span class="math inline">\(C_a\)</span> to explore the roles of heat storage, without choosing a particular ocean depth. <strong>The simulated times in years depend on these choices and are not a prediction of Earth’s warming timeline.</strong> The absorption step occurs before the first update.</p>
 <div id="cell-7" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> integrate(initial_temperature, epsilon, Cs, Ca, years<span class="op">=</span><span class="dv">60</span>, dt_days<span class="op">=</span><span class="fl">1.0</span>):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Forward Euler after a step to a constant epsilon; time returned in seconds."""</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> Cs <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> Ca <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> years <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> dt_days <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Heat capacities, duration, and time step must be positive'</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="dv">0</span> <span class="op">&lt;=</span> epsilon <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'epsilon must lie between 0 and 1'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    initial_temperature <span class="op">=</span> np.asarray(initial_temperature, dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> initial_temperature.shape <span class="op">!=</span> (<span class="dv">2</span>,) <span class="kw">or</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite(initial_temperature)):</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Provide two finite initial temperatures in kelvin'</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.<span class="bu">any</span>(initial_temperature <span class="op">&lt;=</span> <span class="dv">0</span>):</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Initial temperatures must be positive kelvin'</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    nsteps <span class="op">=</span> <span class="bu">int</span>(np.ceil(years <span class="op">*</span> YEAR <span class="op">/</span> (dt_days <span class="op">*</span> DAY)))</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.linspace(<span class="dv">0</span>, years <span class="op">*</span> YEAR, nsteps <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    dt <span class="op">=</span> time[<span class="dv">1</span>] <span class="op">-</span> time[<span class="dv">0</span>]</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    temperature <span class="op">=</span> np.empty((nsteps <span class="op">+</span> <span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    temperature[<span class="dv">0</span>] <span class="op">=</span> initial_temperature</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(nsteps):</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        Rs, Ra, _, _ <span class="op">=</span> budgets(temperature[n], epsilon)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        temperature[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> temperature[n] <span class="op">+</span> dt <span class="op">*</span> np.array([Rs <span class="op">/</span> Cs, Ra <span class="op">/</span> Ca])</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite(temperature[n <span class="op">+</span> <span class="dv">1</span>])) <span class="kw">or</span> np.<span class="bu">any</span>(temperature[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">&lt;=</span> <span class="dv">0</span>):</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">RuntimeError</span>(<span class="st">'Nonphysical numerical result; revisit the time step'</span>)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time, temperature</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>time, temperature <span class="op">=</span> integrate(initial, epsilon_new, Cs, Ca)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>Rs, Ra, OLR, N <span class="op">=</span> budgets(temperature, epsilon_new)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'After </span><span class="sc">{</span>time[<span class="op">-</span><span class="dv">1</span>] <span class="op">/</span> YEAR<span class="sc">:.0f}</span><span class="ss"> years: Ts = </span><span class="sc">{</span>temperature[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss"> K; '</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'Ta = </span><span class="sc">{</span>temperature[<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss"> K'</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Difference from analytic equilibrium: </span><span class="sc">{</span>temperature[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> target<span class="sc">}</span><span class="ss"> K'</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Final planetary imbalance: </span><span class="sc">{</span>N[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss"> W m^-2'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Follow both temperatures after a step to a constant epsilon.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    initial_temperature is [Ts, Ta] in kelvin.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns time in seconds and a temperature array with one row per time:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">        temperature[n, 0] is Ts at time[n];</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">        temperature[n, 1] is Ta at time[n].</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> Cs <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> Ca <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> years <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> dt_days <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Heat capacities, duration, and time step must be positive'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="dv">0</span> <span class="op">&lt;=</span> epsilon <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'epsilon must lie between 0 and 1'</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    initial_temperature <span class="op">=</span> np.asarray(initial_temperature, dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> initial_temperature.shape <span class="op">!=</span> (<span class="dv">2</span>,) <span class="kw">or</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite(initial_temperature)):</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Provide two finite initial temperatures in kelvin'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.<span class="bu">any</span>(initial_temperature <span class="op">&lt;=</span> <span class="dv">0</span>):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Initial temperatures must be positive kelvin'</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert the requested duration and step to seconds. Round the number</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># of steps up so the actual step is no larger than dt_days.</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    nsteps <span class="op">=</span> <span class="bu">int</span>(np.ceil(years <span class="op">*</span> YEAR <span class="op">/</span> (dt_days <span class="op">*</span> DAY)))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.linspace(<span class="dv">0</span>, years <span class="op">*</span> YEAR, nsteps <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    dt <span class="op">=</span> time[<span class="dv">1</span>] <span class="op">-</span> time[<span class="dv">0</span>]</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reserve a table for the full temperature history: one row for each</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># saved time, and two columns for Ts and Ta. The extra row is t=0.</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># np.empty reserves space; each row must be filled before we use it.</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    temperature <span class="op">=</span> np.empty((nsteps <span class="op">+</span> <span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    temperature[<span class="dv">0</span>] <span class="op">=</span> initial_temperature</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(nsteps):</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># temperature[n] is the current pair [Ts, Ta]. Calculate BOTH</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># budgets from this same pair; the underscores discard OLR and N.</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        Rs, Ra, _, _ <span class="op">=</span> budgets(temperature[n], epsilon)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># [Rs/Cs, Ra/Ca] gives the two warming rates in K/s. Multiply by</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># dt to get changes in K, then store both updated temperatures</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># together in the next row (forward Euler).</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        temperature[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> temperature[n] <span class="op">+</span> dt <span class="op">*</span> np.array([Rs <span class="op">/</span> Cs, Ra <span class="op">/</span> Ca])</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite(temperature[n <span class="op">+</span> <span class="dv">1</span>])) <span class="kw">or</span> np.<span class="bu">any</span>(temperature[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">&lt;=</span> <span class="dv">0</span>):</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">RuntimeError</span>(<span class="st">'Nonphysical numerical result; revisit the time step'</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time, temperature</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Evolve the old equilibrium using the new absorption parameter.</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>time, temperature <span class="op">=</span> integrate(initial, epsilon_new, Cs, Ca)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the budgets at every saved pair of temperatures for plotting.</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>Rs, Ra, OLR, N <span class="op">=</span> budgets(temperature, epsilon_new)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'After </span><span class="sc">{</span>time[<span class="op">-</span><span class="dv">1</span>] <span class="op">/</span> YEAR<span class="sc">:.0f}</span><span class="ss"> years: Ts = </span><span class="sc">{</span>temperature[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss"> K; '</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'Ta = </span><span class="sc">{</span>temperature[<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss"> K'</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Difference from analytic equilibrium: </span><span class="sc">{</span>temperature[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> target<span class="sc">}</span><span class="ss"> K'</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Final planetary imbalance: </span><span class="sc">{</span>N[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss"> W m^-2'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-8" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>), sharex<span class="op">=</span><span class="va">True</span>, constrained_layout<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(time <span class="op">/</span> YEAR, temperature[:, <span class="dv">0</span>], label<span class="op">=</span><span class="st">'Surface'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axhline(target[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'New equilibrium'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Surface temperature (K)'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(time <span class="op">/</span> YEAR, temperature[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'tab:orange'</span>, label<span class="op">=</span><span class="st">'Atmosphere'</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(target[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'New equilibrium'</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Atmospheric temperature (K)'</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].plot(time <span class="op">/</span> YEAR, N, color<span class="op">=</span><span class="st">'tab:green'</span>, label<span class="op">=</span><span class="st">'Absorbed sunlight − OLR'</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Years since absorption increased'</span>, ylabel<span class="op">=</span><span class="st">'Planetary imbalance (W m$^{-2}$)'</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes:</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="dv">0</span>, <span class="dv">15</span>)  <span class="co"># Display early adjustment; integration continues to 60 years.</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    ax.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Radiation changes first; temperatures then adjust'</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># temperature[:, 0] selects Ts at every saved time; [:, 1] selects Ta.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Divide time by YEAR to display years rather than the seconds used in the model.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>), sharex<span class="op">=</span><span class="va">True</span>, constrained_layout<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(time <span class="op">/</span> YEAR, temperature[:, <span class="dv">0</span>], label<span class="op">=</span><span class="st">'Surface'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axhline(target[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'New equilibrium'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Surface temperature (K)'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(time <span class="op">/</span> YEAR, temperature[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'tab:orange'</span>, label<span class="op">=</span><span class="st">'Atmosphere'</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(target[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'New equilibrium'</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Atmospheric temperature (K)'</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].plot(time <span class="op">/</span> YEAR, N, color<span class="op">=</span><span class="st">'tab:green'</span>, label<span class="op">=</span><span class="st">'Absorbed sunlight − OLR'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Years since absorption increased'</span>, ylabel<span class="op">=</span><span class="st">'Planetary imbalance (W m$^{-2}$)'</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes:</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="dv">0</span>, <span class="dv">15</span>)  <span class="co"># Display early adjustment; integration continues to 60 years.</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    ax.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Radiation changes first; temperatures then adjust'</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Interpret the curves:</strong></p>
 <ol type="1">
@@ -384,132 +410,138 @@ window.Quarto = {
 <p><em>Write here.</em></p>
 <p>Run the comparison below. Keep <span class="math inline">\(C_a\)</span>, sunlight, albedo, and the absorption change fixed so you isolate the effect of surface heat capacity.</p>
 <div id="cell-11" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Cs_large <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> Cs</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>time_large, temperature_large <span class="op">=</span> integrate(initial, epsilon_new, Cs_large, Ca)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.array_equal(time_large, time)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">4.5</span>), constrained_layout<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ax.plot(time <span class="op">/</span> YEAR, temperature[:, <span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>], label<span class="op">=</span><span class="st">'Original surface heat capacity'</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ax.plot(time_large <span class="op">/</span> YEAR, temperature_large[:, <span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>],</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'4 × surface heat capacity'</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.axhline(target[<span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Same final equilibrium'</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">30</span>), xlabel<span class="op">=</span><span class="st">'Years since absorption increased'</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>       ylabel<span class="op">=</span><span class="st">'Surface warming relative to initial state (K)'</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>       title<span class="op">=</span><span class="st">'More heat storage changes the adjustment, not the endpoint'</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, result <span class="kw">in</span> [(<span class="st">'Original Cs'</span>, temperature), (<span class="st">'4 × Cs'</span>, temperature_large)]:</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: final surface warming = </span><span class="sc">{</span>result[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss"> K'</span>)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Initial surface warming rates: </span><span class="sc">{</span>after[<span class="dv">0</span>] <span class="op">/</span> Cs <span class="op">*</span> DAY<span class="sc">:.5f}</span><span class="ss"> and '</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'</span><span class="sc">{</span>after[<span class="dv">0</span>] <span class="op">/</span> Cs_large <span class="op">*</span> DAY<span class="sc">:.5f}</span><span class="ss"> K/day'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change only surface heat capacity. Reuse the same starting temperatures,</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># absorption step, and atmospheric heat capacity.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Cs_large <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> Cs</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>time_large, temperature_large <span class="op">=</span> integrate(initial, epsilon_new, Cs_large, Ca)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.array_equal(time_large, time)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtract the initial surface temperature to plot warming rather than</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># absolute temperature. Both runs start from the same initial[0].</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">4.5</span>), constrained_layout<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.plot(time <span class="op">/</span> YEAR, temperature[:, <span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>], label<span class="op">=</span><span class="st">'Original surface heat capacity'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.plot(time_large <span class="op">/</span> YEAR, temperature_large[:, <span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>],</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'4 × surface heat capacity'</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ax.axhline(target[<span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'0.4'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Same final equilibrium'</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">30</span>), xlabel<span class="op">=</span><span class="st">'Years since absorption increased'</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>       ylabel<span class="op">=</span><span class="st">'Surface warming relative to initial state (K)'</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>       title<span class="op">=</span><span class="st">'More heat storage changes the adjustment, not the endpoint'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, result <span class="kw">in</span> [(<span class="st">'Original Cs'</span>, temperature), (<span class="st">'4 × Cs'</span>, temperature_large)]:</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: final surface warming = </span><span class="sc">{</span>result[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>] <span class="op">-</span> initial[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss"> K'</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># after[0] is the immediate surface imbalance Rs. Dividing by Cs gives</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># K/s; multiplying by DAY converts that rate to K/day.</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Initial surface warming rates: </span><span class="sc">{</span>after[<span class="dv">0</span>] <span class="op">/</span> Cs <span class="op">*</span> DAY<span class="sc">:.5f}</span><span class="ss"> and '</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'</span><span class="sc">{</span>after[<span class="dv">0</span>] <span class="op">/</span> Cs_large <span class="op">*</span> DAY<span class="sc">:.5f}</span><span class="ss"> K/day'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Compare your initial expectation with the plots.</strong> Explain in one or two sentences why two models with the same equilibrium response might warm at different rates. What changed in this experiment, and what stayed fixed?</p>
 <p><strong>Your response:</strong></p>
 <p><em>Write here.</em></p>
-<p><strong>What this experiment does not tell us:</strong> ε is not a CO₂ concentration, and its prescribed step is not a specified emissions scenario. The time scale depends on illustrative heat capacities. We have isolated one mechanism, not constructed a quantitative global-warming projection.</p>
 </section>
-<section id="discussion-equilibrium-versus-transient-warming" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-equilibrium-versus-transient-warming">4. Discussion: equilibrium versus transient warming</h2>
-<p>Our two runs have the same eventual warming but different warming at a given time. This is the distinction behind two widely used climate measures:</p>
-<ul>
-<li><strong>Equilibrium climate sensitivity (ECS):</strong> equilibrium global surface warming in response to doubled atmospheric CO₂.</li>
-<li><strong>Transient climate response (TCR):</strong> global surface warming averaged over a 20-year window centered on CO₂ doubling, in an experiment where CO₂ concentration increases by 1% per year (doubling at about year 70).</li>
-</ul>
-<p>Definitions: <a href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_AnnexVII.pdf">IPCC AR6 glossary</a>.</p>
-<p><strong>Our experiment illustrates the distinction; it does not measure ECS or TCR.</strong> We changed ε without a CO₂ mapping, used a sudden step rather than the TCR ramp, and chose illustrative heat capacities.</p>
-<p><strong>Discuss:</strong> Why is knowing the eventual warming insufficient to predict how much warming we experience over the next few decades?</p>
-<p><strong>Your discussion notes:</strong></p>
-<p><em>Write here.</em></p>
-</section>
-<section id="follow-the-changing-fluxes-finish-in-class-or-at-home" class="level2">
-<h2 class="anchored" data-anchor-id="follow-the-changing-fluxes-finish-in-class-or-at-home">5. Follow the changing fluxes — finish in class or at home</h2>
+<section id="how-the-radiation-budget-changes-during-adjustment" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-radiation-budget-changes-during-adjustment">4. How the radiation budget changes during adjustment</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="lab1b_adjustment_files/figure-html/cell-14-1-one_layer_fluxes.png" class="img-fluid figure-img"></p>
+<p><img src="lab1b_adjustment_files/figure-html/cell-13-1-one_layer_fluxes.png" class="img-fluid figure-img"></p>
 <figcaption>One-layer radiation budget: sunlight Q reaches the surface; surface emission splits into atmospheric absorption and direct escape to space; the atmosphere emits infrared upward and downward.</figcaption>
 </figure>
 </div>
 <p><strong>Read the arrows:</strong> Find each flux in the diagram. Which arrows cross the planetary boundary, and which transfer energy internally? The two red arrows add up to total surface emission; total outgoing radiation combines the directly escaping red arrow and the upward purple arrow. Arrow widths do not represent magnitudes.</p>
-<p><strong>If time permits, work through this in class; otherwise complete the discussion questions before submitting the lab.</strong> Plotting code is supplied. This returns to notebook 1a: there we balanced the individual fluxes at equilibrium; here we follow the same flows during adjustment.</p>
+<p><strong>Work through this section in class. Be ready to discuss the flux table and plots together.</strong> Plotting code is supplied. In class we balanced the individual fluxes at equilibrium, as explored in optional notebook 1a. Here we follow the same flows during adjustment.</p>
 <p>First compare the <strong>old equilibrium</strong>, the <strong>instant just after the absorption step</strong> (unchanged temperatures), and the <strong>new analytic equilibrium</strong>. Values in the table are flux magnitudes in W m<span class="math inline">\(^{-2}\)</span>.</p>
 <p>The plots then show <strong>changes from the old equilibrium</strong>, making the jumps and slower changes visible. A negative plotted change means a smaller flux, not a reversal in the direction of that radiation. The short segment before year zero is the old equilibrium, not another numerical integration.</p>
-<div id="cell-15" class="cell">
+<div id="cell-14" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> individual_fluxes(temp, epsilon):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Flux magnitudes (W m^-2), with the same definitions as notebook 1a."""</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> np.asarray(temp)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    emitted <span class="op">=</span> sigma <span class="op">*</span> temp[..., <span class="dv">0</span>]<span class="op">**</span><span class="dv">4</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    air_each_way <span class="op">=</span> epsilon <span class="op">*</span> sigma <span class="op">*</span> temp[..., <span class="dv">1</span>]<span class="op">**</span><span class="dv">4</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    solar <span class="op">=</span> np.full_like(emitted, Q)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    direct <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> epsilon) <span class="op">*</span> emitted</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Sunlight absorbed'</span>: solar,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Surface emission'</span>: emitted,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Absorbed by atmosphere'</span>: epsilon <span class="op">*</span> emitted,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Direct surface to space'</span>: direct,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Atmosphere upward'</span>: air_each_way,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Atmosphere downward'</span>: air_each_way,</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Total outgoing to space'</span>: direct <span class="op">+</span> air_each_way,</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Total surface input'</span>: solar <span class="op">+</span> air_each_way,</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>old_flux <span class="op">=</span> individual_fluxes(initial, epsilon_old)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>instant_flux <span class="op">=</span> individual_fluxes(initial, epsilon_new)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>final_flux <span class="op">=</span> individual_fluxes(target, epsilon_new)</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>flux_history <span class="op">=</span> individual_fluxes(temperature, epsilon_new)</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span><span class="st">"Flux (W m^-2)"</span><span class="sc">:28s}</span><span class="ss"> </span><span class="sc">{</span><span class="st">"Old eq."</span><span class="sc">:&gt;12s}</span><span class="ss"> </span><span class="sc">{</span><span class="st">"Just after"</span><span class="sc">:&gt;12s}</span><span class="ss"> </span><span class="sc">{</span><span class="st">"New eq."</span><span class="sc">:&gt;12s}</span><span class="ss">'</span>)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> old_flux:</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>name<span class="sc">:28s}</span><span class="ss"> </span><span class="sc">{</span>old_flux[name]<span class="sc">:12.3f}</span><span class="ss"> </span><span class="sc">{</span>instant_flux[name]<span class="sc">:12.3f}</span><span class="ss"> '</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f'</span><span class="sc">{</span>final_flux[name]<span class="sc">:12.3f}</span><span class="ss">'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># As in budgets(), columns 0 and 1 contain surface and air temperature.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># With a time history, each expression calculates a flux at every time.</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    emitted <span class="op">=</span> sigma <span class="op">*</span> temp[..., <span class="dv">0</span>]<span class="op">**</span><span class="dv">4</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    air_each_way <span class="op">=</span> epsilon <span class="op">*</span> sigma <span class="op">*</span> temp[..., <span class="dv">1</span>]<span class="op">**</span><span class="dv">4</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sunlight stays constant. Match its array shape to the other fluxes.</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    solar <span class="op">=</span> np.full_like(emitted, Q)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    direct <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> epsilon) <span class="op">*</span> emitted</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Sunlight absorbed'</span>: solar,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Surface emission'</span>: emitted,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Absorbed by atmosphere'</span>: epsilon <span class="op">*</span> emitted,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Direct surface to space'</span>: direct,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Atmosphere upward'</span>: air_each_way,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Atmosphere downward'</span>: air_each_way,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Total outgoing to space'</span>: direct <span class="op">+</span> air_each_way,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Total surface input'</span>: solar <span class="op">+</span> air_each_way,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare three states: before the step, just after it at unchanged</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># temperatures, and the new equilibrium. The final call follows all times.</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>old_flux <span class="op">=</span> individual_fluxes(initial, epsilon_old)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>instant_flux <span class="op">=</span> individual_fluxes(initial, epsilon_new)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>final_flux <span class="op">=</span> individual_fluxes(target, epsilon_new)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>flux_history <span class="op">=</span> individual_fluxes(temperature, epsilon_new)</span>
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Check these decomposed fluxes against the budgets used by the integrator.</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(flux_history[<span class="st">'Total outgoing to space'</span>], OLR)</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(flux_history[<span class="st">'Total surface input'</span>] <span class="op">-</span> flux_history[<span class="st">'Surface emission'</span>], Rs)</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(flux_history[<span class="st">'Absorbed by atmosphere'</span>]</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>                   <span class="op">-</span> flux_history[<span class="st">'Atmosphere upward'</span>] <span class="op">-</span> flux_history[<span class="st">'Atmosphere downward'</span>], Ra)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span><span class="st">"Flux (W m^-2)"</span><span class="sc">:28s}</span><span class="ss"> </span><span class="sc">{</span><span class="st">"Old eq."</span><span class="sc">:&gt;12s}</span><span class="ss"> </span><span class="sc">{</span><span class="st">"Just after"</span><span class="sc">:&gt;12s}</span><span class="ss"> </span><span class="sc">{</span><span class="st">"New eq."</span><span class="sc">:&gt;12s}</span><span class="ss">'</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> old_flux:</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>name<span class="sc">:28s}</span><span class="ss"> </span><span class="sc">{</span>old_flux[name]<span class="sc">:12.3f}</span><span class="ss"> </span><span class="sc">{</span>instant_flux[name]<span class="sc">:12.3f}</span><span class="ss"> '</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f'</span><span class="sc">{</span>final_flux[name]<span class="sc">:12.3f}</span><span class="ss">'</span>)</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Check these decomposed fluxes against the budgets used by the integrator.</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(flux_history[<span class="st">'Total outgoing to space'</span>], OLR)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(flux_history[<span class="st">'Total surface input'</span>] <span class="op">-</span> flux_history[<span class="st">'Surface emission'</span>], Rs)</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(flux_history[<span class="st">'Absorbed by atmosphere'</span>]</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>                   <span class="op">-</span> flux_history[<span class="st">'Atmosphere upward'</span>] <span class="op">-</span> flux_history[<span class="st">'Atmosphere downward'</span>], Ra)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-16" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Include the old equilibrium at negative times and a vertical jump at t=0.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plot_years <span class="op">=</span> np.r_[<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">0.0</span>, time <span class="op">/</span> YEAR]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">8</span>), sharex<span class="op">=</span><span class="va">True</span>, constrained_layout<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>panels <span class="op">=</span> [</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Across the planetary boundary'</span>, [</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Sunlight absorbed'</span>, <span class="st">'tab:orange'</span>, <span class="st">'--'</span>),</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Direct surface to space'</span>, <span class="st">'tab:blue'</span>, <span class="st">'-'</span>),</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Atmosphere upward'</span>, <span class="st">'tab:red'</span>, <span class="st">'-'</span>),</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Total outgoing to space'</span>, <span class="st">'black'</span>, <span class="st">'-'</span>),</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    ]),</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Inputs and output of the surface'</span>, [</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Sunlight absorbed'</span>, <span class="st">'tab:orange'</span>, <span class="st">'--'</span>),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Atmosphere downward'</span>, <span class="st">'tab:red'</span>, <span class="st">'-'</span>),</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Total surface input'</span>, <span class="st">'black'</span>, <span class="st">'--'</span>),</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Surface emission'</span>, <span class="st">'tab:blue'</span>, <span class="st">'-'</span>),</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    ]),</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, (title, lines) <span class="kw">in</span> <span class="bu">zip</span>(axes, panels):</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, color, style <span class="kw">in</span> lines:</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        change <span class="op">=</span> flux_history[name] <span class="op">-</span> old_flux[name]</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        ax.plot(plot_years, np.r_[<span class="fl">0.0</span>, <span class="fl">0.0</span>, change], label<span class="op">=</span>name,</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span>color, linestyle<span class="op">=</span>style, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'0.5'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(title<span class="op">=</span>title, ylabel<span class="op">=</span><span class="st">'Change from old equilibrium (W m$^{-2}$)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">10</span>))</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    ax.legend(loc<span class="op">=</span><span class="st">'best'</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Years relative to the absorption increase'</span>)</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Which fluxes jump, and which change as temperatures respond?'</span>)</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-15" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># np.r_ joins the entries into one array. Add an old-equilibrium segment</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># at -1 and 0 years; time also starts at 0, representing the post-step state.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The two entries at t=0 let the plot show an instantaneous vertical jump.</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plot_years <span class="op">=</span> np.r_[<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">0.0</span>, time <span class="op">/</span> YEAR]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">8</span>), sharex<span class="op">=</span><span class="va">True</span>, constrained_layout<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>panels <span class="op">=</span> [</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Across the planetary boundary'</span>, [</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Sunlight absorbed'</span>, <span class="st">'tab:orange'</span>, <span class="st">'--'</span>),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Direct surface to space'</span>, <span class="st">'tab:blue'</span>, <span class="st">'-'</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Atmosphere upward'</span>, <span class="st">'tab:red'</span>, <span class="st">'-'</span>),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Total outgoing to space'</span>, <span class="st">'black'</span>, <span class="st">'-'</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    ]),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Inputs and output of the surface'</span>, [</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Sunlight absorbed'</span>, <span class="st">'tab:orange'</span>, <span class="st">'--'</span>),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Atmosphere downward'</span>, <span class="st">'tab:red'</span>, <span class="st">'-'</span>),</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Total surface input'</span>, <span class="st">'black'</span>, <span class="st">'--'</span>),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Surface emission'</span>, <span class="st">'tab:blue'</span>, <span class="st">'-'</span>),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    ]),</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, (title, lines) <span class="kw">in</span> <span class="bu">zip</span>(axes, panels):</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, color, style <span class="kw">in</span> lines:</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot anomalies relative to the old equilibrium, not absolute fluxes.</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        change <span class="op">=</span> flux_history[name] <span class="op">-</span> old_flux[name]</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The prepended zeros are the unchanged flux before the step.</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        ax.plot(plot_years, np.r_[<span class="fl">0.0</span>, <span class="fl">0.0</span>, change], label<span class="op">=</span>name,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span>color, linestyle<span class="op">=</span>style, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'0.5'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(title<span class="op">=</span>title, ylabel<span class="op">=</span><span class="st">'Change from old equilibrium (W m$^{-2}$)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">10</span>))</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    ax.legend(loc<span class="op">=</span><span class="st">'best'</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Years relative to the absorption increase'</span>)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Which fluxes jump, and which change as temperatures respond?'</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="discussion-questions" class="level3">
 <h3 class="anchored" data-anchor-id="discussion-questions">Discussion questions</h3>
+<p>Revisit the predictions from the slide before Lab 1b. Use the temperature curves, flux table, and radiation-budget plots to support your explanations.</p>
 <ol type="1">
-<li><p>Which fluxes change immediately when ε increases, and which change only as temperatures respond?</p>
+<li><p><strong>What will happen to the temperature?</strong> Compare the initial and final surface and atmospheric temperatures. Explain how the changing surface inputs and outputs produce warming.</p>
 <p><strong>Your response:</strong> <em>Write here.</em></p></li>
-<li><p>How do the changing surface inputs and outputs explain its warming? Identify the gap between input and output in the surface plot.</p>
+<li><p><strong>Do temperatures change immediately?</strong> Distinguish a sudden change in temperature from the start of a temperature tendency. Does the surface or the atmosphere start warming first?</p>
 <p><strong>Your response:</strong> <em>Write here.</em></p></li>
-<li><p>At the new equilibrium, which fluxes return to their original values—and which remain different? Use the table or plots to give examples.</p>
+<li><p><strong>Which radiation fluxes change immediately?</strong> Use the flux table to separate immediate changes from changes as temperatures respond. At the new equilibrium, which fluxes return to their original values, and which remain different?</p>
+<p><strong>Your response:</strong> <em>Write here.</em></p></li>
+<li><p><strong>Does the planet initially gain or lose energy?</strong> Explain using <span class="math inline">\(N=Q-\mathrm{OLR}\)</span>. How does this imbalance evolve, and does <span class="math inline">\(N\approx0\)</span> mean temperatures have returned to their initial values?</p>
+<p><strong>Your response:</strong> <em>Write here.</em></p></li>
+<li><p><strong>What role do the heat capacities play?</strong> Use the two experiments to explain how increasing only <span class="math inline">\(C_s\)</span> changes the initial warming rate, the adjustment, and the final temperatures.</p>
 <p><strong>Your response:</strong> <em>Write here.</em></p></li>
 </ol>
 </section>
@@ -519,7 +551,7 @@ window.Quarto = {
 <ul>
 <li>Run the cells in order and check that all three figures and the flux table appear.</li>
 <li>Complete the expectation and response cells in your own words.</li>
-<li>Complete Section 5, in class or at home, and save the notebook with its outputs.</li>
+<li>Complete all four sections during class, including the changing-flux discussion, and save the notebook with its outputs.</li>
 <li>Follow the course’s existing submission instructions.</li>
 </ul>
 
