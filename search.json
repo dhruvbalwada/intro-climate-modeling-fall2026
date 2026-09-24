@@ -312,14 +312,14 @@
     "href": "labs/index.html#week-2-sep-17",
     "title": "Labs",
     "section": "Week 2 (Sep 17)",
-    "text": "Week 2 (Sep 17)\nFind the slides and lab links in the schedule. For LEAP, GitHub, and submission instructions, see Lab 0a.\n\nLab 1a — Equilibrium and energy conservation: calculate equilibrium temperatures, vary atmospheric absorption, and check energy budgets · Download notebook\nLab 1b — Adjustment over time: use forward Euler to follow warming, compare heat capacities, and track changing fluxes · Download notebook"
+    "text": "Week 2 (Sep 17)\nWe covered the energy-balance models in lecture but did not reach the labs. Lab 1b moves to Week 3; Lab 1a is optional practice."
   },
   {
     "objectID": "labs/index.html#week-3-sep-24",
     "href": "labs/index.html#week-3-sep-24",
     "title": "Labs",
     "section": "Week 3 (Sep 24)",
-    "text": "Week 3 (Sep 24)\nLab 1b is due this week. Save your completed notebook in your course GitHub repository and submit the repository link on Courseworks.\n\nLab 1b — Adjustment over time: complete all four sections in class, including the changing-flux experiments and discussion · Download notebook\nLab 1a — Equilibrium and energy conservation: optional practice with equilibrium temperatures and energy budgets.\n\nFind the slides and lab links in the schedule."
+    "text": "Week 3 (Sep 24)\nLab 1b is due this week. Save your completed notebook in your course GitHub repository and submit the repository link on Courseworks.\n\nLab 1b — Adjustment over time: complete all four sections in class, including the changing-flux experiments and discussion · Download notebook\nLab 1a — Equilibrium and energy conservation: optional practice with equilibrium temperatures and energy budgets · Download notebook\n\nFind the slides and lab links in the schedule. For LEAP, GitHub, and submission instructions, see Lab 0a."
   },
   {
     "objectID": "labs/index.html#reference-optional",
