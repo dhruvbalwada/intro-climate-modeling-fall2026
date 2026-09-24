@@ -13,19 +13,16 @@ Labs are done in class, saved into your course GitHub repo, and submitted by pos
 
 ## Week 2 (Sep 17)
 
-Find the slides and lab links in the [schedule](../schedule.qmd). For LEAP, GitHub, and submission instructions, see [Lab 0a](lab0a.qmd).
-
-- **[Lab 1a — Equilibrium and energy conservation](lab1a_equilibrium.ipynb)**: calculate equilibrium temperatures, vary atmospheric absorption, and check energy budgets · <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab1a_equilibrium.ipynb" download>Download notebook</a>
-- **[Lab 1b — Adjustment over time](lab1b_adjustment.ipynb)**: use forward Euler to follow warming, compare heat capacities, and track changing fluxes · <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab1b_adjustment.ipynb" download>Download notebook</a>
+We covered the energy-balance models in lecture but did not reach the labs. Lab 1b moves to Week 3; Lab 1a is optional practice.
 
 ## Week 3 (Sep 24)
 
 **Lab 1b is due this week.** Save your completed notebook in your course GitHub repository and submit the repository link on Courseworks.
 
 - **[Lab 1b — Adjustment over time](lab1b_adjustment.ipynb)**: complete all four sections in class, including the changing-flux experiments and discussion · <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab1b_adjustment.ipynb" download>Download notebook</a>
-- **[Lab 1a — Equilibrium and energy conservation](lab1a_equilibrium.ipynb)**: optional practice with equilibrium temperatures and energy budgets.
+- **[Lab 1a — Equilibrium and energy conservation](lab1a_equilibrium.ipynb)**: optional practice with equilibrium temperatures and energy budgets · <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/lab1a_equilibrium.ipynb" download>Download notebook</a>
 
-Find the slides and lab links in the [schedule](../schedule.qmd).
+Find the slides and lab links in the [schedule](../schedule.qmd). For LEAP, GitHub, and submission instructions, see [Lab 0a](lab0a.qmd).
 
 ## Reference (optional)
 
