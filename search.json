@@ -39,14 +39,7 @@
     "href": "project.html",
     "title": "Final Project",
     "section": "",
-    "text": "You will develop your own research question and answer it using either output from real climate model simulations (CMIP6 and related archives) or experiments with a simple model of the kind built in class — or both. The deliverable is a reproducible Jupyter notebook documenting your analysis and insights, presented in class during the final weeks.\nExamples of the format and spirit: Earth & Environmental Data Science project gallery."
-  },
-  {
-    "objectID": "project.html#timeline",
-    "href": "project.html#timeline",
-    "title": "Final Project",
-    "section": "Timeline",
-    "text": "Timeline\n\n\n\n\n\n\n\nDate\nMilestone\n\n\n\n\nFri Oct 9\nProject title (1 sentence)\n\n\nFri Oct 23\nProposal (1 page max): question, why it matters, data/model identified and confirmed accessible, planned figures, one annotated reference\n\n\nDec 10 / 17\nIn-class presentation\n\n\nFri Dec 18\nFinal notebook due\n\n\n\nA menu of starter topics, the proposal template, and grading rubrics will be posted here by week 3."
+    "text": "Final project details: TBD.\nProject instructions, deadlines, and grading criteria will be posted here once finalized."
   },
   {
     "objectID": "homeworks/index.html",
