@@ -4,7 +4,7 @@ title: "Homeworks"
 
 Download each notebook and work on it in [LEAP JupyterHub](https://leap.2i2c.cloud/). Save your completed notebook with its outputs in your private course GitHub repository, then submit its link on Courseworks.
 
-## HW1 — From time stepping to climate response {#hw1}
+## HW1 {#hw1}
 
 **Weeks 1–3 · 100 points · Two-week assignment**
 

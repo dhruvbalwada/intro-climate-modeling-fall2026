@@ -19,7 +19,7 @@ Earth system and climate models are critically important tools for climate scien
 
 ## Homework
 
-**[HW1 — From time stepping to climate response](homeworks/index.qmd#hw1)** is available. It covers weeks 1–3; see Courseworks for the submission deadline.
+**[HW1](homeworks/index.qmd#hw1)** is available. It covers weeks 1–3; see Courseworks for the submission deadline.
 
 ## Key dates
 
