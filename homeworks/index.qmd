@@ -1,0 +1,21 @@
+---
+title: "Homeworks"
+---
+
+Download each notebook and work on it in [LEAP JupyterHub](https://leap.2i2c.cloud/). Save your completed notebook with its outputs in your private course GitHub repository, then submit its link on Courseworks.
+
+## HW1 — From time stepping to climate response {#hw1}
+
+**Weeks 1–3 · 100 points · Two-week assignment**
+
+- Write Euler’s method and investigate numerical error.
+- Compare greenhouse models with the same surface temperature.
+- Explore warming rates, equilibrium warming, and changes in stored energy.
+
+<a class="btn btn-primary" href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/homeworks/hw1.ipynb" download="hw1.ipynb">Download HW1 (.ipynb)</a>
+
+[Read the assignment online](hw1.ipynb)
+
+**Deadline:** see the HW1 assignment on Courseworks.
+
+Most plotting code is supplied. Complete the coding tasks and written responses in the notebook. For setup and submission instructions, see [Lab 0a](../labs/lab0a.qmd).

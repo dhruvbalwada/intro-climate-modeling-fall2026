@@ -4,6 +4,7 @@ project:
   resources:
     - "labs/data/*"
     - "labs/*.ipynb"
+    - "homeworks/*.ipynb"
     - "syllabus/*.docx"
 
 website:
@@ -17,6 +18,8 @@ website:
         text: Schedule
       - href: labs/index.qmd
         text: Labs
+      - href: homeworks/index.qmd
+        text: Homeworks
       - href: project.qmd
         text: Final Project
     right:
