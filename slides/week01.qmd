@@ -33,7 +33,7 @@ Brief self-intro, then straight into the work.
 | Participation/attendance | 5% | in-class presence |
 | Labs | 10% | in class, almost every week — submit by end of week |
 | Homework (5) | 50% | ~every two weeks |
-| Project proposal | 10% | title **Oct 9** · proposal **Oct 23** |
+| Project proposal | 10% | proposal **Oct 23** |
 | Final project | 25% | present Dec 10/17 · notebook due **Dec 18** |
 
 
@@ -42,7 +42,7 @@ Brief self-intro, then straight into the work.
 All code in your own private GitHub repo; submitting = posting the folder or notebook link on Courseworks. 
 
 ::: {.notes}
-Flag the early project-title date (Oct 9!). Late policy: 10%/day, one free late HW. 
+Late policy: 10%/day, one free late HW.
 :::
 
 ## Using AI in this course {.smaller}
@@ -141,4 +141,3 @@ One slide of philosophy, then the labs make it real. The structure/parameters li
 . . .
 
 **Next week:** the Earth *is* a bucket — sunlight pours in, infrared drains out, and the level is the heat (temperature). 
-

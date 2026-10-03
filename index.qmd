@@ -23,7 +23,6 @@ Earth system and climate models are critically important tools for climate scien
 
 ## Key dates
 
-- **Oct 9** — final project *title* due
 - **Oct 23** — final project *proposal* due (1 page)
 - **Dec 10 / 17** — project presentations
 - **Dec 18** — final project notebook due
