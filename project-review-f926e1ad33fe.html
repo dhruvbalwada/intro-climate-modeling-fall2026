@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Final Project – Introduction to Climate Modeling</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="robots" content="noindex, nofollow">
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Introduction to Climate Modeling</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./labs/index.html"> 
+<span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./homeworks/index.html"> 
+<span class="menu-text">Homeworks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./project.html"> 
+<span class="menu-text">Final Project</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dhruvbalwada/intro-climate-modeling-fall2026"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#from-a-climate-science-paper-to-an-ipcc-figure" id="toc-from-a-climate-science-paper-to-an-ipcc-figure" class="nav-link active" data-scroll-target="#from-a-climate-science-paper-to-an-ipcc-figure">From a climate science paper to an IPCC figure</a></li>
+  <li><a href="#teams-and-dates" id="toc-teams-and-dates" class="nav-link" data-scroll-target="#teams-and-dates">Teams and dates</a></li>
+  <li><a href="#what-your-project-should-contain" id="toc-what-your-project-should-contain" class="nav-link" data-scroll-target="#what-your-project-should-contain">What your project should contain</a></li>
+  <li><a href="#project-options" id="toc-project-options" class="nav-link" data-scroll-target="#project-options">Project options</a></li>
+  <li><a href="#ai-assistance-and-a-trustworthy-data-pipeline" id="toc-ai-assistance-and-a-trustworthy-data-pipeline" class="nav-link" data-scroll-target="#ai-assistance-and-a-trustworthy-data-pipeline">AI assistance and a trustworthy data pipeline</a></li>
+  <li><a href="#notebook-and-presentation" id="toc-notebook-and-presentation" class="nav-link" data-scroll-target="#notebook-and-presentation">Notebook and presentation</a></li>
+  <li><a href="#how-the-project-will-be-evaluated" id="toc-how-the-project-will-be-evaluated" class="nav-link" data-scroll-target="#how-the-project-will-be-evaluated">How the project will be evaluated</a></li>
+  <li><a href="#starting-resources" id="toc-starting-resources" class="nav-link" data-scroll-target="#starting-resources">Starting resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final Project</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Draft for instructor and TA review
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This project guide is under discussion and has not been released to students. Dates below match the course syllabus; presentation order and submission details will be posted on Courseworks.</p>
+</div>
+</div>
+<section id="from-a-climate-science-paper-to-an-ipcc-figure" class="level2">
+<h2 class="anchored" data-anchor-id="from-a-climate-science-paper-to-an-ipcc-figure">From a climate science paper to an IPCC figure</h2>
+<p>How does a scientific result become a figure that helps us understand climate change?</p>
+<p>Working in <strong>groups of 3–4</strong>, you will study an influential climate science paper, reproduce a result connected to a figure in the <strong>IPCC Sixth Assessment Report, Working Group I: The Physical Science Basis</strong>, and explain the physical science behind it. You will use climate model output, observational data, experiments with a simple model, or a combination of these.</p>
+<p>AI tools can help with finding documentation, writing and debugging code, and handling data. Your responsibility is to <strong>understand the science, explain the full data pipeline, and demonstrate why the result can be trusted</strong>.</p>
+<section id="what-does-reproduce-a-figure-mean" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-reproduce-a-figure-mean">What does “reproduce a figure” mean?</h3>
+<p>Reproduce the scientific result by working from data or a model. This may mean one panel, a few models, or a simplified experiment. Your figure should answer the same physical question as the target, with any differences in methods or scope made clear.</p>
+<p>You do not need to match every color, reproduce the entire IPCC assessment, or derive every equation in the paper. You do need to explain the quantities you calculate, the physical relationships they represent, and why your result agrees with or differs from the published result. A careful explanation of a discrepancy is a valuable outcome.</p>
+<p>Some anchor papers are direct sources for an IPCC figure. Others establish a mechanism or method that the IPCC illustrates using newer data. Identify which relationship applies to your project.</p>
+</section>
+</section>
+<section id="teams-and-dates" class="level2">
+<h2 class="anchored" data-anchor-id="teams-and-dates">Teams and dates</h2>
+<p>With 31 students, we will have <strong>nine teams of three and one team of four</strong>. Every team member should contribute to the analysis and be able to explain the paper, the main processing steps, and the final figures.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Milestone</th>
+<th>Date</th>
+<th>What to submit or prepare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Project topic and team selection</td>
+<td><strong>Friday, October 23</strong></td>
+<td>Team member names and selected topic. Include two ranked alternatives if your first choice is already taken.</td>
+</tr>
+<tr class="even">
+<td>In-class presentations</td>
+<td><strong>December 10 and 17</strong></td>
+<td>A <strong>30-minute slot per team</strong>: plan for 20 minutes presenting, 8 minutes of questions, and 2 minutes for transition.</td>
+</tr>
+<tr class="odd">
+<td>Final project notebook</td>
+<td><strong>Friday, December 18</strong></td>
+<td>Reproducible notebook, supporting files, and presentation slides.</td>
+</tr>
+</tbody>
+</table>
+<p>As stated in the syllabus, topic and team selection counts for <strong>10% of the course grade</strong>, and the final project counts for <strong>25%</strong>. The syllabus late-assignment policy applies. The October 23 milestone is topic and team selection; a written proposal is not required.</p>
+<p>Discuss your choice and the exact target panel with the instructor. The menu has 12 options for 10 teams, so some options will remain unused. Related topics can also be adapted into distinct questions with instructor agreement.</p>
+</section>
+<section id="what-your-project-should-contain" class="level2">
+<h2 class="anchored" data-anchor-id="what-your-project-should-contain">What your project should contain</h2>
+<ol type="1">
+<li><strong>A physical question and an anchor paper.</strong> Explain the question, the paper’s approach and main finding, and how it connects to the IPCC figure. Read the relevant IPCC discussion as well as the caption.</li>
+<li><strong>A reproducible analysis.</strong> Start from clearly identified data or documented model equations and parameters. Explain each transformation needed to produce your result.</li>
+<li><strong>A comparison with the published result.</strong> Show your figure alongside, or clearly linked to, the target. Explain differences in data, experiments, reference periods, methods, and uncertainty.</li>
+<li><strong>Evidence that the pipeline is correct.</strong> Include at least three relevant checks, with the results visible in the notebook. Choose checks that could reveal a consequential error.</li>
+<li><strong>One extension.</strong> Change a parameter, model, region, season, or analysis choice. State your physical expectation before running it, then explain the outcome.</li>
+</ol>
+<p>Start with one model, region, or experiment and get a complete result before expanding. A few well-understood calculations are enough. Mathematical depth should serve the physical explanation: define symbols and units, explain the terms in the equations you use, and describe their assumptions.</p>
+</section>
+<section id="project-options" class="level2">
+<h2 class="anchored" data-anchor-id="project-options">Project options</h2>
+<p>The scopes below are starting points to refine with the instructor. Availability varies by model and experiment; confirm access to a small data sample early. The core task is required for your agreed scope; the suggested extension can be replaced by another focused question.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Physical question</th>
+<th>Main approach</th>
+<th>IPCC target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#option-1">1. Climate sensitivity</a></td>
+<td>How can we estimate equilibrium warming before a model equilibrates?</td>
+<td>CMIP6 energy-budget regression</td>
+<td>Chapter 7, Box 7.1, Figure 1</td>
+</tr>
+<tr class="even">
+<td><a href="#option-2">2. Transient climate response</a></td>
+<td>Why does warming lag behind forcing?</td>
+<td>CMIP6 plus a two-layer model</td>
+<td>Figures 7.17 and 7.18b</td>
+</tr>
+<tr class="odd">
+<td><a href="#option-3">3. Moisture and rainfall</a></td>
+<td>Why do atmospheric moisture and rainfall change at different rates?</td>
+<td>CMIP6 water-cycle analysis</td>
+<td>Figure 8.16</td>
+</tr>
+<tr class="even">
+<td><a href="#option-4">4. Arctic sea ice</a></td>
+<td>How does sea-ice loss relate to warming and CO₂ emissions?</td>
+<td>Observations and CMIP6</td>
+<td>Figure 9.14</td>
+</tr>
+<tr class="odd">
+<td><a href="#option-5">5. Cumulative emissions</a></td>
+<td>Why does warming scale with cumulative CO₂?</td>
+<td>Simple carbon-cycle–climate model</td>
+<td>Figure 5.31</td>
+</tr>
+<tr class="even">
+<td><a href="#option-6">6. Internal variability</a></td>
+<td>Can the same model produce different warming trends?</td>
+<td>Initial-condition large ensemble</td>
+<td>Figure 1.13</td>
+</tr>
+<tr class="odd">
+<td><a href="#option-7">7. Projection uncertainty</a></td>
+<td>Where does uncertainty in future warming come from?</td>
+<td>Models, scenarios, and ensemble members</td>
+<td>Figure 1.15</td>
+</tr>
+<tr class="even">
+<td><a href="#option-8">8. Past projections</a></td>
+<td>How well did early models predict subsequent warming?</td>
+<td>Published projections and observations</td>
+<td>Figure 1.9</td>
+</tr>
+<tr class="odd">
+<td><a href="#option-9">9. Land–ocean contrast</a></td>
+<td>Why does land warm more than the ocean?</td>
+<td>CMIP6 warming patterns</td>
+<td>Figure 4.31</td>
+</tr>
+<tr class="even">
+<td><a href="#option-10">10. Extreme heat</a></td>
+<td>Do the hottest days warm at the global-average rate?</td>
+<td>Regional daily CMIP6 temperatures</td>
+<td>Figure 11.3</td>
+</tr>
+<tr class="odd">
+<td><a href="#option-11">11. Ocean heat content</a></td>
+<td>Where is the excess energy stored?</td>
+<td>Gridded ocean temperatures</td>
+<td>Figure 9.6a</td>
+</tr>
+<tr class="even">
+<td><a href="#option-12">12. Attribution</a></td>
+<td>How do we identify the human contribution to warming?</td>
+<td>Observations and forcing experiments</td>
+<td>Figure 3.9</td>
+</tr>
+</tbody>
+</table>
+<section id="option-1" class="level3">
+<h3 class="anchored" data-anchor-id="option-1">1. Estimating climate sensitivity</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1029/2003GL018747">Gregory et al.&nbsp;(2004), <em>A new method for diagnosing radiative forcing and climate sensitivity</em></a>. <strong>IPCC connection:</strong> the forcing–feedback framework in <a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/">Chapter 7, Box 7.1, Figure 1</a>.</p>
+<p><strong>Core task:</strong> Use <code>abrupt-4xCO2</code> and the corresponding <code>piControl</code> simulation for 2–3 models. Calculate changes in global surface temperature and net top-of-atmosphere energy flux. Plot energy imbalance against temperature and estimate forcing, net feedback, and effective equilibrium climate sensitivity. This gives a data-based counterpart to the IPCC schematic.</p>
+<p><strong>Explain:</strong> What do the slope and intercepts mean? Why is the sensitivity inferred from a finite simulation an effective estimate? How do you convert the quadrupling experiment to a doubling estimate?</p>
+<p><strong>Check and extend:</strong> Verify flux signs and units, area weighting, and alignment with the control. Compare early- and late-year fits and explain what that reveals about the constant-feedback approximation. Build beyond any Gregory analysis completed in class.</p>
+</section>
+<section id="option-2" class="level3">
+<h3 class="anchored" data-anchor-id="option-2">2. Transient climate response: why does warming lag behind forcing?</h3>
+<p><strong>Papers:</strong> <a href="https://doi.org/10.1175/JCLI-D-12-00195.1">Geoffroy et al.&nbsp;(2013), two-layer energy-balance model, Part I</a>, and <a href="https://doi.org/10.1126/sciadv.aba1981">Meehl et al.&nbsp;(2020), interpreting ECS and TCR in CMIP6</a>. <strong>IPCC targets:</strong> <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-7/figure-7-17/">Figure 7.17</a> and the model comparison in <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-7/figure-7-18/">Figure 7.18b</a>.</p>
+<p><strong>Core task:</strong> Calculate transient climate response (TCR) for 3–5 models using <code>1pctCO2</code> and corresponding <code>piControl</code> output. TCR measures warming around CO₂ doubling, approximately year 70 of a 1%-per-year concentration increase. Use a documented 20-year averaging window around doubling, following the <a href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter_07_Supplementary_Material.pdf">IPCC supplementary method</a>, and compare your estimates with published model values.</p>
+<p>Use a two-layer energy-balance model with published parameters to explain the temperature-response curves in Figure 7.17. A full calibration or reproduction of its assessed uncertainty bands is beyond the core scope. Figure 7.17 holds CO₂ constant after doubling; the standard CMIP <code>1pctCO2</code> experiment continues increasing it. Keep these experiments distinct.</p>
+<p><strong>Explain:</strong> How do feedbacks and ocean heat uptake determine TCR? Why does warming continue after concentration stabilizes? How does TCR differ from equilibrium climate sensitivity?</p>
+<p><strong>Check and extend:</strong> Check the doubling time, averaging-window convention, area weighting, and control drift. Vary ocean heat exchange while keeping equilibrium sensitivity fixed and predict how TCR changes.</p>
+</section>
+<section id="option-3" class="level3">
+<h3 class="anchored" data-anchor-id="option-3">3. Atmospheric moisture versus rainfall</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1175/JCLI3990.1">Held and Soden (2006), <em>Robust Responses of the Hydrological Cycle to Global Warming</em></a>. <strong>IPCC target:</strong> selected moisture and precipitation curves in <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-8/figure-8-16/">Figure 8.16</a>.</p>
+<p><strong>Core task:</strong> For a few CMIP6 models, calculate percentage changes in total atmospheric water vapour (<code>prw</code>) and precipitation (<code>pr</code>) against global warming (<code>tas</code>). Begin with global means, then reproduce a simplified comparison for one region and season in the target figure. Runoff and variability curves are outside the minimum scope.</p>
+<p><strong>Explain:</strong> Why does atmospheric water vapour respond strongly to temperature, while global-average rainfall is constrained by the atmospheric energy budget? Why might a regional result depart from the global relationship?</p>
+<p><strong>Check and extend:</strong> Check precipitation unit conversions, reference-period denominators, seasonal averaging, and spatial masks. Compare two seasons or regions without assuming that a global scaling must hold locally.</p>
+</section>
+<section id="option-4" class="level3">
+<h3 class="anchored" data-anchor-id="option-4">4. Arctic sea ice, warming, and emissions</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1126/science.aag2345">Notz and Stroeve (2016), <em>Observed Arctic sea-ice loss directly follows anthropogenic CO₂ emission</em></a>. <strong>IPCC target:</strong> September panels of <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-9/figure-9-14/">Figure 9.14</a>, updated using Notz and the SIMIP Community (2020).</p>
+<p><strong>Core task:</strong> Plot September Arctic sea-ice area against global warming and/or cumulative CO₂ emissions. Compare an observational estimate with a few CMIP6 models and calculate the sensitivity of ice loss over a stated period.</p>
+<p><strong>Explain:</strong> Why can these relationships be approximately linear? What roles do energy balance, feedbacks, and internal variability play? Where should a linear extrapolation cease to be useful?</p>
+<p><strong>Check and extend:</strong> Distinguish sea-ice area from extent, check concentration fractions versus percentages, and use the sea-ice grid’s cell areas. If using emissions, distinguish carbon mass from CO₂ mass. Compare March with September or test sensitivity to the fitting period.</p>
+</section>
+<section id="option-5" class="level3">
+<h3 class="anchored" data-anchor-id="option-5">5. Cumulative CO₂ and global warming</h3>
+<p><strong>Anchor paper:</strong> <a href="https://www.nature.com/articles/nature08047">Matthews et al.&nbsp;(2009), <em>The proportionality of global warming to cumulative carbon emissions</em></a>. <strong>IPCC connection:</strong> the temperature–cumulative-emissions relationship in <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-5/figure-5-31/">Figure 5.31</a>.</p>
+<p><strong>Core task:</strong> Use a documented simple carbon-cycle–climate model, such as FaIR, to compare CO₂-only emissions pathways with different timing but similar cumulative totals. Plot warming against cumulative emissions and assess the approximate proportionality. Reproduce this relationship rather than the complete assessed carbon-budget figure.</p>
+<p><strong>Explain:</strong> How do carbon uptake and ocean heat uptake jointly shape the relationship? Distinguish emissions, concentrations, forcing, and temperature, and distinguish TCRE from TCR in option 2.</p>
+<p><strong>Check and extend:</strong> Track mass units, time integration, initialization, and non-CO₂ forcing. Check that the pathways have the intended cumulative totals. Examine what happens after emissions reach zero or when their timing changes.</p>
+</section>
+<section id="option-6" class="level3">
+<h3 class="anchored" data-anchor-id="option-6">6. Internal variability and warming trends</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1007/s00382-010-0977-x">Deser et al.&nbsp;(2012), <em>Uncertainty in climate change projections: the role of internal variability</em></a>. <strong>IPCC target:</strong> a temperature panel from <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-1/figure-1-13/">Figure 1.13</a>, which uses the MPI Grand Ensemble described by Maher et al.&nbsp;(2019).</p>
+<p><strong>Core task:</strong> Use an initial-condition ensemble from one model to compare individual temperature trajectories with the ensemble mean. Calculate the spread of trends over different time windows for the globe and one region. Another documented large ensemble can be used as an explicit adaptation of the IPCC analysis.</p>
+<p><strong>Explain:</strong> Why do simulations with the same model and forcing evolve differently? What does the ensemble mean estimate, and why do regional or short-term trends differ from the long-term forced response?</p>
+<p><strong>Check and extend:</strong> Confirm that members share the model configuration and forcing, align their time periods, and distinguish member spread from uncertainty in the ensemble mean. Examine how trend spread changes with averaging period or region size.</p>
+</section>
+<section id="option-7" class="level3">
+<h3 class="anchored" data-anchor-id="option-7">7. Sources of uncertainty in projections</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1175/2009BAMS2607.1">Hawkins and Sutton (2009), <em>The Potential to Narrow Uncertainty in Regional Climate Predictions</em></a>. <strong>IPCC connection:</strong> the comparison of uncertainty sources in <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-1/figure-1-15/">Figure 1.15</a>.</p>
+<p><strong>Core task:</strong> Make a simplified comparison of scenario, model-response, and internal-variability contributions to projected temperature uncertainty for the globe or one region. Agree on a balanced subset of models, scenarios, and ensemble members and an explicit decomposition method with the instructor before starting.</p>
+<p><strong>Explain:</strong> Why does the relative importance of the components change with lead time and spatial scale? What assumptions let you separate them, and what uncertainties does the calculation omit?</p>
+<p><strong>Check and extend:</strong> Verify that uneven model/member counts do not silently determine the weights. Document whether quantities are variances, standard deviations, or ranges, and check that the decomposition is internally consistent. Compare two time horizons or spatial scales. This option needs more statistical guidance than most others.</p>
+</section>
+<section id="option-8" class="level3">
+<h3 class="anchored" data-anchor-id="option-8">8. Evaluating early climate projections</h3>
+<p><strong>Anchor reading:</strong> <a href="https://doi.org/10.1029/2019GL085378">Hausfather et al.&nbsp;(2020), <em>Evaluating the Performance of Past Climate Model Projections</em></a>, plus one original projection paper chosen from that study. <strong>IPCC target:</strong> selected comparisons from <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-1/figure-1-9/">Figure 1.9</a>, directly based on the evaluation.</p>
+<p><strong>Core task:</strong> Compare a small selection of published projections with subsequent observed warming. Evaluate both temperature change over time and temperature change relative to forcing, using the study’s archived data where appropriate.</p>
+<p><strong>Explain:</strong> How can differences in assumed forcing affect apparent model performance? What did the original model represent, and which conclusions can you draw about its physical response?</p>
+<p><strong>Check and extend:</strong> Align baselines, projection start dates, evaluation periods, and forcing definitions. Make sure the evaluation distinguishes the projection period from earlier observations. Test an alternative observational dataset or evaluation window.</p>
+</section>
+<section id="option-9" class="level3">
+<h3 class="anchored" data-anchor-id="option-9">9. Land–ocean warming contrast</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1029/2006GL028164">Sutton, Dong and Gregory (2007), <em>Land/sea warming ratio in response to climate change</em></a>. <strong>IPCC target:</strong> the 2°C warming map in <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-4/figure-4-31/">Figure 4.31</a>.</p>
+<p><strong>Core task:</strong> Calculate warming patterns at a 2°C global warming level for three CMIP6 models. Show a map and calculate separate area-weighted land and ocean warming, using near-surface air temperature consistently.</p>
+<p><strong>Explain:</strong> How do ocean heat uptake, moisture availability, evaporation, and atmospheric temperature structure contribute to the contrast? Why is a difference in heat capacity alone insufficient to explain a contrast that persists near equilibrium? <a href="https://doi.org/10.1175/2009JCLI2652.1">Dong et al.&nbsp;(2009)</a> is a useful mechanism reading.</p>
+<p><strong>Check and extend:</strong> Check fractional land masks, cell areas, baselines, and the 20-year window used to define each model’s warming level. Compare warming levels or latitude bands.</p>
+</section>
+<section id="option-10" class="level3">
+<h3 class="anchored" data-anchor-id="option-10">10. Regional extreme heat versus global warming</h3>
+<p><strong>Anchor paper:</strong> <a href="https://www.nature.com/articles/nature16542">Seneviratne et al.&nbsp;(2016), <em>Allowable CO₂ emissions based on regional and impact-related climate targets</em></a>. <strong>IPCC target:</strong> two regional curves from <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-11/figure-11-3/">Figure 11.3</a>.</p>
+<p><strong>Core task:</strong> For a few models and two contrasting regions, calculate each grid cell’s hottest daily maximum temperature in each year (TXx). Average this index over the region and compare its change with global-average warming. Use multi-year averages to identify the relationship.</p>
+<p><strong>Explain:</strong> Why can changes in the hottest days differ from global-average warming? Discuss land warming, soil moisture and evaporative cooling, and circulation where relevant. Temperature curves alone do not establish which mechanism causes a regional difference.</p>
+<p><strong>Check and extend:</strong> Use daily maximum temperature, handle model calendars correctly, and calculate local annual maxima before spatial averaging. Restrict daily-data downloads to the study regions. Test the relationship in another scenario or compare extreme and regional mean warming.</p>
+</section>
+<section id="option-11" class="level3">
+<h3 class="anchored" data-anchor-id="option-11">11. Ocean heat content: where does the energy go?</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1126/sciadv.1601545">Cheng et al.&nbsp;(2017), <em>Improved estimates of ocean heat content from 1960 to 2015</em></a>. <strong>IPCC target:</strong> the historical part of <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-9/figure-9-6/">Figure 9.6a</a>, which brings together several observational and model-based estimates.</p>
+<p><strong>Core task:</strong> Use a documented gridded ocean-temperature product or model simulation to calculate changes in heat stored in the upper 2000 m. Compare the resulting time series with a published estimate and separate the 0–700 m and 700–2000 m contributions. Starting from a gridded product does not require reconstructing the original observational mapping procedure.</p>
+<p><strong>Explain:</strong> How do temperature, water volume, density, and heat capacity determine heat storage? How does ocean heat-content change connect to Earth’s energy imbalance, and what does sparse sampling imply for observations?</p>
+<p><strong>Check and extend:</strong> Verify depth bounds, layer volumes, masks, reference periods, and conversion to joules or zettajoules. State any constant-density/heat-capacity approximation. Compare two ocean basins or quantify sensitivity to the maximum integration depth. Three-dimensional data make careful subsetting important.</p>
+</section>
+<section id="option-12" class="level3">
+<h3 class="anchored" data-anchor-id="option-12">12. Attributing warming to human influence</h3>
+<p><strong>Anchor paper:</strong> <a href="https://doi.org/10.1126/science.290.5499.2133">Stott et al.&nbsp;(2000), <em>External Control of 20th Century Temperature by Natural and Anthropogenic Forcings</em></a>. <strong>IPCC target:</strong> the global or one continental panel of <a href="https://www.ipcc.ch/report/ar6/wg1/figures/chapter-3/figure-3-9/">Figure 3.9</a>, which applies related experimental comparisons to newer models and observations.</p>
+<p><strong>Core task:</strong> Compare observed temperature changes with a small ensemble of CMIP6 historical all-forcing and natural-only (<code>hist-nat</code>) simulations. Reproduce the selected panel’s main comparison with your stated subset. Additional greenhouse-gas-only or aerosol-only experiments are optional.</p>
+<p><strong>Explain:</strong> What is the purpose of the natural-only counterfactual? How do forcing responses and internal variability enter the comparison? Explain what this evidence supports and how a full detection-and-attribution analysis goes beyond visual agreement.</p>
+<p><strong>Check and extend:</strong> Verify experiment labels, common baselines, ensemble weighting, and the observational coverage and temperature definition. Compare a continental result with the global result, or examine an additional forcing experiment where available.</p>
+</section>
+</section>
+<section id="ai-assistance-and-a-trustworthy-data-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="ai-assistance-and-a-trustworthy-data-pipeline">AI assistance and a trustworthy data pipeline</h2>
+<p><strong>AI assistance is permitted for this project.</strong> You may use it to locate documentation, explore methods, generate or debug code, and help process data. Check scientific claims against the paper, report, or dataset documentation. You are responsible for every submitted calculation and explanation, including code developed with AI assistance.</p>
+<p>Your notebook should let another student follow the complete chain:</p>
+<p><strong>source data or model → selection → processing → calculation → figure → scientific interpretation</strong></p>
+<p>For each major stage, explain what enters, what changes, and why. Document the dataset or model version; experiment, scenario, and member selections; variables and units; time periods and baselines; spatial masks and weights; and treatment of missing values, control drift, or uncertainty where relevant.</p>
+<p>Useful checks include:</p>
+<ul>
+<li>Comparing one model’s result against a published value or independently calculated diagnostic.</li>
+<li>Verifying that an area-weighted average has sensible weights and a sensible magnitude.</li>
+<li>Checking a unit conversion or a time integral by hand for a small example.</li>
+<li>Testing a conservation law, limiting case, or known solution in a simple model.</li>
+<li>Repeating a calculation with a different averaging window or another reasonable analysis choice.</li>
+</ul>
+<p>Show the numerical result of each check and explain what it establishes. A plausible-looking plot or a statement that “the code ran” is insufficient evidence.</p>
+<p>Include a short <strong>AI-use statement</strong> identifying the tools used, the tasks they helped with, and how you checked their output. Give one concrete example of a suggestion you verified, corrected, or rejected; if you did not use AI, say so. Cite external code and adapted workflows. Write the scientific interpretation in your own words and ensure every team member can explain it.</p>
+</section>
+<section id="notebook-and-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-and-presentation">Notebook and presentation</h2>
+<section id="reproducible-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="reproducible-notebook">Reproducible notebook</h3>
+<p>Submit a notebook that tells a scientific story, with explanatory text between code cells. Include:</p>
+<ul>
+<li>The question, paper citation, IPCC figure link, and agreed scope.</li>
+<li>A concise explanation of the physics and the equations or diagnostics used.</li>
+<li>Data access or model setup, followed by the documented processing pipeline.</li>
+<li>Your reproduced result, comparison, validation checks, and extension.</li>
+<li>Conclusions, limitations, references, AI-use statement, and a brief account of each member’s contributions.</li>
+</ul>
+<p>Provide a README with run instructions and a record of the software environment. Remove private credentials and machine-specific paths. Identify data sources and retrieval steps; explain any access requirements, cached intermediates, or long-running steps. Restart the kernel and run the workflow in order before submission, and retain the final outputs for review. A separate written report is not required.</p>
+</section>
+<section id="presentation" class="level3">
+<h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
+<p>Use your 20-minute presentation to lead the class from the physical question to the evidence. Explain the paper and its IPCC connection, show the essential pipeline and checks, compare your result with the target, and present your extension and conclusions. Choose figures and equations that you can explain clearly within the available time.</p>
+<p>Every team member should speak and be ready to answer questions about the overall project. Divide the work as useful, while making sure that understanding is shared across the team.</p>
+</section>
+</section>
+<section id="how-the-project-will-be-evaluated" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-project-will-be-evaluated">How the project will be evaluated</h2>
+<p>The final project will be assessed on:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>What strong work demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Physical understanding</td>
+<td>A clear explanation of mechanisms, quantities, assumptions, and the anchor paper’s contribution.</td>
+</tr>
+<tr class="even">
+<td>Analysis and validation</td>
+<td>Appropriate methods, a traceable pipeline, and checks that support the result.</td>
+</tr>
+<tr class="odd">
+<td>Comparison and judgment</td>
+<td>An honest assessment of agreement, discrepancies, uncertainty, and limitations.</td>
+</tr>
+<tr class="even">
+<td>Extension</td>
+<td>A focused question, a stated physical expectation, and a thoughtful interpretation of the outcome.</td>
+</tr>
+<tr class="odd">
+<td>Reproducibility and communication</td>
+<td>An organized notebook, useful figures, clear presentation, accurate citations, and shared understanding.</td>
+</tr>
+</tbody>
+</table>
+<p>Ambition is valuable when it leads to understanding. A well-scoped analysis with convincing checks can be stronger than a much larger analysis that the team cannot explain.</p>
+</section>
+<section id="starting-resources" class="level2">
+<h2 class="anchored" data-anchor-id="starting-resources">Starting resources</h2>
+<ul>
+<li><a href="https://www.ipcc.ch/report/ar6/wg1/">IPCC AR6 WGI report and chapters</a></li>
+<li><a href="https://www.ipcc.ch/report/ar6/wg1/resources/data-access/">IPCC figure data and code access</a></li>
+<li><a href="https://github.com/IPCC-WG1">IPCC WGI figure-code repositories</a></li>
+</ul>
+<p>Published code and processed figure data are useful references and comparison targets. Explain any parts you reuse and carry out the agreed analysis yourself. Some archived workflows require adaptation to current software or computing environments; a smaller, transparent reproduction is an appropriate goal.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Dhruv Balwada · Columbia Climate School · Fall 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
