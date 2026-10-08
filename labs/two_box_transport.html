@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How does heat transport shape regional climates? – Introduction to Climate Modeling</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Introduction to Climate Modeling</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/index.html"> 
+<span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../homeworks/index.html"> 
+<span class="menu-text">Homeworks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../project.html"> 
+<span class="menu-text">Final Project</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dhruvbalwada/intro-climate-modeling-fall2026"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#start-with-observations-where-does-earth-gain-and-lose-energy" id="toc-start-with-observations-where-does-earth-gain-and-lose-energy" class="nav-link active" data-scroll-target="#start-with-observations-where-does-earth-gain-and-lose-energy">Start with observations: where does Earth gain and lose energy?</a></li>
+  <li><a href="#two-equal-area-regions-and-their-budgets" id="toc-two-equal-area-regions-and-their-budgets" class="nav-link" data-scroll-target="#two-equal-area-regions-and-their-budgets">1. Two equal-area regions and their budgets</a>
+  <ul class="collapse">
+  <li><a href="#supplied-numerical-integration" id="toc-supplied-numerical-integration" class="nav-link" data-scroll-target="#supplied-numerical-integration">Supplied numerical integration</a></li>
+  </ul></li>
+  <li><a href="#turn-on-poleward-transport" id="toc-turn-on-poleward-transport" class="nav-link" data-scroll-target="#turn-on-poleward-transport">2. Turn on poleward transport</a></li>
+  <li><a href="#how-can-unequal-radiative-budgets-be-steady" id="toc-how-can-unequal-radiative-budgets-be-steady" class="nav-link" data-scroll-target="#how-can-unequal-radiative-budgets-be-steady">3. How can unequal radiative budgets be steady?</a></li>
+  <li><a href="#what-changed-and-what-stayed-the-same" id="toc-what-changed-and-what-stayed-the-same" class="nav-link" data-scroll-target="#what-changed-and-what-stayed-the-same">4. What changed, and what stayed the same?</a>
+  <ul class="collapse">
+  <li><a href="#optional-experiment-sweep-the-transport-strength" id="toc-optional-experiment-sweep-the-transport-strength" class="nav-link" data-scroll-target="#optional-experiment-sweep-the-transport-strength">Optional experiment: sweep the transport strength</a></li>
+  </ul></li>
+  <li><a href="#closing-comparison-what-do-the-two-box-models-teach-us" id="toc-closing-comparison-what-do-the-two-box-models-teach-us" class="nav-link" data-scroll-target="#closing-comparison-what-do-the-two-box-models-teach-us">Closing comparison: what do the two box models teach us?</a>
+  <ul class="collapse">
+  <li><a href="#optional-reading" id="toc-optional-reading" class="nav-link" data-scroll-target="#optional-reading">Optional reading</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">How does heat transport shape regional climates?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Week 5 · Tropical–polar boxes</strong></p>
+<p>The surface–deep-ocean model explored fast and slow adjustment. Now we use two boxes to represent <strong>places with different solar heating</strong>. Each region exchanges radiation with space and energy with the other region.</p>
+<p><strong>Central question:</strong> How can a region maintain a steady temperature even when its absorbed sunlight and outgoing radiation do not balance?</p>
+<p>All code is supplied. <strong>Make a guess or work it out, run, then explain.</strong> Focus on regional temperatures, transported energy, and conservation. No eigenvalue calculation or numerical-solver implementation is required. The core activity is provisionally 15–20 minutes, subject to classroom testing. The final parameter sweep is optional.</p>
+<p>This is an idealized annual-mean climate, with fixed insolation and albedo. Its parameters are illustrative rather than fitted to observations or CMIP6. No data downloads are needed. Run all cells in order with NumPy, pandas, Matplotlib, and SciPy installed.</p>
+<section id="start-with-observations-where-does-earth-gain-and-lose-energy" class="level2">
+<h2 class="anchored" data-anchor-id="start-with-observations-where-does-earth-gain-and-lose-energy">Start with observations: where does Earth gain and lose energy?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="two_box_transport_files/figure-html/885a8410-1-ceres_net_toa_radiation.png" class="img-fluid figure-img"></p>
+<figcaption>CERES climatological net top-of-atmosphere radiation: surplus at low latitudes and deficits at high latitudes.</figcaption>
+</figure>
+</div>
+<p>Net radiation at the top of the atmosphere (TOA) is <strong>absorbed sunlight minus outgoing infrared radiation</strong>, in W m⁻². Positive values mean a radiative energy gain; negative values mean a loss. This is a climatological mean, rather than a seasonal snapshot.</p>
+<p>The horizontal axis is <strong>sine of latitude</strong>: −1 is the South Pole, 0 is the equator, and +1 is the North Pole. Equal intervals on this axis represent latitude bands with equal areas.</p>
+<ol type="1">
+<li>Where does Earth gain energy by radiation, and where does it lose energy?</li>
+<li>If radiation were the only process, what would happen to temperatures in those regions?</li>
+<li>What could keep the tropics from continually warming and the higher latitudes from continually cooling?</li>
+</ol>
+<p>We will use two regional boxes to explore how heat transport can balance these radiative gains and losses.</p>
+<p><em>Source: <a href="https://ceres.larc.nasa.gov/science/">NASA CERES Science</a>, <a href="https://ceres.larc.nasa.gov/images/NetTOARadiation.png">original figure</a>. CERES EBAF Edition 2.6r climatology, March 2000–June 2011, as labeled in the original. The yellow band is labeled standard error in the mean.</em></p>
+</section>
+<section id="two-equal-area-regions-and-their-budgets" class="level2">
+<h2 class="anchored" data-anchor-id="two-equal-area-regions-and-their-budgets">1. Two equal-area regions and their budgets</h2>
+<p>Use two regions with <strong>the same area</strong>: a low-latitude belt from 30°S to 30°N, and the combined higher latitudes in both hemispheres. We call these the tropical and polar boxes. The second includes midlatitudes as well as the poles.</p>
+<p>Each region receives prescribed sunlight <span class="math inline">\(I_i\)</span> and has a fixed albedo <span class="math inline">\(\mathcal{A}_i\)</span>. Its absorbed sunlight is</p>
+<p><span class="math display">\[
+S_i=(1-\mathcal{A}_i)I_i.
+\]</span></p>
+<p>These are regional averages. Outgoing infrared radiation follows a simple prescribed law:</p>
+<p><span class="math display">\[
+R(T_i)=R_0+B(T_i-T_0).
+\]</span></p>
+<p>We choose <span class="math inline">\(R_0=210\)</span> W m⁻² at <span class="math inline">\(T_0=273.15\)</span> K (0°C), and <span class="math inline">\(B=2\)</span> W m⁻² K⁻¹. Each degree of warming increases outgoing radiation by 2 W m⁻². For example, a box at 20°C emits 250 W m⁻². These are illustrative parameters representing radiation escaping to space through the atmosphere. They remain fixed during each run; the changing temperature determines the outgoing flux. With fixed absorbed sunlight, the corresponding net feedback is <span class="math inline">\(\alpha=-B&lt;0\)</span>.</p>
+<p><span class="math inline">\(T_t\)</span> and <span class="math inline">\(T_p\)</span> are regional temperatures, not warming anomalies. The code uses kelvin and the plots show °C.</p>
+<p>Let the poleward heat-transfer flux be</p>
+<p><span class="math display">\[
+Q=\kappa(T_t-T_p),
+\]</span></p>
+<p>where <span class="math inline">\(Q\)</span> is in W m⁻² and <span class="math inline">\(\kappa\geq0\)</span> is in W m⁻² K⁻¹. Because the boxes have equal areas, the same flux leaves one region and enters the other:</p>
+<p><span class="math display">\[
+C_t\frac{dT_t}{dt}=S_t-R(T_t)-Q,
+\]</span></p>
+<p><span class="math display">\[
+C_p\frac{dT_p}{dt}=S_p-R(T_p)+Q.
+\]</span></p>
+<p>The heat capacities are per square metre of each region. Both regions exchange radiation with space. Transport represents the combined effect of atmospheric and oceanic circulation.</p>
+<p><strong>Can you figure out:</strong> With no transport, which region will be warmer? If heat flows poleward, how does it enter each region’s budget?</p>
+<p><strong>Your response:</strong></p>
+<div id="cd289e2b" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update({<span class="st">'font.size'</span>: <span class="dv">11</span>, <span class="st">'axes.spines.top'</span>: <span class="va">False</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.spines.right'</span>: <span class="va">False</span>, <span class="st">'figure.dpi'</span>: <span class="dv">110</span>})</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>SECONDS_PER_YEAR <span class="op">=</span> <span class="fl">365.25</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">*</span> <span class="dv">3600</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>BASE <span class="op">=</span> <span class="bu">dict</span>(I_t<span class="op">=</span><span class="fl">400.0</span>, I_p<span class="op">=</span><span class="fl">260.0</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            albedo_t<span class="op">=</span><span class="fl">0.30</span>, albedo_p<span class="op">=</span><span class="fl">0.30</span>, R0<span class="op">=</span><span class="fl">210.0</span>, B<span class="op">=</span><span class="fl">2.0</span>, T0<span class="op">=</span><span class="fl">273.15</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            Ct<span class="op">=</span><span class="fl">2.2e8</span>, Cp<span class="op">=</span><span class="fl">2.2e8</span>, initial_C<span class="op">=</span><span class="fl">10.0</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>TROPICAL, POLAR, MEAN <span class="op">=</span> <span class="st">'#c54b26'</span>, <span class="st">'#2374a5'</span>, <span class="st">'#666666'</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>FIGURES <span class="op">=</span> {}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>display(pd.DataFrame({</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Incoming sunlight (W/m²)'</span>: [BASE[<span class="st">'I_t'</span>], BASE[<span class="st">'I_p'</span>]],</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Albedo'</span>: [BASE[<span class="st">'albedo_t'</span>], BASE[<span class="st">'albedo_p'</span>]],</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Absorbed sunlight (W/m²)'</span>: [(<span class="dv">1</span><span class="op">-</span>BASE[<span class="st">'albedo_t'</span>])<span class="op">*</span>BASE[<span class="st">'I_t'</span>],</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                                (<span class="dv">1</span><span class="op">-</span>BASE[<span class="st">'albedo_p'</span>])<span class="op">*</span>BASE[<span class="st">'I_p'</span>]],</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>}, index<span class="op">=</span>[<span class="st">'Tropical belt'</span>, <span class="st">'Higher latitudes'</span>]).<span class="bu">round</span>(<span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="supplied-numerical-integration" class="level3">
+<h3 class="anchored" data-anchor-id="supplied-numerical-integration">Supplied numerical integration</h3>
+<p>The function integrates the two budgets from a uniform initial temperature of 10°C. We compare the resulting steady climates.</p>
+<p>The parameter <code>kappa</code> controls transport in W m⁻² K⁻¹. The code also tracks accumulated global net radiation so we can check energy conservation. With equal-area boxes, the global mean is the simple average of the two regional values.</p>
+<div id="394ab477" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate(kappa<span class="op">=</span><span class="fl">0.4</span>, years<span class="op">=</span><span class="fl">100.0</span>, output_step<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>             rtol<span class="op">=</span><span class="fl">1e-8</span>, atol<span class="op">=</span><span class="fl">1e-10</span>, <span class="op">**</span>changes):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> {<span class="op">**</span>BASE, <span class="op">**</span>changes}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">set</span>(changes) <span class="op">-</span> <span class="bu">set</span>(BASE):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Unknown physical parameter.'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">all</span>(np.isfinite(v) <span class="cf">for</span> v <span class="kw">in</span> [kappa, years, output_step, <span class="op">*</span>p.values()]):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Use finite parameter values.'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">min</span>(p[<span class="st">'Ct'</span>], p[<span class="st">'Cp'</span>], p[<span class="st">'B'</span>], years, output_step) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Use positive capacities, B and times.'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kappa <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> <span class="bu">min</span>(p[<span class="st">'I_t'</span>], p[<span class="st">'I_p'</span>]) <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Use nonnegative conductance and sunlight.'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">all</span>(<span class="dv">0</span> <span class="op">&lt;=</span> p[k] <span class="op">&lt;=</span> <span class="dv">1</span> <span class="cf">for</span> k <span class="kw">in</span> [<span class="st">'albedo_t'</span>, <span class="st">'albedo_p'</span>]):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Albedos must be between zero and one.'</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    St, Sp <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>p[<span class="st">'albedo_t'</span>])<span class="op">*</span>p[<span class="st">'I_t'</span>], (<span class="dv">1</span><span class="op">-</span>p[<span class="st">'albedo_p'</span>])<span class="op">*</span>p[<span class="st">'I_p'</span>]</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    initial_K <span class="op">=</span> p[<span class="st">'initial_C'</span>] <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> budget(t, state):</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        Tt, Tp, incoming_GJ <span class="op">=</span> state</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        Nt <span class="op">=</span> St <span class="op">-</span> (p[<span class="st">'R0'</span>] <span class="op">+</span> p[<span class="st">'B'</span>]<span class="op">*</span>(Tt<span class="op">-</span>p[<span class="st">'T0'</span>]))</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        Np <span class="op">=</span> Sp <span class="op">-</span> (p[<span class="st">'R0'</span>] <span class="op">+</span> p[<span class="st">'B'</span>]<span class="op">*</span>(Tp<span class="op">-</span>p[<span class="st">'T0'</span>]))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        Q <span class="op">=</span> kappa<span class="op">*</span>(Tt<span class="op">-</span>Tp)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [SECONDS_PER_YEAR<span class="op">*</span>(Nt<span class="op">-</span>Q)<span class="op">/</span>p[<span class="st">'Ct'</span>],</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>                SECONDS_PER_YEAR<span class="op">*</span>(Np<span class="op">+</span>Q)<span class="op">/</span>p[<span class="st">'Cp'</span>],</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                SECONDS_PER_YEAR<span class="op">*</span>((Nt<span class="op">+</span>Np)<span class="op">/</span><span class="dv">2</span>)<span class="op">/</span><span class="fl">1e9</span>]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.linspace(<span class="dv">0</span>, years, <span class="bu">int</span>(np.ceil(years<span class="op">/</span>output_step))<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> solve_ivp(budget, (<span class="dv">0</span>, years), [initial_K, initial_K, <span class="fl">0.0</span>],</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                    t_eval<span class="op">=</span>time, rtol<span class="op">=</span>rtol, atol<span class="op">=</span>atol)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> sol.success:</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">RuntimeError</span>(sol.message)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    Tt, Tp, incoming_GJ <span class="op">=</span> sol.y</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    Nt <span class="op">=</span> St <span class="op">-</span> (p[<span class="st">'R0'</span>] <span class="op">+</span> p[<span class="st">'B'</span>]<span class="op">*</span>(Tt<span class="op">-</span>p[<span class="st">'T0'</span>]))</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    Np <span class="op">=</span> Sp <span class="op">-</span> (p[<span class="st">'R0'</span>] <span class="op">+</span> p[<span class="st">'B'</span>]<span class="op">*</span>(Tp<span class="op">-</span>p[<span class="st">'T0'</span>]))</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> kappa<span class="op">*</span>(Tt<span class="op">-</span>Tp)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> pd.DataFrame(<span class="bu">dict</span>(year<span class="op">=</span>time, Tt_K<span class="op">=</span>Tt, Tp_K<span class="op">=</span>Tp,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        Tt_C<span class="op">=</span>Tt<span class="op">-</span><span class="fl">273.15</span>, Tp_C<span class="op">=</span>Tp<span class="op">-</span><span class="fl">273.15</span>, mean_C<span class="op">=</span>(Tt<span class="op">+</span>Tp)<span class="op">/</span><span class="dv">2</span><span class="op">-</span><span class="fl">273.15</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        contrast_K<span class="op">=</span>Tt<span class="op">-</span>Tp, Q<span class="op">=</span>Q, Nt<span class="op">=</span>Nt, Np<span class="op">=</span>Np,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        transport_t<span class="op">=-</span>Q, transport_p<span class="op">=</span>Q,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        storage_t<span class="op">=</span>Nt<span class="op">-</span>Q, storage_p<span class="op">=</span>Np<span class="op">+</span>Q,</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        global_N<span class="op">=</span>(Nt<span class="op">+</span>Np)<span class="op">/</span><span class="dv">2</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        stored_GJ<span class="op">=</span>(p[<span class="st">'Ct'</span>]<span class="op">*</span>(Tt<span class="op">-</span>initial_K)<span class="op">+</span>p[<span class="st">'Cp'</span>]<span class="op">*</span>(Tp<span class="op">-</span>initial_K))<span class="op">/</span><span class="dv">2</span><span class="op">/</span><span class="fl">1e9</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        incoming_GJ<span class="op">=</span>incoming_GJ))</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    out.attrs.update(St<span class="op">=</span>St, Sp<span class="op">=</span>Sp, params<span class="op">=</span>p, kappa<span class="op">=</span>kappa)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>transport_values <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.2</span>, <span class="fl">0.8</span>]  <span class="co"># absent, weak, strong (W/m²/K)</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>runs <span class="op">=</span> {k: simulate(k) <span class="cf">for</span> k <span class="kw">in</span> transport_values}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="turn-on-poleward-transport" class="level2">
+<h2 class="anchored" data-anchor-id="turn-on-poleward-transport">2. Turn on poleward transport</h2>
+<p>Keep regional sunlight, albedo, and radiation properties fixed; change only transport strength.</p>
+<p><strong>Can you make a guess or figure it out?</strong> Compared with no transport, will the tropics warm or cool at equilibrium? What about the higher latitudes? Will the two temperatures become identical for a finite transport coefficient?</p>
+<p><strong>Your response:</strong></p>
+<div id="f6265a92" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.3</span>), sharey<span class="op">=</span><span class="va">True</span>, layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, k <span class="kw">in</span> <span class="bu">zip</span>(axes, [transport_values[<span class="dv">0</span>], transport_values[<span class="op">-</span><span class="dv">1</span>]]):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    run <span class="op">=</span> runs[k]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    part <span class="op">=</span> run[run.year <span class="op">&lt;=</span> <span class="dv">30</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    ax.plot(part.year, part.Tt_C, color<span class="op">=</span>TROPICAL, label<span class="op">=</span><span class="st">'Tropical belt'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    ax.plot(part.year, part.Tp_C, color<span class="op">=</span>POLAR, label<span class="op">=</span><span class="st">'Higher latitudes'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    ax.plot(part.year, part.mean_C, color<span class="op">=</span>MEAN, ls<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Global mean'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Years from initialization'</span>, xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">30</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>           title<span class="op">=</span><span class="ss">f'Transport coefficient = </span><span class="sc">{</span>k<span class="sc">:g}</span><span class="ss"> W/m²/K'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Regional temperature (°C)'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>, loc<span class="op">=</span><span class="st">'center right'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.98</span>, <span class="fl">0.38</span>))</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'temperatures'</span>] <span class="op">=</span> fig</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>equilibria <span class="op">=</span> pd.DataFrame({k: run.iloc[<span class="op">-</span><span class="dv">1</span>] <span class="cf">for</span> k, run <span class="kw">in</span> runs.items()}).T</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>equilibria.index.name <span class="op">=</span> <span class="st">'Transport coefficient (W/m²/K)'</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>display(equilibria[[<span class="st">'Tt_C'</span>, <span class="st">'Tp_C'</span>, <span class="st">'mean_C'</span>, <span class="st">'contrast_K'</span>, <span class="st">'Q'</span>, <span class="st">'global_N'</span>]].rename(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>{<span class="st">'Tt_C'</span>:<span class="st">'Tropical (°C)'</span>, <span class="st">'Tp_C'</span>:<span class="st">'Higher latitudes (°C)'</span>, <span class="st">'mean_C'</span>:<span class="st">'Mean (°C)'</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>             <span class="st">'contrast_K'</span>:<span class="st">'Contrast (K)'</span>, <span class="st">'Q'</span>:<span class="st">'Poleward flux (W/m²)'</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>             <span class="st">'global_N'</span>:<span class="st">'Global net radiation (W/m²)'</span>}).<span class="bu">round</span>(<span class="dv">3</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Table uses year 100; we will check the local budgets before calling it equilibrium.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="how-can-unequal-radiative-budgets-be-steady" class="level2">
+<h2 class="anchored" data-anchor-id="how-can-unequal-radiative-budgets-be-steady">3. How can unequal radiative budgets be steady?</h2>
+<p>For the strongest transport run, inspect the late-time budgets. Radiation is positive into the region. The signed transport contribution is negative for the tropics and positive for the higher latitudes. Their sum is the local energy-storage rate.</p>
+<p><strong>Can you make a guess or figure it out?</strong> At equilibrium, which quantities must be zero: local net radiation, heat transport, local storage rate, or global net radiation?</p>
+<p><strong>Your response:</strong></p>
+<div id="62ea7688" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>chosen <span class="op">=</span> runs[transport_values[<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> chosen.iloc[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>budget_table <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Net radiation (W/m²)'</span>: [end.Nt, end.Np],</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Transport contribution (W/m²)'</span>: [end.transport_t, end.transport_p],</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Storage rate (W/m²)'</span>: [end.storage_t, end.storage_p],</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}, index<span class="op">=</span>[<span class="st">'Tropical belt'</span>, <span class="st">'Higher latitudes'</span>])</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>display(budget_table.<span class="bu">round</span>(<span class="dv">4</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.3</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">2</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> offset, (column, color) <span class="kw">in</span> <span class="bu">zip</span>([<span class="op">-</span><span class="fl">0.26</span>, <span class="dv">0</span>, <span class="fl">0.26</span>], <span class="bu">zip</span>(budget_table.columns, [<span class="st">'#7251a2'</span>, <span class="st">'#268b8b'</span>, <span class="st">'#555555'</span>])):</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].bar(x<span class="op">+</span>offset, budget_table[column], width<span class="op">=</span><span class="fl">0.24</span>, color<span class="op">=</span>color, label<span class="op">=</span>column.split(<span class="st">' ('</span>)[<span class="dv">0</span>])</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xticks<span class="op">=</span>x, xticklabels<span class="op">=</span>budget_table.index, ylabel<span class="op">=</span><span class="st">'Local flux (W/m²)'</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            title<span class="op">=</span><span class="st">'Regional steady budgets'</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">8</span>, loc<span class="op">=</span><span class="st">'upper left'</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">1.0</span>))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>extent <span class="op">=</span> <span class="bu">max</span>(<span class="fl">1.0</span>, budget_table.<span class="bu">abs</span>().to_numpy().<span class="bu">max</span>())</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="fl">1.4</span><span class="op">*</span>extent, <span class="fl">2.0</span><span class="op">*</span>extent)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(chosen.year, chosen.stored_GJ, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Change in total stored energy'</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(chosen.year, chosen.incoming_GJ, color<span class="op">=</span><span class="st">'#b57ab4'</span>, lw<span class="op">=</span><span class="dv">2</span>, ls<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Accumulated net radiation'</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Years from initialization'</span>, ylabel<span class="op">=</span><span class="st">'Energy per Earth area (GJ/m²)'</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>            title<span class="op">=</span><span class="st">'Global energy check'</span>, xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">30</span>))</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">8</span>, loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'budgets'</span>] <span class="op">=</span> fig</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Tropical export: </span><span class="sc">{</span><span class="op">-</span>end<span class="sc">.</span>transport_t<span class="sc">:.3f}</span><span class="ss"> W/m²"</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Polar import:     </span><span class="sc">{</span>end<span class="sc">.</span>transport_p<span class="sc">:.3f}</span><span class="ss"> W/m²"</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Largest remaining local storage rate at year 100: </span><span class="sc">{</span><span class="bu">max</span>(<span class="bu">abs</span>(end.storage_t), <span class="bu">abs</span>(end.storage_p))<span class="sc">:.2e}</span><span class="ss"> W/m²"</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>residual <span class="op">=</span> chosen.stored_GJ <span class="op">-</span> chosen.incoming_GJ</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum accumulated energy mismatch: </span><span class="sc">{</span><span class="bu">abs</span>(residual)<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2e}</span><span class="ss"> GJ/m²"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Explain:</strong> Why do the transport terms cancel when we add the two budgets? At equilibrium, must the radiation budget of each region be zero?</p>
+<p>The energy check uses changes from the initial state, per unit Earth area. Since each region occupies half the planet,</p>
+<p><span class="math display">\[
+\Delta E=\frac{C_t(T_t-T_{t,\mathrm{initial}})+C_p(T_p-T_{p,\mathrm{initial}})}{2},
+\]</span></p>
+<p><span class="math display">\[
+\Delta E=\int_0^t\frac{N_t+N_p}{2}\,dt.
+\]</span></p>
+<p>The code converts years to seconds to keep the energy units consistent.</p>
+<p><strong>Your response:</strong></p>
+</section>
+<section id="what-changed-and-what-stayed-the-same" class="level2">
+<h2 class="anchored" data-anchor-id="what-changed-and-what-stayed-the-same">4. What changed, and what stayed the same?</h2>
+<p>Use the table to compare the absent, weak, and strong transport runs:</p>
+<ol type="1">
+<li>Quantify the change in the temperature contrast.</li>
+<li>Did the equilibrium global mean change? Explain why this depends on our radiation assumptions.</li>
+<li>Does stronger transport necessarily mean a larger temperature difference to drive it?</li>
+</ol>
+<p>With the <strong>same linear radiation law in both regions</strong>, the mean outgoing radiation is <span class="math inline">\(R_0+B(\overline{T}-T_0)\)</span>. At equilibrium it equals <span class="math inline">\((S_t+S_p)/2\)</span>. Thus the mean equilibrium temperature is fixed by the prescribed radiation, independently of transport strength.</p>
+<p>This is a property of this model, not a universal consequence of conservation. Nonlinear radiation, different regional radiative properties, or temperature-dependent albedo can allow redistribution to change the equilibrium global mean. Our albedos remain prescribed even if a region cools below freezing; an evolving ice edge is a later model extension.</p>
+<p><strong>Your response:</strong></p>
+<section id="optional-experiment-sweep-the-transport-strength" class="level3">
+<h3 class="anchored" data-anchor-id="optional-experiment-sweep-the-transport-strength">Optional experiment: sweep the transport strength</h3>
+<p>The supplied code repeats the numerical integration over a range of transport coefficients. Change the list to explore another range. All radiation parameters and areas remain fixed. The values are illustrative; this is not a calibration of actual atmospheric or oceanic transport.</p>
+<p><strong>Can you make a guess or figure it out?</strong> As the temperature contrast shrinks, must the transported power shrink too?</p>
+<div id="10e81b06" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>conductances <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, <span class="fl">1.6</span>, <span class="dv">17</span>)  <span class="co"># W/m²/K</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sweep <span class="op">=</span> pd.DataFrame([simulate(k).iloc[<span class="op">-</span><span class="dv">1</span>] <span class="cf">for</span> k <span class="kw">in</span> conductances], index<span class="op">=</span>conductances)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.3</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(conductances, sweep.Tt_C, color<span class="op">=</span>TROPICAL, label<span class="op">=</span><span class="st">'Tropical belt'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(conductances, sweep.Tp_C, color<span class="op">=</span>POLAR, label<span class="op">=</span><span class="st">'Higher latitudes'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(conductances, sweep.mean_C, color<span class="op">=</span>MEAN, ls<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Global mean'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(ylabel<span class="op">=</span><span class="st">'Equilibrium temperature (°C)'</span>, title<span class="op">=</span><span class="st">'Stronger transport reduces the contrast'</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(conductances, sweep.Q, color<span class="op">=</span><span class="st">'#268b8b'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(ylabel<span class="op">=</span><span class="st">'Poleward flux (W/m²)'</span>, title<span class="op">=</span><span class="st">'More transfer with a smaller contrast'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Transport coefficient κ (W/m²/K)'</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(conductances[<span class="dv">0</span>], conductances[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'transport_sweep'</span>] <span class="op">=</span> fig</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum late-time storage rate across the sweep: </span><span class="sc">{</span>sweep[[<span class="st">"storage_t"</span>, <span class="st">"storage_p"</span>]]<span class="sc">.</span><span class="bu">abs</span>()<span class="sc">.</span>to_numpy()<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2e}</span><span class="ss"> W/m²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Your response:</strong></p>
+</section>
+</section>
+<section id="closing-comparison-what-do-the-two-box-models-teach-us" class="level2">
+<h2 class="anchored" data-anchor-id="closing-comparison-what-do-the-two-box-models-teach-us">Closing comparison: what do the two box models teach us?</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Surface–deep ocean</th>
+<th>Tropical–polar regions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Why choose two boxes?</td>
+<td>Different storage and adjustment times</td>
+<td>Different solar heating across regions</td>
+</tr>
+<tr class="even">
+<td>Temperature variables</td>
+<td>Warming anomalies from reference states</td>
+<td>Actual regional temperatures</td>
+</tr>
+<tr class="odd">
+<td>Direct exchange with space</td>
+<td>Represented through the surface box</td>
+<td>A radiation budget for each region</td>
+</tr>
+<tr class="even">
+<td>Internal transfer</td>
+<td>Additional surface-to-deep exchange</td>
+<td>Net poleward energy transport</td>
+</tr>
+<tr class="odd">
+<td>Eventual steady state</td>
+<td>Anomalous exchange vanishes for positive coupling</td>
+<td>Nonzero transport can persist</td>
+</tr>
+</tbody>
+</table>
+<p><strong>In two sentences:</strong> Explain how a polar region can stay at a fixed temperature while emitting more radiation than it absorbs. Then explain why that does not violate global conservation of energy.</p>
+<p>This model parameterizes the combined effect of winds and ocean currents. It does not predict those motions, regional weather, seasons, or changes in albedo. Later we can subdivide the regions into latitude bands; that extension is outside this practical.</p>
+<section id="optional-reading" class="level3">
+<h3 class="anchored" data-anchor-id="optional-reading">Optional reading</h3>
+<ul>
+<li>Brian Rose, <a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/heat-transport/">“Heat transport,” The Climate Laboratory</a>: connect regional radiation budgets with poleward transport. Focus on the energy-budget interpretation; the column-model calculations are not required here.</li>
+<li>McGuffie &amp; Henderson-Sellers, <em>The Climate Modelling Primer</em>, 4th edition, Figure 3.15: a tropical–polar box-model schematic. Our area conventions and illustrative parameters are specified in this notebook rather than copied from that figure.</li>
+<li>Brian Rose, <a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/one-dim-ebm/">“The one-dimensional energy balance model”</a>, opening section: see how the same idea becomes exchange among latitude bands. The subsequent equations are optional background for a later week.</li>
+</ul>
+<p><strong>Your response:</strong></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Dhruv Balwada · Columbia Climate School · Fall 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

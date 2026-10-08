@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Diagnosing a climate model with a Gregory plot – Introduction to Climate Modeling</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Introduction to Climate Modeling</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/index.html"> 
+<span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../homeworks/index.html"> 
+<span class="menu-text">Homeworks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../project.html"> 
+<span class="menu-text">Final Project</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dhruvbalwada/intro-climate-modeling-fall2026"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-experiment-are-we-analyzing" id="toc-what-experiment-are-we-analyzing" class="nav-link active" data-scroll-target="#what-experiment-are-we-analyzing">1. What experiment are we analyzing?</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  </ul></li>
+  <li><a href="#prepare-the-annual-global-means" id="toc-prepare-the-annual-global-means" class="nav-link" data-scroll-target="#prepare-the-annual-global-means">2. Prepare the annual global means</a></li>
+  <li><a href="#changes-relative-to-which-climate" id="toc-changes-relative-to-which-climate" class="nav-link" data-scroll-target="#changes-relative-to-which-climate">3. Changes relative to which climate?</a></li>
+  <li><a href="#watch-the-response-unfold-in-time" id="toc-watch-the-response-unfold-in-time" class="nav-link" data-scroll-target="#watch-the-response-unfold-in-time">4. Watch the response unfold in time</a></li>
+  <li><a href="#put-radiation-against-warming-the-gregory-plot" id="toc-put-radiation-against-warming-the-gregory-plot" class="nav-link" data-scroll-target="#put-radiation-against-warming-the-gregory-plot">5. Put radiation against warming: the Gregory plot</a>
+  <ul class="collapse">
+  <li><a href="#translate-the-line-back-into-climate-quantities" id="toc-translate-the-line-back-into-climate-quantities" class="nav-link" data-scroll-target="#translate-the-line-back-into-climate-quantities">Translate the line back into climate quantities</a></li>
+  </ul></li>
+  <li><a href="#sources-and-reproducibility" id="toc-sources-and-reproducibility" class="nav-link" data-scroll-target="#sources-and-reproducibility">Sources and reproducibility</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Diagnosing a climate model with a Gregory plot</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Week 5 · From the linear EBM to CMIP6</strong></p>
+<p>The forcing-feedback relation is: <span class="math display">\[N'=F+\alpha T',\qquad\alpha&lt;0\text{ for a restoring response}.\]</span></p>
+<p>Can this describe a much more complex climate model?</p>
+<p>By the end of this activity, you should be able to:</p>
+<ul>
+<li>Explain the control and abrupt CO₂ experiments used to construct a Gregory plot.</li>
+<li>Calculate global temperature and top-of-atmosphere radiation anomalies.</li>
+<li>Interpret the fitted forcing, net feedback parameter, and effective climate sensitivity.</li>
+</ul>
+<p>The data access, averaging, and plotting code are supplied. Read each prediction prompt before running the following cells, and write your interpretations in the response cells. No new numerical integration is needed. Run cells in order.</p>
+<p>We use actual <strong>MPI-ESM1-2-LR</strong> CMIP6 output, one realization (<code>r1i1p1f1</code>), on its native atmospheric grid (<code>gn</code>). This diagnoses one model; it is not an observational estimate of Earth’s sensitivity.</p>
+<section id="what-experiment-are-we-analyzing" class="level2">
+<h2 class="anchored" data-anchor-id="what-experiment-are-we-analyzing">1. What experiment are we analyzing?</h2>
+<p>In <strong><code>piControl</code></strong>, the external conditions are held at preindustrial values, while weather and internal climate variability continue. <strong><code>abrupt-4xCO2</code></strong> branches from that control: CO₂ concentration is abruptly quadrupled and then held fixed. We analyze the first 150 years after the increase, together with the corresponding control segment.</p>
+<p>Abrupt quadrupling is a standard CMIP6 core experiment and is widely used for Gregory estimates (<a href="https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html">experiment definitions</a>). It is an idealized forcing-step experiment, not a future emissions scenario. The model does not need to have reached equilibrium by year 150.</p>
+<p><strong>Predict before running:</strong> After CO₂ increases, what do you expect to happen to global temperature and the net incoming radiation? Why can warming continue while CO₂ is constant?</p>
+<p><strong>Your response:</strong></p>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">Setup</h3>
+<p>Run the cells in order in the course Python environment. The data preparation and plotting code are supplied.</p>
+<div id="0b28f3cd" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> perf_counter</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timezone</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> importlib.metadata</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cftime</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>get_ipython().run_line_magic(<span class="st">'matplotlib'</span>, <span class="st">'inline'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update({<span class="st">'figure.figsize'</span>: (<span class="dv">8</span>, <span class="fl">4.5</span>), <span class="st">'font.size'</span>: <span class="dv">11</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.spines.top'</span>: <span class="va">False</span>, <span class="st">'axes.spines.right'</span>: <span class="va">False</span>})</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>MODEL <span class="op">=</span> <span class="st">'MPI-ESM1-2-LR'</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>MEMBER <span class="op">=</span> <span class="st">'r1i1p1f1'</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>GRID <span class="op">=</span> <span class="st">'gn'</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>VERSION <span class="op">=</span> <span class="st">'v20190710'</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>NYEARS <span class="op">=</span> <span class="dv">150</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>VARIABLES <span class="op">=</span> [<span class="st">'tas'</span>, <span class="st">'rsdt'</span>, <span class="st">'rsut'</span>, <span class="st">'rlut'</span>]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>EXPERIMENTS <span class="op">=</span> [<span class="st">'piControl'</span>, <span class="st">'abrupt-4xCO2'</span>]</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>CATALOG_URL <span class="op">=</span> <span class="st">'https://storage.googleapis.com/cmip6/pangeo-cmip6.csv'</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># The default is a fresh calculation from cloud-hosted spatial fields.</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># True reuses the small annual-mean files made by a previous successful run.</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep both the CSV and its provenance JSON together in the data folder.</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>USE_SAVED_MEANS <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>DATA_DIR <span class="op">=</span> Path(<span class="st">'data'</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>MEANS_FILE <span class="op">=</span> DATA_DIR <span class="op">/</span> <span class="st">'annual_global_means.csv'</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>PROVENANCE_FILE <span class="op">=</span> DATA_DIR <span class="op">/</span> <span class="st">'annual_global_means.provenance.json'</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>settings <span class="op">=</span> <span class="bu">dict</span>(model<span class="op">=</span>MODEL, member<span class="op">=</span>MEMBER, grid<span class="op">=</span>GRID, version<span class="op">=</span>VERSION,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                years<span class="op">=</span>NYEARS, variables<span class="op">=</span>VARIABLES, processing<span class="op">=</span><span class="st">'cell-area_month-days_v1'</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>run_start <span class="op">=</span> perf_counter()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="prepare-the-annual-global-means" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-the-annual-global-means">2. Prepare the annual global means</h2>
+<p>Run the supplied cells to obtain annual global temperature and radiation for each experiment.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>tas</code></td>
+<td>Near-surface air temperature</td>
+<td>K</td>
+</tr>
+<tr class="even">
+<td><code>rsdt</code></td>
+<td>Incoming sunlight at the top of the atmosphere</td>
+<td>W m⁻²</td>
+</tr>
+<tr class="odd">
+<td><code>rsut</code></td>
+<td>Reflected sunlight</td>
+<td>W m⁻²</td>
+</tr>
+<tr class="even">
+<td><code>rlut</code></td>
+<td>Outgoing longwave radiation</td>
+<td>W m⁻²</td>
+</tr>
+</tbody>
+</table>
+<p>The global-mean net radiation is <span class="math inline">\(N=rsdt-rsut-rlut\)</span>. <strong>Positive <span class="math inline">\(N\)</span> means energy entering the climate system.</strong></p>
+<div id="d80f0fd4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> USE_SAVED_MEANS:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    provenance <span class="op">=</span> json.loads(PROVENANCE_FILE.read_text())</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> provenance[<span class="st">'settings'</span>] <span class="op">!=</span> settings:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Saved means use different settings. Run with USE_SAVED_MEANS=False.'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hashlib.sha256(MEANS_FILE.read_bytes()).hexdigest() <span class="op">!=</span> provenance[<span class="st">'csv_sha256'</span>]:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'The saved means and provenance do not match.'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    annual <span class="op">=</span> pd.read_csv(MEANS_FILE)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Using previously calculated annual means; no cloud fields read this run.'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    catalogue <span class="op">=</span> pd.read_csv(CATALOG_URL, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    model_rows <span class="op">=</span> catalogue.loc[</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        (catalogue.source_id <span class="op">==</span> MODEL) <span class="op">&amp;</span> (catalogue.member_id <span class="op">==</span> MEMBER)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">&amp;</span> (catalogue.grid_label <span class="op">==</span> GRID)]</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> locate(experiment, variable, table<span class="op">=</span><span class="st">'Amon'</span>):</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        rows <span class="op">=</span> model_rows.loc[</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            (model_rows.experiment_id <span class="op">==</span> experiment)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">&amp;</span> (model_rows.variable_id <span class="op">==</span> variable)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="op">&amp;</span> (model_rows.table_id <span class="op">==</span> table)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            <span class="op">&amp;</span> model_rows.zstore.<span class="bu">str</span>.rstrip(<span class="st">'/'</span>).<span class="bu">str</span>.endswith(<span class="st">'/'</span> <span class="op">+</span> VERSION)]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        stores <span class="op">=</span> rows.zstore.drop_duplicates().tolist()</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(stores) <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f'Expected one store for </span><span class="sc">{</span>experiment<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>variable<span class="sc">}</span><span class="ss">; found </span><span class="sc">{</span><span class="bu">len</span>(stores)<span class="sc">}</span><span class="ss">.'</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stores[<span class="dv">0</span>]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    sources <span class="op">=</span> {exp: {var: locate(exp, var) <span class="cf">for</span> var <span class="kw">in</span> VARIABLES}</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>               <span class="cf">for</span> exp <span class="kw">in</span> EXPERIMENTS}</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    area_source <span class="op">=</span> locate(<span class="st">'piControl'</span>, <span class="st">'areacella'</span>, <span class="st">'fx'</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    display(pd.DataFrame([{<span class="st">'experiment'</span>: exp, <span class="st">'variable'</span>: var, <span class="st">'store'</span>: url}</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>                          <span class="cf">for</span> exp <span class="kw">in</span> EXPERIMENTS <span class="cf">for</span> var, url <span class="kw">in</span> sources[exp].items()]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="8ec7d394" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> USE_SAVED_MEANS:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Zarr opens metadata first; field data are read when their means are computed.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> open_cloud(url):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> xr.open_zarr(url, consolidated<span class="op">=</span><span class="va">True</span>, chunks<span class="op">=</span>{},</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                            decode_times<span class="op">=</span>xr.coders.CFDatetimeCoder(use_cftime<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                            storage_options<span class="op">=</span>{<span class="st">'token'</span>: <span class="st">'anon'</span>})</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    datasets <span class="op">=</span> {exp: {var: open_cloud(url) <span class="cf">for</span> var, url <span class="kw">in</span> sources[exp].items()}</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> exp <span class="kw">in</span> EXPERIMENTS}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    perturbed <span class="op">=</span> datasets[<span class="st">'abrupt-4xCO2'</span>][<span class="st">'tas'</span>]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    control <span class="op">=</span> datasets[<span class="st">'piControl'</span>][<span class="st">'tas'</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    attrs <span class="op">=</span> perturbed.attrs</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> attrs[<span class="st">'parent_experiment_id'</span>] <span class="op">==</span> <span class="st">'piControl'</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> attrs[<span class="st">'parent_variant_label'</span>] <span class="op">==</span> MEMBER</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    calendar <span class="op">=</span> control.time.encoding.get(<span class="st">'calendar'</span>, <span class="st">'standard'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    branch <span class="op">=</span> cftime.num2date(attrs[<span class="st">'branch_time_in_parent'</span>],</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                            attrs[<span class="st">'parent_time_units'</span>], calendar<span class="op">=</span>calendar)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (branch.month, branch.day) <span class="op">!=</span> (<span class="dv">1</span>, <span class="dv">1</span>):</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'This teaching notebook expects a January 1 control branch.'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    first_control_year <span class="op">=</span> branch.year</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Select the matched control segment BEFORE reading the spatial fields.</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    selected <span class="op">=</span> {}</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    selection_dates <span class="op">=</span> {}</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> exp <span class="kw">in</span> EXPERIMENTS:</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        selected[exp] <span class="op">=</span> {}</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> var, ds <span class="kw">in</span> datasets[exp].items():</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">assert</span> ds.attrs[<span class="st">'source_id'</span>] <span class="op">==</span> MODEL</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">assert</span> ds.attrs[<span class="st">'variant_label'</span>] <span class="op">==</span> MEMBER</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">assert</span> ds.attrs[<span class="st">'grid_label'</span>] <span class="op">==</span> GRID</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> exp <span class="op">==</span> <span class="st">'piControl'</span>:</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>                field <span class="op">=</span> ds[var].sel(time<span class="op">=</span><span class="bu">slice</span>(<span class="ss">f'</span><span class="sc">{</span>first_control_year<span class="sc">}</span><span class="ss">-01-01'</span>,</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>                                              <span class="ss">f'</span><span class="sc">{</span>first_control_year <span class="op">+</span> NYEARS <span class="op">-</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">-12-31'</span>))</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>                <span class="cf">assert</span> ds.attrs[<span class="st">'branch_time_in_parent'</span>] <span class="op">==</span> attrs[<span class="st">'branch_time_in_parent'</span>]</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>                <span class="cf">assert</span> ds.attrs[<span class="st">'parent_time_units'</span>] <span class="op">==</span> attrs[<span class="st">'parent_time_units'</span>]</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>                field <span class="op">=</span> ds[var].isel(time<span class="op">=</span><span class="bu">slice</span>(<span class="dv">0</span>, <span class="dv">12</span> <span class="op">*</span> NYEARS))</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Require 150 complete consecutive January–December years.</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">assert</span> field.sizes[<span class="st">'time'</span>] <span class="op">==</span> <span class="dv">12</span> <span class="op">*</span> NYEARS</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>            months <span class="op">=</span> field.time.dt.month.values</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>            years <span class="op">=</span> field.time.dt.year.values</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>            np.testing.assert_array_equal(months, np.tile(np.arange(<span class="dv">1</span>, <span class="dv">13</span>), NYEARS))</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>            np.testing.assert_array_equal(years, np.repeat(np.arange(years[<span class="dv">0</span>], years[<span class="dv">0</span>]<span class="op">+</span>NYEARS), <span class="dv">12</span>))</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>            selected[exp][var] <span class="op">=</span> field</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>        xr.align(<span class="op">*</span>selected[exp].values(), join<span class="op">=</span><span class="st">'exact'</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>        dates <span class="op">=</span> selected[exp][<span class="st">'tas'</span>].time</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>        selection_dates[exp] <span class="op">=</span> [<span class="bu">str</span>(dates.values[<span class="dv">0</span>]), <span class="bu">str</span>(dates.values[<span class="op">-</span><span class="dv">1</span>])]</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    area <span class="op">=</span> open_cloud(area_source).areacella.astype(<span class="st">'float64'</span>).compute()</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">bool</span>(np.isfinite(area).<span class="bu">all</span>()) <span class="kw">and</span> <span class="bu">bool</span>((area <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">all</span>())</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The area file's latitude labels differ by ~1e-14 degrees in this archive.</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Verify identical cells to tight tolerance before normalizing their labels.</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    reference_grid <span class="op">=</span> selected[<span class="st">'piControl'</span>][<span class="st">'tas'</span>]</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> coordinate <span class="kw">in</span> [<span class="st">'lat'</span>, <span class="st">'lon'</span>]:</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>        np.testing.assert_allclose(area[coordinate], reference_grid[coordinate],</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>                                   rtol<span class="op">=</span><span class="dv">0</span>, atol<span class="op">=</span><span class="fl">1e-10</span>)</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    area <span class="op">=</span> area.assign_coords(lat<span class="op">=</span>reference_grid.lat, lon<span class="op">=</span>reference_grid.lon)</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> exp <span class="kw">in</span> EXPERIMENTS:</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> field <span class="kw">in</span> selected[exp].values():</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>            xr.align(field.isel(time<span class="op">=</span><span class="dv">0</span>, drop<span class="op">=</span><span class="va">True</span>), area, join<span class="op">=</span><span class="st">'exact'</span>)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    earth_area <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> np.pi <span class="op">*</span> <span class="dv">6_371_000</span><span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> np.isclose(<span class="bu">float</span>(area.<span class="bu">sum</span>()) <span class="op">/</span> earth_area, <span class="dv">1</span>, rtol<span class="op">=</span><span class="fl">0.02</span>)</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Control branch: </span><span class="sc">{</span>branch<span class="sc">}</span><span class="ss">; calendar: </span><span class="sc">{</span>calendar<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    display(pd.DataFrame(selection_dates, index<span class="op">=</span>[<span class="st">'first monthly timestamp'</span>, <span class="st">'last monthly timestamp'</span>]).T)</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Grid: </span><span class="sc">{</span>area<span class="sc">.</span>sizes[<span class="st">"lat"</span>]<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>area<span class="sc">.</span>sizes[<span class="st">"lon"</span>]<span class="sc">}</span><span class="ss">; area sum: </span><span class="sc">{</span><span class="bu">float</span>(area.<span class="bu">sum</span>())<span class="sc">:.3e}</span><span class="ss"> m²'</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    display(pd.DataFrame(provenance[<span class="st">'selection_dates'</span>], index<span class="op">=</span>[<span class="st">'first monthly timestamp'</span>, <span class="st">'last monthly timestamp'</span>]).T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="2bff43d3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> USE_SAVED_MEANS:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    averaging_start <span class="op">=</span> perf_counter()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    tables, timings <span class="op">=</span> [], []</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> exp <span class="kw">in</span> EXPERIMENTS:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        table <span class="op">=</span> pd.DataFrame({<span class="st">'experiment'</span>: exp, <span class="st">'year'</span>: np.arange(<span class="dv">1</span>, NYEARS <span class="op">+</span> <span class="dv">1</span>)})</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> var <span class="kw">in</span> VARIABLES:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            start <span class="op">=</span> perf_counter()</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            field <span class="op">=</span> selected[exp][var]</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Weight cells by model-provided area, then months by their calendar length.</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            monthly_mean <span class="op">=</span> field.weighted(area).mean((<span class="st">'lat'</span>, <span class="st">'lon'</span>), skipna<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            days <span class="op">=</span> field.time.dt.days_in_month.astype(<span class="st">'float64'</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            annual_mean <span class="op">=</span> ((monthly_mean <span class="op">*</span> days).groupby(<span class="st">'time.year'</span>).<span class="bu">sum</span>(skipna<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                           <span class="op">/</span> days.groupby(<span class="st">'time.year'</span>).<span class="bu">sum</span>())</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Two local Dask threads process one field at a time; no cluster is needed.</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            values <span class="op">=</span> annual_mean.compute(scheduler<span class="op">=</span><span class="st">'threads'</span>, num_workers<span class="op">=</span><span class="dv">2</span>).values</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">assert</span> <span class="bu">len</span>(values) <span class="op">==</span> NYEARS <span class="kw">and</span> np.isfinite(values).<span class="bu">all</span>()</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            table[var] <span class="op">=</span> values</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            elapsed <span class="op">=</span> perf_counter() <span class="op">-</span> start</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            timings.append(<span class="bu">dict</span>(experiment<span class="op">=</span>exp, variable<span class="op">=</span>var, seconds<span class="op">=</span>elapsed))</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>exp<span class="sc">:14s}</span><span class="ss"> </span><span class="sc">{</span>var<span class="sc">:4s}</span><span class="ss">: </span><span class="sc">{</span>elapsed<span class="sc">:.1f}</span><span class="ss"> s'</span>, flush<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        table[<span class="st">'N'</span>] <span class="op">=</span> table.rsdt <span class="op">-</span> table.rsut <span class="op">-</span> table.rlut</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        tables.append(table)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    annual <span class="op">=</span> pd.concat(tables, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    averaging_seconds <span class="op">=</span> perf_counter() <span class="op">-</span> averaging_start</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    DATA_DIR.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    annual.to_csv(MEANS_FILE, index<span class="op">=</span><span class="va">False</span>, float_format<span class="op">=</span><span class="st">'</span><span class="sc">%.12g</span><span class="st">'</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    packages <span class="op">=</span> [<span class="st">'numpy'</span>, <span class="st">'pandas'</span>, <span class="st">'matplotlib'</span>, <span class="st">'xarray'</span>, <span class="st">'dask'</span>, <span class="st">'zarr'</span>, <span class="st">'gcsfs'</span>, <span class="st">'cftime'</span>]</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    provenance <span class="op">=</span> <span class="bu">dict</span>(</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        settings<span class="op">=</span>settings, created_utc<span class="op">=</span>datetime.now(timezone.utc).isoformat(),</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        catalogue<span class="op">=</span>CATALOG_URL, sources<span class="op">=</span>sources, area_source<span class="op">=</span>area_source,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        selection_dates<span class="op">=</span>selection_dates, parent_branch<span class="op">=</span><span class="bu">str</span>(branch), calendar<span class="op">=</span>calendar,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        area_sum_m2<span class="op">=</span><span class="bu">float</span>(area.<span class="bu">sum</span>()), averaging_seconds<span class="op">=</span>averaging_seconds,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        setup_and_averaging_seconds<span class="op">=</span>perf_counter()<span class="op">-</span>run_start, field_timings<span class="op">=</span>timings,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        packages<span class="op">=</span>{p: importlib.metadata.version(p) <span class="cf">for</span> p <span class="kw">in</span> packages},</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        license<span class="op">=</span>attrs.get(<span class="st">'license'</span>, <span class="st">''</span>), further_info_url<span class="op">=</span>attrs.get(<span class="st">'further_info_url'</span>, <span class="st">''</span>),</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>        csv_sha256<span class="op">=</span>hashlib.sha256(MEANS_FILE.read_bytes()).hexdigest())</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    PROVENANCE_FILE.write_text(json.dumps(provenance, indent<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Cloud-field averaging: </span><span class="sc">{</span>averaging_seconds<span class="sc">:.1f}</span><span class="ss"> s (</span><span class="sc">{</span>averaging_seconds<span class="op">/</span><span class="dv">60</span><span class="sc">:.2f}</span><span class="ss"> min).'</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co"># These checks also run when reusing saved means.</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">set</span>(annual.experiment) <span class="op">==</span> <span class="bu">set</span>(EXPERIMENTS)</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> annual.duplicated([<span class="st">'experiment'</span>, <span class="st">'year'</span>]).<span class="bu">any</span>()</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.isfinite(annual[VARIABLES <span class="op">+</span> [<span class="st">'N'</span>]].to_numpy()).<span class="bu">all</span>()</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> exp <span class="kw">in</span> EXPERIMENTS:</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    np.testing.assert_array_equal(annual.loc[annual.experiment <span class="op">==</span> exp, <span class="st">'year'</span>], np.arange(<span class="dv">1</span>, NYEARS<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>np.testing.assert_allclose(annual.N, annual.rsdt<span class="op">-</span>annual.rsut<span class="op">-</span>annual.rlut, atol<span class="op">=</span><span class="fl">1e-8</span>)</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>display(annual.groupby(<span class="st">'experiment'</span>)[[<span class="st">'tas'</span>, <span class="st">'N'</span>]].mean().rename(</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>{<span class="st">'tas'</span>: <span class="st">'mean temperature (K)'</span>, <span class="st">'N'</span>: <span class="st">'mean net radiation (W m-2)'</span>}))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="changes-relative-to-which-climate" class="level2">
+<h2 class="anchored" data-anchor-id="changes-relative-to-which-climate">3. Changes relative to which climate?</h2>
+<p>Our equation is about anomalies. We need both <span class="math display">\[T'(t)=T_{4\times}(t)-\widehat T_c(t),\qquad
+N'(t)=N_{4\times}(t)-\widehat N_c(t).\]</span></p>
+<p>The hats denote estimates of the control’s background climate. A control may have a small radiation offset and a slow drift. We first inspect its annual series. For this activity, we fit a linear background trend to the matched 150 control years, separately for temperature and radiation, and subtract that background from the perturbed run. This removes estimated linear drift without subtracting the control’s individual weather fluctuations. A fitted trend is an approximation, not proof that every slow change is model drift.</p>
+<p>The baseline comes from the model’s control simulation.</p>
+<div id="712305b0" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>control_annual <span class="op">=</span> annual.loc[annual.experiment <span class="op">==</span> <span class="st">'piControl'</span>].set_index(<span class="st">'year'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>forced_annual <span class="op">=</span> annual.loc[annual.experiment <span class="op">==</span> <span class="st">'abrupt-4xCO2'</span>].set_index(<span class="st">'year'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> control_annual.index.to_numpy()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>control_background <span class="op">=</span> {}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>control_trends <span class="op">=</span> {}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, variable, label <span class="kw">in</span> <span class="bu">zip</span>(axes, [<span class="st">'tas'</span>, <span class="st">'N'</span>],</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                             [<span class="st">'Control temperature (K)'</span>, <span class="st">'Control net radiation (W m$^{-2}$)'</span>]):</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    coefficients <span class="op">=</span> np.polyfit(year, control_annual[variable], <span class="dv">1</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    control_background[variable] <span class="op">=</span> np.polyval(coefficients, year)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    control_trends[variable] <span class="op">=</span> coefficients[<span class="dv">0</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    ax.plot(year, control_annual[variable], color<span class="op">=</span><span class="st">'0.65'</span>, lw<span class="op">=</span><span class="dv">1</span>, label<span class="op">=</span><span class="st">'Annual control'</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ax.plot(year, control_background[variable], color<span class="op">=</span><span class="st">'#326b9b'</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Linear background'</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Year relative to branch'</span>, ylabel<span class="op">=</span>label)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Fitted control temperature trend: </span><span class="sc">{</span>control_trends[<span class="st">"tas"</span>]<span class="sc">:+.4f}</span><span class="ss"> K per century'</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Fitted control radiation trend: </span><span class="sc">{</span>control_trends[<span class="st">"N"</span>]<span class="sc">:+.4f}</span><span class="ss"> W m⁻² per century'</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>T_prime <span class="op">=</span> forced_annual.tas.to_numpy() <span class="op">-</span> control_background[<span class="st">'tas'</span>]</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>N_prime <span class="op">=</span> forced_annual.N.to_numpy() <span class="op">-</span> control_background[<span class="st">'N'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Interpret:</strong> Why subtract the control radiation as well as the control temperature? Why do we subtract a smooth background rather than individual control years?</p>
+<p><strong>Your response:</strong></p>
+</section>
+<section id="watch-the-response-unfold-in-time" class="level2">
+<h2 class="anchored" data-anchor-id="watch-the-response-unfold-in-time">4. Watch the response unfold in time</h2>
+<p>These are two views of the same forced experiment. Temperature is the accumulated response; net radiation is an energy input rate. A declining imbalance can remain positive while temperature keeps increasing.</p>
+<div id="c1c456c6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(year, T_prime, color<span class="op">=</span><span class="st">'#b54b32'</span>, lw<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(year, N_prime, color<span class="op">=</span><span class="st">'#326b9b'</span>, lw<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'0.5'</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Year after CO₂ increase'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">"Temperature anomaly T′ (K)"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">"Net radiation anomaly N′ (W m$^{-2}$)"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f'</span><span class="sc">{</span>MODEL<span class="sc">}</span><span class="ss">: abrupt-4×CO₂ relative to control background'</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Years 141–150 mean warming: </span><span class="sc">{</span>T_prime[<span class="op">-</span><span class="dv">10</span>:]<span class="sc">.</span>mean()<span class="sc">:.2f}</span><span class="ss"> K'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Years 141–150 mean imbalance: </span><span class="sc">{</span>N_prime[<span class="op">-</span><span class="dv">10</span>:]<span class="sc">.</span>mean()<span class="sc">:.2f}</span><span class="ss"> W m⁻²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Interpret:</strong> Has the climate reached equilibrium by the end of the displayed period? Which quantity most directly supports your answer? Does a slower warming rate mean that the planet has stopped gaining energy?</p>
+<p><strong>Your response:</strong></p>
+</section>
+<section id="put-radiation-against-warming-the-gregory-plot" class="level2">
+<h2 class="anchored" data-anchor-id="put-radiation-against-warming-the-gregory-plot">5. Put radiation against warming: the Gregory plot</h2>
+<p>Put <span class="math inline">\(T'\)</span> on the horizontal axis and <span class="math inline">\(N'\)</span> on the vertical axis. Each point is one year. Color records elapsed time, which otherwise disappears from the axes.</p>
+<p><strong>Predict:</strong> Which direction should the points generally move as time passes? In <span class="math inline">\(N'=F+\alpha T'\)</span>, what are the vertical intercept, slope, and horizontal intercept? What units does each have?</p>
+<p><strong>Your response:</strong></p>
+<div id="0d03b631" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gregory_fit(temperature, imbalance):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Ordinary least squares: N′ = intercept + slope*T′."""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    slope, intercept <span class="op">=</span> np.polyfit(temperature, imbalance, <span class="dv">1</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> slope <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'The fitted slope is not restoring; a positive equilibrium estimate is inappropriate.'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(forcing<span class="op">=</span>intercept, slope<span class="op">=</span>slope, alpha<span class="op">=</span>slope,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                warming_4x<span class="op">=-</span>intercept<span class="op">/</span>slope, ecs_eff<span class="op">=-</span>intercept<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>slope))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> gregory_fit(T_prime, N_prime)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> ax.scatter(T_prime, N_prime, c<span class="op">=</span>year, cmap<span class="op">=</span><span class="st">'viridis'</span>, s<span class="op">=</span><span class="dv">26</span>, alpha<span class="op">=</span><span class="fl">0.85</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>fig.colorbar(points, ax<span class="op">=</span>ax, label<span class="op">=</span><span class="st">'Year after CO₂ increase'</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>x_observed <span class="op">=</span> np.linspace(T_prime.<span class="bu">min</span>(), T_prime.<span class="bu">max</span>(), <span class="dv">100</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>x_extended <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="bu">max</span>(fit[<span class="st">'warming_4x'</span>], T_prime.<span class="bu">max</span>()) <span class="op">*</span> <span class="fl">1.08</span>, <span class="dv">150</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>ax.plot(x_extended, fit[<span class="st">'forcing'</span>] <span class="op">+</span> fit[<span class="st">'slope'</span>]<span class="op">*</span>x_extended,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'--'</span>, color<span class="op">=</span><span class="st">'#b54b32'</span>, lw<span class="op">=</span><span class="fl">1.3</span>, label<span class="op">=</span><span class="st">'Line extended beyond observations'</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>ax.plot(x_observed, fit[<span class="st">'forcing'</span>] <span class="op">+</span> fit[<span class="st">'slope'</span>]<span class="op">*</span>x_observed,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">'#b54b32'</span>, lw<span class="op">=</span><span class="fl">2.2</span>, label<span class="op">=</span><span class="st">'OLS fit, years 1–150'</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>ax.scatter([<span class="dv">0</span>, fit[<span class="st">'warming_4x'</span>]], [fit[<span class="st">'forcing'</span>], <span class="dv">0</span>],</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>           marker<span class="op">=</span><span class="st">'x'</span>, s<span class="op">=</span><span class="dv">65</span>, color<span class="op">=</span><span class="st">'#b54b32'</span>, zorder<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'0.5'</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'0.5'</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Temperature anomaly T′ (K)"</span>, ylabel<span class="op">=</span><span class="st">"Net radiation anomaly N′ (W m$^{-2}$)"</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>       title<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span>MODEL<span class="sc">}</span><span class="ss">: Gregory plot'</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'upper right'</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>display(pd.DataFrame({</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Quantity'</span>: [<span class="st">'Fitted quadrupling forcing'</span>, <span class="st">'Slope dN′/dT′'</span>, <span class="st">'Net feedback parameter α'</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'Extrapolated quadrupling warming'</span>, <span class="st">'Effective doubled-CO₂ sensitivity'</span>],</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Value'</span>: [fit[<span class="st">'forcing'</span>], fit[<span class="st">'slope'</span>], fit[<span class="st">'alpha'</span>], fit[<span class="st">'warming_4x'</span>], fit[<span class="st">'ecs_eff'</span>]],</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Units'</span>: [<span class="st">'W m⁻²'</span>, <span class="st">'W m⁻² K⁻¹'</span>, <span class="st">'W m⁻² K⁻¹'</span>, <span class="st">'K'</span>, <span class="st">'K'</span>]}).<span class="bu">round</span>(<span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="translate-the-line-back-into-climate-quantities" class="level3">
+<h3 class="anchored" data-anchor-id="translate-the-line-back-into-climate-quantities">Translate the line back into climate quantities</h3>
+<p>For a fitted line <span class="math inline">\(N'=a+bT'\)</span>, <span class="math display">\[\widehat F_{4\times}=a,\qquad\widehat\alpha=b,
+\qquad\widehat T'_{\mathrm{eq},4\times}=-\frac{a}{b}.\]</span></p>
+<p>We use <strong>negative <span class="math inline">\(\alpha\)</span> for a restoring response</strong>. The intercept estimates an effective forcing, including rapid adjustments; it is not simply the first year’s measured imbalance. The horizontal intercept extrapolates the warming at zero anomalous net radiation.</p>
+<p>ECS refers to <strong>doubled</strong>, not quadrupled, CO₂. We use one additional fact from radiative-transfer calculations: <strong>CO₂ forcing is approximately logarithmic in concentration, so each doubling adds approximately the same forcing.</strong> Quadrupling is two doublings, giving <span class="math inline">\(F_{4\times}\approx2F_{2\times}\)</span>.</p>
+<p>Assuming the same net feedback parameter <span class="math inline">\(\alpha\)</span> for the two experiments, equilibrium warming <span class="math inline">\(-F/\alpha\)</span> also doubles. We therefore halve the <strong>extrapolated temperature intercept</strong> to estimate effective ECS: <span class="math display">\[\widehat{\mathrm{ECS}}_{\mathrm{eff}}\approx\frac{\widehat T'_{\mathrm{eq},4\times}}{2}=-\frac{a}{2b}.\]</span></p>
+<p>We take the logarithmic forcing relationship as a given here; deriving its absorption physics is outside this activity.</p>
+<p>This is an <strong>effective sensitivity from a finite-period fit</strong>. It need not equal the warming the model would reach after a much longer simulation. Evolving warming patterns and climate-state-dependent feedbacks can bend the relationship. Regression scatter is not the only source of uncertainty, so we do not label a simple line-fit confidence interval as uncertainty in the true ECS.</p>
+<p><strong>Interpret:</strong></p>
+<ol type="1">
+<li>Report <span class="math inline">\(F_{4\times}\)</span>, <span class="math inline">\(\alpha\)</span>, and effective ECS with units. Is the horizontal intercept a doubling or quadrupling response?</li>
+<li>Why does the fitted forcing differ from the first annual value of <span class="math inline">\(N'\)</span>?</li>
+<li>If <span class="math inline">\(F\)</span> stayed fixed and <span class="math inline">\(\alpha\)</span> became more negative, how would the line and its horizontal intercept change?</li>
+</ol>
+<p><strong>Your response:</strong></p>
+</section>
+</section>
+<section id="sources-and-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="sources-and-reproducibility">Sources and reproducibility</h2>
+<ul>
+<li>Gregory et al.&nbsp;(2004), <a href="https://doi.org/10.1029/2003GL018747">A new method for diagnosing radiative forcing and climate sensitivity</a>: the diagnostic idea.</li>
+<li>Henry Drake and Ryan Abernathey, <a href="https://gallery.pangeo.io/repos/pangeo-gallery/cmip6/ECS_Gregory_method.html">Pangeo CMIP6 Gregory notebook</a>: the starting workflow. This teaching adaptation uses one model, explicit cell areas, calendar-weighted annual means, branch-aligned control data, and a documented baseline.</li>
+<li><a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/">IPCC AR6 WGI Chapter 7, Box 7.1</a>: forcing, feedback, and effective sensitivity.</li>
+<li>Zehrung et al.&nbsp;(2025), <a href="https://gmd.copernicus.org/articles/18/9433/2025/">Standardising the “Gregory method”</a>: processing choices. Our linear control background is a transparent teaching choice; it is not their recommended rolling-mean implementation.</li>
+</ul>
+<p><strong>Data acknowledgment:</strong> CMIP6 MPI-ESM1-2-LR output produced by MPI-M, accessed through the Pangeo cloud archive. The annual series are derived from the model output and retain its CC BY-SA 4.0 attribution/share-alike terms. The saved provenance records exact stores, version, branch, calendar, processing, package versions, timings, and the source’s further-information link. These intermediate means are sufficient to reproduce the regression without reading the spatial fields again.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Dhruv Balwada · Columbia Climate School · Fall 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
