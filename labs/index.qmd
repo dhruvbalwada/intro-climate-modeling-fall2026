@@ -24,6 +24,18 @@ We covered the energy-balance models in lecture but did not reach the labs. Lab 
 
 Find the slides and lab links in the [schedule](../schedule.qmd). For LEAP, GitHub, and submission instructions, see [Lab 0a](lab0a.qmd).
 
+## Week 5 (Oct 8) {#week-5-oct-8}
+
+Work through these notebooks in order:
+
+1. **Gregory plots from CMIP6:** diagnose radiative forcing and feedback from a climate-model experiment. <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/gregory_cmip6.ipynb" download>Download notebook</a>
+2. **Fast and slow climate responses:** explore surface and deep-ocean heat storage. <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/two_box_ocean.ipynb" download>Download notebook</a>
+3. **Regional climates and heat transport:** explore two equal-area tropical and polar boxes. <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/two_box_transport.ipynb" download>Download notebook</a>
+
+**[Download all three labs and supporting files](week05_labs.zip)** and unzip them before opening the notebooks. The package includes saved CMIP6 annual means for the Gregory notebook: set `USE_SAVED_MEANS = True` to use these instead of reading cloud data. Keep the `data` folder beside the notebooks. The two box-model labs need no downloads.
+
+[Slides (PDF)](../slides/week05.pdf) · [Running instructions](week05_README.txt) · [Python packages](week05_requirements.txt)
+
 ## Reference (optional)
 
 - **[Where our data comes from](getting_the_data.ipynb)**: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project

@@ -9,8 +9,8 @@ The schedule will be filled in as the semester progresses.
 | 1  | Sep 10 | Introduction: what is climate, what is a model, what is uncertainty | [slides](slides/week01.qmd)<br>[labs](labs/index.qmd) | [G&R Ch 1](https://link.springer.com/book/10.1007/978-3-662-48959-8) *(optional)* | Lab 0 |
 | 2  | Sep 17 | Energy balance models: equilibrium and adjustment | [slides](slides/week02.qmd) | | |
 | 3  | Sep 24 | Climate adjustment, radiative forcing, and feedbacks | [slides](slides/week03.qmd)<br>[Lab 1b](labs/lab1b_adjustment.ipynb)<br>[Lab 1a (optional)](labs/lab1a_equilibrium.ipynb)<br>[HW1 (weeks 1–3)](homeworks/index.qmd#hw1) | | [Lab 1b](labs/lab1b_adjustment.ipynb) |
-| 4  | Oct 1  | TBD | | | |
-| 5  | Oct 8  | TBD | | | |
+| 4  | Oct 1  | No class; material moved to Oct 8 | | | |
+| 5  | Oct 8  | Forcing–feedback, ocean heat storage, and regional transport | [Slides (PDF)](slides/week05.pdf)<br>[Three in-class labs](labs/index.qmd#week-5-oct-8) | | |
 | 6  | Oct 15 | TBD | | | |
 | 7  | Oct 22 | TBD | | | |
 | 8  | Oct 29 | TBD | | | |

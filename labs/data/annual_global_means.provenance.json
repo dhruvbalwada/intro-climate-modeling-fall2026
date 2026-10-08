@@ -1,0 +1,103 @@
+{
+  "settings": {
+    "model": "MPI-ESM1-2-LR",
+    "member": "r1i1p1f1",
+    "grid": "gn",
+    "version": "v20190710",
+    "years": 150,
+    "variables": [
+      "tas",
+      "rsdt",
+      "rsut",
+      "rlut"
+    ],
+    "processing": "cell-area_month-days_v1"
+  },
+  "created_utc": "2026-09-30T17:58:54.745373+00:00",
+  "catalogue": "https://storage.googleapis.com/cmip6/pangeo-cmip6.csv",
+  "sources": {
+    "piControl": {
+      "tas": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/piControl/r1i1p1f1/Amon/tas/gn/v20190710/",
+      "rsdt": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/piControl/r1i1p1f1/Amon/rsdt/gn/v20190710/",
+      "rsut": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/piControl/r1i1p1f1/Amon/rsut/gn/v20190710/",
+      "rlut": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/piControl/r1i1p1f1/Amon/rlut/gn/v20190710/"
+    },
+    "abrupt-4xCO2": {
+      "tas": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/abrupt-4xCO2/r1i1p1f1/Amon/tas/gn/v20190710/",
+      "rsdt": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/abrupt-4xCO2/r1i1p1f1/Amon/rsdt/gn/v20190710/",
+      "rsut": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/abrupt-4xCO2/r1i1p1f1/Amon/rsut/gn/v20190710/",
+      "rlut": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/abrupt-4xCO2/r1i1p1f1/Amon/rlut/gn/v20190710/"
+    }
+  },
+  "area_source": "gs://cmip6/CMIP6/CMIP/MPI-M/MPI-ESM1-2-LR/piControl/r1i1p1f1/fx/areacella/gn/v20190710/",
+  "selection_dates": {
+    "piControl": [
+      "1850-01-16 12:00:00",
+      "1999-12-16 12:00:00"
+    ],
+    "abrupt-4xCO2": [
+      "1850-01-16 12:00:00",
+      "1999-12-16 12:00:00"
+    ]
+  },
+  "parent_branch": "1850-01-01 00:00:00",
+  "calendar": "proleptic_gregorian",
+  "area_sum_m2": 510064471965696.0,
+  "averaging_seconds": 22.024514790973626,
+  "setup_and_averaging_seconds": 29.439112000050955,
+  "field_timings": [
+    {
+      "experiment": "piControl",
+      "variable": "tas",
+      "seconds": 4.358573833014816
+    },
+    {
+      "experiment": "piControl",
+      "variable": "rsdt",
+      "seconds": 2.815309749916196
+    },
+    {
+      "experiment": "piControl",
+      "variable": "rsut",
+      "seconds": 2.848501041997224
+    },
+    {
+      "experiment": "piControl",
+      "variable": "rlut",
+      "seconds": 3.1058663750300184
+    },
+    {
+      "experiment": "abrupt-4xCO2",
+      "variable": "tas",
+      "seconds": 2.75652033300139
+    },
+    {
+      "experiment": "abrupt-4xCO2",
+      "variable": "rsdt",
+      "seconds": 1.227442124974914
+    },
+    {
+      "experiment": "abrupt-4xCO2",
+      "variable": "rsut",
+      "seconds": 2.1221999999834225
+    },
+    {
+      "experiment": "abrupt-4xCO2",
+      "variable": "rlut",
+      "seconds": 2.782546625006944
+    }
+  ],
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.3",
+    "xarray": "2025.3.1",
+    "dask": "2025.3.0",
+    "zarr": "2.18.7",
+    "gcsfs": "2025.3.0",
+    "cftime": "1.6.4.post1"
+  },
+  "license": "CMIP6 model data produced by MPI-M is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+  "further_info_url": "https://furtherinfo.es-doc.org/CMIP6.MPI-M.MPI-ESM1-2-LR.abrupt-4xCO2.none.r1i1p1f1",
+  "csv_sha256": "21ec78b52116ff496235f3e447d95eee121efde5f3ef09e2b94c4177544f7782"
+}

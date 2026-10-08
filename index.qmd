@@ -17,6 +17,10 @@ Earth system and climate models are critically important tools for climate scien
 | Submission  | Private GitHub repos; submit by posting links on Courseworks |
 | Computing   | [LEAP JupyterHub](https://leap.2i2c.cloud/) — see [Lab 0a](labs/lab0a.qmd) for setup |
 
+## Week 5 materials (Oct 8)
+
+[Lecture slides (PDF)](slides/week05.pdf) and [the three in-class notebooks](labs/index.qmd#week-5-oct-8) are available.
+
 ## Homework
 
 **[HW1](homeworks/index.qmd#hw1)** is available. It covers weeks 1–3; see Courseworks for the submission deadline.

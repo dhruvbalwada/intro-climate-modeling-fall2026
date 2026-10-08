@@ -4,6 +4,9 @@ project:
   resources:
     - "labs/data/*"
     - "labs/*.ipynb"
+    - "labs/week05_*.txt"
+    - "labs/week05_labs.zip"
+    - "slides/*.pdf"
     - "homeworks/*.ipynb"
     - "syllabus/*.docx"
 
