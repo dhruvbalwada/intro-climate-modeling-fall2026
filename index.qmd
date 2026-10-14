@@ -13,7 +13,7 @@ Earth system and climate models are critically important tools for climate scien
 | Meetings    | Thursdays 10:10–12:40 · FRM 315 (The Forum) |
 | Instructor  | Dhruv Balwada · dbalwada@ldeo.columbia.edu |
 | TAs         | Prani Nalluri · pan2121@columbia.edu<br>Chandanie Kutwaru · ck3397@columbia.edu |
-| Office hours| **[DAYS/TIMES]**                           |
+| Office hours| As discussed by TAs                       |
 | Submission  | Private GitHub repos; submit by posting links on Courseworks |
 | Computing   | [LEAP JupyterHub](https://leap.2i2c.cloud/) — see [Lab 0a](labs/lab0a.qmd) for setup |
 
