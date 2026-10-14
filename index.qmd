@@ -19,7 +19,11 @@ Earth system and climate models are critically important tools for climate scien
 
 ## Week 5 materials (Oct 8)
 
-[Lecture slides (PDF)](slides/week05.pdf) and [the three in-class notebooks](labs/index.qmd#week-5-oct-8) are available.
+[Lecture slides (PDF)](slides/week05.pdf) and [the Gregory lab](labs/index.qmd#week-5-oct-8) are available. We completed the Gregory lab and began discussing deep-ocean heat uptake and two time scales.
+
+## Week 6 materials (Oct 15)
+
+The [two-box ocean and regional heat-transport labs](labs/index.qmd#week-6-oct-15) move to this class. We will continue with the same lecture slides.
 
 ## Homework
 
