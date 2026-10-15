@@ -3,9 +3,12 @@ project:
   output-dir: _site
   resources:
     - "labs/data/*"
+    - "labs/data/ncep/*.nc"
     - "labs/*.ipynb"
     - "labs/week05_*.txt"
     - "labs/week05_labs.zip"
+    - "labs/week06_*.txt"
+    - "labs/week06_labs.zip"
     - "slides/*.pdf"
     - "homeworks/*.ipynb"
     - "syllabus/*.docx"

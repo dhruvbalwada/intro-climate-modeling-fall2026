@@ -36,12 +36,13 @@ We completed the Gregory lab and began discussing deep-ocean heat uptake and fas
 
 ## Week 6 (Oct 15) {#week-6-oct-15}
 
-We will continue with deep-ocean heat uptake and two time scales, then explore regional heat transport. Work through these notebooks in order:
+After discussing surface–deep-ocean heat uptake and two time scales, we will work with a one-dimensional energy balance model across latitude.
 
-1. **Fast and slow climate responses:** explore surface and deep-ocean heat storage. <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/two_box_ocean.ipynb" download>Download notebook</a>
-2. **Regional climates and heat transport:** explore two equal-area tropical and polar boxes. <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/two_box_transport.ipynb" download>Download notebook</a>
+- **[Regional climate: a 1D energy balance model](latitude_ebm.ipynb)**: begin with an independent model at each latitude, compare with Earth's temperature and radiation patterns, then add horizontal heat transport. <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/latitude_ebm.ipynb" download>Download notebook</a>
 
-These notebooks need no external data downloads. We will continue with the [same lecture slides (PDF)](../slides/week05.pdf).
+**[Download the notebook and its data](week06_labs.zip)** and unzip them before opening the notebook. Keep the `data` folder beside it. The package includes the NCEP temperature file, so the lab can run offline; a missing file will be downloaded from NOAA when the notebook runs.
+
+[Week 6 slides (PDF)](../slides/week06.pdf) · [Running instructions](week06_README.txt) · [Python packages](week06_requirements.txt)
 
 ## Reference (optional)
 

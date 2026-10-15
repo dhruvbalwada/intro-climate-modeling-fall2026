@@ -23,7 +23,7 @@ Earth system and climate models are critically important tools for climate scien
 
 ## Week 6 materials (Oct 15)
 
-The [two-box ocean and regional heat-transport labs](labs/index.qmd#week-6-oct-15) move to this class. We will continue with the same lecture slides.
+The latest [lecture slides (PDF)](slides/week06.pdf) and [1D energy-balance-model lab](labs/index.qmd#week-6-oct-15) are available. We discuss surface–deep-ocean adjustment, then explore regional climate and horizontal heat transport.
 
 ## Homework
 
