@@ -1,0 +1,6 @@
+# Scientific versions used for local verification; Jupyter/IPython also needed.
+numpy==2.4.6
+scipy==1.17.1
+matplotlib==3.10.9
+xarray==2026.4.0
+netCDF4==1.7.4
