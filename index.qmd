@@ -17,18 +17,6 @@ Earth system and climate models are critically important tools for climate scien
 | Submission  | Private GitHub repos; submit by posting links on Courseworks |
 | Computing   | [LEAP JupyterHub](https://leap.2i2c.cloud/) — see [Lab 0a](labs/lab0a.qmd) for setup |
 
-## Week 5 materials (Oct 8)
-
-[Lecture slides (PDF)](slides/week05.pdf) and [the Gregory lab](labs/index.qmd#week-5-oct-8) are available. We completed the Gregory lab and began discussing deep-ocean heat uptake and two time scales.
-
-## Week 6 materials (Oct 15)
-
-The latest [lecture slides (PDF)](slides/week06.pdf) and [1D energy-balance-model lab](labs/index.qmd#week-6-oct-15) are available. We discuss surface–deep-ocean adjustment, then explore regional climate and horizontal heat transport.
-
-## Homework
-
-**[HW1](homeworks/index.qmd#hw1)** is available. It covers weeks 1–3; see Courseworks for the submission deadline.
-
 ## Key dates
 
 - **Oct 23** — project topic and team selection due
