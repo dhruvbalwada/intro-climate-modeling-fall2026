@@ -1,0 +1,10 @@
+---
+title: "Final Project"
+search: false
+include-in-header:
+  text: |
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="refresh" content="0; url=project.html">
+---
+
+The final project guide is now available on the [Final Project page](project.qmd).
