@@ -1,7 +1,103 @@
 ---
 title: "Final Project"
+toc-depth: 2
 ---
 
-**Final project details: TBD.**
+Working in **groups of 3–4**, investigate a question about the climate or another environmental system using physical understanding, models and data. You may choose from the suggested topics or develop your own project, provided it meets the basic requirements.
 
-Project instructions, deadlines, and grading criteria will be posted here once finalized.
+## Basic project requirements
+
+1. **Use data from a comprehensive (CMIP class) or idealized climate model, observations, or another environmental source.**
+2. **Ask a question that requires physical understanding.** Your analysis must go beyond reporting means, trends, correlations, or other basic descriptive statistics. Those calculations can be useful steps, but you must connect the results to physical processes, mechanisms, or constraints and use evidence to evaluate an explanation of how the system works.
+3. **Explain and check the analysis.** Document how you move from the source data to your conclusions, justify your choices and show how the analysis helped assess your hypothesis.
+4. **Demonstrate personal understanding.** Every group member must be able to explain the question, relevant physics, methods, results, and limitations in their own words, and respond thoughtfully to follow-up questions during their presentations. This expectation applies regardless of how much AI assistance the team uses.
+5. **Submit a final reproducible notebook**, which can be run and evaluated by the TA and instructor without your help.
+6. **Teach your peers.** One of the major goals of the projects is to expose the class to different facets of climate modeling that we were unable to cover during the course. So your presentations should be laid out in a pedagogical style, and your ability to convey your project clearly carries a lot of weight.
+
+Choose a manageable question and use relevant scientific literature to develop your explanation. Define the quantities, units, and equations you use and explain their assumptions. If you reproduce a published result, compare it carefully with your own and explain discrepancies. If you develop your own analysis, identify the evidence or physical expectations against which you will evaluate it.
+
+## Teams and dates
+
+| Milestone | Date | What to submit or prepare |
+|---|---|---|
+| Topic, team, and feasibility check | **Friday, November 6** | Team member names, selected topic, and a one-paragraph write-up about the project’s feasibility. Use the time leading up to this to have discussions with TA Prani Nalluri and the instructor about the scope of your project and whether it will satisfy the requirements. |
+| In-class presentations | **December 10 and 17** | A 30-minute slot per team: plan for 20 minutes presenting, 8 minutes of questions, and 2 minutes for transition. |
+| Final project notebook and reflections | **Friday, December 18** | Reproducible notebook, any supporting files or data, presentation slides, and brief reflections. |
+
+Discuss your question, data source, and scope with the instructor or a TA early. Student-designed projects are welcome as long as they meet the requirements above. The suggested topics are starting points, and teams may adapt them to their interests.
+
+## Notebook and presentation
+
+### Reproducible notebook
+
+Submit a notebook that tells a scientific story, with explanatory text between code cells. Include:
+
+- The physical question, relevant scientific references, data sources, and agreed scope. Include a target figure reference if you use one.
+- A concise explanation of the physics and the equations or diagnostics used.
+- Data access or model setup, followed by the documented processing pipeline.
+- Your results, physical interpretation, validation checks, and any comparisons or sensitivity analyses used to support your conclusions.
+- Conclusions, limitations, references, AI-use statement, and a brief account of each member's contributions.
+
+Ideally, your notebook should run out of the box on the LEAP Hub used in class. If it requires additional setup, include clear instructions for accessing the data and installing any required packages. Restart the kernel and run the workflow in order before submission, and retain the final outputs for review. **A separate written report is not required.**
+
+### Presentation
+
+Use your 20-minute presentation to **pedagogically** lead the class from the physical question to the evidence. Explain the relevant physics and scientific context, show the essential pipeline and checks, and present the evidence for your conclusions and their limitations. Choose figures and equations that you can explain clearly within the available time.
+
+Every team member should speak and be ready to answer questions about the overall project. We may ask you to explain a processing choice, interpret an unexpected result, discuss an alternative explanation, or predict how the system would respond to a change. Divide the work as useful, while making sure that understanding is shared across the team.
+
+## AI use
+
+**AI assistance is permitted for this project.** You may use it to locate documentation, explore methods, generate or debug code, and process data. Make sure to check its scientific claims against relevant papers, reports, or dataset documentation. **You are responsible for every submitted calculation and explanation**, including code developed with AI assistance.
+
+Include a short **AI-use statement** identifying the tools used, the tasks they helped with, and how you checked their output.
+
+## Grading and evaluation
+
+Topic and team selection, including checking that the project is doable with the available data, tools, and time, counts for **10% of the course grade**. The final project counts for **25%**.
+
+The presentation accounts for **80% of the final project grade**. Evaluations from the instructor, TAs, and classmates will inform the instructor’s final assessment.
+
+The notebook accounts for the remaining **20% of the final project grade**.
+
+The project will receive a group grade.
+
+In addition to the final notebook, by December 18, each student should also submit a brief, confidential reflection to the instructor and TAs on their own and their teammates' contributions, separately from the notebook. We may adjust individual grades based on these reflections and the understanding demonstrated during the presentation and Q&A.
+
+**Personal physical understanding and the ability to communicate it are the central criteria.** The notebook and presentation should make that understanding visible; polished plots and working code alone are not enough. The final project will be assessed on:
+
+| Criterion | What strong work demonstrates |
+|---|---|
+| Physical understanding | Each student can explain the mechanisms, quantities, assumptions, and scientific context in their own words and respond to follow-up questions. |
+| Analysis and validation | Appropriate methods, a traceable pipeline, and checks that support the result. |
+| Interpretation and judgment | Reasoning that goes beyond descriptive statistics, weighs alternative explanations, and recognizes uncertainty, nuances, and limitations. |
+| Reproducibility and communication | An organized notebook, useful figures, clear presentation, accurate citations, and shared understanding. |
+
+A well-scoped analysis with convincing checks can be stronger than a much larger analysis that the team cannot explain or only vaguely understands.
+
+## Some suggested topics and resources
+
+These **12 optional ideas** illustrate possible projects. You may choose, adapt, or propose an alternative to them. Reproducing an IPCC figure is optional, and the approaches and figure references below are suggestions rather than prescribed analyses. Also during the first phase it is your job to ensure that the project is viable; just because a project is on the list here does not imply that it is easily doable.
+
+| Suggested topic | Physical question | Possible approach | Possible IPCC connection |
+|---|---|---|---|
+| 1. Climate sensitivity | How can we estimate equilibrium warming before a model equilibrates? | CMIP6 energy-budget regression | Chapter 7, Box 7.1, Figure 1 |
+| 2. Transient climate response | Why does warming lag behind forcing? | CMIP6 plus a two-layer model | Figures 7.17 and 7.18b |
+| 3. Moisture and rainfall | Why do atmospheric moisture and rainfall change at different rates? | CMIP6 water-cycle analysis | Figure 8.16 |
+| 4. Arctic sea ice | How does sea-ice loss relate to warming and CO₂ emissions? | Observations and CMIP6 | Figure 9.14 |
+| 5. Cumulative emissions | Why does warming scale with cumulative CO₂? | Simple carbon-cycle–climate model | Figure 5.31 |
+| 6. Internal variability | Can the same model produce different warming trends? | Initial-condition large ensemble | Figure 1.13 |
+| 7. Projection uncertainty | Where does uncertainty in future warming come from? | Models, scenarios, and ensemble members | Figure 1.15 |
+| 8. Past projections | How well did early models predict subsequent warming? | Published projections and observations | Figure 1.9 |
+| 9. Land–ocean contrast | Why does land warm more than the ocean? | CMIP6 warming patterns | Figure 4.31 |
+| 10. Extreme heat | Do the hottest days warm at the global-average rate? | Regional daily CMIP6 temperatures | Figure 11.3 |
+| 11. Ocean heat content | Where is the excess energy stored? | Gridded ocean temperatures | Figure 9.6a |
+| 12. Attribution | How do we identify the human contribution to warming? | Observations and forcing experiments | Figure 3.9 |
+
+### Resources for the suggested IPCC topics
+
+- [IPCC AR6 WGI report and chapters](https://www.ipcc.ch/report/ar6/wg1/)
+- [IPCC figure data and code access](https://www.ipcc.ch/report/ar6/wg1/resources/data-access/)
+- [IPCC WGI figure-code repositories](https://github.com/IPCC-WG1)
+
+Published code and processed figure data are useful references and comparison targets. Explain any parts you reuse and carry out the agreed analysis yourself. For projects that reproduce a published result, some archived workflows require adaptation to current software or computing environments; a smaller, transparent reproduction is an appropriate goal.
