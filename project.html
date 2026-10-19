@@ -132,8 +132,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+
+  <ul class="collapse">
+  <li><a href="#basic-project-requirements" id="toc-basic-project-requirements" class="nav-link active" data-scroll-target="#basic-project-requirements">Basic project requirements</a></li>
+  <li><a href="#teams-and-dates" id="toc-teams-and-dates" class="nav-link" data-scroll-target="#teams-and-dates">Teams and dates</a></li>
+  <li><a href="#notebook-and-presentation" id="toc-notebook-and-presentation" class="nav-link" data-scroll-target="#notebook-and-presentation">Notebook and presentation</a></li>
+  <li><a href="#ai-use" id="toc-ai-use" class="nav-link" data-scroll-target="#ai-use">AI use</a></li>
+  <li><a href="#grading-and-evaluation" id="toc-grading-and-evaluation" class="nav-link" data-scroll-target="#grading-and-evaluation">Grading and evaluation</a></li>
+  <li><a href="#some-suggested-topics-and-resources" id="toc-some-suggested-topics-and-resources" class="nav-link" data-scroll-target="#some-suggested-topics-and-resources">Some suggested topics and resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -147,20 +158,234 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
-    
-  
-    
+
+
+
   </div>
-  
+
 
 
 </header>
 
 
-<p><strong>Final project details: TBD.</strong></p>
-<p>Project instructions, deadlines, and grading criteria will be posted here once finalized.</p>
+<p>Working in <strong>groups of 3–4</strong>, investigate a question about the climate or another environmental system using physical understanding, models and data. You may choose from the suggested topics or develop your own project, provided it meets the basic requirements.</p>
+<section id="basic-project-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="basic-project-requirements">Basic project requirements</h2>
+<ol type="1">
+<li><strong>Use data from a comprehensive (CMIP class) or idealized climate model, observations, or another environmental source.</strong></li>
+<li><strong>Ask a question that requires physical understanding.</strong> Your analysis must go beyond reporting means, trends, correlations, or other basic descriptive statistics. Those calculations can be useful steps, but you must connect the results to physical processes, mechanisms, or constraints and use evidence to evaluate an explanation of how the system works.</li>
+<li><strong>Explain and check the analysis.</strong> Document how you move from the source data to your conclusions, justify your choices and show how the analysis helped assess your hypothesis.</li>
+<li><strong>Demonstrate personal understanding.</strong> Every group member must be able to explain the question, relevant physics, methods, results, and limitations in their own words, and respond thoughtfully to follow-up questions during their presentations. This expectation applies regardless of how much AI assistance the team uses.</li>
+<li><strong>Submit a final reproducible notebook</strong>, which can be run and evaluated by the TA and instructor without your help.</li>
+<li><strong>Teach your peers.</strong> One of the major goals of the projects is to expose the class to different facets of climate modeling that we were unable to cover during the course. So your presentations should be laid out in a pedagogical style, and your ability to convey your project clearly carries a lot of weight.</li>
+</ol>
+<p>Choose a manageable question and use relevant scientific literature to develop your explanation. Define the quantities, units, and equations you use and explain their assumptions. If you reproduce a published result, compare it carefully with your own and explain discrepancies. If you develop your own analysis, identify the evidence or physical expectations against which you will evaluate it.</p>
+</section>
+<section id="teams-and-dates" class="level2">
+<h2 class="anchored" data-anchor-id="teams-and-dates">Teams and dates</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Milestone</th>
+<th>Date</th>
+<th>What to submit or prepare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Topic, team, and feasibility check</td>
+<td><strong>Friday, November 6</strong></td>
+<td>Team member names, selected topic, and a one-paragraph write-up about the project’s feasibility. Use the time leading up to this to have discussions with TA Prani Nalluri and the instructor about the scope of your project and whether it will satisfy the requirements.</td>
+</tr>
+<tr class="even">
+<td>In-class presentations</td>
+<td><strong>December 10 and 17</strong></td>
+<td>A 30-minute slot per team: plan for 20 minutes presenting, 8 minutes of questions, and 2 minutes for transition.</td>
+</tr>
+<tr class="odd">
+<td>Final project notebook and reflections</td>
+<td><strong>Friday, December 18</strong></td>
+<td>Reproducible notebook, any supporting files or data, presentation slides, and brief reflections.</td>
+</tr>
+</tbody>
+</table>
+<p>Discuss your question, data source, and scope with the instructor or a TA early. Student-designed projects are welcome as long as they meet the requirements above. The suggested topics are starting points, and teams may adapt them to their interests.</p>
+</section>
+<section id="notebook-and-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-and-presentation">Notebook and presentation</h2>
+<section id="reproducible-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="reproducible-notebook">Reproducible notebook</h3>
+<p>Submit a notebook that tells a scientific story, with explanatory text between code cells. Include:</p>
+<ul>
+<li>The physical question, relevant scientific references, data sources, and agreed scope. Include a target figure reference if you use one.</li>
+<li>A concise explanation of the physics and the equations or diagnostics used.</li>
+<li>Data access or model setup, followed by the documented processing pipeline.</li>
+<li>Your results, physical interpretation, validation checks, and any comparisons or sensitivity analyses used to support your conclusions.</li>
+<li>Conclusions, limitations, references, AI-use statement, and a brief account of each member’s contributions.</li>
+</ul>
+<p>Ideally, your notebook should run out of the box on the LEAP Hub used in class. If it requires additional setup, include clear instructions for accessing the data and installing any required packages. Restart the kernel and run the workflow in order before submission, and retain the final outputs for review. <strong>A separate written report is not required.</strong></p>
+</section>
+<section id="presentation" class="level3">
+<h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
+<p>Use your 20-minute presentation to <strong>pedagogically</strong> lead the class from the physical question to the evidence. Explain the relevant physics and scientific context, show the essential pipeline and checks, and present the evidence for your conclusions and their limitations. Choose figures and equations that you can explain clearly within the available time.</p>
+<p>Every team member should speak and be ready to answer questions about the overall project. We may ask you to explain a processing choice, interpret an unexpected result, discuss an alternative explanation, or predict how the system would respond to a change. Divide the work as useful, while making sure that understanding is shared across the team.</p>
+</section>
+</section>
+<section id="ai-use" class="level2">
+<h2 class="anchored" data-anchor-id="ai-use">AI use</h2>
+<p><strong>AI assistance is permitted for this project.</strong> You may use it to locate documentation, explore methods, generate or debug code, and process data. Make sure to check its scientific claims against relevant papers, reports, or dataset documentation. <strong>You are responsible for every submitted calculation and explanation</strong>, including code developed with AI assistance.</p>
+<p>Include a short <strong>AI-use statement</strong> identifying the tools used, the tasks they helped with, and how you checked their output.</p>
+</section>
+<section id="grading-and-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="grading-and-evaluation">Grading and evaluation</h2>
+<p>Topic and team selection, including checking that the project is doable with the available data, tools, and time, counts for <strong>10% of the course grade</strong>. The final project counts for <strong>25%</strong>.</p>
+<p>The presentation accounts for <strong>80% of the final project grade</strong>. Evaluations from the instructor, TAs, and classmates will inform the instructor’s final assessment.</p>
+<p>The notebook accounts for the remaining <strong>20% of the final project grade</strong>.</p>
+<p>The project will receive a group grade.</p>
+<p>In addition to the final notebook, by December 18, each student should also submit a brief, confidential reflection to the instructor and TAs on their own and their teammates’ contributions, separately from the notebook. We may adjust individual grades based on these reflections and the understanding demonstrated during the presentation and Q&amp;A.</p>
+<p><strong>Personal physical understanding and the ability to communicate it are the central criteria.</strong> The notebook and presentation should make that understanding visible; polished plots and working code alone are not enough. The final project will be assessed on:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>What strong work demonstrates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Physical understanding</td>
+<td>Each student can explain the mechanisms, quantities, assumptions, and scientific context in their own words and respond to follow-up questions.</td>
+</tr>
+<tr class="even">
+<td>Analysis and validation</td>
+<td>Appropriate methods, a traceable pipeline, and checks that support the result.</td>
+</tr>
+<tr class="odd">
+<td>Interpretation and judgment</td>
+<td>Reasoning that goes beyond descriptive statistics, weighs alternative explanations, and recognizes uncertainty, nuances, and limitations.</td>
+</tr>
+<tr class="even">
+<td>Reproducibility and communication</td>
+<td>An organized notebook, useful figures, clear presentation, accurate citations, and shared understanding.</td>
+</tr>
+</tbody>
+</table>
+<p>A well-scoped analysis with convincing checks can be stronger than a much larger analysis that the team cannot explain or only vaguely understands.</p>
+</section>
+<section id="some-suggested-topics-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="some-suggested-topics-and-resources">Some suggested topics and resources</h2>
+<p>These <strong>12 optional ideas</strong> illustrate possible projects. You may choose, adapt, or propose an alternative to them. Reproducing an IPCC figure is optional, and the approaches and figure references below are suggestions rather than prescribed analyses. Also during the first phase it is your job to ensure that the project is viable; just because a project is on the list here does not imply that it is easily doable.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Suggested topic</th>
+<th>Physical question</th>
+<th>Possible approach</th>
+<th>Possible IPCC connection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Climate sensitivity</td>
+<td>How can we estimate equilibrium warming before a model equilibrates?</td>
+<td>CMIP6 energy-budget regression</td>
+<td>Chapter 7, Box 7.1, Figure 1</td>
+</tr>
+<tr class="even">
+<td>2. Transient climate response</td>
+<td>Why does warming lag behind forcing?</td>
+<td>CMIP6 plus a two-layer model</td>
+<td>Figures 7.17 and 7.18b</td>
+</tr>
+<tr class="odd">
+<td>3. Moisture and rainfall</td>
+<td>Why do atmospheric moisture and rainfall change at different rates?</td>
+<td>CMIP6 water-cycle analysis</td>
+<td>Figure 8.16</td>
+</tr>
+<tr class="even">
+<td>4. Arctic sea ice</td>
+<td>How does sea-ice loss relate to warming and CO₂ emissions?</td>
+<td>Observations and CMIP6</td>
+<td>Figure 9.14</td>
+</tr>
+<tr class="odd">
+<td>5. Cumulative emissions</td>
+<td>Why does warming scale with cumulative CO₂?</td>
+<td>Simple carbon-cycle–climate model</td>
+<td>Figure 5.31</td>
+</tr>
+<tr class="even">
+<td>6. Internal variability</td>
+<td>Can the same model produce different warming trends?</td>
+<td>Initial-condition large ensemble</td>
+<td>Figure 1.13</td>
+</tr>
+<tr class="odd">
+<td>7. Projection uncertainty</td>
+<td>Where does uncertainty in future warming come from?</td>
+<td>Models, scenarios, and ensemble members</td>
+<td>Figure 1.15</td>
+</tr>
+<tr class="even">
+<td>8. Past projections</td>
+<td>How well did early models predict subsequent warming?</td>
+<td>Published projections and observations</td>
+<td>Figure 1.9</td>
+</tr>
+<tr class="odd">
+<td>9. Land–ocean contrast</td>
+<td>Why does land warm more than the ocean?</td>
+<td>CMIP6 warming patterns</td>
+<td>Figure 4.31</td>
+</tr>
+<tr class="even">
+<td>10. Extreme heat</td>
+<td>Do the hottest days warm at the global-average rate?</td>
+<td>Regional daily CMIP6 temperatures</td>
+<td>Figure 11.3</td>
+</tr>
+<tr class="odd">
+<td>11. Ocean heat content</td>
+<td>Where is the excess energy stored?</td>
+<td>Gridded ocean temperatures</td>
+<td>Figure 9.6a</td>
+</tr>
+<tr class="even">
+<td>12. Attribution</td>
+<td>How do we identify the human contribution to warming?</td>
+<td>Observations and forcing experiments</td>
+<td>Figure 3.9</td>
+</tr>
+</tbody>
+</table>
+<section id="resources-for-the-suggested-ipcc-topics" class="level3">
+<h3 class="anchored" data-anchor-id="resources-for-the-suggested-ipcc-topics">Resources for the suggested IPCC topics</h3>
+<ul>
+<li><a href="https://www.ipcc.ch/report/ar6/wg1/">IPCC AR6 WGI report and chapters</a></li>
+<li><a href="https://www.ipcc.ch/report/ar6/wg1/resources/data-access/">IPCC figure data and code access</a></li>
+<li><a href="https://github.com/IPCC-WG1">IPCC WGI figure-code repositories</a></li>
+</ul>
+<p>Published code and processed figure data are useful references and comparison targets. Explain any parts you reuse and carry out the agreed analysis yourself. For projects that reproduce a published result, some archived workflows require adaptation to current software or computing environments; a smaller, transparent reproduction is an appropriate goal.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
