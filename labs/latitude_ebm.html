@@ -201,14 +201,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-6-predict-a-climate-test-it-then-add-processes" id="toc-week-6-predict-a-climate-test-it-then-add-processes" class="nav-link active" data-scroll-target="#week-6-predict-a-climate-test-it-then-add-processes">Week 6: predict a climate, test it, then add processes</a></li>
+  <li><a href="#week-6-build-a-model-compare-with-earth-then-add-processes" id="toc-week-6-build-a-model-compare-with-earth-then-add-processes" class="nav-link active" data-scroll-target="#week-6-build-a-model-compare-with-earth-then-add-processes">Week 6: build a model, compare with Earth, then add processes</a></li>
   <li><a href="#our-earlier-ebm-at-every-latitude" id="toc-our-earlier-ebm-at-every-latitude" class="nav-link" data-scroll-target="#our-earlier-ebm-at-every-latitude">1. Our earlier EBM at every latitude</a>
   <ul class="collapse">
-  <li><a href="#independent-bands-with-the-earlier-greenhouse-model" id="toc-independent-bands-with-the-earlier-greenhouse-model" class="nav-link" data-scroll-target="#independent-bands-with-the-earlier-greenhouse-model">Independent bands with the earlier greenhouse model</a></li>
+  <li><a href="#independent-latitude-bands-with-a-one-layer-greenhouse-model" id="toc-independent-latitude-bands-with-a-one-layer-greenhouse-model" class="nav-link" data-scroll-target="#independent-latitude-bands-with-a-one-layer-greenhouse-model">Independent latitude bands with a one-layer greenhouse model</a></li>
   </ul></li>
-  <li><a href="#test-the-first-prediction-against-earth" id="toc-test-the-first-prediction-against-earth" class="nav-link" data-scroll-target="#test-the-first-prediction-against-earth">2. Test the first prediction against Earth</a>
+  <li><a href="#compare-the-first-model-with-earth" id="toc-compare-the-first-model-with-earth" class="nav-link" data-scroll-target="#compare-the-first-model-with-earth">2. Compare the first model with Earth</a>
   <ul class="collapse">
-  <li><a href="#a-sharper-test-the-regional-toa-radiation-budget" id="toc-a-sharper-test-the-regional-toa-radiation-budget" class="nav-link" data-scroll-target="#a-sharper-test-the-regional-toa-radiation-budget">A sharper test: the regional TOA radiation budget</a></li>
+  <li><a href="#evidence-for-heat-exchange-between-latitudes" id="toc-evidence-for-heat-exchange-between-latitudes" class="nav-link" data-scroll-target="#evidence-for-heat-exchange-between-latitudes">Evidence for heat exchange between latitudes</a></li>
   </ul></li>
   <li><a href="#add-horizontal-transport" id="toc-add-horizontal-transport" class="nav-link" data-scroll-target="#add-horizontal-transport">3. Add horizontal transport</a></li>
   <li><a href="#refine-the-prescribed-radiation" id="toc-refine-the-prescribed-radiation" class="nav-link" data-scroll-target="#refine-the-prescribed-radiation">4. Refine the prescribed radiation</a>
@@ -218,8 +218,7 @@ window.Quarto = {
   <li><a href="#isolate-diffusion-optional" id="toc-isolate-diffusion-optional" class="nav-link" data-scroll-target="#isolate-diffusion-optional">5. Isolate diffusion (optional)</a></li>
   <li><a href="#run-the-refined-ebm" id="toc-run-the-refined-ebm" class="nav-link" data-scroll-target="#run-the-refined-ebm">6. Run the refined EBM</a></li>
   <li><a href="#check-the-local-budget" id="toc-check-the-local-budget" class="nav-link" data-scroll-target="#check-the-local-budget">7. Check the local budget</a></li>
-  <li><a href="#change-transport-strength" id="toc-change-transport-strength" class="nav-link" data-scroll-target="#change-transport-strength">8. Change transport strength</a></li>
-  <li><a href="#your-experiment" id="toc-your-experiment" class="nav-link" data-scroll-target="#your-experiment">9. Your experiment</a>
+  <li><a href="#change-transport-strength" id="toc-change-transport-strength" class="nav-link" data-scroll-target="#change-transport-strength">8. Change transport strength</a>
   <ul class="collapse">
   <li><a href="#sources-and-modeling-choices" id="toc-sources-and-modeling-choices" class="nav-link" data-scroll-target="#sources-and-modeling-choices">Sources and modeling choices</a></li>
   </ul></li>
@@ -248,17 +247,19 @@ window.Quarto = {
 </header>
 
 
-<section id="week-6-predict-a-climate-test-it-then-add-processes" class="level2">
-<h2 class="anchored" data-anchor-id="week-6-predict-a-climate-test-it-then-add-processes">Week 6: predict a climate, test it, then add processes</h2>
+<section id="week-6-build-a-model-compare-with-earth-then-add-processes" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-build-a-model-compare-with-earth-then-add-processes">Week 6: build a model, compare with Earth, then add processes</h2>
 <p>Start with the EBM from earlier lectures. Give each latitude its own annual mean sunlight, retaining <strong>constant albedo 0.30</strong>, <strong>atmospheric emissivity 0.779</strong>, and <strong>no horizontal transport</strong>. Integrate forward to obtain a temperature profile, then compare its temperature and TOA budgets with Earth.</p>
 <p>First use Stefan–Boltzmann radiation with temperatures in kelvin. Add horizontal transport while keeping that radiation law and albedo unchanged. Later introduce prescribed latitude-dependent albedo and linear OLR as separate modeling choices.</p>
-<p>All code is supplied. Predict, run, and explain. Each band has the same heat capacity per area, corresponding to a 10 m water layer. We omit seasonal forcing, evolving ice, and a separate CO₂ perturbation. References appear at the end.</p>
+<p>All code is supplied. Run the cells and use the figures to answer one question after each discussion. Each band has the same heat capacity per area, corresponding to a 10 m water layer. We omit seasonal forcing, evolving ice, and a separate CO₂ perturbation. References appear at the end.</p>
+<p>Write your responses in the answer spaces under <strong>Lab questions</strong> after each discussion.</p>
 </section>
 <section id="our-earlier-ebm-at-every-latitude" class="level2">
 <h2 class="anchored" data-anchor-id="our-earlier-ebm-at-every-latitude">1. Our earlier EBM at every latitude</h2>
-<p><span class="math inline">\(Q(\phi)\)</span> is <strong>incoming</strong> sunlight per unit area, averaged over day and year. More oblique sunlight spreads over a larger area at high latitudes. Day length and seasonal solar angle also matter. The helper uses a circular orbit, tilt 23.44°, and <span class="math inline">\(S_0=1361\)</span> W m⁻², consistent with the earlier global model.</p>
-<p>The supplied setup prepares helpers for later experiments. First inspect Q and use the earlier radiation law below.</p>
-<div id="77667b87" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:18.615678Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:18.615507Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:19.456902Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:19.456402Z&quot;}}">
+<p><span class="math inline">\(Q(\phi)\)</span> is <strong>incoming sunlight at the top of the atmosphere per unit area</strong>, in W m⁻², averaged over a full year, including day/night and seasonal cycles. Sunlight arrives more directly at low latitudes, so annual incoming sunlight is greater near the equator than near the poles.</p>
+<p>The supplied function calculates this profile from solar geometry. For an explanation of the calculation, see <a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/insolation/">Brian Rose’s insolation notebook</a>.</p>
+<p>First inspect <span class="math inline">\(Q(\phi)\)</span>. Next, apply the one-layer greenhouse model to each latitude band.</p>
+<div id="77667b87" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:42.313669Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:42.313443Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:43.142830Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:43.142328Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.linalg <span class="im">import</span> lu_factor, lu_solve</span>
@@ -301,391 +302,582 @@ window.Quarto = {
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'incoming_sunlight'</span>] <span class="op">=</span> fig</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Global mean incoming sunlight: </span><span class="sc">{</span>global_mean(Q)<span class="sc">:.2f}</span><span class="ss"> W/m²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<section id="independent-bands-with-the-earlier-greenhouse-model" class="level3">
-<h3 class="anchored" data-anchor-id="independent-bands-with-the-earlier-greenhouse-model">Independent bands with the earlier greenhouse model</h3>
-<p>With <span class="math inline">\(a_0=0.30\)</span>, each band absorbs <span class="math inline">\((1-a_0)Q(\phi)\)</span>. Recall that <span class="math inline">\(\epsilon=0.779\)</span> is the atmospheric layer’s longwave absorptivity/emissivity. With a rapidly adjusting atmosphere, <span class="math inline">\(T_a^4=T_s^4/2\)</span>, giving</p>
-<p><span class="math display">\[\mathrm{OLR}=(1-\epsilon/2)\sigma T_s^4,\]</span> <span class="math display">\[C\frac{dT_s}{dt}=(1-a_0)Q(\phi)-(1-\epsilon/2)\sigma T_s^4.\]</span></p>
-<p>This retains the earlier greenhouse effect. <span class="math inline">\(\sigma=5.670374419\times10^{-8}\)</span> W m⁻² K⁻⁴ and <span class="math inline">\(T_s\)</span> is in kelvin. Start every band at 288 K and integrate forward.</p>
-<p><strong>Predict:</strong> Does the globally calibrated emissivity necessarily reproduce Earth’s latitude profile? What must local net TOA radiation N be at equilibrium without another energy exchange?</p>
-<div id="ac67082b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:19.459385Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:19.459214Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:19.617048Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:19.616475Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SIGMA <span class="op">=</span> <span class="fl">5.670374419e-8</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>EPSILON <span class="op">=</span> <span class="fl">0.779</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gray_olr(T_K, epsilon<span class="op">=</span>EPSILON):</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">1</span> <span class="op">-</span> epsilon<span class="op">/</span><span class="dv">2</span>)<span class="op">*</span>SIGMA<span class="op">*</span>np.asarray(T_K)<span class="op">**</span><span class="dv">4</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_gray(D<span class="op">=</span><span class="fl">0.0</span>, albedo_value<span class="op">=</span><span class="fl">0.30</span>, epsilon<span class="op">=</span>EPSILON,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                  years<span class="op">=</span><span class="fl">30.0</span>, water_depth<span class="op">=</span><span class="fl">10.0</span>, initial_K<span class="op">=</span><span class="fl">288.0</span>):</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> RHO_CP<span class="op">*</span>water_depth</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    reflect <span class="op">=</span> np.broadcast_to(np.asarray(albedo_value, dtype<span class="op">=</span><span class="bu">float</span>), lat.shape)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> (<span class="dv">0</span> <span class="op">&lt;=</span> epsilon <span class="op">&lt;=</span> <span class="dv">1</span> <span class="kw">and</span> np.<span class="bu">all</span>((reflect <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (reflect <span class="op">&lt;=</span> <span class="dv">1</span>))):</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Emissivity and albedo must lie between 0 and 1.'</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> D <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> <span class="bu">min</span>(years, water_depth, initial_K) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Use nonnegative D and positive time, depth and temperature.'</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    absorbed <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>reflect)<span class="op">*</span>Q</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> rhs(t, T_K):</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        h <span class="op">=</span> np.zeros_like(T_K) <span class="cf">if</span> D <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> transport(T_K, D)[<span class="dv">1</span>]</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> SECONDS_PER_YEAR<span class="op">/</span>C<span class="op">*</span>(absorbed<span class="op">-</span>gray_olr(T_K, epsilon)<span class="op">+</span>h)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.linspace(<span class="dv">0</span>, years, <span class="dv">301</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    solution <span class="op">=</span> solve_ivp(rhs, (<span class="dv">0</span>, years), np.full(<span class="bu">len</span>(lat), initial_K),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                         t_eval<span class="op">=</span>time, method<span class="op">=</span><span class="st">'BDF'</span>, rtol<span class="op">=</span><span class="fl">1e-9</span>, atol<span class="op">=</span><span class="fl">1e-10</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> solution.success:</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">RuntimeError</span>(solution.message)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(time<span class="op">=</span>time, T_K<span class="op">=</span>solution.y.T, T<span class="op">=</span>solution.y.T<span class="op">-</span><span class="fl">273.15</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                D<span class="op">=</span>D, C<span class="op">=</span>C, ASR<span class="op">=</span>absorbed, epsilon<span class="op">=</span>epsilon)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>gray_no_transport <span class="op">=</span> simulate_gray()</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.2</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> target <span class="kw">in</span> [<span class="dv">0</span>, <span class="fl">0.3</span>, <span class="dv">1</span>, <span class="dv">30</span>]:</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> np.argmin(np.<span class="bu">abs</span>(gray_no_transport[<span class="st">'time'</span>]<span class="op">-</span>target))</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].plot(lat, gray_no_transport[<span class="st">'T'</span>][i], lw<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>                 label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>gray_no_transport[<span class="st">'time'</span>][i]<span class="sc">:g}</span><span class="ss"> yr"</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Surface temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend()</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>N_gray <span class="op">=</span> gray_no_transport[<span class="st">'ASR'</span>]<span class="op">-</span>gray_olr(gray_no_transport[<span class="st">'T_K'</span>][<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, N_gray, color<span class="op">=</span><span class="st">'#555555'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Final net TOA radiation N (W/m²)'</span>,</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'gray_no_transport'</span>] <span class="op">=</span> fig</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum final |N|: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(N_gray))<span class="sc">:.2e}</span><span class="ss"> W/m²'</span>)</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Final mean surface temperature: </span><span class="sc">{</span>global_mean(gray_no_transport[<span class="st">"T"</span>][<span class="op">-</span><span class="dv">1</span>])<span class="sc">:.2f}</span><span class="ss"> °C'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Global mean incoming sunlight: 340.24 W/m²</code></pre>
+</div>
+</div>
+<section id="independent-latitude-bands-with-a-one-layer-greenhouse-model" class="level3">
+<h3 class="anchored" data-anchor-id="independent-latitude-bands-with-a-one-layer-greenhouse-model">Independent latitude bands with a one-layer greenhouse model</h3>
+<p><strong>Absorbed sunlight:</strong> We assume planetary albedo is <strong>constant with latitude</strong>, with <span class="math inline">\(a_0=0.30\)</span>:</p>
+<p><span class="math display">\[\mathrm{ASR}(\phi)=(1-a_0)Q(\phi).\]</span></p>
+<p>Each band absorbs 70% of its incoming sunlight.</p>
+<p><strong>Outgoing infrared:</strong> From the one-layer greenhouse model,</p>
+<p><span class="math display">\[\mathrm{OLR}(\phi)=(1-\epsilon/2)\sigma T_s^4.\]</span></p>
+<p>Here <span class="math inline">\(\epsilon=0.779\)</span> is the atmospheric layer’s longwave absorptivity/emissivity, <span class="math inline">\(T_s\)</span> is the surface temperature of that band in kelvin, and <span class="math inline">\(\sigma=5.670374419\times10^{-8}\)</span> W m⁻² K⁻⁴. The atmosphere adjusts rapidly, with <span class="math inline">\(T_a^4=T_s^4/2\)</span>.</p>
+<p><strong>Net radiation and temperature change:</strong> The <strong>net downward radiation at the top of the atmosphere (TOA)</strong> is</p>
+<p><span class="math display">\[N(\phi)=\mathrm{ASR}(\phi)-\mathrm{OLR}(\phi).\]</span></p>
+<p>Positive <span class="math inline">\(N\)</span> adds energy to the band; negative <span class="math inline">\(N\)</span> removes energy. ASR, OLR, and <span class="math inline">\(N\)</span> are all in W m⁻². Each band’s temperature changes according to</p>
+<p><span class="math display">\[C\frac{\partial T_s}{\partial t}=N
+=(1-a_0)Q(\phi)-(1-\epsilon/2)\sigma T_s^4.\]</span></p>
+<p><span class="math inline">\(C\)</span> is heat capacity per unit area, in J m⁻² K⁻¹.</p>
+<p>We integrate forward in time to find the <strong>equilibrium temperature at each latitude</strong>, where temperature stops changing. We start every band at 288 K; this is an <strong>arbitrary initial condition</strong>.</p>
+<div id="ac67082b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:43.145081Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:43.144890Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:43.304577Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:43.304076Z&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SIGMA <span class="op">=</span> <span class="fl">5.670374419e-8</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>EPSILON <span class="op">=</span> <span class="fl">0.779</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gray_olr(T_K, epsilon<span class="op">=</span>EPSILON):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">1</span> <span class="op">-</span> epsilon<span class="op">/</span><span class="dv">2</span>)<span class="op">*</span>SIGMA<span class="op">*</span>np.asarray(T_K)<span class="op">**</span><span class="dv">4</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_gray(D<span class="op">=</span><span class="fl">0.0</span>, albedo_value<span class="op">=</span><span class="fl">0.30</span>, epsilon<span class="op">=</span>EPSILON,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                  years<span class="op">=</span><span class="fl">30.0</span>, water_depth<span class="op">=</span><span class="fl">10.0</span>, initial_K<span class="op">=</span><span class="fl">288.0</span>):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> RHO_CP<span class="op">*</span>water_depth</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    reflect <span class="op">=</span> np.broadcast_to(np.asarray(albedo_value, dtype<span class="op">=</span><span class="bu">float</span>), lat.shape)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> (<span class="dv">0</span> <span class="op">&lt;=</span> epsilon <span class="op">&lt;=</span> <span class="dv">1</span> <span class="kw">and</span> np.<span class="bu">all</span>((reflect <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (reflect <span class="op">&lt;=</span> <span class="dv">1</span>))):</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Emissivity and albedo must lie between 0 and 1.'</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> D <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> <span class="bu">min</span>(years, water_depth, initial_K) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Use nonnegative D and positive time, depth and temperature.'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    absorbed <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>reflect)<span class="op">*</span>Q</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> rhs(t, T_K):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        h <span class="op">=</span> np.zeros_like(T_K) <span class="cf">if</span> D <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> transport(T_K, D)[<span class="dv">1</span>]</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> SECONDS_PER_YEAR<span class="op">/</span>C<span class="op">*</span>(absorbed<span class="op">-</span>gray_olr(T_K, epsilon)<span class="op">+</span>h)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.linspace(<span class="dv">0</span>, years, <span class="dv">301</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    solution <span class="op">=</span> solve_ivp(rhs, (<span class="dv">0</span>, years), np.full(<span class="bu">len</span>(lat), initial_K),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                         t_eval<span class="op">=</span>time, method<span class="op">=</span><span class="st">'BDF'</span>, rtol<span class="op">=</span><span class="fl">1e-9</span>, atol<span class="op">=</span><span class="fl">1e-10</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> solution.success:</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">RuntimeError</span>(solution.message)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(time<span class="op">=</span>time, T_K<span class="op">=</span>solution.y.T, T<span class="op">=</span>solution.y.T<span class="op">-</span><span class="fl">273.15</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>                D<span class="op">=</span>D, C<span class="op">=</span>C, ASR<span class="op">=</span>absorbed, epsilon<span class="op">=</span>epsilon)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the independent-band model: D=0 turns horizontal transport off.</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>gray_no_transport <span class="op">=</span> simulate_gray(D<span class="op">=</span><span class="fl">0.0</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>N_gray <span class="op">=</span> gray_no_transport[<span class="st">'ASR'</span>]<span class="op">-</span>gray_olr(gray_no_transport[<span class="st">'T_K'</span>][<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot temperature adjustment (left) and final net TOA radiation (right).</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.2</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> target <span class="kw">in</span> [<span class="dv">0</span>, <span class="fl">0.3</span>, <span class="dv">1</span>, <span class="dv">30</span>]:</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> np.argmin(np.<span class="bu">abs</span>(gray_no_transport[<span class="st">'time'</span>]<span class="op">-</span>target))</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].plot(lat, gray_no_transport[<span class="st">'T'</span>][i], lw<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>                 label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>gray_no_transport[<span class="st">'time'</span>][i]<span class="sc">:g}</span><span class="ss"> yr"</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Surface temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend()</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, N_gray, color<span class="op">=</span><span class="st">'#555555'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Final net TOA radiation N (W/m²)'</span>,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>            xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'gray_no_transport'</span>] <span class="op">=</span> fig</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Report the equilibrium checks.</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum final |N|: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(N_gray))<span class="sc">:.2e}</span><span class="ss"> W/m²'</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Final mean surface temperature: </span><span class="sc">{</span>global_mean(gray_no_transport[<span class="st">"T"</span>][<span class="op">-</span><span class="dv">1</span>])<span class="sc">:.2f}</span><span class="ss"> °C'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Maximum final |N|: 3.55e-09 W/m²
+Final mean surface temperature: 13.42 °C</code></pre>
+</div>
+</div>
+<p><a id="response-1"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>What must net TOA radiation <span class="math inline">\(N\)</span> be at equilibrium in each independent latitude band?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 </section>
 </section>
-<section id="test-the-first-prediction-against-earth" class="level2">
-<h2 class="anchored" data-anchor-id="test-the-first-prediction-against-earth">2. Test the first prediction against Earth</h2>
-<p>Compare with annual mean surface <strong>skin temperature</strong> from NCEP–NCAR reanalysis (1981–2010). Load NOAA’s public monthly NetCDF files, average over longitude, and then average the months using their calendar lengths. These are reanalysis estimates, rather than direct observations of a single year. Native latitudes exclude the exact poles.</p>
+<section id="compare-the-first-model-with-earth" class="level2">
+<h2 class="anchored" data-anchor-id="compare-the-first-model-with-earth">2. Compare the first model with Earth</h2>
+<p>Compare with annual mean surface <strong>skin temperature</strong> from NCEP–NCAR reanalysis (1981–2010). Load NOAA’s public monthly NetCDF files, average over longitude, and then average the months using their calendar lengths. These are reanalysis estimates, rather than direct observations of a single year.</p>
 <p>The supplied <code>data/ncep</code> folder contains the original temperature file, so class can run offline. If it is missing, the cell downloads it from NOAA and keeps a local copy. Xarray and netCDF4 are required in addition to the modeling packages. The temperature file is about 0.7 MB.</p>
-<p><strong>Inspect:</strong> What does the independent-band model capture? Where does its symmetric profile miss Earth’s structure? Does fitting a global mean validate regional predictions?</p>
-<div id="50587b55" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:19.619249Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:19.619146Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:20.431234Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:20.430757Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.request <span class="im">import</span> urlopen</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep the public NOAA temperature file locally for offline classes.</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>DATA_DIR <span class="op">=</span> Path(<span class="st">'data/ncep'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>DATA_DIR.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>NOAA_BASE <span class="op">=</span> <span class="st">'https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.derived/'</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>NCEP_FILES <span class="op">=</span> {</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature_C'</span>: (<span class="st">'surface_gauss/skt.sfc.mon.1981-2010.ltm.nc'</span>, <span class="st">'skt'</span>),</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cached_ncep_file(relative_url):</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    local <span class="op">=</span> DATA_DIR <span class="op">/</span> Path(relative_url).name</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> local.exists():</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        temporary <span class="op">=</span> local.with_suffix(<span class="st">'.nc.part'</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">with</span> urlopen(NOAA_BASE <span class="op">+</span> relative_url, timeout<span class="op">=</span><span class="dv">45</span>) <span class="im">as</span> response:</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                temporary.write_bytes(response.read())</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Check that the download is readable before adding it to the cache.</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">with</span> xr.open_dataset(temporary, engine<span class="op">=</span><span class="st">'netcdf4'</span>, decode_times<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">pass</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>            temporary.replace(local)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> error:</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>            temporary.unlink(missing_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">RuntimeError</span>(</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>                <span class="ss">f'Could not load </span><span class="sc">{</span>local<span class="sc">.</span>name<span class="sc">}</span><span class="ss">. Connect to the internet once, '</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>                <span class="st">'or copy the supplied data/ncep folder beside this notebook.'</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>            ) <span class="im">from</span> error</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> local</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ncep_fields <span class="op">=</span> {}</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, (relative_url, variable) <span class="kw">in</span> NCEP_FILES.items():</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> xr.open_dataset(cached_ncep_file(relative_url),</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>                         engine<span class="op">=</span><span class="st">'netcdf4'</span>, decode_times<span class="op">=</span><span class="va">False</span>) <span class="im">as</span> source:</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Dates are climatological months, not a time series of individual years.</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Label the January--December axis explicitly. Temperatures are in °C.</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        field <span class="op">=</span> source[variable].astype(<span class="st">'float64'</span>).rename(time<span class="op">=</span><span class="st">'month'</span>)</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        field <span class="op">=</span> field.assign_coords(month<span class="op">=</span>np.arange(<span class="dv">1</span>, <span class="dv">13</span>))</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>        ncep_fields[name] <span class="op">=</span> field.load()</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>ncep_monthly <span class="op">=</span> xr.merge(</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    [field.to_dataset(name<span class="op">=</span>name) <span class="cf">for</span> name, field <span class="kw">in</span> ncep_fields.items()],</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    join<span class="op">=</span><span class="st">'exact'</span>)</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>month_days <span class="op">=</span> xr.DataArray(</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">31</span>, <span class="dv">28</span> <span class="op">+</span> <span class="dv">7</span><span class="op">/</span><span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>],</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span><span class="st">'month'</span>, coords<span class="op">=</span>{<span class="st">'month'</span>: np.arange(<span class="dv">1</span>, <span class="dv">13</span>)})</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Zonal mean first, then an annual mean weighted by calendar month length.</span></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co"># February includes the seven leap years in the 1981--2010 period.</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>ncep_annual <span class="op">=</span> (ncep_monthly.mean(<span class="st">'lon'</span>).weighted(month_days)</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>               .mean(<span class="st">'month'</span>).sortby(<span class="st">'lat'</span>))</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>OBS_LAT <span class="op">=</span> ncep_annual.lat.values</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>OBS_T_C <span class="op">=</span> ncep_annual.temperature_C.values</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Loaded temperature: 12 climatological months × 94 latitudes × 192 longitudes.'</span>)</span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Period: 1981–2010. The original NetCDF file is cached locally.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="50587b55" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:43.306643Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:43.306509Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.075150Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.074553Z&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.request <span class="im">import</span> urlopen</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep the public NOAA temperature file locally for offline classes.</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>DATA_DIR <span class="op">=</span> Path(<span class="st">'data/ncep'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>DATA_DIR.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>NOAA_BASE <span class="op">=</span> <span class="st">'https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.derived/'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>NCEP_FILES <span class="op">=</span> {</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'temperature_C'</span>: (<span class="st">'surface_gauss/skt.sfc.mon.1981-2010.ltm.nc'</span>, <span class="st">'skt'</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cached_ncep_file(relative_url):</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    local <span class="op">=</span> DATA_DIR <span class="op">/</span> Path(relative_url).name</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> local.exists():</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        temporary <span class="op">=</span> local.with_suffix(<span class="st">'.nc.part'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">with</span> urlopen(NOAA_BASE <span class="op">+</span> relative_url, timeout<span class="op">=</span><span class="dv">45</span>) <span class="im">as</span> response:</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                temporary.write_bytes(response.read())</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Check that the download is readable before adding it to the cache.</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">with</span> xr.open_dataset(temporary, engine<span class="op">=</span><span class="st">'netcdf4'</span>, decode_times<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">pass</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>            temporary.replace(local)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> error:</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>            temporary.unlink(missing_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">RuntimeError</span>(</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>                <span class="ss">f'Could not load </span><span class="sc">{</span>local<span class="sc">.</span>name<span class="sc">}</span><span class="ss">. Connect to the internet once, '</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>                <span class="st">'or copy the supplied data/ncep folder beside this notebook.'</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>            ) <span class="im">from</span> error</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> local</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>ncep_fields <span class="op">=</span> {}</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, (relative_url, variable) <span class="kw">in</span> NCEP_FILES.items():</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> xr.open_dataset(cached_ncep_file(relative_url),</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>                         engine<span class="op">=</span><span class="st">'netcdf4'</span>, decode_times<span class="op">=</span><span class="va">False</span>) <span class="im">as</span> source:</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Dates are climatological months, not a time series of individual years.</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Label the January--December axis explicitly. Temperatures are in °C.</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>        field <span class="op">=</span> source[variable].astype(<span class="st">'float64'</span>).rename(time<span class="op">=</span><span class="st">'month'</span>)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        field <span class="op">=</span> field.assign_coords(month<span class="op">=</span>np.arange(<span class="dv">1</span>, <span class="dv">13</span>))</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>        ncep_fields[name] <span class="op">=</span> field.load()</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>ncep_monthly <span class="op">=</span> xr.merge(</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    [field.to_dataset(name<span class="op">=</span>name) <span class="cf">for</span> name, field <span class="kw">in</span> ncep_fields.items()],</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    join<span class="op">=</span><span class="st">'exact'</span>)</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>month_days <span class="op">=</span> xr.DataArray(</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">31</span>, <span class="dv">28</span> <span class="op">+</span> <span class="dv">7</span><span class="op">/</span><span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>],</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span><span class="st">'month'</span>, coords<span class="op">=</span>{<span class="st">'month'</span>: np.arange(<span class="dv">1</span>, <span class="dv">13</span>)})</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Zonal mean first, then an annual mean weighted by calendar month length.</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="co"># February includes the seven leap years in the 1981--2010 period.</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>ncep_annual <span class="op">=</span> (ncep_monthly.mean(<span class="st">'lon'</span>).weighted(month_days)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>               .mean(<span class="st">'month'</span>).sortby(<span class="st">'lat'</span>))</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>OBS_LAT <span class="op">=</span> ncep_annual.lat.values</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>OBS_T_C <span class="op">=</span> ncep_annual.temperature_C.values</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Loaded temperature: 12 climatological months × 94 latitudes × 192 longitudes.'</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Period: 1981–2010. The original NetCDF file is cached locally.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Loaded temperature: 12 climatological months × 94 latitudes × 192 longitudes.
+Period: 1981–2010. The original NetCDF file is cached locally.</code></pre>
 </div>
-<div id="52e5b16f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:20.432828Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:20.432657Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:20.509304Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:20.508807Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">7.6</span>, <span class="fl">4.5</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ax.plot(lat, gray_no_transport[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>], color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'Independent bands: earlier EBM'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ax.plot(OBS_LAT, OBS_T_C, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'NCEP reanalysis: 1981–2010'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Surface skin temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'gray_temperature_comparison'</span>] <span class="op">=</span> fig</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="a-sharper-test-the-regional-toa-radiation-budget" class="level3">
-<h3 class="anchored" data-anchor-id="a-sharper-test-the-regional-toa-radiation-budget">A sharper test: the regional TOA radiation budget</h3>
+<div id="52e5b16f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.077021Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.076789Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.156530Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.156036Z&quot;}}" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">7.6</span>, <span class="fl">4.5</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ax.plot(lat, gray_no_transport[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>], color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'Independent bands: earlier EBM'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ax.plot(OBS_LAT, OBS_T_C, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'NCEP reanalysis: 1981–2010'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Surface skin temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'gray_temperature_comparison'</span>] <span class="op">=</span> fig</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Reading the comparison:</strong> The model captures the broad pattern of warm tropics and cold poles. It is too warm in the tropics, too cold near the North Pole, and too warm near the South Pole. Its symmetric profile misses Earth’s differences between hemispheres. The model also omits Antarctica’s high elevation, which contributes to its cold interior. Missing elevation is a likely contributor to the model’s warm bias near the South Pole.</p>
+<section id="evidence-for-heat-exchange-between-latitudes" class="level3">
+<h3 class="anchored" data-anchor-id="evidence-for-heat-exchange-between-latitudes">Evidence for heat exchange between latitudes</h3>
+<p>Temperature differences alone do not identify which missing process causes a model error. The radiation budget provides a direct test of the independent-band assumption: at equilibrium, each band must balance absorbed sunlight with outgoing infrared. We compare that requirement with CERES satellite measurements below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="latitude_ebm_files/figure-html/dc904e67-1-ceres_net_toa_radiation.png" class="img-fluid figure-img"></p>
 <figcaption>CERES annual mean net TOA radiation versus sine of latitude.</figcaption>
 </figure>
 </div>
-<p><strong>CERES satellite-based radiation budget: March 2000–June 2011.</strong> The horizontal axis is <span class="math inline">\(\sin\phi\)</span>, so the equator is 0 and the poles are −1 and +1. Net downward radiation is <span class="math inline">\(N=\mathrm{ASR}-\mathrm{OLR}\)</span>.</p>
-<p>Isolated equilibrium bands require <strong>N=0 everywhere</strong>. The CERES climatology shows tropical radiative surpluses and higher-latitude deficits. For approximately steady regional temperatures, these require exported and imported energy. Storage can also be nonzero, so exact local equilibrium is an idealization.</p>
-<p><strong>Inspect:</strong> Where does radiation supply energy, and where does it remove energy? Can independent equilibrium bands reproduce this pattern by changing emissivity alone?</p>
-<p>The temperature and radiation products cover different periods. We use them to test broad climate structure, without combining them into one contemporaneous closed energy budget.</p>
-<p><strong>Your explanation:</strong></p>
+<p><em>Source: <a href="https://ceres.larc.nasa.gov/science/">NASA CERES Science</a>, <a href="https://ceres.larc.nasa.gov/images/NetTOARadiation.png">original figure</a>. CERES EBAF Edition 2.6r climatology, March 2000–June 2011.</em></p>
+<p>The horizontal axis is <span class="math inline">\(\sin\phi\)</span>, so the equator is 0 and the poles are −1 and +1. Net downward radiation is <span class="math inline">\(N=\mathrm{ASR}-\mathrm{OLR}\)</span>.</p>
+<p>Isolated equilibrium bands require <strong>N=0 everywhere</strong>, as shown in the right-hand panel of the temperature-and-radiation figure in <strong>Section 1</strong>. The CERES climatology shows tropical radiative surpluses and higher-latitude deficits. For approximately steady regional temperatures, these require exported and imported energy. Storage can also be nonzero, so exact local equilibrium is an idealization.</p>
+<p><strong>Caveat:</strong> The temperature and radiation datasets cover different periods. We use them to compare broad climate patterns; they do not provide a combined energy budget for the same years.</p>
+<p><a id="response-2"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>What process can carry energy from regions with a radiative surplus to regions with a radiative deficit?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 </section>
 </section>
 <section id="add-horizontal-transport" class="level2">
 <h2 class="anchored" data-anchor-id="add-horizontal-transport">3. Add horizontal transport</h2>
-<p>Let <span class="math inline">\(H(\phi)\)</span> be the <strong>total rate of heat transfer across the entire latitude circle</strong> at <span class="math inline">\(\phi\)</span>, representing transport by the atmosphere and ocean together. A rate of energy transfer is called power: its units are watts, with <strong>1 W = 1 joule per second</strong>. We often express this large heat-transfer rate in petawatts: <strong>1 PW = <span class="math inline">\(10^{15}\)</span> W</strong>.</p>
+<p>Let <span class="math inline">\(H(\phi)\)</span> be the <strong>total rate of heat transfer across the entire latitude circle</strong> at <span class="math inline">\(\phi\)</span>, representing the atmosphere and ocean together. <strong>Reminder:</strong> a rate of energy transfer is power, with <strong>1 W = 1 joule per second</strong>. We often express heat transport in petawatts: <strong>1 PW = <span class="math inline">\(10^{15}\)</span> W</strong>.</p>
 <p>We choose <strong>northward heat transfer as positive</strong>:</p>
 <ul>
 <li><span class="math inline">\(H&gt;0\)</span>: net heat transfer northward.</li>
 <li><span class="math inline">\(H&lt;0\)</span>: net heat transfer southward.</li>
 </ul>
 <p>For example, <span class="math inline">\(H=+1\)</span> PW at 30°N means <span class="math inline">\(10^{15}\)</span> joules cross that latitude circle northward each second. At 30°S, <span class="math inline">\(H=-1\)</span> PW means the same rate southward. Both examples describe poleward heat transport.</p>
-<p>At an internal boundary, we approximate transport down the temperature gradient using adjacent band temperatures:</p>
+<p><strong>From temperature differences to heat transport:</strong> We approximate the combined effect of winds and ocean currents by diffusion: heat moves from warmer bands toward colder bands. At the boundary between two bands, we use</p>
 <p><span class="math display">\[H_{edge}=-2\pi R^2\cos\phi_{edge}\,D\,
 \frac{T_{north}-T_{south}}{\phi_{north}-\phi_{south}}.\]</span></p>
-<p>Angles in this calculation are in <strong>radians</strong>. <span class="math inline">\(D\geq0\)</span> controls transport strength, in W m⁻² K⁻¹. These units incorporate the spherical scaling in our transport rule. They differ from the m² s⁻¹ units of a molecular diffusivity. For <span class="math inline">\(D=0\)</span>, transport vanishes.</p>
-<p>For each band:</p>
+<p>Each part has a role:</p>
+<ul>
+<li><span class="math inline">\((T_{north}-T_{south})/(\phi_{north}-\phi_{south})\)</span> is the temperature gradient, estimated from the two neighboring band centers. The denominator is positive because latitude increases northward.</li>
+<li><span class="math inline">\(D\geq0\)</span> controls how strongly the atmosphere and ocean transfer heat for a given gradient. Its units are W m⁻² K⁻¹. Larger <span class="math inline">\(D\)</span> gives stronger transport; <span class="math inline">\(D=0\)</span> gives none.</li>
+<li><span class="math inline">\(R\)</span> is Earth’s radius. The latitude circle has length <span class="math inline">\(2\pi R\cos\phi_{edge}\)</span>. The <span class="math inline">\(R^2\)</span> in the final formula comes from the definition of <span class="math inline">\(D\)</span>, as shown below.</li>
+<li>The <strong>minus sign</strong> makes the transport go from warm to cold. If the northern band is colder, the gradient is negative, so <span class="math inline">\(H&gt;0\)</span> and heat moves northward. If the northern band is warmer, <span class="math inline">\(H&lt;0\)</span> and heat moves southward.</li>
+</ul>
+<div class="optional-reading" style="border: 1px solid #cbd5e1; background: #f8fafc; padding: 12px 16px; border-radius: 6px; margin: 16px 0;">
+<p><strong>Optional reading: why <span class="math inline">\(2\pi R^2\)</span> appears</strong></p>
+<p>Start with a transport coefficient <span class="math inline">\(k\)</span> defined using distance in metres. The northward heat transport <strong>per metre of latitude circle</strong> is</p>
+<p><span class="math display">\[f=-k\frac{\Delta T}{\Delta y},\]</span></p>
+<p>where <span class="math inline">\(\Delta T=T_{north}-T_{south}\)</span>, <span class="math inline">\(\Delta y\)</span> is the distance between band centers, and <span class="math inline">\(k\)</span> has units W K⁻¹. Thus <span class="math inline">\(f\)</span> has units W m⁻¹.</p>
+<p>The latitude circle has length <span class="math inline">\(2\pi R\cos\phi_{edge}\)</span>, and <span class="math inline">\(\Delta y=R\Delta\phi\)</span> with <span class="math inline">\(\Delta\phi\)</span> in radians. Multiplying <span class="math inline">\(f\)</span> by that length gives</p>
+<p><span class="math display">\[\begin{aligned}
+H_{edge}&amp;=(2\pi R\cos\phi_{edge})
+\left(-k\frac{\Delta T}{R\Delta\phi}\right)\\
+&amp;=-2\pi k\cos\phi_{edge}\frac{\Delta T}{\Delta\phi}.
+\end{aligned}\]</span></p>
+<p>The radius in the circumference cancels the radius used to convert latitude into distance. In this EBM, we write the coefficient as</p>
+<p><span class="math display">\[D=\frac{k}{R^2},\qquad\text{so}\qquad k=R^2D.\]</span></p>
+<p>Substituting <span class="math inline">\(k=R^2D\)</span> gives the <span class="math inline">\(2\pi R^2D\)</span> in our transport formula. The <span class="math inline">\(2\pi\)</span> comes from going around the latitude circle; the <span class="math inline">\(R^2\)</span> comes from our definition of <span class="math inline">\(D\)</span>.</p>
+<p><strong>Why use <span class="math inline">\(D\)</span>?</strong> To calculate heating per square metre, we divide the net heat transport into a band by its area. Because the area is proportional to <span class="math inline">\(R^2\)</span>, the transport coefficient in that heating calculation is <span class="math inline">\(k/R^2\)</span>. We simply give this quantity the name <span class="math inline">\(D\)</span>; its units are W m⁻² K⁻¹.</p>
+<p>For Earth’s fixed radius, choosing <span class="math inline">\(D\)</span> also fixes <span class="math inline">\(k=R^2D\)</span>. Either coefficient describes the same heat transport. We use <span class="math inline">\(D\)</span> throughout this notebook.</p>
+</div>
+<p><strong>From transport to heating:</strong> Because positive <span class="math inline">\(H\)</span> always points northward,</p>
+<ul>
+<li>positive <span class="math inline">\(H_{south}\)</span> <strong>enters</strong> the band through its southern edge;</li>
+<li>positive <span class="math inline">\(H_{north}\)</span> <strong>leaves</strong> the band through its northern edge.</li>
+</ul>
+<p>The band’s net energy gain is therefore <strong>inflow minus outflow</strong>, <span class="math inline">\(H_{south}-H_{north}\)</span>. Dividing by the band’s area gives its local heating rate:</p>
 <p><span class="math display">\[h_i=\frac{H_{south}-H_{north}}{\mathrm{area}_i}.\]</span></p>
-<p><span class="math inline">\(H\)</span> is the total heat-transfer rate in W; <span class="math inline">\(h\)</span> is the resulting <strong>local heating per unit area</strong>, in W m⁻². The sign of <span class="math inline">\(H\)</span> tells us the transfer direction. A band gains energy from transport when more heat enters than leaves, giving <span class="math inline">\(h&gt;0\)</span>.</p>
+<p>For example, if 2 PW enters through the southern edge and 1 PW leaves through the northern edge, the band gains 1 PW. Negative values of <span class="math inline">\(H\)</span> reverse the flow: a negative <span class="math inline">\(H_{south}\)</span> removes energy, while a negative <span class="math inline">\(H_{north}\)</span> adds energy. The same subtraction handles both directions.</p>
+<p><span class="math inline">\(H\)</span> has units W; <span class="math inline">\(h\)</span> has units W m⁻². Positive <span class="math inline">\(h\)</span> heats the band, and negative <span class="math inline">\(h\)</span> cools it.</p>
 <p>We impose zero heat transfer across the two poles. Heat crossing an internal boundary leaves one band and enters its neighbor, so internal transport conserves energy. The bands have different areas; all global means use their actual areas.</p>
-<div id="dae788d6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:20.511225Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:20.511093Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:20.515504Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:20.515063Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transport(T, D<span class="op">=</span><span class="fl">0.6</span>):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''Return northward boundary power H (W) and band heating h (W/m²).'''</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> np.asarray(T, dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    H <span class="op">=</span> np.zeros(<span class="bu">len</span>(T) <span class="op">+</span> <span class="dv">1</span>)  <span class="co"># polar boundary powers remain zero</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    gradient <span class="op">=</span> np.diff(T) <span class="op">/</span> np.diff(phi)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    H[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>R_EARTH<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> np.cos(phi_edges[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])<span class="op">*</span>D<span class="op">*</span>gradient</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> (H[:<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> H[<span class="dv">1</span>:]) <span class="op">/</span> band_area</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> H, h</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix form of the same conservative exchange rule, for time stepping.</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.zeros((<span class="bu">len</span>(lat), <span class="bu">len</span>(lat)))</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> edge <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(lat)):</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    south, north <span class="op">=</span> edge <span class="op">-</span> <span class="dv">1</span>, edge</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    conductance <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>R_EARTH<span class="op">**</span><span class="dv">2</span><span class="op">*</span>np.cos(phi_edges[edge])<span class="op">/</span>(phi[north]<span class="op">-</span>phi[south])</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    L[south, south] <span class="op">-=</span> conductance<span class="op">/</span>band_area[south]</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    L[south, north] <span class="op">+=</span> conductance<span class="op">/</span>band_area[south]</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    L[north, south] <span class="op">+=</span> conductance<span class="op">/</span>band_area[north]</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    L[north, north] <span class="op">-=</span> conductance<span class="op">/</span>band_area[north]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="dae788d6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.158173Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.158044Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.162600Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.162150Z&quot;}}" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transport(T, D<span class="op">=</span><span class="fl">0.6</span>):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''Return northward boundary power H (W) and band heating h (W/m²).'''</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> np.asarray(T, dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    H <span class="op">=</span> np.zeros(<span class="bu">len</span>(T) <span class="op">+</span> <span class="dv">1</span>)  <span class="co"># polar boundary powers remain zero</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    gradient <span class="op">=</span> np.diff(T) <span class="op">/</span> np.diff(phi)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    H[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>R_EARTH<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> np.cos(phi_edges[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])<span class="op">*</span>D<span class="op">*</span>gradient</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> (H[:<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> H[<span class="dv">1</span>:]) <span class="op">/</span> band_area</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> H, h</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix form of the same conservative exchange rule, for time stepping.</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.zeros((<span class="bu">len</span>(lat), <span class="bu">len</span>(lat)))</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> edge <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(lat)):</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    south, north <span class="op">=</span> edge <span class="op">-</span> <span class="dv">1</span>, edge</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    conductance <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>R_EARTH<span class="op">**</span><span class="dv">2</span><span class="op">*</span>np.cos(phi_edges[edge])<span class="op">/</span>(phi[north]<span class="op">-</span>phi[south])</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    L[south, south] <span class="op">-=</span> conductance<span class="op">/</span>band_area[south]</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    L[south, north] <span class="op">+=</span> conductance<span class="op">/</span>band_area[south]</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    L[north, south] <span class="op">+=</span> conductance<span class="op">/</span>band_area[north]</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    L[north, north] <span class="op">-=</span> conductance<span class="op">/</span>band_area[north]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Keep albedo 0.30, emissivity 0.779, and the same Stefan–Boltzmann-based OLR. Change <strong>only</strong> D from 0 to 0.6 W m⁻² K⁻¹.</p>
-<p><strong>Predict:</strong> How will temperature and local N change? Must the global mean temperature remain exactly unchanged with nonlinear radiation?</p>
-<div id="a834d96a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:20.517283Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:20.517148Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:20.674690Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:20.674099Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gray_with_transport <span class="op">=</span> simulate_gray(D<span class="op">=</span><span class="fl">0.6</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>T_gray <span class="op">=</span> gray_with_transport[<span class="st">'T_K'</span>][<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>H_gray, h_gray <span class="op">=</span> transport(T_gray, <span class="fl">0.6</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>N_gray_transport <span class="op">=</span> gray_with_transport[<span class="st">'ASR'</span>]<span class="op">-</span>gray_olr(T_gray)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="fl">11.5</span>, <span class="fl">4.3</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, gray_no_transport[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>], label<span class="op">=</span><span class="st">'D = 0'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, gray_with_transport[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>], label<span class="op">=</span><span class="st">'D = 0.6'</span>, color<span class="op">=</span><span class="st">'#7b4397'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(OBS_LAT, OBS_T_C, label<span class="op">=</span><span class="st">'NCEP reanalysis'</span>, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Surface temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, N_gray_transport, label<span class="op">=</span><span class="st">'Net radiation N'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, h_gray, label<span class="op">=</span><span class="st">'Convergence heating h'</span>, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, N_gray_transport<span class="op">+</span>h_gray, label<span class="op">=</span><span class="st">'Storage N + h'</span>, color<span class="op">=</span><span class="st">'#555555'</span>, ls<span class="op">=</span><span class="st">'--'</span>)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Energy flux (W/m²)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'gray_with_transport'</span>] <span class="op">=</span> fig</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum local storage rate: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(N_gray_transport<span class="op">+</span>h_gray))<span class="sc">:.2e}</span><span class="ss"> W/m²'</span>)</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Global means, D=0 / D=0.6: </span><span class="sc">{</span>global_mean(gray_no_transport[<span class="st">"T"</span>][<span class="op">-</span><span class="dv">1</span>])<span class="sc">:.3f}</span><span class="ss"> / </span><span class="sc">{</span>global_mean(gray_with_transport[<span class="st">"T"</span>][<span class="op">-</span><span class="dv">1</span>])<span class="sc">:.3f}</span><span class="ss"> °C'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Keep albedo 0.30, emissivity 0.779, and the same Stefan–Boltzmann-based OLR. The <span class="math inline">\(D=0\)</span> result is stored as <code>gray_no_transport</code>, calculated in Section 1. We reuse it below and calculate a second run with <span class="math inline">\(D=0.6\)</span> W m⁻² K⁻¹.</p>
+<div id="a834d96a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.164171Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.164061Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.330116Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.329549Z&quot;}}" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># D=0: reuse gray_no_transport, calculated in Section 1.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># D=0.6: calculate the same model with horizontal heat transport.</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>gray_with_transport <span class="op">=</span> simulate_gray(D<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the energy budget at the final time for D=0.6.</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>T_gray <span class="op">=</span> gray_with_transport[<span class="st">'T_K'</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>H_gray, h_gray <span class="op">=</span> transport(T_gray, <span class="fl">0.6</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>N_gray_transport <span class="op">=</span> gray_with_transport[<span class="st">'ASR'</span>]<span class="op">-</span>gray_olr(T_gray)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results.</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="fl">11.5</span>, <span class="fl">4.3</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Left panel: compare the final temperature profiles.</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, gray_no_transport[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>], label<span class="op">=</span><span class="st">'D = 0'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, gray_with_transport[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>], label<span class="op">=</span><span class="st">'D = 0.6'</span>, color<span class="op">=</span><span class="st">'#7b4397'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(OBS_LAT, OBS_T_C, label<span class="op">=</span><span class="st">'NCEP reanalysis'</span>, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Surface temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Right panel: radiation, transport convergence, and net storage for D=0.6.</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, N_gray_transport, label<span class="op">=</span><span class="st">'Net radiation N'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, h_gray, label<span class="op">=</span><span class="st">'Convergence heating h'</span>, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, N_gray_transport<span class="op">+</span>h_gray, label<span class="op">=</span><span class="st">'Storage N + h'</span>, color<span class="op">=</span><span class="st">'#555555'</span>, ls<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Energy flux (W/m²)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'gray_with_transport'</span>] <span class="op">=</span> fig</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Report the final storage rate and compare global mean temperatures.</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum local storage rate: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(N_gray_transport<span class="op">+</span>h_gray))<span class="sc">:.2e}</span><span class="ss"> W/m²'</span>)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Global means, D=0 / D=0.6: '</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'</span><span class="sc">{</span>global_mean(gray_no_transport[<span class="st">"T"</span>][<span class="op">-</span><span class="dv">1</span>])<span class="sc">:.3f}</span><span class="ss"> / '</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f'</span><span class="sc">{</span>global_mean(gray_with_transport[<span class="st">"T"</span>][<span class="op">-</span><span class="dv">1</span>])<span class="sc">:.3f}</span><span class="ss"> °C'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<p><strong>Your explanation:</strong></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Maximum local storage rate: 2.27e-09 W/m²
+Global means, D=0 / D=0.6: 13.416 / 14.567 °C</code></pre>
+</div>
+</div>
+<p><a id="response-3"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>How does adding horizontal heat transport change the equator-to-pole temperature difference?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 </section>
 <section id="refine-the-prescribed-radiation" class="level2">
 <h2 class="anchored" data-anchor-id="refine-the-prescribed-radiation">4. Refine the prescribed radiation</h2>
-<p>We now prescribe latitude-dependent albedo and use a linear approximation for outgoing infrared radiation.</p>
+<p>In Sections 1–3, albedo was 0.30 at every latitude. We now let albedo vary with latitude, so different bands reflect different fractions of their incoming sunlight. We also introduce a linear approximation for outgoing infrared radiation.</p>
 <p><strong>Absorbed sunlight:</strong> <span class="math inline">\(\mathrm{ASR}(\phi)=[1-\mathcal A(\phi)]Q(\phi)\)</span>.</p>
-<p><span class="math inline">\(Q\)</span> is annual-mean incoming sunlight at the top of the atmosphere. It is averaged over day and year. The supplied solar calculation averages a tilted, circular-orbit planet over a year, using <span class="math inline">\(S_0=1361.0\)</span> W m⁻² and tilt 23.44°.</p>
-<p>Our prescribed planetary albedo is <span class="math display">\[\mathcal A(\phi)=0.229+0.375\sin^2\phi.\]</span> Planetary albedo can be inferred from annual mean incoming and absorbed TOA radiation as 1 − ASR/Q. Our smooth profile approximates the broad latitude dependence of the NCEP-based curve shown in class. Snow and ice, clouds, and the angle of incoming sunlight affect reflection. The prescribed curve is about 0.23 at the equator and 0.60 at the poles, and stays fixed as temperature changes. It represents the column’s effective reflection, including atmospheric and surface effects.</p>
-<p><strong>Outgoing infrared:</strong> <span class="math inline">\(\mathrm{OLR}=A+BT\)</span>, with <span class="math inline">\(A=210\)</span> W m⁻² and <span class="math inline">\(B=2\)</span> W m⁻² K⁻¹, using <span class="math inline">\(T\)</span> in °C. This linear approximation relates surface temperature to radiation escaping to space after atmospheric absorption and emission. <span class="math inline">\(A\)</span> gives OLR at 0°C, and <span class="math inline">\(B\)</span> gives its increase per degree of warming. A 1°C warming increases OLR by 2 W m⁻², so warmer bands lose more energy through radiation.</p>
-<p><strong>Local heating from transport convergence:</strong> <span class="math inline">\(H\)</span> is the total rate of heat transfer across a latitude circle by the atmosphere and ocean, in W (joules per second), often expressed in PW (<span class="math inline">\(10^{15}\)</span> W). We choose northward transfer as positive. Calculate <span class="math inline">\(H\)</span> at band boundaries from the temperature gradient, then calculate <span class="math inline">\(h=(H_{south}-H_{north})/\text{band area}\)</span>. Heating <span class="math inline">\(h\)</span> uses W m⁻². Positive <span class="math inline">\(h\)</span> adds energy to the band.</p>
-<div id="3df13929" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:20.676842Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:20.676740Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:20.795310Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:20.794874Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>A, B <span class="op">=</span> <span class="fl">210.0</span>, <span class="fl">2.0</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> <span class="fl">0.229</span> <span class="op">+</span> <span class="fl">0.375</span><span class="op">*</span>np.sin(phi)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ASR <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> albedo)<span class="op">*</span>Q</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> olr(T):</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> A <span class="op">+</span> B<span class="op">*</span>np.asarray(T)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, Q, label<span class="op">=</span><span class="st">'Incoming sunlight Q'</span>, color<span class="op">=</span><span class="st">'#777777'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, ASR, label<span class="op">=</span><span class="st">'Absorbed sunlight ASR'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Solar flux (W/m²)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend()</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, albedo, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Prescribed planetary albedo'</span>,</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>), ylim<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">0.7</span>))</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'inputs'</span>] <span class="op">=</span> fig</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Area-weighted incoming sunlight: </span><span class="sc">{</span>global_mean(Q)<span class="sc">:.2f}</span><span class="ss"> W/m²'</span>)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Area-weighted absorbed sunlight: </span><span class="sc">{</span>global_mean(ASR)<span class="sc">:.2f}</span><span class="ss"> W/m²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="math inline">\(Q(\phi)\)</span> is the same annual mean incoming sunlight introduced in Section 1.</p>
+<p>Our prescribed planetary albedo is <span class="math display">\[\mathcal A(\phi)=0.229+0.375\sin^2\phi.\]</span> Planetary albedo can be inferred from annual mean incoming and absorbed TOA radiation as <span class="math inline">\(1-\mathrm{ASR}/Q\)</span>. The figure compares the NCEP-based curve (blue) with the smooth profile used here (green). Snow and ice, clouds, and the angle of incoming sunlight affect reflection. Our albedo varies with latitude but stays fixed as temperature changes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/5f08fa99-1-planetary_albedo_reanalysis_and_profile.png" class="img-fluid figure-img"></p>
+<figcaption>NCEP-based planetary albedo and the smooth prescribed profile</figcaption>
+</figure>
 </div>
-<p><strong>Predict and explain:</strong> Why is the equator-to-pole difference in ASR stronger than the difference in incoming sunlight alone? Would ASR change if we warmed every band by 2°C in this model? What would happen to OLR?</p>
-<p><strong>Your explanation:</strong></p>
+<p><em>Horizontal axis: latitude (°). Vertical axis: planetary albedo. Blue: NCEP-based estimate; green: prescribed profile.</em></p>
+<p><strong>Outgoing infrared:</strong> <span class="math inline">\(\mathrm{OLR}=A+BT\)</span>, with <span class="math inline">\(A=210\)</span> W m⁻² and <span class="math inline">\(B=2\)</span> W m⁻² K⁻¹, using <span class="math inline">\(T\)</span> in °C. This linear approximation relates surface temperature to radiation escaping to space after atmospheric absorption and emission. <span class="math inline">\(A\)</span> gives OLR at 0°C, and <span class="math inline">\(B\)</span> gives its increase per degree of warming. A 1°C warming increases OLR by 2 W m⁻², so warmer bands lose more energy through radiation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/5f08fa99-2-rose_olr_surface_temperature.png" class="img-fluid figure-img"></p>
+<figcaption>NCEP outgoing infrared radiation versus surface temperature</figcaption>
+</figure>
+</div>
+<p><em>Each blue point represents one latitude’s annual mean temperature and OLR. Their approximately linear relationship motivates this approximation. The red dashed line is our chosen <span class="math inline">\(210+2T\)</span>; the black dashed line is the best fit to these data.</em></p>
+<p>We keep the horizontal heat transport from Section 3 unchanged.</p>
+<div id="3df13929" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.331996Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.331875Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.458850Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.458187Z&quot;}}" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>A, B <span class="op">=</span> <span class="fl">210.0</span>, <span class="fl">2.0</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>albedo <span class="op">=</span> <span class="fl">0.229</span> <span class="op">+</span> <span class="fl">0.375</span><span class="op">*</span>np.sin(phi)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ASR <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> albedo)<span class="op">*</span>Q</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> olr(T):</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> A <span class="op">+</span> B<span class="op">*</span>np.asarray(T)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, Q, label<span class="op">=</span><span class="st">'Incoming sunlight Q'</span>, color<span class="op">=</span><span class="st">'#777777'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, ASR, label<span class="op">=</span><span class="st">'Absorbed sunlight ASR'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Solar flux (W/m²)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend()</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat, albedo, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Prescribed planetary albedo'</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>            xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>), ylim<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">0.7</span>))</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'inputs'</span>] <span class="op">=</span> fig</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Area-weighted incoming sunlight: </span><span class="sc">{</span>global_mean(Q)<span class="sc">:.2f}</span><span class="ss"> W/m²'</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Area-weighted absorbed sunlight: </span><span class="sc">{</span>global_mean(ASR)<span class="sc">:.2f}</span><span class="ss"> W/m²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Area-weighted incoming sunlight: 340.24 W/m²
+Area-weighted absorbed sunlight: 227.90 W/m²</code></pre>
+</div>
+</div>
+<p>Compare the latitude dependence of incoming sunlight, absorbed sunlight, and prescribed albedo in the plots above.</p>
+<p><a id="response-4"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>Why is the equator-to-pole difference in ASR stronger than the difference in incoming sunlight alone?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 <section id="supplied-time-stepping" class="level3">
 <h3 class="anchored" data-anchor-id="supplied-time-stepping">Supplied time stepping</h3>
-<p>The next function advances all band temperatures forward through time. At each step it combines radiation and transport, then updates heat storage. It uses an <strong>implicit</strong> step, solving the coupled temperatures together; this avoids the extremely small explicit time steps required by diffusion on a fine grid. We use 5-day steps, and check convergence separately.</p>
+<p>The next function advances temperatures through time using the same energy budget as the <strong>explicit time stepping</strong> we learned earlier. Here we use an <strong>implicit</strong> method: each update solves for all bands’ new temperatures together. This allows larger stable time steps than explicit stepping for diffusion, so we can reach equilibrium with fewer steps. We use 5-day steps.</p>
 <p>The settings to change are <code>D</code>, <code>water_depth</code>, and the initial temperature. <code>radiation=False</code> turns <strong>both</strong> ASR and OLR off, isolating redistribution. You do not need to edit the solver.</p>
-<div id="3ff0eba7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:20.797071Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:20.796940Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:20.802598Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:20.802089Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate(D<span class="op">=</span><span class="fl">0.6</span>, years<span class="op">=</span><span class="fl">15.0</span>, water_depth<span class="op">=</span><span class="fl">10.0</span>,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>             initial<span class="op">=</span><span class="fl">10.0</span>, radiation<span class="op">=</span><span class="va">True</span>, dt_days<span class="op">=</span><span class="fl">5.0</span>):</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite([D, years, water_depth, dt_days])):</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Use finite parameters.'</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> D <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> <span class="bu">min</span>(years, water_depth, dt_days) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'D must be nonnegative; time and depth must be positive.'</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> RHO_CP<span class="op">*</span>water_depth</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> np.broadcast_to(np.asarray(initial, dtype<span class="op">=</span><span class="bu">float</span>), lat.shape).copy()</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite(start)):</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Initial temperatures must be finite.'</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    nstep <span class="op">=</span> <span class="bu">int</span>(np.ceil(years<span class="op">*</span><span class="fl">365.25</span><span class="op">/</span>dt_days))</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, years, nstep <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    dt <span class="op">=</span> (time[<span class="dv">1</span>]<span class="op">-</span>time[<span class="dv">0</span>])<span class="op">*</span>SECONDS_PER_YEAR</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    operator <span class="op">=</span> D<span class="op">*</span>L <span class="op">-</span> (B<span class="op">*</span>np.eye(<span class="bu">len</span>(lat)) <span class="cf">if</span> radiation <span class="cf">else</span> <span class="dv">0</span>)</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> ASR <span class="op">-</span> A <span class="cf">if</span> radiation <span class="cf">else</span> np.zeros_like(ASR)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    factor <span class="op">=</span> lu_factor(np.eye(<span class="bu">len</span>(lat)) <span class="op">-</span> dt<span class="op">/</span>C<span class="op">*</span>operator)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> np.empty((nstep <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(lat)))</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    T[<span class="dv">0</span>] <span class="op">=</span> start</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(nstep):</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        T[n<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> lu_solve(factor, T[n] <span class="op">+</span> dt<span class="op">/</span>C<span class="op">*</span>source)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(time<span class="op">=</span>time, T<span class="op">=</span>T, C<span class="op">=</span>C, D<span class="op">=</span>D, radiation<span class="op">=</span>radiation,</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>                water_depth<span class="op">=</span>water_depth, dt_seconds<span class="op">=</span>dt)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> profiles(ax, run, times):</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> target <span class="kw">in</span> times:</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> np.argmin(np.<span class="bu">abs</span>(run[<span class="st">'time'</span>]<span class="op">-</span>target))</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        ax.plot(lat, run[<span class="st">'T'</span>][i], label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>run[<span class="st">'time'</span>][i]<span class="sc">:.2g}</span><span class="ss"> yr"</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3ff0eba7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.461153Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.461021Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.467041Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.466433Z&quot;}}" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate(D<span class="op">=</span><span class="fl">0.6</span>, years<span class="op">=</span><span class="fl">15.0</span>, water_depth<span class="op">=</span><span class="fl">10.0</span>,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>             initial<span class="op">=</span><span class="fl">10.0</span>, radiation<span class="op">=</span><span class="va">True</span>, dt_days<span class="op">=</span><span class="fl">5.0</span>):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite([D, years, water_depth, dt_days])):</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Use finite parameters.'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> D <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> <span class="bu">min</span>(years, water_depth, dt_days) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'D must be nonnegative; time and depth must be positive.'</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> RHO_CP<span class="op">*</span>water_depth</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> np.broadcast_to(np.asarray(initial, dtype<span class="op">=</span><span class="bu">float</span>), lat.shape).copy()</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">all</span>(np.isfinite(start)):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Initial temperatures must be finite.'</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    nstep <span class="op">=</span> <span class="bu">int</span>(np.ceil(years<span class="op">*</span><span class="fl">365.25</span><span class="op">/</span>dt_days))</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, years, nstep <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    dt <span class="op">=</span> (time[<span class="dv">1</span>]<span class="op">-</span>time[<span class="dv">0</span>])<span class="op">*</span>SECONDS_PER_YEAR</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    operator <span class="op">=</span> D<span class="op">*</span>L <span class="op">-</span> (B<span class="op">*</span>np.eye(<span class="bu">len</span>(lat)) <span class="cf">if</span> radiation <span class="cf">else</span> <span class="dv">0</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    source <span class="op">=</span> ASR <span class="op">-</span> A <span class="cf">if</span> radiation <span class="cf">else</span> np.zeros_like(ASR)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    factor <span class="op">=</span> lu_factor(np.eye(<span class="bu">len</span>(lat)) <span class="op">-</span> dt<span class="op">/</span>C<span class="op">*</span>operator)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> np.empty((nstep <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(lat)))</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    T[<span class="dv">0</span>] <span class="op">=</span> start</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(nstep):</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>        T[n<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> lu_solve(factor, T[n] <span class="op">+</span> dt<span class="op">/</span>C<span class="op">*</span>source)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(time<span class="op">=</span>time, T<span class="op">=</span>T, C<span class="op">=</span>C, D<span class="op">=</span>D, radiation<span class="op">=</span>radiation,</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>                water_depth<span class="op">=</span>water_depth, dt_seconds<span class="op">=</span>dt)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> profiles(ax, run, times):</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> target <span class="kw">in</span> times:</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> np.argmin(np.<span class="bu">abs</span>(run[<span class="st">'time'</span>]<span class="op">-</span>target))</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>        ax.plot(lat, run[<span class="st">'T'</span>][i], label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>run[<span class="st">'time'</span>][i]<span class="sc">:.2g}</span><span class="ss"> yr"</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>    ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="isolate-diffusion-optional" class="level2">
 <h2 class="anchored" data-anchor-id="isolate-diffusion-optional">5. Isolate diffusion (optional)</h2>
 <p>Start with a smooth warm-equator, cold-pole profile: <span class="math display">\[T(\phi,0)=32-60\sin^2\phi\quad[{}^\circ\mathrm C].\]</span></p>
-<p>Turn radiation off. <strong>Predict:</strong> What happens to the temperature contrast? What happens to global mean temperature? What temperature would remain after a sufficiently long run?</p>
-<div id="cc1c743f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:20.803998Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:20.803897Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:20.898072Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:20.897495Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>initial_profile <span class="op">=</span> <span class="fl">32.0</span> <span class="op">-</span> <span class="fl">60.0</span><span class="op">*</span>np.sin(phi)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>diffusion_run <span class="op">=</span> simulate(D<span class="op">=</span><span class="fl">0.6</span>, years<span class="op">=</span><span class="dv">3</span>, initial<span class="op">=</span>initial_profile, radiation<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">4.4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>profiles(ax, diffusion_run, [<span class="dv">0</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>])</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Redistribution alone: no radiation'</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'diffusion_only'</span>] <span class="op">=</span> fig</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> global_mean(diffusion_run[<span class="st">'T'</span>])</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Initial global mean: </span><span class="sc">{</span>means[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss"> °C'</span>)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Final global mean:   </span><span class="sc">{</span>means[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss"> °C'</span>)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum mean change: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(means<span class="op">-</span>means[<span class="dv">0</span>]))<span class="sc">:.2e}</span><span class="ss"> K'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Turn radiation off.</p>
+<div id="cc1c743f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.468753Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.468582Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.567540Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.567146Z&quot;}}" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>initial_profile <span class="op">=</span> <span class="fl">32.0</span> <span class="op">-</span> <span class="fl">60.0</span><span class="op">*</span>np.sin(phi)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>diffusion_run <span class="op">=</span> simulate(D<span class="op">=</span><span class="fl">0.6</span>, years<span class="op">=</span><span class="dv">3</span>, initial<span class="op">=</span>initial_profile, radiation<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">4.4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>profiles(ax, diffusion_run, [<span class="dv">0</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>])</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Redistribution alone: no radiation'</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'diffusion_only'</span>] <span class="op">=</span> fig</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> global_mean(diffusion_run[<span class="st">'T'</span>])</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Initial global mean: </span><span class="sc">{</span>means[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss"> °C'</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Final global mean:   </span><span class="sc">{</span>means[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss"> °C'</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum mean change: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(means<span class="op">-</span>means[<span class="dv">0</span>]))<span class="sc">:.2e}</span><span class="ss"> K'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<p><strong>Your explanation:</strong></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Initial global mean: 11.9980 °C
+Final global mean:   11.9980 °C
+Maximum mean change: 4.85e-13 K</code></pre>
+</div>
+</div>
+<p><a id="response-5"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>What happens to the temperature profile when diffusion acts alone?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 </section>
 <section id="run-the-refined-ebm" class="level2">
 <h2 class="anchored" data-anchor-id="run-the-refined-ebm">6. Run the refined EBM</h2>
-<p>Restore the fixed ASR profile and temperature-dependent OLR. Start every band at 10°C. First run with <span class="math inline">\(D=0\)</span>, then with <span class="math inline">\(D=0.6\)</span> W m⁻² K⁻¹.</p>
-<p><strong>Predict:</strong> Without transport, what sets each band’s final temperature? Compared with that solution, how should transport change the tropics and the poles? Does steady temperature require zero heat transport?</p>
-<div id="2dd7359d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:20.900302Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:20.900180Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:21.080622Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:21.080104Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>no_transport <span class="op">=</span> simulate(D<span class="op">=</span><span class="fl">0.0</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>baseline <span class="op">=</span> simulate(D<span class="op">=</span><span class="fl">0.6</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.3</span>), sharey<span class="op">=</span><span class="va">True</span>, layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, run, title <span class="kw">in</span> <span class="bu">zip</span>(axes, [no_transport, baseline],</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                        [<span class="st">'Radiation alone (D = 0)'</span>, <span class="st">'Radiation and transport (D = 0.6)'</span>]):</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    profiles(ax, run, [<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">15</span>])</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'adjustment'</span>] <span class="op">=</span> fig</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The refined EBM combines <strong>absorbed sunlight</strong> <span class="math inline">\(\mathrm{ASR}=[1-\mathcal A(\phi)]Q(\phi)\)</span> using latitude-dependent albedo, <strong>outgoing infrared</strong> <span class="math inline">\(\mathrm{OLR}=210+2T\)</span> with <span class="math inline">\(T\)</span> in °C, and <strong>heating from horizontal transport</strong> <span class="math inline">\(h\)</span>:</p>
+<p><span class="math display">\[C\frac{dT}{dt}=[1-\mathcal A(\phi)]Q(\phi)-(210+2T)+h.\]</span></p>
+<p>We now include radiation again after the optional diffusion-only experiment. Start every band at 10°C. First run without transport (<span class="math inline">\(D=0\)</span>), then with transport (<span class="math inline">\(D=0.6\)</span> W m⁻² K⁻¹).</p>
+<div id="2dd7359d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.569809Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.569676Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.752322Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.751761Z&quot;}}" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>no_transport <span class="op">=</span> simulate(D<span class="op">=</span><span class="fl">0.0</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>baseline <span class="op">=</span> simulate(D<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">4.3</span>), sharey<span class="op">=</span><span class="va">True</span>, layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, run, title <span class="kw">in</span> <span class="bu">zip</span>(axes, [no_transport, baseline],</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                        [<span class="st">'Radiation alone (D = 0)'</span>, <span class="st">'Radiation and transport (D = 0.6)'</span>]):</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    profiles(ax, run, [<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">15</span>])</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'adjustment'</span>] <span class="op">=</span> fig</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<p><strong>Your explanation:</strong></p>
+</div>
+</div>
+<p><a id="response-6"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>Why are the tropics cooler at equilibrium with heat transport than at equilibrium without it?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 </section>
 <section id="check-the-local-budget" class="level2">
 <h2 class="anchored" data-anchor-id="check-the-local-budget">7. Check the local budget</h2>
 <p>Look at the final budget of the <span class="math inline">\(D=0.6\)</span> run. The local storage rate is</p>
 <p><span class="math display">\[\frac{dE_i}{dt}=C\frac{dT_i}{dt}=\underbrace{\mathrm{ASR}_i-\mathrm{OLR}_i}_{N_i}+h_i.\]</span></p>
-<p><strong>Predict:</strong> Which quantities should vanish at equilibrium: <span class="math inline">\(N\)</span>, <span class="math inline">\(h\)</span>, <span class="math inline">\(N+h\)</span>, or <span class="math inline">\(H\)</span>? For poleward heat transport in both hemispheres, what sign should <span class="math inline">\(H\)</span> have south and north of the equator?</p>
-<div id="255a67bd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:21.082511Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:21.082384Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:21.289547Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:21.288861Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>T_final <span class="op">=</span> baseline[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>H, h <span class="op">=</span> transport(T_final, D<span class="op">=</span>baseline[<span class="st">'D'</span>])</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> ASR <span class="op">-</span> olr(T_final)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>storage <span class="op">=</span> N <span class="op">+</span> h</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="fl">11.5</span>, <span class="fl">4.2</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, N, label<span class="op">=</span><span class="st">'Net radiation N = ASR − OLR'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, h, label<span class="op">=</span><span class="st">'Transport heating h'</span>, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, storage, label<span class="op">=</span><span class="st">'Storage rate N + h'</span>, color<span class="op">=</span><span class="st">'#555555'</span>, ls<span class="op">=</span><span class="st">'--'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Energy flux (W/m²)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat_edges, H<span class="op">/</span><span class="fl">1e15</span>, color<span class="op">=</span><span class="st">'#7b4397'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Boundary latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Northward heat transport H (PW)'</span>,</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>            xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'budgets'</span>] <span class="op">=</span> fig</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum absolute local storage rate: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(storage))<span class="sc">:.3e}</span><span class="ss"> W/m²'</span>)</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Global mean transport heating:      </span><span class="sc">{</span>global_mean(h)<span class="sc">:.3e}</span><span class="ss"> W/m²'</span>)</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Global mean net radiation:          </span><span class="sc">{</span>global_mean(N)<span class="sc">:.3e}</span><span class="ss"> W/m²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="255a67bd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.754105Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.753979Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:44.889026Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:44.888526Z&quot;}}" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>T_final <span class="op">=</span> baseline[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>H, h <span class="op">=</span> transport(T_final, D<span class="op">=</span>baseline[<span class="st">'D'</span>])</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> ASR <span class="op">-</span> olr(T_final)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>storage <span class="op">=</span> N <span class="op">+</span> h</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="fl">11.5</span>, <span class="fl">4.2</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, N, label<span class="op">=</span><span class="st">'Net radiation N = ASR − OLR'</span>, color<span class="op">=</span><span class="st">'#c54b26'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, h, label<span class="op">=</span><span class="st">'Transport heating h'</span>, color<span class="op">=</span><span class="st">'#2374a5'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(lat, storage, label<span class="op">=</span><span class="st">'Storage rate N + h'</span>, color<span class="op">=</span><span class="st">'#555555'</span>, ls<span class="op">=</span><span class="st">'--'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Energy flux (W/m²)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(lat_edges, H<span class="op">/</span><span class="fl">1e15</span>, color<span class="op">=</span><span class="st">'#7b4397'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Boundary latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Northward heat transport H (PW)'</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>            xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'budgets'</span>] <span class="op">=</span> fig</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum absolute local storage rate: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(storage))<span class="sc">:.3e}</span><span class="ss"> W/m²'</span>)</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Global mean transport heating:      </span><span class="sc">{</span>global_mean(h)<span class="sc">:.3e}</span><span class="ss"> W/m²'</span>)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Global mean net radiation:          </span><span class="sc">{</span>global_mean(N)<span class="sc">:.3e}</span><span class="ss"> W/m²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<p><strong>Your explanation:</strong></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Maximum absolute local storage rate: 3.895e-10 W/m²
+Global mean transport heating:      -2.325e-16 W/m²
+Global mean net radiation:          -3.849e-10 W/m²</code></pre>
+</div>
+</div>
+<p><strong>What the printed numbers mean:</strong> All three are in W m⁻².</p>
+<ul>
+<li><strong>Maximum absolute local storage rate:</strong> the largest <span class="math inline">\(|N+h|\)</span> among all latitude bands. Its tiny value confirms that temperatures have nearly stopped changing everywhere.</li>
+<li><strong>Global mean transport heating:</strong> the area-weighted mean of <span class="math inline">\(h\)</span>. It is zero because transport redistributes energy between bands and conserves the total.</li>
+<li><strong>Global mean net radiation:</strong> the area-weighted mean of <span class="math inline">\(N\)</span>. Its tiny value shows that the planet’s total absorbed sunlight balances its outgoing infrared radiation at equilibrium.</li>
+</ul>
+<p>Values such as <code>3.895e-10</code> mean <span class="math inline">\(3.895\times10^{-10}\)</span>, effectively zero here. The small remainders come from finite numerical precision and approaching equilibrium.</p>
+<p><strong>Reading the figure:</strong></p>
+<ul>
+<li><strong>Left panel:</strong> The tropics gain energy from radiation (<span class="math inline">\(N&gt;0\)</span>) and lose it through transport (<span class="math inline">\(h&lt;0\)</span>). High latitudes lose energy through radiation (<span class="math inline">\(N&lt;0\)</span>) and gain it through transport (<span class="math inline">\(h&gt;0\)</span>). The two terms cancel, so the dashed storage rate <span class="math inline">\(N+h\)</span> is approximately zero everywhere.</li>
+<li><strong>Right panel:</strong> Heat moves toward both poles: <span class="math inline">\(H&lt;0\)</span> means southward transport in the Southern Hemisphere, and <span class="math inline">\(H&gt;0\)</span> means northward transport in the Northern Hemisphere.</li>
+</ul>
+<p><strong>Takeaway:</strong> At equilibrium, temperatures stay steady while radiation and heat transport continue. Each latitude balances its radiative gain or loss with heat exported or imported by transport.</p>
+<p><a id="response-7"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>What should the local storage rate <span class="math inline">\(N+h\)</span> be when the model reaches equilibrium?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 </section>
 <section id="change-transport-strength" class="level2">
 <h2 class="anchored" data-anchor-id="change-transport-strength">8. Change transport strength</h2>
-<p>Keep radiation and heat capacity fixed. <strong>Predict:</strong> As <span class="math inline">\(D\)</span> increases, what happens to the temperature contrast, maximum poleward power, and global mean temperature?</p>
+<p>Keep radiation and heat capacity fixed.</p>
 <p>We report the contrast between the <strong>1°N and 89°N band centers</strong>, not an exact point temperature at the equator or pole.</p>
-<div id="a3bf66cd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:21.291730Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:21.291617Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:21.405783Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:21.405095Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>transport_values <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.1</span>, <span class="fl">0.6</span>, <span class="fl">1.2</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>runs <span class="op">=</span> {D: no_transport <span class="cf">if</span> D <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> baseline <span class="cf">if</span> D <span class="op">==</span> <span class="fl">0.6</span> <span class="cf">else</span> simulate(D<span class="op">=</span>D)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> D <span class="kw">in</span> transport_values}</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">7.2</span>, <span class="fl">4.4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'D (W/m²/K)   mean (°C)   contrast (K)   max |H| (PW)'</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>equator_band <span class="op">=</span> <span class="bu">len</span>(lat)<span class="op">//</span><span class="dv">2</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> D, run <span class="kw">in</span> runs.items():</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> run[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    H_D, _ <span class="op">=</span> transport(T, D)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    ax.plot(lat, T, label<span class="op">=</span><span class="ss">f'D = </span><span class="sc">{</span>D<span class="sc">:g}</span><span class="ss">'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    contrast <span class="op">=</span> T[equator_band] <span class="op">-</span> T[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>D<span class="sc">:10.1f}</span><span class="ss">   </span><span class="sc">{</span>global_mean(T)<span class="sc">:9.3f}</span><span class="ss">   </span><span class="sc">{</span>contrast<span class="sc">:12.3f}</span><span class="ss">   </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(H_D))<span class="op">/</span><span class="fl">1e15</span><span class="sc">:12.3f}</span><span class="ss">'</span>)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Final temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'transport_strength'</span>] <span class="op">=</span> fig</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a3bf66cd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-22T01:21:44.891014Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-22T01:21:44.890898Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-22T01:21:45.039670Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-22T01:21:45.039048Z&quot;}}" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>transport_values <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.1</span>, <span class="fl">0.6</span>, <span class="fl">1.2</span>]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>runs <span class="op">=</span> {D: no_transport <span class="cf">if</span> D <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> baseline <span class="cf">if</span> D <span class="op">==</span> <span class="fl">0.6</span> <span class="cf">else</span> simulate(D<span class="op">=</span>D)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> D <span class="kw">in</span> transport_values}</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">7.2</span>, <span class="fl">4.4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'D (W/m²/K)   mean (°C)   contrast (K)   max |H| (PW)'</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>equator_band <span class="op">=</span> <span class="bu">len</span>(lat)<span class="op">//</span><span class="dv">2</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> D, run <span class="kw">in</span> runs.items():</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> run[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    H_D, _ <span class="op">=</span> transport(T, D)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    ax.plot(lat, T, label<span class="op">=</span><span class="ss">f'D = </span><span class="sc">{</span>D<span class="sc">:g}</span><span class="ss">'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    contrast <span class="op">=</span> T[equator_band] <span class="op">-</span> T[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>D<span class="sc">:10.1f}</span><span class="ss">   </span><span class="sc">{</span>global_mean(T)<span class="sc">:9.3f}</span><span class="ss">   </span><span class="sc">{</span>contrast<span class="sc">:12.3f}</span><span class="ss">   </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(H_D))<span class="op">/</span><span class="fl">1e15</span><span class="sc">:12.3f}</span><span class="ss">'</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Latitude (°)'</span>, ylabel<span class="op">=</span><span class="st">'Final temperature (°C)'</span>, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">90</span>, <span class="dv">90</span>))</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>FIGURES[<span class="st">'transport_strength'</span>] <span class="op">=</span> fig</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>D (W/m²/K)   mean (°C)   contrast (K)   max |H| (PW)
+       0.0       8.951        126.001          0.000
+       0.1       8.951         99.433          2.065
+       0.6       8.951         46.721          5.689
+       1.2       8.951         28.496          6.911</code></pre>
 </div>
-<p><strong>Your explanation:</strong></p>
-</section>
-<section id="your-experiment" class="level2">
-<h2 class="anchored" data-anchor-id="your-experiment">9. Your experiment</h2>
-<p>Change <code>my_D</code> and rerun the cell. Then change only <code>my_depth</code>.</p>
-<p>Before running, explain which change should alter the equilibrium profile, and which should mainly alter the adjustment time. The displayed profiles are at the stated times; check the local storage rate before calling a result equilibrium, especially for a deeper layer.</p>
-<div id="889525e0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-15T13:23:21.407684Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-15T13:23:21.407504Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-15T13:23:21.513687Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-15T13:23:21.513069Z&quot;}}">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_D <span class="op">=</span> <span class="fl">0.3</span>             <span class="co"># W/m²/K; try 0, 0.1, 0.6, or 1.2</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>my_depth <span class="op">=</span> <span class="fl">10.0</span>        <span class="co"># metres; try 50 with D fixed</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>my_years <span class="op">=</span> <span class="fl">15.0</span>        <span class="co"># extend the run if the storage rate is still large</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>my_run <span class="op">=</span> simulate(D<span class="op">=</span>my_D, water_depth<span class="op">=</span>my_depth, years<span class="op">=</span>my_years)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">7.2</span>, <span class="fl">4.4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>profiles(ax, my_run, [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, my_years])</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f'D = </span><span class="sc">{</span>my_D<span class="sc">:g}</span><span class="ss"> W/m²/K, water depth = </span><span class="sc">{</span>my_depth<span class="sc">:g}</span><span class="ss"> m'</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>my_T <span class="op">=</span> my_run[<span class="st">'T'</span>][<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>_, my_h <span class="op">=</span> transport(my_T, my_D)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Maximum final |ASR − OLR + h|: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(np.<span class="bu">abs</span>(ASR<span class="op">-</span>olr(my_T)<span class="op">+</span>my_h))<span class="sc">:.3e}</span><span class="ss"> W/m²'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="latitude_ebm_files/figure-html/cell-13-output-2.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<p><strong>Your explanation:</strong></p>
+</div>
+</div>
+<p><a id="response-8"></a></p>
+<p><strong>Lab questions</strong></p>
+<p>What happens to the equator-to-pole temperature difference as <span class="math inline">\(D\)</span> increases?</p>
+<p><strong>Answer:</strong> [Your answer here.]</p>
 <section id="sources-and-modeling-choices" class="level3">
 <h3 class="anchored" data-anchor-id="sources-and-modeling-choices">Sources and modeling choices</h3>
 <ul>
-<li><a href="https://www.atmos.albany.edu/facstaff/brose/classes/ATM623_Spring2015/Notes/Lectures/Lecture14%20--%20Diffusive%20energy%20balance%20model.html">Brian E. J. Rose, Lecture 14: The one-dimensional energy balance model</a>: radiation and diffusion parameterizations, reference coefficients, and experiment sequence. The class slides also reproduce the lecture’s NCEP-based albedo comparison and OLR–surface-temperature figure.</li>
-<li><a href="https://climlab.readthedocs.io/en/latest/api/climlab.solar.insolation.html">climlab solar geometry documentation</a>: daily and annual insolation calculations. Our short solar helper uses daily geometry for a circular orbit, with prescribed tilt and solar constant.</li>
+<li><a href="https://www.atmos.albany.edu/facstaff/brose/classes/ATM623_Spring2015/Notes/Lectures/Lecture14%20--%20Diffusive%20energy%20balance%20model.html">Brian E. J. Rose, Lecture 14: The one-dimensional energy balance model</a>: radiation and diffusion parameterizations, reference coefficients, and experiment sequence. The NCEP-based albedo comparison and OLR–surface-temperature figures in Section 4 are reproduced from this lecture, as in the class slides.</li>
+<li><a href="https://climlab.readthedocs.io/en/latest/api/climlab.solar.insolation.html">climlab solar geometry documentation</a>: daily and annual insolation calculations. Our short solar helper uses daily geometry for a circular orbit, with axial tilt 23.44° and <span class="math inline">\(S_0=1361\)</span> W m⁻².</li>
 </ul>
 <p>The notebook uses NumPy and SciPy directly, so the model runs without climlab. Public data are read from the local cache, with downloads only if a file is missing. It preserves spherical geometry through boundary circumference factors and exact band areas. The code integrates in time to find equilibrium. The initial profile and albedo are written directly with <span class="math inline">\(\sin^2\phi\)</span>.</p>
 <ul>
@@ -693,7 +885,8 @@ window.Quarto = {
 </ul>
 <p>Both radiation models use S0=1361 W/m². The gray runs use adaptive BDF integration; the linear runs use backward Euler. In each radiative run equilibrium is obtained by time integration.</p>
 <ul>
-<li><a href="https://ceres.larc.nasa.gov/science/">NASA CERES</a>: unchanged net TOA radiation figure, EBAF Ed2.6r, March 2000–June 2011. This is the main radiation-budget comparison. <a href="https://ceres.larc.nasa.gov/documents/cmip5-data/Tech-Note_rsdt_CERES-EBAF_L3B_Ed2-6r_20121101.pdf">Edition 2.6r documentation</a> describes the global heat-storage constraint.</li>
+<li><p><a href="https://ceres.larc.nasa.gov/science/">NASA CERES</a>: unchanged net TOA radiation figure, EBAF Ed2.6r, March 2000–June 2011. This is the main radiation-budget comparison. <a href="https://ceres.larc.nasa.gov/documents/cmip5-data/Tech-Note_rsdt_CERES-EBAF_L3B_Ed2-6r_20121101.pdf">Edition 2.6r documentation</a> describes the global heat-storage constraint.</p></li>
+<li><p><a href="https://legacy.bas.ac.uk/about_antarctica/geography/weather/temperatures.php">British Antarctic Survey: Temperatures in Antarctica</a>: elevation contributes to the cold Antarctic interior; the regional model has no elevation dependence.</p></li>
 </ul>
 
 
