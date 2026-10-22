@@ -7544,11 +7544,10 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Definitions">Definitions<a class="anchor-link" href="#Definitions">¶</a></h3><p>The <em>Climate Modelling Primer</em> (4th ed., page 124) <a href="https://www.wiley.com/en-us/The+Climate+Modelling+Primer%2C+4th+Edition-p-9781118747186">McGuffie &amp; Henderson-Sellers, 2014</a> defines <strong>parameterization</strong> as</p>
-<blockquote>
+<h3 id="Parameterization">Parameterization<a class="anchor-link" href="#Parameterization">¶</a></h3><blockquote>
 <p>The process of capturing a physical process through some mathematical relationship between important parameters in the process, but without explicitly modeling all the actual processes. For example, the albedo of leaves might be related to the soil moisture (via some specification of wilting point) but the physical and biological mechanisms in the plant that happen when the leaf wilts are not modelled.</p>
 </blockquote>
-<p><strong>Our class example:</strong> the single parameter $\epsilon$ represented atmospheric infrared absorption and emission. We did not resolve the individual gases, cloud properties, or wavelength-dependent radiative transfer.</p>
+<p><em>Source: <a href="https://www.wiley.com/en-us/The+Climate+Modelling+Primer%2C+4th+Edition-p-9781118747186">McGuffie &amp; Henderson-Sellers (2014), The Climate Modelling Primer</a>, 4th edition, p. 124.</em></p>
 </div>
 </div>
 </div>
@@ -7559,9 +7558,11 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>An example from our own work so far: the <strong>greenhouse effect</strong>, which causes the OLR to be much lower than the surface emission, and the equilibrium temperature of the surface to be much warmer than it would otherwise be.</p>
-<p>In reality the greenhouse effect arises from the contributions of several different gases, at various levels, to the absorption and emission of longwave radiation. Key greenhouse species include water vapor and cloud droplets, which both strongly tied to the day-to-day variations in weather.</p>
-<p>How can we represent this in a climate model?</p>
+<h3 id="Parameterizations-we-have-already-used">Parameterizations we have already used<a class="anchor-link" href="#Parameterizations-we-have-already-used">¶</a></h3><ul>
+<li><strong>Greenhouse radiation:</strong> we represented atmospheric infrared absorption and emission with a single parameter, rather than calculating the contributions of individual gases and clouds.</li>
+<li><strong>Horizontal heat transport:</strong> we represented the combined effect of winds and ocean currents using the temperature gradient and a transport coefficient, without predicting those motions.</li>
+</ul>
+<p>In both cases, a simple relationship captured the net effect of processes we did not explicitly resolve.</p>
 </div>
 </div>
 </div>
@@ -7572,10 +7573,13 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Parameterization">Parameterization<a class="anchor-link" href="#Parameterization">¶</a></h3><p>Represent the time-averaged, net effect of the complex radiative transfer process, and its coupling to day-to-day water and cloud variations, with an <strong>empirical relationship</strong>, e.g.</p>
-<p>$$ OLR = \tau \sigma T_s^4 $$</p>
-<p>Use observed temperature and OLR to choose an appropriate value for $\tau$</p>
-<p>(this is what we have done so far)</p>
+<h3 id="Parameterizing-radiation-in-our-EBM">Parameterizing radiation in our EBM<a class="anchor-link" href="#Parameterizing-radiation-in-our-EBM">¶</a></h3><p>Our one-layer greenhouse model represented atmospheric infrared absorption and emission with the single parameter $\epsilon$.</p>
+<p>With a rapidly adjusting atmosphere,</p>
+<p>$$
+\mathrm{OLR}=\left(1-\frac{\epsilon}{2}\right)\sigma T_s^4.
+$$</p>
+<p>Here $T_s$ is surface temperature in kelvin and $\epsilon$ is atmospheric longwave absorptivity/emissivity. We chose $\epsilon\approx0.779$ to match the global-mean surface temperature.</p>
+<p>The model does not predict the individual gases, cloud properties, or wavelength-dependent radiative transfer.</p>
 </div>
 </div>
 </div>
@@ -7586,8 +7590,30 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Pro">Pro<a class="anchor-link" href="#Pro">¶</a></h4><p>Simple to implement, easy to understand the result</p>
-<h4 id="Con">Con<a class="anchor-link" href="#Con">¶</a></h4><p>How might the value of $\tau$ change with climate change? We have no way of knowing, and have to make assumptions.</p>
+<ul>
+<li><strong>Benefit:</strong> a simple, interpretable radiation law.</li>
+<li><strong>Limitation:</strong> the model does not determine how $\epsilon$ changes as humidity, clouds, and atmospheric composition change.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=course-transport-parameterization">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Parameterizing-heat-transport-in-our-1D-EBM">Parameterizing heat transport in our 1D EBM<a class="anchor-link" href="#Parameterizing-heat-transport-in-our-1D-EBM">¶</a></h3><p>We represented the combined transport by winds and ocean currents with a <strong>diffusive closure</strong>:</p>
+<p>$$
+H(\phi)=-2\pi R^2D\cos\phi\,\frac{\partial T}{\partial\phi}.
+$$</p>
+<ul>
+<li>$H$ is northward heat transport across a latitude circle, in watts; $\phi$ is latitude in radians and $R$ is Earth’s radius.</li>
+<li>$D$ sets transport strength, in $\mathrm{W\,m^{-2}\,K^{-1}}$: heat flows down the temperature gradient.</li>
+<li>The model calculates heat transport <strong>without predicting the winds or currents</strong> that carry it.</li>
+</ul>
+<p>How might $D$ change in a different climate? Our closure does not answer that question by itself.</p>
 </div>
 </div>
 </div>
@@ -7650,26 +7676,13 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Key-components-of-a-climate-model">Key components of a climate model<a class="anchor-link" href="#Key-components-of-a-climate-model">¶</a></h3><p><strong>Radiation</strong></p>
-<p>The way in which the input and absorption of solar radiation and the emission of infrared radiation are handled</p>
-<p><strong>Dynamics</strong></p>
-<p>The movement of energy around the globe by winds and ocean currents (specifically from low to high latitudes) and vertical movements (e.g. small-scale turbulence, convection and deep-water formation)</p>
-<p><strong>Surface processes</strong></p>
-<p>Inclusion of the effects of sea and land ice, snow, vegetation and the resultant change in albedo, emissivity and surface-atmosphere energy and moisture interchanges.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=rose-20-1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Chemistry</strong></p>
-<p>The chemical composition of the atmosphere and interactions, including biological, with other components (e.g. carbon exchanges between ocean, land and atmosphere)</p>
-<p><strong>Resolution (in both time and space)</strong></p>
-<p>The timestep of the model and the horizontal and vertical scales resolved.</p>
+<h3 id="Key-components-and-design-choices-of-a-climate-model">Key components and design choices of a climate model<a class="anchor-link" href="#Key-components-and-design-choices-of-a-climate-model">¶</a></h3><ul>
+<li><strong>Radiation:</strong> absorption and reflection of sunlight, and absorption and emission of infrared radiation.</li>
+<li><strong>Dynamics:</strong> winds and ocean currents, including horizontal and vertical transport of energy and other quantities.</li>
+<li><strong>Surface processes:</strong> land-surface models represent soil, vegetation, and snow; sea-ice models represent freezing, melting, and ice motion. These components determine surface properties and exchanges of energy, water, and momentum. Land ice, such as glaciers and ice sheets, requires separate treatment.</li>
+<li><strong>Chemistry and biogeochemistry:</strong> atmospheric composition and exchanges of substances, including carbon, among the atmosphere, ocean, and land.</li>
+<li><strong>Resolution:</strong> horizontal and vertical spatial detail, and the time steps used to advance the model.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7680,7 +7693,7 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-climate-modeling-pyramid">The climate modeling pyramid<a class="anchor-link" href="#The-climate-modeling-pyramid">¶</a></h3><p>The edges represent the basic elements of the models, with <strong>complexity increasing upwards</strong>. Around the base of the pyramid are the simpler climate models, which incorporate only one primary process.</p>
+<h3 id="The-climate-modeling-pyramid">The climate modeling pyramid<a class="anchor-link" href="#The-climate-modeling-pyramid">¶</a></h3><p>Complexity increases upwards through <strong>more processes and interactions</strong> and <strong>finer resolution in space and time</strong>. The edges represent the model’s basic elements; simpler models lie near the base.</p>
 </div>
 </div>
 </div>
@@ -7704,12 +7717,11 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Five-basic-types-of-climate-model">Five basic types of climate model<a class="anchor-link" href="#Five-basic-types-of-climate-model">¶</a></h3><ol>
 <li>Energy Balance Models (EBMs)</li>
-<li>Radiative-Convective (RC) or Single-Column models (SCMs)</li>
-<li>"Dimensionally Constrained" models</li>
+<li>Radiative-convective (RC) and single-column models (SCMs)</li>
+<li>Other simplified and integrated modeling approaches</li>
 <li>Global Circulation Models (GCMs)</li>
 <li>Earth System Models (ESMs)</li>
 </ol>
-<p>The vertical axis in the pyramid figures shows increasing complexity BOTH in terms of number of processes included and linked together, AND increasing resolution in space and time.</p>
 </div>
 </div>
 </div>
@@ -7720,11 +7732,9 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-Energy-Balance-Models-(EBMs)">1. Energy Balance Models (EBMs)<a class="anchor-link" href="#1.-Energy-Balance-Models-(EBMs)">¶</a></h3><p>Here's a definition:</p>
-<p><strong>Energy Balance Model</strong></p>
-<p>A simplified climate model (typically zero- or one-dimensional) predicting the surface temperature as a function of the Earth's energy balance (i.e., the imbalance between the Absorbed Shortwave Radiation and Outgoing Longwave Radiation.</p>
+<h3 id="1.-Energy-Balance-Models-(EBMs)">1. Energy Balance Models (EBMs)<a class="anchor-link" href="#1.-Energy-Balance-Models-(EBMs)">¶</a></h3><p><strong>Energy Balance Model</strong></p>
+<p>A simplified climate model (typically zero- or one-dimensional) predicting the surface temperature as a function of the Earth's energy balance (i.e., the imbalance between absorbed shortwave radiation and outgoing longwave radiation).</p>
 <p>Simplified relationships are used to calculate the terms contributing to the energy balance in each latitude zone in the one-dimensional case.</p>
-<p><em>How might we extend our zero-dimensional model to include a latitude dimension? What new kinds of processes might we have to include?</em></p>
 </div>
 </div>
 </div>
@@ -7735,10 +7745,10 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Radiative-Convective-(RC)-or-Single-Column-models-(SCMs)">2. Radiative-Convective (RC) or Single-Column models (SCMs)<a class="anchor-link" href="#2.-Radiative-Convective-(RC)-or-Single-Column-models-(SCMs)">¶</a></h3><p>Focus on processes in the <strong>vertical column</strong>.</p>
+<h3 id="2.-Radiative-convective-and-single-column-models">2. Radiative-convective and single-column models<a class="anchor-link" href="#2.-Radiative-convective-and-single-column-models">¶</a></h3><p>Both resolve the <strong>vertical column</strong>, but the terms describe different aspects of a model.</p>
 <ul>
-<li>RC models compute the (usually global average) temperature profile by explicit modelling of <strong>radiation</strong> and <strong>convection</strong> processes, which together determine the *lapse rate.</li>
-<li>SCMs are single columns 'extracted' from a three-dimensional model and include all the processes that would be modelled in the three-dimensional version but without any of the horizontal energy transfers.</li>
+<li><strong>Radiative-convective (RC) model:</strong> focuses on radiation and convection and how they establish a vertical temperature profile and lapse rate.</li>
+<li><strong>Single-column model (SCM):</strong> runs a GCM’s column physics, including radiation, convection, clouds, turbulence, and surface exchanges. Large-scale transport is prescribed or omitted; the column does not predict a surrounding circulation.</li>
 </ul>
 </div>
 </div>
@@ -7750,9 +7760,9 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Dimensionally-constrained-models">3. Dimensionally constrained models<a class="anchor-link" href="#3.-Dimensionally-constrained-models">¶</a></h3><p>Include the following:</p>
+<h3 id="3.-Other-simplified-and-integrated-modeling-approaches">3. Other simplified and integrated modeling approaches<a class="anchor-link" href="#3.-Other-simplified-and-integrated-modeling-approaches">¶</a></h3><p>Also called <strong>“dimensionally constrained models.”</strong></p>
 <ul>
-<li>Statistical-Dynamical (SD) models, deal explicitly with surface processes and dynamics in a zonal average (average around latitude circles) framework and have a vertically resolved atmosphere.</li>
+<li><strong>Statistical-dynamical (SD) models:</strong> calculate a simplified mean atmospheric state, often using latitude and height. Individual weather systems are not resolved; their average effects, such as heat and moisture transport by storms, are represented through statistical relationships. The mean circulation and these statistical effects interact.</li>
 <li>Earth-System Models of Intermediate Complexity (EMICs) extend SD models to include interactive chemistry, especially the cycling of carbon between ocean, atmosphere and land.</li>
 <li>Integrated Assessment Models (IAMs) couple the climate system to models of economic activity to more fully assess the impact of particular policy choices affective emissions.</li>
 </ul>
