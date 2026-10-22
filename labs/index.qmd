@@ -40,6 +40,8 @@ After discussing surface–deep-ocean heat uptake and two time scales, we will w
 
 - **[Regional climate: a 1D energy balance model](latitude_ebm.ipynb)**: begin with an independent model at each latitude, compare with Earth's temperature and radiation patterns, then add horizontal heat transport. <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/latitude_ebm.ipynb" download>Download notebook</a>
 
+All model code is supplied. Answer one short question after each section; Section 5 (diffusion alone) is optional.
+
 **[Download the notebook and its data](week06_labs.zip)** and unzip them before opening the notebook. Keep the `data` folder beside it. The package includes the NCEP temperature file, so the lab can run offline; a missing file will be downloaded from NOAA when the notebook runs.
 
 [Week 6 slides (PDF)](../slides/week06.pdf) · [Running instructions](week06_README.txt) · [Python packages](week06_requirements.txt)
