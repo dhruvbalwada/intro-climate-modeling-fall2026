@@ -10,6 +10,7 @@ project:
     - "labs/week06_*.txt"
     - "labs/week06_labs.zip"
     - "slides/*.pdf"
+    - "slides/week07/**"
     - "homeworks/*.ipynb"
     - "syllabus/*.docx"
 

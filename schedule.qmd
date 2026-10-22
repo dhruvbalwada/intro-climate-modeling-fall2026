@@ -12,7 +12,7 @@ The schedule will be filled in as the semester progresses.
 | 4  | Oct 1  | No class; material moved to Oct 8 | | | |
 | 5  | Oct 8  | Forcing–feedback and Gregory plots; introduction to deep-ocean heat uptake | [Slides (PDF)](slides/week05.pdf)<br>[Gregory lab](labs/index.qmd#week-5-oct-8) | | |
 | 6  | Oct 15 | Fast and slow climate responses; regional heat transport | [Slides (PDF)](slides/week06.pdf)<br>[1D EBM lab](labs/index.qmd#week-6-oct-15) | | [HW1](homeworks/index.qmd#hw1) |
-| 7  | Oct 22 | TBD | | | |
+| 7  | Oct 22 | Finishing the 1D EBM; the climate system and comprehensive climate models | [Slides (draft)](slides/week07/climate_system_models.slides.html)<br>[Reading view](slides/week07/climate_system_models.html) | [Rose: The climate system and climate models](https://brian-rose.github.io/ClimateLaboratoryBook/courseware/climate-system-models/) | |
 | 8  | Oct 29 | TBD | | | |
 | 9  | Nov 5  | Guest lecture: the CMIP process — [Mike Previdi](https://lamont.columbia.edu/directory/michael-previdi) | | | |
 | 10 | Nov 12 | TBD | | | |
