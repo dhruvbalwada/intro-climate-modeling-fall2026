@@ -11,6 +11,7 @@ project:
     - "labs/week06_labs.zip"
     - "slides/*.pdf"
     - "slides/week07/**"
+    - "slides/week08/**"
     - "homeworks/*.ipynb"
     - "syllabus/*.docx"
 
