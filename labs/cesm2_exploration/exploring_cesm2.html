@@ -11033,36 +11033,133 @@ dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=62e770e5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a5677a1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-What-have-we-learned-about-this-simulated-climate?">6. What have we learned about this simulated climate?<a class="anchor-link" href="#6.-What-have-we-learned-about-this-simulated-climate?">¶</a></h2><p>Choose one of the plots and answer:</p>
-<ol>
-<li>What physical feature of the simulated climate does it reveal?</li>
-<li>What averaging or weighting did we use, and what information did it remove?</li>
-<li>What observation or additional model variable would you use to evaluate your interpretation?</li>
-</ol>
+<h2 id="6.-End-of-class-exercises">6. End-of-class exercises<a class="anchor-link" href="#6.-End-of-class-exercises">¶</a></h2><p>Work through these exercises in order. We will discuss as many as time allows. For each exercise, make a guess, produce the plot, and answer the questions below it.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7e1fa5dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Exercise-1:-seasonal-temperature-contrast">Exercise 1: seasonal temperature contrast<a class="anchor-link" href="#Exercise-1:-seasonal-temperature-contrast">¶</a></h3><p>Make a map of <strong>July minus January climatological temperature</strong>. Label the units and use a colour scale centred on zero.</p>
+<p><strong>Guess before plotting:</strong> Where do you expect the largest positive and negative differences?</p>
+<p><strong>Your guess:</strong></p>
+<p>Use <code>temperature_c</code>, which contains the monthly climatology in °C. Select months with <code>.sel(month=7)</code> and <code>.sel(month=1)</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=264948dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate July minus January temperature and plot the difference.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8ccbb0a7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Questions:</strong> Where is the seasonal contrast strongest? Compare land and ocean regions. What physical processes could explain the differences?</p>
 <p><strong>Your response:</strong></p>
-<p>To evaluate the model, we would need observations of the same quantities, averaged over comparable areas and periods. To estimate forcing or feedbacks, we would also need an appropriate experiment and reference climate.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f3899cf6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=89a00807">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Optional:-choose-another-question">Optional: choose another question<a class="anchor-link" href="#Optional:-choose-another-question">¶</a></h2><ul>
-<li><strong>Seasonal contrast:</strong> Map July minus January temperature. Where is the contrast strongest?</li>
-<li><strong>Hemispheric contrast:</strong> Calculate the annual mean temperature of each hemisphere using cell-area weights. Explain your result.</li>
-<li><strong>Radiation map:</strong> Map annual $N$. What spatial structure disappeared in the zonal mean?</li>
-</ul>
-<p>Write down your question and <strong>guess</strong> before adding a calculation.</p>
+<h3 id="Exercise-2:-hemispheric-temperature-contrast">Exercise 2: hemispheric temperature contrast<a class="anchor-link" href="#Exercise-2:-hemispheric-temperature-contrast">¶</a></h3><p>Calculate the <strong>annual mean temperature of each hemisphere</strong>, using grid-cell areas as weights. Plot the two values in a bar chart.</p>
+<p><strong>Guess before calculating:</strong> Which hemisphere do you expect to be warmer in the annual average?</p>
+<p><strong>Your guess:</strong></p>
+<p>Use <code>annual_temperature</code> and <code>ds.areacella</code>. Select each hemisphere with <code>.where(ds.lat &gt; 0)</code> or <code>.where(ds.lat &lt; 0)</code>, then calculate an area-weighted mean over latitude and longitude.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0827badc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate area-weighted hemispheric temperatures and plot the two means.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29d8ddfc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Questions:</strong> Which hemisphere is warmer, and by how much? What differences between the hemispheres might contribute? Suggest one additional quantity you could examine to test your explanation.</p>
+<p><strong>Your response:</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=43297bcc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Exercise-3:-a-map-of-the-planetary-energy-budget">Exercise 3: a map of the planetary energy budget<a class="anchor-link" href="#Exercise-3:-a-map-of-the-planetary-energy-budget">¶</a></h3><p>Plot <strong>annual mean net incoming radiation, $N$</strong>, as a latitude–longitude map. Label the units in W m⁻² and use a colour scale centred on zero.</p>
+<p><strong>Guess before plotting:</strong> Will regions at the same latitude all have the same radiative surplus or deficit?</p>
+<p><strong>Your guess:</strong></p>
+<p>Use <code>annual_net</code>, which we calculated above, and compare your map with the earlier zonal-mean radiation plot.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4d507cbd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot annual_net as a map.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8b2debf2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Questions:</strong> Identify regions with a radiative surplus and a radiative deficit. What spatial structure was hidden by the zonal average? How could energy transport help balance these regional differences?</p>
+<p><strong>Your response:</strong></p>
 </div>
 </div>
 </div>
