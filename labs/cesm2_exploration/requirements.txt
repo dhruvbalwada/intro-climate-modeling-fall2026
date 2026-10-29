@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+xarray>=2025.1
+netCDF4
+cftime
+jupyterlab
+# Needed for automatic data preparation if the local dataset is missing,
+# or for the optional cloud exploration:
+dask[array]
+zarr
+gcsfs

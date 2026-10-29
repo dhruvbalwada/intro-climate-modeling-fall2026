@@ -46,6 +46,17 @@ All model code is supplied. Answer one short question after each section; Sectio
 
 [Week 6 slides (PDF)](../slides/week06.pdf) · [Running instructions](week06_README.txt) · [Python packages](week06_requirements.txt)
 
+## Week 8 (Oct 29) {#week-8-oct-29}
+
+**Exploring the climate of CESM2:** inspect a CMIP6 simulation, compare monthly temperature with its climatology, calculate area-weighted averages, and examine the planetary energy budget.
+
+- <a href="cesm2_exploration/exploring_cesm2.ipynb" download>Download the notebook</a>
+- [Read the notebook with plots](cesm2_exploration/exploring_cesm2.html)
+
+Open the notebook in the course Jupyter environment and run the cells in order. The data preparation code is included. The first run needs internet access and takes about one to two minutes to create the data file; later runs use the saved file. No separate data download is needed.
+
+Pause at the **Guess before running** questions and complete the plotting exercise. [Python packages](cesm2_exploration/requirements.txt).
+
 ## Reference (optional)
 
 - **[Where our data comes from](getting_the_data.ipynb)**: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project

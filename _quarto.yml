@@ -5,6 +5,7 @@ project:
     - "labs/data/*"
     - "labs/data/ncep/*.nc"
     - "labs/*.ipynb"
+    - "labs/cesm2_exploration/**"
     - "labs/week05_*.txt"
     - "labs/week05_labs.zip"
     - "labs/week06_*.txt"
