@@ -32,4 +32,6 @@ Most plotting code is supplied. Complete the coding tasks and written responses 
 
 [Read the assignment online](hw2.ipynb)
 
-Complete the two coding tasks and written responses. Most calculation and plotting code is supplied. See the HW2 assignment on Courseworks for submission dates.
+**Deadline: Thursday, November 5.** Anyone who needs longer may submit by **Monday, November 9**.
+
+Complete the two coding tasks and written responses. Most calculation and plotting code is supplied.
