@@ -12,6 +12,8 @@ project:
     - "labs/week06_labs.zip"
     - "labs/keeling_curve_ml.zip"
     - "labs/keeling_curve_ml.html"
+    - "labs/generative_weather.zip"
+    - "labs/generative_weather.html"
     - "slides/*.pdf"
     - "slides/week07/**"
     - "slides/week08/**"

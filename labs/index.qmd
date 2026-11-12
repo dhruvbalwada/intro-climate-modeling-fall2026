@@ -66,6 +66,13 @@ Pause at the **Guess before running** questions and complete the plotting exerci
 
 The package includes a fixed data copy so it can run offline once the Python packages are available. The notebook-only download can retrieve the same data on its first run.
 
+**Generating synthetic weather:** learn a seasonal temperature distribution and day-to-day persistence from the NYC observations used in Lab 0c. Generate new weather sequences, then compare their histograms, anomaly correlations, and hot spells with held-out observations. This short practical introduces generative modeling through a simple statistical weather generator and closes with a connection to modern generative AI.
+
+- [Download the notebook and data](generative_weather.zip) and unzip the folder before opening `generative_weather.ipynb` in the course LEAP Jupyter environment. Keep the `data` folder beside it.
+- <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/generative_weather.ipynb" download="generative_weather.ipynb">Download the notebook only</a> · [Read the notebook with plots](generative_weather.html)
+
+Allow about **25–35 minutes**; all code is supplied, with four short discussion prompts and an optional persistence experiment. The package includes the data and runs offline once NumPy, pandas, and Matplotlib are available. No GPU is needed.
+
 ## Reference (optional)
 
 - **[Where our data comes from](getting_the_data.ipynb)**: how the Lab 0c datasets were pulled from NOAA, ERA5 and the CMIP6 cloud archive — useful when you start hunting data for your project
