@@ -10,6 +10,8 @@ project:
     - "labs/week05_labs.zip"
     - "labs/week06_*.txt"
     - "labs/week06_labs.zip"
+    - "labs/keeling_curve_ml.zip"
+    - "labs/keeling_curve_ml.html"
     - "slides/*.pdf"
     - "slides/week07/**"
     - "slides/week08/**"
