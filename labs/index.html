@@ -143,7 +143,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#week-5-oct-8" id="toc-week-5-oct-8" class="nav-link" data-scroll-target="#week-5-oct-8">Week 5 (Oct 8)</a></li>
   <li><a href="#week-6-oct-15" id="toc-week-6-oct-15" class="nav-link" data-scroll-target="#week-6-oct-15">Week 6 (Oct 15)</a></li>
   <li><a href="#week-8-oct-29" id="toc-week-8-oct-29" class="nav-link" data-scroll-target="#week-8-oct-29">Week 8 (Oct 29)</a></li>
-  <li><a href="#week-10-nov-12" id="toc-week-10-nov-12" class="nav-link" data-scroll-target="#week-10-nov-12">Week 10 (Nov 12)</a></li>
+  <li><a href="#week-10-nov-12" id="toc-week-10-nov-12" class="nav-link" data-scroll-target="#week-10-nov-12">Week 10 (Nov 12)</a>
+  <ul class="collapse">
+  <li><a href="#keeling-curve-ml" id="toc-keeling-curve-ml" class="nav-link" data-scroll-target="#keeling-curve-ml">Fitting the Keeling curve</a></li>
+  <li><a href="#generating-synthetic-weather" id="toc-generating-synthetic-weather" class="nav-link" data-scroll-target="#generating-synthetic-weather">Generating synthetic weather</a></li>
+  </ul></li>
   <li><a href="#reference-optional" id="toc-reference-optional" class="nav-link" data-scroll-target="#reference-optional">Reference (optional)</a></li>
   </ul>
 </nav>
@@ -224,18 +228,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="week-10-nov-12" class="level2">
 <h2 class="anchored" data-anchor-id="week-10-nov-12">Week 10 (Nov 12)</h2>
-<p><strong>Fitting the Keeling curve:</strong> learn a function from the Mauna Loa CO₂ record, then compare its predictions with later observations. We fit a line, a quadratic, a model with an annual cycle, and a neural network. All code is supplied; pause at the prediction and discussion prompts.</p>
+<section id="keeling-curve-ml" class="level3">
+<h3 class="anchored" data-anchor-id="keeling-curve-ml">Fitting the Keeling curve</h3>
+<p>Learn a function from the Mauna Loa CO₂ record, then compare its predictions with later observations. We fit a line, a quadratic, a model with an annual cycle, and a neural network. All code is supplied; pause at the prediction and discussion prompts.</p>
 <ul>
 <li><a href="keeling_curve_ml.zip">Download the notebook and data</a> and unzip the folder before opening <code>keeling_curve_ml.ipynb</code> in the course LEAP Jupyter environment. Keep the <code>data</code> folder beside it.</li>
 <li><a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/keeling_curve_ml.ipynb" download="keeling_curve_ml.ipynb">Download the notebook only</a> · <a href="keeling_curve_ml.html">Read the notebook with plots</a></li>
 </ul>
 <p>The package includes a fixed data copy so it can run offline once the Python packages are available. The notebook-only download can retrieve the same data on its first run.</p>
-<p><strong>Generating synthetic weather:</strong> learn a seasonal temperature distribution and day-to-day persistence from the NYC observations used in Lab 0c. Generate new weather sequences, then compare their histograms, anomaly correlations, and hot spells with held-out observations. This short practical introduces generative modeling through a simple statistical weather generator and closes with a connection to modern generative AI.</p>
+</section>
+<section id="generating-synthetic-weather" class="level3">
+<h3 class="anchored" data-anchor-id="generating-synthetic-weather">Generating synthetic weather</h3>
+<p>Learn a seasonal temperature distribution and day-to-day persistence from the NYC observations used in Lab 0c. Generate new weather sequences, then compare their histograms, anomaly correlations, and hot spells with held-out observations. This short practical introduces generative modeling through a simple statistical weather generator and closes with a connection to modern generative AI.</p>
 <ul>
 <li><a href="generative_weather.zip">Download the notebook and data</a> and unzip the folder before opening <code>generative_weather.ipynb</code> in the course LEAP Jupyter environment. Keep the <code>data</code> folder beside it.</li>
 <li><a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/generative_weather.ipynb" download="generative_weather.ipynb">Download the notebook only</a> · <a href="generative_weather.html">Read the notebook with plots</a></li>
 </ul>
 <p>Allow about <strong>25–35 minutes</strong>; all code is supplied, with four short discussion prompts and an optional persistence experiment. The package includes the data and runs offline once NumPy, pandas, and Matplotlib are available. No GPU is needed.</p>
+</section>
 </section>
 <section id="reference-optional" class="level2">
 <h2 class="anchored" data-anchor-id="reference-optional">Reference (optional)</h2>
