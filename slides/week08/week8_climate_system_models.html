@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 8 · October 29, 2026 – Introduction to Climate Modeling</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Introduction to Climate Modeling</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../labs/index.html"> 
+<span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../homeworks/index.html"> 
+<span class="menu-text">Homeworks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project.html"> 
+<span class="menu-text">Final Project</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dhruvbalwada/intro-climate-modeling-fall2026"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-climate-system-and-climate-models" id="toc-the-climate-system-and-climate-models" class="nav-link active" data-scroll-target="#the-climate-system-and-climate-models">The climate system and climate models</a>
+  <ul class="collapse">
+  <li><a href="#five-basic-types-of-climate-model1.-energy-balance-models-ebms2.-radiative-convective-rc-and-single-column-models-scms3.-other-simplified-and-integrated-modeling-approaches4.-global-circulation-models-gcms5.-earth-system-models-esms" id="toc-five-basic-types-of-climate-model1.-energy-balance-models-ebms2.-radiative-convective-rc-and-single-column-models-scms3.-other-simplified-and-integrated-modeling-approaches4.-global-circulation-models-gcms5.-earth-system-models-esms" class="nav-link" data-scroll-target="#five-basic-types-of-climate-model1.-energy-balance-models-ebms2.-radiative-convective-rc-and-single-column-models-scms3.-other-simplified-and-integrated-modeling-approaches4.-global-circulation-models-gcms5.-earth-system-models-esms">Five basic types of climate model1. Energy Balance Models (EBMs)2. Radiative-convective (RC) and single-column models (SCMs)3. Other simplified and integrated modeling approaches4. Global Circulation Models (GCMs)5. Earth System Models (ESMs)</a></li>
+  <li><a href="#energy-balance-models-ebmsenergy-balance-modela-simplified-climate-model-typically-zero--or-one-dimensional-predicting-the-surface-temperature-as-a-function-of-the-earths-energy-balance-i.e.-the-imbalance-between-absorbed-shortwave-radiation-and-outgoing-longwave-radiation.simplified-relationships-are-used-to-calculate-the-terms-contributing-to-the-energy-balance-in-each-latitude-zone-in-the-one-dimensional-case." id="toc-energy-balance-models-ebmsenergy-balance-modela-simplified-climate-model-typically-zero--or-one-dimensional-predicting-the-surface-temperature-as-a-function-of-the-earths-energy-balance-i.e.-the-imbalance-between-absorbed-shortwave-radiation-and-outgoing-longwave-radiation.simplified-relationships-are-used-to-calculate-the-terms-contributing-to-the-energy-balance-in-each-latitude-zone-in-the-one-dimensional-case." class="nav-link" data-scroll-target="#energy-balance-models-ebmsenergy-balance-modela-simplified-climate-model-typically-zero--or-one-dimensional-predicting-the-surface-temperature-as-a-function-of-the-earths-energy-balance-i.e.-the-imbalance-between-absorbed-shortwave-radiation-and-outgoing-longwave-radiation.simplified-relationships-are-used-to-calculate-the-terms-contributing-to-the-energy-balance-in-each-latitude-zone-in-the-one-dimensional-case.">1. Energy Balance Models (EBMs)<strong>Energy Balance Model</strong>A simplified climate model (typically zero- or one-dimensional) predicting the surface temperature as a function of the Earth’s energy balance (i.e., the imbalance between absorbed shortwave radiation and outgoing longwave radiation).Simplified relationships are used to calculate the terms contributing to the energy balance in each latitude zone in the one-dimensional case.</a></li>
+  <li><a href="#the-ebm-from-our-latitude-lablatitude-ebm-lab-temperature-profiles-and-local-energy-budgettransport-cools-the-tropics-and-warms-the-poles.-at-equilibrium-transport-heating-balances-net-radiation-locally.source-week-6-latitude-ebm-lab-section-3.-left-model-with-and-without-transport-and-ncep-reanalysis.-right-energy-budget-with-transport." id="toc-the-ebm-from-our-latitude-lablatitude-ebm-lab-temperature-profiles-and-local-energy-budgettransport-cools-the-tropics-and-warms-the-poles.-at-equilibrium-transport-heating-balances-net-radiation-locally.source-week-6-latitude-ebm-lab-section-3.-left-model-with-and-without-transport-and-ncep-reanalysis.-right-energy-budget-with-transport." class="nav-link" data-scroll-target="#the-ebm-from-our-latitude-lablatitude-ebm-lab-temperature-profiles-and-local-energy-budgettransport-cools-the-tropics-and-warms-the-poles.-at-equilibrium-transport-heating-balances-net-radiation-locally.source-week-6-latitude-ebm-lab-section-3.-left-model-with-and-without-transport-and-ncep-reanalysis.-right-energy-budget-with-transport.">The EBM from our latitude lab<img src="assets/example_ebm_lab.png" class="img-fluid" alt="Latitude EBM lab: temperature profiles and local energy budget">Transport cools the tropics and warms the poles. At equilibrium, transport heating balances net radiation locally.<small>Source: Week 6 latitude EBM lab, Section 3. Left: model with and without transport, and NCEP reanalysis. Right: energy budget with transport.</small></a></li>
+  <li><a href="#radiative-convective-and-single-column-modelsboth-resolve-the-vertical-column-but-the-terms-describe-different-aspects-of-a-model.--radiative-convective-rc-model-focuses-on-radiation-and-convection-and-how-they-establish-a-vertical-temperature-profile-and-lapse-rate.--single-column-model-scm-runs-a-gcms-column-physics-including-radiation-convection-clouds-turbulence-and-surface-exchanges.-large-scale-transport-is-prescribed-or-omitted-the-column-does-not-predict-a-surrounding-circulation." id="toc-radiative-convective-and-single-column-modelsboth-resolve-the-vertical-column-but-the-terms-describe-different-aspects-of-a-model.--radiative-convective-rc-model-focuses-on-radiation-and-convection-and-how-they-establish-a-vertical-temperature-profile-and-lapse-rate.--single-column-model-scm-runs-a-gcms-column-physics-including-radiation-convection-clouds-turbulence-and-surface-exchanges.-large-scale-transport-is-prescribed-or-omitted-the-column-does-not-predict-a-surrounding-circulation." class="nav-link" data-scroll-target="#radiative-convective-and-single-column-modelsboth-resolve-the-vertical-column-but-the-terms-describe-different-aspects-of-a-model.--radiative-convective-rc-model-focuses-on-radiation-and-convection-and-how-they-establish-a-vertical-temperature-profile-and-lapse-rate.--single-column-model-scm-runs-a-gcms-column-physics-including-radiation-convection-clouds-turbulence-and-surface-exchanges.-large-scale-transport-is-prescribed-or-omitted-the-column-does-not-predict-a-surrounding-circulation.">2. Radiative-convective and single-column modelsBoth resolve the <strong>vertical column</strong>, but the terms describe different aspects of a model.- <strong>Radiative-convective (RC) model:</strong> focuses on radiation and convection and how they establish a vertical temperature profile and lapse rate.- <strong>Single-column model (SCM):</strong> runs a GCM’s column physics, including radiation, convection, clouds, turbulence, and surface exchanges. Large-scale transport is prescribed or omitted; the column does not predict a surrounding circulation.</a></li>
+  <li><a href="#a-radiativeconvective-columna-radiativeconvective-columntemperature-varies-with-pressure-the-curves-compare-different-absorbing-gas-configurations.source-brian-e.-j.-rose-the-climate-laboratory-cc-by-4.0" id="toc-a-radiativeconvective-columna-radiativeconvective-columntemperature-varies-with-pressure-the-curves-compare-different-absorbing-gas-configurations.source-brian-e.-j.-rose-the-climate-laboratory-cc-by-4.0" class="nav-link" data-scroll-target="#a-radiativeconvective-columna-radiativeconvective-columntemperature-varies-with-pressure-the-curves-compare-different-absorbing-gas-configurations.source-brian-e.-j.-rose-the-climate-laboratory-cc-by-4.0">A radiative–convective column<img src="assets/example_column.png" class="img-fluid" alt="A radiative–convective column">Temperature varies with pressure; the curves compare different absorbing-gas configurations.<small>Source: </small></a><small><a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/rce/" class="nav-link" data-scroll-target="https\://brian-rose.github.io/ClimateLaboratoryBook/courseware/rce/">Brian E. J. Rose, The Climate Laboratory (CC BY 4.0)</a></small></li>
+  <li><a href="#other-simplified-and-integrated-modeling-approachesalso-called-dimensionally-constrained-models.--statistical-dynamical-sd-models-calculate-a-simplified-mean-atmospheric-state-often-using-latitude-and-height.-individual-weather-systems-are-not-resolved-their-average-effects-such-as-heat-and-moisture-transport-by-storms-are-represented-through-statistical-relationships.-the-mean-circulation-and-these-statistical-effects-interact.---earth-system-models-of-intermediate-complexity-emics-extend-sd-models-to-include-interactive-chemistry-especially-the-cycling-of-carbon-between-ocean-atmosphere-and-land.--integrated-assessment-models-iams-couple-the-climate-system-to-models-of-economic-activity-to-more-fully-assess-the-impact-of-particular-policy-choices-affective-emissions." id="toc-other-simplified-and-integrated-modeling-approachesalso-called-dimensionally-constrained-models.--statistical-dynamical-sd-models-calculate-a-simplified-mean-atmospheric-state-often-using-latitude-and-height.-individual-weather-systems-are-not-resolved-their-average-effects-such-as-heat-and-moisture-transport-by-storms-are-represented-through-statistical-relationships.-the-mean-circulation-and-these-statistical-effects-interact.---earth-system-models-of-intermediate-complexity-emics-extend-sd-models-to-include-interactive-chemistry-especially-the-cycling-of-carbon-between-ocean-atmosphere-and-land.--integrated-assessment-models-iams-couple-the-climate-system-to-models-of-economic-activity-to-more-fully-assess-the-impact-of-particular-policy-choices-affective-emissions." class="nav-link" data-scroll-target="#other-simplified-and-integrated-modeling-approachesalso-called-dimensionally-constrained-models.--statistical-dynamical-sd-models-calculate-a-simplified-mean-atmospheric-state-often-using-latitude-and-height.-individual-weather-systems-are-not-resolved-their-average-effects-such-as-heat-and-moisture-transport-by-storms-are-represented-through-statistical-relationships.-the-mean-circulation-and-these-statistical-effects-interact.---earth-system-models-of-intermediate-complexity-emics-extend-sd-models-to-include-interactive-chemistry-especially-the-cycling-of-carbon-between-ocean-atmosphere-and-land.--integrated-assessment-models-iams-couple-the-climate-system-to-models-of-economic-activity-to-more-fully-assess-the-impact-of-particular-policy-choices-affective-emissions.">3. Other simplified and integrated modeling approachesAlso called <strong>“dimensionally constrained models.”</strong>- <strong>Statistical-dynamical (SD) models:</strong> calculate a simplified mean atmospheric state, often using latitude and height. Individual weather systems are not resolved; their average effects, such as heat and moisture transport by storms, are represented through statistical relationships. The mean circulation and these statistical effects interact. - Earth-System Models of Intermediate Complexity (EMICs) extend SD models to include interactive chemistry, especially the cycling of carbon between ocean, atmosphere and land.- Integrated Assessment Models (IAMs) couple the climate system to models of economic activity to more fully assess the impact of particular policy choices affective emissions.</a></li>
+  <li><a href="#an-integrated-assessment-model-gcaman-integrated-assessment-model-gcamassumptions-about-society-and-technology-become-scenarios-of-emissions-land-use-and-climate.source-jgcri-gcam-documentation-overview-figure-1" id="toc-an-integrated-assessment-model-gcaman-integrated-assessment-model-gcamassumptions-about-society-and-technology-become-scenarios-of-emissions-land-use-and-climate.source-jgcri-gcam-documentation-overview-figure-1" class="nav-link" data-scroll-target="#an-integrated-assessment-model-gcaman-integrated-assessment-model-gcamassumptions-about-society-and-technology-become-scenarios-of-emissions-land-use-and-climate.source-jgcri-gcam-documentation-overview-figure-1">An integrated assessment model: GCAM<img src="assets/example_iam.png" class="img-fluid" alt="An integrated assessment model: GCAM">Assumptions about society and technology become scenarios of emissions, land use, and climate.<small>Source: </small></a><small><a href="https://jgcri.github.io/gcam-doc/overview.html" class="nav-link" data-scroll-target="https\://jgcri.github.io/gcam-doc/overview.html">JGCRI, GCAM documentation, overview Figure 1</a></small></li>
+  <li><a href="#general-circulation-models-gcmsgcm-can-mean-general-circulation-model-global-climate-model-or-global-circulation-model.--simulate-the-three-dimensional-time-evolving-circulation-of-the-atmosphere-ocean-or-both.--agcm-atmospheric-model.-ogcm-ocean-model.-aogcm-cgcm-coupled-atmosphereocean-model.--originally-developed-to-explain-the-mean-circulation-for-example-why-surface-winds-tend-to-be-westerly-in-midlatitudes-and-easterly-in-the-tropics.--combine-circulation-with-radiation-and-other-physical-processes-to-calculate-the-evolving-climate-state.-atmosphere-and-ocean-components-can-also-be-run-separately-for-experiments-and-evaluation.--vertical-grid-spacing-is-typically-much-smaller-than-horizontal-spacing-while-the-number-of-vertical-layers-is-usually-smaller-than-the-number-of-horizontal-columns." id="toc-general-circulation-models-gcmsgcm-can-mean-general-circulation-model-global-climate-model-or-global-circulation-model.--simulate-the-three-dimensional-time-evolving-circulation-of-the-atmosphere-ocean-or-both.--agcm-atmospheric-model.-ogcm-ocean-model.-aogcm-cgcm-coupled-atmosphereocean-model.--originally-developed-to-explain-the-mean-circulation-for-example-why-surface-winds-tend-to-be-westerly-in-midlatitudes-and-easterly-in-the-tropics.--combine-circulation-with-radiation-and-other-physical-processes-to-calculate-the-evolving-climate-state.-atmosphere-and-ocean-components-can-also-be-run-separately-for-experiments-and-evaluation.--vertical-grid-spacing-is-typically-much-smaller-than-horizontal-spacing-while-the-number-of-vertical-layers-is-usually-smaller-than-the-number-of-horizontal-columns." class="nav-link" data-scroll-target="#general-circulation-models-gcmsgcm-can-mean-general-circulation-model-global-climate-model-or-global-circulation-model.--simulate-the-three-dimensional-time-evolving-circulation-of-the-atmosphere-ocean-or-both.--agcm-atmospheric-model.-ogcm-ocean-model.-aogcm-cgcm-coupled-atmosphereocean-model.--originally-developed-to-explain-the-mean-circulation-for-example-why-surface-winds-tend-to-be-westerly-in-midlatitudes-and-easterly-in-the-tropics.--combine-circulation-with-radiation-and-other-physical-processes-to-calculate-the-evolving-climate-state.-atmosphere-and-ocean-components-can-also-be-run-separately-for-experiments-and-evaluation.--vertical-grid-spacing-is-typically-much-smaller-than-horizontal-spacing-while-the-number-of-vertical-layers-is-usually-smaller-than-the-number-of-horizontal-columns.">4. General Circulation Models (GCMs)GCM can mean <strong>General Circulation Model</strong>, <strong>Global Climate Model</strong>, or <strong>Global Circulation Model</strong>.- Simulate the <strong>three-dimensional, time-evolving circulation</strong> of the atmosphere, ocean, or both.- <strong>AGCM:</strong> atmospheric model. <strong>OGCM:</strong> ocean model. <strong>AOGCM / CGCM:</strong> coupled atmosphere–ocean model.- Originally developed to explain the mean circulation: for example, why surface winds tend to be westerly in midlatitudes and easterly in the tropics.- Combine circulation with radiation and other physical processes to calculate the evolving climate state. Atmosphere and ocean components can also be run separately for experiments and evaluation.- Vertical grid spacing is typically much smaller than horizontal spacing, while the number of vertical layers is usually smaller than the number of horizontal columns.</a></li>
+  <li><a href="#a-gcm-connected-columns-on-a-grida-gcm-connected-columns-on-a-gridthe-grid-represents-horizontal-and-vertical-structure-column-physics-represents-additional-processes.source-mcguffie-henderson-sellers-the-climate-modelling-primer-4th-ed.-figure-2.5-via-rose" id="toc-a-gcm-connected-columns-on-a-grida-gcm-connected-columns-on-a-gridthe-grid-represents-horizontal-and-vertical-structure-column-physics-represents-additional-processes.source-mcguffie-henderson-sellers-the-climate-modelling-primer-4th-ed.-figure-2.5-via-rose" class="nav-link" data-scroll-target="#a-gcm-connected-columns-on-a-grida-gcm-connected-columns-on-a-gridthe-grid-represents-horizontal-and-vertical-structure-column-physics-represents-additional-processes.source-mcguffie-henderson-sellers-the-climate-modelling-primer-4th-ed.-figure-2.5-via-rose">A GCM: connected columns on a grid<img src="assets/Primer_Figure2.5.png" class="img-fluid" alt="A GCM: connected columns on a grid">The grid represents horizontal and vertical structure; column physics represents additional processes.<small>Source: </small></a><small><a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/climate-system-models/" class="nav-link" data-scroll-target="https\://brian-rose.github.io/ClimateLaboratoryBook/courseware/climate-system-models/">McGuffie &amp; Henderson-Sellers, The Climate Modelling Primer, 4th ed., Figure 2.5; via Rose</a></small></li>
+  <li><a href="#earth-system-models" id="toc-earth-system-models" class="nav-link" data-scroll-target="#earth-system-models">5. Earth System Models</a></li>
+  <li><a href="#cesm2-coupling-physical-climate-and-biogeochemistrycesm2-component-diagram-showing-the-coupler-atmosphere-ocean-land-ice-and-biogeochemistryland-and-marine-biogeochemistry-interact-with-the-physical-climate-components-through-the-coupled-system.source-danabasoglu-et-al.-2020-figure-1-image-hosted-by-utrecht-university-imau." id="toc-cesm2-coupling-physical-climate-and-biogeochemistrycesm2-component-diagram-showing-the-coupler-atmosphere-ocean-land-ice-and-biogeochemistryland-and-marine-biogeochemistry-interact-with-the-physical-climate-components-through-the-coupled-system.source-danabasoglu-et-al.-2020-figure-1-image-hosted-by-utrecht-university-imau." class="nav-link" data-scroll-target="#cesm2-coupling-physical-climate-and-biogeochemistrycesm2-component-diagram-showing-the-coupler-atmosphere-ocean-land-ice-and-biogeochemistryland-and-marine-biogeochemistry-interact-with-the-physical-climate-components-through-the-coupled-system.source-danabasoglu-et-al.-2020-figure-1-image-hosted-by-utrecht-university-imau.">CESM2: coupling physical climate and biogeochemistry<img src="assets/example_esm_cesm2.jpg" class="img-fluid" alt="CESM2 component diagram showing the coupler, atmosphere, ocean, land, ice, and biogeochemistry">Land and marine biogeochemistry interact with the physical climate components through the coupled system.<small>Source: </small></a><small><a href="https://doi.org/10.1029/2019MS001916" class="nav-link" data-scroll-target="https\://doi.org/10.1029/2019MS001916">Danabasoglu et al.&nbsp;(2020), Figure 1</a>; image hosted by Utrecht University / IMAU.</small></li>
+  <li><a href="#simple-vs.-complex-models-their-different-roles-in-the-science" id="toc-simple-vs.-complex-models-their-different-roles-in-the-science" class="nav-link" data-scroll-target="#simple-vs.-complex-models-their-different-roles-in-the-science">Simple vs.&nbsp;Complex models: their different roles in the science</a></li>
+  <li><a href="#model-simplicity-and-system-complexitymodel-simplicity-versus-system-complexity-maher-et-al.-2019-figure-1aincluding-more-of-the-earth-system-and-representing-each-process-in-more-detail-are-different-choices.source-maher-et-al.-2019-figure-1a-reproducing-the-framework-of-bony-et-al.-2013." id="toc-model-simplicity-and-system-complexitymodel-simplicity-versus-system-complexity-maher-et-al.-2019-figure-1aincluding-more-of-the-earth-system-and-representing-each-process-in-more-detail-are-different-choices.source-maher-et-al.-2019-figure-1a-reproducing-the-framework-of-bony-et-al.-2013." class="nav-link" data-scroll-target="#model-simplicity-and-system-complexitymodel-simplicity-versus-system-complexity-maher-et-al.-2019-figure-1aincluding-more-of-the-earth-system-and-representing-each-process-in-more-detail-are-different-choices.source-maher-et-al.-2019-figure-1a-reproducing-the-framework-of-bony-et-al.-2013.">Model simplicity and system complexity<img src="assets/maher2019_fig1a.png" class="img-fluid" alt="Model simplicity versus system complexity, Maher et al.&nbsp;2019 Figure 1a">Including more of the Earth system and representing each process in more detail are different choices.<small>Source: </small></a><small><a href="https://doi.org/10.1029/2018RG000607" class="nav-link" data-scroll-target="https\://doi.org/10.1029/2018RG000607">Maher et al.&nbsp;(2019), Figure 1(a)</a>, reproducing the framework of Bony et al.&nbsp;(2013).</small></li>
+  <li><a href="#how-did-these-models-come-togetherwhich-came-first-calculating-warming-from-co₂-or-simulating-atmospheric-circulation-thread-milestones-connection-to-our-models-energy-balance-and-greenhouse-physics-fourier-arrhenius-calculating-temperature-from-energy-balance-and-atmospheric-composition-predicting-circulation-numerically-richardson-early-computer-models-solving-physical-equations-on-a-grid-coupling-the-climate-system-manabe-and-colleagues-coupled-gcms-earth-system-models-letting-components-evolve-together-and-exchange-energy-water-and-carbon-explore-selected-milestones-ucar-history-of-climate-science-these-are-overlapping-threads-rather-than-separate-stages-that-replaced-one-another." id="toc-how-did-these-models-come-togetherwhich-came-first-calculating-warming-from-co₂-or-simulating-atmospheric-circulation-thread-milestones-connection-to-our-models-energy-balance-and-greenhouse-physics-fourier-arrhenius-calculating-temperature-from-energy-balance-and-atmospheric-composition-predicting-circulation-numerically-richardson-early-computer-models-solving-physical-equations-on-a-grid-coupling-the-climate-system-manabe-and-colleagues-coupled-gcms-earth-system-models-letting-components-evolve-together-and-exchange-energy-water-and-carbon-explore-selected-milestones-ucar-history-of-climate-science-these-are-overlapping-threads-rather-than-separate-stages-that-replaced-one-another." class="nav-link" data-scroll-target="#how-did-these-models-come-togetherwhich-came-first-calculating-warming-from-co₂-or-simulating-atmospheric-circulation-thread-milestones-connection-to-our-models-energy-balance-and-greenhouse-physics-fourier-arrhenius-calculating-temperature-from-energy-balance-and-atmospheric-composition-predicting-circulation-numerically-richardson-early-computer-models-solving-physical-equations-on-a-grid-coupling-the-climate-system-manabe-and-colleagues-coupled-gcms-earth-system-models-letting-components-evolve-together-and-exchange-energy-water-and-carbon-explore-selected-milestones-ucar-history-of-climate-science-these-are-overlapping-threads-rather-than-separate-stages-that-replaced-one-another.">How did these models come together?<strong>Which came first: calculating warming from CO₂, or simulating atmospheric circulation?</strong>| Thread | Milestones | Connection to our models ||:—|:—|:—|| Energy balance and greenhouse physics | Fourier → Arrhenius | Calculating temperature from energy balance and atmospheric composition || Predicting circulation numerically | Richardson → early computer models | Solving physical equations on a grid || Coupling the climate system | Manabe and colleagues → coupled GCMs → Earth System Models | Letting components evolve together and exchange energy, water, and carbon |Explore selected milestones: UCAR history of climate science ↗<small>These are overlapping threads, rather than separate stages that replaced one another.</small></a></li>
+  <li><a href="#before-computers-the-foundations-of-climate-modelingnineteenth-century-climate-science-timeline-from-fourier-to-arrheniussource-steve-m.-easterbrook-computing-the-climate-2023-figure-2.8-p.-34.-watercolour-map-by-stamen-design." id="toc-before-computers-the-foundations-of-climate-modelingnineteenth-century-climate-science-timeline-from-fourier-to-arrheniussource-steve-m.-easterbrook-computing-the-climate-2023-figure-2.8-p.-34.-watercolour-map-by-stamen-design." class="nav-link" data-scroll-target="#before-computers-the-foundations-of-climate-modelingnineteenth-century-climate-science-timeline-from-fourier-to-arrheniussource-steve-m.-easterbrook-computing-the-climate-2023-figure-2.8-p.-34.-watercolour-map-by-stamen-design.">Before computers: the foundations of climate modeling<img src="assets/easterbrook_fig2_8_timeline.png" class="img-fluid" alt="Nineteenth-century climate-science timeline from Fourier to Arrhenius"><small>Source: Steve M. Easterbrook, </small></a><small><a href="https://doi.org/10.1017/9781316459768.003" class="nav-link" data-scroll-target="https\://doi.org/10.1017/9781316459768.003">Computing the Climate (2023), Figure 2.8, p.&nbsp;34</a>. Watercolour map by Stamen Design.</small></li>
+  <li><a href="#evolving-complexity-of-gcms" id="toc-evolving-complexity-of-gcms" class="nav-link" data-scroll-target="#evolving-complexity-of-gcms">Evolving complexity of GCMs</a></li>
+  </ul></li>
+  <li><a href="#introducing-the-gcm" id="toc-introducing-the-gcm" class="nav-link" data-scroll-target="#introducing-the-gcm">4. Introducing the GCM</a>
+  <ul class="collapse">
+  <li><a href="#ingredients-of-a-gcmpredict-the-three-dimensional-evolving-circulation-of-the-atmosphere-and-ocean-together-with-temperature-and-transported-quantities.the-model-solves-equations-expressing--momentum-forces-change-winds-and-currents.--mass-track-air-water-and-the-substances-they-carry.--energy-heating-cooling-and-transport-change-temperature.--an-equation-of-state-link-pressure-density-and-temperature.resolved-flow-is-combined-with-parameterizations-of-processes-such-as-convection-clouds-and-turbulent-mixing." id="toc-ingredients-of-a-gcmpredict-the-three-dimensional-evolving-circulation-of-the-atmosphere-and-ocean-together-with-temperature-and-transported-quantities.the-model-solves-equations-expressing--momentum-forces-change-winds-and-currents.--mass-track-air-water-and-the-substances-they-carry.--energy-heating-cooling-and-transport-change-temperature.--an-equation-of-state-link-pressure-density-and-temperature.resolved-flow-is-combined-with-parameterizations-of-processes-such-as-convection-clouds-and-turbulent-mixing." class="nav-link" data-scroll-target="#ingredients-of-a-gcmpredict-the-three-dimensional-evolving-circulation-of-the-atmosphere-and-ocean-together-with-temperature-and-transported-quantities.the-model-solves-equations-expressing--momentum-forces-change-winds-and-currents.--mass-track-air-water-and-the-substances-they-carry.--energy-heating-cooling-and-transport-change-temperature.--an-equation-of-state-link-pressure-density-and-temperature.resolved-flow-is-combined-with-parameterizations-of-processes-such-as-convection-clouds-and-turbulent-mixing.">Ingredients of a GCMPredict the <strong>three-dimensional, evolving circulation</strong> of the atmosphere and ocean, together with temperature and transported quantities.The model solves equations expressing:- <strong>Momentum:</strong> forces change winds and currents.- <strong>Mass:</strong> track air, water, and the substances they carry.- <strong>Energy:</strong> heating, cooling, and transport change temperature.- <strong>An equation of state:</strong> link pressure, density, and temperature.Resolved flow is combined with <strong>parameterizations</strong> of processes such as convection, clouds, and turbulent mixing.</a></li>
+  <li><a href="#what-do-the-governing-equations-look-likea-schematic-set-for-a-dry-atmosphere-physical-law-equation-what-it-says-momentum-displaystyle-fracdmathbfudt2boldsymbolomegatimesmathbfu-frac1rhonabla-pmathbfgmathbff-forces-change-the-velocity-of-moving-air.-mass-displaystyle-fracdrhodt-rhonablacdotmathbfu-expansion-lowers-density-compression-raises-it.-energy-displaystyle-c_pfracdtdt-frac1rhofracdpdtq-heating-and-pressure-changes-alter-temperature.-equation-of-state-displaystyle-prho-r_dt-pressure-density-and-temperature-are-linked.-ddt-follows-moving-air.-mathbfu-velocity-rho-density-p-pressure-t-temperature.boldsymbolomega-earths-rotation-mathbfg-gravity-mathbff-frictionmixing-acceleration-q-diabatic-heating-per-unit-mass.-moisture-and-other-tracers-require-additional-equations-model-formulations-use-different-approximations." id="toc-what-do-the-governing-equations-look-likea-schematic-set-for-a-dry-atmosphere-physical-law-equation-what-it-says-momentum-displaystyle-fracdmathbfudt2boldsymbolomegatimesmathbfu-frac1rhonabla-pmathbfgmathbff-forces-change-the-velocity-of-moving-air.-mass-displaystyle-fracdrhodt-rhonablacdotmathbfu-expansion-lowers-density-compression-raises-it.-energy-displaystyle-c_pfracdtdt-frac1rhofracdpdtq-heating-and-pressure-changes-alter-temperature.-equation-of-state-displaystyle-prho-r_dt-pressure-density-and-temperature-are-linked.-ddt-follows-moving-air.-mathbfu-velocity-rho-density-p-pressure-t-temperature.boldsymbolomega-earths-rotation-mathbfg-gravity-mathbff-frictionmixing-acceleration-q-diabatic-heating-per-unit-mass.-moisture-and-other-tracers-require-additional-equations-model-formulations-use-different-approximations." class="nav-link" data-scroll-target="#what-do-the-governing-equations-look-likea-schematic-set-for-a-dry-atmosphere-physical-law-equation-what-it-says-momentum-displaystyle-fracdmathbfudt2boldsymbolomegatimesmathbfu-frac1rhonabla-pmathbfgmathbff-forces-change-the-velocity-of-moving-air.-mass-displaystyle-fracdrhodt-rhonablacdotmathbfu-expansion-lowers-density-compression-raises-it.-energy-displaystyle-c_pfracdtdt-frac1rhofracdpdtq-heating-and-pressure-changes-alter-temperature.-equation-of-state-displaystyle-prho-r_dt-pressure-density-and-temperature-are-linked.-ddt-follows-moving-air.-mathbfu-velocity-rho-density-p-pressure-t-temperature.boldsymbolomega-earths-rotation-mathbfg-gravity-mathbff-frictionmixing-acceleration-q-diabatic-heating-per-unit-mass.-moisture-and-other-tracers-require-additional-equations-model-formulations-use-different-approximations.">What do the governing equations look like?A schematic set for a <strong>dry atmosphere</strong>| Physical law | Equation | What it says ||:—|:—|:—|| Momentum | <span class="math inline">\(\displaystyle \frac{D\mathbf{u}}{Dt}+2\boldsymbol{\Omega}\times\mathbf{u}=-\frac{1}{\rho}\nabla p+\mathbf{g}+\mathbf{F}\)</span> | Forces change the velocity of moving air. || Mass | <span class="math inline">\(\displaystyle \frac{D\rho}{Dt}=-\rho\nabla\!\cdot\mathbf{u}\)</span> | Expansion lowers density; compression raises it. || Energy | <span class="math inline">\(\displaystyle c_p\frac{DT}{Dt}-\frac{1}{\rho}\frac{Dp}{Dt}=Q\)</span> | Heating and pressure changes alter temperature. || Equation of state | <span class="math inline">\(\displaystyle p=\rho R_dT\)</span> | Pressure, density, and temperature are linked. |<span class="math inline">\(D/Dt\)</span> follows moving air. <span class="math inline">\(\mathbf{u}\)</span>: velocity; <span class="math inline">\(\rho\)</span>: density; <span class="math inline">\(p\)</span>: pressure; <span class="math inline">\(T\)</span>: temperature.<small><span class="math inline">\(\boldsymbol{\Omega}\)</span>: Earth’s rotation; <span class="math inline">\(\mathbf{g}\)</span>: gravity; <span class="math inline">\(\mathbf{F}\)</span>: friction/mixing acceleration; <span class="math inline">\(Q\)</span>: diabatic heating per unit mass. Moisture and other tracers require additional equations; model formulations use different approximations.</small></a></li>
+  <li><a href="#a-million-dollar-question-about-fluid-motionour-momentum-equation-belongs-to-the-navierstokes-family-adapted-for-a-rotating-atmosphere.-climate-models-also-include-thermodynamics-moisture-and-other-processes.--the-millennium-prize-problem-for-specified-three-dimensional-incompressible-flows-prove-that-smooth-solutions-persist-or-demonstrate-finite-time-breakdown.--september-2026-closely-timed-announcements-included-tristan-buckmaster-and-levent-alpöges-smooth-forced-euler-blowup-results-and-openais-announced-smooth-forced-navierstokes-blowup-proof.-these-are-related-but-distinct-results.-clay-acknowledged-an-apparent-resolution-of-its-problem-evaluation-continues.the-mathematical-question-is-whether-smooth-fluid-motion-can-break-downeven-with-viscosity-and-smooth-forcing.status-checked-october-28-2026.-clay-mathematics-institute-announcement-buckmaster-and-alpöges-work-openai-announcement-and-proof-links" id="toc-a-million-dollar-question-about-fluid-motionour-momentum-equation-belongs-to-the-navierstokes-family-adapted-for-a-rotating-atmosphere.-climate-models-also-include-thermodynamics-moisture-and-other-processes.--the-millennium-prize-problem-for-specified-three-dimensional-incompressible-flows-prove-that-smooth-solutions-persist-or-demonstrate-finite-time-breakdown.--september-2026-closely-timed-announcements-included-tristan-buckmaster-and-levent-alpöges-smooth-forced-euler-blowup-results-and-openais-announced-smooth-forced-navierstokes-blowup-proof.-these-are-related-but-distinct-results.-clay-acknowledged-an-apparent-resolution-of-its-problem-evaluation-continues.the-mathematical-question-is-whether-smooth-fluid-motion-can-break-downeven-with-viscosity-and-smooth-forcing.status-checked-october-28-2026.-clay-mathematics-institute-announcement-buckmaster-and-alpöges-work-openai-announcement-and-proof-links" class="nav-link" data-scroll-target="#a-million-dollar-question-about-fluid-motionour-momentum-equation-belongs-to-the-navierstokes-family-adapted-for-a-rotating-atmosphere.-climate-models-also-include-thermodynamics-moisture-and-other-processes.--the-millennium-prize-problem-for-specified-three-dimensional-incompressible-flows-prove-that-smooth-solutions-persist-or-demonstrate-finite-time-breakdown.--september-2026-closely-timed-announcements-included-tristan-buckmaster-and-levent-alpöges-smooth-forced-euler-blowup-results-and-openais-announced-smooth-forced-navierstokes-blowup-proof.-these-are-related-but-distinct-results.-clay-acknowledged-an-apparent-resolution-of-its-problem-evaluation-continues.the-mathematical-question-is-whether-smooth-fluid-motion-can-break-downeven-with-viscosity-and-smooth-forcing.status-checked-october-28-2026.-clay-mathematics-institute-announcement-buckmaster-and-alpöges-work-openai-announcement-and-proof-links">A million-dollar question about fluid motionOur momentum equation belongs to the <strong>Navier–Stokes family</strong>, adapted for a rotating atmosphere. Climate models also include thermodynamics, moisture, and other processes.- <strong>The Millennium Prize problem:</strong> for specified three-dimensional incompressible flows, prove that smooth solutions persist, or demonstrate finite-time breakdown.- <strong>September 2026:</strong> closely timed announcements included <strong>Tristan Buckmaster and Levent Alpöge’s</strong> smooth-forced Euler blowup results and <strong>OpenAI’s</strong> announced smooth-forced Navier–Stokes blowup proof. These are related but distinct results. Clay acknowledged an apparent resolution of its problem; evaluation continues.<strong>The mathematical question is whether smooth fluid motion can break down—even with viscosity and smooth forcing.</strong><small>Status checked October 28, 2026. </small></a><small><a href="https://www.claymath.org/news/navier-stokes-announcement/" class="nav-link" data-scroll-target="https\://www.claymath.org/news/navier-stokes-announcement/">Clay Mathematics Institute announcement</a> · <a href="https://cims.nyu.edu/~tristanb/statement.pdf" class="nav-link" data-scroll-target="https\://cims.nyu.edu/~tristanb/statement.pdf">Buckmaster and Alpöge’s work</a> · <a href="https://openai.com/index/navier-stokes-solution/" class="nav-link" data-scroll-target="https\://openai.com/index/navier-stokes-solution/">OpenAI announcement and proof links</a></small></li>
+  <li><a href="#what-does-a-singularity-mean-for-numerical-modelinga-possible-singularity-does-not-prevent-useful-numerical-solutions-for-flows-and-time-intervals-where-the-solution-remains-smooth-and-adequately-resolved.--why-the-mathematics-matters-regularity-theory-helps-establish-conditions-under-which-numerical-approximations-converge-and-error-estimates-apply.--near-a-singularity-increasingly-small-scales-or-steep-gradients-may-require-finer-grids-and-smaller-time-steps.-a-computer-continuing-to-produce-numbers-does-not-guarantee-an-accurate-solution.--what-a-blowup-proof-establishes-under-specified-conditions-smooth-initial-data-and-viscosity-need-not-guarantee-smooth-motion-for-all-time.-it-does-not-supply-a-general-method-for-computing-through-that-breakdown.--for-climate-models-such-a-construction-does-not-show-that-ordinary-weather-develops-singularities-or-that-climate-simulations-fail.-numerical-accuracy-and-the-physical-approximations-still-need-evaluation.navierstokes-treats-fluid-as-a-continuum-additional-physics-would-matter-before-a-real-fluid-attained-an-infinite-speed.-announced-result-and-assumptions-clays-evaluation-process." id="toc-what-does-a-singularity-mean-for-numerical-modelinga-possible-singularity-does-not-prevent-useful-numerical-solutions-for-flows-and-time-intervals-where-the-solution-remains-smooth-and-adequately-resolved.--why-the-mathematics-matters-regularity-theory-helps-establish-conditions-under-which-numerical-approximations-converge-and-error-estimates-apply.--near-a-singularity-increasingly-small-scales-or-steep-gradients-may-require-finer-grids-and-smaller-time-steps.-a-computer-continuing-to-produce-numbers-does-not-guarantee-an-accurate-solution.--what-a-blowup-proof-establishes-under-specified-conditions-smooth-initial-data-and-viscosity-need-not-guarantee-smooth-motion-for-all-time.-it-does-not-supply-a-general-method-for-computing-through-that-breakdown.--for-climate-models-such-a-construction-does-not-show-that-ordinary-weather-develops-singularities-or-that-climate-simulations-fail.-numerical-accuracy-and-the-physical-approximations-still-need-evaluation.navierstokes-treats-fluid-as-a-continuum-additional-physics-would-matter-before-a-real-fluid-attained-an-infinite-speed.-announced-result-and-assumptions-clays-evaluation-process." class="nav-link" data-scroll-target="#what-does-a-singularity-mean-for-numerical-modelinga-possible-singularity-does-not-prevent-useful-numerical-solutions-for-flows-and-time-intervals-where-the-solution-remains-smooth-and-adequately-resolved.--why-the-mathematics-matters-regularity-theory-helps-establish-conditions-under-which-numerical-approximations-converge-and-error-estimates-apply.--near-a-singularity-increasingly-small-scales-or-steep-gradients-may-require-finer-grids-and-smaller-time-steps.-a-computer-continuing-to-produce-numbers-does-not-guarantee-an-accurate-solution.--what-a-blowup-proof-establishes-under-specified-conditions-smooth-initial-data-and-viscosity-need-not-guarantee-smooth-motion-for-all-time.-it-does-not-supply-a-general-method-for-computing-through-that-breakdown.--for-climate-models-such-a-construction-does-not-show-that-ordinary-weather-develops-singularities-or-that-climate-simulations-fail.-numerical-accuracy-and-the-physical-approximations-still-need-evaluation.navierstokes-treats-fluid-as-a-continuum-additional-physics-would-matter-before-a-real-fluid-attained-an-infinite-speed.-announced-result-and-assumptions-clays-evaluation-process.">What does a singularity mean for numerical modeling?<strong>A possible singularity does not prevent useful numerical solutions for flows and time intervals where the solution remains smooth and adequately resolved.</strong>- <strong>Why the mathematics matters:</strong> regularity theory helps establish conditions under which numerical approximations converge and error estimates apply.- <strong>Near a singularity:</strong> increasingly small scales or steep gradients may require finer grids and smaller time steps. A computer continuing to produce numbers does not guarantee an accurate solution.- <strong>What a blowup proof establishes:</strong> under specified conditions, smooth initial data and viscosity need not guarantee smooth motion for all time. It does not supply a general method for computing through that breakdown.- <strong>For climate models:</strong> such a construction does not show that ordinary weather develops singularities or that climate simulations fail. Numerical accuracy and the physical approximations still need evaluation.<small>Navier–Stokes treats fluid as a continuum; additional physics would matter before a real fluid attained an infinite speed. </small></a><small><a href="https://openai.com/index/navier-stokes-solution/" class="nav-link" data-scroll-target="https\://openai.com/index/navier-stokes-solution/">Announced result and assumptions</a> · <a href="https://www.claymath.org/news/navier-stokes-announcement/" class="nav-link" data-scroll-target="https\://www.claymath.org/news/navier-stokes-announcement/">Clay’s evaluation process</a>.</small></li>
+  <li><a href="#discretizing-space-three-approachesthe-same-physical-laws-can-have-different-numerical-representations.-approach-main-idea-what-to-notice-finite-differences-approximate-derivatives-using-nearby-grid-values-partial-tpartial-xapproxt_i1-t_i-12delta-x.-the-choice-of-neighboring-points-affects-accuracy-and-behavior.-finite-volumes-evolve-cell-averages-from-fluxes-crossing-cell-faces.-the-outflow-from-one-cell-is-the-inflow-to-its-neighbor-budgets-can-be-conserved.-spectral-methods-represent-a-field-as-a-sum-of-basis-functions-such-as-waves-or-spherical-harmonics.-derivatives-come-from-the-basis-functions-smooth-fields-can-be-represented-accurately.-lab-connection-our-latitude-band-transport-budget-uses-shared-boundary-fluxes-the-finite-volume-idea.examples-gfdl-finite-volume-core-gfdl-spectral-models.-models-may-combine-methods-in-different-directions-or-processes." id="toc-discretizing-space-three-approachesthe-same-physical-laws-can-have-different-numerical-representations.-approach-main-idea-what-to-notice-finite-differences-approximate-derivatives-using-nearby-grid-values-partial-tpartial-xapproxt_i1-t_i-12delta-x.-the-choice-of-neighboring-points-affects-accuracy-and-behavior.-finite-volumes-evolve-cell-averages-from-fluxes-crossing-cell-faces.-the-outflow-from-one-cell-is-the-inflow-to-its-neighbor-budgets-can-be-conserved.-spectral-methods-represent-a-field-as-a-sum-of-basis-functions-such-as-waves-or-spherical-harmonics.-derivatives-come-from-the-basis-functions-smooth-fields-can-be-represented-accurately.-lab-connection-our-latitude-band-transport-budget-uses-shared-boundary-fluxes-the-finite-volume-idea.examples-gfdl-finite-volume-core-gfdl-spectral-models.-models-may-combine-methods-in-different-directions-or-processes." class="nav-link" data-scroll-target="#discretizing-space-three-approachesthe-same-physical-laws-can-have-different-numerical-representations.-approach-main-idea-what-to-notice-finite-differences-approximate-derivatives-using-nearby-grid-values-partial-tpartial-xapproxt_i1-t_i-12delta-x.-the-choice-of-neighboring-points-affects-accuracy-and-behavior.-finite-volumes-evolve-cell-averages-from-fluxes-crossing-cell-faces.-the-outflow-from-one-cell-is-the-inflow-to-its-neighbor-budgets-can-be-conserved.-spectral-methods-represent-a-field-as-a-sum-of-basis-functions-such-as-waves-or-spherical-harmonics.-derivatives-come-from-the-basis-functions-smooth-fields-can-be-represented-accurately.-lab-connection-our-latitude-band-transport-budget-uses-shared-boundary-fluxes-the-finite-volume-idea.examples-gfdl-finite-volume-core-gfdl-spectral-models.-models-may-combine-methods-in-different-directions-or-processes.">Discretizing space: three approachesThe same physical laws can have different numerical representations.| Approach | Main idea | What to notice ||:—|:—|:—|| <strong>Finite differences</strong> | Approximate derivatives using nearby grid values: <span class="math inline">\(\partial T/\partial x\approx(T_{i+1}-T_{i-1})/(2\Delta x)\)</span>. | The choice of neighboring points affects accuracy and behavior. || <strong>Finite volumes</strong> | Evolve cell averages from fluxes crossing cell faces. | The outflow from one cell is the inflow to its neighbor: budgets can be conserved. || <strong>Spectral methods</strong> | Represent a field as a sum of basis functions, such as waves or spherical harmonics. | Derivatives come from the basis functions; smooth fields can be represented accurately. |<strong>Lab connection:</strong> our latitude-band transport budget uses shared boundary fluxes, the finite-volume idea.<small>Examples: </small></a><small><a href="https://www.gfdl.noaa.gov/fv3/fv3-key-components/" class="nav-link" data-scroll-target="https\://www.gfdl.noaa.gov/fv3/fv3-key-components/">GFDL finite-volume core</a> · <a href="https://www.gfdl.noaa.gov/atmospheric-model/" class="nav-link" data-scroll-target="https\://www.gfdl.noaa.gov/atmospheric-model/">GFDL spectral models</a>. Models may combine methods in different directions or processes.</small></li>
+  <li><a href="#same-advection-equation-different-numerical-behaviora-warm-patch-carried-by-a-constant-wind-partial-tpartial-tupartial-tpartial-x0.-no-physical-diffusion.exact-transport-compared-with-numerical-spreading-from-upwind-and-oscillations-from-laxwendroff--upwind-numerical-diffusion-spreads-the-patchs-edges.--laxwendroff-a-second-order-method-keeps-sharper-edges-here-but-creates-artificial-oscillations.both-conserve-the-total-anomaly-here.-conservation-alone-does-not-guarantee-an-accurate-shape.course-calculation-same-initial-patch-periodic-domain-160-cells-80-steps-courant-number-0.5.-numerical-diffusion-differs-from-physical-transport-parameterized-in-our-ebm.-related-clawpack-demonstration." id="toc-same-advection-equation-different-numerical-behaviora-warm-patch-carried-by-a-constant-wind-partial-tpartial-tupartial-tpartial-x0.-no-physical-diffusion.exact-transport-compared-with-numerical-spreading-from-upwind-and-oscillations-from-laxwendroff--upwind-numerical-diffusion-spreads-the-patchs-edges.--laxwendroff-a-second-order-method-keeps-sharper-edges-here-but-creates-artificial-oscillations.both-conserve-the-total-anomaly-here.-conservation-alone-does-not-guarantee-an-accurate-shape.course-calculation-same-initial-patch-periodic-domain-160-cells-80-steps-courant-number-0.5.-numerical-diffusion-differs-from-physical-transport-parameterized-in-our-ebm.-related-clawpack-demonstration." class="nav-link" data-scroll-target="#same-advection-equation-different-numerical-behaviora-warm-patch-carried-by-a-constant-wind-partial-tpartial-tupartial-tpartial-x0.-no-physical-diffusion.exact-transport-compared-with-numerical-spreading-from-upwind-and-oscillations-from-laxwendroff--upwind-numerical-diffusion-spreads-the-patchs-edges.--laxwendroff-a-second-order-method-keeps-sharper-edges-here-but-creates-artificial-oscillations.both-conserve-the-total-anomaly-here.-conservation-alone-does-not-guarantee-an-accurate-shape.course-calculation-same-initial-patch-periodic-domain-160-cells-80-steps-courant-number-0.5.-numerical-diffusion-differs-from-physical-transport-parameterized-in-our-ebm.-related-clawpack-demonstration.">Same advection equation, different numerical behaviorA warm patch carried by a constant wind: <span class="math inline">\(\partial T/\partial t+u\,\partial T/\partial x=0\)</span>. <strong>No physical diffusion.</strong><img src="assets/advection_schemes.png" class="img-fluid" alt="Exact transport compared with numerical spreading from upwind and oscillations from Lax–Wendroff">- <strong>Upwind:</strong> numerical diffusion spreads the patch’s edges.- <strong>Lax–Wendroff:</strong> a second-order method keeps sharper edges here, but creates artificial oscillations.<strong>Both conserve the total anomaly here. Conservation alone does not guarantee an accurate shape.</strong><small>Course calculation: same initial patch, periodic domain, 160 cells, 80 steps, Courant number 0.5. Numerical diffusion differs from physical transport parameterized in our EBM. </small></a><small><a href="https://www.clawpack.org/gallery/_static/notebooks/classic/advection_1d/advection_1d.html" class="nav-link" data-scroll-target="https\://www.clawpack.org/gallery/_static/notebooks/classic/advection_1d/advection_1d.html">Related Clawpack demonstration</a>.</small></li>
+  <li><a href="#horizontal-resolution-and-topography" id="toc-horizontal-resolution-and-topography" class="nav-link" data-scroll-target="#horizontal-resolution-and-topography">Horizontal resolution and topography<img src="assets/Fig1-14.jpg" width="800"></a></li>
+  <li><a href="#what-do-we-put-beneath-the-atmospherethe-ocean-can-supply-a-prescribed-lower-boundary-or-evolve-as-an-interacting-component." id="toc-what-do-we-put-beneath-the-atmospherethe-ocean-can-supply-a-prescribed-lower-boundary-or-evolve-as-an-interacting-component." class="nav-link" data-scroll-target="#what-do-we-put-beneath-the-atmospherethe-ocean-can-supply-a-prescribed-lower-boundary-or-evolve-as-an-interacting-component.">What do we put beneath the atmosphere?The ocean can supply a <strong>prescribed lower boundary</strong> or evolve as an <strong>interacting component</strong>.</a></li>
+  <li><a href="#representing-forcing-feedbacks-and-heat-uptakea-comprehensive-model-calculates-how-external-changes-and-internal-responses-alter-the-planetary-energy-budget.change-co₂-calculate-radiative-transfer-diagnose-forcing-simulate-the-evolving-climate.--forcing-f-the-radiative-budget-change-caused-by-an-imposed-driver-before-global-surface-warming-with-specified-adjustments-allowed.-a-concentration-change-in-ppm-is-not-itself-a-forcing-in-w-m².--feedbacks-lambda-the-radiative-response-as-temperature-water-vapor-clouds-lapse-rate-and-albedo-change-with-warming.--heat-uptake-the-evolving-energy-imbalance-changes-heat-storage-mainly-in-the-ocean-and-affects-the-pace-of-surface-warming.forcing-definitions-distinguish-instantaneous-effects-from-rapid-adjustments.-in-a-concentration-driven-experiment-co₂-is-prescribed-and-radiative-fluxes-are-calculated.-rose-forcing-and-feedback-calculations." id="toc-representing-forcing-feedbacks-and-heat-uptakea-comprehensive-model-calculates-how-external-changes-and-internal-responses-alter-the-planetary-energy-budget.change-co₂-calculate-radiative-transfer-diagnose-forcing-simulate-the-evolving-climate.--forcing-f-the-radiative-budget-change-caused-by-an-imposed-driver-before-global-surface-warming-with-specified-adjustments-allowed.-a-concentration-change-in-ppm-is-not-itself-a-forcing-in-w-m².--feedbacks-lambda-the-radiative-response-as-temperature-water-vapor-clouds-lapse-rate-and-albedo-change-with-warming.--heat-uptake-the-evolving-energy-imbalance-changes-heat-storage-mainly-in-the-ocean-and-affects-the-pace-of-surface-warming.forcing-definitions-distinguish-instantaneous-effects-from-rapid-adjustments.-in-a-concentration-driven-experiment-co₂-is-prescribed-and-radiative-fluxes-are-calculated.-rose-forcing-and-feedback-calculations." class="nav-link" data-scroll-target="#representing-forcing-feedbacks-and-heat-uptakea-comprehensive-model-calculates-how-external-changes-and-internal-responses-alter-the-planetary-energy-budget.change-co₂-calculate-radiative-transfer-diagnose-forcing-simulate-the-evolving-climate.--forcing-f-the-radiative-budget-change-caused-by-an-imposed-driver-before-global-surface-warming-with-specified-adjustments-allowed.-a-concentration-change-in-ppm-is-not-itself-a-forcing-in-w-m².--feedbacks-lambda-the-radiative-response-as-temperature-water-vapor-clouds-lapse-rate-and-albedo-change-with-warming.--heat-uptake-the-evolving-energy-imbalance-changes-heat-storage-mainly-in-the-ocean-and-affects-the-pace-of-surface-warming.forcing-definitions-distinguish-instantaneous-effects-from-rapid-adjustments.-in-a-concentration-driven-experiment-co₂-is-prescribed-and-radiative-fluxes-are-calculated.-rose-forcing-and-feedback-calculations.">Representing forcing, feedbacks, and heat uptakeA comprehensive model calculates how <strong>external changes and internal responses alter the planetary energy budget</strong>.<strong>Change CO₂ → calculate radiative transfer → diagnose forcing → simulate the evolving climate.</strong>- <strong>Forcing <span class="math inline">\(F\)</span>:</strong> the radiative-budget change caused by an imposed driver before global surface warming, with specified adjustments allowed. A concentration change in ppm is not itself a forcing in W m⁻².- <strong>Feedbacks <span class="math inline">\(\lambda\)</span>:</strong> the radiative response as temperature, water vapor, clouds, lapse rate, and albedo change with warming.- <strong>Heat uptake:</strong> the evolving energy imbalance changes heat storage, mainly in the ocean, and affects the pace of surface warming.<small>Forcing definitions distinguish instantaneous effects from rapid adjustments. In a concentration-driven experiment, CO₂ is prescribed and radiative fluxes are calculated. </small></a><small><a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/sensitivity-feedback/" class="nav-link" data-scroll-target="https\://brian-rose.github.io/ClimateLaboratoryBook/courseware/sensitivity-feedback/">Rose: forcing and feedback calculations</a>.</small></li>
+  <li><a href="#comprehensive-models-need-parameterizationscomprehensive-models-cannot-explicitly-simulate-every-process-at-every-scale.-parameterizations-represent-the-effects-of-unresolved-processes-using-physical-relationships-and-evidence-from-observations-or-detailed-models.land-surface-processes-are-a-good-example.exchanges-of-energy-water-and-carbon-between-the-land-and-atmosphere-are-biologically-mediated.-we-must-to-a-certain-extent-rely-on-empirical-relationships.-a-bit-like-economic-modeling.we-also-must-deal-with-interaction-across-spatial-scales.e.g.-cumulus-convection-and-vertical-transport-of-heat-and-water-vapor" id="toc-comprehensive-models-need-parameterizationscomprehensive-models-cannot-explicitly-simulate-every-process-at-every-scale.-parameterizations-represent-the-effects-of-unresolved-processes-using-physical-relationships-and-evidence-from-observations-or-detailed-models.land-surface-processes-are-a-good-example.exchanges-of-energy-water-and-carbon-between-the-land-and-atmosphere-are-biologically-mediated.-we-must-to-a-certain-extent-rely-on-empirical-relationships.-a-bit-like-economic-modeling.we-also-must-deal-with-interaction-across-spatial-scales.e.g.-cumulus-convection-and-vertical-transport-of-heat-and-water-vapor" class="nav-link" data-scroll-target="#comprehensive-models-need-parameterizationscomprehensive-models-cannot-explicitly-simulate-every-process-at-every-scale.-parameterizations-represent-the-effects-of-unresolved-processes-using-physical-relationships-and-evidence-from-observations-or-detailed-models.land-surface-processes-are-a-good-example.exchanges-of-energy-water-and-carbon-between-the-land-and-atmosphere-are-biologically-mediated.-we-must-to-a-certain-extent-rely-on-empirical-relationships.-a-bit-like-economic-modeling.we-also-must-deal-with-interaction-across-spatial-scales.e.g.-cumulus-convection-and-vertical-transport-of-heat-and-water-vapor">Comprehensive models need parameterizationsComprehensive models cannot explicitly simulate every process at every scale. Parameterizations represent the effects of unresolved processes using physical relationships and evidence from observations or detailed models.Land surface processes are a good example.Exchanges of energy, water and carbon between the land and atmosphere are biologically mediated. We must (to a certain extent) rely on empirical relationships. A bit like economic modeling.We also must deal with interaction across spatial scales.E.g. cumulus convection and vertical transport of heat and water vapor</a></li>
+  </ul></li>
+  <li><a href="#watching-weather-emerge-in-a-climate-modelthe-next-movie-shows-simulated-atmospheric-water-vapor-evolving-through-time-as-featured-in-nathan-steigers-global-warming-science-notes.look-for-broad-wet-and-dry-regions-moving-weather-systems-and-structures-at-different-scales.a-movie-shows-one-variable-from-the-evolving-model-state.-climate-is-described-by-the-statistics-of-that-changing-weather.source-global-climate-models-nathan-steiger." id="toc-watching-weather-emerge-in-a-climate-modelthe-next-movie-shows-simulated-atmospheric-water-vapor-evolving-through-time-as-featured-in-nathan-steigers-global-warming-science-notes.look-for-broad-wet-and-dry-regions-moving-weather-systems-and-structures-at-different-scales.a-movie-shows-one-variable-from-the-evolving-model-state.-climate-is-described-by-the-statistics-of-that-changing-weather.source-global-climate-models-nathan-steiger." class="nav-link" data-scroll-target="#watching-weather-emerge-in-a-climate-modelthe-next-movie-shows-simulated-atmospheric-water-vapor-evolving-through-time-as-featured-in-nathan-steigers-global-warming-science-notes.look-for-broad-wet-and-dry-regions-moving-weather-systems-and-structures-at-different-scales.a-movie-shows-one-variable-from-the-evolving-model-state.-climate-is-described-by-the-statistics-of-that-changing-weather.source-global-climate-models-nathan-steiger.">Watching weather emerge in a climate modelThe next movie shows <strong>simulated atmospheric water vapor evolving through time</strong>, as featured in Nathan Steiger’s Global Warming Science notes.Look for broad wet and dry regions, moving weather systems, and structures at different scales.A movie shows one variable from the evolving model state. Climate is described by the statistics of that changing weather.<small>Source: </small></a><small><a href="https://njsteiger.github.io/gws/global-climate-models.html" class="nav-link" data-scroll-target="https\://njsteiger.github.io/gws/global-climate-models.html">Global Climate Models — Nathan Steiger</a>.</small>
+  <ul class="collapse">
+  <li><a href="#simulated-atmospheric-water-vaporopen-on-youtube-if-the-embedded-player-is-unavailable-source-nathan-steigers-notes.-internet-required." id="toc-simulated-atmospheric-water-vaporopen-on-youtube-if-the-embedded-player-is-unavailable-source-nathan-steigers-notes.-internet-required." class="nav-link" data-scroll-target="#simulated-atmospheric-water-vaporopen-on-youtube-if-the-embedded-player-is-unavailable-source-nathan-steigers-notes.-internet-required.">Simulated atmospheric water vapor<iframe class="climate-movie" width="1120" height="570" src="https://www.youtube-nocookie.com/embed/ujhstaGfhbE" title="Simulated atmospheric water vapor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe><small></small></a><small><a href="https://www.youtube.com/watch?v=ujhstaGfhbE" target="_blank" rel="noopener" class="nav-link" data-scroll-target="https\://www.youtube.com/watch?v=ujhstaGfhbE">Open on YouTube if the embedded player is unavailable</a> · <a href="https://njsteiger.github.io/gws/global-climate-models.html" class="nav-link" data-scroll-target="https\://njsteiger.github.io/gws/global-climate-models.html">Source: Nathan Steiger’s notes</a>. Internet required.</small></li>
+  <li><a href="#discussion-what-does-this-simulation-represent--which-broad-circulation-patterns-can-you-recognize-from-the-movement-and-distribution-of-water-vapor--which-features-look-like-individual-weather-systems--what-would-we-need-to-calculate-from-this-simulation-to-describe-its-climate" id="toc-discussion-what-does-this-simulation-represent--which-broad-circulation-patterns-can-you-recognize-from-the-movement-and-distribution-of-water-vapor--which-features-look-like-individual-weather-systems--what-would-we-need-to-calculate-from-this-simulation-to-describe-its-climate" class="nav-link" data-scroll-target="#discussion-what-does-this-simulation-represent--which-broad-circulation-patterns-can-you-recognize-from-the-movement-and-distribution-of-water-vapor--which-features-look-like-individual-weather-systems--what-would-we-need-to-calculate-from-this-simulation-to-describe-its-climate">Discussion: what does this simulation represent?- Which broad circulation patterns can you recognize from the movement and distribution of water vapor?- Which features look like individual weather systems?- What would we need to calculate from this simulation to describe its climate?</a></li>
+  </ul></li>
+  <li><a href="#citation-information" id="toc-citation-information" class="nav-link" data-scroll-target="#citation-information">Citation information</a></li>
+  <li><a href="#credits" id="toc-credits" class="nav-link" data-scroll-target="#credits">Credits</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 8 · October 29, 2026</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-climate-system-and-climate-models" class="level2">
+<h2 class="anchored" data-anchor-id="the-climate-system-and-climate-models">The climate system and climate models</h2>
+<p>Adapted from <a href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a> by <a href="https://www.atmos.albany.edu/facstaff/brose/">Brian E. J. Rose</a>, University at Albany.</p>
+<p><a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/climate-system-models/">Original chapter</a></p>
+<section id="five-basic-types-of-climate-model1.-energy-balance-models-ebms2.-radiative-convective-rc-and-single-column-models-scms3.-other-simplified-and-integrated-modeling-approaches4.-global-circulation-models-gcms5.-earth-system-models-esms" class="level3">
+<h3 class="anchored" data-anchor-id="five-basic-types-of-climate-model1.-energy-balance-models-ebms2.-radiative-convective-rc-and-single-column-models-scms3.-other-simplified-and-integrated-modeling-approaches4.-global-circulation-models-gcms5.-earth-system-models-esms">Five basic types of climate model1. Energy Balance Models (EBMs)2. Radiative-convective (RC) and single-column models (SCMs)3. Other simplified and integrated modeling approaches4. Global Circulation Models (GCMs)5. Earth System Models (ESMs)</h3>
+</section>
+<section id="energy-balance-models-ebmsenergy-balance-modela-simplified-climate-model-typically-zero--or-one-dimensional-predicting-the-surface-temperature-as-a-function-of-the-earths-energy-balance-i.e.-the-imbalance-between-absorbed-shortwave-radiation-and-outgoing-longwave-radiation.simplified-relationships-are-used-to-calculate-the-terms-contributing-to-the-energy-balance-in-each-latitude-zone-in-the-one-dimensional-case." class="level3">
+<h3 class="anchored" data-anchor-id="energy-balance-models-ebmsenergy-balance-modela-simplified-climate-model-typically-zero--or-one-dimensional-predicting-the-surface-temperature-as-a-function-of-the-earths-energy-balance-i.e.-the-imbalance-between-absorbed-shortwave-radiation-and-outgoing-longwave-radiation.simplified-relationships-are-used-to-calculate-the-terms-contributing-to-the-energy-balance-in-each-latitude-zone-in-the-one-dimensional-case.">1. Energy Balance Models (EBMs)<strong>Energy Balance Model</strong>A simplified climate model (typically zero- or one-dimensional) predicting the surface temperature as a function of the Earth’s energy balance (i.e., the imbalance between absorbed shortwave radiation and outgoing longwave radiation).Simplified relationships are used to calculate the terms contributing to the energy balance in each latitude zone in the one-dimensional case.</h3>
+</section>
+<section id="the-ebm-from-our-latitude-lablatitude-ebm-lab-temperature-profiles-and-local-energy-budgettransport-cools-the-tropics-and-warms-the-poles.-at-equilibrium-transport-heating-balances-net-radiation-locally.source-week-6-latitude-ebm-lab-section-3.-left-model-with-and-without-transport-and-ncep-reanalysis.-right-energy-budget-with-transport." class="level3">
+<h3 class="anchored" data-anchor-id="the-ebm-from-our-latitude-lablatitude-ebm-lab-temperature-profiles-and-local-energy-budgettransport-cools-the-tropics-and-warms-the-poles.-at-equilibrium-transport-heating-balances-net-radiation-locally.source-week-6-latitude-ebm-lab-section-3.-left-model-with-and-without-transport-and-ncep-reanalysis.-right-energy-budget-with-transport.">The EBM from our latitude lab<img src="assets/example_ebm_lab.png" class="img-fluid" alt="Latitude EBM lab: temperature profiles and local energy budget">Transport cools the tropics and warms the poles. At equilibrium, transport heating balances net radiation locally.<small>Source: Week 6 latitude EBM lab, Section 3. Left: model with and without transport, and NCEP reanalysis. Right: energy budget with transport.</small></h3>
+</section>
+<section id="radiative-convective-and-single-column-modelsboth-resolve-the-vertical-column-but-the-terms-describe-different-aspects-of-a-model.--radiative-convective-rc-model-focuses-on-radiation-and-convection-and-how-they-establish-a-vertical-temperature-profile-and-lapse-rate.--single-column-model-scm-runs-a-gcms-column-physics-including-radiation-convection-clouds-turbulence-and-surface-exchanges.-large-scale-transport-is-prescribed-or-omitted-the-column-does-not-predict-a-surrounding-circulation." class="level3">
+<h3 class="anchored" data-anchor-id="radiative-convective-and-single-column-modelsboth-resolve-the-vertical-column-but-the-terms-describe-different-aspects-of-a-model.--radiative-convective-rc-model-focuses-on-radiation-and-convection-and-how-they-establish-a-vertical-temperature-profile-and-lapse-rate.--single-column-model-scm-runs-a-gcms-column-physics-including-radiation-convection-clouds-turbulence-and-surface-exchanges.-large-scale-transport-is-prescribed-or-omitted-the-column-does-not-predict-a-surrounding-circulation.">2. Radiative-convective and single-column modelsBoth resolve the <strong>vertical column</strong>, but the terms describe different aspects of a model.- <strong>Radiative-convective (RC) model:</strong> focuses on radiation and convection and how they establish a vertical temperature profile and lapse rate.- <strong>Single-column model (SCM):</strong> runs a GCM’s column physics, including radiation, convection, clouds, turbulence, and surface exchanges. Large-scale transport is prescribed or omitted; the column does not predict a surrounding circulation.</h3>
+</section>
+<section id="a-radiativeconvective-columna-radiativeconvective-columntemperature-varies-with-pressure-the-curves-compare-different-absorbing-gas-configurations.source-brian-e.-j.-rose-the-climate-laboratory-cc-by-4.0" class="level3">
+<h3 class="anchored" data-anchor-id="a-radiativeconvective-columna-radiativeconvective-columntemperature-varies-with-pressure-the-curves-compare-different-absorbing-gas-configurations.source-brian-e.-j.-rose-the-climate-laboratory-cc-by-4.0">A radiative–convective column<img src="assets/example_column.png" class="img-fluid" alt="A radiative–convective column">Temperature varies with pressure; the curves compare different absorbing-gas configurations.<small>Source: <a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/rce/">Brian E. J. Rose, The Climate Laboratory (CC BY 4.0)</a></small></h3>
+</section>
+<section id="other-simplified-and-integrated-modeling-approachesalso-called-dimensionally-constrained-models.--statistical-dynamical-sd-models-calculate-a-simplified-mean-atmospheric-state-often-using-latitude-and-height.-individual-weather-systems-are-not-resolved-their-average-effects-such-as-heat-and-moisture-transport-by-storms-are-represented-through-statistical-relationships.-the-mean-circulation-and-these-statistical-effects-interact.---earth-system-models-of-intermediate-complexity-emics-extend-sd-models-to-include-interactive-chemistry-especially-the-cycling-of-carbon-between-ocean-atmosphere-and-land.--integrated-assessment-models-iams-couple-the-climate-system-to-models-of-economic-activity-to-more-fully-assess-the-impact-of-particular-policy-choices-affective-emissions." class="level3">
+<h3 class="anchored" data-anchor-id="other-simplified-and-integrated-modeling-approachesalso-called-dimensionally-constrained-models.--statistical-dynamical-sd-models-calculate-a-simplified-mean-atmospheric-state-often-using-latitude-and-height.-individual-weather-systems-are-not-resolved-their-average-effects-such-as-heat-and-moisture-transport-by-storms-are-represented-through-statistical-relationships.-the-mean-circulation-and-these-statistical-effects-interact.---earth-system-models-of-intermediate-complexity-emics-extend-sd-models-to-include-interactive-chemistry-especially-the-cycling-of-carbon-between-ocean-atmosphere-and-land.--integrated-assessment-models-iams-couple-the-climate-system-to-models-of-economic-activity-to-more-fully-assess-the-impact-of-particular-policy-choices-affective-emissions.">3. Other simplified and integrated modeling approachesAlso called <strong>“dimensionally constrained models.”</strong>- <strong>Statistical-dynamical (SD) models:</strong> calculate a simplified mean atmospheric state, often using latitude and height. Individual weather systems are not resolved; their average effects, such as heat and moisture transport by storms, are represented through statistical relationships. The mean circulation and these statistical effects interact. - Earth-System Models of Intermediate Complexity (EMICs) extend SD models to include interactive chemistry, especially the cycling of carbon between ocean, atmosphere and land.- Integrated Assessment Models (IAMs) couple the climate system to models of economic activity to more fully assess the impact of particular policy choices affective emissions.</h3>
+</section>
+<section id="an-integrated-assessment-model-gcaman-integrated-assessment-model-gcamassumptions-about-society-and-technology-become-scenarios-of-emissions-land-use-and-climate.source-jgcri-gcam-documentation-overview-figure-1" class="level3">
+<h3 class="anchored" data-anchor-id="an-integrated-assessment-model-gcaman-integrated-assessment-model-gcamassumptions-about-society-and-technology-become-scenarios-of-emissions-land-use-and-climate.source-jgcri-gcam-documentation-overview-figure-1">An integrated assessment model: GCAM<img src="assets/example_iam.png" class="img-fluid" alt="An integrated assessment model: GCAM">Assumptions about society and technology become scenarios of emissions, land use, and climate.<small>Source: <a href="https://jgcri.github.io/gcam-doc/overview.html">JGCRI, GCAM documentation, overview Figure 1</a></small></h3>
+</section>
+<section id="general-circulation-models-gcmsgcm-can-mean-general-circulation-model-global-climate-model-or-global-circulation-model.--simulate-the-three-dimensional-time-evolving-circulation-of-the-atmosphere-ocean-or-both.--agcm-atmospheric-model.-ogcm-ocean-model.-aogcm-cgcm-coupled-atmosphereocean-model.--originally-developed-to-explain-the-mean-circulation-for-example-why-surface-winds-tend-to-be-westerly-in-midlatitudes-and-easterly-in-the-tropics.--combine-circulation-with-radiation-and-other-physical-processes-to-calculate-the-evolving-climate-state.-atmosphere-and-ocean-components-can-also-be-run-separately-for-experiments-and-evaluation.--vertical-grid-spacing-is-typically-much-smaller-than-horizontal-spacing-while-the-number-of-vertical-layers-is-usually-smaller-than-the-number-of-horizontal-columns." class="level3">
+<h3 class="anchored" data-anchor-id="general-circulation-models-gcmsgcm-can-mean-general-circulation-model-global-climate-model-or-global-circulation-model.--simulate-the-three-dimensional-time-evolving-circulation-of-the-atmosphere-ocean-or-both.--agcm-atmospheric-model.-ogcm-ocean-model.-aogcm-cgcm-coupled-atmosphereocean-model.--originally-developed-to-explain-the-mean-circulation-for-example-why-surface-winds-tend-to-be-westerly-in-midlatitudes-and-easterly-in-the-tropics.--combine-circulation-with-radiation-and-other-physical-processes-to-calculate-the-evolving-climate-state.-atmosphere-and-ocean-components-can-also-be-run-separately-for-experiments-and-evaluation.--vertical-grid-spacing-is-typically-much-smaller-than-horizontal-spacing-while-the-number-of-vertical-layers-is-usually-smaller-than-the-number-of-horizontal-columns.">4. General Circulation Models (GCMs)GCM can mean <strong>General Circulation Model</strong>, <strong>Global Climate Model</strong>, or <strong>Global Circulation Model</strong>.- Simulate the <strong>three-dimensional, time-evolving circulation</strong> of the atmosphere, ocean, or both.- <strong>AGCM:</strong> atmospheric model. <strong>OGCM:</strong> ocean model. <strong>AOGCM / CGCM:</strong> coupled atmosphere–ocean model.- Originally developed to explain the mean circulation: for example, why surface winds tend to be westerly in midlatitudes and easterly in the tropics.- Combine circulation with radiation and other physical processes to calculate the evolving climate state. Atmosphere and ocean components can also be run separately for experiments and evaluation.- Vertical grid spacing is typically much smaller than horizontal spacing, while the number of vertical layers is usually smaller than the number of horizontal columns.</h3>
+</section>
+<section id="a-gcm-connected-columns-on-a-grida-gcm-connected-columns-on-a-gridthe-grid-represents-horizontal-and-vertical-structure-column-physics-represents-additional-processes.source-mcguffie-henderson-sellers-the-climate-modelling-primer-4th-ed.-figure-2.5-via-rose" class="level3">
+<h3 class="anchored" data-anchor-id="a-gcm-connected-columns-on-a-grida-gcm-connected-columns-on-a-gridthe-grid-represents-horizontal-and-vertical-structure-column-physics-represents-additional-processes.source-mcguffie-henderson-sellers-the-climate-modelling-primer-4th-ed.-figure-2.5-via-rose">A GCM: connected columns on a grid<img src="assets/Primer_Figure2.5.png" class="img-fluid" alt="A GCM: connected columns on a grid">The grid represents horizontal and vertical structure; column physics represents additional processes.<small>Source: <a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/climate-system-models/">McGuffie &amp; Henderson-Sellers, The Climate Modelling Primer, 4th ed., Figure 2.5; via Rose</a></small></h3>
+</section>
+<section id="earth-system-models" class="level3">
+<h3 class="anchored" data-anchor-id="earth-system-models">5. Earth System Models</h3>
+<p>Ascending the pyramid even more and moving forward in climate modeling history, more processes that used to be fixed come to be incorporated into GCMs and the coupling becomes more complete: e.g.&nbsp;changes in biomes and vegetation, chemical changes in atmosphere, ocean and soil.</p>
+<p>Such models are now generally known as <strong>Earth System Models</strong>.</p>
+<p>For brevity we use the generic term GCM to mean any complex three-dimensional model of the atmosphere and ocean and possibly other components, used for climate simulation. We will be more precise where necessary.</p>
+</section>
+<section id="cesm2-coupling-physical-climate-and-biogeochemistrycesm2-component-diagram-showing-the-coupler-atmosphere-ocean-land-ice-and-biogeochemistryland-and-marine-biogeochemistry-interact-with-the-physical-climate-components-through-the-coupled-system.source-danabasoglu-et-al.-2020-figure-1-image-hosted-by-utrecht-university-imau." class="level3">
+<h3 class="anchored" data-anchor-id="cesm2-coupling-physical-climate-and-biogeochemistrycesm2-component-diagram-showing-the-coupler-atmosphere-ocean-land-ice-and-biogeochemistryland-and-marine-biogeochemistry-interact-with-the-physical-climate-components-through-the-coupled-system.source-danabasoglu-et-al.-2020-figure-1-image-hosted-by-utrecht-university-imau.">CESM2: coupling physical climate and biogeochemistry<img src="assets/example_esm_cesm2.jpg" class="img-fluid" alt="CESM2 component diagram showing the coupler, atmosphere, ocean, land, ice, and biogeochemistry">Land and marine biogeochemistry interact with the physical climate components through the coupled system.<small>Source: <a href="https://doi.org/10.1029/2019MS001916">Danabasoglu et al.&nbsp;(2020), Figure 1</a>; image hosted by Utrecht University / IMAU.</small></h3>
+</section>
+<section id="simple-vs.-complex-models-their-different-roles-in-the-science" class="level3">
+<h3 class="anchored" data-anchor-id="simple-vs.-complex-models-their-different-roles-in-the-science">Simple vs.&nbsp;Complex models: their different roles in the science</h3>
+<div class="line-block">Aspect | Complex climate models | Simple climate models ||:—|:—|:—|| Spatial output | Geographical patterns of temperature, rainfall, winds, and other fields | Mainly global or zonal averages; fewer variables || Variability | Can simulate variability such as El Niño and changes in it | Often focus on the mean climate-change signal || Process detail | More processes represented; short time steps can resolve the daily cycle | Net effects approximated at coarser spatial and temporal scales || Climate sensitivity | Emerges from physical laws and parameterizations | Often specified or calibrated; easy to vary in sensitivity tests || Computational cost | Limits the number of experiments and length of spin-up | Enables many scenarios, parameter sweeps, and long integrations || Scientific uses | Investigate processes the model can resolve | Explore large-scale interactions and sensitivity || Interpretation | Many interacting processes make behavior harder to diagnose | Fewer processes make mechanisms easier to isolate; both model types inform each other || Ocean circulation | Coupled models can represent major changes, with uncertainty in timing and character | A 1D model cannot represent circulation changes; added dimensions can help |<em>Condensed from The Climate Modelling Primer, Table 2.1, based on Harvey et al.&nbsp;(1997). <a href="assets/Primer_Table2.1.png">Full original table</a>.</em></div>
+</section>
+<section id="model-simplicity-and-system-complexitymodel-simplicity-versus-system-complexity-maher-et-al.-2019-figure-1aincluding-more-of-the-earth-system-and-representing-each-process-in-more-detail-are-different-choices.source-maher-et-al.-2019-figure-1a-reproducing-the-framework-of-bony-et-al.-2013." class="level3">
+<h3 class="anchored" data-anchor-id="model-simplicity-and-system-complexitymodel-simplicity-versus-system-complexity-maher-et-al.-2019-figure-1aincluding-more-of-the-earth-system-and-representing-each-process-in-more-detail-are-different-choices.source-maher-et-al.-2019-figure-1a-reproducing-the-framework-of-bony-et-al.-2013.">Model simplicity and system complexity<img src="assets/maher2019_fig1a.png" class="img-fluid" alt="Model simplicity versus system complexity, Maher et al.&nbsp;2019 Figure 1a">Including more of the Earth system and representing each process in more detail are different choices.<small>Source: <a href="https://doi.org/10.1029/2018RG000607">Maher et al.&nbsp;(2019), Figure 1(a)</a>, reproducing the framework of Bony et al.&nbsp;(2013).</small></h3>
+</section>
+<section id="how-did-these-models-come-togetherwhich-came-first-calculating-warming-from-co₂-or-simulating-atmospheric-circulation-thread-milestones-connection-to-our-models-energy-balance-and-greenhouse-physics-fourier-arrhenius-calculating-temperature-from-energy-balance-and-atmospheric-composition-predicting-circulation-numerically-richardson-early-computer-models-solving-physical-equations-on-a-grid-coupling-the-climate-system-manabe-and-colleagues-coupled-gcms-earth-system-models-letting-components-evolve-together-and-exchange-energy-water-and-carbon-explore-selected-milestones-ucar-history-of-climate-science-these-are-overlapping-threads-rather-than-separate-stages-that-replaced-one-another." class="level3">
+<h3 class="anchored" data-anchor-id="how-did-these-models-come-togetherwhich-came-first-calculating-warming-from-co₂-or-simulating-atmospheric-circulation-thread-milestones-connection-to-our-models-energy-balance-and-greenhouse-physics-fourier-arrhenius-calculating-temperature-from-energy-balance-and-atmospheric-composition-predicting-circulation-numerically-richardson-early-computer-models-solving-physical-equations-on-a-grid-coupling-the-climate-system-manabe-and-colleagues-coupled-gcms-earth-system-models-letting-components-evolve-together-and-exchange-energy-water-and-carbon-explore-selected-milestones-ucar-history-of-climate-science-these-are-overlapping-threads-rather-than-separate-stages-that-replaced-one-another.">How did these models come together?<strong>Which came first: calculating warming from CO₂, or simulating atmospheric circulation?</strong>| Thread | Milestones | Connection to our models ||:—|:—|:—|| Energy balance and greenhouse physics | Fourier → Arrhenius | Calculating temperature from energy balance and atmospheric composition || Predicting circulation numerically | Richardson → early computer models | Solving physical equations on a grid || Coupling the climate system | Manabe and colleagues → coupled GCMs → Earth System Models | Letting components evolve together and exchange energy, water, and carbon |<a href="https://scied.ucar.edu/learning-zone/how-climate-works/history-climate-science-research">Explore selected milestones: UCAR history of climate science ↗</a><small>These are overlapping threads, rather than separate stages that replaced one another.</small></h3>
+</section>
+<section id="before-computers-the-foundations-of-climate-modelingnineteenth-century-climate-science-timeline-from-fourier-to-arrheniussource-steve-m.-easterbrook-computing-the-climate-2023-figure-2.8-p.-34.-watercolour-map-by-stamen-design." class="level3">
+<h3 class="anchored" data-anchor-id="before-computers-the-foundations-of-climate-modelingnineteenth-century-climate-science-timeline-from-fourier-to-arrheniussource-steve-m.-easterbrook-computing-the-climate-2023-figure-2.8-p.-34.-watercolour-map-by-stamen-design.">Before computers: the foundations of climate modeling<img src="assets/easterbrook_fig2_8_timeline.png" class="img-fluid" alt="Nineteenth-century climate-science timeline from Fourier to Arrhenius"><small>Source: Steve M. Easterbrook, <a href="https://doi.org/10.1017/9781316459768.003">Computing the Climate (2023), Figure 2.8, p.&nbsp;34</a>. Watercolour map by Stamen Design.</small></h3>
+</section>
+<section id="evolving-complexity-of-gcms" class="level3">
+<h3 class="anchored" data-anchor-id="evolving-complexity-of-gcms">Evolving complexity of GCMs</h3>
+<p><img src="assets/Fig1-13.jpg" width="800"></p>
+<blockquote class="blockquote">
+<p>Figure 1.13 | The development of climate models over the last 35 years showing how the different components were coupled into comprehensive climate models over time. In each aspect (e.g., the atmosphere, which comprises a wide range of atmospheric processes) the complexity and range of processes has increased over time (illustrated by growing cylinders). Note that during the same time the horizontal and vertical resolution has increased considerably e.g., for spectral models from T21L9 (roughly 500 km horizontal resolu- tion and 9 vertical levels) in the 1970s to T95L95 (roughly 100 km horizontal resolution and 95 vertical levels) at present, and that now ensembles with at least three independent experiments can be considered as standard.<small>Historical illustration: IPCC AR5 (2013), Figure 1.13. “At present” in the original caption refers to that assessment period.</small></p>
+</blockquote>
+</section>
+</section>
+<section id="introducing-the-gcm" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-the-gcm">4. Introducing the GCM</h2>
+<section id="ingredients-of-a-gcmpredict-the-three-dimensional-evolving-circulation-of-the-atmosphere-and-ocean-together-with-temperature-and-transported-quantities.the-model-solves-equations-expressing--momentum-forces-change-winds-and-currents.--mass-track-air-water-and-the-substances-they-carry.--energy-heating-cooling-and-transport-change-temperature.--an-equation-of-state-link-pressure-density-and-temperature.resolved-flow-is-combined-with-parameterizations-of-processes-such-as-convection-clouds-and-turbulent-mixing." class="level3">
+<h3 class="anchored" data-anchor-id="ingredients-of-a-gcmpredict-the-three-dimensional-evolving-circulation-of-the-atmosphere-and-ocean-together-with-temperature-and-transported-quantities.the-model-solves-equations-expressing--momentum-forces-change-winds-and-currents.--mass-track-air-water-and-the-substances-they-carry.--energy-heating-cooling-and-transport-change-temperature.--an-equation-of-state-link-pressure-density-and-temperature.resolved-flow-is-combined-with-parameterizations-of-processes-such-as-convection-clouds-and-turbulent-mixing.">Ingredients of a GCMPredict the <strong>three-dimensional, evolving circulation</strong> of the atmosphere and ocean, together with temperature and transported quantities.The model solves equations expressing:- <strong>Momentum:</strong> forces change winds and currents.- <strong>Mass:</strong> track air, water, and the substances they carry.- <strong>Energy:</strong> heating, cooling, and transport change temperature.- <strong>An equation of state:</strong> link pressure, density, and temperature.Resolved flow is combined with <strong>parameterizations</strong> of processes such as convection, clouds, and turbulent mixing.</h3>
+</section>
+<section id="what-do-the-governing-equations-look-likea-schematic-set-for-a-dry-atmosphere-physical-law-equation-what-it-says-momentum-displaystyle-fracdmathbfudt2boldsymbolomegatimesmathbfu-frac1rhonabla-pmathbfgmathbff-forces-change-the-velocity-of-moving-air.-mass-displaystyle-fracdrhodt-rhonablacdotmathbfu-expansion-lowers-density-compression-raises-it.-energy-displaystyle-c_pfracdtdt-frac1rhofracdpdtq-heating-and-pressure-changes-alter-temperature.-equation-of-state-displaystyle-prho-r_dt-pressure-density-and-temperature-are-linked.-ddt-follows-moving-air.-mathbfu-velocity-rho-density-p-pressure-t-temperature.boldsymbolomega-earths-rotation-mathbfg-gravity-mathbff-frictionmixing-acceleration-q-diabatic-heating-per-unit-mass.-moisture-and-other-tracers-require-additional-equations-model-formulations-use-different-approximations." class="level3">
+<h3 class="anchored" data-anchor-id="what-do-the-governing-equations-look-likea-schematic-set-for-a-dry-atmosphere-physical-law-equation-what-it-says-momentum-displaystyle-fracdmathbfudt2boldsymbolomegatimesmathbfu-frac1rhonabla-pmathbfgmathbff-forces-change-the-velocity-of-moving-air.-mass-displaystyle-fracdrhodt-rhonablacdotmathbfu-expansion-lowers-density-compression-raises-it.-energy-displaystyle-c_pfracdtdt-frac1rhofracdpdtq-heating-and-pressure-changes-alter-temperature.-equation-of-state-displaystyle-prho-r_dt-pressure-density-and-temperature-are-linked.-ddt-follows-moving-air.-mathbfu-velocity-rho-density-p-pressure-t-temperature.boldsymbolomega-earths-rotation-mathbfg-gravity-mathbff-frictionmixing-acceleration-q-diabatic-heating-per-unit-mass.-moisture-and-other-tracers-require-additional-equations-model-formulations-use-different-approximations.">What do the governing equations look like?A schematic set for a <strong>dry atmosphere</strong>| Physical law | Equation | What it says ||:—|:—|:—|| Momentum | <span class="math inline">\(\displaystyle \frac{D\mathbf{u}}{Dt}+2\boldsymbol{\Omega}\times\mathbf{u}=-\frac{1}{\rho}\nabla p+\mathbf{g}+\mathbf{F}\)</span> | Forces change the velocity of moving air. || Mass | <span class="math inline">\(\displaystyle \frac{D\rho}{Dt}=-\rho\nabla\!\cdot\mathbf{u}\)</span> | Expansion lowers density; compression raises it. || Energy | <span class="math inline">\(\displaystyle c_p\frac{DT}{Dt}-\frac{1}{\rho}\frac{Dp}{Dt}=Q\)</span> | Heating and pressure changes alter temperature. || Equation of state | <span class="math inline">\(\displaystyle p=\rho R_dT\)</span> | Pressure, density, and temperature are linked. |<span class="math inline">\(D/Dt\)</span> follows moving air. <span class="math inline">\(\mathbf{u}\)</span>: velocity; <span class="math inline">\(\rho\)</span>: density; <span class="math inline">\(p\)</span>: pressure; <span class="math inline">\(T\)</span>: temperature.<small><span class="math inline">\(\boldsymbol{\Omega}\)</span>: Earth’s rotation; <span class="math inline">\(\mathbf{g}\)</span>: gravity; <span class="math inline">\(\mathbf{F}\)</span>: friction/mixing acceleration; <span class="math inline">\(Q\)</span>: diabatic heating per unit mass. Moisture and other tracers require additional equations; model formulations use different approximations.</small></h3>
+</section>
+<section id="a-million-dollar-question-about-fluid-motionour-momentum-equation-belongs-to-the-navierstokes-family-adapted-for-a-rotating-atmosphere.-climate-models-also-include-thermodynamics-moisture-and-other-processes.--the-millennium-prize-problem-for-specified-three-dimensional-incompressible-flows-prove-that-smooth-solutions-persist-or-demonstrate-finite-time-breakdown.--september-2026-closely-timed-announcements-included-tristan-buckmaster-and-levent-alpöges-smooth-forced-euler-blowup-results-and-openais-announced-smooth-forced-navierstokes-blowup-proof.-these-are-related-but-distinct-results.-clay-acknowledged-an-apparent-resolution-of-its-problem-evaluation-continues.the-mathematical-question-is-whether-smooth-fluid-motion-can-break-downeven-with-viscosity-and-smooth-forcing.status-checked-october-28-2026.-clay-mathematics-institute-announcement-buckmaster-and-alpöges-work-openai-announcement-and-proof-links" class="level3">
+<h3 class="anchored" data-anchor-id="a-million-dollar-question-about-fluid-motionour-momentum-equation-belongs-to-the-navierstokes-family-adapted-for-a-rotating-atmosphere.-climate-models-also-include-thermodynamics-moisture-and-other-processes.--the-millennium-prize-problem-for-specified-three-dimensional-incompressible-flows-prove-that-smooth-solutions-persist-or-demonstrate-finite-time-breakdown.--september-2026-closely-timed-announcements-included-tristan-buckmaster-and-levent-alpöges-smooth-forced-euler-blowup-results-and-openais-announced-smooth-forced-navierstokes-blowup-proof.-these-are-related-but-distinct-results.-clay-acknowledged-an-apparent-resolution-of-its-problem-evaluation-continues.the-mathematical-question-is-whether-smooth-fluid-motion-can-break-downeven-with-viscosity-and-smooth-forcing.status-checked-october-28-2026.-clay-mathematics-institute-announcement-buckmaster-and-alpöges-work-openai-announcement-and-proof-links">A million-dollar question about fluid motionOur momentum equation belongs to the <strong>Navier–Stokes family</strong>, adapted for a rotating atmosphere. Climate models also include thermodynamics, moisture, and other processes.- <strong>The Millennium Prize problem:</strong> for specified three-dimensional incompressible flows, prove that smooth solutions persist, or demonstrate finite-time breakdown.- <strong>September 2026:</strong> closely timed announcements included <strong>Tristan Buckmaster and Levent Alpöge’s</strong> smooth-forced Euler blowup results and <strong>OpenAI’s</strong> announced smooth-forced Navier–Stokes blowup proof. These are related but distinct results. Clay acknowledged an apparent resolution of its problem; evaluation continues.<strong>The mathematical question is whether smooth fluid motion can break down—even with viscosity and smooth forcing.</strong><small>Status checked October 28, 2026. <a href="https://www.claymath.org/news/navier-stokes-announcement/">Clay Mathematics Institute announcement</a> · <a href="https://cims.nyu.edu/~tristanb/statement.pdf">Buckmaster and Alpöge’s work</a> · <a href="https://openai.com/index/navier-stokes-solution/">OpenAI announcement and proof links</a></small></h3>
+</section>
+<section id="what-does-a-singularity-mean-for-numerical-modelinga-possible-singularity-does-not-prevent-useful-numerical-solutions-for-flows-and-time-intervals-where-the-solution-remains-smooth-and-adequately-resolved.--why-the-mathematics-matters-regularity-theory-helps-establish-conditions-under-which-numerical-approximations-converge-and-error-estimates-apply.--near-a-singularity-increasingly-small-scales-or-steep-gradients-may-require-finer-grids-and-smaller-time-steps.-a-computer-continuing-to-produce-numbers-does-not-guarantee-an-accurate-solution.--what-a-blowup-proof-establishes-under-specified-conditions-smooth-initial-data-and-viscosity-need-not-guarantee-smooth-motion-for-all-time.-it-does-not-supply-a-general-method-for-computing-through-that-breakdown.--for-climate-models-such-a-construction-does-not-show-that-ordinary-weather-develops-singularities-or-that-climate-simulations-fail.-numerical-accuracy-and-the-physical-approximations-still-need-evaluation.navierstokes-treats-fluid-as-a-continuum-additional-physics-would-matter-before-a-real-fluid-attained-an-infinite-speed.-announced-result-and-assumptions-clays-evaluation-process." class="level3">
+<h3 class="anchored" data-anchor-id="what-does-a-singularity-mean-for-numerical-modelinga-possible-singularity-does-not-prevent-useful-numerical-solutions-for-flows-and-time-intervals-where-the-solution-remains-smooth-and-adequately-resolved.--why-the-mathematics-matters-regularity-theory-helps-establish-conditions-under-which-numerical-approximations-converge-and-error-estimates-apply.--near-a-singularity-increasingly-small-scales-or-steep-gradients-may-require-finer-grids-and-smaller-time-steps.-a-computer-continuing-to-produce-numbers-does-not-guarantee-an-accurate-solution.--what-a-blowup-proof-establishes-under-specified-conditions-smooth-initial-data-and-viscosity-need-not-guarantee-smooth-motion-for-all-time.-it-does-not-supply-a-general-method-for-computing-through-that-breakdown.--for-climate-models-such-a-construction-does-not-show-that-ordinary-weather-develops-singularities-or-that-climate-simulations-fail.-numerical-accuracy-and-the-physical-approximations-still-need-evaluation.navierstokes-treats-fluid-as-a-continuum-additional-physics-would-matter-before-a-real-fluid-attained-an-infinite-speed.-announced-result-and-assumptions-clays-evaluation-process.">What does a singularity mean for numerical modeling?<strong>A possible singularity does not prevent useful numerical solutions for flows and time intervals where the solution remains smooth and adequately resolved.</strong>- <strong>Why the mathematics matters:</strong> regularity theory helps establish conditions under which numerical approximations converge and error estimates apply.- <strong>Near a singularity:</strong> increasingly small scales or steep gradients may require finer grids and smaller time steps. A computer continuing to produce numbers does not guarantee an accurate solution.- <strong>What a blowup proof establishes:</strong> under specified conditions, smooth initial data and viscosity need not guarantee smooth motion for all time. It does not supply a general method for computing through that breakdown.- <strong>For climate models:</strong> such a construction does not show that ordinary weather develops singularities or that climate simulations fail. Numerical accuracy and the physical approximations still need evaluation.<small>Navier–Stokes treats fluid as a continuum; additional physics would matter before a real fluid attained an infinite speed. <a href="https://openai.com/index/navier-stokes-solution/">Announced result and assumptions</a> · <a href="https://www.claymath.org/news/navier-stokes-announcement/">Clay’s evaluation process</a>.</small></h3>
+<p>The physical laws are expressed in terms of <strong>differential equations</strong>.</p>
+<p>Just as we saw with the zero-dimensional EBM, we need to approximate the derivatives in order to represent them on a computer.</p>
+<p>One way to do this is to divide the Earth into a <strong>series of boxes on a regular grid</strong>.</p>
+<p>The model then represents all the <strong>state variables</strong>, e.g.&nbsp;for the atmosphere</p>
+<ul>
+<li>Temperature</li>
+<li>Wind speed and direction</li>
+<li>Humidity</li>
+<li>Pressure</li>
+</ul>
+<p>for each box - essentially a spatial average of these quantities over the box.</p>
+<p>The discretized equations are then solved numerically by <strong>timestepping</strong>, (conceptually at least) just like we have already done with the EBM.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/Primer_Figure2.5.png" class="img-fluid figure-img"></p>
+<figcaption>Primer Figure 2.5</figcaption>
+</figure>
+</div>
+</section>
+<section id="discretizing-space-three-approachesthe-same-physical-laws-can-have-different-numerical-representations.-approach-main-idea-what-to-notice-finite-differences-approximate-derivatives-using-nearby-grid-values-partial-tpartial-xapproxt_i1-t_i-12delta-x.-the-choice-of-neighboring-points-affects-accuracy-and-behavior.-finite-volumes-evolve-cell-averages-from-fluxes-crossing-cell-faces.-the-outflow-from-one-cell-is-the-inflow-to-its-neighbor-budgets-can-be-conserved.-spectral-methods-represent-a-field-as-a-sum-of-basis-functions-such-as-waves-or-spherical-harmonics.-derivatives-come-from-the-basis-functions-smooth-fields-can-be-represented-accurately.-lab-connection-our-latitude-band-transport-budget-uses-shared-boundary-fluxes-the-finite-volume-idea.examples-gfdl-finite-volume-core-gfdl-spectral-models.-models-may-combine-methods-in-different-directions-or-processes." class="level3">
+<h3 class="anchored" data-anchor-id="discretizing-space-three-approachesthe-same-physical-laws-can-have-different-numerical-representations.-approach-main-idea-what-to-notice-finite-differences-approximate-derivatives-using-nearby-grid-values-partial-tpartial-xapproxt_i1-t_i-12delta-x.-the-choice-of-neighboring-points-affects-accuracy-and-behavior.-finite-volumes-evolve-cell-averages-from-fluxes-crossing-cell-faces.-the-outflow-from-one-cell-is-the-inflow-to-its-neighbor-budgets-can-be-conserved.-spectral-methods-represent-a-field-as-a-sum-of-basis-functions-such-as-waves-or-spherical-harmonics.-derivatives-come-from-the-basis-functions-smooth-fields-can-be-represented-accurately.-lab-connection-our-latitude-band-transport-budget-uses-shared-boundary-fluxes-the-finite-volume-idea.examples-gfdl-finite-volume-core-gfdl-spectral-models.-models-may-combine-methods-in-different-directions-or-processes.">Discretizing space: three approachesThe same physical laws can have different numerical representations.| Approach | Main idea | What to notice ||:—|:—|:—|| <strong>Finite differences</strong> | Approximate derivatives using nearby grid values: <span class="math inline">\(\partial T/\partial x\approx(T_{i+1}-T_{i-1})/(2\Delta x)\)</span>. | The choice of neighboring points affects accuracy and behavior. || <strong>Finite volumes</strong> | Evolve cell averages from fluxes crossing cell faces. | The outflow from one cell is the inflow to its neighbor: budgets can be conserved. || <strong>Spectral methods</strong> | Represent a field as a sum of basis functions, such as waves or spherical harmonics. | Derivatives come from the basis functions; smooth fields can be represented accurately. |<strong>Lab connection:</strong> our latitude-band transport budget uses shared boundary fluxes, the finite-volume idea.<small>Examples: <a href="https://www.gfdl.noaa.gov/fv3/fv3-key-components/">GFDL finite-volume core</a> · <a href="https://www.gfdl.noaa.gov/atmospheric-model/">GFDL spectral models</a>. Models may combine methods in different directions or processes.</small></h3>
+### Three ways to represent a spatial field
+<div class="spatial-schematic-panels">
+<div class="spatial-schematic-panel">
+<h4 class="anchored">
+Finite differences
+</h4>
+<div class="spatial-schematic-image">
+<img src="assets/neelin_finite_difference.png" alt="Pressure values at grid points and a finite-difference slope">
+</div>
+<p>
+Point values → approximate gradients
+</p>
+<small><a href="https://njsteiger.github.io/gws/global-climate-models.html">Neelin (2011), via Steiger</a></small>
+</div>
+<div class="spatial-schematic-panel">
+<h4 class="anchored">
+Finite volumes
+</h4>
+<div class="spatial-schematic-image">
+<img src="assets/delft_fvm_fdm.svg" alt="Grid points, a gray finite volume, and a red dashed point-based grid unit">
+</div>
+<p>
+Cell averages → budgets from face fluxes
+</p>
+<small><a href="https://mude.citg.tudelft.nl/book/2024/fvm/fvm.html#fvm-fdm">TU Delft MUDE, Figure 1.5</a></small>
+</div>
+<div class="spatial-schematic-panel">
+<h4 class="anchored">
+Spectral methods
+</h4>
+<div class="spatial-schematic-image">
+<img src="assets/ecmwf_spherical_harmonic.png" alt="A spherical-harmonic pattern evaluated on a grid">
+</div>
+<p>
+Global basis patterns → weighted sums
+</p>
+<small><a href="https://sites.ecmwf.int/docs/ectrans/page/usage.html">ECMWF ecTrans tutorial</a></small>
+</div>
+</div>
+<p>The images illustrate different representations, rather than three solutions of the same experiment.</p>
+### Time stepping: return to our adjusting EBM<span class="math inline">\(\displaystyle \frac{dT}{dt}=\frac{T_{\mathrm{eq}}-T}{\tau}\)</span>: temperature relaxes toward equilibrium.
+<div class="time-update-equations">
+<div>
+<strong>Explicit Euler: current slope</strong><span class="math inline">\(\displaystyle T^{n+1}=T^n+\frac{\Delta t}{\tau}\left(T_{\mathrm{eq}}-T^n\right)\)</span>
+</div>
+<div>
+<strong>Implicit Euler: new slope</strong><span class="math inline">\(\displaystyle T^{n+1}=T^n+\frac{\Delta t}{\tau}\left(T_{\mathrm{eq}}-T^{n+1}\right)\)</span>
+</div>
+</div>
+<p><img src="assets/time_stepping_ebm.png" class="img-fluid" alt="EBM adjustment with small and large time steps, comparing analytical, explicit Euler, and implicit Euler solutions">Small steps track the adjustment. Large explicit steps can become unstable; implicit Euler stays stable for this decay problem, but <strong>stability does not guarantee accuracy</strong>.<small>Course calculation; plotted temperature is the fraction of equilibrium warming. For this linear EBM, explicit Euler is stable for <span class="math inline">\(0&lt;\Delta t/\tau&lt;2\)</span>; implicit Euler is stable for any positive step. These properties depend on the equation and scheme.</small></p>
+</section>
+<section id="same-advection-equation-different-numerical-behaviora-warm-patch-carried-by-a-constant-wind-partial-tpartial-tupartial-tpartial-x0.-no-physical-diffusion.exact-transport-compared-with-numerical-spreading-from-upwind-and-oscillations-from-laxwendroff--upwind-numerical-diffusion-spreads-the-patchs-edges.--laxwendroff-a-second-order-method-keeps-sharper-edges-here-but-creates-artificial-oscillations.both-conserve-the-total-anomaly-here.-conservation-alone-does-not-guarantee-an-accurate-shape.course-calculation-same-initial-patch-periodic-domain-160-cells-80-steps-courant-number-0.5.-numerical-diffusion-differs-from-physical-transport-parameterized-in-our-ebm.-related-clawpack-demonstration." class="level3">
+<h3 class="anchored" data-anchor-id="same-advection-equation-different-numerical-behaviora-warm-patch-carried-by-a-constant-wind-partial-tpartial-tupartial-tpartial-x0.-no-physical-diffusion.exact-transport-compared-with-numerical-spreading-from-upwind-and-oscillations-from-laxwendroff--upwind-numerical-diffusion-spreads-the-patchs-edges.--laxwendroff-a-second-order-method-keeps-sharper-edges-here-but-creates-artificial-oscillations.both-conserve-the-total-anomaly-here.-conservation-alone-does-not-guarantee-an-accurate-shape.course-calculation-same-initial-patch-periodic-domain-160-cells-80-steps-courant-number-0.5.-numerical-diffusion-differs-from-physical-transport-parameterized-in-our-ebm.-related-clawpack-demonstration.">Same advection equation, different numerical behaviorA warm patch carried by a constant wind: <span class="math inline">\(\partial T/\partial t+u\,\partial T/\partial x=0\)</span>. <strong>No physical diffusion.</strong><img src="assets/advection_schemes.png" class="img-fluid" alt="Exact transport compared with numerical spreading from upwind and oscillations from Lax–Wendroff">- <strong>Upwind:</strong> numerical diffusion spreads the patch’s edges.- <strong>Lax–Wendroff:</strong> a second-order method keeps sharper edges here, but creates artificial oscillations.<strong>Both conserve the total anomaly here. Conservation alone does not guarantee an accurate shape.</strong><small>Course calculation: same initial patch, periodic domain, 160 cells, 80 steps, Courant number 0.5. Numerical diffusion differs from physical transport parameterized in our EBM. <a href="https://www.clawpack.org/gallery/_static/notebooks/classic/advection_1d/advection_1d.html">Related Clawpack demonstration</a>.</small></h3>
+</section>
+<section id="horizontal-resolution-and-topography" class="level3">
+<h3 class="anchored" data-anchor-id="horizontal-resolution-and-topography">Horizontal resolution and topography<img src="assets/Fig1-14.jpg" width="800"></h3>
+<blockquote class="blockquote">
+<p>Figure 1.14 | Horizontal resolutions considered in today’s higher resolution models and in the very high resolution models now being tested: (a) Illustration of the European topography at a resolution of 87.5 × 87.5 km; (b) same as (a) but for a resolution of 30.0 × 30.0 km.<small>IPCC AR5 (2013), Figure 1.14. Descriptions of “today” and models “now being tested” refer to that assessment period.</small></p>
+</blockquote>
+</section>
+<section id="what-do-we-put-beneath-the-atmospherethe-ocean-can-supply-a-prescribed-lower-boundary-or-evolve-as-an-interacting-component." class="level3">
+<h3 class="anchored" data-anchor-id="what-do-we-put-beneath-the-atmospherethe-ocean-can-supply-a-prescribed-lower-boundary-or-evolve-as-an-interacting-component.">What do we put beneath the atmosphere?The ocean can supply a <strong>prescribed lower boundary</strong> or evolve as an <strong>interacting component</strong>.</h3>
+<p><img src="assets/Primer_Figure2.9.png" class="img-fluid" alt="Ocean choices: prescribed SSTs, slab, detailed mixed layer, and dynamical ocean"><strong>Prescribed SSTs → surface heat storage → deeper heat exchange → evolving currents and heat transport.</strong><small>Our ocean boxes introduced heat storage and exchange; a dynamical ocean also predicts currents. SST = sea-surface temperature. Source: The Climate Modelling Primer, 4th ed., Figure 2.9.</small></p>
+</section>
+<section id="representing-forcing-feedbacks-and-heat-uptakea-comprehensive-model-calculates-how-external-changes-and-internal-responses-alter-the-planetary-energy-budget.change-co₂-calculate-radiative-transfer-diagnose-forcing-simulate-the-evolving-climate.--forcing-f-the-radiative-budget-change-caused-by-an-imposed-driver-before-global-surface-warming-with-specified-adjustments-allowed.-a-concentration-change-in-ppm-is-not-itself-a-forcing-in-w-m².--feedbacks-lambda-the-radiative-response-as-temperature-water-vapor-clouds-lapse-rate-and-albedo-change-with-warming.--heat-uptake-the-evolving-energy-imbalance-changes-heat-storage-mainly-in-the-ocean-and-affects-the-pace-of-surface-warming.forcing-definitions-distinguish-instantaneous-effects-from-rapid-adjustments.-in-a-concentration-driven-experiment-co₂-is-prescribed-and-radiative-fluxes-are-calculated.-rose-forcing-and-feedback-calculations." class="level3">
+<h3 class="anchored" data-anchor-id="representing-forcing-feedbacks-and-heat-uptakea-comprehensive-model-calculates-how-external-changes-and-internal-responses-alter-the-planetary-energy-budget.change-co₂-calculate-radiative-transfer-diagnose-forcing-simulate-the-evolving-climate.--forcing-f-the-radiative-budget-change-caused-by-an-imposed-driver-before-global-surface-warming-with-specified-adjustments-allowed.-a-concentration-change-in-ppm-is-not-itself-a-forcing-in-w-m².--feedbacks-lambda-the-radiative-response-as-temperature-water-vapor-clouds-lapse-rate-and-albedo-change-with-warming.--heat-uptake-the-evolving-energy-imbalance-changes-heat-storage-mainly-in-the-ocean-and-affects-the-pace-of-surface-warming.forcing-definitions-distinguish-instantaneous-effects-from-rapid-adjustments.-in-a-concentration-driven-experiment-co₂-is-prescribed-and-radiative-fluxes-are-calculated.-rose-forcing-and-feedback-calculations.">Representing forcing, feedbacks, and heat uptakeA comprehensive model calculates how <strong>external changes and internal responses alter the planetary energy budget</strong>.<strong>Change CO₂ → calculate radiative transfer → diagnose forcing → simulate the evolving climate.</strong>- <strong>Forcing <span class="math inline">\(F\)</span>:</strong> the radiative-budget change caused by an imposed driver before global surface warming, with specified adjustments allowed. A concentration change in ppm is not itself a forcing in W m⁻².- <strong>Feedbacks <span class="math inline">\(\lambda\)</span>:</strong> the radiative response as temperature, water vapor, clouds, lapse rate, and albedo change with warming.- <strong>Heat uptake:</strong> the evolving energy imbalance changes heat storage, mainly in the ocean, and affects the pace of surface warming.<small>Forcing definitions distinguish instantaneous effects from rapid adjustments. In a concentration-driven experiment, CO₂ is prescribed and radiative fluxes are calculated. <a href="https://brian-rose.github.io/ClimateLaboratoryBook/courseware/sensitivity-feedback/">Rose: forcing and feedback calculations</a>.</small></h3>
+</section>
+<section id="comprehensive-models-need-parameterizationscomprehensive-models-cannot-explicitly-simulate-every-process-at-every-scale.-parameterizations-represent-the-effects-of-unresolved-processes-using-physical-relationships-and-evidence-from-observations-or-detailed-models.land-surface-processes-are-a-good-example.exchanges-of-energy-water-and-carbon-between-the-land-and-atmosphere-are-biologically-mediated.-we-must-to-a-certain-extent-rely-on-empirical-relationships.-a-bit-like-economic-modeling.we-also-must-deal-with-interaction-across-spatial-scales.e.g.-cumulus-convection-and-vertical-transport-of-heat-and-water-vapor" class="level3">
+<h3 class="anchored" data-anchor-id="comprehensive-models-need-parameterizationscomprehensive-models-cannot-explicitly-simulate-every-process-at-every-scale.-parameterizations-represent-the-effects-of-unresolved-processes-using-physical-relationships-and-evidence-from-observations-or-detailed-models.land-surface-processes-are-a-good-example.exchanges-of-energy-water-and-carbon-between-the-land-and-atmosphere-are-biologically-mediated.-we-must-to-a-certain-extent-rely-on-empirical-relationships.-a-bit-like-economic-modeling.we-also-must-deal-with-interaction-across-spatial-scales.e.g.-cumulus-convection-and-vertical-transport-of-heat-and-water-vapor">Comprehensive models need parameterizationsComprehensive models cannot explicitly simulate every process at every scale. Parameterizations represent the effects of unresolved processes using physical relationships and evidence from observations or detailed models.Land surface processes are a good example.Exchanges of energy, water and carbon between the land and atmosphere are biologically mediated. We must (to a certain extent) rely on empirical relationships. A bit like economic modeling.We also must deal with interaction across spatial scales.E.g. cumulus convection and vertical transport of heat and water vapor</h3>
+</section>
+</section>
+<section id="watching-weather-emerge-in-a-climate-modelthe-next-movie-shows-simulated-atmospheric-water-vapor-evolving-through-time-as-featured-in-nathan-steigers-global-warming-science-notes.look-for-broad-wet-and-dry-regions-moving-weather-systems-and-structures-at-different-scales.a-movie-shows-one-variable-from-the-evolving-model-state.-climate-is-described-by-the-statistics-of-that-changing-weather.source-global-climate-models-nathan-steiger." class="level2">
+<h2 class="anchored" data-anchor-id="watching-weather-emerge-in-a-climate-modelthe-next-movie-shows-simulated-atmospheric-water-vapor-evolving-through-time-as-featured-in-nathan-steigers-global-warming-science-notes.look-for-broad-wet-and-dry-regions-moving-weather-systems-and-structures-at-different-scales.a-movie-shows-one-variable-from-the-evolving-model-state.-climate-is-described-by-the-statistics-of-that-changing-weather.source-global-climate-models-nathan-steiger.">Watching weather emerge in a climate modelThe next movie shows <strong>simulated atmospheric water vapor evolving through time</strong>, as featured in Nathan Steiger’s Global Warming Science notes.Look for broad wet and dry regions, moving weather systems, and structures at different scales.A movie shows one variable from the evolving model state. Climate is described by the statistics of that changing weather.<small>Source: <a href="https://njsteiger.github.io/gws/global-climate-models.html">Global Climate Models — Nathan Steiger</a>.</small></h2>
+<section id="simulated-atmospheric-water-vaporopen-on-youtube-if-the-embedded-player-is-unavailable-source-nathan-steigers-notes.-internet-required." class="level3">
+<h3 class="anchored" data-anchor-id="simulated-atmospheric-water-vaporopen-on-youtube-if-the-embedded-player-is-unavailable-source-nathan-steigers-notes.-internet-required.">Simulated atmospheric water vapor<iframe class="climate-movie" width="1120" height="570" src="https://www.youtube-nocookie.com/embed/ujhstaGfhbE" title="Simulated atmospheric water vapor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe><small><a href="https://www.youtube.com/watch?v=ujhstaGfhbE" target="_blank" rel="noopener">Open on YouTube if the embedded player is unavailable</a> · <a href="https://njsteiger.github.io/gws/global-climate-models.html">Source: Nathan Steiger’s notes</a>. Internet required.</small></h3>
+</section>
+<section id="discussion-what-does-this-simulation-represent--which-broad-circulation-patterns-can-you-recognize-from-the-movement-and-distribution-of-water-vapor--which-features-look-like-individual-weather-systems--what-would-we-need-to-calculate-from-this-simulation-to-describe-its-climate" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-what-does-this-simulation-represent--which-broad-circulation-patterns-can-you-recognize-from-the-movement-and-distribution-of-water-vapor--which-features-look-like-individual-weather-systems--what-would-we-need-to-calculate-from-this-simulation-to-describe-its-climate">Discussion: what does this simulation represent?- Which broad circulation patterns can you recognize from the movement and distribution of water vapor?- Which features look like individual weather systems?- What would we need to calculate from this simulation to describe its climate?</h3>
+</section>
+</section>
+<section id="citation-information" class="level2">
+<h2 class="anchored" data-anchor-id="citation-information">Citation information</h2>
+<p>Several figures above are reproduced from Chapter 1 of the IPCC AR5 Working Group 1 report. The report and images can be found online at https://www.ipcc.ch/report/ar5/wg1/</p>
+<p>The full citation is:</p>
+<blockquote class="blockquote">
+<p>Cubasch, U., D. Wuebbles, D. Chen, M.C. Facchini, D. Frame, N. Mahowald and J.-G. Winther, 2013: Introduction. In: Climate Change 2013: The Physical Science Basis. Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Stocker, T.F., D. Qin, G.-K. Plattner, M. Tignor, S.K. Allen, J. Boschung, A. Nauels, Y. Xia, V. Bex and P.M. Midgley (eds.)]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA, pp.&nbsp;119–158, doi:10.1017/CBO9781107415324.007.</p>
+</blockquote>
+<p>Some other figures are reproduced from <a href="https://www.wiley.com/en-us/The+Climate+Modelling+Primer%2C+4th+Edition-p-9781118747186"><em>The Climate Modelling Primer</em> (4th ed)</a> by Kendal McGuffie and Ann Henderson-Sellers, Wiley-Blackwell 2014.</p>
+</section>
+<section id="credits" class="level2">
+<h2 class="anchored" data-anchor-id="credits">Credits</h2>
+<p>This notebook is part of <a href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a>, an open-source textbook developed and maintained by <a href="https://www.atmos.albany.edu/facstaff/brose/">Brian E. J. Rose</a>, University at Albany.</p>
+<p>It is licensed for free and open consumption under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license.</p>
+<p>Development of these notes and the <a href="https://github.com/climlab/climlab">climlab software</a> is partially supported by the National Science Foundation under award AGS-1455071 to Brian Rose. Any opinions, findings, conclusions or recommendations expressed here are mine and do not necessarily reflect the views of the National Science Foundation.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Dhruv Balwada · Columbia Climate School · Fall 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
