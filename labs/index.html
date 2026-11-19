@@ -143,9 +143,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#week-5-oct-8" id="toc-week-5-oct-8" class="nav-link" data-scroll-target="#week-5-oct-8">Week 5 (Oct 8)</a></li>
   <li><a href="#week-6-oct-15" id="toc-week-6-oct-15" class="nav-link" data-scroll-target="#week-6-oct-15">Week 6 (Oct 15)</a></li>
   <li><a href="#week-8-oct-29" id="toc-week-8-oct-29" class="nav-link" data-scroll-target="#week-8-oct-29">Week 8 (Oct 29)</a></li>
-  <li><a href="#week-10-nov-12" id="toc-week-10-nov-12" class="nav-link" data-scroll-target="#week-10-nov-12">Week 10 (Nov 12)</a>
+  <li><a href="#week-10-nov-12" id="toc-week-10-nov-12" class="nav-link" data-scroll-target="#week-10-nov-12">Weeks 10–11 (Nov 12 and 19)</a>
   <ul class="collapse">
-  <li><a href="#keeling-curve-ml" id="toc-keeling-curve-ml" class="nav-link" data-scroll-target="#keeling-curve-ml">Fitting the Keeling curve</a></li>
+  <li><a href="#keeling-curve-ml" id="toc-keeling-curve-ml" class="nav-link" data-scroll-target="#keeling-curve-ml">1. Fitting the Keeling curve</a></li>
+  <li><a href="#keeling-curve-dynamics" id="toc-keeling-curve-dynamics" class="nav-link" data-scroll-target="#keeling-curve-dynamics">2. Emissions-driven models of atmospheric CO₂</a></li>
   <li><a href="#generating-synthetic-weather" id="toc-generating-synthetic-weather" class="nav-link" data-scroll-target="#generating-synthetic-weather">Generating synthetic weather</a></li>
   </ul></li>
   <li><a href="#reference-optional" id="toc-reference-optional" class="nav-link" data-scroll-target="#reference-optional">Reference (optional)</a></li>
@@ -227,15 +228,23 @@ ul.task-list li input[type="checkbox"] {
 <p>Pause at the <strong>Guess before running</strong> questions and complete the plotting exercise. <a href="cesm2_exploration/requirements.txt">Python packages</a>.</p>
 </section>
 <section id="week-10-nov-12" class="level2">
-<h2 class="anchored" data-anchor-id="week-10-nov-12">Week 10 (Nov 12)</h2>
+<h2 class="anchored" data-anchor-id="week-10-nov-12">Weeks 10–11 (Nov 12 and 19)</h2>
 <section id="keeling-curve-ml" class="level3">
-<h3 class="anchored" data-anchor-id="keeling-curve-ml">Fitting the Keeling curve</h3>
+<h3 class="anchored" data-anchor-id="keeling-curve-ml">1. Fitting the Keeling curve</h3>
 <p>Learn a function from the Mauna Loa CO₂ record, then compare its predictions with later observations. We fit a line, a quadratic, a model with an annual cycle, and a neural network. All code is supplied; pause at the prediction and discussion prompts.</p>
 <ul>
-<li><a href="keeling_curve_ml.zip">Download the notebook and data</a> and unzip the folder before opening <code>keeling_curve_ml.ipynb</code> in the course LEAP Jupyter environment. Keep the <code>data</code> folder beside it.</li>
-<li><a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/keeling_curve_ml.ipynb" download="keeling_curve_ml.ipynb">Download the notebook only</a> · <a href="keeling_curve_ml.html">Read the notebook with plots</a></li>
+<li><a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/keeling_curve_ml.ipynb" download="keeling_curve_ml.ipynb">Download the notebook</a> · <a href="keeling_curve_ml.html">Read the notebook with plots</a></li>
 </ul>
-<p>The package includes a fixed data copy so it can run offline once the Python packages are available. The notebook-only download can retrieve the same data on its first run.</p>
+<p>Open the notebook in the course <a href="https://leap.2i2c.cloud/">LEAP Jupyter environment</a> and run the cells in order. The data-reading cell downloads fixed classroom data from our course GitHub repository. <strong>No separate data-folder download is needed.</strong> The first run needs internet access; saved files can be reused offline.</p>
+</section>
+<section id="keeling-curve-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="keeling-curve-dynamics">2. Emissions-driven models of atmospheric CO₂</h3>
+<p>Keep quadratic-plus-sine as a reference, introduce a one-box carbon budget through the EBM analogy, and compare it with a richer carbon response. Change future emissions while retaining the fitted parameters. This notebook runs independently of Notebook 1; detailed calibration is outside the main teaching sequence.</p>
+<ul>
+<li><a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/keeling_curve_dynamics.ipynb" download="keeling_curve_dynamics.ipynb">Download the notebook</a> · <a href="keeling_curve_dynamics.html">Read the notebook with plots</a></li>
+</ul>
+<p>The first cell retrieves the fixed data and numerical helper from the course GitHub repository. <strong>Download just the notebook</strong> and run it in LEAP; no separate data folder or helper download is needed. Historical emissions end in 2024, so this notebook compares all models over 2017–2024. Notebook 1 also includes 2025 concentration observations.</p>
+<p><a href="keeling_curve_notebooks.zip">Optional offline package: both notebooks, data, and helper</a>. Individual offline packages: <a href="keeling_curve_ml.zip">regression</a> · <a href="keeling_curve_dynamics.zip">dynamical models</a>. These student packages contain no instructor answers.</p>
 </section>
 <section id="generating-synthetic-weather" class="level3">
 <h3 class="anchored" data-anchor-id="generating-synthetic-weather">Generating synthetic weather</h3>

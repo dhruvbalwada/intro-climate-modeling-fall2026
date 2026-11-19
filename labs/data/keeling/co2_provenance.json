@@ -1,0 +1,16 @@
+{
+  "commit": "80bed51456ac5034a3b5796e7fa820d8b5705112",
+  "commit_date": "2026-11-10T19:21:05Z",
+  "source_url": "https://raw.githubusercontent.com/sio-co2o2/keelingcurve_notebooks/80bed51456ac5034a3b5796e7fa820d8b5705112/preliminary_data/mlo/mlo_full_record_now_span.csv",
+  "retrieved_utc": "2026-11-12T14:09:02.764136+00:00",
+  "source_sha256": "16a010800d5a83a624f37ca70f8195f2f9f28f3ee9606c5fb980b20a7cd00018",
+  "classroom_sha256": "d29ae206a7f59ae0ffedf2dbcda65b43d1a440bc2628fc19bdb394d76d61cf3e",
+  "classroom_file": "mauna_loa_monthly_1958-2025.csv",
+  "rows": 809,
+  "selection": "date >= 1958 and date < 2026; retain finite, positive co2; no gap filling",
+  "first_decimal_year": 1958.20273972603,
+  "last_decimal_year": 2025.95616438356,
+  "units": "dry-air CO2 mole fraction, ppm",
+  "attribution": "Scripps CO2 Program, Scripps Institution of Oceanography, University of California San Diego",
+  "note": "Monthly Mauna Loa record through December 2025. Excludes the mixed monthly/daily 2026 tail of the source file. Source data may be revised."
+}

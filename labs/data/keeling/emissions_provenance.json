@@ -1,0 +1,11 @@
+{
+  "source": "Global Carbon Budget 2025",
+  "url": "https://globalcarbonbudget.org/download/2341/?tmstv=1762815901",
+  "xlsx_sha256": "ef7a68cb8f7d140abfe44a2d7aad2dba5eaadbaf6b128494e2111addf10a5358",
+  "sheet": "Historical Budget",
+  "header_row_zero_based": 15,
+  "years": "1850\u20132024",
+  "input_accounting": "fossil emissions excluding carbonation + land-use change emissions - cement carbonation sink (missing early cement sink treated as zero)",
+  "co2": "Same Scripps observations supplied in the existing Keeling lab; all fits stop before 2017",
+  "scope": "Exploratory comparison with reused later-period data, not independent validation"
+}
