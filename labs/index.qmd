@@ -79,12 +79,13 @@ The first cell retrieves the fixed data and numerical helper from the course Git
 
 ### Generating synthetic weather {#generating-synthetic-weather}
 
-Learn a seasonal temperature distribution and day-to-day persistence from the NYC observations used in Lab 0c. Generate new weather sequences, then compare their histograms, anomaly correlations, and hot spells with held-out observations. This short practical introduces generative modeling through a simple statistical weather generator and closes with a connection to modern generative AI.
+Learn a seasonal temperature distribution and day-to-day persistence from the NYC observations used in Lab 0c. Generate independent and persistent weather sequences with the same seasonal mean and spread, then compare histograms, anomaly correlations, hot-day counts, and hot-spell lengths with held-out observations. The notebook connects memory to EBM relaxation and closes with the connection to modern generative AI.
 
-- [Download the notebook and data](generative_weather.zip) and unzip the folder before opening `generative_weather.ipynb` in the course LEAP Jupyter environment. Keep the `data` folder beside it.
-- <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/generative_weather.ipynb" download="generative_weather.ipynb">Download the notebook only</a> · [Read the notebook with plots](generative_weather.html)
+- <a href="https://dhruvbalwada.github.io/intro-climate-modeling-fall2026/labs/generative_weather.ipynb" download="generative_weather.ipynb">Download the notebook</a> · [Read the notebook with plots](generative_weather.html)
 
-Allow about **25–35 minutes**; all code is supplied, with four short discussion prompts and an optional persistence experiment. The package includes the data and runs offline once NumPy, pandas, and Matplotlib are available. No GPU is needed.
+Open the notebook in the course [LEAP Jupyter environment](https://leap.2i2c.cloud/). The data-reading cell retrieves a fixed version from the course GitHub and caches it locally. **Download just the notebook**; no separate data folder is needed.
+
+Allow about **30–40 minutes**; all code is supplied, with four Lab questions and an optional memory experiment. NumPy, pandas, and Matplotlib are required. No GPU is needed. The [optional offline package](generative_weather.zip) includes the notebook, reading view, and data.
 
 ## Reference (optional)
 
